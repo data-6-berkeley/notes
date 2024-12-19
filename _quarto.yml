@@ -2,15 +2,15 @@ project:
   type: website
 
 website:
-  site-url: https://berkeley-cdss.github.io/course-site-quarto/
+  site-url: https://stat133.berkeley.edu/spring-2025/
   sidebar:
     style: docked
-    title: "Dept 999"
+    title: "Stat 133"
     logo: assets/stat_bear.png
     logo-alt: "UC Berkeley Statistics logo"
     tools:
       - icon: github
-        href: https://github.com/berkeley-cdss/course-site-quarto
+        href: https://github.com/berkeley-stat133/spring-2025
         aria-label: GitHub
     contents:
       - href: index.qmd

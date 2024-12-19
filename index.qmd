@@ -1,6 +1,6 @@
 ---
-title: "Department 999: Generic Class"
-subtitle: "UC Berkeley, Spring 2024"
+title: "Statistics 133: Concepts in Computing with Data"
+subtitle: "UC Berkeley, Spring 2025"
 listing:
   - id: schedule
     template: _extensions/qmd-lab/course-website-ejs/schedule-badge/schedule.ejs
@@ -16,7 +16,7 @@ listing:
 [UNDER CONSTRUCTION]
 
 
-::: {.callout-note title="Welcome to Week 1 of Dept 999"}
+::: {.callout-note title="Welcome to Week 1 of Stat 133"}
 :::
 
 ::: {.callout-note title="Welcome to Week 2"}
