@@ -2,39 +2,58 @@ project:
   type: website
 
 website:
-  site-url: https://stat133.berkeley.edu/spring-2025/
+  favicon: assets/favicon.ico
+  google-analytics: G-CES9J82GLL
+  page-footer: 
+    center:
+      - text: About
+        href: about.qmd
+      - text: License
+        href: license.qmd
+      - text: GitHub
+        href: "https://github.com/berkeley-stat133"
+    background: "dark"
   sidebar:
-    style: docked
-    title: "Stat 133"
+    style: "docked"
+    title: "STAT 133"
     logo: assets/stat_bear.png
-    logo-alt: "UC Berkeley Statistics logo"
     tools:
       - icon: github
         href: https://github.com/berkeley-stat133/spring-2025
-        aria-label: GitHub
     contents:
       - href: index.qmd
         text: Home / Schedule
       - href: syllabus.qmd
         text: Syllabus
+      - href: about.qmd
+        text: About
       - href: staff.qmd
         text: Staff
-      - href: calendar.qmd
-        text: Calendar
       - section: "Units"
         contents:
           - units/unit1.qmd
-          - units/unit2.ipynb
+          - units/unit2.qmd
           - units/unit3.qmd
-      - href: data.qmd
-        text: Datasets
-      - href: license.qmd
-        text: License
+          - units/unit4.qmd
+          - units/unit5.qmd
+          - units/unit6.qmd
+          - units/unit7.qmd
+          - units/unit8.qmd
+          - units/unit9.qmd
+          - units/unit10.qmd
+          - units/unit11.qmd
+          - units/unit12.qmd
+          - units/unit13.qmd
+          - units/unit14.qmd
+      - href: cheatsheets.qmd
+        text: Cheatsheets
+      - href: faqs.qmd
+        text: FAQs
           
-
 format:
   html:
     theme: cosmo
+    fontsize: 1em
     css: assets/styles.css
     toc: true
 

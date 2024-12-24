@@ -1,0 +1,58 @@
+---
+title: "Five things you need to know to pass this class"
+subtitle: "UC Berkeley, STAT 133, Spring 2025"
+---
+
+
+Here they are, in no particular order.
+
+ 
+
+## 1) Read Instructions Carefully
+
+You must carefully read the instructions provided for each assignment. Read, not skim! They contain information vital for the completion of the assigned work.
+
+ 
+
+## 2) Do all the assigned work
+
+This course is a very hands-on course and requires many hours of practical work outside class and lab. It also requires reviewing ALL the learning materials shared in this website and in bCourses. 
+
+It goes without saying that you should do all the assigned work: attend lecture and section, review the practice material discussed in lab, and of course do all HW assignments. Keep in mind that the activities and assignments build upon earlier work. So it's important not to fall behind and avoid leaving gaps along the semester.
+
+On the technical side, you should have your own computer, (good) internet connection, download and install specific software (e.g. R, RStudio, gitbash, zoom), and also know how to record a video of both 1) computer's screen capture, and 2) face capture (e.g. a zoom recording makes this easy). We will provide more detailed instructions about the required tools as we move forward with the semester.
+
+ 
+
+## 3) No need to memorize all commands
+
+Do you need to memorize all commands? No! We don't expect that you memorize all commands. In fact, you can find a series of [cheatsheets](./cheatsheets.html) that you can (and should) use at all times (even during quizzes and tests).
+
+However, we do expect that you learn the most common types of functions in R: e.g. library(), function(), help(), etc. More important, we expect that you understand the "logic" and working principles of certain data objects, common programming structures, good practices, etc.
+
+ 
+
+## 4) Study for tests
+
+The exams are a way to test your understanding of the various concepts presented in the course. The exams are also a way to test whether you are really doing all the practical work by yourself.
+
+In theory, students who do an honest effort in completing all the assignments (e.g. writing commands, understanding commands, learning the syntax, etc) should be able to get a passing score in these tests.
+
+ 
+
+## 5) What else do you recommend to succeed in this course?
+
+This one is hard to answer, in part because it depends on your personal definition of "success". Simply put, I don't think there's a unique recipe for success. Instead, let me answer this question by telling you about the typical factors that may negatively affect your performance:
+
+- not attending lecture and/or lab,
+- not submitting assignments,
+- looking at the solutions of other students and "inadvertently" copy them,
+- poor studying/working habits
+- being afraid/scared/ashamed of asking the teaching staff for help
+- you've been doing work of passing quality and you cannot complete the course due to circumstances beyond your control
+
+Don't underestimate the second to last item. Coding (in any programming language) can be extremely frustrating at times. You would be surprised to hear my collection of student stories about all sorts of bugs, typos, misspellings, and the like, that gave them a fair amount of frustration. So please, ask the teaching staff for help in a timely and respectful manner.
+
+As for the last item, please let us know you've been affected by circumstances beyond your control as soon as possible. While we cannot guarantee any outcome, we will do what is within our reach to help you in this class.
+
+ 

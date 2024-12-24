@@ -1,47 +1,67 @@
 ---
 title: "Staff"
+subtitle: "UC Berkeley, STAT 133, Spring 2025"
 ---
 
-[UNDER CONSTRUCTION]
+
+Append `@berkeley.edu` to all email addresses.
 
 Office hours are subject to change.
+
+You can attend OH of any staff member.
 
 -----
 
 ::: {.grid}
 
-::: {.g-col-4}
-**Instructor:** <a href="https://statistics.berkeley.edu" target='_blank'>Person X</a><br>
-`x@berkeley.edu`<br>
+::: {.g-col-6}
+**Instructor:** <a href='https://www.gastonsanchez.com' target='_blank'>Gaston Sanchez</a><br>
+`gastonsanchez`<br>
 Office hours: <br>
-- Thursday 3pm-5pm, Evans 309 <br>
-- Friday 2:00pm-4:30pm, Evans 309<br>
+- Day hh:mm-hh:mm, Evans 309<br>
+- Day hh:mm-hh:mm, Evans 309
 :::
 
-::: {.g-col-4}
-**GSI**: <a href="http://statistics.berkeley.edu" target="_blank">Person Y</a><br>
-`y@berkeley.edu`<br>
+::: {.g-col-6}
+**GSI**: <a href="https://statistics.berkeley.edu/people/calvin-carter" target="_blank">Calvin Carter</a><br>
+`calv2n`<br>
 Office hours:<br>
-- Monday 11am-12pm, Evans 432<br>
-- Tuesday 4pm-5pm, Evans 432<br>
-- Wednesday 2pm-3pm, Evans 432<br>
-- Friday 12pm-1pm, Evans 432
+- Day hh:mm-hh:mm, Evans TBD<br>
+- Day hh:mm-hh:mm, Evans TBD
 :::
 
-::: {.g-col-4}
-**Tutor:** Person Z<br>
-`z@berkeley.edu`<br>
+
+::: {.g-col-6}
+**GSI**: <a href="https://statistics.berkeley.edu/people/huong-bui-thien-vu" target="_blank">Huong Vu</a><br>
+`huong_vu`<br>
 Office hours: <br>
-- Wednesday 2:30pm - 4:30pm, Evans 434<br>
-- Sunday 2pm - 6pm, <a href="https://berkeley.zoom.us/j/99887452083?pwd=T1pXWC9HZFpTRHQzc1MrOElUakFUdz09">Zoom</a>
+- Day hh:mm-hh:mm, Evans TBD<br>
+- Day hh:mm-hh:mm, Evans TBD
 :::
 
-::: {.g-col-4}
-**Tutor**: Person W<br>
-`w@berkeley.edu`<br>
+::: {.g-col-6}
+**GSI:** <a href="https://statistics.berkeley.edu/people/dylan-webb" target="_blank">Dylan Webb</a><br>
+`dylancw`<br>
 Office hours: <br>
-- Wednesday 10am-2pm, Evans 432<br>
-- Thursday 3-5pm, Evans 434
+- Day hh:mm-hh:mm, Evans TBD<br>
+- Day hh:mm-hh:mm, Evans TBD
+:::
+
+
+::: {.g-col-6}
+**Tutor:** David Sun<br>
+`davidzhongyisun`<br>
+Office hours: <br>
+- Day hh:mm-hh:mm, Evans TBD<br>
+- Day hh:mm-hh:mm, Evans TBD
+:::
+
+::: {.g-col-6}
+**Tutor**: Evan Passalacqua<br>
+`evanqua`<br>
+Office hours: <br>
+- Day hh:mm-hh:mm, Evans TBD<br>
+- Day hh:mm-hh:mm, Evans TBD
 :::
 
 :::

@@ -1,0 +1,26 @@
+---
+title: "Cheat Sheets"
+subtitle: "UC Berkeley, STAT 133, Fall 2024"
+---
+
+Cheat sheets are your friends, use them at all times.
+
+- <a href="cheatsheets/rstudio-IDE-cheatsheet.pdf" target="_blank">rstudio-IDE-cheatsheet.pdf</a>
+
+- <a href="cheatsheets/rmarkdown-cheatsheet-2.0.pdf" target="_blank">rmarkdown-cheatsheet-2.0.pdf</a>
+
+- <a href="cheatsheets/base-r-cheatsheet.pdf" target="_blank">base-r-cheatsheet.pdf</a>
+
+- <a href="cheatsheets/dplyr-cheatsheet.pdf" target="_blank">dplyr-cheatsheet.pdf</a>
+
+- <a href="cheatsheets/ggplot2-cheatsheet-2.1.pdf" target="_blank">ggplot2-cheatsheet-2.1.pdf</a>
+
+- <a href="cheatsheets/data-import-cheatsheet.pdf" target="_blank">data-import-cheatsheet.pdf</a>
+
+- <a href="cheatsheets/lubridate-cheatsheet.pdf" target="_blank">lubridate-cheatsheet.pdf</a>
+
+- <a href="cheatsheets/shiny-cheatsheet.pdf" target="_blank">shiny-cheatsheet.pdf</a>
+
+- <a href="cheatsheets/command-line-cheatsheet.pdf" target="_blank">command-line-cheatsheet.pdf</a>
+
+- <a href="cheatsheets/stringr-cheatsheet.pdf" target="_blank">stringr-cheatsheet.pdf</a>

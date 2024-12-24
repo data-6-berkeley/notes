@@ -1,0 +1,720 @@
+- week: 1
+  days:
+    - date: "About"
+      items:
+        - type: "Overview"
+          id: ""
+          name: "Unit 1: Introduction"
+          href: "./units/unit1.html"
+    - date: "Aug 28"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: Welcome to Stat 133 (slides)
+          href: "slides/stat133-00-intro1-welcome.pdf"
+    - date: "Aug 29"
+      items:
+        - type: "Labwork"
+          name: "Lab 1: Intro to R and RStudio"
+          href: "https://bcourses.berkeley.edu/courses/1536526/assignments/8766383"
+    - date: "Aug 30"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: "Vectors, part 1 (notes)"
+          href: "https://www.gastonsanchez.com/R-coding-basics/1-01-vectors-intro.html"
+          auxil:
+            id: "Slides"
+            href: "slides/stat133-01-objs1-vectors-part1.pdf"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1536526/files/folder/demos?preview=90268962"
+        - type: "Lectur2"
+          id: ""
+          name: "Vectors, part 2 (notes)"
+          href: "https://www.gastonsanchez.com/R-coding-basics/1-02-vectors-properties.html"
+- week: 2
+  days:
+    - date: "About"
+      items:
+        - type: "Overview"
+          id: ""
+          name: "Unit 2: R Vectors"
+          href: "./units/unit2.html"
+    - date: "Sep 2"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: "No class (Labor day)"
+          href: ""
+    - date: "Sep 4"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: Vectors, part 3 (notes)
+          href: "https://www.gastonsanchez.com/R-coding-basics/1-03-vectors-creation.html"
+          auxil:
+            id: "Slides"
+            href: "slides/stat133-01-objs1-vectors-part2.pdf"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1536526/files/folder/demos?preview=90268963"
+        - type: "Lectur2"
+          id: ""
+          name: "Vectors, part 4 (notes)"
+          href: "https://www.gastonsanchez.com/R-coding-basics/1-04-vectors-concepts.html"
+    - date: "Sep 5"
+      items:
+        - type: "Labwork"
+          id: ""
+          name: "Lab 2: Vectors  (due 9/06)"
+          href: "https://bcourses.berkeley.edu/courses/1536526/assignments/8766384"
+    - date: "Sep 6"
+      items:
+        - type: "Shiny"
+          id: ""
+          name: "Shiny Friday: Old Faithful (default app)"
+          href: "https://github.com/data133/shiny/tree/main/old-faithful1-default"
+          auxil:
+            id: "Slides"
+            href: "slides/shiny-tutorial-part1-by-Garret-Grolemund.pdf"
+        - type: "Homework"
+          id: ""
+          name: "HW 1: Vectors (avail 9/07, due 9/13)"
+          href: "https://bcourses.berkeley.edu/courses/1536526/assignments/8766407"
+- week: 3
+  days:
+    - date: "About"
+      items:
+        - type: "Overview"
+          id: ""
+          name: "Unit 3: R Matrices and Lists"
+          href: "./units/unit3.html"
+    - date: "Sep 9"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: Matrices, part 1 (notes)
+          href: "https://www.gastonsanchez.com/R-coding-basics/3-01-matrices-intro.html"
+          auxil:
+            id: "Slides"
+            href: "slides/stat133-01-objs2-matrices-factors.pdf"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1536526/files/folder/demos?preview=90268964"
+        - type: "Lectur2"
+          id: ""
+          name: Matrices, part 2 (notes)
+          href: "https://www.gastonsanchez.com/R-coding-basics/3-02-matrices-operations.html"
+    - date: "Sep 11"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: Lists (notes)
+          href: "https://www.gastonsanchez.com/R-coding-basics/4-01-lists.html"
+          auxil:
+            id: "Slides"
+            href: "slides/stat133-01-objs3-lists.pdf"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1536526/files/folder/demos?preview=90268965"
+    - date: "Sep 12"
+      items:
+        - type: "Labwork"
+          id: ""
+          name: "Lab 3: Lists and Matrices (due 9/13)"
+          href: "https://bcourses.berkeley.edu/courses/1536526/assignments/8766385"
+    - date: "Sep 13"
+      items:
+        - type: "Shiny"
+          id: ""
+          name: "Shiny Friday: Future Value"
+          href: "https://github.com/data133/shiny/blob/main/future-value2-sliders/app.R"
+          auxil:
+            id: "Slides"
+            href: "slides/stat133-01-shiny-future-value.pdf"
+        - type: "Homework"
+          id: ""
+          name: "HW 2: Lists & Matrices (avail 9/14, due 9/20)"
+          href: "https://bcourses.berkeley.edu/courses/1536526/assignments/8766408"
+- week: 4
+  days:
+    - date: "About"
+      items:
+        - type: "Overview"
+          id: ""
+          name: "Unit 4: Simple Functions and Conditionals"
+          href: "./units/unit4.html"
+    - date: "Sep 16"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: Intro to Functions (notes)
+          href: "https://www.gastonsanchez.com/R-coding-basics/5-01-functions-intro.html"
+          auxil:
+            id: "Slides"
+            href: "slides/stat133-02-prog1-intro-functions.pdf"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1536526/files/folder/demos?preview=90268966"
+        - type: "Lectur2"
+          id: ""
+          name: R Compound Expressions (notes)
+          href: "https://www.gastonsanchez.com/R-coding-basics/5-02-expressions.html"
+    - date: "Sep 18"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: If-else statements (notes)
+          href: "https://www.gastonsanchez.com/R-coding-basics/5-03-conditionals.html"
+          auxil:
+            id: "Slides"
+            href: "slides/stat133-02-prog2-if-else.pdf"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1536526/files/folder/demos?preview=90268967"
+    - date: "Sep 19"
+      items:
+        - type: "Labwork"
+          id: ""
+          name: "Lab 4: Functions and If-else (due 9/20)"
+          href: "https://bcourses.berkeley.edu/courses/1536526/assignments/8766386"
+    - date: "Sep 20"
+      items:
+        - type: "Shiny"
+          id: ""
+          name: "Shiny Friday: Old Faithful revisited"
+          href: "https://github.com/data133/shiny/blob/main/old-faithful3-average-radio/app.R"
+        - type: "Homework"
+          id: ""
+          name: "HW 3: Functions (avail 9/21, due 9/27)"
+          href: "https://bcourses.berkeley.edu/courses/1536526/assignments/8766409"
+- week: 5
+  days:
+    - date: "About"
+      items:
+        - type: "Overview"
+          id: ""
+          name: "Unit 5: Tables and Tidyverse (part 1)"
+          href: "./units/unit5.html"
+    - date: "Sep 23"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: Graphics with ggplot2 (notes)
+          href: "https://www.gastonsanchez.com/R-tidy-hurricanes/2-01-intro-ggplot.html"
+          auxil:
+            id: "Slides"
+            href: "slides/stat133-01-objs4-data-frames.pdf"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1536526/files/folder/demos?preview=90268969"
+    - date: "Sep 25"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: More graphics with ggplot2 (notes)
+          href: "https://www.gastonsanchez.com/R-tidy-hurricanes/3-02-storms-1975.html"
+          auxil:
+            id: "Slides"
+            href: "slides/stat133-03-tables1-grammar-graphics.pdf"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1536526/files/folder/demos?preview=90268970"
+    - date: "Sep 26"
+      items:
+        - type: "Labwork"
+          id: ""
+          name: "Lab 5a: Intro to ggplot2 (due 9/27)"
+          href: "https://bcourses.berkeley.edu/courses/1536526/assignments/8766387"
+        - type: "Labwork2"
+          id: ""
+          name: "Lab 5b: Shiny app Old Faithful w/ggplot2"
+          href: "https://bcourses.berkeley.edu/courses/1536526/assignments/8767002"
+    - date: "Sep 27"
+      items:
+        - type: "Shiny"
+          id: ""
+          name: "Shiny Friday: graphics with ggplot"
+          href: "https://github.com/data133/shiny/blob/main/mtcars-scatterplots1-ggplot/app.R"
+          auxil:
+            id: "Demo2"
+            href: "https://github.com/data133/shiny/blob/main/old-faithful-quarto-doc/old-faithful-doc.qmd"
+          auxil2:
+            id: "Demo3"
+            href: "https://github.com/data133/shiny/blob/main/old-faithful-quarto-dashboard/old-faithful-quarto-dashboard.qmd"
+        - type: "Homework"
+          id: ""
+          name: "HW4: Graphics (avail 9/28, due 10/04)"
+          href: "https://bcourses.berkeley.edu/courses/1536526/assignments/8766410"
+- week: 6
+  days:
+    - date: "About"
+      items:
+        - type: "Overview"
+          id: ""
+          name: "Unit 6: Tables and Tidyverse (part 2)"
+          href: "./units/unit6.html"
+    - date: "Sep 30"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: Manipulating tables with dplyr (notes)
+          href: "https://www.gastonsanchez.com/R-tidy-hurricanes/2-02-intro-dplyr.html"
+          auxil:
+            id: "Slides"
+            href: "slides/stat133-03-tables2-intro-dplyr.pdf"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1536526/files/folder/demos?preview=90268971"
+    - date: "Oct 2"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: More dplyr (notes)
+          href: "https://www.gastonsanchez.com/R-tidy-hurricanes/2-03-intro-pipes.html"
+          auxil:
+            id: "Slides"
+            href: "slides/stat133-03-tables3-more-dplyr.pdf"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1536526/files/folder/demos?preview=90268972"
+    - date: "Oct 3"
+      items:
+        - type: "Labwork"
+          id: ""
+          name: "Lab 6: Intro to dplyr (due 10/04)"
+          href: "https://bcourses.berkeley.edu/courses/1536526/assignments/8766388"
+    - date: "Oct 4"
+      items:
+        - type: "Shiny"
+          id: ""
+          name: "Shiny Friday: Top-n mtcars"
+          href: "https://github.com/data133/shiny/blob/main/mtcars-topn-barchart/app.R"
+        - type: "Homework"
+          id: ""
+          name: "HW5: Data Wrangling (avail 10/05, due 10/11)"
+          href: "https://bcourses.berkeley.edu/courses/1536526/assignments/8766411"
+- week: 7
+  days:
+    - date: "About"
+      items:
+        - type: "Overview"
+          id: ""
+          name: "Unit 7: Iterations and Loops"
+          href: "./units/unit7.html"
+    - date: "Oct 7"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: Iterations (notes)
+          href: "https://www.gastonsanchez.com/R-coding-basics/5-04-for-loop.html"
+          auxil:
+            id: "Slides"
+            href: "slides/stat133-02-prog3-for-loop.pdf"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1536526/files/folder/demos?preview=90268974"
+    - date: "Oct 9"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: More Iterations and Simulations (slides)
+          href: "https://www.gastonsanchez.com/R-coding-basics/5-05-while-loop.html"
+          auxil:
+            id: "Slides"
+            href: "slides/stat133-02-prog4-apply-loops.pdf"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1536526/files/folder/demos?preview=90268975"
+    - date: "Oct 10"
+      items:
+        - type: "Labwork"
+          id: ""
+          name: "Lab 7: Loops in R (due 10/11)"
+          href: "https://bcourses.berkeley.edu/courses/1536526/assignments/8766390"
+    - date: "Oct 11"
+      items:
+        - type: "Shiny"
+          id: ""
+          name: "Shiny Friday: Future Value simulations"
+          href: "https://github.com/data133/shiny/blob/main/future-value3-simulations/app.R"
+          auxil:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1536526/files/folder/demos?preview=90268976"
+        - type: "Homework"
+          id: ""
+          name: "HW6: Iterations (avail 10/12, due 10/18)"
+          href: "https://bcourses.berkeley.edu/courses/1536526/assignments/8766412"
+- week: 8
+  days:
+    - date: "About"
+      items:
+        - type: "Overview"
+          id: ""
+          name: "Unit 8: Regular Expressions"
+          href: "./units/unit8.html"
+    - date: "Oct 14"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: Intro to Regular Expressions (notes)
+          href: "https://www.gastonsanchez.com/R-for-strings/08-regex-intro.html"
+          auxil:
+            id: "Slides"
+            href: "slides/stat133-04-regex1-part1.pdf"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1536526/files/folder/demos?preview=90268977"
+        - type: "Lectur2"
+          id: ""
+          name: Character sets (notes)
+          href: "https://www.gastonsanchez.com/R-for-strings/09-regex-charsets.html"
+    - date: "Oct 16"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: Anchors (notes)
+          href: "https://www.gastonsanchez.com/R-for-strings/10-regex-anchors.html"
+          auxil:
+            id: "Slides"
+            href: "slides/stat133-04-regex2-part2.pdf"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1536526/files/folder/demos?preview=90268978"
+        - type: "Lectur2"
+          id: ""
+          name: Quantifiers (notes)
+          href: "https://www.gastonsanchez.com/R-for-strings/11-regex-quantifiers.html"
+    - date: "Oct 17"
+      items:
+        - type: "Labwork"
+          id: ""
+          name: "Lab 8a: Publishing a shiny app (due 10/18)"
+          href: "https://bcourses.berkeley.edu/courses/1536526/assignments/8767003"
+        - type: "Labwork2"
+          id: ""
+          name: "Lab 8b: Intro to Regex (due 10/18)"
+          href: "https://bcourses.berkeley.edu/courses/1536526/assignments/8766391"
+    - date: "Oct 18"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: Look Arounds (notes)
+          href: "https://www.gastonsanchez.com/R-for-strings/12-regex-boundaries.html"
+        - type: "Homework"
+          id: ""
+          name: "Shiny App-1 (avail 10/19, due 11/01)"
+          href: "https://bcourses.berkeley.edu/courses/1536526/assignments/8766404"
+- week: 9
+  days:
+    - date: "About"
+      items:
+        - type: "Overview"
+          id: ""
+          name: "Unit 9: Text Mining 1"
+          href: "./units/unit9.html"
+    - date: "Oct 21"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: Text Mining, introduction (notes)
+          href: "https://www.tidytextmining.com/tidytext"
+          auxil:
+            id: "Slides"
+            href: "slides/stat133-05-text1-mining-intro.pdf"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1536526/files/folder/demos?preview=90269046"
+    - date: "Oct 23"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: Text Mining, word frequencies (notes)
+          href: "https://www.tidytextmining.com/tidytext"
+          auxil:
+            id: "Slides"
+            href: "slides/stat133-05-text2-mining-tidytext.pdf"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1536526/files/folder/demos?preview=90268981"
+    - date: "Oct 24"
+      items:
+        - type: "Labwork"
+          id: ""
+          name: "Lab 9: More Regex (due 10/25)"
+          href: "https://bcourses.berkeley.edu/courses/1536526/assignments/8766392"
+    - date: "Oct 25"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: Text Mining, part 3
+          href: "https://www.tidytextmining.com/ngrams"
+          auxil:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1536526/files/folder/demos?preview=90268982"
+        - type: "Midterm"
+          id: ""
+          name: "See announcement in bCourses"
+          href: ""
+- week: 10
+  days:
+    - date: "About"
+      items:
+        - type: "Overview"
+          id: ""
+          name: "Unit 10: Text Mining 2"
+          href: "./units/unit10.html"
+    - date: "Oct 28"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: "Sentiment Analysis 1 (notes)"
+          href: "https://www.tidytextmining.com/sentiment"
+          auxil:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1536526/files/folder/demos?preview=90268983"
+    - date: "Oct 30"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: "Sentiment Analysis 2 (notes)"
+          href: "https://www.tidytextmining.com/sentiment"
+          auxil:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1536526/files/folder/demos?preview=90268984"
+        - type: "Lectur2"
+          id: ""
+          name: "Correspondence Analysis (notes)"
+          href: "docs/tm-correspondence/text-mining-corresp-analysis1.html"
+    - date: "Oct 31"
+      items:
+        - type: "Labwork"
+          id: ""
+          name: "Lab 10: Text Mining (due 11/01)"
+          href: "https://bcourses.berkeley.edu/courses/1536526/assignments/8766393"
+    - date: "Nov 1"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: "More Correspondence Analysis (notes)"
+          href: "docs/tm-correspondence/text-mining-corresp-analysis2.html"
+        - type: "Homework"
+          id: ""
+          name: "Shiny App-2 (avail 11/02, due 11/15)"
+          href: "https://bcourses.berkeley.edu/courses/1536526/assignments/8766405"
+- week: 11
+  days:
+    - date: "About"
+      items:
+        - type: "Overview"
+          id: ""
+          name: "Unit 11: Geospatial Data 1"
+          href: "./units/unit11.html"
+    - date: "Nov 4"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: "Mapping Storms, simple features (notes)"
+          href: "https://www.gastonsanchez.com/R-tidy-hurricanes/5-03-maps-sf.html"
+          auxil:
+            id: "Slides"
+            href: "docs/maps-storms/storms-slides1.html"
+    - date: "Nov 6"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: "Mapping Storms, leaflet (notes)"
+          href: "https://www.gastonsanchez.com/R-tidy-hurricanes/5-04-maps-leaflet.html"
+          auxil:
+            id: "Slides"
+            href: "docs/maps-storms/storms-slides2.html"
+    - date: "Nov 7"
+      items:
+        - type: "Labwork"
+          id: ""
+          name: "Lab 11: Maps 1 (due 11/08)"
+          href: "https://bcourses.berkeley.edu/courses/1536526/assignments/8766394"
+    - date: "Nov 8"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: "Mapping Storms (part 3)"
+          href: ""
+          auxil:
+            id: "Slides"
+            href: "docs/maps-storms/storms-slides3.html"
+          auxil:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1536526/files/folder/demos?preview=90269007"
+- week: 12
+  days:
+    - date: "About"
+      items:
+        - type: "Overview"
+          id: ""
+          name: "Unit 12: Geospatial Data 2"
+          href: "./units/unit12.html"
+    - date: "Nov 11"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: "No class (Veterans day)"
+          href: ""
+    - date: "Nov 13"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: "Guest Lecture: Wildfire in California"
+          href: ""
+    - date: "Nov 14"
+      items:
+        - type: "Labwork"
+          id: ""
+          name: "Lab 12: Maps 2 (due 11/15)"
+          href: "https://bcourses.berkeley.edu/courses/1536526/assignments/8766395"
+    - date: "Nov 15"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: "Choropleth maps 1"
+          href: "https://bcourses.berkeley.edu/courses/1536526/files/folder/demos?preview=90269008"
+          auxil:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1536526/files/folder/demos?preview=90269008"
+        - type: "Homework"
+          id: ""
+          name: "Shiny App-3 (avail 11/16, due 12/06)"
+          href: "https://bcourses.berkeley.edu/courses/1536526/assignments/8766406"
+- week: 13
+  days:
+    - date: "About"
+      items:
+        - type: "Overview"
+          id: ""
+          name: "Unit 13: Web Tech 1"
+          href: "./units/unit13.html"
+    - date: "Nov 18"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: "Choropleth maps 2"
+          href: "docs/choropleth/us-elections-slides1.html"
+          auxil:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1536526/files/folder/demos?preview=90287921"
+    - date: "Nov 20"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: "JSON data (notes)"
+          href: "https://www.gastonsanchez.com/R-web-technologies/3-01-json.html"
+          auxil:
+            id: "Slides"
+            href: "docs/api-open-notify/open-notify-slides.html"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1536526/files/folder/demos?preview=90273694"
+    - date: "Nov 21"
+      items:
+        - type: "Labwork"
+          id: ""
+          name: "Lab 13: Bart API (due 11/22)"
+          href: "https://bcourses.berkeley.edu/courses/1536526/assignments/8766396"
+    - date: "Nov 22"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: "APIs (notes)"
+          href: "https://www.gastonsanchez.com/R-web-technologies/4-02-api-open-notify.html"
+- week: 14
+  days:
+    - date: "About"
+      items:
+        - type: "Overview"
+          id: ""
+          name: "Unit 14: Web Tech 2"
+          href: "./units/unit14.html"
+    - date: "Nov 25"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: "XML 1 (notes)"
+          href: "https://www.gastonsanchez.com/R-web-technologies/2-01-xml.html"
+          auxil:
+            id: "Slides"
+            href: "slides/stat133-07-web2-xml-intro.pdf"
+    - date: "Nov 27"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: "No class (Thanksgiving)"
+          href: ""
+    - date: "Nov 28"
+      items:
+        - type: "Labwork"
+          id: ""
+          name: "No lab (Thanksgiving)"
+          href: ""
+    - date: "Nov 29"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: "No class (Thanksgiving)"
+          href: ""
+- week: 15
+  days:
+    - date: "About"
+      items:
+        - type: "Overview"
+          id: ""
+          name: "Unit 15: Web Tech 2 (cont'd)"
+          href: "./units/unit14.html"
+    - date: "Dec 2"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: "Xpath (notes)"
+          href: "https://www.gastonsanchez.com/R-web-technologies/2-02-parsing-xml.html"
+          auxil:
+            id: "Slides"
+            href: "slides/stat133-07-web3-parsing-xml.pdf"
+    - date: "Dec 4"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: "Xpath (notes)"
+          href: "https://www.gastonsanchez.com/R-web-technologies/2-03-xpath.html"
+          auxil:
+            id: "Slides"
+            href: "slides/stat133-07-web3-parsing-xml.pdf"
+        - type: "Lectur2"
+          id: ""
+          name: "Web Scraping: HTML (notes)"
+          href: "https://www.gastonsanchez.com/R-web-technologies/2-04-html.html"
+    - date: "Dec 5"
+      items:
+        - type: "Labwork"
+          id: ""
+          name: "Lab 14: Web Scraping (due 12/06)"
+          href: "https://bcourses.berkeley.edu/courses/1536526/assignments/8766397"
+    - date: "Dec 6"
+      items:
+        - type: "Lecture"
+          id: ""
+          name: "Closing Talk"
+          href: ""
+- week: 16
+  days:
+    - date: "About"
+      items:
+        - type: "Overview"
+          id: ""
+          name: "RRR Week"
+- week: 17
+  days:
+    - date: "Dec 18"
+      items:
+        - type: "Final"
+          id: ""
+          name: "Final Exam (see announcement in bCourses)"

@@ -1,0 +1,41 @@
+---
+title: "11) Maps 1"
+subtitle: "UC Berkeley, STAT 133, Spring 2025"
+---
+
+
+## 📖 Lecture
+
+Many data sets (e.g. `storms` data set from `"dplyr"`) contain geographical variables such as **longitude** and **latitude** that can be visualized with a map.
+This week we take `"ggplot2"` a further step to learn how to plot basic maps with some dedicated packages such as `"sf"` and `"rnaturalearth"`.
+Likewise, we'll also discuss how to produce web-interactive maps with the package `"leaflet"`.
+
+
+
+## 📚 Reading
+
+Read chapters 17, 18, and 19 of "Tidy Hurricanes":
+
+- <a href="https://www.gastonsanchez.com/R-tidy-hurricanes/5-01-maps-intro.html" target="_blank">https://www.gastonsanchez.com/R-tidy-hurricanes/5-01-maps-intro.html</a>
+- <a href="https://www.gastonsanchez.com/R-tidy-hurricanes/5-03-maps-sf.html" target="_blank">https://www.gastonsanchez.com/R-tidy-hurricanes/5-03-maps-sf.html</a>
+- <a href="https://www.gastonsanchez.com/R-tidy-hurricanes/5-04-maps-leaflet.html" target="_blank">https://www.gastonsanchez.com/R-tidy-hurricanes/5-04-maps-leaflet.html</a>
+
+
+## 🔬 Lab
+
+- Graphing basic maps with `"ggplot2"` & `"sf"`.
+- Making web-interactive maps with `"leaflet"`.
+
+
+
+## 🎯 Objectives
+
+- Explain the concept of a "simple feature"
+- Describe how to use the layer `geom_sf()`
+- Map latitude and longitude coordinates in a `geom_sf()` layer.
+
+
+
+## 🔔 Assignments
+
+- Shiny App2, due 11/14

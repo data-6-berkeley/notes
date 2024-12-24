@@ -1,0 +1,149 @@
+---
+title: "Some Frequently Asked Questions"
+subtitle: "UC Berkeley, STAT 133, Spring 2025"
+---
+
+__Will STAT 133 be offered in hybrid mode (both in-person and remotely, simultaneously)?__ <br>
+No, STAT 133 will not be offered in hybrid mode. Instead, all classes and sections are to be delivered in-person. If you have time conflicts with lecture and/or section, please don't take STAT 133 this semester.
+
+<br>
+
+__Will there be live webcast or recordings of lectures?__ <br>
+Unless Campus authorities decide to switch to remote instruction, there won't be live webcast or live zoom recordings. With that said, lectures may be recorded for archival purposes, but not necessarily be shared with the class.
+
+<br>
+
+__Do you have a Covid (or other illness) policy?__ <br>
+Maintaining your health and that of the Berkeley community is of primary importance to course staff, so if you are feeling ill or have been exposed to illness, please do not come to class. All of the materials used in class will be posted either in this website or in bCourses. Likewise, you’re encouraged to reach out to fellow students to discuss the class materials or stop by office hours to chat with the GSI, the tutor, or the instructor.
+
+Having said that, we expect you to attend lecture and lab. Past experience tells us that students who constantly miss lecture/lab tend to have a mediocre performance.
+
+Also, missing lecture/lab does not give you the right to use OH as a replacement for receiving instruction. We are always willing to help you understand the learning materials during OH, but this also requires that you make an honest effort reviewing them before coming to OH.
+
+<br>
+
+__I am a concurrent student. What are my chances of enrolling in the class?__ <br>
+Depending on the size of the waitlist, and the available space in the labs, you may or may not have a chance to join the class. For example, there have been semesters in which only 10% of concurrent applications have been accepted. Likewise, there have been semesters in which 100% of concurrent applications have been accepted.
+
+Keep in mind that the approval process for concurrent enrollment students takes place between the 2nd and 3rd week of instruction, and it is a somewhat slow 2-step process, which takes some days, and it involves not only my intervention but also the participation of one of the advisors in the Dept. of Statistics.
+
+<br>
+
+__I am a grad student officially enrolled. Do you have a grading structure for grad students?__ <br>
+This semester we don't have a special grading structure for graduate students. All students will be evaluated with the same criteria. See the course syllabus for more information about the grading structure.
+
+<br>
+
+__What if I join the class late?__ <br>
+If you join the class within the first two weeks, read the syllabus and lecture notes, take a look at bCourses to get a sense of any assignments that may have already passed, and visit office hours to check that you're up to date with things.
+
+After two weeks into the semester, you’ll have too much material that you’ll need to make up, so you will have to wait to a subsequent semester to take STAT 133.
+
+<br>
+
+__Are time conflicts allowed?__ <br>
+STAT 133 does not allow students to enroll with time conflicts.
+
+<br>
+
+__I would like to switch lab sections with other student. Is this possible?__ <br>
+This is not possible. You should attend the lab section you are officially enrolled in.
+
+<br>
+
+__Is this course a good fit if I don't have any programming experience?__ <br>
+Quick answer: yes. Because Stat 133 has no prerequisites, we actually expect that many of you come without any coding experience. It is nice to have some programming experience under your belt, which makes the learning curve less steep. Having said that, if this is your first time coding, you should expect to spend a great amount of time doing work outside class (and also deal with the inevitable frustration that comes when learning any language).
+
+<br>
+
+__Is this course a good fit if I don't have any data analysis experience?__ <br>
+Yes. Because STAT 133 has no prerequisites, we actually expect that most of you come without any data analysis experience. In this course you will be working with a variety of fairly simple real data sets, as well as with simulated data.
+
+<br>
+ 
+__Is this course a good fit if I've already taken several programming courses?__ <br>
+You may find some parts of this course somewhat slow (and boring?) in terms of basics concepts such as data types, data structures, conditionals, loops, and functions. Unless Stat 133 is a required course for your major/minor (or you are eager to learn about R), please consider taking more advanced courses if what you are interested in is algorithms, computational statistics, databases, machine learning and statistical learning.
+
+<br>
+ 
+__Is this course a good fit if I don't intend to major in Statistics?__ <br>
+STAT 133 is one of the core courses of the Statistics Major. The way I've been teaching this course is having Statistics majors as my target audience. However, much of the content should be helpful for any student who has to analyze data, or for those majors with some sort of data-analysis concentration.
+
+<br>
+ 
+__What if I want to declare Statistics as my major, but I already have taken other programming courses on Campus?__ <br>
+You may need to talk to a student advisor for more information about this. In 2019, students that took Data 100 (e.g. C100) "Principles & Techniques of Data Science", were able to waive Stat 133 by just taking Stat 33B "Introduction to Advanced Programming in R". Please contact your advisor to know if this option is still available.
+
+<br>
+
+__Is this course a good fit to become a data scientist?__ <br>
+Becoming a data scientist is not a (one-semester) sprint. It is a (years-long) marathon. Like any other profession, it takes many years of learning, practice, practice, practice, and then some practice, to become a proficient data scientist/analyst. This course can be very useful, and we are confident it will help you to build a good foundation in your DS career.
+
+<br>
+
+__What if I don't want to be a data scientist?__ <br>
+That's perfect too. You don't need to be a data scientist aspirant to take this course. Whether your plans are to become a consultant, life scientist, social scientist, journalist, or get some analytic skills, this course should be a good choice.
+
+<br>
+ 
+__Why is R (and not python) the main computational tool used in Stat 133?__ <br>
+Historically, STAT 133 has always been taught with R, and this semester is no exception. Personally, I believe that both R and python are great tools, and it is a good idea that you learn both of them (especially if you are interested in Data Science, analytics, etc). STAT 133 gives you the opportunity to learn a fair amount of R. Quoting [Hadley Wickham](https://posit.co/blog/r-vs-python-what-s-the-best-for-language-for-data-science/):
+
+> "Generally, there are a lot of people who talk about R versus Python like it’s a war that either R or Python is going to win. I think that is not helpful because it is not actually a battle. These things exist independently and are both awesome in different ways".
+
+On a side note, [Ross Ihaka](https://en.wikipedia.org/wiki/Ross_Ihaka), one of the creators of R, obtained his PhD at UC Berkeley (in the Dept. of Statistics), so it is no coincidence that we are heavily influenced by R.
+
+<br>
+
+__Are we going to learn about machine learning methods?__ <br>
+The Statistics department offers a dedicated course on this topic: STAT 154: Modern Statistical Prediction and Machine Learning. There is also CS 189: Introduction to Machine Learning offered through Electrical Engineering and Computer Sciences (EECS). Similarly, DATA 100: Principles and Techniques of Data Science covers several machine learning concepts.
+
+<br> 
+
+__Are we going to learn about databases?__ <br>
+If you are interested in Databases you should consider CS 186: Introduction to Database Systems offered through Electrical Engineering and Computer Sciences (EECS).
+
+<br>
+
+__Are we going to learn about linear models?__ <br>
+The Statistics department offers a dedicated course on this topic: STAT 151A: Linear Modeling, Theory and Applications.
+
+<br>
+
+__Are we going to learn about introductory statistics and/or probability?__ <br>
+The Statistics department offers two core courses on these topics: STAT 134: Concepts of Probability, and STAT 135: Concepts of Statistics.  
+
+<br>
+
+__Are we going to learn about Reproducible Research (RR)?__ <br>
+We are just going to scratch the surface. We will touch on dynamic documents, and some practices and tools that are useful in RR. 
+
+<br>
+
+__Can we work in groups?__ <br>
+Yes, absolutely. We strongly encourage you to not work alone. Well, let me rephrase that. You should try to first work on your own (trial and error). Take notes of the things you don't understand. Then get with other people and discuss ideas, share tips (but not the entire solution).
+
+<br>
+
+__Aren't you suppose to teach us?__ <br>
+Yes. But you don't learn programming by watching someone else program. The same way that you don't learn to swim by simply watching someone else swimming. You have to get into the pool, and do all the drills your instructor says. This is a very hands-on course, and you will be required to do a great amount of work on your own.
+
+<br>
+
+__What if I don't agree with all the course policies?__ <br>
+If there is one or more policies you don't agree with, then please reconsider your enrollment in the course. I am assuming that all students completely agree with the course policies described in the Syllabus.
+
+<br>
+
+__Can I ask you to write me a Letter of Recommendation (LoR)?__ <br>
+Please take a look at this document before asking me to write you a letter of recommendation: <a href="https://github.com/gastonstat/letter-of-rec" target="_blank">https://github.com/gastonstat/letter-of-rec</a>. 
+
+<br>
+
+__I invited you to join my network in LinkedIn. Why haven't you accepted my invitation?__ <br>
+First: Don't take it personal. It's not you, it's me. Second: if you really want that I become part of your network, why don't you talk to me in person? We can meet in OH, or you can also schedule a meeting at a different time. Let me know you better than just as a distant contact in a social media networking site.
+
+<br>
+
+__Do you have research projects open to undergrad students?__ <br>
+Lecturing takes most of my time and I don't have a lab. Sometimes, however, I may look for collaborators to create some data-based project. This typically happens in the Summer.

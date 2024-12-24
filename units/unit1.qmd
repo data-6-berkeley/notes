@@ -1,94 +1,40 @@
 ---
-title: "Unit 1: Intro"
-format:
-  html:
-    code-fold: show
-    code-tools: true
+title: "1) Intro"
+subtitle: "UC Berkeley, STAT 133, Spring 2025"
 ---
 
-[UNDER CONSTRUCTION]
 
-This is an example of using qmd as the source document.
+## 📖 Lecture
+
+Welcome to Stat 133. Our first meeting is on Wednesday Aug-28 where we begin with the usual review of the course policies, logistics, overall expectations, topics in a nutshell, etc. As for Friday Aug-30, we start with an introduction to R vectors which are the most basic kind of data structure in R.
+
+ 
+
+## 🔬 Lab
+
+Getting started with R and RStudio: first, we want to make sure everybody has installed both programs; and then we will provide an introductory review of RStudio’s workspace, as well as a brief intro to Quarto notebooks. 
+
+BTW: there's nothing to submit this week.
+
+ 
+
+## 🔔 Activities
+
+If you haven't yet, please spend some time outside class to review the following documentation:
+
+- <a href="../syllabus.html" target="_blank">syllabus</a>
+- <a href="../email.html" target="_blank">communication via email</a>
+- <a href="../faqs.html" target="_blank">some frequently asked questions</a>
+- <a href="../five-things.html" target="_blank">five things you need to know to pass this class</a>
+- <a href="https://forms.gle/2R6V5FGh2UMj5Uom7" target="_blank">introduction survey (google form)</a>
 
 
-## Evaluated Python code chunk, with a plot
 
-```{python}
-import numpy as np
-x = np.random.normal(size=100)
-import matplotlib.pyplot as plt
-plt.hist(x)
-plt.show()
-np.mean(x)
-```
+## 📢 Install R & RStudio
 
+For those of you that don't have either R or RStudio, download and install these programs (both are free, and they are available for Mac, Windows, and Linux computers)
 
-## $\LaTeX$
+- <a href="https://cran.r-project.org/" target="_blank">Install R</a>
 
-$$
-\theta = \int_0^\infty f(x,\theta)d\theta
-$$
+- <a href="https://www.rstudio.com/products/rstudio/download/#download" target="_blank">Install RStudio</a> (Desktop free version)
 
-
-## Styled div via direct html
-
-::: {.border}
-This content can be styled via the border class.
-:::
-
-## A callout
-
-::: {.callout-tip}
-## Tip with Title
-
-This is an example of a callout with a title.
-:::
-
-## Tabset 
-
-::: {.panel-tabset}
-## R
-
-This code is not executed.
-
-```{.r}
-fizz_buzz <- function(fbnums = 1:50) {
-  output <- dplyr::case_when(
-    fbnums %% 15 == 0 ~ "FizzBuzz",
-    fbnums %% 3 == 0 ~ "Fizz",
-    fbnums %% 5 == 0 ~ "Buzz",
-    TRUE ~ as.character(fbnums)
-  )
-  print(output)
-}
-
-fizz_buzz(3)
-```
-
-## Python
-
-This code is executed.
-
-```{python}
-def fizz_buzz(num):
-  if num % 15 == 0:
-    print("FizzBuzz")
-  elif num % 5 == 0:
-    print("Buzz")
-  elif num % 3 == 0:
-    print("Fizz")
-  else:
-    print(num)
-    
-fizz_buzz(3)
-```
-
-:::
-
-## A basic Markdown table
-
-| Default | Left | Right | Center |
-|----|:--|---:|-----------------------:|
-| 12      | 12   |    12 |   12   |
-| 123     | 123  |   123 |  123   |
-| 1       | 1    |     1 |   1    |

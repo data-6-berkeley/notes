@@ -1,0 +1,41 @@
+---
+title: "13) Web Tech 1"
+subtitle: "UC Berkeley, STAT 133, Spring 2025"
+---
+
+
+## 📖 Lecture
+
+In this last part of the course we look at so-called web technologies for computing with data. To be more specific, we'll focus on tools that have to do with getting data from the Web.
+
+The Web is full of information and sources of data. As it turns out, we can use a wide array of approaches to get data from the Web. For instance, we can simply scrape data from human-readable webpages. Likewise, we can also utilize application programming interfaces (APIs) to request some data sets. Interestingly, the data may come in some XML dialect, the most common one being HTML. But it can also come in a JSON document or some other self-describing format. Consequently, you need to be prepared to deal with data from the Web.
+
+
+## 📚 Reading
+
+Read the following chapters from "R Web Technologies":
+
+- <a href="https://www.gastonsanchez.com/R-web-technologies/json.html" target="_blank">https://www.gastonsanchez.com/R-web-technologies/json.html</a>
+- <a href="https://www.gastonsanchez.com/R-web-technologies/xml.html" target="_blank">https://www.gastonsanchez.com/R-web-technologies/xml.html</a>
+- <a href="https://www.gastonsanchez.com/R-web-technologies/parsing-xml.html" target="_blank">https://www.gastonsanchez.com/R-web-technologies/parsing-xml.html</a>
+- <a href="https://www.gastonsanchez.com/R-web-technologies/xpath.html" target="_blank">https://www.gastonsanchez.com/R-web-technologies/xpath.html</a>
+
+
+
+## 🔬 Lab
+
+- Practice with a basic API to get some data.
+
+
+## 🎯 Objectives
+
+- Describe what an API is.
+- Understand JSON sytnax
+    + data types
+    + json arrays
+    + json objects
+
+
+## 🔔 Assignments
+
+- Start working on your App3, due on 12/06

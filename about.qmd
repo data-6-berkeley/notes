@@ -1,0 +1,54 @@
+---
+title: "About"
+subtitle: "UC Berkeley, STAT 133, Spring 2025"
+---
+
+::: {.callout-note title="Announcement"}
+## Info
+__Instructor__: <a href='https://www.gastonsanchez.com' target='_blank'>Gaston Sanchez</a>
+
+__Lecture__: MWF 3pm-4pm in [Stanley 105](https://www.berkeley.edu/map/stanley-hall/)
+
+__Lab__:
+
+- Lab 101, Th 9am-11am, Evans 342 (GSI TBA)
+- Lab 102, Th 9am-11am, Evans 334 (GSI TBA)
+- Lab 103, Th 11am-1pm, Evans 342 (GSI TBA)
+- Lab 104, Th 1pm-3pm, Evans 342 (GSI TBA)
+- Lab 105, Th 3pm-5pm, Evans 342 (GSI TBA)
+- Lab 106, Th 4pm-6pm, Evans 332 (GSI TBA)
+
+
+__Code #__: 22824
+
+__Units__: 3
+
+__Final Exam__: Wed May-14th, 7pm-10pm, location TBD.
+
+__Dates__: Jan-22 / May-02
+:::
+
+
+Stat 133 is an introductory-to-intermediate level course to computational data analysis with an emphasis on four major cornerstones:
+
+- 🔢  Understand common data formats, and principles of data manipulation (e.g. wrangling, reshaping, tidying)
+
+- 📊  Production of data visualizations and their role in data analysis projects
+
+- 💻  Learn basic principles for writing code, and programming concepts (with emphasis on data analysis)
+
+- ⚒️  Use computational tools to carry out the data analysis cycle, organize your workflow, and become familiar with reporting tools (via dynamic documents and web-apps)
+
+Because Stat 133 is one of the core courses for Statistics majors, the underlying goal is to provide foundations for "computing with data" so that stat majors, as well as other data-dependent majors (e.g. Data Science, Applied Math, CogSci, Economics, etc), have the basic computational skills for subsequent upper division courses (e.g. Stat 150, 151A, 152, 153, 154, 155, 157, 158, 159).
+
+
+## More Information
+
+- [Schedule](.)
+- [Syllabus](./syllabus.html)
+- [Staff](./staff.html)
+- [Communication via email](./email.html)
+- [Ed Netiquette](./ed-netiquette.html)
+- [Q&As](./faqs.html)
+- [5 things you need to know](./five-things.html)
+
