@@ -51,7 +51,7 @@ If you are concerned about classroom environment issues created by other student
 
 This course __does not have any prerequisites__, although it would be nice if you have taken an introductory course in statistics (e.g. Stat 2, 20, 21, 131A).
 
-The curriculum and format is designed specifically for students (ideally majoring in Statistics and/or Data Science) __who have no-or-minimum programming experience__. You also don't need previous data analysis experience---although it helps if you do.
+The curriculum and format is designed specifically for students (ideally majoring in Statistics or minoring in Data Science) __who have no-or-minimum programming experience__. You also don't need previous data analysis experience---although it helps if you do.
 
 Students with some prior experience in either computational statistics or computing are welcome to enroll, though some parts of the course might feel extremely slow. We recommend that you take more advanced courses unless you need Stat 133 because of your major/minor's requirements.
 
@@ -59,7 +59,7 @@ Students with some prior experience in either computational statistics or comput
 
 ## 📚 Textbooks
 
-We'll be using a handful of textbooks (most of them based on the notes I've authored for Stat 133 in the last 8 years):
+We'll be using a handful of textbooks (most of them based on the notes I've authored for Stat 133 in the last 9 years):
 
 - <a href="https://www.gastonsanchez.com/R-coding-basics/" target="_blank">https://www.gastonsanchez.com/R-coding-basics/</a>
 - <a href="https://www.gastonsanchez.com/R-tidy-hurricanes/" target="_blank">https://www.gastonsanchez.com/R-tidy-hurricanes/</a>
@@ -112,7 +112,7 @@ Group tutoring is a great place to go to meet other students and collaborate on 
 - You must attend the lab section you are officially enrolled in.
 - During lab, you will work on short-form assignments designed to apply the concepts on real and simulated data sets.
 - Lab assignments will be released every Thursday (available in bCourses), 
-- The due date is always on a Friday (please check the <a href="https://bcourses.berkeley.edu/courses/1536526/assignments" target="_blank">assignments tab</a> in bCourses to keep track of deadlines).
+- The due date is always on a Friday (please check the <a href="https://bcourses.berkeley.edu/courses/1541131/assignments" target="_blank">assignments tab</a> in bCourses to keep track of deadlines).
 - Solutions to lab assignments will be available a few days after their due date.
 - We will be giving credit on lab assignments based on completion.
 - The first lab assignment (lab-1) does not count toward your grade.
@@ -128,7 +128,7 @@ Group tutoring is a great place to go to meet other students and collaborate on 
 - There will be about 6 Problem-Set (PS) assignments (available in bCourses).
 - PS are long-form assignments designed to apply the concepts you've learned in class and lab.
 - Starting on week-2 they will be assigned every week, until week-7.
-- The due date is always on a Friday (please check the <a href="https://bcourses.berkeley.edu/courses/1536526/assignments" target="_blank">assignments tab</a> in bCourses to keep track of deadlines). 
+- The due date is always on a Friday (please check the <a href="https://bcourses.berkeley.edu/courses/1541131/assignments" target="_blank">assignments tab</a> in bCourses to keep track of deadlines). 
 - You must write your own answers (using your own words and/or code). Copy and plagiarism will not be tolerated (see Academic Honesty policy).
 - If you don't submit all required files, you will receive an automatic 10% deduction.
 - If you submit the incorrect files, you will receive no credit.
@@ -169,7 +169,7 @@ Please plan ahead and pace yourself. Don't wait until the last day to do an assi
 
 ## 📝 Midterm (7% of final grade)
 
-- There will be one midterm assigned on Friday Mar-14th.
+- There will be one midterm assigned on Wed Mar-5th.
 - More information about the midterm will be announced as we approach its due date.
 - Unless you have approved accommodations, we won't be able to provide any extensions if you miss the midterm.
 
