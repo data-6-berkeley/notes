@@ -82,7 +82,7 @@ The lectures tend to be focused on the data analysis concepts, while learning ho
 
 ## ⏳ Waitlisted Students and Late Joining
 
-If you are on the waiting list or have a pending application or added the course late, you must still do all coursework and complete labs and homework by the deadlines. __We will not be offering extensions if you are admitted/enrolled into the course later.__ So it is your responsibility to stay up to date on the assignments.
+If you are on the waiting list or have a pending application or added the course late, you must still do all coursework and complete labs and homework by the deadlines. __We will not be offering extensions/exceptions if you are admitted/enrolled into the course later.__ So it is your responsibility to stay up to date on the assignments.
 
 Unfortunately, doing all the work is not a guarantee of enrollment. You will only be enrolled if there is space in your lab. Enrollment will proceed by CalCentral.
 
@@ -155,7 +155,7 @@ If you cannot turn in a HW assignment on time, our default policy is:
 - Submissions within 48 hours after the deadline will receive a 30% deduction.
 - Submissions that are 48 hours or more after the deadline will receive no credit.
 
-__Requesting an extension__: If you need to request an extension, regardless of your DSP status, fill out this <a href="https://forms.gle/Qydn3KNecnhdz8Rb7" target="_blank">google form</a>. Submissions to this form will be visible only to the course staff members.
+__Requesting an extension__: If you need to request an extension, regardless of your DSP status, fill out this <a href="https://forms.gle/mwoxDHWk25oEfGis8" target="_blank">google form</a>. Submissions to this form will be visible only to the course staff members.
 
 - Any first-time request for a 1-day extension on a __problem set__ assignment, made before an assignment's deadline, will be guaranteed to be approved, so long as it is made in good faith. 
 - Any first-time request for a 1-day extension on a __shiny app__ assignment, made before an assignment's deadline, will be guaranteed to be approved, so long as it is made in good faith. 

@@ -15,13 +15,13 @@ listing:
 
 
 
-::: {.callout-note title="Announcements"}
+::: {.callout-note title="Announcements 📣"}
 
 See announcements in bCourses
 :::
 
 
-## Schedule
+## Schedule 📅
 
 Tentative calendar subject to change.
 
