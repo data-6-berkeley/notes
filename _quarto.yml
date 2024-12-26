@@ -52,7 +52,7 @@ website:
           
 format:
   html:
-    theme: cosmo
+    theme: lumen
     fontsize: 1em
     css: assets/styles.css
     toc: true
