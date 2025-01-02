@@ -1,8 +1,8 @@
 - button: bCourses
-  link: https://bcourses.berkeley.edu/courses/1536526
+  link: https://bcourses.berkeley.edu/courses/1541135
   color: "#e7298a"
 - button: Ed
-  link: https://edstem.org/us/courses/62340/discussion/
+  link: https://edstem.org/us/courses/70355/discussion/
   color: "#7570b3"
 - button: R-DataHub
   link: https://r.datahub.berkeley.edu

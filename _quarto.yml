@@ -15,8 +15,9 @@ website:
     background: "dark"
   sidebar:
     style: "docked"
-    title: "STAT 133"
+    title: "STAT 133 <br><small>Spring 2025</small>"
     logo: assets/stat_bear.png
+    logo-alt: "UC Berkeley Statistics logo"
     tools:
       - icon: github
         href: https://github.com/berkeley-stat133/spring-2025
@@ -27,8 +28,6 @@ website:
         text: Syllabus
       - href: about.qmd
         text: About
-      - href: staff.qmd
-        text: Staff
       - section: "Units"
         contents:
           - units/unit1.qmd
@@ -45,11 +44,23 @@ website:
           - units/unit12.qmd
           - units/unit13.qmd
           - units/unit14.qmd
-      - href: cheatsheets.qmd
-        text: Cheatsheets
-      - href: faqs.qmd
-        text: FAQs
-          
+      - section: "Other"
+        contents:
+          - href: staff.qmd
+            text: Staff
+          - href: cheatsheets.qmd
+            text: Cheatsheets
+          - href: email.qmd
+            text: Email
+          - href: ed-netiquette.qmd
+            text: "Ed Netiquette"
+          - href: faqs.qmd
+            text: FAQs
+          - href: five-things.qmd
+            text: "5 Things to know"
+          - href: license.qmd
+            text: License
+
 format:
   html:
     theme: lumen

@@ -16,7 +16,7 @@
       items:
         - type: "Labwork"
           name: "Lab 1: Intro to R and RStudio"
-          href: "https://bcourses.berkeley.edu/courses/1541131/assignments/8766383"
+          href: "https://bcourses.berkeley.edu/courses/1541135/assignments/8841737"
     - date: "Jan 24"
       items:
         - type: "Lecture"
@@ -45,7 +45,7 @@
             href: "slides/stat133-01-objs1-vectors-part1.pdf"
           auxil2:
             id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541131/files/folder/demos?preview=90268962"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268962"
         - type: "Lectur2"
           id: ""
           name: "Vectors, part 2 (notes)"
@@ -61,7 +61,7 @@
             href: "slides/stat133-01-objs1-vectors-part2.pdf"
           auxil2:
             id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541131/files/folder/demos?preview=90268963"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268963"
         - type: "Lectur2"
           id: ""
           name: "Vectors, part 4 (notes)"
@@ -71,7 +71,7 @@
         - type: "Labwork"
           id: ""
           name: "Lab 2: Vectors  (due 1/31)"
-          href: "https://bcourses.berkeley.edu/courses/1541131/assignments/8766384"
+          href: "https://bcourses.berkeley.edu/courses/1541135/assignments/8841738"
     - date: "Jan 31"
       items:
         - type: "Shiny"
@@ -84,7 +84,7 @@
         - type: "Homework"
           id: ""
           name: "HW 1: Vectors (avail 2/01, due 2/07)"
-          href: "https://bcourses.berkeley.edu/courses/1541131/assignments/8766407"
+          href: "https://bcourses.berkeley.edu/courses/1541135/assignments/8841731"
 - week: 3
   days:
     - date: "About"
@@ -104,7 +104,7 @@
             href: "slides/stat133-01-objs2-matrices-factors.pdf"
           auxil2:
             id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541131/files/folder/demos?preview=90268964"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268964"
         - type: "Lectur2"
           id: ""
           name: "Matrices, part 2 (notes)"
@@ -120,13 +120,13 @@
             href: "slides/stat133-01-objs3-lists.pdf"
           auxil2:
             id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541131/files/folder/demos?preview=90268965"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268965"
     - date: "Feb 6"
       items:
         - type: "Labwork"
           id: ""
           name: "Lab 3: Lists and Matrices (due 2/07)"
-          href: "https://bcourses.berkeley.edu/courses/1541131/assignments/8766385"
+          href: "https://bcourses.berkeley.edu/courses/1541135/assignments/8841739"
     - date: "Feb 7"
       items:
         - type: "Shiny"
@@ -139,7 +139,7 @@
         - type: "Homework"
           id: ""
           name: "HW 2: Lists & Matrices (avail 2/08, due 2/14)"
-          href: "https://bcourses.berkeley.edu/courses/1541131/assignments/8766408"
+          href: "https://bcourses.berkeley.edu/courses/1541135/assignments/8841732"
 - week: 4
   days:
     - date: "About"
@@ -159,7 +159,7 @@
             href: "slides/stat133-02-prog1-intro-functions.pdf"
           auxil2:
             id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541131/files/folder/demos?preview=90268966"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268966"
         - type: "Lectur2"
           id: ""
           name: R Compound Expressions (notes)
@@ -175,13 +175,13 @@
             href: "slides/stat133-02-prog2-if-else.pdf"
           auxil2:
             id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541131/files/folder/demos?preview=90268967"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268967"
     - date: "Feb 13"
       items:
         - type: "Labwork"
           id: ""
           name: "Lab 4: Functions and If-else (due 2/14)"
-          href: "https://bcourses.berkeley.edu/courses/1541131/assignments/8766386"
+          href: "https://bcourses.berkeley.edu/courses/1541135/assignments/8841740"
     - date: "Feb 14"
       items:
         - type: "Shiny"
@@ -191,7 +191,7 @@
         - type: "Homework"
           id: ""
           name: "HW 3: Functions (avail 2/15, due 2/21)"
-          href: "https://bcourses.berkeley.edu/courses/1541131/assignments/8766409"
+          href: "https://bcourses.berkeley.edu/courses/1541135/assignments/8841733"
 - week: 5
   days:
     - date: "About"
@@ -216,7 +216,7 @@
             href: "slides/stat133-01-objs4-data-frames.pdf"
           auxil2:
             id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541131/files/folder/demos?preview=90268969"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268969"
         - type: "Lectur2"
           id: ""
           name: More graphics with ggplot2 (notes)
@@ -226,17 +226,17 @@
             href: "slides/stat133-03-tables1-grammar-graphics.pdf"
           auxil2:
             id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541131/files/folder/demos?preview=90268970"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268970"
     - date: "Feb 20"
       items:
         - type: "Labwork"
           id: ""
           name: "Lab 5a: Intro to ggplot2 (due 2/21)"
-          href: "https://bcourses.berkeley.edu/courses/1541131/assignments/8766387"
+          href: "https://bcourses.berkeley.edu/courses/1541135/assignments/8841742"
         - type: "Labwork2"
           id: ""
           name: "Lab 5b: Shiny app Old Faithful w/ggplot2"
-          href: "https://bcourses.berkeley.edu/courses/1541131/assignments/8767002"
+          href: "https://bcourses.berkeley.edu/courses/1541135/assignments/8841754"
     - date: "Feb 21"
       items:
         - type: "Shiny"
@@ -252,7 +252,7 @@
         - type: "Homework"
           id: ""
           name: "HW4: Graphics (avail 2/22, due 2/28)"
-          href: "https://bcourses.berkeley.edu/courses/1541131/assignments/8766410"
+          href: "https://bcourses.berkeley.edu/courses/1541135/assignments/8841734"
 - week: 6
   days:
     - date: "About"
@@ -272,7 +272,7 @@
             href: "slides/stat133-03-tables2-intro-dplyr.pdf"
           auxil2:
             id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541131/files/folder/demos?preview=90268971"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268971"
     - date: "Feb 26"
       items:
         - type: "Lecture"
@@ -284,13 +284,13 @@
             href: "slides/stat133-03-tables3-more-dplyr.pdf"
           auxil2:
             id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541131/files/folder/demos?preview=90268972"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268972"
     - date: "Feb 27"
       items:
         - type: "Labwork"
           id: ""
           name: "Lab 6: Intro to dplyr (due 2/28)"
-          href: "https://bcourses.berkeley.edu/courses/1541131/assignments/8766388"
+          href: "https://bcourses.berkeley.edu/courses/1541135/assignments/8841743"
     - date: "Feb 28"
       items:
         - type: "Shiny"
@@ -300,7 +300,7 @@
         - type: "Homework"
           id: ""
           name: "HW5: Data Wrangling (avail 3/01, due 3/07)"
-          href: "https://bcourses.berkeley.edu/courses/1541131/assignments/8766411"
+          href: "https://bcourses.berkeley.edu/courses/1541135/assignments/8841735"
 - week: 7
   days:
     - date: "About"
@@ -320,7 +320,7 @@
             href: "slides/stat133-02-prog3-for-loop.pdf"
           auxil2:
             id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541131/files/folder/demos?preview=90268974"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268974"
     - date: "Mar 5"
       items:
         - type: "Lecture"
@@ -332,7 +332,7 @@
             href: "slides/stat133-02-prog4-apply-loops.pdf"
           auxil2:
             id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541131/files/folder/demos?preview=90268975"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268975"
         - type: "Midterm"
           id: ""
           name: "See announcement in bCourses"
@@ -342,7 +342,7 @@
         - type: "Labwork"
           id: ""
           name: "Lab 7: Loops in R (due 3/07)"
-          href: "https://bcourses.berkeley.edu/courses/1541131/assignments/8766390"
+          href: "https://bcourses.berkeley.edu/courses/1541135/assignments/8841744"
     - date: "Mar 7"
       items:
         - type: "Shiny"
@@ -351,11 +351,11 @@
           href: "https://github.com/data133/shiny/blob/main/future-value3-simulations/app.R"
           auxil:
             id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541131/files/folder/demos?preview=90268976"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268976"
         - type: "Homework"
           id: ""
           name: "HW6: Iterations (avail 3/08, due 3/14)"
-          href: "https://bcourses.berkeley.edu/courses/1541131/assignments/8766412"
+          href: "https://bcourses.berkeley.edu/courses/1541135/assignments/8841736"
 - week: 8
   days:
     - date: "About"
@@ -375,7 +375,7 @@
             href: "slides/stat133-04-regex1-part1.pdf"
           auxil2:
             id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541131/files/folder/demos?preview=90268977"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268977"
         - type: "Lectur2"
           id: ""
           name: Character sets (notes)
@@ -391,7 +391,7 @@
             href: "slides/stat133-04-regex2-part2.pdf"
           auxil2:
             id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541131/files/folder/demos?preview=90268978"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268978"
         - type: "Lectur2"
           id: ""
           name: Quantifiers (notes)
@@ -401,11 +401,11 @@
         - type: "Labwork"
           id: ""
           name: "Lab 8a: Publishing a shiny app (due 3/14)"
-          href: "https://bcourses.berkeley.edu/courses/1541131/assignments/8767003"
+          href: "https://bcourses.berkeley.edu/courses/1541135/assignments/8841746"
         - type: "Labwork2"
           id: ""
-          name: "Lab 8b: Intro to Regex (due 3/20)"
-          href: "https://bcourses.berkeley.edu/courses/1541131/assignments/8766391"
+          name: "Lab 8b: Intro to Regex (due 3/14)"
+          href: "https://bcourses.berkeley.edu/courses/1541135/assignments/8841747"
     - date: "Mar 14"
       items:
         - type: "Lecture"
@@ -415,7 +415,7 @@
         - type: "Homework"
           id: ""
           name: "Shiny App-1 (avail 3/15, due 4/04)"
-          href: "https://bcourses.berkeley.edu/courses/1541131/assignments/8766404"
+          href: "https://bcourses.berkeley.edu/courses/1541135/assignments/8841728"
 - week: 9
   days:
     - date: "About"
@@ -435,7 +435,7 @@
             href: "slides/stat133-05-text1-mining-intro.pdf"
           auxil2:
             id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541131/files/folder/demos?preview=90269046"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90269046"
     - date: "Mar 19"
       items:
         - type: "Lecture"
@@ -447,13 +447,13 @@
             href: "slides/stat133-05-text2-mining-tidytext.pdf"
           auxil2:
             id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541131/files/folder/demos?preview=90268981"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268981"
     - date: "Mar 20"
       items:
         - type: "Labwork"
           id: ""
           name: "Lab 9: More Regex (due 3/21)"
-          href: "https://bcourses.berkeley.edu/courses/1541131/assignments/8766392"
+          href: "https://bcourses.berkeley.edu/courses/1541135/assignments/8841748"
     - date: "Mar 21"
       items:
         - type: "Lecture"
@@ -462,7 +462,7 @@
           href: "https://www.tidytextmining.com/ngrams"
           auxil:
             id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541131/files/folder/demos?preview=90268982"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268982"
 - week: Spring Recess
   days: 
     - date: "None"
@@ -484,7 +484,7 @@
           href: "https://www.tidytextmining.com/sentiment"
           auxil:
             id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541131/files/folder/demos?preview=90268983"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268983"
     - date: "Apr 2"
       items:
         - type: "Lecture"
@@ -493,7 +493,7 @@
           href: "https://www.tidytextmining.com/sentiment"
           auxil:
             id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541131/files/folder/demos?preview=90268984"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268984"
         - type: "Lectur2"
           id: ""
           name: "Correspondence Analysis (notes)"
@@ -503,7 +503,7 @@
         - type: "Labwork"
           id: ""
           name: "Lab 10: Text Mining (due 4/04)"
-          href: "https://bcourses.berkeley.edu/courses/1541131/assignments/8766393"
+          href: "https://bcourses.berkeley.edu/courses/1541135/assignments/8841749"
     - date: "Apr 4"
       items:
         - type: "Lecture"
@@ -513,7 +513,7 @@
         - type: "Homework"
           id: ""
           name: "Shiny App-2 (avail 4/05, due 4/18)"
-          href: "https://bcourses.berkeley.edu/courses/1541131/assignments/8766405"
+          href: "https://bcourses.berkeley.edu/courses/1541135/assignments/8841729"
 - week: 11
   days:
     - date: "About"
@@ -545,7 +545,7 @@
         - type: "Labwork"
           id: ""
           name: "Lab 11: Maps 1 (due 4/11)"
-          href: "https://bcourses.berkeley.edu/courses/1541131/assignments/8766394"
+          href: "https://bcourses.berkeley.edu/courses/1541135/assignments/8841750"
     - date: "Apr 11"
       items:
         - type: "Lecture"
@@ -557,7 +557,7 @@
             href: "docs/maps-storms/storms-slides3.html"
           auxil:
             id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541131/files/folder/demos?preview=90269007"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90269007"
 - week: 12
   days:
     - date: "About"
@@ -571,10 +571,10 @@
         - type: "Lecture"
           id: ""
           name: "Choropleth maps 1"
-          href: "https://bcourses.berkeley.edu/courses/1541131/files/folder/demos?preview=90269008"
+          href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90269008"
           auxil:
             id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541131/files/folder/demos?preview=90269008"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90269008"
     - date: "Apr 16"
       items:
         - type: "Lecture"
@@ -583,26 +583,26 @@
           href: "docs/choropleth/us-elections-slides1.html"
           auxil:
             id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541131/files/folder/demos?preview=90287921"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90287921"
     - date: "Apr 17"
       items:
         - type: "Labwork"
           id: ""
           name: "Lab 12: Maps 2 (due 4/18)"
-          href: "https://bcourses.berkeley.edu/courses/1541131/assignments/8766395"
+          href: "https://bcourses.berkeley.edu/courses/1541135/assignments/8841751"
     - date: "Apr 18"
       items:
         - type: "Lecture"
           id: ""
           name: "Choropleth maps 3"
-          href: "https://bcourses.berkeley.edu/courses/1541131/files/folder/demos?preview=90269008"
+          href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90269008"
           auxil:
             id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541131/files/folder/demos?preview=90269008"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90269008"
         - type: "Homework"
           id: ""
           name: "Shiny App-3 (avail 4/19, due 5/02)"
-          href: "https://bcourses.berkeley.edu/courses/1541131/assignments/8766406"
+          href: "https://bcourses.berkeley.edu/courses/1541135/assignments/8841730"
 - week: 13
   days:
     - date: "About"
@@ -622,7 +622,7 @@
             href: "docs/api-open-notify/open-notify-slides.html"
           auxil2:
             id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541131/files/folder/demos?preview=90273694"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90273694"
     - date: "Apr 23"
       items:
         - type: "Lecture"
@@ -634,7 +634,7 @@
         - type: "Labwork"
           id: ""
           name: "Lab 13: Bart API (due 4/25)"
-          href: "https://bcourses.berkeley.edu/courses/1541131/assignments/8766396"
+          href: "https://bcourses.berkeley.edu/courses/1541135/assignments/8841752"
     - date: "Apr 25"
       items:
         - type: "Lecture"
@@ -679,7 +679,7 @@
         - type: "Labwork"
           id: ""
           name: "Lab 14: Web Scraping (due 5/02)"
-          href: "https://bcourses.berkeley.edu/courses/1541131/assignments/8766397"
+          href: "https://bcourses.berkeley.edu/courses/1541135/assignments/8841753"
     - date: "May 2"
       items:
         - type: "Lecture"

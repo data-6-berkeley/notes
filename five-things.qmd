@@ -1,6 +1,5 @@
 ---
 title: "Five things you need to know to pass this class"
-subtitle: "UC Berkeley, STAT 133, Spring 2025"
 ---
 
 
@@ -28,7 +27,7 @@ On the technical side, you should have your own computer, (good) internet connec
 
 Do you need to memorize all commands? No! We don't expect that you memorize all commands. In fact, you can find a series of [cheatsheets](./cheatsheets.html) that you can (and should) use at all times (even during quizzes and tests).
 
-However, we do expect that you learn the most common types of functions in R: e.g. library(), function(), help(), etc. More important, we expect that you understand the "logic" and working principles of certain data objects, common programming structures, good practices, etc.
+However, we do expect that you learn the most common types of functions in R: e.g. `library()`, `function()`, `help()`, etc. More important, we expect that you understand the "logic" and working principles of certain data objects, common programming structures, good practices, etc.
 
  
 

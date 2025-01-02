@@ -1,6 +1,5 @@
 ---
 title: "Cheat Sheets"
-subtitle: "UC Berkeley, STAT 133, Fall 2024"
 ---
 
 Cheat sheets are your friends, use them at all times.

@@ -1,6 +1,5 @@
 ---
 title: "Communication via Email"
-subtitle: "UC Berkeley, STAT 133, Spring 2025"
 ---
 
 
