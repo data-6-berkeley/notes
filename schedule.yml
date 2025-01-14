@@ -43,9 +43,9 @@
           auxil:
             id: "Slides"
             href: "slides/stat133-01-objs1-vectors-part1.pdf"
-          auxil2:
-            id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268962"
+          # auxil2:
+          #   id: "Demo"
+          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268962"
         - type: "Lectur2"
           id: ""
           name: "Vectors, part 2 (notes)"
@@ -59,9 +59,9 @@
           auxil:
             id: "Slides"
             href: "slides/stat133-01-objs1-vectors-part2.pdf"
-          auxil2:
-            id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268963"
+          # auxil2:
+          #   id: "Demo"
+          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268963"
         - type: "Lectur2"
           id: ""
           name: "Vectors, part 4 (notes)"
@@ -102,9 +102,9 @@
           auxil:
             id: "Slides"
             href: "slides/stat133-01-objs2-matrices-factors.pdf"
-          auxil2:
-            id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268964"
+          # auxil2:
+          #   id: "Demo"
+          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268964"
         - type: "Lectur2"
           id: ""
           name: "Matrices, part 2 (notes)"
@@ -118,9 +118,9 @@
           auxil:
             id: "Slides"
             href: "slides/stat133-01-objs3-lists.pdf"
-          auxil2:
-            id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268965"
+          # auxil2:
+          #   id: "Demo"
+          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268965"
     - date: "Feb 6"
       items:
         - type: "Labwork"
@@ -157,9 +157,9 @@
           auxil:
             id: "Slides"
             href: "slides/stat133-02-prog1-intro-functions.pdf"
-          auxil2:
-            id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268966"
+          # auxil2:
+          #   id: "Demo"
+          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268966"
         - type: "Lectur2"
           id: ""
           name: R Compound Expressions (notes)
@@ -173,9 +173,9 @@
           auxil:
             id: "Slides"
             href: "slides/stat133-02-prog2-if-else.pdf"
-          auxil2:
-            id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268967"
+          # auxil2:
+          #   id: "Demo"
+          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268967"
     - date: "Feb 13"
       items:
         - type: "Labwork"
@@ -214,9 +214,9 @@
           auxil:
             id: "Slides"
             href: "slides/stat133-01-objs4-data-frames.pdf"
-          auxil2:
-            id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268969"
+          # auxil2:
+          #   id: "Demo"
+          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268969"
         - type: "Lectur2"
           id: ""
           name: More graphics with ggplot2 (notes)
@@ -224,9 +224,9 @@
           auxil:
             id: "Slides"
             href: "slides/stat133-03-tables1-grammar-graphics.pdf"
-          auxil2:
-            id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268970"
+          # auxil2:
+          #   id: "Demo"
+          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268970"
     - date: "Feb 20"
       items:
         - type: "Labwork"
@@ -243,12 +243,12 @@
           id: ""
           name: "Shiny Friday: graphics with ggplot"
           href: "https://github.com/data133/shiny/blob/main/mtcars-scatterplots1-ggplot/app.R"
-          auxil:
-            id: "Demo2"
-            href: "https://github.com/data133/shiny/blob/main/old-faithful-quarto-doc/old-faithful-doc.qmd"
-          auxil2:
-            id: "Demo3"
-            href: "https://github.com/data133/shiny/blob/main/old-faithful-quarto-dashboard/old-faithful-quarto-dashboard.qmd"
+          # auxil:
+          #   id: "Demo2"
+          #   href: "https://github.com/data133/shiny/blob/main/old-faithful-quarto-doc/old-faithful-doc.qmd"
+          # auxil2:
+          #   id: "Demo3"
+          #   href: "https://github.com/data133/shiny/blob/main/old-faithful-quarto-dashboard/old-faithful-quarto-dashboard.qmd"
         - type: "Homework"
           id: ""
           name: "HW4: Graphics (avail 2/22, due 2/28)"
@@ -270,9 +270,9 @@
           auxil:
             id: "Slides"
             href: "slides/stat133-03-tables2-intro-dplyr.pdf"
-          auxil2:
-            id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268971"
+          # auxil2:
+          #   id: "Demo"
+          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268971"
     - date: "Feb 26"
       items:
         - type: "Lecture"
@@ -282,9 +282,9 @@
           auxil:
             id: "Slides"
             href: "slides/stat133-03-tables3-more-dplyr.pdf"
-          auxil2:
-            id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268972"
+          # auxil2:
+          #   id: "Demo"
+          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268972"
     - date: "Feb 27"
       items:
         - type: "Labwork"
@@ -318,9 +318,9 @@
           auxil:
             id: "Slides"
             href: "slides/stat133-02-prog3-for-loop.pdf"
-          auxil2:
-            id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268974"
+          # auxil2:
+          #   id: "Demo"
+          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268974"
     - date: "Mar 5"
       items:
         - type: "Lecture"
@@ -330,9 +330,9 @@
           auxil:
             id: "Slides"
             href: "slides/stat133-02-prog4-apply-loops.pdf"
-          auxil2:
-            id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268975"
+          # auxil2:
+          #   id: "Demo"
+          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268975"
         - type: "Midterm"
           id: ""
           name: "See announcement in bCourses"
@@ -349,9 +349,9 @@
           id: ""
           name: "Shiny Friday: Future Value simulations"
           href: "https://github.com/data133/shiny/blob/main/future-value3-simulations/app.R"
-          auxil:
-            id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268976"
+          # auxil:
+          #   id: "Demo"
+          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268976"
         - type: "Homework"
           id: ""
           name: "HW6: Iterations (avail 3/08, due 3/14)"
@@ -373,9 +373,9 @@
           auxil:
             id: "Slides"
             href: "slides/stat133-04-regex1-part1.pdf"
-          auxil2:
-            id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268977"
+          # auxil2:
+          #   id: "Demo"
+          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268977"
         - type: "Lectur2"
           id: ""
           name: Character sets (notes)
@@ -389,9 +389,9 @@
           auxil:
             id: "Slides"
             href: "slides/stat133-04-regex2-part2.pdf"
-          auxil2:
-            id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268978"
+          # auxil2:
+          #   id: "Demo"
+          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268978"
         - type: "Lectur2"
           id: ""
           name: Quantifiers (notes)
@@ -433,9 +433,9 @@
           auxil:
             id: "Slides"
             href: "slides/stat133-05-text1-mining-intro.pdf"
-          auxil2:
-            id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90269046"
+          # auxil2:
+          #   id: "Demo"
+          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90269046"
     - date: "Mar 19"
       items:
         - type: "Lecture"
@@ -445,9 +445,9 @@
           auxil:
             id: "Slides"
             href: "slides/stat133-05-text2-mining-tidytext.pdf"
-          auxil2:
-            id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268981"
+          # auxil2:
+          #   id: "Demo"
+          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268981"
     - date: "Mar 20"
       items:
         - type: "Labwork"
@@ -460,9 +460,9 @@
           id: ""
           name: Text Mining, part 3
           href: "https://www.tidytextmining.com/ngrams"
-          auxil:
-            id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268982"
+          # auxil:
+          #   id: "Demo"
+          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268982"
 - week: Spring Recess
   days: 
     - date: "None"
@@ -482,18 +482,18 @@
           id: ""
           name: "Sentiment Analysis 1 (notes)"
           href: "https://www.tidytextmining.com/sentiment"
-          auxil:
-            id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268983"
+          # auxil:
+          #   id: "Demo"
+          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268983"
     - date: "Apr 2"
       items:
         - type: "Lecture"
           id: ""
           name: "Sentiment Analysis 2 (notes)"
           href: "https://www.tidytextmining.com/sentiment"
-          auxil:
-            id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268984"
+          # auxil:
+          #   id: "Demo"
+          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268984"
         - type: "Lectur2"
           id: ""
           name: "Correspondence Analysis (notes)"
@@ -555,9 +555,9 @@
           auxil:
             id: "Slides"
             href: "docs/maps-storms/storms-slides3.html"
-          auxil:
-            id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90269007"
+          # auxil:
+          #   id: "Demo"
+          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90269007"
 - week: 12
   days:
     - date: "About"
@@ -572,18 +572,18 @@
           id: ""
           name: "Choropleth maps 1"
           href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90269008"
-          auxil:
-            id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90269008"
+          # auxil:
+          #   id: "Demo"
+          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90269008"
     - date: "Apr 16"
       items:
         - type: "Lecture"
           id: ""
           name: "Choropleth maps 2"
           href: "docs/choropleth/us-elections-slides1.html"
-          auxil:
-            id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90287921"
+          # auxil:
+          #   id: "Demo"
+          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90287921"
     - date: "Apr 17"
       items:
         - type: "Labwork"
@@ -596,9 +596,9 @@
           id: ""
           name: "Choropleth maps 3"
           href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90269008"
-          auxil:
-            id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90269008"
+          # auxil:
+          #   id: "Demo"
+          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90269008"
         - type: "Homework"
           id: ""
           name: "Shiny App-3 (avail 4/19, due 5/02)"
@@ -620,9 +620,9 @@
           auxil:
             id: "Slides"
             href: "docs/api-open-notify/open-notify-slides.html"
-          auxil2:
-            id: "Demo"
-            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90273694"
+          # auxil2:
+          #   id: "Demo"
+          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90273694"
     - date: "Apr 23"
       items:
         - type: "Lecture"
