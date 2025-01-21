@@ -11,11 +11,11 @@ __Lecture__: MWF 3pm-4pm in [Stanley 105](https://www.berkeley.edu/map/stanley-h
 __Lab__:
 
 - Lab 101, Th 9am-11am, Evans 342 (GSI Huong)
-- Lab 102, Th 9am-11am, Evans 334 (GSI Calvin)
-- Lab 103, Th 11am-1pm, Evans 342 (GSI Huong)
-- Lab 104, Th 1pm-3pm, Evans 342 (GSI Dylan)
-- Lab 105, Th 3pm-5pm, Evans 342 (GSI Calvin)
-- Lab 106, Th 4pm-6pm, Evans 332 (GSI Dylan)
+- Lab 102, Th 9am-11am, Evans 334 (GSI Dylan)
+- Lab 103, Th 11am-1pm, Evans 342 (GSI Calvin)
+- Lab 104, Th 1pm-3pm, Evans 342 (GSI Huong)
+- Lab 105, Th 3pm-5pm, Evans 342 (GSI Dylan)
+- Lab 106, Th 4pm-6pm, Evans 332 (GSI Calvin)
 
 
 __Code #__: 22824
