@@ -79,6 +79,6 @@ There are two versions of the app: one uses three sliders (one slider per input)
 
 ## 🔔 HW Assignments
 
-- HW1 due this 9/13
-- HW2 released on 9/14, due 9/20
+- HW1 due this 2/07
+- HW2 released on 2/08, due 2/14
  

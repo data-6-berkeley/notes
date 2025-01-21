@@ -48,5 +48,5 @@ An important component of this app is the use of the `reactive()` function to cr
 
 ## 🔔 Assignments
 
-- HW5 due this 10/11
-- HW6 released on 10/12, due 10/18
+- HW5 due this 3/07
+- HW6 released on 3/08, due 3/14

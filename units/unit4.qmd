@@ -61,5 +61,5 @@ More specifically, we have three new versions:
 
 ## 🔔 Assignments
 
-- HW2 due this 9/20
-- HW3 released on 9/21, due 9/27
+- HW2 due this 2/14
+- HW3 released on 2/15, due 2/21

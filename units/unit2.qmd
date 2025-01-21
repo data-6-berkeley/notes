@@ -75,6 +75,6 @@ The app is a very basic app that displays a histogram of the `waiting` times.
 
 ## 🔔 Activities
 
-HW1 instructions will be released at the end of this week (due 9/07).
+HW1 instructions will be released at the end of this week (due 2/07).
 
 

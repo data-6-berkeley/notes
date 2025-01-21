@@ -78,5 +78,5 @@ We have two versions:
 
 ## 🔔 Assignments
 
-- HW3 due this 9/27
-- HW4 released on 9/28, due 10/04
+- HW3 due this 2/21
+- HW4 released on 2/22, due 2/28

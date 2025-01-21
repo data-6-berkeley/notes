@@ -55,5 +55,5 @@ The shiny app for this week uses the `mtcars` data set to visualize the top-n ca
 
 ## 🔔 Assignments
 
-- HW4 due this 10/04
-- HW5 released on 10/05, due 10/11
+- HW4 due this 2/28
+- HW5 released on 3/01, due 3/07
