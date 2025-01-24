@@ -15,7 +15,7 @@ You can attend OH of any staff member.
 **Instructor:** <a href='https://www.gastonsanchez.com' target='_blank'>Gaston Sanchez</a><br>
 `gastonsanchez@berkeley.edu`<br>
 Office hours: <br>
-- Day hh:mm-hh:mm, Evans 309<br>
+- Fri 4:10pm-5:10pm, Evans 309<br>
 - Day hh:mm-hh:mm, Evans 309
 :::
 
@@ -23,8 +23,8 @@ Office hours: <br>
 **GSI**: <a href="https://statistics.berkeley.edu/people/calvin-carter" target="_blank">Calvin Carter</a><br>
 `calv2n@berkeley.edu`<br>
 Office hours:<br>
-- Day hh:mm-hh:mm, Evans TBD<br>
-- Day hh:mm-hh:mm, Evans TBD
+- Mon 2pm-4pm, Evans 434<br>
+- Tue 11am-1pm, Evans 434
 :::
 
 
