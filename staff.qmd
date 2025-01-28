@@ -32,16 +32,16 @@ Office hours:<br>
 **GSI**: <a href="https://statistics.berkeley.edu/people/huong-bui-thien-vu" target="_blank">Huong Vu</a><br>
 `huong_vu@berkeley.edu`<br>
 Office hours: <br>
-- Day hh:mm-hh:mm, Evans TBD<br>
-- Day hh:mm-hh:mm, Evans TBD
+- Tue 3-5pm, Evans 434<br>
+- Thr 3-5pm, Evans 434
 :::
 
 ::: {.g-col-6}
 **GSI:** <a href="https://statistics.berkeley.edu/people/dylan-webb" target="_blank">Dylan Webb</a><br>
 `dylancw@berkeley.edu`<br>
 Office hours: <br>
-- Day hh:mm-hh:mm, Evans TBD<br>
-- Day hh:mm-hh:mm, Evans TBD
+- Wed 3-5pm, Evans 434<br>
+- Fri 3-5pm, on zoom
 :::
 
 
