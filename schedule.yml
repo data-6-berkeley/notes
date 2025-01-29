@@ -43,9 +43,9 @@
           auxil:
             id: "Slides"
             href: "slides/stat133-01-objs1-vectors-part1.pdf"
-          # auxil2:
-          #   id: "Demo"
-          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268962"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90825272"
         - type: "Lectur2"
           id: ""
           name: "Vectors, part 2 (notes)"
