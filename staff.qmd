@@ -16,7 +16,6 @@ You can attend OH of any staff member.
 `gastonsanchez@berkeley.edu`<br>
 Office hours: <br>
 - Fri 4:10pm-5:10pm, Evans 309<br>
-- Day hh:mm-hh:mm, Evans 309
 :::
 
 ::: {.g-col-6}
@@ -24,7 +23,7 @@ Office hours: <br>
 `calv2n@berkeley.edu`<br>
 Office hours:<br>
 - Mon 2pm-4pm, Evans 434<br>
-- Tue 11am-1pm, Evans 434
+- Wed 12pm-2pm, Evans 434
 :::
 
 
@@ -49,16 +48,16 @@ Office hours: <br>
 **Tutor:** David Sun<br>
 `davidzhongyisun@berkeley.edu`<br>
 Office hours: <br>
-- Day hh:mm-hh:mm, Evans TBD<br>
-- Day hh:mm-hh:mm, Evans TBD
+- Tue 12:30-3pm, Evans 428<br>
+- Thr 1-3pm, Evans 446
 :::
 
 ::: {.g-col-6}
 **Tutor**: Evan Passalacqua<br>
 `evanqua@berkeley.edu`<br>
 Office hours: <br>
-- Day hh:mm-hh:mm, Evans TBD<br>
-- Day hh:mm-hh:mm, Evans TBD
+- Mon 9-11am, Evans 426<br>
+- Wed 9-11am, Evans 426
 :::
 
 :::
