@@ -118,9 +118,9 @@
           auxil:
             id: "Slides"
             href: "slides/stat133-01-objs3-lists.pdf"
-          # auxil2:
-          #   id: "Demo"
-          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268965"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90903774"
     - date: "Feb 6"
       items:
         - type: "Labwork"
