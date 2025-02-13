@@ -157,9 +157,9 @@
           auxil:
             id: "Slides"
             href: "slides/stat133-02-prog1-intro-functions.pdf"
-          # auxil2:
-          #   id: "Demo"
-          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268966"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90974345"
         - type: "Lectur2"
           id: ""
           name: R Compound Expressions (notes)
@@ -173,9 +173,9 @@
           auxil:
             id: "Slides"
             href: "slides/stat133-02-prog2-if-else.pdf"
-          # auxil2:
-          #   id: "Demo"
-          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268967"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90974346"
     - date: "Feb 13"
       items:
         - type: "Labwork"
