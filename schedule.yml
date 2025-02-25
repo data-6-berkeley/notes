@@ -214,9 +214,9 @@
           auxil:
             id: "Slides"
             href: "slides/stat133-01-objs4-data-frames.pdf"
-          # auxil2:
-          #   id: "Demo"
-          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268969"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91028584"
         - type: "Lectur2"
           id: ""
           name: More graphics with ggplot2 (notes)
@@ -270,9 +270,9 @@
           auxil:
             id: "Slides"
             href: "slides/stat133-03-tables2-intro-dplyr.pdf"
-          # auxil2:
-          #   id: "Demo"
-          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268971"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91074701"
     - date: "Feb 26"
       items:
         - type: "Lecture"
