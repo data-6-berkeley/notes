@@ -282,9 +282,9 @@
           auxil:
             id: "Slides"
             href: "slides/stat133-03-tables3-more-dplyr.pdf"
-          # auxil2:
-          #   id: "Demo"
-          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268972"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91097212"
     - date: "Feb 27"
       items:
         - type: "Labwork"
