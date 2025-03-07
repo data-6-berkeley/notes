@@ -318,9 +318,9 @@
           auxil:
             id: "Slides"
             href: "slides/stat133-02-prog3-for-loop.pdf"
-          # auxil2:
-          #   id: "Demo"
-          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268974"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91145077"
     - date: "Mar 5"
       items:
         - type: "Lecture"
@@ -330,9 +330,9 @@
           auxil:
             id: "Slides"
             href: "slides/stat133-02-prog4-apply-loops.pdf"
-          # auxil2:
-          #   id: "Demo"
-          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268975"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91172407"
         - type: "Midterm"
           id: ""
           name: "See announcement in bCourses"
