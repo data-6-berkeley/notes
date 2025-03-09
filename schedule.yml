@@ -347,11 +347,11 @@
       items:
         - type: "Shiny"
           id: ""
-          name: "Shiny Friday: Future Value simulations"
-          href: "https://github.com/data133/shiny/blob/main/future-value3-simulations/app.R"
-          # auxil:
-          #   id: "Demo"
-          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268976"
+          name: "Shiny Friday: Simulations"
+          href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos/shiny-app6?preview=91188169"
+          auxil:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91187994"
         - type: "Homework"
           id: ""
           name: "HW6: Iterations (avail 3/08, due 3/14)"
