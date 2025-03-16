@@ -373,9 +373,9 @@
           auxil:
             id: "Slides"
             href: "slides/stat133-04-regex1-part1.pdf"
-          # auxil2:
-          #   id: "Demo"
-          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268977"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91219310"
         - type: "Lectur2"
           id: ""
           name: Character sets (notes)
@@ -389,9 +389,9 @@
           auxil:
             id: "Slides"
             href: "slides/stat133-04-regex2-part2.pdf"
-          # auxil2:
-          #   id: "Demo"
-          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268978"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91243111"
         - type: "Lectur2"
           id: ""
           name: Quantifiers (notes)
@@ -412,6 +412,9 @@
           id: ""
           name: Look Arounds (notes)
           href: "https://www.gastonsanchez.com/R-for-strings/12-regex-boundaries.html"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91257331"
         - type: "Homework"
           id: ""
           name: "Shiny App-1 (avail 3/15, due 4/04)"
