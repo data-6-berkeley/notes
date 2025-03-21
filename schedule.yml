@@ -436,9 +436,9 @@
           auxil:
             id: "Slides"
             href: "slides/stat133-05-text1-mining-intro.pdf"
-          # auxil2:
-          #   id: "Demo"
-          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90269046"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91289066"
     - date: "Mar 19"
       items:
         - type: "Lecture"
@@ -448,9 +448,9 @@
           auxil:
             id: "Slides"
             href: "slides/stat133-05-text2-mining-tidytext.pdf"
-          # auxil2:
-          #   id: "Demo"
-          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268981"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91316198"
     - date: "Mar 20"
       items:
         - type: "Labwork"
