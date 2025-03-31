@@ -349,7 +349,7 @@
           id: ""
           name: "Shiny Friday: Simulations"
           href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos/shiny-app6?preview=91188169"
-          auxil:
+          auxil2:
             id: "Demo"
             href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91187994"
         - type: "Homework"
@@ -463,9 +463,9 @@
           id: ""
           name: Text Mining, part 3
           href: "https://www.tidytextmining.com/ngrams"
-          # auxil:
-          #   id: "Demo"
-          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268982"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91331554"
 - week: Spring Recess
   days: 
     - date: "None"
