@@ -485,9 +485,9 @@
           id: ""
           name: "Sentiment Analysis 1 (notes)"
           href: "https://www.tidytextmining.com/sentiment"
-          # auxil:
-          #   id: "Demo"
-          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268983"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91368010"
     - date: "Apr 2"
       items:
         - type: "Lecture"
@@ -500,7 +500,7 @@
         - type: "Lectur2"
           id: ""
           name: "Correspondence Analysis (notes)"
-          href: "docs/tm-correspondence/text-mining-corresp-analysis1.html"
+          href: "https://stat133.berkeley.edu/fall-2024/docs/tm-correspondence/text-mining-corresp-analysis1.html"
     - date: "Apr 3"
       items:
         - type: "Labwork"
