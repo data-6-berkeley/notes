@@ -494,9 +494,9 @@
           id: ""
           name: "Sentiment Analysis 2 (notes)"
           href: "https://www.tidytextmining.com/sentiment"
-          # auxil:
-          #   id: "Demo"
-          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90268984"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91387030"
         - type: "Lectur2"
           id: ""
           name: "Correspondence Analysis (notes)"
