@@ -512,7 +512,7 @@
         - type: "Lecture"
           id: ""
           name: "More Correspondence Analysis (notes)"
-          href: "docs/tm-correspondence/text-mining-corresp-analysis2.html"
+          href: "https://stat133.berkeley.edu/fall-2024/docs/tm-correspondence/text-mining-corresp-analysis2.html"
         - type: "Homework"
           id: ""
           name: "Shiny App-2 (avail 4/05, due 4/18)"
