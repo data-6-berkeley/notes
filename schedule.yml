@@ -533,7 +533,7 @@
           href: "https://www.gastonsanchez.com/R-tidy-hurricanes/5-03-maps-sf.html"
           auxil:
             id: "Slides"
-            href: "docs/maps-storms/storms-slides1.html"
+            href: "https://bcourses.berkeley.edu/files/91437291/download?download_frd=1"
     - date: "Apr 9"
       items:
         - type: "Lecture"
@@ -542,7 +542,7 @@
           href: "https://www.gastonsanchez.com/R-tidy-hurricanes/5-04-maps-leaflet.html"
           auxil:
             id: "Slides"
-            href: "docs/maps-storms/storms-slides2.html"
+            href: "https://bcourses.berkeley.edu/files/91455032/download?download_frd=1"
     - date: "Apr 10"
       items:
         - type: "Labwork"
