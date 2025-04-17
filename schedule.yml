@@ -555,12 +555,9 @@
           id: ""
           name: "Mapping Storms (part 3)"
           href: ""
-          auxil:
-            id: "Slides"
-            href: "docs/maps-storms/storms-slides3.html"
-          # auxil:
-          #   id: "Demo"
-          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90269007"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91464129"
 - week: 12
   days:
     - date: "About"
@@ -574,19 +571,19 @@
         - type: "Lecture"
           id: ""
           name: "Choropleth maps 1"
-          href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90269008"
-          # auxil:
-          #   id: "Demo"
-          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90269008"
+          href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91476801"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91476801"
     - date: "Apr 16"
       items:
         - type: "Lecture"
           id: ""
           name: "Choropleth maps 2"
           href: "docs/choropleth/us-elections-slides1.html"
-          # auxil:
-          #   id: "Demo"
-          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90287921"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91505786"
     - date: "Apr 17"
       items:
         - type: "Labwork"
