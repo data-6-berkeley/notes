@@ -595,10 +595,10 @@
         - type: "Lecture"
           id: ""
           name: "Choropleth maps 3"
-          href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90269008"
-          # auxil:
-          #   id: "Demo"
-          #   href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90269008"
+          href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91526425"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91526425"
         - type: "Homework"
           id: ""
           name: "Shiny App-3 (avail 4/19, due 5/02)"
