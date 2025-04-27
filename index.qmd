@@ -16,6 +16,7 @@ listing:
 
 
 ::: {.callout-note title="Announcements 📣"}
+Final Exam on May-14th (7-10pm)
 
 See announcements in bCourses
 :::
