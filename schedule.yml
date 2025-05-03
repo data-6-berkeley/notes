@@ -629,6 +629,9 @@
           id: ""
           name: "APIs (notes)"
           href: "https://www.gastonsanchez.com/R-web-technologies/4-02-api-open-notify.html"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91672460"
     - date: "Apr 24"
       items:
         - type: "Labwork"
@@ -644,6 +647,9 @@
           auxil:
             id: "Slides"
             href: "slides/stat133-07-web2-xml-intro.pdf"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91672463"
 - week: 14
   days:
     - date: "About"
