@@ -667,6 +667,9 @@
           auxil:
             id: "Slides"
             href: "slides/stat133-07-web3-parsing-xml.pdf"
+          auxil2:
+            id: "Demo"
+            href: "https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91676685"
         - type: "Lectur2"
           id: ""
           name: "Xpath (notes)"
