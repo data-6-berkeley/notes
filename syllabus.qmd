@@ -219,7 +219,7 @@ Grades will be assigned using the following weighted components:
 - As a matter of course policy, I do not round up when calculating letter grades. Ex: if your overall score is 79.9999%, then the highest letter grade that you can expect is a C+, not a B-.
 - There is no curve; your grade will depend only on how well you do, and not on how well everyone else does.
 - Letter grades are final; I don't enter into negotiations with students about grades.
-- Please do not engage in [grade grubbing](https://marktomforde.com/academic/undergraduates/GradeGrubbing.html).
+- Please do not engage in <a href="https://marktomforde.com/academic/undergraduates/GradeGrubbing.html" target="_blank">grade grubbing</a>.
 - Also, please remember that we grade your course performance, not your personal worth.
 
 
