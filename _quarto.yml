@@ -6,60 +6,37 @@ website:
   google-analytics: G-CES9J82GLL
   page-footer: 
     center:
-      - text: About
-        href: about.qmd
-      - text: License
-        href: license.qmd
+      - text: Home / About / License
+        href: index.qmd
       - text: GitHub
-        href: "https://github.com/berkeley-stat133"
+        href: "https://github.com/data-6-berkeley"
     background: "dark"
+  page-navigation: true
   sidebar:
     style: "docked"
-    title: "STAT 133 <br><small>Spring 2025</small>"
-    logo: assets/stat_bear.png
-    logo-alt: "UC Berkeley Statistics logo"
+    title: "DATA 6 <br><small>Course Notes</small>"
+    logo: assets/data6.png
+    logo-alt: "Data 6 logo"
     tools:
       - icon: github
-        href: https://github.com/berkeley-stat133/spring-2025
+        href: https://github.com/data-6-berkeley/notes
     contents:
       - href: index.qmd
-        text: Home / Schedule
-      - href: syllabus.qmd
-        text: Syllabus
-      - href: about.qmd
-        text: About
-      - section: "Units"
+        text: Home / About
+      - section: "Unit 1: Introduction"
         contents:
-          - units/unit1.qmd
-          - units/unit2.qmd
-          - units/unit3.qmd
-          - units/unit4.qmd
-          - units/unit5.qmd
-          - units/unit6.qmd
-          - units/unit7.qmd
-          - units/unit8.qmd
-          - units/unit9.qmd
-          - units/unit10.qmd
-          - units/unit11.qmd
-          - units/unit12.qmd
-          - units/unit13.qmd
-          - units/unit14.qmd
-      - section: "Other"
-        contents:
-          - href: staff.qmd
-            text: Staff
-          - href: cheatsheets.qmd
-            text: Cheatsheets
-          - href: email.qmd
-            text: Email
-          - href: ed-netiquette.qmd
-            text: "Ed Netiquette"
-          - href: faqs.qmd
-            text: FAQs
-          - href: five-things.qmd
-            text: "5 Things to know"
-          - href: license.qmd
-            text: License
+          - href: 01-intro/introduction.qmd
+            text: About this curriculum
+          - href: 01-intro/jupyter-notebook.qmd
+            text: Jupyter Notebooks
+          - href: 01-intro/programming-basics-1.qmd
+            text: "Programming Basics: I"
+          - href: 01-intro/rates-incidence.qmd
+            text: "Application: Rates and Incidence"
+          - href: 01-intro/programming-basics-2.qmd
+            text: "Programming Basics: II"
+      - href: five-things.qmd
+        text: "5 Things to know"
 
 format:
   html:
@@ -69,5 +46,4 @@ format:
     toc: true
     include-in-header:
       file: siteimprove.html
-
 

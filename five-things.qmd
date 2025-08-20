@@ -19,16 +19,15 @@ This course is a very hands-on course and requires many hours of practical work 
 
 It goes without saying that you should do all the assigned work: attend lecture and section, review the practice material discussed in lab, and of course do all HW assignments. Keep in mind that the activities and assignments build upon earlier work. So it's important not to fall behind and avoid leaving gaps along the semester.
 
-On the technical side, you should have your own computer, (good) internet connection, download and install specific software (e.g. R, RStudio, gitbash, zoom), and also know how to record a video of both 1) computer's screen capture, and 2) face capture (e.g. a zoom recording makes this easy). We will provide more detailed instructions about the required tools as we move forward with the semester.
+On the technical side, you should have your own computer, (good) internet connection, and also know how to record a video of both 1) computer's screen capture, and 2) face capture (e.g. a zoom recording makes this easy). We will provide more detailed instructions about the required tools as we move forward with the semester.
 
  
 
 ## 3) No need to memorize all commands
 
-Do you need to memorize all commands? No! We don't expect that you memorize all commands. In fact, you can find a series of [cheatsheets](./cheatsheets.html) that you can (and should) use at all times (even during quizzes and tests).
+Do you need to memorize all commands? No! We don't expect that you memorize all commands. In fact, you can find a series of cheatsheets that you can (and should) use at all times (even during quizzes and tests). We will release these soon.
 
-However, we do expect that you learn the most common types of functions in R: e.g. `library()`, `function()`, `help()`, etc. More important, we expect that you understand the "logic" and working principles of certain data objects, common programming structures, good practices, etc.
-
+However, we do expect that you learn the most common types of functions in Python and Jupyter notebooks: e.g. `print()`, `?`, etc. More important, we expect that you understand the "logic" and working principles of certain data objects, common programming structures, good practices, etc.
  
 
 ## 4) Study for tests
@@ -54,4 +53,7 @@ Don't underestimate the second to last item. Coding (in any programming language
 
 As for the last item, please let us know you've been affected by circumstances beyond your control as soon as possible. While we cannot guarantee any outcome, we will do what is within our reach to help you in this class.
 
+## Acknowledgments
+
+The original copy of this text is written by Gaston Sanchez, [Stat 133 Spring 2025](https://stat133.berkeley.edu/spring-2025/five-things.html).
  

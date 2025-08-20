@@ -1,31 +1,28 @@
 ---
-title: "Statistics 133: Concepts in Computing with Data"
-subtitle: "UC Berkeley, STAT 133, Spring 2025"
-listing:
-  - id: schedule
-    template: schedule.ejs
-    contents: schedule.yml
-  - id: buttons
-    template: buttons.ejs
-    contents: buttons.yml
+title: "About these Course Notes"
 ---
 
-::: {#buttons}
-:::
+These course notes were compiled and created for **Data 6: Introduction to Computational Thinking with Data Science and Society**. This is an introductory, interdisciplinary course that focuses on the principles of computational thinking for the purposes exploratory data analysis and computational social science.
 
+## Disclaimer: Is this a textbook?
 
+These lecture notes are exactly that—lecture notes. That means that while they may follow the beats of class, they may not contain all the context needed to fully understand the course material and its theoretically underpinnings. This is a limitation of this curriculum being new _and_ interdisciplinary. We source from many other foundational texts as needed; these textbook chapters are linked within the lecture notes themselves. You are expected to read these external links.
 
-::: {.callout-note title="Announcements 📣"}
-Final Exam on May-14th (7-10pm)
+## Course Links
+[data6.org](https://data6.org): Syllabi and assignments for semesters at UC Berkeley.
 
-See reminders in bCourses
-:::
+We strongly recommend supplementing the notes presented here with the fantastic foundational texts prepared by UC Berkeley faculty instructors in Stat 20, Data 8, and CS 61A:
 
+- Data 8: [_Computational and Inferential Thinking: The Foundations of Data Science_](https://inferentialthinking.com/), 2nd Edition, by Ani Adhikari, John DeNero, David Wagner.
+- CS 61A: [_Composing Programs_](https://www.composingprograms.com/), by John DeNero.
+- Stat 20: [Course Notes](https://www.stat20.org/notes) by Andrew Bray.
 
-## Schedule 📅
+## License
 
-Tentative calendar subject to change.
+The contents of this work are licensed for free consumption under the following license: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="blank_"><strong>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</strong></a>
 
-::: {#schedule}
-:::
+## Acknowledgments
 
+Many faculty instructors and teaching assistants have contributed to the creation of Data 6. Special thanks to Suraj Rampure for one of the early iterations of this course.
+
+This material is based upon work supported by the U.S. National Science Foundation under award Nos. [2245877](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2245877), [2245878](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2245878), [2245879](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2245879), and the California Learning Lab. Please read more about our DUBOIS project activities here: [https://dubois-ctds.github.io/](https://dubois-ctds.github.io/)
