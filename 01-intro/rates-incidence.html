@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Application: Rates</title>
+<title>Case Study: Rates</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -81,6 +116,35 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </script>
 <!--<script async src=”https://siteimproveanalytics.com/js/siteanalyze_6294756.js”></script>-->
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
@@ -188,7 +252,15 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#rates-incidence" id="toc-rates-incidence" class="nav-link active" data-scroll-target="#rates-incidence">Rates: Incidence</a></li>
+  <li><a href="#definitions" id="toc-definitions" class="nav-link active" data-scroll-target="#definitions">Definitions</a>
+  <ul class="collapse">
+  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables">Tables</a></li>
+  <li><a href="#rates" id="toc-rates" class="nav-link" data-scroll-target="#rates">Rates</a></li>
+  </ul></li>
+  <li><a href="#rates-incidence" id="toc-rates-incidence" class="nav-link" data-scroll-target="#rates-incidence">Rates: Incidence</a></li>
+  <li><a href="#define-incidence" id="toc-define-incidence" class="nav-link" data-scroll-target="#define-incidence">Define: Incidence</a></li>
+  <li><a href="#verifying-incidence" id="toc-verifying-incidence" class="nav-link" data-scroll-target="#verifying-incidence">Verifying Incidence</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
@@ -197,8 +269,8 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../01-intro/introduction.html">Unit 1: Introduction</a></li><li class="breadcrumb-item"><a href="../01-intro/rates-incidence.html">Application: Rates and Incidence</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Application: Rates</h1>
-<p class="subtitle lead">Expressions, Data Types, Style, and Debugging</p>
+<h1 class="title">Case Study: Rates</h1>
+<p class="subtitle lead">U.S. Tuberculosis Incidence</p>
 </div>
 
 
@@ -215,31 +287,271 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </header>
 
 
+<p>How can Python help us understand numerical data? Let’s explore a case study in the context of a public health data report!</p>
+<section id="definitions" class="level2">
+<h2 class="anchored" data-anchor-id="definitions">Definitions</h2>
+<p>Before we dive into the case study, let’s describe some key data science terms: <strong>tables</strong> and <strong>rates</strong>.</p>
+<section id="tables" class="level3">
+<h3 class="anchored" data-anchor-id="tables">Tables</h3>
+<p>In this course, we will describe many examples of <strong>data structures</strong>, which are ways to store and organize data, often for computational processing. One of the most common examples is a <strong>table</strong>:</p>
+<blockquote class="blockquote">
+<p>A rectangular data structure composed of <strong>rows</strong> and <strong>columns</strong>. Columns are <strong>labeled</strong>.</p>
+</blockquote>
+<p>We will expand on this definition of table over the next few lectures.</p>
+</section>
+<section id="rates" class="level3">
+<h3 class="anchored" data-anchor-id="rates">Rates</h3>
+<p>A <strong>rate</strong> is a measure of one quantity per unit of some other quantity. A few examples: 6 miles per hour, 70%, 4.8 parts per million. Rates are often expressed as a percentage, fraction with a numerator and a denominator, or a decimal number.</p>
+<p>Data scientists often use and define rates to compare different situations or events. For example, it is easy to compare 60 mph to 40 mph, but harder to compare 15 mph to 10 km/s. Occasionally, it’s unclear why a rate is necessary until we dig into the data. Let’s inspect a particular case below.</p>
+</section>
+</section>
 <section id="rates-incidence" class="level2">
 <h2 class="anchored" data-anchor-id="rates-incidence">Rates: Incidence</h2>
-<p>Let’s apply these ideas towards understanding data!</p>
-<p>The U.S. Center for Disease Control (CDC) regularly examines disease data nationwide and publishes reports for the public.</p>
-<p>Consider the reported U.S. Tuberculosis (TB) cases in 2021 (CDC Morbidity and Mortality Weekly Report (MMWR) 03/25/2022, <a href="https://www.cdc.gov/mmwr/volumes/71/wr/mm7112a1.htm?s_cid=mm7112a1_w#T1_down">source</a>). The report summary states:</p>
+<p>The U.S. Center for Disease Control (CDC) regularly examines disease data nationwide and publishes reports for the public. These reports help inform public health policy and consequent responses to disease epidemics at the national and global levels. One such disease is Tuberculosis (TB), a highly contagious respiratory infection.</p>
+<p>Consider the reported U.S. TB cases in 2021 (CDC Morbidity and Mortality Weekly Report (MMWR) 03/25/2022, <a href="https://www.cdc.gov/mmwr/volumes/71/wr/mm7112a1.htm?s_cid=mm7112a1_w#T1_down">source</a>). The report summary states:</p>
 <blockquote class="blockquote">
 <p>Reported TB incidence (cases per 100,000 persons) increased 9.4%, from 2.2 during 2020 to 2.4 during 2021 but was lower than incidence during 2019 (2.7). Increases occurred among both U.S.-born and non–U.S.-born persons.</p>
 </blockquote>
-<p>Given <em>just</em> this statement, let’s try to answer the following questions: 1. What is <strong>incidence</strong>? 1. Incidence is a <strong>rate</strong>. Why use this rate, and not absolute case sizes? 1. How can we verify the TB incidence columns from the TB cases shown in <a href="https://www.cdc.gov/mmwr/volumes/71/wr/mm7112a1.htm?s_cid=mm7112a1_w#T1_down">Table 1</a>? 1. How can we verify the percent change from the TB incidence?</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Aside: Summarizing versus Inferring">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<p>While the report discusses possible interpretations as to <em>why</em> this occurred, let’s focus on this particular numeric summary by answering the following questions:</p>
+<ol type="1">
+<li><strong>Define</strong>: What is <strong>incidence</strong>? Incidence is a <strong>rate</strong>. Why use this rate for comparison, and not the total number of cases?</li>
+<li><strong>Verify</strong>: Consider <a href="https://www.cdc.gov/mmwr/volumes/71/wr/mm7112a1.htm?s_cid=mm7112a1_w#T1_down">Table 1</a>. How can we use Python to verify that the TB incidence column can be computed from the TB cases column? How can use Python to verify the reported percent change in incidence?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Look at the tabular data">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Aside: Summarizing versus Inferring
+Look at the tabular data
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There is a lot of information on the CDC website—more than we can cover in this example. Our main goal is to understand the numeric data presented in the summary statement quoted above. There are two sources of information relevant to us:</p>
+<ol type="1">
+<li>The quote above, taken from the webpage summary.</li>
+<li><a href="https://www.cdc.gov/mmwr/volumes/71/wr/mm7112a1.htm?s_cid=mm7112a1_w#T1_down">Table 1</a>, located at the bottom of the webpage.</li>
+</ol>
+<p>Before continuing, try reading Table 1. <strong>Hint</strong>: Read the footnotes!</p>
+</div>
+</div>
+</section>
+<section id="define-incidence" class="level2">
+<h2 class="anchored" data-anchor-id="define-incidence">Define: Incidence</h2>
+<p>In epidemiology, incidence is a rate that measures the number of cases of a disease in a population, within a given time period, as shown in <a href="#eq-pp" class="quarto-xref">Equation&nbsp;1</a>:</p>
+<p><span id="eq-pp"><span class="math display">\[ \text{TB incidence} = \frac{\text{\# TB cases}}{\text{population}} \tag{1}\]</span></span></p>
+<p>This rate can be interpreted as the number of cases (i.e., the number of reported individuals diagnosed with TB) per person (the number of people in the population).</p>
+<p><strong>Why not use TB cases? Why scale by population size?</strong> Based on the <a href="https://www.cdc.gov/mmwr/volumes/71/wr/mm7112a1.htm?s_cid=mm7112a1_w">CDC summary</a>, the intention of this report was to highlight a drop in TB cases in 2020, compared to adjacent years. The report accomplished this by reporting and comparing the TB incidence in 2019, 2020, and 2021.</p>
+<p>Simply reporting the total number of TB cases has several pitfalls, including the inability to compare the prevalence of TB in different scenarios.</p>
+<p>While the precise explanation requires a strong understanding of probability (see Data 140), intuitively, incidence is a proxy for the prevalence, or rate of occurrence, of TB cases occurring in a population. As an example, Hawaii reported much fewer TB cases than California, but had a much higher TB incidence, across all three years. After all, Hawaii has a much smaller population than California (1.5 million vs.&nbsp;39 million), so each case of reported TB matters more.</p>
+<hr>
+<p>Next, let’s consider how the CDC defines TB incidence in this report. From the Table 1 footnote:</p>
+<blockquote class="blockquote">
+<p>Cases per 100,000 persons using midyear population estimates from the U.S. Census Bureau.</p>
+</blockquote>
+<p><strong>Incorrect interpretation.</strong> First, consider the following (incorrect) ratio in <a href="#eq-incorrect" class="quarto-xref">Equation&nbsp;2</a>:</p>
+<p><span id="eq-incorrect"><span class="math display">\[ \frac{\text{\# TB cases}}{100,000 \text{ persons}} \tag{2}\]</span></span></p>
+<p>This rate does not account for different states having different population sizes. In other words, the population denominator in <a href="#eq-pp" class="quarto-xref">Equation&nbsp;1</a> has disappeared.</p>
+<p><strong>Correct interpretation.</strong> Incidence is a measure of the <em>rate of occurrence</em> of a disease across a population. The Table 1 footnote translates <a href="#eq-pp" class="quarto-xref">Equation&nbsp;1</a> to consider different ways of measuring the population.</p>
+<p>If TB incidence in <a href="#eq-pp" class="quarto-xref">Equation&nbsp;1</a> was defined as number of TB cases per person, we scale up by 100,000 to define TB cases per group, where the group is defined as 100,000 persons. <span class="math display">\[
+\frac{\text{cases}}{\text{1 person}} \times \frac{100,000 \text{ persons}}{\text{group}}
+\]</span></p>
+<p>The CDC definition of TB incidence is therefore represented by <a href="#eq-p100k" class="quarto-xref">Equation&nbsp;3</a>:</p>
+<p><span id="eq-p100k"><span class="math display">\[
+\frac{\text{\# TB cases}}{\# \text{people in population}} \times 100,000
+\tag{3}\]</span></span></p>
+</section>
+<section id="verifying-incidence" class="level2">
+<h2 class="anchored" data-anchor-id="verifying-incidence">Verifying Incidence</h2>
+<p>To compute TB incidence, we need to source two pieces of data: the number of TB cases from Table 1, and the midyear population estimates from the U.S. Census. For your convenience, we’ve included a few data points on each U.S. jurisdiction in the two tables below (click to expand).</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Snippet of Table 1, U.S. CDC">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Snippet of Table 1, U.S. CDC
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>This statement is a <strong>summary</strong> of the data: it compares three values, the incidences of 2.7 (in 2019), 2.2 (in 2020), and 2.4 (in 2021). From this interesting observation, the remainder of the report seeks to provide possible explanations for <em>why</em> this observation occurred.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th colspan="3">No.&nbsp;of TB cases</th>
+<th colspan="3">TB incidence</th>
+</tr>
+<tr class="even">
+<th>U.S. jurisdiction</th>
+<th>2019</th>
+<th>2020</th>
+<th>2021</th>
+<th>2019</th>
+<th>2020</th>
+<th>2021</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Total</td>
+<td>8,900</td>
+<td>7,173</td>
+<td>7,860</td>
+<td>2.71</td>
+<td>2.16</td>
+<td>2.37</td>
+</tr>
+<tr class="even">
+<td>Alabama</td>
+<td>87</td>
+<td>72</td>
+<td>92</td>
+<td>1.77</td>
+<td>1.43</td>
+<td>1.83</td>
+</tr>
+<tr class="odd">
+<td>Alaska</td>
+<td>58</td>
+<td>58</td>
+<td>58</td>
+<td>7.91</td>
+<td>7.92</td>
+<td>7.92</td>
+</tr>
+<tr class="even">
+<td>Arizona</td>
+<td>183</td>
+<td>136</td>
+<td>129</td>
+<td>2.51</td>
+<td>1.89</td>
+<td>1.77</td>
+</tr>
+<tr class="odd">
+<td>Arkansas</td>
+<td>64</td>
+<td>59</td>
+<td>69</td>
+<td>2.12</td>
+<td>1.96</td>
+<td>2.28</td>
+</tr>
+<tr class="even">
+<td>California</td>
+<td>2,111</td>
+<td>1,706</td>
+<td>1,750</td>
+<td>5.35</td>
+<td>4.32</td>
+<td>4.46</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-note callout-titled" title="Snippet of midyear population estimates, U.S. Census Bureau">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Snippet of midyear population estimates, U.S. Census Bureau
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Here are the population estimates for the corresponding years, sourced from the U.S. Census Bureau:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 19%">
+<col style="width: 19%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>U.S. jurisdiction</th>
+<th>2019 pop</th>
+<th>2020 pop</th>
+<th>2021 pop</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Total</td>
+<td>328,239,523</td>
+<td>331,501,080</td>
+<td>331,893,745</td>
+</tr>
+<tr class="even">
+<td>Alabama</td>
+<td>4,903,185</td>
+<td>5,024,803</td>
+<td>5,039,877</td>
+</tr>
+<tr class="odd">
+<td>California</td>
+<td>39,512,223</td>
+<td>39,499,738</td>
+<td>39,237,836</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Let’s use <a href="#eq-p100k" class="quarto-xref">Equation&nbsp;3</a> compute TB incidence in the U.S. in 2020:</p>
+<div id="ee22a8cd" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">7173</span> <span class="op">/</span> <span class="dv">331501080</span> <span class="op">*</span> <span class="dv">100000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<pre><code>2.1637938555132306</code></pre>
+</div>
+</div>
+<p>Rounding to the nearest tenth spot, we get the original quoted rate, 2.2!</p>
+<p>The previous cell makes little sense without the intense exposition we just covered. Python names and comments make everything more understandable:</p>
+<div id="6b0dee8b" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># compute incidence as cases per 100k</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>pop_2020 <span class="op">=</span> <span class="dv">331501080</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>tb_2020 <span class="op">=</span> <span class="dv">7173</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>incidence_2020 <span class="op">=</span> tb_2020 <span class="op">/</span> pop_2020 <span class="op">*</span> <span class="dv">100000</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>incidence_2020</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
+<pre><code>2.1637938555132306</code></pre>
+</div>
+</div>
+<p>If we need to verify <em>all</em> incidences in the 2020 column, you might be tempted to edit the cell above, manually inputting the values for each U.S. jurisdiction. This approach is both tedious and error-prone (what if you input incorrect numbers); in a few lectures, we will show you a much easier way using data structures: arrays and tables.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>Filardo TD, Feng P, Pratt RH, Price SF, Self JL. Tuberculosis — United States, 2021. MMWR Morb Mortal Wkly Rep 2022;71:441–446. DOI: <a href="http://dx.doi.org/10.15585/mmwr.mm7112a1">http://dx.doi.org/10.15585/mmwr.mm7112a1</a></p>
+<p>U.S. Census, 2024. State Population Totals and Components of Change: 2010-2019, <a href="https://www.census.gov/data/tables/time-series/demo/popest/2010s-state-total.html">https://www.census.gov/data/tables/time-series/demo/popest/2010s-state-total.html</a></p>
+<p>U.S. Census, 2025. State Population Totals and Components of Change: 2020-2024. <a href="https://www.census.gov/data/tables/time-series/demo/popest/2020s-state-total.html">https://www.census.gov/data/tables/time-series/demo/popest/2020s-state-total.html</a>.</p>
+<!-- ::: {.callout-note title="Aside: Summarizing versus Inferring" collapse="true"}
+This statement is a **summary** of the data: it compares three values, the incidences of 2.7 (in 2019), 2.2 (in 2020), and 2.4 (in 2021). From this interesting observation, the remainder of the report seeks to provide possible explanations for _why_ this observation occurred.
+::: -->
 
 
 </section>
@@ -317,7 +629,7 @@ Aside: Summarizing versus Inferring
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/data-6-berkeley\.github\.io\/notes\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

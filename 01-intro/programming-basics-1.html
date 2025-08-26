@@ -262,7 +262,9 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </header>
 
 
-<p>Let’s get programming! This is a challenging set of notes because it involves a lot of terminology up-front—expressions, names, operators, assignments, data types, etc.—to describe the fundamentals of writing Python expressions. Getting a handle on the terminology earlier will make it easier to describe the programming concepts. But it does take some memorization…!</p>
+<p>Let’s get programming!</p>
+<p>The first goal of this lecture is to demonstrate that <strong>some Python programming is as familiar as using a calculator</strong>, which you have likely used before.</p>
+<p>The second goal is to <strong>introduce programming terminology</strong>—expressions, names, assignments, data types, etc. Learning this terminology is like learning grammar; these terms help us describe precisely what our programs are doing. Getting a handle on the terminology earlier will make it easier to describe the programming concepts. But it does take some memorization…!</p>
 <div class="callout callout-style-default callout-warning callout-titled" title="Read _Inferential Thinking_">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -325,22 +327,22 @@ Read <em>Inferential Thinking</em>
 </div>
 </div>
 <p>One analogy for names is suitcase tags. Consider the following assignment statement:</p>
-<div id="ebc74b34" class="cell" data-execution_count="1">
+<div id="e023854a" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This statement assigns the name <code>x</code> to the value <code>3</code>. Like a suitcase tag, the name <code>x</code> is bound to the value <code>3</code>.</p>
-<div id="d7d6b53d" class="cell" data-execution_count="2">
+<div id="51b3ad82" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>3</code></pre>
 </div>
 </div>
 <p>Python first evaluates the expression on the right-hand side of the <code>=</code> assignment operator, then binds the name <code>x</code> to the resulting value.</p>
 <p>The below statement re-assigns the name <code>x</code>. Think of this as moving the suitcase tag to a different suitcase.</p>
-<div id="797dc8d4" class="cell" data-execution_count="3">
+<div id="e040f023" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">1</span> <span class="op">+</span> <span class="dv">2</span> <span class="op">*</span> <span class="dv">3</span> <span class="op">-</span> <span class="dv">4</span> <span class="op">//</span> <span class="dv">5</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>7</code></pre>
 </div>
 </div>
@@ -405,23 +407,23 @@ Read <em>Inferential Thinking</em>
 </div>
 </div>
 <p>The <code>+</code> operator works differently on string data types. Instead of adding numerically, it “adds textually,” which is more formally called <strong>concatenation</strong>:</p>
-<div id="d31e20a5" class="cell" data-execution_count="4">
+<div id="e9a94c71" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="op">+</span> <span class="dv">3</span>  <span class="co"># addition</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>5</code></pre>
 </div>
 </div>
-<div id="c6e74748" class="cell" data-execution_count="5">
+<div id="9124ae34" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">'hello'</span> <span class="op">+</span> <span class="st">"donuts"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>'hellodonuts'</code></pre>
 </div>
 </div>
 <p>There is one function not shown above that would be useful to you know, and that is <code>len(s)</code>, which takes a string argument and returns its length.</p>
-<div id="6233ff55" class="cell" data-execution_count="6">
+<div id="b2cf6f68" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">"hello world"</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(s)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>11</code></pre>
 </div>
 </div>
@@ -436,9 +438,9 @@ Read <em>Inferential Thinking</em>
 <p>Good style practices can involve comments, meaningful names, whitespace, markdown cells interspersed with code cells, etc. <a href="https://inferentialthinking.com/chapters/03/2/Names.html">Ch 3.2</a> of <em>Inferential Thinking</em> describes meaningful names; we discuss comments below.</p>
 <p><strong>Comments</strong> are used to explain what code does. Good programmers write code that is self-evident and use comments only where necessary.</p>
 <p>In Python, you can write comments in the same line as code (“in-line” comments) using <code>#</code>:</p>
-<div id="3cfafde4" class="cell" data-execution_count="7">
+<div id="19460db2" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="op">+</span> <span class="dv">4</span>     <span class="co"># simple arithmetic</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>7</code></pre>
 </div>
 </div>
@@ -614,7 +616,7 @@ Read <em>Inferential Thinking</em>
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/data-6-berkeley\.github\.io\/notes\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

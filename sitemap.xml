@@ -1,39 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://data-6-berkeley.github.io/notes/five-things.html</loc>
-    <lastmod>2025-08-20T20:12:34.557Z</lastmod>
+    <loc>https://data-6-berkeley.github.io/notes/03-arrays/index.html</loc>
+    <lastmod>2025-08-26T00:08:00.572Z</lastmod>
   </url>
   <url>
-    <loc>https://data-6-berkeley.github.io/notes/staff.html</loc>
+    <loc>https://data-6-berkeley.github.io/notes/02-datatypes/index.html</loc>
+    <lastmod>2025-08-26T00:08:15.972Z</lastmod>
+  </url>
+  <url>
+    <loc>https://data-6-berkeley.github.io/notes/syllabus.html</loc>
     <lastmod>2025-08-20T20:12:34.558Z</lastmod>
   </url>
   <url>
-    <loc>https://data-6-berkeley.github.io/notes/01-intro/programming-basics-1.html</loc>
-    <lastmod>2025-08-20T20:12:34.553Z</lastmod>
+    <loc>https://data-6-berkeley.github.io/notes/01-intro/index-copy.html</loc>
+    <lastmod>2025-08-26T00:36:26.234Z</lastmod>
   </url>
   <url>
-    <loc>https://data-6-berkeley.github.io/notes/01-intro/jupyter-notebook.html</loc>
-    <lastmod>2025-08-20T20:12:34.553Z</lastmod>
+    <loc>https://data-6-berkeley.github.io/notes/01-intro/index.html</loc>
+    <lastmod>2025-08-26T00:38:20.208Z</lastmod>
   </url>
   <url>
     <loc>https://data-6-berkeley.github.io/notes/index.html</loc>
     <lastmod>2025-08-20T20:12:34.558Z</lastmod>
   </url>
   <url>
-    <loc>https://data-6-berkeley.github.io/notes/01-intro/rates-incidence.html</loc>
-    <lastmod>2025-08-20T01:56:18.383Z</lastmod>
+    <loc>https://data-6-berkeley.github.io/notes/04-variables/none-print.html</loc>
+    <lastmod>2025-08-25T17:10:28.149Z</lastmod>
   </url>
   <url>
-    <loc>https://data-6-berkeley.github.io/notes/01-intro/programming-basics-2.html</loc>
-    <lastmod>2025-08-20T02:15:00.306Z</lastmod>
+    <loc>https://data-6-berkeley.github.io/notes/01-intro/jupyter-notebook.html</loc>
+    <lastmod>2025-08-20T20:12:34.553Z</lastmod>
   </url>
   <url>
-    <loc>https://data-6-berkeley.github.io/notes/01-intro/introduction.html</loc>
-    <lastmod>2025-08-19T21:57:43.792Z</lastmod>
+    <loc>https://data-6-berkeley.github.io/notes/01-intro/programming-basics.html</loc>
+    <lastmod>2025-08-25T17:19:58.590Z</lastmod>
   </url>
   <url>
-    <loc>https://data-6-berkeley.github.io/notes/syllabus.html</loc>
+    <loc>https://data-6-berkeley.github.io/notes/staff.html</loc>
     <lastmod>2025-08-20T20:12:34.558Z</lastmod>
+  </url>
+  <url>
+    <loc>https://data-6-berkeley.github.io/notes/02-datatypes/rates-incidence.html</loc>
+    <lastmod>2025-08-25T03:26:35.842Z</lastmod>
+  </url>
+  <url>
+    <loc>https://data-6-berkeley.github.io/notes/five-things.html</loc>
+    <lastmod>2025-08-25T17:08:35.236Z</lastmod>
   </url>
 </urlset>

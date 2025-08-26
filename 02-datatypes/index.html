@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Five things you need to know to pass this class</title>
+<title>Data Types</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,28 +20,64 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./04-variables/none-print.html" rel="prev">
-<link href="./assets/favicon.ico" rel="icon">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-753e6901f2c274e22bcfe03890f74e5f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../02-datatypes/rates-incidence.html" rel="next">
+<link href="../01-intro/programming-basics.html" rel="prev">
+<link href="../assets/favicon.ico" rel="icon">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-753e6901f2c274e22bcfe03890f74e5f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -81,7 +117,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <!--<script async src=”https://siteimproveanalytics.com/js/siteanalyze_6294756.js”></script>-->
 
 
-<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="../assets/styles.css">
 </head>
 
 <body class="nav-sidebar docked quarto-light">
@@ -93,7 +129,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./five-things.html">5 Things to Know</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../02-datatypes/index.html">Lecture 2: Data Types</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -107,11 +143,11 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./assets/data6.png" alt="Data 6 logo" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../assets/data6.png" alt="Data 6 logo" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">DATA 6 <br><small>Course Notes</small></a> 
+      <a href="../">DATA 6 <br><small>Course Notes</small></a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/data-6-berkeley/notes" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
 </div>
@@ -126,13 +162,13 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home / About</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./01-intro/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../01-intro/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 1: Introduction</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -141,19 +177,19 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-intro/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../01-intro/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Course Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-intro/jupyter-notebook.html" class="sidebar-item-text sidebar-link">
+  <a href="../01-intro/jupyter-notebook.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Jupyter Notebooks</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-intro/programming-basics.html" class="sidebar-item-text sidebar-link">
+  <a href="../01-intro/programming-basics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Programming Basics</span></a>
   </div>
 </li>
@@ -161,22 +197,22 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./02-datatypes/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../02-datatypes/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Lecture 2: Data Types</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-datatypes/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../02-datatypes/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Numeric and String Data Types</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-datatypes/rates-incidence.html" class="sidebar-item-text sidebar-link">
+  <a href="../02-datatypes/rates-incidence.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Application: Rates and Incidence</span></a>
   </div>
 </li>
@@ -184,7 +220,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./03-arrays/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../03-arrays/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 3: Arrays</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -193,7 +229,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-arrays/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../03-arrays/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Arrays, NumPy</span></a>
   </div>
 </li>
@@ -210,7 +246,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-variables/none-print.html" class="sidebar-item-text sidebar-link">
+  <a href="../04-variables/none-print.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">None and Print</span></a>
   </div>
 </li>
@@ -218,7 +254,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./five-things.html" class="sidebar-item-text sidebar-link active">
+  <a href="../five-things.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">5 Things to Know</span></a>
   </div>
 </li>
@@ -232,12 +268,14 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#read-instructions-carefully" id="toc-read-instructions-carefully" class="nav-link active" data-scroll-target="#read-instructions-carefully">1) Read Instructions Carefully</a></li>
-  <li><a href="#do-all-the-assigned-work" id="toc-do-all-the-assigned-work" class="nav-link" data-scroll-target="#do-all-the-assigned-work">2) Do all the assigned work</a></li>
-  <li><a href="#no-need-to-memorize-all-commands" id="toc-no-need-to-memorize-all-commands" class="nav-link" data-scroll-target="#no-need-to-memorize-all-commands">3) No need to memorize all commands</a></li>
-  <li><a href="#study-for-tests" id="toc-study-for-tests" class="nav-link" data-scroll-target="#study-for-tests">4) Study for tests</a></li>
-  <li><a href="#what-else-do-you-recommend-to-succeed-in-this-course" id="toc-what-else-do-you-recommend-to-succeed-in-this-course" class="nav-link" data-scroll-target="#what-else-do-you-recommend-to-succeed-in-this-course">5) What else do you recommend to succeed in this course?</a></li>
-  <li><a href="#acknowledgments" id="toc-acknowledgments" class="nav-link" data-scroll-target="#acknowledgments">Acknowledgments</a></li>
+  <li><a href="#numeric-data-types" id="toc-numeric-data-types" class="nav-link active" data-scroll-target="#numeric-data-types">Numeric Data Types</a>
+  <ul class="collapse">
+  <li><a href="#summary-of-numeric-operators" id="toc-summary-of-numeric-operators" class="nav-link" data-scroll-target="#summary-of-numeric-operators">Summary of Numeric Operators</a></li>
+  </ul></li>
+  <li><a href="#strings" id="toc-strings" class="nav-link" data-scroll-target="#strings">Strings</a></li>
+  <li><a href="#boolean-data-type" id="toc-boolean-data-type" class="nav-link" data-scroll-target="#boolean-data-type">Boolean Data Type</a></li>
+  <li><a href="#typecasting" id="toc-typecasting" class="nav-link" data-scroll-target="#typecasting">Typecasting</a></li>
+  <li><a href="#external-reading" id="toc-external-reading" class="nav-link" data-scroll-target="#external-reading">External Reading</a></li>
   </ul>
 </nav>
     </div>
@@ -246,7 +284,8 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Five things you need to know to pass this class</h1>
+<h1 class="title">Data Types</h1>
+<p class="subtitle lead">int, float, str, bool</p>
 </div>
 
 
@@ -263,44 +302,179 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </header>
 
 
-<p>Here they are, in no particular order.</p>
-<section id="read-instructions-carefully" class="level2">
-<h2 class="anchored" data-anchor-id="read-instructions-carefully">1) Read Instructions Carefully</h2>
-<p>You must carefully read the instructions provided for each assignment. Read, not skim! They contain information vital for the completion of the assigned work.</p>
-</section>
-<section id="do-all-the-assigned-work" class="level2">
-<h2 class="anchored" data-anchor-id="do-all-the-assigned-work">2) Do all the assigned work</h2>
-<p>This course is a very hands-on course and requires many hours of practical work outside class and lab. It also requires reviewing ALL the learning materials shared on this website and on the course website.</p>
-<p>It goes without saying that you should do all the assigned work: attend lecture and section, review the practice material discussed in lab, and of course do all HW assignments. Keep in mind that the activities and assignments build upon earlier work. So it’s important not to fall behind and avoid leaving gaps along the semester.</p>
-<p>On the technical side, you should have your own computer, (good) internet connection, and also know how to record a video of both 1) computer’s screen capture, and 2) face capture (e.g.&nbsp;a zoom recording makes this easy). We will provide more detailed instructions about the required tools as we move forward with the semester.</p>
-</section>
-<section id="no-need-to-memorize-all-commands" class="level2">
-<h2 class="anchored" data-anchor-id="no-need-to-memorize-all-commands">3) No need to memorize all commands</h2>
-<p>Do you need to memorize all commands? No! We don’t expect that you memorize all commands. In fact, you can find a series of cheatsheets that you can (and should) use at all times (even during quizzes and tests). We will release these soon.</p>
-<p>However, we do expect that you learn the most common types of functions in Python and Jupyter notebooks: e.g.&nbsp;<code>print()</code>, <code>?</code>, etc. More important, we expect that you understand the “logic” and working principles of certain data objects, common programming structures, good practices, etc.</p>
-</section>
-<section id="study-for-tests" class="level2">
-<h2 class="anchored" data-anchor-id="study-for-tests">4) Study for tests</h2>
-<p>The exams are a way to test your understanding of the various concepts presented in the course. The exams are also a way to test whether you are really doing all the practical work by yourself.</p>
-<p>In theory, students who do an honest effort in completing all the assignments (e.g.&nbsp;writing commands, understanding commands, learning the syntax, etc) should be able to get a passing score in these tests.</p>
-</section>
-<section id="what-else-do-you-recommend-to-succeed-in-this-course" class="level2">
-<h2 class="anchored" data-anchor-id="what-else-do-you-recommend-to-succeed-in-this-course">5) What else do you recommend to succeed in this course?</h2>
-<p>This one is hard to answer, in part because it depends on your personal definition of “success”. Simply put, I don’t think there’s a unique recipe for success. Instead, let me answer this question by telling you about the typical factors that may negatively affect your performance:</p>
+<section id="numeric-data-types" class="level2">
+<h2 class="anchored" data-anchor-id="numeric-data-types">Numeric Data Types</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Read _Inferential Thinking_">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Read <em>Inferential Thinking</em>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Read <a href="https://inferentialthinking.com/chapters/04/Data_Types.html">Ch 4 intro</a> and <a href="https://inferentialthinking.com/chapters/04/1/Numbers.html">Ch 4.1</a>, which describes in detail how Python evaluates expressions involving <strong>numeric data types</strong>.</p>
+<p>Before continuing, make sure you understand the following:</p>
 <ul>
-<li>not attending lecture and/or lab,</li>
-<li>not submitting assignments,</li>
-<li>looking at the solutions of other students and “inadvertently” copy them,</li>
-<li>poor studying/working habits</li>
-<li>being afraid/scared/ashamed of asking the teaching staff for help</li>
-<li>you’ve been doing work of passing quality and you cannot complete the course due to circumstances beyond your control</li>
+<li>Every value has a type (<strong>data type</strong>), and the built-in type function returns the type of the result of any expression.</li>
+<li>In Python, integers are called <code>int</code> values. Real numbers are called <code>float</code> values. These are flexible but have some computational limitations.</li>
+<li>The <code>type</code> of an expression is the type of its final value.</li>
+<li>When a <code>float</code> value is combined with an <code>int</code> value using some arithmetic operator, then the result is always a <code>float</code> value.</li>
 </ul>
-<p>Don’t underestimate the second to last item. Coding (in any programming language) can be extremely frustrating at times. You would be surprised to hear my collection of student stories about all sorts of bugs, typos, misspellings, and the like, that gave them a fair amount of frustration. So please, ask the teaching staff for help in a timely and respectful manner.</p>
-<p>As for the last item, please let us know you’ve been affected by circumstances beyond your control as soon as possible. While we cannot guarantee any outcome, we will do what is within our reach to help you in this class.</p>
+</div>
+</div>
+<section id="summary-of-numeric-operators" class="level3">
+<h3 class="anchored" data-anchor-id="summary-of-numeric-operators">Summary of Numeric Operators</h3>
+<p>You have seen this table before.</p>
+<table class="caption-top table">
+<caption>Common Python operators for numeric data types</caption>
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th>Symbol</th>
+<th>Example Expression</th>
+<th>Expression Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Addition</td>
+<td><code>+</code></td>
+<td><code>2 + 3</code></td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td>Subtraction</td>
+<td><code>-</code></td>
+<td><code>15 - 4</code></td>
+<td><code>11</code></td>
+</tr>
+<tr class="odd">
+<td>Multiplication</td>
+<td><code>*</code></td>
+<td><code>-2 * 9</code></td>
+<td><code>-18</code></td>
+</tr>
+<tr class="even">
+<td>Division</td>
+<td><code>/</code></td>
+<td><code>15 / 2</code></td>
+<td><code>7.5</code></td>
+</tr>
+<tr class="odd">
+<td>Integer division</td>
+<td>Cuts off remainder</td>
+<td><code>//</code></td>
+<td><code>15 // 2</code></td>
+</tr>
+<tr class="even">
+<td>Remainder/Modulo</td>
+<td><code>%</code></td>
+<td><code>19 % 3</code></td>
+<td><code>1</code> <br> (19 ÷ 3 = 6 Remainder 1)</td>
+</tr>
+<tr class="odd">
+<td>Exponentiation</td>
+<td><code>**</code></td>
+<td><code>3 ** 2</code></td>
+<td><code>9</code></td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="acknowledgments" class="level2">
-<h2 class="anchored" data-anchor-id="acknowledgments">Acknowledgments</h2>
-<p>The original version of this text was written by Gaston Sanchez for <a href="https://stat133.berkeley.edu/spring-2025/five-things.html">Stat 133 Spring 2025</a>.</p>
+</section>
+<section id="strings" class="level2">
+<h2 class="anchored" data-anchor-id="strings">Strings</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Read _Inferential Thinking_">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Read <em>Inferential Thinking</em>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Read <a href="https://inferentialthinking.com/chapters/04/2/Strings.html">Ch 4.2</a> which describes the <strong>string data type</strong>.</p>
+<p>Before continuing, make sure you understand the following:</p>
+<ul>
+<li>A string is a text data type. It can use single quotes or double quotes.</li>
+<li>The meaning of an expression depends both upon its structure and the types of values that are being combined.</li>
+</ul>
+</div>
+</div>
+<p><strong>Concatenation operation</strong>: The <code>+</code> operator works differently on string data types. Instead of adding numerically, it “adds textually,” which is more formally called <strong>concatenation</strong>:</p>
+<div id="04cad28b" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="op">+</span> <span class="dv">3</span>  <span class="co"># addition</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>5</code></pre>
+</div>
+</div>
+<div id="c769be80" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">'hello'</span> <span class="op">+</span> <span class="st">"donuts"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>'hellodonuts'</code></pre>
+</div>
+</div>
+<p><strong>Length function</strong>: There is one function not shown above that would be useful to you know, and that is <code>len(s)</code>, which takes a string argument and returns its length.</p>
+<div id="2764daf0" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">"hello world"</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(s)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>11</code></pre>
+</div>
+</div>
+</section>
+<section id="boolean-data-type" class="level2">
+<h2 class="anchored" data-anchor-id="boolean-data-type">Boolean Data Type</h2>
+<p>The Boolean data type (<code>bool</code>) has exactly two values: <code>True</code> and <code>False</code>. Note that boolean values are <em>not</em> strings!</p>
+<div id="ca170af2" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>True</code></pre>
+</div>
+</div>
+<div id="d8bd487b" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>bool</code></pre>
+</div>
+</div>
+<p>In our current view of Python as an advanced calculator, it may be unclear why such a special data type is needed. We will find soon that it is very useful to have a special data type to represent whether something is true or false.</p>
+</section>
+<section id="typecasting" class="level2">
+<h2 class="anchored" data-anchor-id="typecasting">Typecasting</h2>
+<p>We can also <strong>typecast</strong>, or convert values between data types. These typecasting functions take in one typed argument and return another typed argument, then return that value as a different type. The function name is generally the type. Note that data type conversion is only valid “when it makes sense.” We’ll talk about this more later.</p>
+<div id="f3da2dd8" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">3</span>       <span class="co"># what type is x?</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">str</span>(x)      <span class="co"># returns a value of type string</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>'3'</code></pre>
+</div>
+</div>
+<div id="ccf84556" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">"5"</span>       <span class="co"># what type is x?</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">float</span>(s)      <span class="co"># what type is returned?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>5.0</code></pre>
+</div>
+</div>
+</section>
+<section id="external-reading" class="level2">
+<h2 class="anchored" data-anchor-id="external-reading">External Reading</h2>
+<ul>
+<li>(mentioned in notes) <em>Computational and Inferential Thinking</em>, <a href="https://inferentialthinking.com/chapters/04/Data_Types.html">Ch 4 intro</a>, <a href="https://inferentialthinking.com/chapters/04/1/Numbers.html">Ch 4.1</a>, <a href="https://inferentialthinking.com/chapters/04/2/Strings.html">Ch 4.2</a></li>
+<li>(optional) Tomas Beuzen. <em>Python Programming for Data Science</em> <a href="https://www.tomasbeuzen.com/python-programming-for-data-science/chapters/chapter1-basics.html#basic-python-data-types">Ch 1.2</a>.</li>
+</ul>
 
 
 </section>
@@ -707,11 +881,14 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./04-variables/none-print.html" class="pagination-link" aria-label="None and Print">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">None and Print</span>
+      <a href="../01-intro/programming-basics.html" class="pagination-link" aria-label="Programming Basics">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Programming Basics</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../02-datatypes/rates-incidence.html" class="pagination-link" aria-label="Application: Rates and Incidence">
+        <span class="nav-page-text">Application: Rates and Incidence</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -723,7 +900,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page">
+    <a class="nav-link active" href="../index.html" aria-current="page">
 <p>Home / About / License</p>
 </a>
   </li>  
