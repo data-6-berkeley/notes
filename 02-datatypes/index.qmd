@@ -1,0 +1,97 @@
+---
+title: "Data Types"
+subtitle: "int, float, str, bool"
+---
+
+## Numeric Data Types
+::: {.callout-note title="Read _Inferential Thinking_"}
+ Read [Ch 4 intro](https://inferentialthinking.com/chapters/04/Data_Types.html) and [Ch 4.1](https://inferentialthinking.com/chapters/04/1/Numbers.html), which describes in detail how Python evaluates expressions involving **numeric data types**.
+
+ Before continuing, make sure you understand the following:
+
+ * Every value has a type (**data type**), and the built-in type function returns the type of the result of any expression.
+ * In Python, integers are called `int` values. Real numbers are called `float` values. These are flexible but have some computational limitations.
+ * The `type` of an expression is the type of its final value.
+ * When a `float` value is combined with an `int` value using some arithmetic operator, then the result is always a `float` value. 
+:::
+
+
+### Summary of Numeric Operators
+
+You have seen this table before.
+
+|  Operator | Symbol | Example Expression | Expression Value |
+| --- | --- | --- | --- |
+| Addition | `+` | `2 + 3` | 5 |
+| Subtraction | `-` | `15 - 4` | `11` |
+| Multiplication | `*` | `-2 * 9` | `-18` |
+| Division | `/` | `15 / 2` | `7.5` |
+| Integer division | Cuts off remainder | `//` | `15 // 2` | `7` |
+| Remainder/Modulo | `%` | `19 % 3` | `1` <br/> (19 ÷ 3 = 6 Remainder 1) |
+| Exponentiation | `**` | `3 ** 2` | `9` |
+
+: Common Python operators for numeric data types
+
+## Strings
+::: {.callout-note title="Read _Inferential Thinking_"}
+ Read [Ch 4.2](https://inferentialthinking.com/chapters/04/2/Strings.html) which describes the **string data type**.
+
+ Before continuing, make sure you understand the following:
+
+ * A string is a text data type. It can use single quotes or double quotes.
+ * The meaning of an expression depends both upon its structure and the types of values that are being combined.
+:::
+
+ **Concatenation operation**: The `+` operator works differently on string data types. Instead of adding numerically, it "adds textually," which is more formally called **concatenation**:
+
+```{python}
+2 + 3  # addition
+```
+
+```{python}
+'hello' + "donuts"
+```
+
+**Length function**: There is one function not shown above that would be useful to you know, and that is `len(s)`, which takes a string argument and returns its length.
+
+```{python}
+s = "hello world"
+len(s)
+```
+
+## Boolean Data Type
+
+The Boolean data type (`bool`) has exactly two values: `True` and `False`. Note that boolean values are _not_ strings!
+
+```{python}
+b = True
+b
+```
+
+```{python}
+b = False
+type(b)
+```
+
+In our current view of Python as an advanced calculator, it may be unclear why such a special data type is needed. We will find soon that it is very useful to have a special data type to represent whether something is true or false. 
+
+
+## Typecasting
+
+We can also **typecast**, or convert values between data types. These typecasting functions take in one typed argument and return another typed argument, then return that value as a different type. The function name is generally the type. Note that data type conversion is only valid "when it makes sense." We'll talk about this more later.
+
+```{python}
+x = 3       # what type is x?
+str(x)      # returns a value of type string
+```
+
+```{python}
+s = "5"       # what type is x?
+float(s)      # what type is returned?
+```
+
+
+## External Reading
+
+* (mentioned in notes) _Computational and Inferential Thinking_, [Ch 4 intro](https://inferentialthinking.com/chapters/04/Data_Types.html), [Ch 4.1](https://inferentialthinking.com/chapters/04/1/Numbers.html), [Ch 4.2](https://inferentialthinking.com/chapters/04/2/Strings.html)
+* (optional) Tomas Beuzen. _Python Programming for Data Science_ [Ch 1.2](https://www.tomasbeuzen.com/python-programming-for-data-science/chapters/chapter1-basics.html#basic-python-data-types).

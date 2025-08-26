@@ -10,6 +10,10 @@ website:
         href: index.qmd
       - text: GitHub
         href: "https://github.com/data-6-berkeley"
+      - text: Accessibility
+        href: "https://dap.berkeley.edu/get-help/report-web-accessibility-issue"
+      - text: Nondiscrimination
+        href: "https://ophd.berkeley.edu/policies-and-procedures/nondiscrimination-policy-statement"
     background: "dark"
   page-navigation: true
   sidebar:
@@ -17,26 +21,40 @@ website:
     title: "DATA 6 <br><small>Course Notes</small>"
     logo: assets/data6.png
     logo-alt: "Data 6 logo"
+    collapse-level: 1 # doesn't expand next level
     tools:
       - icon: github
         href: https://github.com/data-6-berkeley/notes
     contents:
       - href: index.qmd
         text: Home / About
-      - section: "Unit 1: Introduction"
+      - section: "Lecture 1: Introduction"
+        href: 01-intro/index.qmd
         contents:
-          - href: 01-intro/introduction.qmd
-            text: About this curriculum
+          - href: 01-intro/index.qmd
+            text: "Course Introduction"
           - href: 01-intro/jupyter-notebook.qmd
             text: Jupyter Notebooks
-          - href: 01-intro/programming-basics-1.qmd
-            text: "Programming Basics: I"
-          - href: 01-intro/rates-incidence.qmd
+          - href: 01-intro/programming-basics.qmd
+            text: Programming Basics
+      - section: "Lecture 2: Data Types"
+        href: 02-datatypes/index.qmd
+        contents:
+          - href: 02-datatypes/index.qmd
+            text: "Numeric and String Data Types"
+          - href: 02-datatypes/rates-incidence.qmd
             text: "Application: Rates and Incidence"
-          - href: 01-intro/programming-basics-2.qmd
-            text: "Programming Basics: II"
+      # - section: "Lecture 3: Arrays"
+      #   href: 03-arrays/index.qmd
+      #   contents:
+      #     - href: 03-arrays/index.qmd
+      #       text: "Arrays, NumPy"
+      # - section: "Lecture 4: Variables in Social Science"
+      #   contents:
+      #     - href: 04-variables/none-print.qmd
+      #       text: "None and Print"
       - href: five-things.qmd
-        text: "5 Things to know"
+        text: "5 Things to Know"
 
 format:
   html:

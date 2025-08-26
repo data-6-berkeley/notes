@@ -15,7 +15,7 @@ You must carefully read the instructions provided for each assignment. Read, not
 
 ## 2) Do all the assigned work
 
-This course is a very hands-on course and requires many hours of practical work outside class and lab. It also requires reviewing ALL the learning materials shared in this website and in bCourses. 
+This course is a very hands-on course and requires many hours of practical work outside class and lab. It also requires reviewing ALL the learning materials shared on this website and on the course website. 
 
 It goes without saying that you should do all the assigned work: attend lecture and section, review the practice material discussed in lab, and of course do all HW assignments. Keep in mind that the activities and assignments build upon earlier work. So it's important not to fall behind and avoid leaving gaps along the semester.
 
@@ -55,5 +55,5 @@ As for the last item, please let us know you've been affected by circumstances b
 
 ## Acknowledgments
 
-The original copy of this text is written by Gaston Sanchez, [Stat 133 Spring 2025](https://stat133.berkeley.edu/spring-2025/five-things.html).
+The original version of this text was written by Gaston Sanchez for [Stat 133 Spring 2025](https://stat133.berkeley.edu/spring-2025/five-things.html).
  

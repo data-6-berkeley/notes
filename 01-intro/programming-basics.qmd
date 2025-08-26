@@ -1,9 +1,13 @@
 ---
-title: "Programming Basics I"
-subtitle: "Expressions, Data Types, Style, and Debugging"
+title: "Programming Basics"
+subtitle: "Expressions, Style, and Debugging"
 ---
 
-Let's get programming! This is a challenging set of notes because it involves a lot of terminology up-front---expressions, names, operators, assignments, data types, etc.---to describe the fundamentals of writing Python expressions. Getting a handle on the terminology earlier will make it easier to describe the programming concepts. But it does take some memorization...!
+Let's get programming!
+
+The first goal of this lecture is to demonstrate that **some Python programming is as familiar as using a calculator**, which you have likely used before.
+
+The second goal is to **introduce programming terminology**---expressions, names, assignments, data types, etc. Learning this terminology is like learning grammar; these terms help us describe precisely what our programs are doing. Getting a handle on the terminology earlier will make it easier to describe the programming concepts. But it does take some memorization...!
 
 ::: {.callout-warning title="Read _Inferential Thinking_"}
 An existing text, _Inferential Thinking_, defines the terminology and describes the programming concepts quite well. We reference the text chapters (mainly Chapters 3 and 4) below.
@@ -25,6 +29,20 @@ When our notes reference other texts, we will provide the terminology/ideas that
  * operands
 :::
 
+### Summary of Numeric Operators
+
+|  Operator | Symbol | Example Expression | Expression Value |
+| --- | --- | --- | --- |
+| Addition | `+` | `2 + 3` | 5 |
+| Subtraction | `-` | `15 - 4` | `11` |
+| Multiplication | `*` | `-2 * 9` | `-18` |
+| Division | `/` | `15 / 2` | `7.5` |
+| Integer division | Cuts off remainder | `//` | `15 // 2` | `7` |
+| Remainder/Modulo | `%` | `19 % 3` | `1` <br/> (19 ÷ 3 = 6 Remainder 1) |
+| Exponentiation | `**` | `3 ** 2` | `9` |
+
+: Common Python operators for numeric data types
+
 ## Names and Call Expressions
 
 ::: {.callout-note title="Read _Inferential Thinking_"}
@@ -36,12 +54,14 @@ When our notes reference other texts, we will provide the terminology/ideas that
  * A function is a named operation.
  * A call expression invokes functions: a function is _called_ on _arguments_, the argument values are passed into the function; the function then _returns_ the final value to the larger call expression.
  * In Jupyter Notebooks, placing a `?` after a function name will bring up a built-in description of that function.
+ * Most functions in Python are stored in modules (e.g., `math`) that can be imported via `import` then called with a dot (e.g., `math.log(10)`).
 
  Terminology:
  - name
  - assignment statement
  - function, arguments, return value
  - call expression
+
 :::
 
 One analogy for names is suitcase tags. Consider the following assignment statement:
@@ -65,6 +85,9 @@ x = 1 + 2 * 3 - 4 // 5
 x
 ```
 
+### A note on function calls
+
+We will use the term **function call** interchangeably with **call expression**. You will see why when we talk more about defining our own functions 
 
 ::: {.callout-warning title="Assignment statements are _not_ expressions!"}
 Statements, when executed, do something. Expressions are a type of statement that, when executed, evaluate to values. In Jupyter Notebook code cells, if the last statement in a cell is not an expression, executing that last statement will not produce an output.
@@ -72,50 +95,9 @@ Statements, when executed, do something. Expressions are a type of statement tha
 The first cell above does not end in an expression and therefore does not produce output. The second cell above has two statements; the last one is an expression, which is displayed in the cell output. 
 :::
 
-## Data Types
-
-### Numeric Data Types
-::: {.callout-note title="Read _Inferential Thinking_"}
- Read [Ch 4 intro](https://inferentialthinking.com/chapters/04/Data_Types.html) and [Ch 4.1](https://inferentialthinking.com/chapters/04/1/Numbers.html), which describes in detail how Python evaluates expressions involving **numeric data types**.
-
- Before continuing, make sure you understand the following:
-
- * Every value has a type (**data type**), and the built-in type function returns the type of the result of any expression.
- * In Python, integers are called `int` values. Real numbers are called `float` values. These are flexible but have some computational limitations.
- * The `type` of an expression is the type of its final value.
- * When a `float` value is combined with an `int` value using some arithmetic operator, then the result is always a `float` value. 
-:::
-
-### Strings
-::: {.callout-note title="Read _Inferential Thinking_"}
- Read [Ch 4.2](https://inferentialthinking.com/chapters/04/2/Strings.html) which describes the **string data type**.
-
- Before continuing, make sure you understand the following:
-
- * A string is a text data type. It can use single quotes or double quotes.
- * The meaning of an expression depends both upon its structure and the types of values that are being combined.
-:::
-
- The `+` operator works differently on string data types. Instead of adding numerically, it "adds textually," which is more formally called **concatenation**:
-
-```{python}
-2 + 3  # addition
-```
-
-```{python}
-'hello' + "donuts"
-```
-
-There is one function not shown above that would be useful to you know, and that is `len(s)`, which takes a string argument and returns its length.
-
-```{python}
-s = "hello world"
-len(s)
-```
-
 ## Style and Debugging
 
-You may have noticed by now that Jupyter Notebooks are not just by computers to run code; data scientists also use notebooks to understand the purpose of the code. We'd therefore like to establish two habits early:
+You may have noticed by now that Jupyter Notebooks are not just by computers to run code. Data scientists also use notebooks to understand how the code facilitates data analysis. We'd therefore like to establish two habits early:
 
 ### Programming Style and Comments
 
@@ -149,6 +131,32 @@ Errors in your code can pop up for any number of reasons! Here are some tips:
 
 **Trace your code, but not at the expense of testing.** Code tracing is the process of analyzing Python code, statement by statement and line by line, to understand program execution. This is a visual process and can sometimes be helped along by diagrams. Learning to trace code is learning procedural thinking---it is a key skill that helps break down exactly what your code is doing. Once you get the hang of tracing your code, you may be tempted to debug by just staring at your code---don't do this! Instead, develop a healthy balance between developing an understanding of your code and testing if your code does what you expect.
 
+### Practice with Errors
+
+Try these on for size:
+
+**Syntax errors** are errors in writing "valid" Python that cannot even create nonsensical Python code. 
+```{python}
+#| error: true
+3 ** / 4
+```
+
+Why might the below code *not* error? (Hint: What does `-` represent?)
+
+```{python}
+#| error: true
+9 ** - .5
+```
+
+Once you fix syntax errors, you may still encounter **functionality errors**, which can be errors caused during execution that leads to your program crashing. Here's one common one:
+
+```{python}
+#| error: true
+5 / 0
+```
+
+```
+
 ## Summary
 
 We write code to tell our computer what to do.
@@ -178,3 +186,8 @@ Debugging and good style make good programmers.
 | Exponentiation | `**` | `3 ** 2` | `9` |
 
 : Common Python operators for numeric data types
+
+## External Reading
+
+* (mentioned in notes) _Computational and Inferential Thinking_, [Ch 3.1](https://inferentialthinking.com/chapters/03/1/Expressions.html), [Ch 3.2](https://inferentialthinking.com/chapters/03/2/Names.html), [Ch 3.3](https://inferentialthinking.com/chapters/03/3/Calls.html)
+* (optional) Nick Parlante. _Python Guide_ [Python Math](https://cs.stanford.edu/people/nick/py/python-math.html).

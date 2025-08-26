@@ -1,0 +1,89 @@
+---
+title: "`None` and Print"
+subtitle: "A special data type, and a valuable function"
+---
+
+## `None` type
+
+We have covered a few data types so far. There are  infinitely* many integers, floating point numbers, and strings. (*Actually finite, because of how computers store information. Take CS61C to learn more.)
+
+However, for the `NoneType` data type, there is only one value: `None`.
+
+```{python}
+my_var = None
+type(my_var)
+```
+
+`None` is strange: Cells will not output expressions that evaluate to `None`.
+
+`None` is also referred to as the **null value.**
+
+## The `print` function
+
+The **`print`** function displays values to the screen (in this case, our Jupyter notebook). Each call to `print` displays information on a new line. 
+```{python}
+print(2)
+print("Hello, world!")
+```
+
+`print` lets us to see information about executed statements that are not just the last line of the cell. Could you see why this would be a useful feature for **debugging**?
+
+`print` is ultra-convenient because it can take as many arguments as you want. 
+
+```{python}
+x = 3
+y = 4
+print(x, "+", y, "is equal to", x + y)
+```
+
+Trace through the above program. Do you see how expressions are evaluated before printing?
+
+## Notebooks: Cell Output vs. `print`
+
+Cell output and `print` output seem very closely related:
+* Both evaluate expressions
+* Both display something in the notebook
+
+However, they have subtle differences. We won't expect you to know all of them. Instead, the purpose of this section is to get you used to **tracing programs**, where you closely consider Python's order of execution of each statement, expression, function call, and so on.
+
+Because the `print` output is intended for human view, it displays strings without quotes. Contrast this with the **cell output**, which includes the quotes.
+
+```{python}
+print(2)
+"Hello, world!"
+```
+
+
+### Exercise 1
+This is now super pedantic, but consider the following cells. Can you explain what is happening?
+
+```{python}
+my_var
+```
+
+```{python}
+print(my_var)
+```
+
+::: {.callout-note title="Explanation" collapse="true"}
+When `print` is evaluated as the last line in a cell, it displays the value of the evaluated argument (here, `None`). `print` returns `None`, so the cell does not additionally output anything,
+:::
+
+### Exercise 2
+
+Try this challenge on for size.
+```{python code-line-numbers="true"}
+print(my_var)
+print(3)
+45
+```
+
+::: {.callout-note title="Explanation" collapse="true"}
+Each line explained:
+
+1. Evaluate the first `print` call expression. This prints the value of `my_var` to the screen, which evaluates to `None`. `print` returns `None`, but this second `None` is not output to the sceen because it is not the last line.
+1. Evaluate the second `print` call expression. This prints the value of `3` to the screen. `print` returns `None`, but this second `None` is not output to the sceen because it is not the last line.
+1. Evaluate the third expression, `45`; because it is the last line, output to screen.
+:::
+
+You're thinking like a computer scientist now!
