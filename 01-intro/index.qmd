@@ -6,7 +6,62 @@ subtitle: "UC Berkeley, Data 6"
 
 ## What will I learn in this course?
 
-More soon!
+Consider this class as an application of computational thinking to data science. Naturally, Data Science can cover multiple contexts, and in this one we focus on social science contexts.
+
+Three pillars:
+
+- Computer Science: Computational Thinking
+- Data Science: Exploratory data analysis.
+- Social Science: Computational Social Science
+
+(need to translate into learning objectives, but you get it)
+
+This course can serve as a precursor to a statistics and inference course like Data 8 or as a standalone introduction to computational thinking for social scientists.
+
+## Computational Thinking
+
+### What is it?
+
+- Define computational thinking
+
+Communications of the ACM, Jeanette Wing ([PDF](https://www.cs.cmu.edu/~15110-s13/Wing06-ct.pdf)) and [this follow-up article](https://www.cs.cmu.edu/~CompThink/resources/TheLinkWing.pdf)
+
+> Computational Thinking is the thought processes involved in formulating problems and their solutions so that the solutions are represented in a form that can be effectively carried out by an information-processing agent (Cuny, Snyder, and Wing, 2010).
+
+### Abstraction: A Core Concept
+
+What does this definition mean in the age of data? 
+
+- Define **abstraction**
+
+> "Abstraction gives us the power to scale and deal with complexity." (Wing, 2010)
+
+
+## Exploratory Data Analysis
+
+See Data 8 book: [Chapter 1](https://inferentialthinking.com/chapters/01/what-is-data-science.html)
+
+> Data Science is about drawing useful conclusions from large and diverse data sets through exploration, prediction, and inference. Exploration involves identifying patterns in information. Prediction involves using information we know to make informed guesses about values we wish we knew. Inference involves quantifying our degree of certainty: will the patterns that we found in our data also appear in new observations? How accurate are our predictions? Our primary tools for exploration are visualizations and descriptive statistics, for prediction are machine learning and optimization, and for inference are statistical tests and models.
+
+
+
+From Data 8 ([1.1 Introduction](https://inferentialthinking.com/chapters/01/1/intro.html)):
+
+> Data are descriptions of the world around us, collected through observation and stored on computers. Computers enable us to infer properties of the world from these descriptions. Data science is the discipline of drawing conclusions from data using computation.
+
+
+## Computational Social Science
+
+What does it mean to study social phenomena?
+
+Research methodologies: quantitative data, qualitative data
+
+Most methods contain a mix of both
+
+How 
+Define experiments
+
+In the real world
 
 ## External Reading
 

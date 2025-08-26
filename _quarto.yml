@@ -44,15 +44,15 @@ website:
             text: "Numeric and String Data Types"
           - href: 02-datatypes/rates-incidence.qmd
             text: "Application: Rates and Incidence"
-      # - section: "Lecture 3: Arrays"
-      #   href: 03-arrays/index.qmd
-      #   contents:
-      #     - href: 03-arrays/index.qmd
-      #       text: "Arrays, NumPy"
-      # - section: "Lecture 4: Variables in Social Science"
-      #   contents:
-      #     - href: 04-variables/none-print.qmd
-      #       text: "None and Print"
+      - section: "Lecture 3: Arrays"
+        href: 03-arrays/index.qmd
+        contents:
+          - href: 03-arrays/index.qmd
+            text: "Arrays, NumPy"
+      - section: "Lecture 4: Variables in Social Science"
+        contents:
+          - href: 04-variables/none-print.qmd
+            text: "None and Print"
       - href: five-things.qmd
         text: "5 Things to Know"
 
