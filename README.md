@@ -2,6 +2,11 @@
 
 Course notes for Data 6, based on the Stat course-site-quarto template.
 
+Quick reference:
+- Use VS Code with Quarto extensions to update and preview notes locally.
+- Push changes to quarto source files to `main`.
+- Optional: `quarto render` builds `_site`.
+- `quarto publish gh-pages` to host `_site` on GitHub pages.
 
 ## course-site-quarto
 This repository contains a Quarto-based template for class website. You can see a preview of it at [https://berkeley-cdss.github.io/course-site-quarto](https://berkeley-cdss.github.io/course-site-quarto). This template is intended to be forked and altered for other courses.

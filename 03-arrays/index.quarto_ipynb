@@ -55,7 +55,7 @@
         "\n",
         "Below, we create a new array for the column \"Estimated high school graduate or higher (%)\" and assign the returned array to a single name, `hs_or_higher`. This simple assignment statement is abstraction at work! Also note that the import statement gives us access to array functions with the `datascience` module, including `make_array`, which returns a new array with the provided argument values. "
       ],
-      "id": "43b165ad"
+      "id": "fde4d187"
     },
     {
       "cell_type": "code",
@@ -66,7 +66,7 @@
         "hs_or_higher = make_array(86.9, 83.9, 88.5, 87.2, 84.4)\n",
         "hs_or_higher"
       ],
-      "id": "caa4681e",
+      "id": "00a6e832",
       "execution_count": null,
       "outputs": []
     },
@@ -78,7 +78,7 @@
         "\n",
         "The array data type (as shown below) is a bit esoteric for now; we will discuss what NumPy (`np`) is very soon."
       ],
-      "id": "3acf4016"
+      "id": "d6f86370"
     },
     {
       "cell_type": "code",
@@ -87,7 +87,7 @@
         "bs_or_higher = make_array(26.2, 34.7, 30.5, 37.5, 30.7)\n",
         "type(bs_or_higher)"
       ],
-      "id": "bfa4bec1",
+      "id": "b3323ab7",
       "execution_count": null,
       "outputs": []
     },
@@ -97,7 +97,7 @@
       "source": [
         "When creating the state names array of strings below, what do you observe about the datatype, `dtype`? Hint: Count the number of characters in each string."
       ],
-      "id": "b5e677ed"
+      "id": "7852dcd9"
     },
     {
       "cell_type": "code",
@@ -106,7 +106,7 @@
         "states = make_array(\"Alabama\", \"California\", \"Florida\", \"New York\", \"Texas\")\n",
         "states"
       ],
-      "id": "1dd6642a",
+      "id": "b08a986e",
       "execution_count": null,
       "outputs": []
     },
@@ -116,7 +116,7 @@
       "source": [
         "When creating the state population array below, why might we decide to make an integer array, as opposed to a string array?"
       ],
-      "id": "9cf6e728"
+      "id": "dcd1d117"
     },
     {
       "cell_type": "code",
@@ -125,7 +125,7 @@
         "state_pop = make_array(3344006, 26665143, 15255326, 13649157, 18449851)\n",
         "state_pop"
       ],
-      "id": "36e93157",
+      "id": "6898ae0e",
       "execution_count": null,
       "outputs": []
     },
@@ -138,7 +138,7 @@
         "\n",
         "Array with 4 `int`s:"
       ],
-      "id": "f279e545"
+      "id": "d31b13f9"
     },
     {
       "cell_type": "code",
@@ -146,7 +146,7 @@
       "source": [
         "make_array(5, -1, 0.3, 5)"
       ],
-      "id": "b42f98aa",
+      "id": "e80223b1",
       "execution_count": null,
       "outputs": []
     },
@@ -156,7 +156,7 @@
       "source": [
         "Values in an array must all be of the same data type, and the `make_array` function will cast appropriately. Below, all values can be represented by strings:"
       ],
-      "id": "68c9d13b"
+      "id": "0b9565c3"
     },
     {
       "cell_type": "code",
@@ -164,7 +164,7 @@
       "source": [
         "make_array(4, -4.5, \"not a number\")"
       ],
-      "id": "1d8deb4f",
+      "id": "a56896e5",
       "execution_count": null,
       "outputs": []
     },
@@ -174,7 +174,7 @@
       "source": [
         "Incidentally, we can clean up our code stylistically by makine line breaks after each argument:"
       ],
-      "id": "6606e08d"
+      "id": "4637cdc9"
     },
     {
       "cell_type": "code",
@@ -184,7 +184,7 @@
         "           \"world\",\n",
         "           \"!\")"
       ],
-      "id": "78f22d7f",
+      "id": "ff199fa6",
       "execution_count": null,
       "outputs": []
     },
@@ -200,7 +200,7 @@
         "\n",
         "To compute the estimated percentage by state of adults 25 years or higher that have not graduated high school, we can create a new array by performing arithmetic with an **array and a numeric value**:"
       ],
-      "id": "b32d3f78"
+      "id": "ba9a1d77"
     },
     {
       "cell_type": "code",
@@ -208,7 +208,7 @@
       "source": [
         "100 - hs_or_higher"
       ],
-      "id": "e4de8bd7",
+      "id": "cff1e9a9",
       "execution_count": null,
       "outputs": []
     },
@@ -218,7 +218,7 @@
       "source": [
         "To compute the estimated number by state of adults 25 years or higher with bachelor's degrees, we can create a new array by performing arithmetic with **two arrays**:"
       ],
-      "id": "a66cee80"
+      "id": "834a1130"
     },
     {
       "cell_type": "code",
@@ -226,7 +226,7 @@
       "source": [
         "bs_or_higher / 100 * state_pop"
       ],
-      "id": "d1271318",
+      "id": "01b9a8e8",
       "execution_count": null,
       "outputs": []
     },
@@ -242,7 +242,7 @@
         "\n",
         "In the `int_arr` array below, the first element (`3`) has index 0; the last element (`2`) has index 4."
       ],
-      "id": "bde497c8"
+      "id": "91a81f5a"
     },
     {
       "cell_type": "code",
@@ -251,7 +251,7 @@
         "int_arr = make_array(3, -4, 0, 5, 2)\n",
         "int_arr"
       ],
-      "id": "2f4253ef",
+      "id": "14a57a4b",
       "execution_count": null,
       "outputs": []
     },
@@ -271,7 +271,7 @@
         "\n",
         "We can access an element in an array by using its index and the `item()` method:"
       ],
-      "id": "015ca10b"
+      "id": "8080d002"
     },
     {
       "cell_type": "code",
@@ -279,7 +279,7 @@
       "source": [
         "int_arr.item(0)"
       ],
-      "id": "bf74bb66",
+      "id": "6bec4e86",
       "execution_count": null,
       "outputs": []
     },
@@ -289,7 +289,7 @@
       "source": [
         "int_arr.item(3)"
       ],
-      "id": "6b8d8f37",
+      "id": "b0e8f3e2",
       "execution_count": null,
       "outputs": []
     },
@@ -299,7 +299,7 @@
       "source": [
         "Because of zero-indexing, the largest valid index is 4 for the five-element `int_arr` array:"
       ],
-      "id": "ef3f8118"
+      "id": "a76d2376"
     },
     {
       "cell_type": "code",
@@ -308,7 +308,7 @@
         "#| error: true\n",
         "int_arr.item(5)"
       ],
-      "id": "5c28325b",
+      "id": "082ab77b",
       "execution_count": null,
       "outputs": []
     },
@@ -318,7 +318,7 @@
       "source": [
         "In Python, we can also “count backwards” using **negative indexes**. -1 corresponds to the last element in a array; -2 corresponds to the second last element in a array; and so on."
       ],
-      "id": "74923fd0"
+      "id": "f3324f85"
     },
     {
       "cell_type": "code",
@@ -327,7 +327,7 @@
         "# functionally equivalent to int_arr.item(4)\n",
         "int_arr.item(-1)"
       ],
-      "id": "c25a0d4a",
+      "id": "29a6b910",
       "execution_count": null,
       "outputs": []
     },
@@ -341,7 +341,7 @@
         "\n",
         "Here are some starter arrays to get us going. What are the resulting arrays created?"
       ],
-      "id": "212a2393"
+      "id": "af3a0edb"
     },
     {
       "cell_type": "code",
@@ -351,7 +351,7 @@
         "str_arr = make_array(\"cm\", \"m\", \"in\", \"ft\", \"yd\")\n",
         "empty_arr = make_array() # challenge"
       ],
-      "id": "5f77ef5a",
+      "id": "30926272",
       "execution_count": null,
       "outputs": []
     },
@@ -361,7 +361,7 @@
       "source": [
         "::: {.callout-note title=\"Arrays created\" collapse=\"true\"}"
       ],
-      "id": "8f0b5537"
+      "id": "7a2d6552"
     },
     {
       "cell_type": "code",
@@ -369,7 +369,7 @@
       "source": [
         "int_arr"
       ],
-      "id": "c345972a",
+      "id": "b359b824",
       "execution_count": null,
       "outputs": []
     },
@@ -379,7 +379,7 @@
       "source": [
         "str_arr"
       ],
-      "id": "98109e27",
+      "id": "9f3abe5b",
       "execution_count": null,
       "outputs": []
     },
@@ -389,7 +389,7 @@
       "source": [
         "An **empty** array is one with no elements:"
       ],
-      "id": "d4e33eab"
+      "id": "7058b482"
     },
     {
       "cell_type": "code",
@@ -397,7 +397,7 @@
       "source": [
         "empty_arr"
       ],
-      "id": "f1975a5b",
+      "id": "8b0a8367",
       "execution_count": null,
       "outputs": []
     },
@@ -435,7 +435,7 @@
         "Remember that even though function names can be identical, call expressions can evaluate differently depending on the argument data type.\n",
         " `len(arg)`, for example, returns an integer value indicating the \"length\" of the argument `arg`. If `arg` is a string, it returns the number of characters; if `arg` is an array, it returns the number of elements."
       ],
-      "id": "804d6e25"
+      "id": "6dfded2c"
     },
     {
       "cell_type": "code",
@@ -443,7 +443,7 @@
       "source": [
         "len(str_arr)"
       ],
-      "id": "c0246c17",
+      "id": "7a3bdfe4",
       "execution_count": null,
       "outputs": []
     },
@@ -453,7 +453,7 @@
       "source": [
         "len(str_arr.item(0)) # what is the argument here?"
       ],
-      "id": "0433a63a",
+      "id": "5df019ca",
       "execution_count": null,
       "outputs": []
     },
@@ -474,7 +474,7 @@
         "\n",
         "Let's use these built-in functions to compute the _average_ (_mean_) value of the below array. We will discuss measures of average much later in this course."
       ],
-      "id": "cf17ab91"
+      "id": "60d8f6eb"
     },
     {
       "cell_type": "code",
@@ -484,7 +484,7 @@
         "avg = sum(arr)/len(arr)\n",
         "avg"
       ],
-      "id": "08de8121",
+      "id": "bf0e8cb3",
       "execution_count": null,
       "outputs": []
     },
@@ -499,7 +499,7 @@
         "NumPy (pronounced \"NUM-pie”) is a Python library with convenient and\n",
         "powerful modules and functions for manipulating arrays. Any time we want to use NumPy, we must write an import statement:"
       ],
-      "id": "0d2890f9"
+      "id": "9759e698"
     },
     {
       "cell_type": "code",
@@ -510,7 +510,7 @@
         "arr = make_array(30, -40, -4.5, 0, 35)\n",
         "arr"
       ],
-      "id": "6180b79a",
+      "id": "9b4b59db",
       "execution_count": null,
       "outputs": []
     },
@@ -520,7 +520,7 @@
       "source": [
         "After putting this statement at the top of our notebook, we can then prepend `np.` to call a NumPy function. The below NumPy function call computes averages much more conveniently than our clever (but verbose) expression with built-in function calls, though it still suffers from floating point approximations:"
       ],
-      "id": "f7cca7b6"
+      "id": "480cbe80"
     },
     {
       "cell_type": "code",
@@ -528,7 +528,7 @@
       "source": [
         "np.average(arr)"
       ],
-      "id": "0f916b2f",
+      "id": "fb5bd429",
       "execution_count": null,
       "outputs": []
     },
@@ -573,7 +573,7 @@
         "\n",
         "U.S. Census Bureau, \"EDUCATIONAL ATTAINMENT,\" American Community Survey 5-Year Estimates Subject Tables, Table S1501, 2020, <https://data.census.gov/table/ACSST5Y2020.S1501?q=2020+education&t=Age+and+Sex:Educational+Attainment&g=010XX00US$0400000>, accessed on August 24, 2025."
       ],
-      "id": "06d843a1"
+      "id": "34270472"
     }
   ],
   "metadata": {

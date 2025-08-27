@@ -57,6 +57,7 @@ When our notes reference other texts, we will provide the terminology/ideas that
  * Most functions in Python are stored in modules (e.g., `math`) that can be imported via `import` then called with a dot (e.g., `math.log(10)`).
 
  Terminology:
+
  - name
  - assignment statement
  - function, arguments, return value
@@ -94,6 +95,15 @@ Statements, when executed, do something. Expressions are a type of statement tha
 
 The first cell above does not end in an expression and therefore does not produce output. The second cell above has two statements; the last one is an expression, which is displayed in the cell output. 
 :::
+
+Consider the below Python code:
+
+```{python}
+x = 4
+y = max(-2, 9) + x
+```
+
+Python executes these two statements sequentially: first, Line 1 is an assignment statement that assigns the name `x` to 4. Then, Line 2 assigns the name `y` to the result of evaluating the right-hand-side.
 
 ## Style and Debugging
 
