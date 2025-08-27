@@ -65,8 +65,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../04-variables/none-print.html" rel="next">
-<link href="../02-datatypes/rates-incidence.html" rel="prev">
 <link href="../assets/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -120,148 +118,12 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 
-<body class="nav-sidebar docked quarto-light">
+<body class="quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../03-arrays/index.html">Lecture 3: Arrays</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
-</header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="../index.html" class="sidebar-logo-link">
-      <img src="../assets/data6.png" alt="Data 6 logo" class="sidebar-logo py-0 d-lg-inline d-none">
-      </a>
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">DATA 6 <br><small>Course Notes</small></a> 
-        <div class="sidebar-tools-main">
-    <a href="https://github.com/data-6-berkeley/notes" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
-</div>
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Home / About</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../01-intro/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 1: Introduction</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../01-intro/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Course Introduction</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../01-intro/jupyter-notebook.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Jupyter Notebooks</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../01-intro/programming-basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Programming Basics</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../02-datatypes/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 2: Data Types</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../02-datatypes/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Numeric and String Data Types</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../02-datatypes/rates-incidence.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Application: Rates and Incidence</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../03-arrays/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Lecture 3: Arrays</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../03-arrays/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Arrays, NumPy</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
- <span class="menu-text">Lecture 4: Variables in Social Science</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../04-variables/none-print.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">None and Print</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../five-things.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5 Things to Know</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -399,7 +261,7 @@ Read <em>Inferential Thinking</em>
 <h2 class="anchored" data-anchor-id="creating-arrays">Creating arrays</h2>
 <p>Each of these table columns can be represented by an array.</p>
 <p>Below, we create a new array for the column “Estimated high school graduate or higher (%)” and assign the returned array to a single name, <code>hs_or_higher</code>. This simple assignment statement is abstraction at work! Also note that the import statement gives us access to array functions with the <code>datascience</code> module, including <code>make_array</code>, which returns a new array with the provided argument values.</p>
-<div id="3543b8aa" class="cell" data-execution_count="1">
+<div id="bd747509" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datascience <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>hs_or_higher <span class="op">=</span> make_array(<span class="fl">86.9</span>, <span class="fl">83.9</span>, <span class="fl">88.5</span>, <span class="fl">87.2</span>, <span class="fl">84.4</span>)</span>
@@ -410,7 +272,7 @@ Read <em>Inferential Thinking</em>
 </div>
 <p>Let’s make a few more arrays.</p>
 <p>The array data type (as shown below) is a bit esoteric for now; we will discuss what NumPy (<code>np</code>) is very soon.</p>
-<div id="3ed1f5f2" class="cell" data-execution_count="2">
+<div id="c1fb722e" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>bs_or_higher <span class="op">=</span> make_array(<span class="fl">26.2</span>, <span class="fl">34.7</span>, <span class="fl">30.5</span>, <span class="fl">37.5</span>, <span class="fl">30.7</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(bs_or_higher)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -418,7 +280,7 @@ Read <em>Inferential Thinking</em>
 </div>
 </div>
 <p>When creating the state names array of strings below, what do you observe about the datatype, <code>dtype</code>? Hint: Count the number of characters in each string.</p>
-<div id="1654262d" class="cell" data-execution_count="3">
+<div id="f7732518" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>states <span class="op">=</span> make_array(<span class="st">"Alabama"</span>, <span class="st">"California"</span>, <span class="st">"Florida"</span>, <span class="st">"New York"</span>, <span class="st">"Texas"</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>states</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -427,7 +289,7 @@ Read <em>Inferential Thinking</em>
 </div>
 </div>
 <p>When creating the state population array below, why might we decide to make an integer array, as opposed to a string array?</p>
-<div id="3fea4bb6" class="cell" data-execution_count="4">
+<div id="fce5d111" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>state_pop <span class="op">=</span> make_array(<span class="dv">3344006</span>, <span class="dv">26665143</span>, <span class="dv">15255326</span>, <span class="dv">13649157</span>, <span class="dv">18449851</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>state_pop</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
@@ -448,14 +310,14 @@ More array details
 <div class="callout-body-container callout-body">
 <p>The order of an array is fixed (i.e., they will be arranged in the order specified when building the array), and values can be repeated.</p>
 <p>Array with 4 <code>int</code>s:</p>
-<div id="52043429" class="cell" data-execution_count="5">
+<div id="264906be" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>make_array(<span class="dv">5</span>, <span class="op">-</span><span class="dv">1</span>, <span class="fl">0.3</span>, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>array([ 5. , -1. ,  0.3,  5. ])</code></pre>
 </div>
 </div>
 <p>Values in an array must all be of the same data type, and the <code>make_array</code> function will cast appropriately. Below, all values can be represented by strings:</p>
-<div id="1dc14ea8" class="cell" data-execution_count="6">
+<div id="601fff48" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>make_array(<span class="dv">4</span>, <span class="op">-</span><span class="fl">4.5</span>, <span class="st">"not a number"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>array(['4', '-4.5', 'not a number'],
@@ -463,7 +325,7 @@ More array details
 </div>
 </div>
 <p>Incidentally, we can clean up our code stylistically by makine line breaks after each argument:</p>
-<div id="6a5ba8e3" class="cell" data-execution_count="7">
+<div id="38e775a5" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>make_array(<span class="st">"hello"</span>,</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>           <span class="st">"world"</span>,</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>           <span class="st">"!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -480,14 +342,14 @@ More array details
 <h2 class="anchored" data-anchor-id="element-wise-arithmetic">Element-wise arithmetic</h2>
 <p>Arrays allow us to write code that performs <strong>the same operation on many pieces of data at once</strong>. We can therefore easily use arithmetic operations on elements of numeric arrays where it “makes sense” (see sidenote).</p>
 <p>To compute the estimated percentage by state of adults 25 years or higher that have not graduated high school, we can create a new array by performing arithmetic with an <strong>array and a numeric value</strong>:</p>
-<div id="8410fc45" class="cell" data-execution_count="8">
+<div id="d3abb7e8" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="dv">100</span> <span class="op">-</span> hs_or_higher</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>array([ 13.1,  16.1,  11.5,  12.8,  15.6])</code></pre>
 </div>
 </div>
 <p>To compute the estimated number by state of adults 25 years or higher with bachelor’s degrees, we can create a new array by performing arithmetic with <strong>two arrays</strong>:</p>
-<div id="7b991801" class="cell" data-execution_count="9">
+<div id="b38e5776" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>bs_or_higher <span class="op">/</span> <span class="dv">100</span> <span class="op">*</span> state_pop</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>array([  876129.572,  9252804.621,  4652874.43 ,  5118433.875,  5664104.257])</code></pre>
@@ -499,7 +361,7 @@ More array details
 <h2 class="anchored" data-anchor-id="indexing">Indexing</h2>
 <p>When people stand in a line, each person has a position. Similarly, each <strong>element</strong> (i.e., value) of an array has a position – called its <strong>index</strong>. Python, like many programming languages, is <strong>zero-indexed</strong>. This means that in an array, the first element has index 0, not 1.</p>
 <p>In the <code>int_arr</code> array below, the first element (<code>3</code>) has index 0; the last element (<code>2</code>) has index 4.</p>
-<div id="2557bfcb" class="cell" data-execution_count="10">
+<div id="5006316f" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>int_arr <span class="op">=</span> make_array(<span class="dv">3</span>, <span class="op">-</span><span class="dv">4</span>, <span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">2</span>)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>int_arr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
@@ -512,20 +374,20 @@ More array details
 <pre><code>name_of_array.method(arguments)</code></pre>
 <p>We will discuss many more methods once we introduce tables, but for now let’s learn our first method to index arrays.</p>
 <p>We can access an element in an array by using its index and the <code>item()</code> method:</p>
-<div id="4eac435d" class="cell" data-execution_count="11">
+<div id="69c3a5d9" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>int_arr.item(<span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>3</code></pre>
 </div>
 </div>
-<div id="4ef28684" class="cell" data-execution_count="12">
+<div id="2ac4193e" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>int_arr.item(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>5</code></pre>
 </div>
 </div>
 <p>Because of zero-indexing, the largest valid index is 4 for the five-element <code>int_arr</code> array:</p>
-<div id="cf46fbbe" class="cell" data-execution_count="13">
+<div id="2490d9a9" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>int_arr.item(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
@@ -539,7 +401,7 @@ More array details
 </div>
 </div>
 <p>In Python, we can also “count backwards” using <strong>negative indexes</strong>. -1 corresponds to the last element in a array; -2 corresponds to the second last element in a array; and so on.</p>
-<div id="69095a31" class="cell" data-execution_count="14">
+<div id="58447627" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># functionally equivalent to int_arr.item(4)</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>int_arr.item(<span class="op">-</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
@@ -552,7 +414,7 @@ More array details
 <h2 class="anchored" data-anchor-id="array-functions">Array Functions</h2>
 <p>As data scientists we may find it useful to perform operations on arrays beyond simple element-wise arithmetic operations. We can do so via a range of functions from different sources.</p>
 <p>Here are some starter arrays to get us going. What are the resulting arrays created?</p>
-<div id="e4124a0f" class="cell" data-execution_count="15">
+<div id="446e289c" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>int_arr <span class="op">=</span> make_array(<span class="dv">3</span>, <span class="op">-</span><span class="dv">4</span>, <span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">2</span>)</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>str_arr <span class="op">=</span> make_array(<span class="st">"cm"</span>, <span class="st">"m"</span>, <span class="st">"in"</span>, <span class="st">"ft"</span>, <span class="st">"yd"</span>)</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>empty_arr <span class="op">=</span> make_array() <span class="co"># challenge</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -569,13 +431,13 @@ Arrays created
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="5862aa35" class="cell" data-execution_count="16">
+<div id="bceec781" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>int_arr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>array([ 3, -4,  0,  5,  2])</code></pre>
 </div>
 </div>
-<div id="8eaa4770" class="cell" data-execution_count="17">
+<div id="147d0d68" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>str_arr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <pre><code>array(['cm', 'm', 'in', 'ft', 'yd'],
@@ -583,7 +445,7 @@ Arrays created
 </div>
 </div>
 <p>An <strong>empty</strong> array is one with no elements:</p>
-<div id="b62287fc" class="cell" data-execution_count="18">
+<div id="689444f6" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>empty_arr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>array([], dtype=float64)</code></pre>
@@ -647,13 +509,13 @@ Note 1: Argument data types
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Remember that even though function names can be identical, call expressions can evaluate differently depending on the argument data type. <code>len(arg)</code>, for example, returns an integer value indicating the “length” of the argument <code>arg</code>. If <code>arg</code> is a string, it returns the number of characters; if <code>arg</code> is an array, it returns the number of elements.</p>
-<div id="ec59b520" class="cell" data-execution_count="19">
+<div id="38946c23" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(str_arr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
 <pre><code>5</code></pre>
 </div>
 </div>
-<div id="6a092acd" class="cell" data-execution_count="20">
+<div id="10c7cdf9" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(str_arr.item(<span class="dv">0</span>)) <span class="co"># what is the argument here?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>2</code></pre>
@@ -681,7 +543,7 @@ Note 2: Expressions with string arrays
 </div>
 </div>
 <p>Let’s use these built-in functions to compute the <em>average</em> (<em>mean</em>) value of the below array. We will discuss measures of average much later in this course.</p>
-<div id="51bd83d4" class="cell" data-execution_count="21">
+<div id="02f39510" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> make_array(<span class="dv">30</span>, <span class="op">-</span><span class="dv">40</span>, <span class="op">-</span><span class="fl">4.5</span>, <span class="dv">0</span>, <span class="dv">35</span>)</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>avg <span class="op">=</span> <span class="bu">sum</span>(arr)<span class="op">/</span><span class="bu">len</span>(arr)</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>avg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -694,7 +556,7 @@ Note 2: Expressions with string arrays
 <section id="numpy-functions" class="level3">
 <h3 class="anchored" data-anchor-id="numpy-functions">NumPy functions</h3>
 <p>NumPy (pronounced “NUM-pie”) is a Python library with convenient and powerful modules and functions for manipulating arrays. Any time we want to use NumPy, we must write an import statement:</p>
-<div id="b5e30e72" class="cell" data-execution_count="22">
+<div id="224556ef" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> make_array(<span class="dv">30</span>, <span class="op">-</span><span class="dv">40</span>, <span class="op">-</span><span class="fl">4.5</span>, <span class="dv">0</span>, <span class="dv">35</span>)</span>
@@ -704,7 +566,7 @@ Note 2: Expressions with string arrays
 </div>
 </div>
 <p>After putting this statement at the top of our notebook, we can then prepend <code>np.</code> to call a NumPy function. The below NumPy function call computes averages much more conveniently than our clever (but verbose) expression with built-in function calls, though it still suffers from floating point approximations:</p>
-<div id="738bc9ba" class="cell" data-execution_count="23">
+<div id="fff4e636" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>np.average(arr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
 <pre><code>4.0999999999999996</code></pre>
@@ -1192,18 +1054,6 @@ Note 2: Expressions with string arrays
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../02-datatypes/rates-incidence.html" class="pagination-link" aria-label="Application: Rates and Incidence">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Application: Rates and Incidence</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../04-variables/none-print.html" class="pagination-link" aria-label="None and Print">
-        <span class="nav-page-text">None and Print</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -1213,7 +1063,7 @@ Note 2: Expressions with string arrays
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link active" href="../index.html" aria-current="page">
+    <a class="nav-link" href="../index.html">
 <p>Home / About / License</p>
 </a>
   </li>  
