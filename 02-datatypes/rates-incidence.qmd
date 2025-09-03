@@ -18,7 +18,7 @@ We will expand on this definition of table over the next few lectures.
 
 ### Rates
 
-A **rate** is a measure of one quantity per unit of some other quantity. A few examples: 6 miles per hour, 70%, 4.8 parts per million. Rates are often expressed as a percentage, fraction with a numerator and a denominator, or a decimal number.
+A **rate** is a measure of one quantity per unit of some other quantity. A few examples: 6 miles per hour, 4.8 parts per million. Rates are often expressed as a percentage, fraction with a numerator and a denominator, or a decimal number.
 
 Data scientists often use and define rates to compare different situations or events. For example, it is easy to compare 60 mph to 40 mph, but harder to compare 15 mph to 10 km/s. Occasionally, it's unclear why a rate is necessary until we dig into the data. Let's inspect a particular case below.
 
@@ -132,7 +132,7 @@ Here are the population estimates for the corresponding years, sourced from the 
 
 
 
-Let's use @eq-p100k compute TB incidence in the U.S. in 2020:
+Let's use @eq-p100k to compute TB incidence in the U.S. in 2020:
 
 ```{python}
 7173 / 331501080 * 100000
