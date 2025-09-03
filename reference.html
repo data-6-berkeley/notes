@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>🐍 Data 6 Python Reference</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./five-things.html" rel="next">
+<link href="./02-datatypes/rates-incidence.html" rel="prev">
+<link href="./assets/favicon.ico" rel="icon">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-753e6901f2c274e22bcfe03890f74e5f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-CES9J82GLL"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
+</script>
+<!--<script async src=”https://siteimproveanalytics.com/js/siteanalyze_6294756.js”></script>-->
+
+
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./reference.html">Data 6 Python Reference</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./assets/data6.png" alt="Data 6 logo" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">DATA 6 <br><small>Course Notes</small></a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/data-6-berkeley/notes" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home / About</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./01-intro/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 1: Introduction</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-intro/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-intro/jupyter-notebook.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Jupyter Notebooks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-intro/programming-basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programming Basics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./02-datatypes/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 2: Data Types</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-datatypes/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Numeric and String Data Types</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-datatypes/rates-incidence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application: Rates and Incidence</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./reference.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Data 6 Python Reference</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./five-things.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5 Things to Know</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#understanding-this-documentation-page" id="toc-understanding-this-documentation-page" class="nav-link active" data-scroll-target="#understanding-this-documentation-page">Understanding This Documentation Page</a>
+  <ul class="collapse">
+  <li><a href="#the-anatomy-of-a-function" id="toc-the-anatomy-of-a-function" class="nav-link" data-scroll-target="#the-anatomy-of-a-function">The Anatomy of a Function</a></li>
+  <li><a href="#how-to-read-these-tables" id="toc-how-to-read-these-tables" class="nav-link" data-scroll-target="#how-to-read-these-tables">How to Read These Tables</a></li>
+  </ul></li>
+  <li><a href="#built-in-python-functions" id="toc-built-in-python-functions" class="nav-link" data-scroll-target="#built-in-python-functions">Built-In Python Functions</a></li>
+  <li><a href="#numpy-array-functions" id="toc-numpy-array-functions" class="nav-link" data-scroll-target="#numpy-array-functions">NumPy Array Functions</a></li>
+  <li><a href="#string-methods" id="toc-string-methods" class="nav-link" data-scroll-target="#string-methods">String Methods</a></li>
+  <li><a href="#tables-and-table-methods" id="toc-tables-and-table-methods" class="nav-link" data-scroll-target="#tables-and-table-methods">Tables and Table Methods</a></li>
+  <li><a href="#visualization-functions" id="toc-visualization-functions" class="nav-link" data-scroll-target="#visualization-functions">Visualization Functions</a></li>
+  <li><a href="#table.where-predicates" id="toc-table.where-predicates" class="nav-link" data-scroll-target="#table.where-predicates">Table.where Predicates</a></li>
+  <li><a href="#more-documentation" id="toc-more-documentation" class="nav-link" data-scroll-target="#more-documentation">More Documentation</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">🐍 Data 6 Python Reference</h1>
+<p class="subtitle lead">Python Reference Guide</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="understanding-this-documentation-page" class="level2">
+<h2 class="anchored" data-anchor-id="understanding-this-documentation-page">Understanding This Documentation Page</h2>
+<p>If you’re new to reading documentation, looking at this page might feel a little overwhelming, but don’t worry — the point of this class is <strong>not to memorize</strong> all of these functions or their arguments. For exams and quizzes, you will be provided with a reference sheet that contains all of the functions you may need on the exam.</p>
+<p>However, we do expect you to understand how to use this Python Reference to understand new functions, and to help with debugging when things go wrong. Learning how to read and understand documentation is a key to becoming a good data scientist. In fact, even course staff continue to use the Python Reference to refresh their memory about certain functions.</p>
+<p>Of course, the Python Reference can only provide information about the basics of the functions you’ll use in Data 6. The best knowledge about functions comes from using these functions in code you write in labs or homeworks. If you get stuck when using a certain function, we encourage you to come to office hours or ask a question on Ed.</p>
+<section id="the-anatomy-of-a-function" class="level3">
+<h3 class="anchored" data-anchor-id="the-anatomy-of-a-function">The Anatomy of a Function</h3>
+<div id="014b14bb" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> my_function(num):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> num <span class="op">**</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In the function above, <code>my_function</code> is the name of the function, which takes one argument called <code>num</code>. The data type of the input is an <strong>int</strong> or <strong>float</strong>, and the function returns the number raised to the power 3, which is also an <strong>int</strong> or <strong>float</strong>.</p>
+</section>
+<section id="how-to-read-these-tables" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-read-these-tables">How to Read These Tables</h3>
+<ul>
+<li>The <strong>Function</strong> column tells you how to call the function and what arguments it accepts. Everything written in <code>this font</code> is code or refers to a particular argument in the function (e.g.&nbsp;<code>num</code> in <code>np.sqrt(num)</code>).</li>
+<li>The <strong>Description</strong> column gives you a brief description of what the function does, including what each argument is used for</li>
+<li>The <strong>Input</strong> column tells you what data type each argument needs to be. If you’re getting a <code>TypeError</code>, it might be because your inputs are of the wrong type. Data types are indicated in bold (e.g.&nbsp;<strong>string</strong> or <strong>Table</strong>).</li>
+<li>The <strong>Output</strong> column tells you what the function returns and what data type it is.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="built-in-python-functions" class="level2">
+<h2 class="anchored" data-anchor-id="built-in-python-functions">Built-In Python Functions</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 37%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Function</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Input</strong></th>
+<th><strong>Output</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>str(val)</code></td>
+<td>Converts <code>val</code> to a string</td>
+<td>A value of any type (<strong>int</strong>, <strong>float</strong>, <strong>NoneType</strong>, etc.)</td>
+<td>The value as a <strong>string</strong></td>
+</tr>
+<tr class="even">
+<td><code>int(num)</code></td>
+<td>Converts <code>num</code> to an int</td>
+<td>A numerical value (represented as a <strong>string</strong> or <strong>float</strong>)</td>
+<td>The value as an <strong>int</strong></td>
+</tr>
+<tr class="odd">
+<td><code>float(num)</code></td>
+<td>Converts <code>num</code> to a float</td>
+<td>A numerical value (represented as a <strong>string</strong> or <strong>int</strong>)</td>
+<td>The value as a <strong>float</strong></td>
+</tr>
+<tr class="even">
+<td><code>len(arr)</code></td>
+<td>Returns the length of <code>arr</code></td>
+<td><strong>array</strong> or <strong>list</strong></td>
+<td><strong>int</strong>: the length of the array or list</td>
+</tr>
+<tr class="odd">
+<td><code>max(arr)</code></td>
+<td>Returns the maximum value in <code>arr</code></td>
+<td><strong>array</strong> or <strong>list</strong></td>
+<td>The maximum value the array (usually an <strong>int</strong>)</td>
+</tr>
+<tr class="even">
+<td><code>min(arr)</code></td>
+<td>Returns the minimum value in <code>arr</code></td>
+<td><strong>array</strong> or <strong>list</strong></td>
+<td>The minimum value the array (usually an <strong>int</strong>)</td>
+</tr>
+<tr class="odd">
+<td><code>sum(arr)</code></td>
+<td>Returns the sum of the values in <code>arr</code></td>
+<td><strong>array</strong> or <strong>list</strong></td>
+<td><strong>int</strong> or <strong>float</strong>: the sum of the values in the array</td>
+</tr>
+<tr class="even">
+<td><code>abs(num)</code></td>
+<td>Returns the absolute value of <code>num</code></td>
+<td><strong>int</strong> or <strong>float</strong></td>
+<td><strong>int</strong> or <strong>float</strong></td>
+</tr>
+<tr class="odd">
+<td><code>print(input, ...)</code></td>
+<td>Prints the <code>input</code>. Multiple inputs can be passed, and they will be separated by spaces by default.</td>
+<td><strong>input</strong>: any inputs to print <br></td>
+<td><strong>None</strong></td>
+</tr>
+<tr class="even">
+<td><code>type(object)</code></td>
+<td>Returns the type of <code>object</code>.</td>
+<td><strong>object</strong>: the object whose type is to be determined</td>
+<td><strong>type</strong>: the type of the object</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="numpy-array-functions" class="level2">
+<h2 class="anchored" data-anchor-id="numpy-array-functions">NumPy Array Functions</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 37%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Function</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Input</strong></th>
+<th><strong>Output</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>make_array(val1, val2, ...)</code></td>
+<td>Makes a NumPy array with the inputted values</td>
+<td>A sequence of values</td>
+<td>An <strong>array</strong> with those values</td>
+</tr>
+<tr class="even">
+<td><code>np.mean(arr)</code> or <code>np.average(arr)</code></td>
+<td>Calculates the average value of <code>arr</code></td>
+<td>An <strong>array</strong> of numbers</td>
+<td><strong>float</strong>: The average of the array</td>
+</tr>
+<tr class="odd">
+<td><code>np.sum(arr)</code></td>
+<td>Returns the sum of the values in <code>arr</code></td>
+<td><strong>array</strong></td>
+<td><strong>int</strong> or <strong>float</strong>: the sum of the values in the array</td>
+</tr>
+<tr class="even">
+<td><code>np.prod(arr)</code></td>
+<td>Returns the product of the values in <code>arr</code></td>
+<td><strong>array</strong></td>
+<td><strong>int</strong> or <strong>float</strong>: the product of the values in the array</td>
+</tr>
+<tr class="odd">
+<td><code>np.sqrt(num)</code></td>
+<td>Calculates the square root of <code>num</code></td>
+<td><strong>int</strong> or <strong>float</strong></td>
+<td><strong>float</strong> : the square root of the number</td>
+</tr>
+<tr class="even">
+<td><code>np.arange(stop)</code>, <code>np.arange(start, stop)</code>, or <code>np.arange(start, stop, step)</code></td>
+<td>Creates an array of sequential numbers starting at <code>start</code>, going up in increments of <code>step</code>, and going up to but excluding <code>stop</code>. Default <code>start</code> is 0, default <code>step</code> is 1</td>
+<td><strong>int</strong> or <strong>float</strong></td>
+<td><strong>array</strong></td>
+</tr>
+<tr class="odd">
+<td><code>np.count_nonzero(arr)</code></td>
+<td>Returns the number of non-zero (or <code>True</code>) elements in an array</td>
+<td>An <strong>array</strong> of values</td>
+<td><strong>int</strong>: the number of non-zero values in <code>arr</code></td>
+</tr>
+<tr class="even">
+<td><code>np.append(arr, item)</code></td>
+<td>Appends <code>item</code> to the end of <code>arr</code>. Does not modify the original array.</td>
+<td>1. <strong>array</strong> to append to <br> 2. item to append (any type)</td>
+<td><strong>array</strong>: a new array with the appended item</td>
+</tr>
+<tr class="odd">
+<td><code>np.cumsum(arr)</code></td>
+<td>Returns the cumulative sum of the elements in <code>arr</code>, where each element is the sum of all preceding elements including itself</td>
+<td><strong>array</strong></td>
+<td><strong>array</strong>: the cumulative sum of the values in the array</td>
+</tr>
+<tr class="even">
+<td><code>np.diff(arr)</code></td>
+<td>Computes the difference between consecutive elements in <code>arr</code>.</td>
+<td><strong>array</strong></td>
+<td><strong>array</strong>: the differences between consecutive elements in the array containing <code>len(arr) - 1</code> elements</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="string-methods" class="level2">
+<h2 class="anchored" data-anchor-id="string-methods">String Methods</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 37%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Function</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Input</strong></th>
+<th><strong>Output</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>str.split(separator, maxsplit)</code></td>
+<td>Splits <code>str</code> into a list of substrings using the specified <code>separator</code>. If <code>separator</code> is not provided, splits at any whitespace. You can also use the optional argument <code>maxsplit</code> to limit the number of splits.</td>
+<td>1. (Optional) <strong>separator</strong>: the delimiter used to split <code>str</code> <br> 2. (Optional) <strong>maxsplit</strong>: maximum number of splits</td>
+<td><strong>list</strong> of substrings</td>
+</tr>
+<tr class="even">
+<td><code>str.join(iterable)</code></td>
+<td>Concatenates the elements in <code>iterable</code> (usually a list or array) into a single string, with each element separated by <code>str</code>.</td>
+<td><strong>iterable</strong>: an iterable of strings to join (can be an array or list of strings)</td>
+<td><strong>string</strong>: a single string formed by joining the elements of <code>iterable</code> with the separator <code>str</code></td>
+</tr>
+<tr class="odd">
+<td><code>str.replace(old, new)</code></td>
+<td>Returns a copy of the string with all occurrences of the substring <code>old</code> replaced by <code>new</code>.</td>
+<td><code>old</code>: the substring to be replaced. <br> <code>new</code>: the substring to replace <code>old</code> with.</td>
+<td>string: a new string where occurrences of <code>old</code> have been replaced by <code>new</code>.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tables-and-table-methods" class="level2">
+<h2 class="anchored" data-anchor-id="tables-and-table-methods">Tables and Table Methods</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><strong>Function</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Input</strong></th>
+<th><strong>Output</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Table()</code></td>
+<td>Creates an empty table, usually to extend with data</td>
+<td>None</td>
+<td>An empty <strong>Table</strong></td>
+</tr>
+<tr class="even">
+<td><code>Table().read_table(filename)</code></td>
+<td>Create a table from a data file</td>
+<td><strong>string</strong>: the name of the file</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>tbl.with_column(name, values)</code> or <code>tbl.with_columns(n1, v1, n2, v2, ...)</code></td>
+<td>Adds an extra column onto <code>tbl</code> with the label <code>name</code> and <code>values</code> as the column values</td>
+<td>1. <strong>string</strong>: name of the new column <br> 2. <strong>array</strong>: values in the column</td>
+<td><strong>Table</strong>: a copy of the original table with the new column(s)</td>
+</tr>
+<tr class="even">
+<td><code>tbl.column(col)</code></td>
+<td>Returns the values in a column in <code>tbl</code></td>
+<td><strong>string</strong> or <strong>int</strong>: the column name or index</td>
+<td><strong>array</strong>: the values in that column</td>
+</tr>
+<tr class="odd">
+<td><code>tbl.num_rows</code></td>
+<td>Compute the number of rows in <code>tbl</code></td>
+<td>None</td>
+<td><strong>int</strong>: the number of rows in the table</td>
+</tr>
+<tr class="even">
+<td><code>tbl.num_columns</code></td>
+<td>Compute the number of columns in <code>tbl</code></td>
+<td>None</td>
+<td><strong>int</strong>: the number of columns in the table</td>
+</tr>
+<tr class="odd">
+<td><code>tbl.labels</code></td>
+<td>Returns the labels in <code>tbl</code></td>
+<td>None</td>
+<td><strong>array</strong>: the names of each column as strings</td>
+</tr>
+<tr class="even">
+<td><code>tbl.select(col1, col2, ...)</code></td>
+<td>Creates a copy of <code>tbl</code> only with the selected columns</td>
+<td><strong>string</strong> or <strong>int</strong>: the column name(s) or index(es) to be included in the table</td>
+<td><strong>Table</strong> with the selected columns</td>
+</tr>
+<tr class="odd">
+<td><code>tbl.drop(col1, col2, ...)</code></td>
+<td>Creates a copy of <code>tbl</code> without the selected columns</td>
+<td><strong>string</strong> or <strong>int</strong>: the column name(s) or index(es) to be dropped from the table</td>
+<td><strong>Table</strong> without the selected columns</td>
+</tr>
+<tr class="even">
+<td><code>tbl.relabeled(old_label, new_label)</code></td>
+<td>Creates a new table, changing the column name specified by <code>old_label</code> to <code>new_label</code>, and leaves the original table unchanged.</td>
+<td>1. <strong>string</strong>: the old column name <br> 2. <strong>string</strong> the new column name</td>
+<td><strong>Table</strong>: a copy of the original table with the changed column name</td>
+</tr>
+<tr class="odd">
+<td><code>tbl.show(n)</code></td>
+<td>Displays the first <code>n</code> rows of <code>tbl</code>. If no argument is specified, the function defaults to showing the entire table</td>
+<td>(Optional) <strong>int</strong>: number of rows to be displayed</td>
+<td>None (table is displayed)</td>
+</tr>
+<tr class="even">
+<td><code>tbl.sort(column_name)</code></td>
+<td>Sorts the rows of <code>tbl</code> by the values in the <code>column_name</code> column. Defaults to ascending order unless the optional argument <code>descending=True</code> is included.</td>
+<td>1. <strong>string</strong> or <strong>int</strong>: name or index of the column to sort <br> 2. (Optional) <code>descending=True</code></td>
+<td><strong>Table</strong>: a copy of the original table with the column sorted</td>
+</tr>
+<tr class="odd">
+<td><code>tbl.where(column, predicate)</code></td>
+<td>Creates a copy of <code>tbl</code> containing only the rows where the value of <code>column</code> matches the <code>predicate</code>. See <code>Table.where</code> predicates below.</td>
+<td>1. <strong>string</strong> or <strong>int</strong>: column name or index <br> 2. <code>are.(...)</code> predicate</td>
+<td><strong>Table</strong>: a copy of the original table with only the rows that match the predicate</td>
+</tr>
+<tr class="even">
+<td><code>tbl.take(row_indices)</code></td>
+<td>Creates a table with only the rows at the given indices. <code>row_indices</code> is either an array of indices or an integer corresponding to one index.</td>
+<td><strong>int</strong> or <strong>array</strong>: indices of rows to be included in the table</td>
+<td><strong>Table</strong>: a copy of the original table with only the rows at the given indices</td>
+</tr>
+<tr class="odd">
+<td><code>tbl.apply(function)</code> or <code>tbl.apply(function, col1, col2, ...)</code></td>
+<td>Returns an <strong>array</strong> of values resulting from applying a function to each item in a column.</td>
+<td>1. <strong>Function</strong>: function to apply to column <br> 2. (Optional) <strong>string</strong> or <strong>int</strong>: the column name(s) or index(es) to apply the function to</td>
+<td><strong>array</strong> containing an element for each value in the original column after applying the function to it</td>
+</tr>
+<tr class="even">
+<td><code>tbl.group(column_or_columns, function)</code></td>
+<td>Groups rows in <code>tbl</code> by unique values or combinations of values in a column(s). Multiple columns must be entered as an array of strings. Values in the other columns are aggregated by count (by default) or the optional argument <code>function</code>. You can visualize the <code>group</code> function <a href="http://data8.org/interactive_table_functions/">here</a>.</td>
+<td>1. <strong>string</strong> or <strong>array of strings</strong>: column(s) on which to group <br> 2. (Optional) <strong>Function</strong>: function to aggregate values in cells (defaults to counting rows)</td>
+<td><strong>Table</strong> a new groupped table</td>
+</tr>
+<tr class="odd">
+<td><code>tbl.pivot(col1, col2)</code> or <code>tbl.pivot(col1, col2, values, collect)</code></td>
+<td>Creates a pivot table where each unique value in <code>col1</code> has its own column and each unique value in <code>col2</code> has its own row. Counts or aggregates values from a third column, collected with some function. If the <code>values</code> and <code>collect</code> arguments are not included, <code>pivot</code> defaults to returning counts in the cells. You can visualize the <code>pivot</code> function <a href="http://data8.org/interactive_table_functions/">here</a>.</td>
+<td>1. <strong>string</strong>: name of the column in <code>tbl</code> whose unique values will make up the columns of the pivot table <br> 2. <strong>string</strong>: name of column in <code>tbl</code> whose unique values will make up the rows of the pivot table <br> 3. (Optional) <strong>string</strong>: name of the column in <code>tbl</code> that describes the values of cells in the pivot table <br> 4. (Optional) <strong>Function</strong>: how the values are collected (e.g.&nbsp;<code>sum</code> or <code>np.mean</code>)</td>
+<td><strong>Table</strong>: a new pivot table</td>
+</tr>
+<tr class="even">
+<td><code>tblA.join(colA, tblB)</code> or <code>tblA.join(colA, tblB, colB)</code></td>
+<td>Generate a table with the columns of <code>tblA</code> and <code>tblB</code>, containing rows for all values in <code>colA</code> and <code>colB</code> that appear in <code>tblA</code> and <code>tblB</code>, respectively. By default, <code>colB</code> is the same value as <code>colA</code>. <code>colA</code> and <code>colB</code> must be strings specifying column names.</td>
+<td>1. <strong>string</strong>: name of column in <code>tblA</code> with values to join on <br> 2. <strong>Table</strong>: the other table <br> 3. (Optional) <strong>string</strong>: the name of the shared column in <code>tblB</code>, if column names are different between the tables</td>
+<td><strong>Table</strong>: a new combined table</td>
+</tr>
+<tr class="odd">
+<td><code>tbl.with_row(values)</code></td>
+<td>Adds a new row with the specified <code>values</code> to <code>tbl</code></td>
+<td>1. <strong>list</strong> or <strong>array</strong>: values to add as a new row</td>
+<td><strong>Table</strong>: a copy of the original table with the new row</td>
+</tr>
+<tr class="even">
+<td><code>tbl.with_rows(list_of_rows)</code></td>
+<td>Adds multiple rows to <code>tbl</code> using a list of rows</td>
+<td>1. <strong>list</strong> of <strong>lists</strong> or <strong>arrays</strong>: each list/array represents a new row</td>
+<td><strong>Table</strong>: a copy of the original table with the new rows</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="visualization-functions" class="level2">
+<h2 class="anchored" data-anchor-id="visualization-functions">Visualization Functions</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 42%">
+<col style="width: 21%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Function</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Input</strong></th>
+<th><strong>Output</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>tbl.barh(categories)</code> or <code>tbl.barh(categories, values)</code></td>
+<td>Displays a horizontal bar chart with bars for each category in the column <code>categories</code>. <code>values</code> specifies the column corresponding to the size of each bar, but is unnecessary if the table only has two columns. Optional argument <code>overlay</code> (default is <code>True</code>) specifies whether grouped bar charts should be overlaid or on separate plots.</td>
+<td>1. <strong>string</strong>: name of the column with categories <br> 2. (Optional) <strong>string</strong>: name of the column with values corresponding to the categories</td>
+<td>None: draws a bar chart</td>
+</tr>
+<tr class="even">
+<td><code>tbl.hist(column)</code></td>
+<td>Generates a histogram of the numerical values in <code>column</code>. Optional arguments <code>group</code> (to specify categorical column to group on), <code>bins</code> (to specify custom bins), and <code>overlay</code> to specify overlaid or separate histograms.</td>
+<td><strong>string</strong>: name of the column</td>
+<td>None: draws a histogram</td>
+</tr>
+<tr class="odd">
+<td><code>tbl.plot(x_column, y_column)</code> or <code>tbl.plot(x_column)</code></td>
+<td>Draws a line plot consisting of one point for each row in <code>tbl</code>. If only <code>x_column</code> is specified, <code>plot</code> will plot the rest of the columns on the y-axis with different colored lines. Optional argument <code>overlay</code> (default is <code>True</code>) specifies whether multiple lines should be overlaid or on separate plots.</td>
+<td>1. <strong>string</strong>: name of the column on the x-axis <br> 2. <strong>string</strong>: name of the column on the y-axis</td>
+<td>None: draws a line graph</td>
+</tr>
+<tr class="even">
+<td><code>tbl.scatter(x_column, y_column)</code></td>
+<td>Draws a scatter plot consisting of one point for each row in <code>tbl</code>. The optional argument <code>fit_line=True</code> can be included to draw a line of best fit through the scatter plot. The optional arguments <code>group</code> (to specify categorical column to group on) and <code>sizes</code> (to specify a numerical column for bubble sizes) can also be used to encode additional variables.</td>
+<td>1. <strong>string</strong>: name of the column on the x-axis <br> 2. <strong>string</strong>: name of the column on the y-axis <br> 3. (Optional) <code>fit_line=True</code></td>
+<td>None: draws a scatter plot</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="table.where-predicates" class="level2">
+<h2 class="anchored" data-anchor-id="table.where-predicates">Table.where Predicates</h2>
+<p>These functions can be passed in as the second argument to <code>tbl.where(..)</code> and act as a condition by which to select rows from <code>tbl</code>.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Predicate</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>are.equal_to(Z)</code></td>
+<td>Equal to <code>Z</code> (can be an <strong>int</strong>, <strong>float</strong> or <strong>string</strong>)</td>
+</tr>
+<tr class="even">
+<td><code>are.not_equal_to(Z)</code></td>
+<td>Not equal to ‘Z’ can be a number (<strong>int</strong> or <strong>float</strong>) or a <strong>string</strong>)</td>
+</tr>
+<tr class="odd">
+<td><code>are.above(x)</code></td>
+<td>Greater than <code>x</code></td>
+</tr>
+<tr class="even">
+<td><code>are.above_or_equal_to(x)</code></td>
+<td>Greater than or equal to <code>x</code></td>
+</tr>
+<tr class="odd">
+<td><code>are.below(x)</code></td>
+<td>Less than <code>x</code></td>
+</tr>
+<tr class="even">
+<td><code>are.below_or_equal_to(x)</code></td>
+<td>Less than or equal to <code>x</code></td>
+</tr>
+<tr class="odd">
+<td><code>are.between(x,y)</code></td>
+<td>Greater than or equal to <code>x</code> and less than <code>y</code></td>
+</tr>
+<tr class="even">
+<td><code>are.between_or_equal_to(x,y)</code></td>
+<td>Greater than or equal to <code>x</code>, and less than or equal to <code>y</code></td>
+</tr>
+<tr class="odd">
+<td><code>are.strictly_between(x,y)</code></td>
+<td>Greater than <code>x</code> and less than <code>y</code></td>
+</tr>
+<tr class="even">
+<td><code>are.contained_in(A)</code></td>
+<td>True if it is a substring of <code>A</code> (if <code>A</code> is a <strong>string</strong>) or an element of <code>A</code> (if <code>A</code> is an <strong>array</strong>)</td>
+</tr>
+<tr class="odd">
+<td><code>are.containing(S)</code></td>
+<td>Contains the string <code>S</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="more-documentation" class="level2">
+<h2 class="anchored" data-anchor-id="more-documentation">More Documentation</h2>
+<p>The Data 6 Python reference guide is based on the Data 8 <a href="https://www.data8.org/sp25/reference/">Python Reference</a>. More detailed Python documentation is available <a href="https://docs.python.org/3/">here</a>.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/data-6-berkeley\.github\.io\/notes\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./02-datatypes/rates-incidence.html" class="pagination-link" aria-label="Application: Rates and Incidence">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Application: Rates and Incidence</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./five-things.html" class="pagination-link" aria-label="5 Things to Know">
+        <span class="nav-page-text">5 Things to Know</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page">
+<p>Home / About / License</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://github.com/data-6-berkeley">
+<p>GitHub</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://dap.berkeley.edu/get-help/report-web-accessibility-issue">
+<p>Accessibility</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://ophd.berkeley.edu/policies-and-procedures/nondiscrimination-policy-statement">
+<p>Nondiscrimination</p>
+</a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
