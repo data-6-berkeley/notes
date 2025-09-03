@@ -1,0 +1,189 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"`None` and Print\"\n",
+        "subtitle: \"A special data type, and a valuable function\"\n",
+        "---\n",
+        "\n",
+        "## `None` type\n",
+        "\n",
+        "We have covered a few data types so far. There are  infinitely* many integers, floating point numbers, and strings. (*Actually finite, because of how computers store information. Take CS61C to learn more.)\n",
+        "\n",
+        "However, for the `NoneType` data type, there is only one value: `None`."
+      ],
+      "id": "16b29925"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "my_var = None\n",
+        "type(my_var)"
+      ],
+      "id": "151cfa33",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "`None` is strange: Cells will not output expressions that evaluate to `None`.\n",
+        "\n",
+        "`None` is also referred to as the **null value.**\n",
+        "\n",
+        "## The `print` function\n",
+        "\n",
+        "The **`print`** function displays values to the screen (in this case, our Jupyter notebook). Each call to `print` displays information on a new line. "
+      ],
+      "id": "b82e0250"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "print(2)\n",
+        "print(\"Hello, world!\")"
+      ],
+      "id": "bd0104a4",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "`print` lets us to see information about executed statements that are not just the last line of the cell. Could you see why this would be a useful feature for **debugging**?\n",
+        "\n",
+        "`print` is ultra-convenient because it can take as many arguments as you want. "
+      ],
+      "id": "52ce749a"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "x = 3\n",
+        "y = 4\n",
+        "print(x, \"+\", y, \"is equal to\", x + y)"
+      ],
+      "id": "d312f491",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Trace through the above program. Do you see how expressions are evaluated before printing?\n",
+        "\n",
+        "## Notebooks: Cell Output vs. `print`\n",
+        "\n",
+        "Cell output and `print` output seem very closely related:\n",
+        "* Both evaluate expressions\n",
+        "* Both display something in the notebook\n",
+        "\n",
+        "However, they have subtle differences. We won't expect you to know all of them. Instead, the purpose of this section is to get you used to **tracing programs**, where you closely consider Python's order of execution of each statement, expression, function call, and so on.\n",
+        "\n",
+        "Because the `print` output is intended for human view, it displays strings without quotes. Contrast this with the **cell output**, which includes the quotes."
+      ],
+      "id": "7d89650e"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "print(2)\n",
+        "\"Hello, world!\""
+      ],
+      "id": "33a6d932",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "### Exercise 1\n",
+        "This is now super pedantic, but consider the following cells. Can you explain what is happening?"
+      ],
+      "id": "59ac2cde"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "my_var"
+      ],
+      "id": "9268ca82",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "print(my_var)"
+      ],
+      "id": "e7297db7",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "::: {.callout-note title=\"Explanation\" collapse=\"true\"}\n",
+        "When `print` is evaluated as the last line in a cell, it displays the value of the evaluated argument (here, `None`). `print` returns `None`, so the cell does not additionally output anything,\n",
+        ":::\n",
+        "\n",
+        "### Exercise 2\n",
+        "\n",
+        "Try this challenge on for size."
+      ],
+      "id": "92e7eddc"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "print(my_var)\n",
+        "print(3)\n",
+        "45"
+      ],
+      "id": "f659349f",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "::: {.callout-note title=\"Explanation\" collapse=\"true\"}\n",
+        "Each line explained:\n",
+        "\n",
+        "1. Evaluate the first `print` call expression. This prints the value of `my_var` to the screen, which evaluates to `None`. `print` returns `None`, but this second `None` is not output to the sceen because it is not the last line.\n",
+        "1. Evaluate the second `print` call expression. This prints the value of `3` to the screen. `print` returns `None`, but this second `None` is not output to the sceen because it is not the last line.\n",
+        "1. Evaluate the third expression, `45`; because it is the last line, output to screen.\n",
+        ":::\n",
+        "\n",
+        "You're thinking like a computer scientist now!"
+      ],
+      "id": "cecdfc94"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/Users/yanlisa/Library/Jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

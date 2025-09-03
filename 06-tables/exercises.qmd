@@ -1,0 +1,148 @@
+---
+title: "Table Exercises"
+subtitle: ""
+---
+
+We work with the `schools` table from before.
+
+```{python}
+from datascience import *
+import numpy as np
+
+schools = Table.read_table('data/cal_unis.csv')
+schools
+```
+
+Pull up the Python Reference and try these exercises yourself! They are roughly in order of increasing difficulty.
+
+## Exercise 1: Variable names
+
+How do we get all the column labels of `schools`?
+
+::: {.callout-note collapse="true" title="Show Answer"}
+```{python}
+schools.labels
+```
+:::
+
+## Exercise 2: Reorder columns
+
+How do we reorder the columns to get the following table?
+
+Hint: use one of `select`, `drop`, or `with_columns`.
+
+::: {.callout-note collapse="true" title="Show Answer"}
+```{python}
+schools.select(
+  "Name", "Founded",
+  "Institution", "City",
+  "County", "Enrollment"
+)
+```
+:::
+
+## Exercise 3: Filtering
+
+Let's reset the `schools` table to our original dataset before continuing.
+```{python}
+schools = Table.read_table('data/cal_unis.csv')
+```
+
+::: {.callout-note collapse="true" title="The schools table for reference, if you need it"}
+
+```{python}
+schools
+```
+:::
+
+1. How do we get a table with all of the UC schools?
+
+::: {.callout-note collapse="true" title="Show Answer"}
+
+```{python}
+schools.where("Institution", "UC")
+```
+
+:::
+
+2. How do we get a table with all the schools in Los Angeles?
+
+
+::: {.callout-note collapse="true" title="Show Answer"}
+
+```{python}
+schools.where("City", "Los Angeles")
+```
+
+:::
+
+## Exercise 4: Rename Columns
+
+How do we update `schools` such that the column Name is renamed University? _Hint_: Check out the method `relabeled`.
+
+
+::: {.callout-note collapse="true" title="Show Answer"}
+
+```{python}
+schools = schools.relabeled("Name", "University")
+schools
+```
+
+:::
+
+
+There are many ways to approach a problem. Suppose you didn't know the method `relabeled` existed:
+
+::: {.callout-note collapse="true" title="Alternate Answer"}
+
+
+```{python}
+#| include: false
+schools = Table.read_table('data/cal_unis.csv')
+```
+
+```{python}
+schools = schools.with_column("University", schools.column("Name")).drop("Name")
+schools
+```
+
+Questions for you as you read the above code:
+
+1. What methods are being chained together here? Which is executed first, `with_column` or `drop`?
+1. When is the `column` method being called?
+1. What would happen if you switched the two methods? (try it out)
+1. Why is University now the last column?
+:::
+
+## Exercise 5: Debugging `show`
+
+The following cells exhibit a tricky, but potentially common bug. First, check out the Python Reference to understand what `show` does.
+
+```{python}
+schools = Table.read_table('data/cal_unis.csv')
+```
+
+```{python}
+schools = schools.show(3)
+```
+
+
+```{python}
+#| error: true
+schools = schools.show(4)
+```
+
+Like `print`, show is for display purposes. It does not return anything—i.e., it returns None. The second cell above therefore assigns schools to None!
+
+Despite this, `show`---just like `print`---is useful when you want to display intermediate output for debugging purposes.
+
+```{python}
+schools = Table.read_table('data/cal_unis.csv')
+schools.show(3) # just the first three rows
+schools = schools.relabeled("Name", "University")
+schools.show(3) # and again
+schools = schools.with_columns("Name", "City")
+schools         # the last evaluated value in a cell
+                # is displayed by default
+```
+

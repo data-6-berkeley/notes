@@ -25,13 +25,13 @@ th {
     width: 9%;
 }
 
-td:first-of-type {
+/* td:first-of-type {
     width: 55%;
 }
 
 td:last-of-type {
     width: 20%;
-}
+} */
 
 table {
     border: 2px solid;

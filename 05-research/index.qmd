@@ -1,0 +1,34 @@
+---
+title: "Intro to Social Science Research"
+subtitle: ""
+---
+
+## The Scientific Method
+
+* Theory
+* Hypothesis
+* Data Collection
+* Data Analysis
+* Results
+* (and back)
+
+## Theory vs. Hypothesis
+
+**Theory**: A systematic set of related statements that accord with a worldview.
+
+When (social) scientists do research, we use theories 3 different ways:
+* Theories prevent us from being taken in by flukes.
+* Theories help us make sense of observed patterns in ways that can suggest other possibilities.
+* Theories direct our research efforts, pointing us toward likely discoveries through empirical observation.
+
+Elements of a scientific sociological theory:
+* **Concepts**
+* Relations between concepts
+* Causal mechanisms
+
+**Hypothesis**: The empirical instantiation of a theory, i.e., a testable statement of a relationship involving two concepts.
+* Hypotheses therefore involve **variables**, which are representations that capture the different dimensions, categories, or levels of a concept.
+
+_insert images of concept 1, concept 2, variable 1, variable 2_
+
+

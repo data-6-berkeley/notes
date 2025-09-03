@@ -28,7 +28,7 @@ website:
     contents:
       - href: index.qmd
         text: Home / About
-      - section: "Lecture 1: Introduction"
+      - section: "L01: Introduction"
         href: 01-intro/index.qmd
         contents:
           - href: 01-intro/index.qmd
@@ -37,24 +37,47 @@ website:
             text: Jupyter Notebooks
           - href: 01-intro/programming-basics.qmd
             text: Programming Basics
-      - section: "Lecture 2: Data Types"
+      - section: "L02: Data Types"
         href: 02-datatypes/index.qmd
         contents:
           - href: 02-datatypes/index.qmd
             text: "Numeric and String Data Types"
           - href: 02-datatypes/rates-incidence.qmd
             text: "Application: Rates and Incidence"
-      - section: "Lecture 3: Arrays"
+      - section: "L03: Arrays"
         href: 03-arrays/index.qmd
         contents:
           - href: 03-arrays/index.qmd
             text: "Arrays, NumPy"
-      - section: "Lecture 4: Variables in Social Science"
+      - section: "L04: Variables in Social Science"
+        href: 04-variables/index.qmd
         contents:
+          - href: 04-variables/index.qmd
+            text: "Variables and Variable Types"
+          - href: 04-variables/units-of-analysis.qmd
+            text: "Units of Analysis"
           - href: 04-variables/none-print.qmd
             text: "None and Print"
+      - section: "L05: Research and Design"
+        href: 05-research/index.qmd
+        contents:
+          - href: 05-research/index.qmd
+            text: "The Scientific Method"
+          - href: 05-research/cause-effect.qmd
+            text: "Cause and Effect"
+          - href: 05-research/eda.qmd
+            text: "Exploratory Data Analysis"
+      - section: "L06: Table Fundamentals"
+        href: 06-tables/index.qmd
+        contents:
+          - href: 06-tables/index.qmd
+            text: "Table Fundamentals"
+          - href: 06-tables/exercises.qmd
+            text: "Table Exercises"
       - href: five-things.qmd
         text: "5 Things to Know"
+      - href: reference.qmd
+        text: "Data 6 Python Reference"
 
 format:
   html:

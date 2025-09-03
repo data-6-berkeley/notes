@@ -1,0 +1,22 @@
+---
+title: "Exploratory Data Analysis - consider removing"
+subtitle: ""
+---
+
+If we're _not_ going to be studying causal relationships in this class, what _will_ we be looking at? In this course we will look deeply at a core component of Data Science: **Exploratory Data Analysis**, or **EDA**.
+
+## What is EDA?
+
+Exploratory Data Analysis (EDA) is like detective work. As coined by the famous American statistician and mathematician [John Tukey](https://en.wikipedia.org/wiki/John_Tukey) (we will discuss Tukey numbers soon):
+
+> Exploratory data analysis is an attitude, a state of flexibility, a willingness to look for those things that we believe are not there, as well as those that we believe to be there.
+
+More formally, **Exploratory Data Analysis (EDA)** is the process of understanding a new dataset. It is an open-ended, informal analysis that involves familiarizing ourselves with the variables present in the data, discovering potential hypotheses, and identifying possible issues with the data.
+
+### What is Data Wrangling?
+
+A process very closely related to EDA is **data wrangling**, often called **data cleaning**. Data wrangling is the process of transforming raw data to facilitate subsequent analysis and can address issues like unclear structure or formatting, missing or corrupted values, unit conversions, and so on.
+
+EDA and data cleaning are often thought of as an “infinite loop,” with each process driving the other.
+
+Fortunately, in our classes we will try our best to work with "clean" datasets. These datasets will often have already been preprocessed for cleaner analysis, allowing us to explore and ask questions much more easily than if we were stuck with messier data.
