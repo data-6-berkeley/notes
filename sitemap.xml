@@ -1,16 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://data-6-berkeley.github.io/notes/03-arrays/index.html</loc>
-    <lastmod>2025-09-03T17:22:45.481Z</lastmod>
+    <loc>https://data-6-berkeley.github.io/notes/03-arrays/numpy.html</loc>
+    <lastmod>2025-09-07T22:34:52.355Z</lastmod>
   </url>
   <url>
-    <loc>https://data-6-berkeley.github.io/notes/02-datatypes/index.html</loc>
-    <lastmod>2025-08-26T00:08:15.972Z</lastmod>
+    <loc>https://data-6-berkeley.github.io/notes/five-things.html</loc>
+    <lastmod>2025-08-25T17:08:35.236Z</lastmod>
   </url>
   <url>
-    <loc>https://data-6-berkeley.github.io/notes/syllabus.html</loc>
+    <loc>https://data-6-berkeley.github.io/notes/02-datatypes/rates-incidence.html</loc>
+    <lastmod>2025-09-07T21:59:05.215Z</lastmod>
+  </url>
+  <url>
+    <loc>https://data-6-berkeley.github.io/notes/staff.html</loc>
     <lastmod>2025-08-20T20:12:34.558Z</lastmod>
+  </url>
+  <url>
+    <loc>https://data-6-berkeley.github.io/notes/05-research/index.html</loc>
+    <lastmod>2025-09-07T21:59:10.104Z</lastmod>
+  </url>
+  <url>
+    <loc>https://data-6-berkeley.github.io/notes/06-tables/exercises.html</loc>
+    <lastmod>2025-09-07T21:59:10.104Z</lastmod>
   </url>
   <url>
     <loc>https://data-6-berkeley.github.io/notes/01-intro/index-copy.html</loc>
@@ -18,7 +30,7 @@
   </url>
   <url>
     <loc>https://data-6-berkeley.github.io/notes/01-intro/index.html</loc>
-    <lastmod>2025-09-03T17:22:45.481Z</lastmod>
+    <lastmod>2025-09-07T22:00:01.483Z</lastmod>
   </url>
   <url>
     <loc>https://data-6-berkeley.github.io/notes/index.html</loc>
@@ -29,8 +41,16 @@
     <lastmod>2025-09-02T22:07:42.173Z</lastmod>
   </url>
   <url>
+    <loc>https://data-6-berkeley.github.io/notes/04-variables/units-of-analysis.html</loc>
+    <lastmod>2025-09-07T21:59:10.104Z</lastmod>
+  </url>
+  <url>
+    <loc>https://data-6-berkeley.github.io/notes/04-variables/index.html</loc>
+    <lastmod>2025-09-07T21:59:10.104Z</lastmod>
+  </url>
+  <url>
     <loc>https://data-6-berkeley.github.io/notes/reference.html</loc>
-    <lastmod>2025-09-03T17:22:45.483Z</lastmod>
+    <lastmod>2025-09-07T22:01:10.175Z</lastmod>
   </url>
   <url>
     <loc>https://data-6-berkeley.github.io/notes/01-intro/jupyter-notebook.html</loc>
@@ -38,18 +58,30 @@
   </url>
   <url>
     <loc>https://data-6-berkeley.github.io/notes/01-intro/programming-basics.html</loc>
-    <lastmod>2025-09-03T17:22:45.481Z</lastmod>
+    <lastmod>2025-09-07T21:59:05.215Z</lastmod>
   </url>
   <url>
-    <loc>https://data-6-berkeley.github.io/notes/staff.html</loc>
+    <loc>https://data-6-berkeley.github.io/notes/06-tables/index.html</loc>
+    <lastmod>2025-09-07T21:59:10.105Z</lastmod>
+  </url>
+  <url>
+    <loc>https://data-6-berkeley.github.io/notes/05-research/eda.html</loc>
+    <lastmod>2025-09-07T21:59:10.104Z</lastmod>
+  </url>
+  <url>
+    <loc>https://data-6-berkeley.github.io/notes/05-research/cause-effect.html</loc>
+    <lastmod>2025-09-07T21:59:10.104Z</lastmod>
+  </url>
+  <url>
+    <loc>https://data-6-berkeley.github.io/notes/syllabus.html</loc>
     <lastmod>2025-08-20T20:12:34.558Z</lastmod>
   </url>
   <url>
-    <loc>https://data-6-berkeley.github.io/notes/02-datatypes/rates-incidence.html</loc>
-    <lastmod>2025-09-03T17:22:45.481Z</lastmod>
+    <loc>https://data-6-berkeley.github.io/notes/02-datatypes/index.html</loc>
+    <lastmod>2025-08-26T00:08:15.972Z</lastmod>
   </url>
   <url>
-    <loc>https://data-6-berkeley.github.io/notes/five-things.html</loc>
-    <lastmod>2025-08-25T17:08:35.236Z</lastmod>
+    <loc>https://data-6-berkeley.github.io/notes/03-arrays/index.html</loc>
+    <lastmod>2025-09-07T22:30:13.012Z</lastmod>
   </url>
 </urlset>

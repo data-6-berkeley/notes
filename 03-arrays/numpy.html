@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>None and Print</title>
+<title>NumPy and Array Functions</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../five-things.html" rel="next">
-<link href="../04-variables/units-of-analysis.html" rel="prev">
+<link href="../04-variables/index.html" rel="next">
+<link href="../03-arrays/index.html" rel="prev">
 <link href="../assets/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -129,7 +129,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../04-variables/index.html">L04: Variables in Social Science</a></li><li class="breadcrumb-item"><a href="../04-variables/none-print.html">None and Print</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../03-arrays/index.html">L03: Arrays</a></li><li class="breadcrumb-item"><a href="../03-arrays/numpy.html">NumPy and Array Functions</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -222,11 +222,11 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <div class="sidebar-item-container"> 
             <a href="../03-arrays/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">L03: Arrays</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../03-arrays/index.html" class="sidebar-item-text sidebar-link">
@@ -235,7 +235,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../03-arrays/numpy.html" class="sidebar-item-text sidebar-link">
+  <a href="../03-arrays/numpy.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">NumPy and Array Functions</span></a>
   </div>
 </li>
@@ -245,11 +245,11 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <div class="sidebar-item-container"> 
             <a href="../04-variables/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">L04: Variables in Social Science</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../04-variables/index.html" class="sidebar-item-text sidebar-link">
@@ -264,7 +264,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../04-variables/none-print.html" class="sidebar-item-text sidebar-link active">
+  <a href="../04-variables/none-print.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">None and Print</span></a>
   </div>
 </li>
@@ -292,23 +292,24 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#none-type" id="toc-none-type" class="nav-link active" data-scroll-target="#none-type"><code>None</code> type</a></li>
-  <li><a href="#the-print-function" id="toc-the-print-function" class="nav-link" data-scroll-target="#the-print-function">The <code>print</code> function</a></li>
-  <li><a href="#notebooks-cell-output-vs.-print" id="toc-notebooks-cell-output-vs.-print" class="nav-link" data-scroll-target="#notebooks-cell-output-vs.-print">Notebooks: Cell Output vs.&nbsp;<code>print</code></a>
+  <li><a href="#array-functions" id="toc-array-functions" class="nav-link active" data-scroll-target="#array-functions">Array Functions</a>
   <ul class="collapse">
-  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
-  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
+  <li><a href="#built-in-functions" id="toc-built-in-functions" class="nav-link" data-scroll-target="#built-in-functions">Built-in functions</a></li>
+  <li><a href="#numpy-functions" id="toc-numpy-functions" class="nav-link" data-scroll-target="#numpy-functions">NumPy functions</a></li>
+  <li><a href="#numpy-array-function-table" id="toc-numpy-array-function-table" class="nav-link" data-scroll-target="#numpy-array-function-table">NumPy Array Function Table</a></li>
   </ul></li>
+  <li><a href="#external-reading" id="toc-external-reading" class="nav-link" data-scroll-target="#external-reading">External Reading</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../04-variables/index.html">L04: Variables in Social Science</a></li><li class="breadcrumb-item"><a href="../04-variables/none-print.html">None and Print</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../03-arrays/index.html">L03: Arrays</a></li><li class="breadcrumb-item"><a href="../03-arrays/numpy.html">NumPy and Array Functions</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><code>None</code> and Print</h1>
-<p class="subtitle lead">A special data type, and a valuable function</p>
+<h1 class="title">NumPy and Array Functions</h1>
+<p class="subtitle lead">Accessing Packages</p>
 </div>
 
 
@@ -325,127 +326,254 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </header>
 
 
-<section id="none-type" class="level2">
-<h2 class="anchored" data-anchor-id="none-type"><code>None</code> type</h2>
-<p>We have covered a few data types so far. There are infinitely* many integers, floating point numbers, and strings. (*Actually finite, because of how computers store information. Take CS61C to learn more.)</p>
-<p>However, for the <code>NoneType</code> data type, there is only one value: <code>None</code>.</p>
-<div id="f69f785a" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>my_var <span class="op">=</span> <span class="va">None</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(my_var)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>NoneType</code></pre>
+<p>This note has the following goals:</p>
+<ul>
+<li>Call built-in functions and NumPy functions on arrays.</li>
+</ul>
+<section id="array-functions" class="level2">
+<h2 class="anchored" data-anchor-id="array-functions">Array Functions</h2>
+<p>As data scientists we may find it useful to perform operations on arrays beyond simple element-wise arithmetic operations. We can do so via a range of functions from different sources.</p>
+<p>Here are some starter arrays to get us going. What arrays are created?</p>
+<div id="b597a8c1" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datascience <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>int_arr <span class="op">=</span> make_array(<span class="dv">3</span>, <span class="op">-</span><span class="dv">4</span>, <span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">2</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>str_arr <span class="op">=</span> make_array(<span class="st">"cm"</span>, <span class="st">"m"</span>, <span class="st">"in"</span>, <span class="st">"ft"</span>, <span class="st">"yd"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>empty_arr <span class="op">=</span> make_array() <span class="co"># challenge</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-<p><code>None</code> is strange: Cells will not output expressions that evaluate to <code>None</code>.</p>
-<p><code>None</code> is also referred to as the <strong>null value.</strong></p>
-</section>
-<section id="the-print-function" class="level2">
-<h2 class="anchored" data-anchor-id="the-print-function">The <code>print</code> function</h2>
-<p>The <strong><code>print</code></strong> function displays values to the screen (in this case, our Jupyter notebook). Each call to <code>print</code> displays information on a new line.</p>
-<div id="f0ad0fb3" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">2</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, world!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>2
-Hello, world!</code></pre>
-</div>
-</div>
-<p><code>print</code> lets us to see information about executed statements that are not just the last line of the cell. Could you see why this would be a useful feature for <strong>debugging</strong>?</p>
-<p><code>print</code> is ultra-convenient because it can take as many arguments as you want.</p>
-<div id="52060cad" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">4</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x, <span class="st">"+"</span>, y, <span class="st">"is equal to"</span>, x <span class="op">+</span> y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>3 + 4 is equal to 7</code></pre>
-</div>
-</div>
-<p>Trace through the above program. Do you see how expressions are evaluated before printing?</p>
-</section>
-<section id="notebooks-cell-output-vs.-print" class="level2">
-<h2 class="anchored" data-anchor-id="notebooks-cell-output-vs.-print">Notebooks: Cell Output vs.&nbsp;<code>print</code></h2>
-<p>Cell output and <code>print</code> output seem very closely related: * Both evaluate expressions * Both display something in the notebook</p>
-<p>However, they have subtle differences. We won’t expect you to know all of them. Instead, the purpose of this section is to get you used to <strong>tracing programs</strong>, where you closely consider Python’s order of execution of each statement, expression, function call, and so on.</p>
-<p>Because the <code>print</code> output is intended for human view, it displays strings without quotes. Contrast this with the <strong>cell output</strong>, which includes the quotes.</p>
-<div id="6556b6ad" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">2</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">"Hello, world!"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>2</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>'Hello, world!'</code></pre>
-</div>
-</div>
-<section id="exercise-1" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-1">Exercise 1</h3>
-<p>This is now super pedantic, but consider the following cells. Can you explain what is happening?</p>
-<div id="8e1b13ec" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>my_var</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="361d616a" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_var)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>None</code></pre>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" title="Explanation">
+<div class="callout callout-style-default callout-note callout-titled" title="Arrays created">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Explanation
+Arrays created
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>When <code>print</code> is evaluated as the last line in a cell, it displays the value of the evaluated argument (here, <code>None</code>). <code>print</code> returns <code>None</code>, so the cell does not additionally output anything,</p>
+<div id="fe765415" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>int_arr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>array([ 3, -4,  0,  5,  2])</code></pre>
+</div>
+</div>
+<div id="c750186b" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>str_arr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>array(['cm', 'm', 'in', 'ft', 'yd'],
+      dtype='&lt;U2')</code></pre>
+</div>
+</div>
+<p>An <strong>empty</strong> array is one with no elements:</p>
+<div id="713e6d20" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>empty_arr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>array([], dtype=float64)</code></pre>
 </div>
 </div>
 </div>
-</section>
-<section id="exercise-2" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
-<p>Try this challenge on for size.</p>
-<div id="9b8a2ce4" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_var)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">3</span>)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="dv">45</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>None
-3</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>45</code></pre>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled" title="Explanation">
+<p>We will describe the syntax and terminology of built-in and NumPy functions below, then provide a table of operations. Here’s how we suggest working through this section:</p>
+<ol type="1">
+<li>Don’t memorize these functions!</li>
+<li>Instead, remember there are two types of functions for arrays: built-in functions and NumPy functions.</li>
+<li>Get familiar with two tables, copied below. Get familiar with reading this tabl documentation to understand how each function works.</li>
+<li>When writing your programs, look through these functions and see which function(s) can compose your solution.</li>
+</ol>
+<section id="built-in-functions" class="level3">
+<h3 class="anchored" data-anchor-id="built-in-functions">Built-in functions</h3>
+<p>Some <strong>built-in functions</strong> (i.e., included with Python) can take in arrays as arguments.</p>
+<p>Here is a table of example built-in functions for arrays. Again, don’t memorize the functions. Rather, get familiar with reading and predicting their outputs.</p>
+<table class="caption-top table">
+<caption>Built-in Python functions that take in array arguments.</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Expression and Return value</th>
+<th>Example(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>len(arr)</code> Length of an array, providing the number of elements it contains. Useful for determining the size of an array dynamically.</td>
+<td><code>len(str_arr)   # 5</code> <br> <code>len(empty_arr) # 0</code></td>
+</tr>
+<tr class="even">
+<td><code>max(arr)</code> The largest value within an array.</td>
+<td><code>max(int_arr)    # 5</code> <br> <code>max(str_arr)   # 'yd'</code></td>
+</tr>
+<tr class="odd">
+<td><code>min(arr)</code> The smallest value within an array.</td>
+<td><code>min(int_arr)</code></td>
+</tr>
+<tr class="even">
+<td><code>sum(arr)</code> Sum of all values in an array.</td>
+<td><code>sum(int_arr)   # 6</code> <br> <code>sum(str_arr)   # TypeError</code></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled" title="Note 1: Argument data types">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Explanation
+Note 1: Argument data types
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Each line explained:</p>
-<ol type="1">
-<li>Evaluate the first <code>print</code> call expression. This prints the value of <code>my_var</code> to the screen, which evaluates to <code>None</code>. <code>print</code> returns <code>None</code>, but this second <code>None</code> is not output to the sceen because it is not the last line.</li>
-<li>Evaluate the second <code>print</code> call expression. This prints the value of <code>3</code> to the screen. <code>print</code> returns <code>None</code>, but this second <code>None</code> is not output to the sceen because it is not the last line.</li>
-<li>Evaluate the third expression, <code>45</code>; because it is the last line, output to screen.</li>
-</ol>
+<p>Remember that even though function names can be identical, call expressions can evaluate differently depending on the argument data type. <code>len(arg)</code>, for example, returns an integer value indicating the “length” of the argument <code>arg</code>. If <code>arg</code> is a string, it returns the number of characters; if <code>arg</code> is an array, it returns the number of elements.</p>
+<div id="3d58d9f7" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(str_arr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>5</code></pre>
+</div>
+</div>
+<div id="382f62e4" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(str_arr.item(<span class="dv">0</span>)) <span class="co"># what is the argument here?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>2</code></pre>
 </div>
 </div>
 </div>
-<p>You’re thinking like a computer scientist now!</p>
-
-
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Note 2: Expressions with string arrays">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note 2: Expressions with string arrays
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>As you may have noticed above, calling these functions on strings return some seemingly bizarre values. After all, what does it mean to get the maximum value of an array of strings?</p>
+<p>Instead of erroring out, the Pythonic convention is to consider alphabetic sorting as a way of ordering elements—hence, <code>"yd"</code> comes alphabetically after <code>"cm"</code> and <code>"ft"</code>, and so on.</p>
+<p>We will not cover string comparisons in detail in this course. If you are curious about these algorithms, we encourage you to take a Data Structures course!</p>
+</div>
+</div>
+</div>
+<p>Let’s use these built-in functions to compute the <em>average</em> (<em>mean</em>) value of the below array. We will discuss measures of average much later in this course.</p>
+<div id="6d9aaeee" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> make_array(<span class="dv">30</span>, <span class="op">-</span><span class="dv">40</span>, <span class="op">-</span><span class="fl">4.5</span>, <span class="dv">0</span>, <span class="dv">35</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>avg <span class="op">=</span> <span class="bu">sum</span>(arr)<span class="op">/</span><span class="bu">len</span>(arr)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>avg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>4.0999999999999996</code></pre>
+</div>
+</div>
+<p>Due to approximations in how the computer stores and operates on floats, the above number is as close to 4.1 (the true numeric average) as we can get with our Python calculator. Take a computer systems or computer architecture course for more information!</p>
 </section>
+<section id="numpy-functions" class="level3">
+<h3 class="anchored" data-anchor-id="numpy-functions">NumPy functions</h3>
+<p>NumPy (pronounced “NUM-pie”) is a Python library with convenient and powerful modules and functions for manipulating arrays. Any time we want to use NumPy, we must write an import statement:</p>
+<div id="c3a35b27" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> make_array(<span class="dv">30</span>, <span class="op">-</span><span class="dv">40</span>, <span class="op">-</span><span class="fl">4.5</span>, <span class="dv">0</span>, <span class="dv">35</span>)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>arr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>array([ 30. , -40. ,  -4.5,   0. ,  35. ])</code></pre>
+</div>
+</div>
+<p>After putting this statement at the top of our notebook, we can then prepend <code>np.</code> to call a NumPy function. The below NumPy function call computes averages much more conveniently than our clever (but verbose) expression with built-in function calls, though it still suffers from floating point approximations:</p>
+<div id="cbea790d" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>np.average(arr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>4.0999999999999996</code></pre>
+</div>
+</div>
+</section>
+<section id="numpy-array-function-table" class="level3">
+<h3 class="anchored" data-anchor-id="numpy-array-function-table">NumPy Array Function Table</h3>
+<p>There are many, many types of NumPy array functions; the below table only scratches the surface of what is possible. Again, instead of memorizing functions, we encourage you to learn how to read documentation by considering the following:</p>
+<ol type="1">
+<li>What is the function name? How is this name informed by the function description?</li>
+<li>What is the return value of this function?
+<ul>
+<li>If the data type of the return value is an array, is it the same length as the original array? Is the function therefore operating element-wise on the original array?</li>
+<li>If the data type of the return value is a single value, how is this value computed from the different elements of the original array?</li>
+</ul></li>
+<li>Is the function changing the contents of the original array?</li>
+</ol>
+<p>The answer to question 3 is <strong>no</strong> for all array functions we will cover in this course. <strong>All array functions return a new array</strong>.</p>
+<table class="caption-top table">
+<caption>A subset of NumPy array functions. A full reference is in the Data 6 reference sheet.</caption>
+<colgroup>
+<col style="width: 25%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>NumPy function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>np.average(arr)</code> <br> <code>np.mean(arr)</code></td>
+<td>The average (i.e., mean) value of <code>arr</code></td>
+</tr>
+<tr class="even">
+<td><code>np.sum(arr)</code></td>
+<td>The sum of all elements in <code>arr</code></td>
+</tr>
+<tr class="odd">
+<td><code>np.prod(arr)</code></td>
+<td>The product of all elements in <code>arr</code></td>
+</tr>
+<tr class="even">
+<td><code>np.count_nonzero(arr)</code></td>
+<td>The number of elements in arr that are not equal to 0</td>
+</tr>
+<tr class="odd">
+<td><code>np.diff(arr)</code></td>
+<td>The difference between each element and the previous one value of <code>arr</code>. Returns an array of length 1 <em>less</em> than the original.</td>
+</tr>
+<tr class="even">
+<td><code>np.cumsum(arr)</code></td>
+<td>The cumulative sum of all elements in <code>arr</code>.</td>
+</tr>
+<tr class="odd">
+<td><code>np.sqrt(arr)</code></td>
+<td>The square roots of each element in <code>arr</code>.</td>
+</tr>
+<tr class="even">
+<td><code>np.log(arr)</code></td>
+<td>The natural logarithm of each element in <code>arr</code>.</td>
+</tr>
+<tr class="odd">
+<td><code>np.log10(arr)</code></td>
+<td>The base-10 logarithm of each element in <code>arr</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Refer to the lecture notebook for example call expressions involving these NumPy functions. Refer to the <strong>Data 6 reference sheet</strong> for all functions we will expect you to be familiar with (not memorize!) in this course.</p>
+</section>
+</section>
+<section id="external-reading" class="level2">
+<h2 class="anchored" data-anchor-id="external-reading">External Reading</h2>
+<ul>
+<li>(mentioned in notes) <em>Computational and Inferential Thinking</em>, <a href="https://inferentialthinking.com/chapters/05/1/Arrays.html">Ch 5.1</a></li>
+<li>(optional) Tomas Beuzen. <em>Python Programming for Data Science</em> <a href="https://www.tomasbeuzen.com/python-programming-for-data-science/chapters/chapter1-basics.html#basic-python-data-types">Ch 1.2</a>.</li>
+</ul>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>U.S. Census Bureau, “EDUCATIONAL ATTAINMENT,” American Community Survey 5-Year Estimates Subject Tables, Table S1501, 2020, <a href="https://data.census.gov/table/ACSST5Y2020.S1501?q=2020+education&amp;t=Age+and+Sex:Educational+Attainment&amp;g=010XX00US$0400000" class="uri">https://data.census.gov/table/ACSST5Y2020.S1501?q=2020+education&amp;t=Age+and+Sex:Educational+Attainment&amp;g=010XX00US$0400000</a>, accessed on August 24, 2025.</p>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -850,13 +978,13 @@ Explanation
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../04-variables/units-of-analysis.html" class="pagination-link" aria-label="Units of Analysis">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Units of Analysis</span>
+      <a href="../03-arrays/index.html" class="pagination-link" aria-label="L03: Arrays">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">L03: Arrays</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../five-things.html" class="pagination-link" aria-label="5 Things to Know">
-        <span class="nav-page-text">5 Things to Know</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../04-variables/index.html" class="pagination-link" aria-label="L04: Variables in Social Science">
+        <span class="nav-page-text">L04: Variables in Social Science</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

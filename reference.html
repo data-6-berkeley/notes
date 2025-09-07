@@ -65,8 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./five-things.html" rel="next">
-<link href="./02-datatypes/rates-incidence.html" rel="prev">
+<link href="./five-things.html" rel="prev">
 <link href="./assets/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -169,7 +168,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./01-intro/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 1: Introduction</span></a>
+ <span class="menu-text">L01: Introduction</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -198,7 +197,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./02-datatypes/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 2: Data Types</span></a>
+ <span class="menu-text">L02: Data Types</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -218,16 +217,68 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./03-arrays/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">L03: Arrays</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./reference.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Data 6 Python Reference</span></a>
+  <a href="./03-arrays/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Arrays</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-arrays/numpy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NumPy and Array Functions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./04-variables/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">L04: Variables in Social Science</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-variables/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Variables and Variable Types</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-variables/units-of-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Units of Analysis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-variables/none-print.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">None and Print</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./five-things.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">5 Things to Know</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./reference.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Data 6 Python Reference</span></a>
   </div>
 </li>
     </ul>
@@ -285,7 +336,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <p>Of course, the Python Reference can only provide information about the basics of the functions you’ll use in Data 6. The best knowledge about functions comes from using these functions in code you write in labs or homeworks. If you get stuck when using a certain function, we encourage you to come to office hours or ask a question on Ed.</p>
 <section id="the-anatomy-of-a-function" class="level3">
 <h3 class="anchored" data-anchor-id="the-anatomy-of-a-function">The Anatomy of a Function</h3>
-<div id="014b14bb" class="cell" data-execution_count="1">
+<div id="55cab498" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> my_function(num):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> num <span class="op">**</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -1154,14 +1205,11 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./02-datatypes/rates-incidence.html" class="pagination-link" aria-label="Application: Rates and Incidence">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Application: Rates and Incidence</span>
+      <a href="./five-things.html" class="pagination-link" aria-label="5 Things to Know">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">5 Things to Know</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./five-things.html" class="pagination-link" aria-label="5 Things to Know">
-        <span class="nav-page-text">5 Things to Know</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

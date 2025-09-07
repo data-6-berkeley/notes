@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>None and Print</title>
+<title>Units of Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -65,8 +30,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../five-things.html" rel="next">
-<link href="../04-variables/units-of-analysis.html" rel="prev">
+<link href="../04-variables/none-print.html" rel="next">
+<link href="../04-variables/index.html" rel="prev">
 <link href="../assets/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -129,7 +94,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../04-variables/index.html">L04: Variables in Social Science</a></li><li class="breadcrumb-item"><a href="../04-variables/none-print.html">None and Print</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../04-variables/index.html">L04: Variables in Social Science</a></li><li class="breadcrumb-item"><a href="../04-variables/units-of-analysis.html">Units of Analysis</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -258,13 +223,13 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../04-variables/units-of-analysis.html" class="sidebar-item-text sidebar-link">
+  <a href="../04-variables/units-of-analysis.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Units of Analysis</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../04-variables/none-print.html" class="sidebar-item-text sidebar-link active">
+  <a href="../04-variables/none-print.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">None and Print</span></a>
   </div>
 </li>
@@ -292,23 +257,22 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#none-type" id="toc-none-type" class="nav-link active" data-scroll-target="#none-type"><code>None</code> type</a></li>
-  <li><a href="#the-print-function" id="toc-the-print-function" class="nav-link" data-scroll-target="#the-print-function">The <code>print</code> function</a></li>
-  <li><a href="#notebooks-cell-output-vs.-print" id="toc-notebooks-cell-output-vs.-print" class="nav-link" data-scroll-target="#notebooks-cell-output-vs.-print">Notebooks: Cell Output vs.&nbsp;<code>print</code></a>
-  <ul class="collapse">
-  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
-  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
-  </ul></li>
+  <li><a href="#units-of-analysis" id="toc-units-of-analysis" class="nav-link active" data-scroll-target="#units-of-analysis">Units of Analysis</a></li>
+  <li><a href="#aggregation-and-disaggregation" id="toc-aggregation-and-disaggregation" class="nav-link" data-scroll-target="#aggregation-and-disaggregation">Aggregation and Disaggregation</a></li>
+  <li><a href="#example-dataset-american-community-survey" id="toc-example-dataset-american-community-survey" class="nav-link" data-scroll-target="#example-dataset-american-community-survey">Example Dataset: American Community Survey</a></li>
+  <li><a href="#privacy-and-pums" id="toc-privacy-and-pums" class="nav-link" data-scroll-target="#privacy-and-pums">Privacy and PUMS</a></li>
+  <li><a href="#external-reading" id="toc-external-reading" class="nav-link" data-scroll-target="#external-reading">External Reading</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../04-variables/index.html">L04: Variables in Social Science</a></li><li class="breadcrumb-item"><a href="../04-variables/none-print.html">None and Print</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../04-variables/index.html">L04: Variables in Social Science</a></li><li class="breadcrumb-item"><a href="../04-variables/units-of-analysis.html">Units of Analysis</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><code>None</code> and Print</h1>
-<p class="subtitle lead">A special data type, and a valuable function</p>
+<h1 class="title">Units of Analysis</h1>
+<p class="subtitle lead">Intro to Social Science Research</p>
 </div>
 
 
@@ -325,127 +289,137 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </header>
 
 
-<section id="none-type" class="level2">
-<h2 class="anchored" data-anchor-id="none-type"><code>None</code> type</h2>
-<p>We have covered a few data types so far. There are infinitely* many integers, floating point numbers, and strings. (*Actually finite, because of how computers store information. Take CS61C to learn more.)</p>
-<p>However, for the <code>NoneType</code> data type, there is only one value: <code>None</code>.</p>
-<div id="f69f785a" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>my_var <span class="op">=</span> <span class="va">None</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(my_var)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>NoneType</code></pre>
-</div>
-</div>
-<p><code>None</code> is strange: Cells will not output expressions that evaluate to <code>None</code>.</p>
-<p><code>None</code> is also referred to as the <strong>null value.</strong></p>
+<section id="units-of-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="units-of-analysis">Units of Analysis</h2>
+<p>Operationalization also depends on our <strong>unit of analysis</strong>, or the level of social life about which we want to generalize. There are many different such units:</p>
+<ul>
+<li>Individuals</li>
+<li>Groups (families, classes, gangs, …)</li>
+<li>Localities (cities, counties, countries, …)</li>
+<li>Organizations, industries, political units, social artifacts, etc.</li>
+</ul>
+<p>For example, consider the concept “poverty.” From Carr et al.:</p>
+<blockquote class="blockquote">
+<p>Counting up the number of economic stressors that a person has faced in the past year (for example, trouble paying bills, getting behind on rent) would be appropriate for categorizing individual people but not neighborhoods. Neighborhood poverty is generally assessed through summary factors that can be more directly and comparably measured across large numbers of people, such as average income. One can try to identify the unit of analysis in a study by asking whether the researchers are trying to compare people to each other or neighborhoods to each other.</p>
+</blockquote>
 </section>
-<section id="the-print-function" class="level2">
-<h2 class="anchored" data-anchor-id="the-print-function">The <code>print</code> function</h2>
-<p>The <strong><code>print</code></strong> function displays values to the screen (in this case, our Jupyter notebook). Each call to <code>print</code> displays information on a new line.</p>
-<div id="f0ad0fb3" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">2</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, world!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>2
-Hello, world!</code></pre>
-</div>
-</div>
-<p><code>print</code> lets us to see information about executed statements that are not just the last line of the cell. Could you see why this would be a useful feature for <strong>debugging</strong>?</p>
-<p><code>print</code> is ultra-convenient because it can take as many arguments as you want.</p>
-<div id="52060cad" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">4</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x, <span class="st">"+"</span>, y, <span class="st">"is equal to"</span>, x <span class="op">+</span> y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>3 + 4 is equal to 7</code></pre>
-</div>
-</div>
-<p>Trace through the above program. Do you see how expressions are evaluated before printing?</p>
+<section id="aggregation-and-disaggregation" class="level2">
+<h2 class="anchored" data-anchor-id="aggregation-and-disaggregation">Aggregation and Disaggregation</h2>
+<p>It is possible to operationalize variables at larger units of analysis using variables at smaller units of analysis via a process called <strong>aggregation</strong>.</p>
+<p><strong>Aggregation</strong> - “Roll up” a variable measured on a fine-grained unit of analysis (e.g., individuals) into a variable on a coarser-grained unit of analysis (e.g., groups).</p>
+<ul>
+<li>Income of many individuals in geographic regions → average income by region</li>
+<li>Usually done through counting or averaging.</li>
+</ul>
+<p>From Carr et al.:</p>
+<blockquote class="blockquote">
+<p>A discussion of historical change in the onset of puberty in the United States occurs at a national level of analysis. Yet, researchers measure that national level by getting data on puberty from individuals and then calculating an average across the group. A country’s average age of puberty is a national-level concept, and its measurement is based on the aggregation of individual-level data.</p>
+</blockquote>
+<p>We will soon see that it can often be challenging to move in the other direction with disaggregation:</p>
+<p><strong>Disaggregation</strong>: “Drill down” a variable measured on a coarser-grained unit of analysis (e.g., region) into a variable on a coarser-grained unit of analysis (e.g., groups within that region)</p>
+<ul>
+<li>Generally performed to identify confounding (or mediating) variables to disentangle the impact of certain variables (more later)</li>
+<li>Average income by geographic region → average income by race/ethnicity by region</li>
+</ul>
 </section>
-<section id="notebooks-cell-output-vs.-print" class="level2">
-<h2 class="anchored" data-anchor-id="notebooks-cell-output-vs.-print">Notebooks: Cell Output vs.&nbsp;<code>print</code></h2>
-<p>Cell output and <code>print</code> output seem very closely related: * Both evaluate expressions * Both display something in the notebook</p>
-<p>However, they have subtle differences. We won’t expect you to know all of them. Instead, the purpose of this section is to get you used to <strong>tracing programs</strong>, where you closely consider Python’s order of execution of each statement, expression, function call, and so on.</p>
-<p>Because the <code>print</code> output is intended for human view, it displays strings without quotes. Contrast this with the <strong>cell output</strong>, which includes the quotes.</p>
-<div id="6556b6ad" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">2</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">"Hello, world!"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>2</code></pre>
+<section id="example-dataset-american-community-survey" class="level2">
+<h2 class="anchored" data-anchor-id="example-dataset-american-community-survey">Example Dataset: American Community Survey</h2>
+<p>Let’s return to our American Community Survey (ACS) 2020 data. It shows education levels of adults 25 years or higher by state.</p>
+<table class="caption-top table">
+<caption>ACS 2020.</caption>
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>State</th>
+<th>Estimated total state population</th>
+<th>Estimated high school graduate or higher (%)</th>
+<th>Estimated bachelor’s degree or higher (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Alabama</td>
+<td>3,344,006</td>
+<td>86.9</td>
+<td>26.2</td>
+</tr>
+<tr class="even">
+<td>California</td>
+<td>26,665,143</td>
+<td>83.9</td>
+<td>34.7</td>
+</tr>
+<tr class="odd">
+<td>Florida</td>
+<td>15,255,326</td>
+<td>88.5</td>
+<td>30.5</td>
+</tr>
+<tr class="even">
+<td>New York</td>
+<td>13,649,157</td>
+<td>87.2</td>
+<td>37.5</td>
+</tr>
+<tr class="odd">
+<td>Texas</td>
+<td>18,449,851</td>
+<td>84.4</td>
+<td>30.7</td>
+</tr>
+</tbody>
+</table>
+<p>From the <a href="https://www.census.gov/programs-surveys/acs/methodology/design-and-methodology.html">ACS webpage</a>, the American Community Survey (ACS) is an ongoing monthly survey that collects detailed housing and socioeconomic data.</p>
+<div style="text-align: center">
+<div id="fig-inflation" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-inflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/acs_screenshot.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%">
 </div>
-<div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>'Hello, world!'</code></pre>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-inflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: ACS Household survey, which collects data on individual households.
+</figcaption>
+</figure>
 </div>
 </div>
-<section id="exercise-1" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-1">Exercise 1</h3>
-<p>This is now super pedantic, but consider the following cells. Can you explain what is happening?</p>
-<div id="8e1b13ec" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>my_var</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>There are (at least) two datasets collected by the ACS: A private dataset of survey responses by household (Figure 1), and a public-facing dataset of responses by geographic region. The variables for the geographic region, a larger unit of analysis, are constructed via aggregation and estimation (Figure 2):</p>
+<div style="text-align: center">
+<div id="fig-inflation" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-inflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/acs_aggregate.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%">
 </div>
-<div id="361d616a" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_var)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>None</code></pre>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" title="Explanation">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Explanation
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>When <code>print</code> is evaluated as the last line in a cell, it displays the value of the evaluated argument (here, <code>None</code>). <code>print</code> returns <code>None</code>, so the cell does not additionally output anything,</p>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-inflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: ACS reported public data, which reports aggregated data of households across a geographic region.
+</figcaption>
+</figure>
 </div>
 </div>
-</div>
+<p>Simple forms of aggregation are straightforward and involve counting and averaging—methods that are very possible using our limited Data Science toolkit thus far. However, disaggregation cannot be done without individual datapoints! There are various methods of estimating individuals from averages using statistics and distributions; we discuss this briefly in a few weeks, but you can take a statistics course for more information.</p>
 </section>
-<section id="exercise-2" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
-<p>Try this challenge on for size.</p>
-<div id="9b8a2ce4" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_var)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">3</span>)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="dv">45</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>None
-3</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>45</code></pre>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" title="Explanation">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Explanation
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Each line explained:</p>
-<ol type="1">
-<li>Evaluate the first <code>print</code> call expression. This prints the value of <code>my_var</code> to the screen, which evaluates to <code>None</code>. <code>print</code> returns <code>None</code>, but this second <code>None</code> is not output to the sceen because it is not the last line.</li>
-<li>Evaluate the second <code>print</code> call expression. This prints the value of <code>3</code> to the screen. <code>print</code> returns <code>None</code>, but this second <code>None</code> is not output to the sceen because it is not the last line.</li>
-<li>Evaluate the third expression, <code>45</code>; because it is the last line, output to screen.</li>
-</ol>
-</div>
-</div>
-</div>
-<p>You’re thinking like a computer scientist now!</p>
+<section id="privacy-and-pums" class="level2">
+<h2 class="anchored" data-anchor-id="privacy-and-pums">Privacy and PUMS</h2>
+<p>Why would the ACS choose to release aggregate data publicly, but keep individual data private? Releasing “fine-grained” data about individuals is a privacy issue. It puts individuals in that dataset at risk of being identified beyond the research. In particular, small, already vulnerable populations are often more easily identified.</p>
+<p>Nevertheless, the researchers at ACS understand the value of their government-collected dataset for supporting social science researchers in answering questions about large units of analysis. ACS therefore provides aggregated views of data by region and <em>specific disaggregations</em> by certain demographic factors, such as income and sex.</p>
+<p>Researchers who may be studying questions that try to disentangle the impact of demographic factors that ACS disaggregated data does <em>not</em> support (e.g., race/ethnicity) may choose to connect the ACS dataset with a second dataset that has finer-grained data on an individual level, then build up aggregate measures based on differently defined units of analysis.</p>
+<p>The ACS Public Use Microdata Sample (PUMS) is one such source. PUMS is a smaller sample of records from individual people and/or housing units that uses a combination of techniques (including differential privacy and synthetic data) to preserve individual privacy (<a href="https://www.census.gov/newsroom/blogs/random-samplings/2022/12/disclosure-avoidance-protections-acs.html">source1</a>, <a href="https://acsdatacommunity.prb.org/p/disaggregating_data_webinar">source2</a>). We hope that later in this class we can discuss this privacy protection process.</p>
+</section>
+<section id="external-reading" class="level2">
+<h2 class="anchored" data-anchor-id="external-reading">External Reading</h2>
+<p>“Chapter 4: From Concepts to Models.” Elizabeth Heger Boyle, Deborah Carr, Benjamin Cornwell, Shelley Correll, Robert Crosnoe, Jeremy Freese, and Waters, Mary C. 2017. <em>The Art and Science of Social Research</em>. New York: W. W. Norton &amp; Company.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>U.S. Census Bureau, “EDUCATIONAL ATTAINMENT,” American Community Survey 5-Year Estimates Subject Tables, Table S1501, 2020, <a href="https://data.census.gov/table/ACSST5Y2020.S1501?q=2020+education&amp;t=Age+and+Sex:Educational+Attainment&amp;g=010XX00US$0400000" class="uri">https://data.census.gov/table/ACSST5Y2020.S1501?q=2020+education&amp;t=Age+and+Sex:Educational+Attainment&amp;g=010XX00US$0400000</a>, accessed on August 24, 2025.</p>
+<p>U.S. Census Bureau, “Design and Methodology Report.” <a href="https://www.census.gov/programs-surveys/acs/methodology/design-and-methodology.html" class="uri">https://www.census.gov/programs-surveys/acs/methodology/design-and-methodology.html</a>, accessed on September 2, 2025.</p>
+<p>U.S. Census Bureau, “Public Use Microdata Sample (PUMS).” <a href="https://www.census.gov/programs-surveys/acs/microdata.html" class="uri">https://www.census.gov/programs-surveys/acs/microdata.html</a>, accessed on September 2, 2025.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -850,13 +824,13 @@ Explanation
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../04-variables/units-of-analysis.html" class="pagination-link" aria-label="Units of Analysis">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Units of Analysis</span>
+      <a href="../04-variables/index.html" class="pagination-link" aria-label="L04: Variables in Social Science">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">L04: Variables in Social Science</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../five-things.html" class="pagination-link" aria-label="5 Things to Know">
-        <span class="nav-page-text">5 Things to Know</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../04-variables/none-print.html" class="pagination-link" aria-label="None and Print">
+        <span class="nav-page-text">None and Print</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

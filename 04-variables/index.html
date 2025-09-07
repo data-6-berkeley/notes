@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>None and Print</title>
+<title>Variables and Variable Types</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -65,8 +30,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../five-things.html" rel="next">
-<link href="../04-variables/units-of-analysis.html" rel="prev">
+<link href="../04-variables/units-of-analysis.html" rel="next">
+<link href="../03-arrays/numpy.html" rel="prev">
 <link href="../assets/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -129,7 +94,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../04-variables/index.html">L04: Variables in Social Science</a></li><li class="breadcrumb-item"><a href="../04-variables/none-print.html">None and Print</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../04-variables/index.html">L04: Variables in Social Science</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -243,7 +208,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../04-variables/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../04-variables/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">L04: Variables in Social Science</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -252,7 +217,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../04-variables/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../04-variables/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Variables and Variable Types</span></a>
   </div>
 </li>
@@ -264,7 +229,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../04-variables/none-print.html" class="sidebar-item-text sidebar-link active">
+  <a href="../04-variables/none-print.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">None and Print</span></a>
   </div>
 </li>
@@ -292,23 +257,21 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#none-type" id="toc-none-type" class="nav-link active" data-scroll-target="#none-type"><code>None</code> type</a></li>
-  <li><a href="#the-print-function" id="toc-the-print-function" class="nav-link" data-scroll-target="#the-print-function">The <code>print</code> function</a></li>
-  <li><a href="#notebooks-cell-output-vs.-print" id="toc-notebooks-cell-output-vs.-print" class="nav-link" data-scroll-target="#notebooks-cell-output-vs.-print">Notebooks: Cell Output vs.&nbsp;<code>print</code></a>
-  <ul class="collapse">
-  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
-  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
-  </ul></li>
+  <li><a href="#variables-operationalization-of-concepts" id="toc-variables-operationalization-of-concepts" class="nav-link active" data-scroll-target="#variables-operationalization-of-concepts">Variables: Operationalization of Concepts</a></li>
+  <li><a href="#variables-in-tabular-data" id="toc-variables-in-tabular-data" class="nav-link" data-scroll-target="#variables-in-tabular-data">Variables in Tabular Data</a></li>
+  <li><a href="#variable-types" id="toc-variable-types" class="nav-link" data-scroll-target="#variable-types">Variable Types</a></li>
+  <li><a href="#external-reading" id="toc-external-reading" class="nav-link" data-scroll-target="#external-reading">External Reading</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../04-variables/index.html">L04: Variables in Social Science</a></li><li class="breadcrumb-item"><a href="../04-variables/none-print.html">None and Print</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><code>None</code> and Print</h1>
-<p class="subtitle lead">A special data type, and a valuable function</p>
+<h1 class="title">Variables and Variable Types</h1>
+<p class="subtitle lead">Intro to Social Science Research</p>
 </div>
 
 
@@ -325,127 +288,104 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </header>
 
 
-<section id="none-type" class="level2">
-<h2 class="anchored" data-anchor-id="none-type"><code>None</code> type</h2>
-<p>We have covered a few data types so far. There are infinitely* many integers, floating point numbers, and strings. (*Actually finite, because of how computers store information. Take CS61C to learn more.)</p>
-<p>However, for the <code>NoneType</code> data type, there is only one value: <code>None</code>.</p>
-<div id="f69f785a" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>my_var <span class="op">=</span> <span class="va">None</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(my_var)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>NoneType</code></pre>
-</div>
-</div>
-<p><code>None</code> is strange: Cells will not output expressions that evaluate to <code>None</code>.</p>
-<p><code>None</code> is also referred to as the <strong>null value.</strong></p>
+<section id="variables-operationalization-of-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="variables-operationalization-of-concepts">Variables: Operationalization of Concepts</h2>
+<p>In data science, a <strong>variable</strong> is a measurable feature, attribute, and/or representation of a concept. It can have different values for different individuals.</p>
+<p>Variables are often <strong>empirical measurements</strong>; they are metrics that researchers create to approximate the specific dimensions of an abstract <strong>concept</strong> of a research question.</p>
+<p>The process of going from a concept, which may often be unmeasurable, to a definition of variable(s) and methods of measurement of these variable(s) is a process broadly referred to as <strong>operationalization</strong>.</p>
+<table class="caption-top table">
+<caption>Examples of operationalizing concepts into variables</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Concept</th>
+<th>Variable(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Education level</td>
+<td>Highest degree earned</td>
+</tr>
+<tr class="even">
+<td>Family background</td>
+<td>Household income, in thousands of dollars<br>Household size<br>Parental/guardian immigrant status</td>
+</tr>
+</tbody>
+</table>
+<p>From the above it should be evident that the operationalization process has pitfalls! <a href="https://en.wikipedia.org/wiki/Operationalization#Anger_example">Wikipedia</a> describes this issue well with an example operationalizing the concept “anger.” One operation could be directly asking each participant their anger level. However, this self-evaluation process is not only subjective (individuals may define their own anger levels differently) but also often impractical (e.g., surveys or interviews may be impossible in an experimental setting).</p>
+<p>In summary, operationalization necessarily highlights certain dimensions of a concept, constructing certain precise dimensions and measurements while hiding or obscuring others. However, operationalization makes research practical. Through operational definitions, it constructs procedures for measuring and collecting data. By translating immeasurable concepts into numeric or categorical quantities, one can then conduct statistical and graphical analysis on the data.</p>
 </section>
-<section id="the-print-function" class="level2">
-<h2 class="anchored" data-anchor-id="the-print-function">The <code>print</code> function</h2>
-<p>The <strong><code>print</code></strong> function displays values to the screen (in this case, our Jupyter notebook). Each call to <code>print</code> displays information on a new line.</p>
-<div id="f0ad0fb3" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">2</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, world!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>2
-Hello, world!</code></pre>
+<section id="variables-in-tabular-data" class="level2">
+<h2 class="anchored" data-anchor-id="variables-in-tabular-data">Variables in Tabular Data</h2>
+<p>We will see that as data scientists, we may often start with a dataset involving data that have already been collected for us. These datasets may have been constructed to answer specific questions (we’ll get into the research methods a bit later) and later shared to the broader public for transparency and reproducibility.</p>
+<p>It is challenging to use another person’s data! The concepts have already been operationalized into variables; or the quality of data may vary widely; or multiple data sources may be needed to construct a reasonable first step towards a new research question. We’ll see more benefits and drawbacks in our examples this semester.</p>
+<p>For now, we focus on variables as they exist in tabular data. In most of the tabular datasets we will examine, variables correspond to <strong>columns</strong> of features. Each row is a <strong>record</strong> of a datapoint, with different values of variables measured for that datapoint.</p>
+<div style="text-align: center">
+<div id="fig-inflation" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-inflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/variable.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
 </div>
-</div>
-<p><code>print</code> lets us to see information about executed statements that are not just the last line of the cell. Could you see why this would be a useful feature for <strong>debugging</strong>?</p>
-<p><code>print</code> is ultra-convenient because it can take as many arguments as you want.</p>
-<div id="52060cad" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">4</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x, <span class="st">"+"</span>, y, <span class="st">"is equal to"</span>, x <span class="op">+</span> y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>3 + 4 is equal to 7</code></pre>
-</div>
-</div>
-<p>Trace through the above program. Do you see how expressions are evaluated before printing?</p>
-</section>
-<section id="notebooks-cell-output-vs.-print" class="level2">
-<h2 class="anchored" data-anchor-id="notebooks-cell-output-vs.-print">Notebooks: Cell Output vs.&nbsp;<code>print</code></h2>
-<p>Cell output and <code>print</code> output seem very closely related: * Both evaluate expressions * Both display something in the notebook</p>
-<p>However, they have subtle differences. We won’t expect you to know all of them. Instead, the purpose of this section is to get you used to <strong>tracing programs</strong>, where you closely consider Python’s order of execution of each statement, expression, function call, and so on.</p>
-<p>Because the <code>print</code> output is intended for human view, it displays strings without quotes. Contrast this with the <strong>cell output</strong>, which includes the quotes.</p>
-<div id="6556b6ad" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">2</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">"Hello, world!"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>2</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>'Hello, world!'</code></pre>
-</div>
-</div>
-<section id="exercise-1" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-1">Exercise 1</h3>
-<p>This is now super pedantic, but consider the following cells. Can you explain what is happening?</p>
-<div id="8e1b13ec" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>my_var</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="361d616a" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_var)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>None</code></pre>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" title="Explanation">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Explanation
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>When <code>print</code> is evaluated as the last line in a cell, it displays the value of the evaluated argument (here, <code>None</code>). <code>print</code> returns <code>None</code>, so the cell does not additionally output anything,</p>
-</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-inflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Variables as columns.
+</figcaption>
+</figure>
 </div>
 </div>
 </section>
-<section id="exercise-2" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
-<p>Try this challenge on for size.</p>
-<div id="9b8a2ce4" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_var)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">3</span>)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="dv">45</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>None
-3</code></pre>
+<section id="variable-types" class="level2">
+<h2 class="anchored" data-anchor-id="variable-types">Variable Types</h2>
+<p><strong>Variable types</strong> are different from Python data types like <code>string</code>, <code>int</code>, etc. Variable types help us make more informed decisions about how to measure and analyze variables: to make comparisons, create visualizations, and draw conclusions.</p>
+<ul>
+<li><strong>Numerical/Quantitative</strong> Variable: a variable that takes numbers as values and where the magnitude of the number has a quantitative meaning.
+<ul>
+<li><strong>Discrete</strong>: A numerical variable that takes values that have jumps between them.</li>
+<li><strong>Continuous</strong>: A numerical variable that takes values on an interval of the real number line.</li>
+</ul></li>
+<li><strong>Categorical/Qualitative</strong> Variable: a variable that takes categories as values. Each unique category is called a <em>level</em>.
+<ul>
+<li><strong>Ordinal</strong>: A categorical variable with levels that have a natural ordering.</li>
+<li><strong>Nominal</strong>: A categorical variable with levels that have no ordering.</li>
+</ul></li>
+</ul>
+<p>Figure 2 has examples of each variable type.</p>
+<div style="text-align: center">
+<div id="fig-inflation" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-inflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/variable_types.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%">
 </div>
-<div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>45</code></pre>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" title="Explanation">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Explanation
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Each line explained:</p>
-<ol type="1">
-<li>Evaluate the first <code>print</code> call expression. This prints the value of <code>my_var</code> to the screen, which evaluates to <code>None</code>. <code>print</code> returns <code>None</code>, but this second <code>None</code> is not output to the sceen because it is not the last line.</li>
-<li>Evaluate the second <code>print</code> call expression. This prints the value of <code>3</code> to the screen. <code>print</code> returns <code>None</code>, but this second <code>None</code> is not output to the sceen because it is not the last line.</li>
-<li>Evaluate the third expression, <code>45</code>; because it is the last line, output to screen.</li>
-</ol>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-inflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Variable Types.
+</figcaption>
+</figure>
 </div>
 </div>
-</div>
-<p>You’re thinking like a computer scientist now!</p>
+<p><em>What do we mean by “meaningful” arithmetic?</em> From <a href="https://www.stat20.org/1-questions-and-data/02-taxonomy-of-data/notes">Stat 20</a>:</p>
+<blockquote class="blockquote">
+<p>What unites both types of numerical variables is that the magnitude of the numbers have meaning and you can perform mathematical operations on them and the result also has meaning. It is possible and meaningful to talk about the average air temperature across three locations. It is also possible and meaningful to talk about the sum total number of people across ten households.</p>
+</blockquote>
+<p>Just because a variable has numbers for values does not make it numerical. Consider phone area codes: Berkeley is 510, San Francisco is 415, Palo Alto is 650, and so on. While area codes are numbers, you can’t do any arithmetic—comparative or otherwise—with them that “makes sense”: what does it mean to add area codes? have one area code (650) that is “larger” than another (510)?</p>
+<p><em>What is a discrete variable type, really?</em> If you think about it deeply from a Computer Science perspective, there will be cases in which continuous numerical variables may seem discrete: after all, price (in U.S. dollars) is counted to the cent, and so there are a discrete number of prices for, say, a pound of apples (we hope). However, in the data world we consider how the variable type may inform how we construct informative visualizations of the variable itself and compare it to other values. In short, variable typing informs our choice of using histograms vs.&nbsp;scatter plots, and so on. More later on this.</p>
+</section>
+<section id="external-reading" class="level2">
+<h2 class="anchored" data-anchor-id="external-reading">External Reading</h2>
+<ul>
+<li>(mentioned in notes) “Chapter 4: From Concepts to Models.” Elizabeth Heger Boyle, Deborah Carr, Benjamin Cornwell, Shelley Correll, Robert Crosnoe, Jeremy Freese, and Waters, Mary C. 2017. <em>The Art and Science of Social Research</em>. New York: W. W. Norton &amp; Company.</li>
+<li>(mentioned in notes) <em>Stat 20 notes</em>, <a href="https://www.stat20.org/1-questions-and-data/02-taxonomy-of-data/notes">Taxonomy of Data</a></li>
+</ul>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>U.S. Census Bureau, “EDUCATIONAL ATTAINMENT,” American Community Survey 5-Year Estimates Subject Tables, Table S1501, 2020, <a href="https://data.census.gov/table/ACSST5Y2020.S1501?q=2020+education&amp;t=Age+and+Sex:Educational+Attainment&amp;g=010XX00US$0400000" class="uri">https://data.census.gov/table/ACSST5Y2020.S1501?q=2020+education&amp;t=Age+and+Sex:Educational+Attainment&amp;g=010XX00US$0400000</a>, accessed on August 24, 2025.</p>
+<p>U.S. Census Bureau, “Design and Methodology Report.” <a href="https://www.census.gov/programs-surveys/acs/methodology/design-and-methodology.html" class="uri">https://www.census.gov/programs-surveys/acs/methodology/design-and-methodology.html</a>, accessed on September 2, 2025.</p>
+<p>U.S. Census Bureau, “Public Use Microdata Sample (PUMS).” <a href="https://www.census.gov/programs-surveys/acs/microdata.html" class="uri">https://www.census.gov/programs-surveys/acs/microdata.html</a>, accessed on September 2, 2025.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -850,13 +790,13 @@ Explanation
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../04-variables/units-of-analysis.html" class="pagination-link" aria-label="Units of Analysis">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Units of Analysis</span>
+      <a href="../03-arrays/numpy.html" class="pagination-link" aria-label="NumPy and Array Functions">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">NumPy and Array Functions</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../five-things.html" class="pagination-link" aria-label="5 Things to Know">
-        <span class="nav-page-text">5 Things to Know</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../04-variables/units-of-analysis.html" class="pagination-link" aria-label="Units of Analysis">
+        <span class="nav-page-text">Units of Analysis</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
