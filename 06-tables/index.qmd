@@ -108,13 +108,16 @@ schools.drop('Founded', 'County')
 
 **Note**: The above two cells were run in sequence. Each table method returns a new table, so our original table `schools` is unchanged.
 
+
+### Modifying Tables
+
 ::: {.callout-tip title="Table methods return copies"}
 All table methods return **copies of information** from the original table! This paradigm is quite useful for data analysis. From _Inferential Thinking_: 
 
 > [Table methods] create new smaller tables that share the same data. The fact that the original table is preserved is useful! You can generate multiple different tables that only consider certain columns without worrying that one analysis will affect the other.
+
 :::
 
-### Modifying Tables
 
 If we would like to modify the original table, then we must re-assign `schools` to the new return value:
 
@@ -224,8 +227,10 @@ Another key indicator is what happens when you use incorrect syntax:
 schools.num_rows()
 ```
 
+The above error message means that Python assumed you wanted to call a function `num_rows` (specifically, a method of the Table `schools`); however, when run, `num_rows` was actually an `int` data type attribute, and `int`s are not callable. Similarly, below:
+
 ```{python}
 schools.column
 ```
 
-...hopefully not that scary!
+The above statement did not error, but it did not output a column, either. Rather, it output a `method` of a table, but it didn't call this method.
