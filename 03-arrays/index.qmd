@@ -26,9 +26,9 @@ We have previously discussed the idea of tables: a rectangular data structure wi
  Read [Ch 5.1](https://inferentialthinking.com/chapters/05/1/Arrays.html), which describes in detail how arrays can be used in arithmetic expressions to compute over their contents.
  
  Before continuing, make sure that:
+ 
  * You understand the figure that shows how to convert an array of Celsius temperatures to an array of Farenheit temperatures.
-
-
+ 
 :::
 
 ### Today's dataset
