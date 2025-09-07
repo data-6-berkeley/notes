@@ -48,7 +48,9 @@ website:
         href: 03-arrays/index.qmd
         contents:
           - href: 03-arrays/index.qmd
-            text: "Arrays, NumPy"
+            text: "Arrays"
+          - href: 03-arrays/numpy.qmd
+            text: "NumPy and Array Functions"
       - section: "L04: Variables in Social Science"
         href: 04-variables/index.qmd
         contents:
