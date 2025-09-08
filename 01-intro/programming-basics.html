@@ -243,8 +243,8 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../04-variables/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L04: Variables in Social Science</span></a>
+            <a href="../04-tables/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">L04: Table Fundamentals</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -252,19 +252,19 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../04-variables/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Variables and Variable Types</span></a>
+  <a href="../04-tables/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Table Fundamentals</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../04-variables/units-of-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Units of Analysis</span></a>
+  <a href="../04-tables/exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Table Exercises</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../04-variables/none-print.html" class="sidebar-item-text sidebar-link">
+  <a href="../04-tables/none-print.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">None and Print</span></a>
   </div>
 </li>
@@ -470,11 +470,11 @@ Read <em>Inferential Thinking</em>
 </div>
 </div>
 <p>One analogy for names is suitcase tags. Consider the following assignment statement:</p>
-<div id="d4e1ddbf" class="cell" data-execution_count="1">
+<div id="90dc3c8f" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This statement assigns the name <code>x</code> to the value <code>3</code>. Like a suitcase tag, the name <code>x</code> is bound to the value <code>3</code>.</p>
-<div id="8e9443f6" class="cell" data-execution_count="2">
+<div id="33d312a8" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>3</code></pre>
@@ -482,7 +482,7 @@ Read <em>Inferential Thinking</em>
 </div>
 <p>Python first evaluates the expression on the right-hand side of the <code>=</code> assignment operator, then binds the name <code>x</code> to the resulting value.</p>
 <p>The below statement re-assigns the name <code>x</code>. Think of this as moving the suitcase tag to a different suitcase.</p>
-<div id="632f63f7" class="cell" data-execution_count="3">
+<div id="497e4618" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">1</span> <span class="op">+</span> <span class="dv">2</span> <span class="op">*</span> <span class="dv">3</span> <span class="op">-</span> <span class="dv">4</span> <span class="op">//</span> <span class="dv">5</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -507,7 +507,7 @@ Assignment statements are <em>not</em> expressions!
 </div>
 </div>
 <p>Consider the below Python code:</p>
-<div id="e600e46a" class="cell" data-execution_count="4">
+<div id="f23d7077" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">4</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="bu">max</span>(<span class="op">-</span><span class="dv">2</span>, <span class="dv">9</span>) <span class="op">+</span> x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -523,7 +523,7 @@ Assignment statements are <em>not</em> expressions!
 <p>Good style practices can involve comments, meaningful names, whitespace, markdown cells interspersed with code cells, etc. <a href="https://inferentialthinking.com/chapters/03/2/Names.html">Ch 3.2</a> of <em>Inferential Thinking</em> describes meaningful names; we discuss comments below.</p>
 <p><strong>Comments</strong> are used to explain what code does. Good programmers write code that is self-evident and use comments only where necessary.</p>
 <p>In Python, you can write comments in the same line as code (“in-line” comments) using <code>#</code>:</p>
-<div id="cbb9f1a1" class="cell" data-execution_count="5">
+<div id="02de9810" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="op">+</span> <span class="dv">4</span>     <span class="co"># simple arithmetic</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>7</code></pre>
@@ -548,7 +548,7 @@ Assignment statements are <em>not</em> expressions!
 <h3 class="anchored" data-anchor-id="practice-with-errors">Practice with Errors</h3>
 <p>Try these on for size:</p>
 <p><strong>Syntax errors</strong> are errors in writing “valid” Python that cannot even create nonsensical Python code.</p>
-<div id="e5b624dd" class="cell" data-execution_count="6">
+<div id="5feb0c8e" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="op">**</span> <span class="op">/</span> <span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
@@ -561,14 +561,14 @@ Assignment statements are <em>not</em> expressions!
 </div>
 </div>
 <p>Why might the below code <em>not</em> error? (Hint: What does <code>-</code> represent?)</p>
-<div id="d33d34bd" class="cell" data-execution_count="7">
+<div id="9f78e48c" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span> <span class="op">**</span> <span class="op">-</span> <span class="fl">.5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>0.3333333333333333</code></pre>
 </div>
 </div>
 <p>Once you fix syntax errors, you may still encounter <strong>functionality errors</strong>, which can be errors caused during execution that leads to your program crashing. Here’s one common one:</p>
-<div id="8988adc8" class="cell" data-execution_count="8">
+<div id="81070f2c" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="op">/</span> <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">

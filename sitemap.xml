@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://data-6-berkeley.github.io/notes/03-arrays/numpy.html</loc>
-    <lastmod>2025-09-07T22:34:52.355Z</lastmod>
+    <lastmod>2025-09-08T17:28:48.090Z</lastmod>
   </url>
   <url>
     <loc>https://data-6-berkeley.github.io/notes/five-things.html</loc>
@@ -17,11 +17,7 @@
     <lastmod>2025-08-20T20:12:34.558Z</lastmod>
   </url>
   <url>
-    <loc>https://data-6-berkeley.github.io/notes/05-research/index.html</loc>
-    <lastmod>2025-09-07T21:59:10.104Z</lastmod>
-  </url>
-  <url>
-    <loc>https://data-6-berkeley.github.io/notes/06-tables/exercises.html</loc>
+    <loc>https://data-6-berkeley.github.io/notes/04-tables/exercises.html</loc>
     <lastmod>2025-09-07T21:59:10.104Z</lastmod>
   </url>
   <url>
@@ -37,20 +33,28 @@
     <lastmod>2025-08-20T20:12:34.558Z</lastmod>
   </url>
   <url>
-    <loc>https://data-6-berkeley.github.io/notes/04-variables/none-print.html</loc>
-    <lastmod>2025-09-02T22:07:42.173Z</lastmod>
-  </url>
-  <url>
-    <loc>https://data-6-berkeley.github.io/notes/04-variables/units-of-analysis.html</loc>
+    <loc>https://data-6-berkeley.github.io/notes/05-variables/units-of-analysis.html</loc>
     <lastmod>2025-09-07T21:59:10.104Z</lastmod>
   </url>
   <url>
-    <loc>https://data-6-berkeley.github.io/notes/04-variables/index.html</loc>
+    <loc>https://data-6-berkeley.github.io/notes/06-research/cause-effect.html</loc>
+    <lastmod>2025-09-07T21:59:10.104Z</lastmod>
+  </url>
+  <url>
+    <loc>https://data-6-berkeley.github.io/notes/06-research/eda.html</loc>
+    <lastmod>2025-09-07T21:59:10.104Z</lastmod>
+  </url>
+  <url>
+    <loc>https://data-6-berkeley.github.io/notes/06-research/index.html</loc>
     <lastmod>2025-09-07T21:59:10.104Z</lastmod>
   </url>
   <url>
     <loc>https://data-6-berkeley.github.io/notes/reference.html</loc>
     <lastmod>2025-09-07T22:01:10.175Z</lastmod>
+  </url>
+  <url>
+    <loc>https://data-6-berkeley.github.io/notes/05-variables/index.html</loc>
+    <lastmod>2025-09-07T21:59:10.104Z</lastmod>
   </url>
   <url>
     <loc>https://data-6-berkeley.github.io/notes/01-intro/jupyter-notebook.html</loc>
@@ -61,16 +65,12 @@
     <lastmod>2025-09-07T21:59:05.215Z</lastmod>
   </url>
   <url>
-    <loc>https://data-6-berkeley.github.io/notes/06-tables/index.html</loc>
+    <loc>https://data-6-berkeley.github.io/notes/04-tables/index.html</loc>
     <lastmod>2025-09-07T21:59:10.105Z</lastmod>
   </url>
   <url>
-    <loc>https://data-6-berkeley.github.io/notes/05-research/eda.html</loc>
-    <lastmod>2025-09-07T21:59:10.104Z</lastmod>
-  </url>
-  <url>
-    <loc>https://data-6-berkeley.github.io/notes/05-research/cause-effect.html</loc>
-    <lastmod>2025-09-07T21:59:10.104Z</lastmod>
+    <loc>https://data-6-berkeley.github.io/notes/04-tables/none-print.html</loc>
+    <lastmod>2025-09-02T22:07:42.173Z</lastmod>
   </url>
   <url>
     <loc>https://data-6-berkeley.github.io/notes/syllabus.html</loc>

@@ -65,6 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../04-tables/exercises.html" rel="next">
+<link href="../03-arrays/numpy.html" rel="prev">
 <link href="../assets/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -121,12 +123,172 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 
-<body class="quarto-light">
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../04-tables/index.html">L04: Table Fundamentals</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../assets/data6.png" alt="Data 6 logo" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">DATA 6 <br><small>Course Notes</small></a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/data-6-berkeley/notes" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home / About</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../01-intro/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">L01: Introduction</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-intro/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-intro/jupyter-notebook.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Jupyter Notebooks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-intro/programming-basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programming Basics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../02-datatypes/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">L02: Data Types</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-datatypes/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Numeric and String Data Types</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-datatypes/rates-incidence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application: Rates and Incidence</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../03-arrays/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">L03: Arrays</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../03-arrays/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Arrays</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../03-arrays/numpy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NumPy and Array Functions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../04-tables/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">L04: Table Fundamentals</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../04-tables/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Table Fundamentals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../04-tables/exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Table Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../04-tables/none-print.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">None and Print</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../five-things.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5 Things to Know</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data 6 Python Reference</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -221,7 +383,7 @@ Documentation, documentation, documentation
 </ul></li>
 </ul>
 <p>We work with the <code>datascience</code> package’s <code>Table</code>.</p>
-<div id="09c274bc" class="cell" data-execution_count="1">
+<div id="0fa98fb6" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datascience <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -230,12 +392,12 @@ Documentation, documentation, documentation
 <h2 class="anchored" data-anchor-id="todays-dataset-schools">Today’s Dataset: Schools</h2>
 <p>This lecture we will return to the dataset of public four-year colleges and universities in California (<a href="https://en.wikipedia.org/wiki/List_of_colleges_and_universities_in_California">Wikipedia</a>).</p>
 <p>To work with this table, we first load it in from a file called <code>data/cal_unis.csv</code>.</p>
-<div id="ed7b9e13" class="cell" data-execution_count="2">
+<div id="676c19c6" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> Table.read_table(<span class="st">'data/cal_unis.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Let’s break down what we meant by “load it in”: * The right-hand-side of the assignment calls a function that returns a <code>datascience</code> <code>Table</code> <strong>object</strong> from the provided data file. * The left-hand-side of the assignment assigns this object to the Python name <code>schools</code>. * After this assignment statement, then we can use <code>schools</code> as the particular Table object that has the tabular data we want.</p>
 <p>Running the below cell evaluates <code>schools</code> and displays that tabular data to us:</p>
-<div id="f0b7eb51" class="cell" data-execution_count="3">
+<div id="b5977c38" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>schools</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -341,7 +503,7 @@ Documentation, documentation, documentation
 <section id="exercise-1-find-table-dimensions" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-1-find-table-dimensions">Exercise 1: Find Table Dimensions</h2>
 <p>First off: How many rows and columns are in our <code>schools</code> table?</p>
-<div id="a8c5c247" class="cell" data-execution_count="4">
+<div id="2d8f9fed" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(schools.num_rows)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(schools.num_columns)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -350,7 +512,7 @@ Documentation, documentation, documentation
 </div>
 </div>
 <p>What variables are being recorded?</p>
-<div id="bd81e0b9" class="cell" data-execution_count="5">
+<div id="1d3c2397" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(schools.labels)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>('Name', 'Institution', 'City', 'County', 'Enrollment', 'Founded')</code></pre>
@@ -375,7 +537,7 @@ Documentation, documentation, documentation
 <li><code>tbl.drop(...)</code> and returns a new table without a subset of columns</li>
 <li><code>tbl.with_columns(...)</code> returns a new table with additional new column(s).</li>
 </ul>
-<div id="cef45d37" class="cell" data-execution_count="6">
+<div id="d5380896" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>schools.select(<span class="st">'Name'</span>, <span class="st">'Enrollment'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -432,7 +594,7 @@ Documentation, documentation, documentation
 <p>... (22 rows omitted)</p>
 </div>
 </div>
-<div id="f2041674" class="cell" data-execution_count="7">
+<div id="3f241fb7" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>schools.drop(<span class="st">'Founded'</span>, <span class="st">'County'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -531,7 +693,7 @@ Table methods return copies
 </div>
 </div>
 <p>If we would like to modify the original table, then we must re-assign <code>schools</code> to the new return value:</p>
-<div id="be2aadb6" class="cell" data-execution_count="8">
+<div id="178bb84d" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> schools.with_columns(</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Years since founding"</span>,</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2025</span> <span class="op">-</span> schools.column(<span class="st">"Founded"</span>)</span>
@@ -653,7 +815,7 @@ Table methods return copies
 <h2 class="anchored" data-anchor-id="filtering-rows">Filtering Rows</h2>
 <p>Often we would like to perform row <strong>filtering</strong>, where we only extract row entries that match a specific <strong>feature</strong>.</p>
 <p>By <strong>exact match</strong>: <code>tbl.where(column, value)</code>. Create a new table of only the rows where column <code>column</code> matches the value <code>value</code>.</p>
-<div id="35f6444c" class="cell" data-execution_count="9">
+<div id="6c2ff686" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>schools.where(<span class="st">"Institution"</span>, <span class="st">"UC"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -755,7 +917,7 @@ Table methods return copies
 </div>
 </div>
 <p>By <strong>index</strong>: <code>tbl.take(row_indices)</code>. Create a new table of only the rows with an index specified in <code>row_indices</code>.</p>
-<div id="43a24b60" class="cell" data-execution_count="10">
+<div id="487165f0" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>schools.take(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -807,7 +969,7 @@ Table methods return copies
 <section id="creating-new-tables" class="level2">
 <h2 class="anchored" data-anchor-id="creating-new-tables">Creating New Tables</h2>
 <p>So far we’ve used a table with pre-existing data. We can also make <strong>new Tables</strong> with a special function: <code>Table()</code>.</p>
-<div id="073c4903" class="cell" data-execution_count="11">
+<div id="cf3bed07" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>Table()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -817,7 +979,7 @@ Table methods return copies
 </div>
 </div>
 <p>Check it out!!!</p>
-<div id="d1302002" class="cell" data-execution_count="12">
+<div id="e6cb6db0" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>states <span class="op">=</span> Table().with_columns(<span class="st">'State'</span>, np.array([<span class="st">'California'</span>, <span class="st">'New York'</span>, <span class="st">'Florida'</span>, <span class="st">'Texas'</span>, <span class="st">'Pennsylvania'</span>]),<span class="st">'Code'</span>, np.array([<span class="st">'CA'</span>, <span class="st">'NY'</span>, <span class="st">'FL'</span>, <span class="st">'TX'</span>, <span class="st">'PA'</span>]), <span class="st">'Population (millions)'</span>, np.array([<span class="fl">39.3</span>, <span class="fl">19.3</span>, <span class="fl">21.7</span>, <span class="fl">29.3</span>, <span class="fl">12.8</span>]))</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>states</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
@@ -860,7 +1022,7 @@ Table methods return copies
 </div>
 </div>
 <p>…unfortunately, due to poor coding style, the above code is quite unreadable. Let’s use whitespace (new lines and indents) to delineate what we are doing:</p>
-<div id="deb0058b" class="cell" data-execution_count="13">
+<div id="555ae9a9" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>states <span class="op">=</span> Table().with_columns(</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">'State'</span>, np.array([<span class="st">'California'</span>, <span class="st">'New York'</span>, <span class="st">'Florida'</span>, <span class="st">'Texas'</span>, <span class="st">'Pennsylvania'</span>]),</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">'Code'</span>, np.array([<span class="st">'CA'</span>, <span class="st">'NY'</span>, <span class="st">'FL'</span>, <span class="st">'TX'</span>, <span class="st">'PA'</span>]),</span>
@@ -950,7 +1112,7 @@ Attribute
 <p>In other words, attributes are named values tied to specific objects. To get these values, we must refer to them by their name using “dot” syntax.</p>
 </div>
 </div>
-<div id="80516869" class="cell" data-execution_count="14">
+<div id="1fb078ea" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>schools.num_rows</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>32</code></pre>
@@ -970,7 +1132,7 @@ Method
 <p>The Python glossary definition above is a more opaque definition than we would like. But you can think of the methods we study in this class as functions that take into account the attributes and values of specific objects. In order to call them on a specific operation, we also use “dot” syntax. Because they are functions, we must use call expression syntax with parenthesis, and provide arguments as needed.</p>
 </div>
 </div>
-<div id="cc1f454b" class="cell" data-execution_count="15">
+<div id="53691182" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>schools.column(<span class="st">"Enrollment"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>array([42519, 39152, 35220, 45428,  8544, 23278, 38798, 24346, 19700,
@@ -981,7 +1143,7 @@ Method
 </div>
 <p><strong>Which to syntax use</strong>? To determine which “dot” syntax to use, read the documentation. The entire <code>Table</code> class has been defined for us already, and the designers of the <code>datascience</code> package have predetermined which table features make sense to have as attributes, and which features make sense to return as values from a method call. But as a rule of thumb, if you need to specify any additional detail to get what you want, you will likely need to call a function: use table methods and pass in arguments. See the <code>column</code> method call above.</p>
 <p>Another key indicator is what happens when you use incorrect syntax:</p>
-<div id="95834b83" class="cell" data-execution_count="16">
+<div id="82c0be2f" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>schools.num_rows()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
@@ -995,7 +1157,7 @@ Method
 </div>
 </div>
 <p>The above error message means that Python assumed you wanted to call a function <code>num_rows</code> (specifically, a method of the Table <code>schools</code>); however, when run, <code>num_rows</code> was actually an <code>int</code> data type attribute, and <code>int</code>s are not callable. Similarly, below:</p>
-<div id="4c15be64" class="cell" data-execution_count="17">
+<div id="a94e1fb9" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>schools.column</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <pre><code>&lt;bound method Table.column of Name                                         | Institution | City          | County        | Enrollment | Founded | Years since founding
@@ -1417,6 +1579,18 @@ California State University Maritime Academy | CSU         | Vallejo       | Sol
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../03-arrays/numpy.html" class="pagination-link" aria-label="NumPy and Array Functions">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">NumPy and Array Functions</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../04-tables/exercises.html" class="pagination-link" aria-label="Table Exercises">
+        <span class="nav-page-text">Table Exercises</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -1426,7 +1600,7 @@ California State University Maritime Academy | CSU         | Vallejo       | Sol
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../index.html">
+    <a class="nav-link active" href="../index.html" aria-current="page">
 <p>Home / About / License</p>
 </a>
   </li>  

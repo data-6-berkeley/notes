@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Units of Analysis</title>
+<title>Variables and Variable Types</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../04-variables/none-print.html" rel="next">
-<link href="../04-variables/index.html" rel="prev">
 <link href="../assets/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -85,182 +83,21 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 
-<body class="nav-sidebar docked quarto-light">
+<body class="quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../04-variables/index.html">L04: Variables in Social Science</a></li><li class="breadcrumb-item"><a href="../04-variables/units-of-analysis.html">Units of Analysis</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
-</header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="../index.html" class="sidebar-logo-link">
-      <img src="../assets/data6.png" alt="Data 6 logo" class="sidebar-logo py-0 d-lg-inline d-none">
-      </a>
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">DATA 6 <br><small>Course Notes</small></a> 
-        <div class="sidebar-tools-main">
-    <a href="https://github.com/data-6-berkeley/notes" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
-</div>
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Home / About</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../01-intro/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L01: Introduction</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../01-intro/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Course Introduction</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../01-intro/jupyter-notebook.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Jupyter Notebooks</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../01-intro/programming-basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Programming Basics</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../02-datatypes/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L02: Data Types</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../02-datatypes/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Numeric and String Data Types</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../02-datatypes/rates-incidence.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Application: Rates and Incidence</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../03-arrays/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L03: Arrays</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../03-arrays/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Arrays</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../03-arrays/numpy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">NumPy and Array Functions</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../04-variables/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L04: Variables in Social Science</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../04-variables/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Variables and Variable Types</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../04-variables/units-of-analysis.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Units of Analysis</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../04-variables/none-print.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">None and Print</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../five-things.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5 Things to Know</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../reference.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data 6 Python Reference</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#units-of-analysis" id="toc-units-of-analysis" class="nav-link active" data-scroll-target="#units-of-analysis">Units of Analysis</a></li>
-  <li><a href="#aggregation-and-disaggregation" id="toc-aggregation-and-disaggregation" class="nav-link" data-scroll-target="#aggregation-and-disaggregation">Aggregation and Disaggregation</a></li>
-  <li><a href="#example-dataset-american-community-survey" id="toc-example-dataset-american-community-survey" class="nav-link" data-scroll-target="#example-dataset-american-community-survey">Example Dataset: American Community Survey</a></li>
-  <li><a href="#privacy-and-pums" id="toc-privacy-and-pums" class="nav-link" data-scroll-target="#privacy-and-pums">Privacy and PUMS</a></li>
+  <li><a href="#variables-operationalization-of-concepts" id="toc-variables-operationalization-of-concepts" class="nav-link active" data-scroll-target="#variables-operationalization-of-concepts">Variables: Operationalization of Concepts</a></li>
+  <li><a href="#variables-in-tabular-data" id="toc-variables-in-tabular-data" class="nav-link" data-scroll-target="#variables-in-tabular-data">Variables in Tabular Data</a></li>
+  <li><a href="#variable-types" id="toc-variable-types" class="nav-link" data-scroll-target="#variable-types">Variable Types</a></li>
   <li><a href="#external-reading" id="toc-external-reading" class="nav-link" data-scroll-target="#external-reading">External Reading</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
@@ -269,9 +106,9 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../04-variables/index.html">L04: Variables in Social Science</a></li><li class="breadcrumb-item"><a href="../04-variables/units-of-analysis.html">Units of Analysis</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Units of Analysis</h1>
+<h1 class="title">Variables and Variable Types</h1>
 <p class="subtitle lead">Intro to Social Science Research</p>
 </div>
 
@@ -289,129 +126,96 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </header>
 
 
-<section id="units-of-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="units-of-analysis">Units of Analysis</h2>
-<p>Operationalization also depends on our <strong>unit of analysis</strong>, or the level of social life about which we want to generalize. There are many different such units:</p>
-<ul>
-<li>Individuals</li>
-<li>Groups (families, classes, gangs, …)</li>
-<li>Localities (cities, counties, countries, …)</li>
-<li>Organizations, industries, political units, social artifacts, etc.</li>
-</ul>
-<p>For example, consider the concept “poverty.” From Carr et al.:</p>
-<blockquote class="blockquote">
-<p>Counting up the number of economic stressors that a person has faced in the past year (for example, trouble paying bills, getting behind on rent) would be appropriate for categorizing individual people but not neighborhoods. Neighborhood poverty is generally assessed through summary factors that can be more directly and comparably measured across large numbers of people, such as average income. One can try to identify the unit of analysis in a study by asking whether the researchers are trying to compare people to each other or neighborhoods to each other.</p>
-</blockquote>
-</section>
-<section id="aggregation-and-disaggregation" class="level2">
-<h2 class="anchored" data-anchor-id="aggregation-and-disaggregation">Aggregation and Disaggregation</h2>
-<p>It is possible to operationalize variables at larger units of analysis using variables at smaller units of analysis via a process called <strong>aggregation</strong>.</p>
-<p><strong>Aggregation</strong> - “Roll up” a variable measured on a fine-grained unit of analysis (e.g., individuals) into a variable on a coarser-grained unit of analysis (e.g., groups).</p>
-<ul>
-<li>Income of many individuals in geographic regions → average income by region</li>
-<li>Usually done through counting or averaging.</li>
-</ul>
-<p>From Carr et al.:</p>
-<blockquote class="blockquote">
-<p>A discussion of historical change in the onset of puberty in the United States occurs at a national level of analysis. Yet, researchers measure that national level by getting data on puberty from individuals and then calculating an average across the group. A country’s average age of puberty is a national-level concept, and its measurement is based on the aggregation of individual-level data.</p>
-</blockquote>
-<p>We will soon see that it can often be challenging to move in the other direction with disaggregation:</p>
-<p><strong>Disaggregation</strong>: “Drill down” a variable measured on a coarser-grained unit of analysis (e.g., region) into a variable on a coarser-grained unit of analysis (e.g., groups within that region)</p>
-<ul>
-<li>Generally performed to identify confounding (or mediating) variables to disentangle the impact of certain variables (more later)</li>
-<li>Average income by geographic region → average income by race/ethnicity by region</li>
-</ul>
-</section>
-<section id="example-dataset-american-community-survey" class="level2">
-<h2 class="anchored" data-anchor-id="example-dataset-american-community-survey">Example Dataset: American Community Survey</h2>
-<p>Let’s return to our American Community Survey (ACS) 2020 data. It shows education levels of adults 25 years or higher by state.</p>
+<section id="variables-operationalization-of-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="variables-operationalization-of-concepts">Variables: Operationalization of Concepts</h2>
+<p>In data science, a <strong>variable</strong> is a measurable feature, attribute, and/or representation of a concept. It can have different values for different individuals.</p>
+<p>Variables are often <strong>empirical measurements</strong>; they are metrics that researchers create to approximate the specific dimensions of an abstract <strong>concept</strong> of a research question.</p>
+<p>The process of going from a concept, which may often be unmeasurable, to a definition of variable(s) and methods of measurement of these variable(s) is a process broadly referred to as <strong>operationalization</strong>.</p>
 <table class="caption-top table">
-<caption>ACS 2020.</caption>
+<caption>Examples of operationalizing concepts into variables</caption>
 <colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
+<col style="width: 50%">
+<col style="width: 50%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>State</th>
-<th>Estimated total state population</th>
-<th>Estimated high school graduate or higher (%)</th>
-<th>Estimated bachelor’s degree or higher (%)</th>
+<th>Concept</th>
+<th>Variable(s)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Alabama</td>
-<td>3,344,006</td>
-<td>86.9</td>
-<td>26.2</td>
+<td>Education level</td>
+<td>Highest degree earned</td>
 </tr>
 <tr class="even">
-<td>California</td>
-<td>26,665,143</td>
-<td>83.9</td>
-<td>34.7</td>
-</tr>
-<tr class="odd">
-<td>Florida</td>
-<td>15,255,326</td>
-<td>88.5</td>
-<td>30.5</td>
-</tr>
-<tr class="even">
-<td>New York</td>
-<td>13,649,157</td>
-<td>87.2</td>
-<td>37.5</td>
-</tr>
-<tr class="odd">
-<td>Texas</td>
-<td>18,449,851</td>
-<td>84.4</td>
-<td>30.7</td>
+<td>Family background</td>
+<td>Household income, in thousands of dollars<br>Household size<br>Parental/guardian immigrant status</td>
 </tr>
 </tbody>
 </table>
-<p>From the <a href="https://www.census.gov/programs-surveys/acs/methodology/design-and-methodology.html">ACS webpage</a>, the American Community Survey (ACS) is an ongoing monthly survey that collects detailed housing and socioeconomic data.</p>
-<div style="text-align: center">
-<div id="fig-inflation" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-inflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/acs_screenshot.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-inflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: ACS Household survey, which collects data on individual households.
-</figcaption>
-</figure>
-</div>
-</div>
-<p>There are (at least) two datasets collected by the ACS: A private dataset of survey responses by household (Figure 1), and a public-facing dataset of responses by geographic region. The variables for the geographic region, a larger unit of analysis, are constructed via aggregation and estimation (Figure 2):</p>
-<div style="text-align: center">
-<div id="fig-inflation" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-inflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/acs_aggregate.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-inflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: ACS reported public data, which reports aggregated data of households across a geographic region.
-</figcaption>
-</figure>
-</div>
-</div>
-<p>Simple forms of aggregation are straightforward and involve counting and averaging—methods that are very possible using our limited Data Science toolkit thus far. However, disaggregation cannot be done without individual datapoints! There are various methods of estimating individuals from averages using statistics and distributions; we discuss this briefly in a few weeks, but you can take a statistics course for more information.</p>
+<p>From the above it should be evident that the operationalization process has pitfalls! <a href="https://en.wikipedia.org/wiki/Operationalization#Anger_example">Wikipedia</a> describes this issue well with an example operationalizing the concept “anger.” One operation could be directly asking each participant their anger level. However, this self-evaluation process is not only subjective (individuals may define their own anger levels differently) but also often impractical (e.g., surveys or interviews may be impossible in an experimental setting).</p>
+<p>In summary, operationalization necessarily highlights certain dimensions of a concept, constructing certain precise dimensions and measurements while hiding or obscuring others. However, operationalization makes research practical. Through operational definitions, it constructs procedures for measuring and collecting data. By translating immeasurable concepts into numeric or categorical quantities, one can then conduct statistical and graphical analysis on the data.</p>
 </section>
-<section id="privacy-and-pums" class="level2">
-<h2 class="anchored" data-anchor-id="privacy-and-pums">Privacy and PUMS</h2>
-<p>Why would the ACS choose to release aggregate data publicly, but keep individual data private? Releasing “fine-grained” data about individuals is a privacy issue. It puts individuals in that dataset at risk of being identified beyond the research. In particular, small, already vulnerable populations are often more easily identified.</p>
-<p>Nevertheless, the researchers at ACS understand the value of their government-collected dataset for supporting social science researchers in answering questions about large units of analysis. ACS therefore provides aggregated views of data by region and <em>specific disaggregations</em> by certain demographic factors, such as income and sex.</p>
-<p>Researchers who may be studying questions that try to disentangle the impact of demographic factors that ACS disaggregated data does <em>not</em> support (e.g., race/ethnicity) may choose to connect the ACS dataset with a second dataset that has finer-grained data on an individual level, then build up aggregate measures based on differently defined units of analysis.</p>
-<p>The ACS Public Use Microdata Sample (PUMS) is one such source. PUMS is a smaller sample of records from individual people and/or housing units that uses a combination of techniques (including differential privacy and synthetic data) to preserve individual privacy (<a href="https://www.census.gov/newsroom/blogs/random-samplings/2022/12/disclosure-avoidance-protections-acs.html">source1</a>, <a href="https://acsdatacommunity.prb.org/p/disaggregating_data_webinar">source2</a>). We hope that later in this class we can discuss this privacy protection process.</p>
+<section id="variables-in-tabular-data" class="level2">
+<h2 class="anchored" data-anchor-id="variables-in-tabular-data">Variables in Tabular Data</h2>
+<p>We will see that as data scientists, we may often start with a dataset involving data that have already been collected for us. These datasets may have been constructed to answer specific questions (we’ll get into the research methods a bit later) and later shared to the broader public for transparency and reproducibility.</p>
+<p>It is challenging to use another person’s data! The concepts have already been operationalized into variables; or the quality of data may vary widely; or multiple data sources may be needed to construct a reasonable first step towards a new research question. We’ll see more benefits and drawbacks in our examples this semester.</p>
+<p>For now, we focus on variables as they exist in tabular data. In most of the tabular datasets we will examine, variables correspond to <strong>columns</strong> of features. Each row is a <strong>record</strong> of a datapoint, with different values of variables measured for that datapoint.</p>
+<div style="text-align: center">
+<div id="fig-inflation" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-inflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/variable.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-inflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Variables as columns.
+</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="variable-types" class="level2">
+<h2 class="anchored" data-anchor-id="variable-types">Variable Types</h2>
+<p><strong>Variable types</strong> are different from Python data types like <code>string</code>, <code>int</code>, etc. Variable types help us make more informed decisions about how to measure and analyze variables: to make comparisons, create visualizations, and draw conclusions.</p>
+<ul>
+<li><strong>Numerical/Quantitative</strong> Variable: a variable that takes numbers as values and where the magnitude of the number has a quantitative meaning.
+<ul>
+<li><strong>Discrete</strong>: A numerical variable that takes values that have jumps between them.</li>
+<li><strong>Continuous</strong>: A numerical variable that takes values on an interval of the real number line.</li>
+</ul></li>
+<li><strong>Categorical/Qualitative</strong> Variable: a variable that takes categories as values. Each unique category is called a <em>level</em>.
+<ul>
+<li><strong>Ordinal</strong>: A categorical variable with levels that have a natural ordering.</li>
+<li><strong>Nominal</strong>: A categorical variable with levels that have no ordering.</li>
+</ul></li>
+</ul>
+<p>Figure 2 has examples of each variable type.</p>
+<div style="text-align: center">
+<div id="fig-inflation" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-inflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/variable_types.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-inflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Variable Types.
+</figcaption>
+</figure>
+</div>
+</div>
+<p><em>What do we mean by “meaningful” arithmetic?</em> From <a href="https://www.stat20.org/1-questions-and-data/02-taxonomy-of-data/notes">Stat 20</a>:</p>
+<blockquote class="blockquote">
+<p>What unites both types of numerical variables is that the magnitude of the numbers have meaning and you can perform mathematical operations on them and the result also has meaning. It is possible and meaningful to talk about the average air temperature across three locations. It is also possible and meaningful to talk about the sum total number of people across ten households.</p>
+</blockquote>
+<p>Just because a variable has numbers for values does not make it numerical. Consider phone area codes: Berkeley is 510, San Francisco is 415, Palo Alto is 650, and so on. While area codes are numbers, you can’t do any arithmetic—comparative or otherwise—with them that “makes sense”: what does it mean to add area codes? have one area code (650) that is “larger” than another (510)?</p>
+<p><em>What is a discrete variable type, really?</em> If you think about it deeply from a Computer Science perspective, there will be cases in which continuous numerical variables may seem discrete: after all, price (in U.S. dollars) is counted to the cent, and so there are a discrete number of prices for, say, a pound of apples (we hope). However, in the data world we consider how the variable type may inform how we construct informative visualizations of the variable itself and compare it to other values. In short, variable typing informs our choice of using histograms vs.&nbsp;scatter plots, and so on. More later on this.</p>
 </section>
 <section id="external-reading" class="level2">
 <h2 class="anchored" data-anchor-id="external-reading">External Reading</h2>
-<p>“Chapter 4: From Concepts to Models.” Elizabeth Heger Boyle, Deborah Carr, Benjamin Cornwell, Shelley Correll, Robert Crosnoe, Jeremy Freese, and Waters, Mary C. 2017. <em>The Art and Science of Social Research</em>. New York: W. W. Norton &amp; Company.</p>
+<ul>
+<li>(mentioned in notes) “Chapter 4: From Concepts to Models.” Elizabeth Heger Boyle, Deborah Carr, Benjamin Cornwell, Shelley Correll, Robert Crosnoe, Jeremy Freese, and Waters, Mary C. 2017. <em>The Art and Science of Social Research</em>. New York: W. W. Norton &amp; Company.</li>
+<li>(mentioned in notes) <em>Stat 20 notes</em>, <a href="https://www.stat20.org/1-questions-and-data/02-taxonomy-of-data/notes">Taxonomy of Data</a></li>
+</ul>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
@@ -822,18 +626,6 @@ Figure&nbsp;2: ACS reported public data, which reports aggregated data of househ
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../04-variables/index.html" class="pagination-link" aria-label="L04: Variables in Social Science">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">L04: Variables in Social Science</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../04-variables/none-print.html" class="pagination-link" aria-label="None and Print">
-        <span class="nav-page-text">None and Print</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -843,7 +635,7 @@ Figure&nbsp;2: ACS reported public data, which reports aggregated data of househ
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link active" href="../index.html" aria-current="page">
+    <a class="nav-link" href="../index.html">
 <p>Home / About / License</p>
 </a>
   </li>  
