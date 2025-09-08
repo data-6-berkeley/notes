@@ -51,31 +51,31 @@ website:
             text: "Arrays"
           - href: 03-arrays/numpy.qmd
             text: "NumPy and Array Functions"
-      - section: "L04: Variables in Social Science"
-        href: 04-variables/index.qmd
+      - section: "L04: Table Fundamentals"
+        href: 04-tables/index.qmd
         contents:
-          - href: 04-variables/index.qmd
-            text: "Variables and Variable Types"
-          - href: 04-variables/units-of-analysis.qmd
-            text: "Units of Analysis"
-          - href: 04-variables/none-print.qmd
+          - href: 04-tables/index.qmd
+            text: "Table Fundamentals"
+          - href: 04-tables/exercises.qmd
+            text: "Table Exercises"
+          - href: 04-tables/none-print.qmd
             text: "None and Print"
-      # - section: "L05: Research and Design"
-      #   href: 05-research/index.qmd
+      # - section: "L05: Variables in Social Science"
+      #   href: 05-variables/index.qmd
       #   contents:
-      #     - href: 05-research/index.qmd
+      #     - href: 05-variables/index.qmd
+      #       text: "Variables and Variable Types"
+      #     - href: 05-variables/units-of-analysis.qmd
+      #       text: "Units of Analysis"
+      # - section: "L06: Research and Design"
+      #   href: 06-research/index.qmd
+      #   contents:
+      #     - href: 06-research/index.qmd
       #       text: "The Scientific Method"
-      #     - href: 05-research/cause-effect.qmd
+      #     - href: 06-research/cause-effect.qmd
       #       text: "Cause and Effect"
-      #     - href: 05-research/eda.qmd
+      #     - href: 06-research/eda.qmd
       #       text: "Exploratory Data Analysis"
-      # - section: "L06: Table Fundamentals"
-      #   href: 06-tables/index.qmd
-      #   contents:
-      #     - href: 06-tables/index.qmd
-      #       text: "Table Fundamentals"
-      #     - href: 06-tables/exercises.qmd
-      #       text: "Table Exercises"
       - href: five-things.qmd
         text: "5 Things to Know"
       - href: reference.qmd

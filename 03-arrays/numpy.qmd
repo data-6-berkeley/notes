@@ -115,13 +115,11 @@ np.average(arr)
 
 There are many, many types of NumPy array functions; the below table only scratches the surface of what is possible. Again, instead of memorizing functions, we encourage you to learn how to read documentation by considering the following:
 
-1. What is the function name? How is this name informed by the function description?
+1. What is the function name? How does this name inform the function description?
 1. What is the return value of this function?
     * If the data type of the return value is an array, is it the same length as the original array? Is the function therefore operating element-wise on the original array?
     * If the data type of the return value is a single value, how is this value computed from the different elements of the original array? 
 1. Is the function changing the contents of the original array?
-
-The answer to question 3 is **no** for all array functions we will cover in this course. **All array functions return a new array**.
 
 | NumPy function | Description |
 | - | --- | 
@@ -134,6 +132,7 @@ The answer to question 3 is **no** for all array functions we will cover in this
 | `np.sqrt(arr)` | The square roots of each element in `arr`.|
 | `np.log(arr)` | The natural logarithm of each element in `arr`. |
 | `np.log10(arr)` | The base-10 logarithm of each element in `arr`. |
+| `np.sort(arr)` | Sort the elements in `arr`. |
 : A subset of NumPy array functions. A full reference is in the Data 6 reference sheet.
 
 Refer to the lecture notebook for example call expressions involving these NumPy functions. Refer to the **Data 6 reference sheet** for all functions we will expect you to be familiar with (not memorize!) in this course.
