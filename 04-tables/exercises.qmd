@@ -27,7 +27,11 @@ schools.labels
 
 ## Exercise 2: Reorder columns
 
-How do we reorder the columns to get the following table?
+How do we reorder the columns, as below?
+
+| **Name**	| **Founded** |	**Institution** |	**City** |	**County** |	**Enrollment** |
+| --- | --- | --- | --- | --- | --- |
+| ... | ... | ... | ... | ... | ... |
 
 Hint: use one of `select`, `drop`, or `with_columns`.
 
@@ -39,14 +43,10 @@ schools.select(
   "County", "Enrollment"
 )
 ```
+
 :::
 
 ## Exercise 3: Filtering
-
-Let's reset the `schools` table to our original dataset before continuing.
-```{python}
-schools = Table.read_table('data/cal_unis.csv')
-```
 
 ::: {.callout-note collapse="true" title="The schools table for reference, if you need it"}
 
@@ -55,7 +55,7 @@ schools
 ```
 :::
 
-1. How do we get a table with all of the UC schools?
+1. How do we get a table with only **UC** schools?
 
 ::: {.callout-note collapse="true" title="Show Answer"}
 
@@ -65,7 +65,7 @@ schools.where("Institution", "UC")
 
 :::
 
-2. How do we get a table with all the schools in Los Angeles?
+2. How do we get a table with all the schools in **Los Angeles**?
 
 
 ::: {.callout-note collapse="true" title="Show Answer"}
@@ -78,7 +78,7 @@ schools.where("City", "Los Angeles")
 
 ## Exercise 4: Rename Columns
 
-How do we update `schools` such that the column Name is renamed University? _Hint_: Check out the method `relabeled`.
+How do we **update** `schools` such that the column Name is renamed University? _Hint_: Check out the method `relabeled`.
 
 
 ::: {.callout-note collapse="true" title="Show Answer"}
