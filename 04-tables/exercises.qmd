@@ -10,7 +10,7 @@ from datascience import *
 import numpy as np
 
 schools = Table.read_table('data/cal_unis.csv')
-schools
+schools.show(3)
 ```
 
 Pull up the Python Reference and try these exercises yourself! They are roughly in order of increasing difficulty.
@@ -51,7 +51,7 @@ schools.select(
 ::: {.callout-note collapse="true" title="The schools table for reference, if you need it"}
 
 ```{python}
-schools
+schools.show(3)
 ```
 :::
 
@@ -85,7 +85,7 @@ How do we **update** `schools` such that the column Name is renamed University? 
 
 ```{python}
 schools = schools.relabeled("Name", "University")
-schools
+schools.show(3)
 ```
 
 :::
@@ -103,7 +103,7 @@ schools = Table.read_table('data/cal_unis.csv')
 
 ```{python}
 schools = schools.with_column("University", schools.column("Name")).drop("Name")
-schools
+schools.show(3)
 ```
 
 Questions for you as you read the above code:

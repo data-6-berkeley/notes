@@ -32,7 +32,7 @@ This entire note revolves around getting used to using the documentation on the 
 To begin, recall the terminology we have been using to describe tables so far:
 
 * **Table**: Retangular data structure.
-  * **Columns** (vertical) correspond to **variables** (AKA features, or attributes) that measure and operationalize social concepts.
+  * **Columns** (vertical) correspond to **variables** (AKA features, or attributes) that measure and operationalize social concepts. We discuss variables and social concepts more in another note.
   * **Rows** (horizontal) correspond to **records** (AKA entries), which are specific values of variables for a given individual, group, etc.---whatever your unit of analysis is. 
 
 We work with the `datascience` package's `Table`.
@@ -43,7 +43,7 @@ import numpy as np
 
 ## Today's Dataset: Schools
 
-This lecture we will return to the dataset of public four-year colleges and universities in California ([Wikipedia](https://en.wikipedia.org/wiki/List_of_colleges_and_universities_in_California)).
+This lecture we will return to the dataset of public universities in California ([Wikipedia](https://en.wikipedia.org/wiki/List_of_colleges_and_universities_in_California)).
 
 To work with this table, we first load it in from a file called `data/cal_unis.csv`.
 
@@ -64,7 +64,7 @@ schools
 
 Let's get to exploring and understanding our tabular data!
 
-## Exercise 1: Find Table Dimensions
+## Find Table Dimensions
 
 First off: How many rows and columns are in our `schools` table?
 ```{python}
@@ -165,16 +165,16 @@ states
 
 ```{python}
 states = Table().with_columns(
-  'State', np.array(['California', 'New York', 'Florida', 'Texas', 'Pennsylvania']),
-  'Code', np.array(['CA', 'NY', 'FL', 'TX', 'PA']),
-  'Population (millions)', np.array([39.3, 19.3, 21.7, 29.3, 12.8])
+  'State', make_array('California', 'New York', 'Florida', 'Texas', 'Pennsylvania'),
+  'Code', make_array('CA', 'NY', 'FL', 'TX', 'PA'),
+  'Population (millions)', make_array(39.3, 19.3, 21.7, 29.3, 12.8)
 )
 states
 ```
 
 ### Method Chaining
 
-**Method chaining** in Python is when the object returned from one method becomes the object to use in the next method. In this case:
+**Method chaining** in Python is when the object returned from one method becomes the object to use in the next method. In the above case:
 
 1. Calling the `Table` returns an empty table.
 1. The method `with_columns` is called on the empty table object, returning a table with the columns State, Code, and Population.
