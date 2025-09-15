@@ -60,13 +60,13 @@ website:
             text: "Table Exercises"
           - href: 04-tables/none-print.qmd
             text: "None and Print"
-      # - section: "L05: Variables in Social Science"
-      #   href: 05-variables/index.qmd
-      #   contents:
-      #     - href: 05-variables/index.qmd
-      #       text: "Variables and Variable Types"
-      #     - href: 05-variables/units-of-analysis.qmd
-      #       text: "Units of Analysis"
+      - section: "L05: Variables in Social Science"
+        href: 05-variables/index.qmd
+        contents:
+          - href: 05-variables/index.qmd
+            text: "Variables and Variable Types"
+          - href: 05-variables/units-of-analysis.qmd
+            text: "Units of Analysis"
       # - section: "L06: Research and Design"
       #   href: 06-research/index.qmd
       #   contents:

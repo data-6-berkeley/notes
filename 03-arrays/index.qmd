@@ -156,7 +156,7 @@ Because of zero-indexing, the largest valid index is 4 for the five-element `int
 int_arr.item(5)
 ```
 
-In Python, we can also “count backwards” using **negative indexes**. -1 corresponds to the last element in a array; -2 corresponds to the second last element in a array; and so on.
+In Python, we can also “count backwards” using **negative indexes**. -1 corresponds to the last element in a array; -2 corresponds to the second to last element in a array; and so on.
 
 ```{python}
 # functionally equivalent to int_arr.item(4)
