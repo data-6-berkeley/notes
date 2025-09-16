@@ -1,0 +1,45 @@
+---
+title: "Sample vs. Population"
+subtitle: ""
+---
+
+## Population vs. Sample
+
+Given a research question, the **population** is the group you want to learn something about However, directly studying the population as a whole is often not possible! Data might not exist at that scale, or it might be too costly to collect, if it’s even possible to gather that information.
+
+Many times, we instead study a **sample** of the population. If the sample is a good representation of the population, we can make useful analyses at a much lower cost.
+
+### Sampling Frame
+
+The set of individuals we actually draw our sample from is the **sampling frame**. Depending on how we select our sample, we may miss individuals from the population we’re interested in, and we might also include individuals that are not in the population.
+
+## Examples
+
+:::{style="text-align: center"}
+![A sampling frame may include individuals not in our population.](images/sampling-frame.png){#fig-inflation fig-align=center width=80%}
+:::
+
+| Target Population | Collected sample | 
+|  --- | --- | 
+| Student body of the school | A specific classroom of students at the school | 
+| A bag of 100 marbles | 10 marbles from the bag | 
+| Computing Education Research (CER) papers | Papers published at the American Society of Engineering Education (ASEE) conference |
+
+: Examples of target populations and the collected samples.
+
+In the last example of the table, it is possible some of the research papers published at the ASEE conference are not specific to CER and may perhaps be focused on education in other engineering fields, like mechanical engineering or civil engineering. The sampling frame may be inferred to be the ASEE conference, and then the sample collected would need to be adjusted to include just the CER papers we want.
+
+### A longer example
+
+Let’s say you’re planning a social event for all Data Science-declared sophomores (second-years). Since you only have the budget to cater pizza, you want to figure out what pizza toppings Data Science sophomores enjoy, and buy pizza toppings according to how popular they are.
+
+In order to figure out the most popular flavors, you survey every student walking into or out of Warren Hall (where Data Science course office hours are located) from 12PM to 1PM by asking what their favorite topping is. Assume that everyone responds.
+
+* **Population**: Data Science sophomores
+* **Sampling frame**: Students walking into/out of Warren Hall between 12PM and 1PM
+
+If we draw a sample from this sampling frame we may not get a **representative** sample because we will get respondents from not just the sophomore pool, but also freshman, juniors, seniors, non-Data Science majors, and generally many more students than our target population. These students may have different preferences than Data Science sophomores.
+
+## How do we construct representative samples?
+
+We will (hopefully) get into this topic later this semester.

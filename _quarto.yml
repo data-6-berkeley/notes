@@ -67,15 +67,13 @@ website:
             text: "Variables and Variable Types"
           - href: 05-variables/units-of-analysis.qmd
             text: "Units of Analysis"
-      # - section: "L06: Research and Design"
-      #   href: 06-research/index.qmd
-      #   contents:
-      #     - href: 06-research/index.qmd
-      #       text: "The Scientific Method"
-      #     - href: 06-research/cause-effect.qmd
-      #       text: "Cause and Effect"
-      #     - href: 06-research/eda.qmd
-      #       text: "Exploratory Data Analysis"
+      - section: "L06: Causality vs. EDA"
+        href: 06-variables-ii/index.qmd
+        contents:
+          - href: 06-variables-ii/index.qmd
+            text: "Causality vs. EDA"
+          - href: 06-variables-ii/sample-population.qmd
+            text: "Sample vs. Population"
       - href: five-things.qmd
         text: "5 Things to Know"
       - href: reference.qmd
