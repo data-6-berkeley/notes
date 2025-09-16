@@ -273,6 +273,52 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../05-variables/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">L05: Variables in Social Science</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../05-variables/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Variables and Variable Types</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../05-variables/units-of-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Units of Analysis</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../06-variables-ii/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">L06: Causality vs. EDA</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../06-variables-ii/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Causality vs.&nbsp;EDA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../06-variables-ii/sample-population.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sample vs.&nbsp;Population</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../five-things.html" class="sidebar-item-text sidebar-link">
@@ -297,7 +343,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   <ul>
   <li><a href="#definitions" id="toc-definitions" class="nav-link active" data-scroll-target="#definitions">Definitions</a></li>
   <li><a href="#todays-dataset-schools" id="toc-todays-dataset-schools" class="nav-link" data-scroll-target="#todays-dataset-schools">Today’s Dataset: Schools</a></li>
-  <li><a href="#exercise-1-find-table-dimensions" id="toc-exercise-1-find-table-dimensions" class="nav-link" data-scroll-target="#exercise-1-find-table-dimensions">Exercise 1: Find Table Dimensions</a></li>
+  <li><a href="#find-table-dimensions" id="toc-find-table-dimensions" class="nav-link" data-scroll-target="#find-table-dimensions">Find Table Dimensions</a></li>
   <li><a href="#column-first-paradigm" id="toc-column-first-paradigm" class="nav-link" data-scroll-target="#column-first-paradigm">Column-First Paradigm</a>
   <ul class="collapse">
   <li><a href="#modifying-tables" id="toc-modifying-tables" class="nav-link" data-scroll-target="#modifying-tables">Modifying Tables</a></li>
@@ -378,26 +424,26 @@ Documentation, documentation, documentation
 <ul>
 <li><strong>Table</strong>: Retangular data structure.
 <ul>
-<li><strong>Columns</strong> (vertical) correspond to <strong>variables</strong> (AKA features, or attributes) that measure and operationalize social concepts.</li>
+<li><strong>Columns</strong> (vertical) correspond to <strong>variables</strong> (AKA features, or attributes) that measure and operationalize social concepts. We discuss variables and social concepts more in another note.</li>
 <li><strong>Rows</strong> (horizontal) correspond to <strong>records</strong> (AKA entries), which are specific values of variables for a given individual, group, etc.—whatever your unit of analysis is.</li>
 </ul></li>
 </ul>
 <p>We work with the <code>datascience</code> package’s <code>Table</code>.</p>
-<div id="0fa98fb6" class="cell" data-execution_count="1">
+<div id="4248aec5" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datascience <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="todays-dataset-schools" class="level2">
 <h2 class="anchored" data-anchor-id="todays-dataset-schools">Today’s Dataset: Schools</h2>
-<p>This lecture we will return to the dataset of public four-year colleges and universities in California (<a href="https://en.wikipedia.org/wiki/List_of_colleges_and_universities_in_California">Wikipedia</a>).</p>
+<p>This lecture we will return to the dataset of public universities in California (<a href="https://en.wikipedia.org/wiki/List_of_colleges_and_universities_in_California">Wikipedia</a>).</p>
 <p>To work with this table, we first load it in from a file called <code>data/cal_unis.csv</code>.</p>
-<div id="676c19c6" class="cell" data-execution_count="2">
+<div id="e6665498" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> Table.read_table(<span class="st">'data/cal_unis.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Let’s break down what we meant by “load it in”: * The right-hand-side of the assignment calls a function that returns a <code>datascience</code> <code>Table</code> <strong>object</strong> from the provided data file. * The left-hand-side of the assignment assigns this object to the Python name <code>schools</code>. * After this assignment statement, then we can use <code>schools</code> as the particular Table object that has the tabular data we want.</p>
 <p>Running the below cell evaluates <code>schools</code> and displays that tabular data to us:</p>
-<div id="b5977c38" class="cell" data-execution_count="3">
+<div id="99a7a9e9" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>schools</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -413,84 +459,84 @@ Documentation, documentation, documentation
 </thead>
 <tbody>
 <tr class="odd">
+<td>California State Polytechnic University, Humboldt</td>
+<td>CSU</td>
+<td>Arcata</td>
+<td>Humboldt</td>
+<td>6025</td>
+<td>1913</td>
+</tr>
+<tr class="even">
+<td>California State University, Bakersfield</td>
+<td>CSU</td>
+<td>Bakersfield</td>
+<td>Kern</td>
+<td>9613</td>
+<td>1965</td>
+</tr>
+<tr class="odd">
 <td>University of California, Berkeley</td>
 <td>UC</td>
 <td>Berkeley</td>
 <td>Alameda</td>
-<td>42519</td>
+<td>45307</td>
 <td>1869</td>
 </tr>
 <tr class="even">
+<td>California State University Channel Islands</td>
+<td>CSU</td>
+<td>Camarillo</td>
+<td>Ventura</td>
+<td>6128</td>
+<td>2002</td>
+</tr>
+<tr class="odd">
+<td>California State University, Dominguez Hills</td>
+<td>CSU</td>
+<td>Carson</td>
+<td>Los Angeles</td>
+<td>16426</td>
+<td>1960</td>
+</tr>
+<tr class="even">
+<td>California State University, Chico</td>
+<td>CSU</td>
+<td>Chico</td>
+<td>Butte</td>
+<td>14183</td>
+<td>1887</td>
+</tr>
+<tr class="odd">
 <td>University of California, Davis</td>
 <td>UC</td>
 <td>Davis</td>
 <td>Yolo</td>
-<td>39152</td>
+<td>39679</td>
 <td>1905</td>
 </tr>
-<tr class="odd">
-<td>University of California, Irvine</td>
-<td>UC</td>
-<td>Irvine</td>
-<td>Orange</td>
-<td>35220</td>
-<td>1965</td>
-</tr>
 <tr class="even">
-<td>University of California, Los Angeles</td>
-<td>UC</td>
-<td>Los Angeles</td>
-<td>Los Angeles</td>
-<td>45428</td>
-<td>1882</td>
-</tr>
-<tr class="odd">
-<td>University of California, Merced</td>
-<td>UC</td>
-<td>Merced</td>
-<td>Merced</td>
-<td>8544</td>
-<td>2005</td>
-</tr>
-<tr class="even">
-<td>University of California, Riverside</td>
-<td>UC</td>
-<td>Riverside</td>
-<td>Riverside</td>
-<td>23278</td>
-<td>1954</td>
-</tr>
-<tr class="odd">
-<td>University of California, San Diego</td>
-<td>UC</td>
-<td>San Diego</td>
-<td>San Diego</td>
-<td>38798</td>
-<td>1960</td>
-</tr>
-<tr class="even">
-<td>University of California, Santa Barbara</td>
-<td>UC</td>
-<td>Santa Barbara</td>
-<td>Santa Barbara</td>
-<td>24346</td>
-<td>1891</td>
-</tr>
-<tr class="odd">
-<td>University of California, Santa Cruz</td>
-<td>UC</td>
-<td>Santa Cruz</td>
-<td>Santa Cruz</td>
-<td>19700</td>
-<td>1965</td>
-</tr>
-<tr class="even">
-<td>California State University Maritime Academy</td>
+<td>California State University, Fresno</td>
 <td>CSU</td>
-<td>Vallejo</td>
-<td>Solano</td>
-<td>1017</td>
-<td>1929</td>
+<td>Fresno</td>
+<td>Fresno</td>
+<td>23999</td>
+<td>1911</td>
+</tr>
+<tr class="odd">
+<td>California State University, Fullerton</td>
+<td>CSU</td>
+<td>Fullerton</td>
+<td>Orange</td>
+<td>40386</td>
+<td>1957</td>
+</tr>
+<tr class="even">
+<td>California State University, East Bay</td>
+<td>CSU</td>
+<td>Hayward</td>
+<td>Alameda</td>
+<td>13673</td>
+<td>1957</td>
 </tr>
 </tbody>
 </table>
@@ -500,10 +546,10 @@ Documentation, documentation, documentation
 </div>
 <p>Let’s get to exploring and understanding our tabular data!</p>
 </section>
-<section id="exercise-1-find-table-dimensions" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-1-find-table-dimensions">Exercise 1: Find Table Dimensions</h2>
+<section id="find-table-dimensions" class="level2">
+<h2 class="anchored" data-anchor-id="find-table-dimensions">Find Table Dimensions</h2>
 <p>First off: How many rows and columns are in our <code>schools</code> table?</p>
-<div id="2d8f9fed" class="cell" data-execution_count="4">
+<div id="b86cd4ce" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(schools.num_rows)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(schools.num_columns)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -512,7 +558,7 @@ Documentation, documentation, documentation
 </div>
 </div>
 <p>What variables are being recorded?</p>
-<div id="1d3c2397" class="cell" data-execution_count="5">
+<div id="1d3b55bc" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(schools.labels)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>('Name', 'Institution', 'City', 'County', 'Enrollment', 'Founded')</code></pre>
@@ -537,7 +583,7 @@ Documentation, documentation, documentation
 <li><code>tbl.drop(...)</code> and returns a new table without a subset of columns</li>
 <li><code>tbl.with_columns(...)</code> returns a new table with additional new column(s).</li>
 </ul>
-<div id="d5380896" class="cell" data-execution_count="6">
+<div id="7200cf9d" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>schools.select(<span class="st">'Name'</span>, <span class="st">'Enrollment'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -549,44 +595,44 @@ Documentation, documentation, documentation
 </thead>
 <tbody>
 <tr class="odd">
+<td>California State Polytechnic University, Humboldt</td>
+<td>6025</td>
+</tr>
+<tr class="even">
+<td>California State University, Bakersfield</td>
+<td>9613</td>
+</tr>
+<tr class="odd">
 <td>University of California, Berkeley</td>
-<td>42519</td>
+<td>45307</td>
 </tr>
 <tr class="even">
+<td>California State University Channel Islands</td>
+<td>6128</td>
+</tr>
+<tr class="odd">
+<td>California State University, Dominguez Hills</td>
+<td>16426</td>
+</tr>
+<tr class="even">
+<td>California State University, Chico</td>
+<td>14183</td>
+</tr>
+<tr class="odd">
 <td>University of California, Davis</td>
-<td>39152</td>
-</tr>
-<tr class="odd">
-<td>University of California, Irvine</td>
-<td>35220</td>
+<td>39679</td>
 </tr>
 <tr class="even">
-<td>University of California, Los Angeles</td>
-<td>45428</td>
+<td>California State University, Fresno</td>
+<td>23999</td>
 </tr>
 <tr class="odd">
-<td>University of California, Merced</td>
-<td>8544</td>
+<td>California State University, Fullerton</td>
+<td>40386</td>
 </tr>
 <tr class="even">
-<td>University of California, Riverside</td>
-<td>23278</td>
-</tr>
-<tr class="odd">
-<td>University of California, San Diego</td>
-<td>38798</td>
-</tr>
-<tr class="even">
-<td>University of California, Santa Barbara</td>
-<td>24346</td>
-</tr>
-<tr class="odd">
-<td>University of California, Santa Cruz</td>
-<td>19700</td>
-</tr>
-<tr class="even">
-<td>California State University Maritime Academy</td>
-<td>1017</td>
+<td>California State University, East Bay</td>
+<td>13673</td>
 </tr>
 </tbody>
 </table>
@@ -594,7 +640,7 @@ Documentation, documentation, documentation
 <p>... (22 rows omitted)</p>
 </div>
 </div>
-<div id="3f241fb7" class="cell" data-execution_count="7">
+<div id="f48f4e1f" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>schools.drop(<span class="st">'Founded'</span>, <span class="st">'County'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -608,64 +654,64 @@ Documentation, documentation, documentation
 </thead>
 <tbody>
 <tr class="odd">
+<td>California State Polytechnic University, Humboldt</td>
+<td>CSU</td>
+<td>Arcata</td>
+<td>6025</td>
+</tr>
+<tr class="even">
+<td>California State University, Bakersfield</td>
+<td>CSU</td>
+<td>Bakersfield</td>
+<td>9613</td>
+</tr>
+<tr class="odd">
 <td>University of California, Berkeley</td>
 <td>UC</td>
 <td>Berkeley</td>
-<td>42519</td>
+<td>45307</td>
 </tr>
 <tr class="even">
+<td>California State University Channel Islands</td>
+<td>CSU</td>
+<td>Camarillo</td>
+<td>6128</td>
+</tr>
+<tr class="odd">
+<td>California State University, Dominguez Hills</td>
+<td>CSU</td>
+<td>Carson</td>
+<td>16426</td>
+</tr>
+<tr class="even">
+<td>California State University, Chico</td>
+<td>CSU</td>
+<td>Chico</td>
+<td>14183</td>
+</tr>
+<tr class="odd">
 <td>University of California, Davis</td>
 <td>UC</td>
 <td>Davis</td>
-<td>39152</td>
-</tr>
-<tr class="odd">
-<td>University of California, Irvine</td>
-<td>UC</td>
-<td>Irvine</td>
-<td>35220</td>
+<td>39679</td>
 </tr>
 <tr class="even">
-<td>University of California, Los Angeles</td>
-<td>UC</td>
-<td>Los Angeles</td>
-<td>45428</td>
-</tr>
-<tr class="odd">
-<td>University of California, Merced</td>
-<td>UC</td>
-<td>Merced</td>
-<td>8544</td>
-</tr>
-<tr class="even">
-<td>University of California, Riverside</td>
-<td>UC</td>
-<td>Riverside</td>
-<td>23278</td>
-</tr>
-<tr class="odd">
-<td>University of California, San Diego</td>
-<td>UC</td>
-<td>San Diego</td>
-<td>38798</td>
-</tr>
-<tr class="even">
-<td>University of California, Santa Barbara</td>
-<td>UC</td>
-<td>Santa Barbara</td>
-<td>24346</td>
-</tr>
-<tr class="odd">
-<td>University of California, Santa Cruz</td>
-<td>UC</td>
-<td>Santa Cruz</td>
-<td>19700</td>
-</tr>
-<tr class="even">
-<td>California State University Maritime Academy</td>
+<td>California State University, Fresno</td>
 <td>CSU</td>
-<td>Vallejo</td>
-<td>1017</td>
+<td>Fresno</td>
+<td>23999</td>
+</tr>
+<tr class="odd">
+<td>California State University, Fullerton</td>
+<td>CSU</td>
+<td>Fullerton</td>
+<td>40386</td>
+</tr>
+<tr class="even">
+<td>California State University, East Bay</td>
+<td>CSU</td>
+<td>Hayward</td>
+<td>13673</td>
 </tr>
 </tbody>
 </table>
@@ -693,7 +739,7 @@ Table methods return copies
 </div>
 </div>
 <p>If we would like to modify the original table, then we must re-assign <code>schools</code> to the new return value:</p>
-<div id="178bb84d" class="cell" data-execution_count="8">
+<div id="26b10c2d" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> schools.with_columns(</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Years since founding"</span>,</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2025</span> <span class="op">-</span> schools.column(<span class="st">"Founded"</span>)</span>
@@ -714,94 +760,94 @@ Table methods return copies
 </thead>
 <tbody>
 <tr class="odd">
+<td>California State Polytechnic University, Humboldt</td>
+<td>CSU</td>
+<td>Arcata</td>
+<td>Humboldt</td>
+<td>6025</td>
+<td>1913</td>
+<td>112</td>
+</tr>
+<tr class="even">
+<td>California State University, Bakersfield</td>
+<td>CSU</td>
+<td>Bakersfield</td>
+<td>Kern</td>
+<td>9613</td>
+<td>1965</td>
+<td>60</td>
+</tr>
+<tr class="odd">
 <td>University of California, Berkeley</td>
 <td>UC</td>
 <td>Berkeley</td>
 <td>Alameda</td>
-<td>42519</td>
+<td>45307</td>
 <td>1869</td>
 <td>156</td>
 </tr>
 <tr class="even">
-<td>University of California, Davis</td>
-<td>UC</td>
-<td>Davis</td>
-<td>Yolo</td>
-<td>39152</td>
-<td>1905</td>
-<td>120</td>
+<td>California State University Channel Islands</td>
+<td>CSU</td>
+<td>Camarillo</td>
+<td>Ventura</td>
+<td>6128</td>
+<td>2002</td>
+<td>23</td>
 </tr>
 <tr class="odd">
-<td>University of California, Irvine</td>
-<td>UC</td>
-<td>Irvine</td>
-<td>Orange</td>
-<td>35220</td>
-<td>1965</td>
-<td>60</td>
-</tr>
-<tr class="even">
-<td>University of California, Los Angeles</td>
-<td>UC</td>
+<td>California State University, Dominguez Hills</td>
+<td>CSU</td>
+<td>Carson</td>
 <td>Los Angeles</td>
-<td>Los Angeles</td>
-<td>45428</td>
-<td>1882</td>
-<td>143</td>
-</tr>
-<tr class="odd">
-<td>University of California, Merced</td>
-<td>UC</td>
-<td>Merced</td>
-<td>Merced</td>
-<td>8544</td>
-<td>2005</td>
-<td>20</td>
-</tr>
-<tr class="even">
-<td>University of California, Riverside</td>
-<td>UC</td>
-<td>Riverside</td>
-<td>Riverside</td>
-<td>23278</td>
-<td>1954</td>
-<td>71</td>
-</tr>
-<tr class="odd">
-<td>University of California, San Diego</td>
-<td>UC</td>
-<td>San Diego</td>
-<td>San Diego</td>
-<td>38798</td>
+<td>16426</td>
 <td>1960</td>
 <td>65</td>
 </tr>
 <tr class="even">
-<td>University of California, Santa Barbara</td>
-<td>UC</td>
-<td>Santa Barbara</td>
-<td>Santa Barbara</td>
-<td>24346</td>
-<td>1891</td>
-<td>134</td>
+<td>California State University, Chico</td>
+<td>CSU</td>
+<td>Chico</td>
+<td>Butte</td>
+<td>14183</td>
+<td>1887</td>
+<td>138</td>
 </tr>
 <tr class="odd">
-<td>University of California, Santa Cruz</td>
+<td>University of California, Davis</td>
 <td>UC</td>
-<td>Santa Cruz</td>
-<td>Santa Cruz</td>
-<td>19700</td>
-<td>1965</td>
-<td>60</td>
+<td>Davis</td>
+<td>Yolo</td>
+<td>39679</td>
+<td>1905</td>
+<td>120</td>
 </tr>
 <tr class="even">
-<td>California State University Maritime Academy</td>
+<td>California State University, Fresno</td>
 <td>CSU</td>
-<td>Vallejo</td>
-<td>Solano</td>
-<td>1017</td>
-<td>1929</td>
-<td>96</td>
+<td>Fresno</td>
+<td>Fresno</td>
+<td>23999</td>
+<td>1911</td>
+<td>114</td>
+</tr>
+<tr class="odd">
+<td>California State University, Fullerton</td>
+<td>CSU</td>
+<td>Fullerton</td>
+<td>Orange</td>
+<td>40386</td>
+<td>1957</td>
+<td>68</td>
+</tr>
+<tr class="even">
+<td>California State University, East Bay</td>
+<td>CSU</td>
+<td>Hayward</td>
+<td>Alameda</td>
+<td>13673</td>
+<td>1957</td>
+<td>68</td>
 </tr>
 </tbody>
 </table>
@@ -815,7 +861,7 @@ Table methods return copies
 <h2 class="anchored" data-anchor-id="filtering-rows">Filtering Rows</h2>
 <p>Often we would like to perform row <strong>filtering</strong>, where we only extract row entries that match a specific <strong>feature</strong>.</p>
 <p>By <strong>exact match</strong>: <code>tbl.where(column, value)</code>. Create a new table of only the rows where column <code>column</code> matches the value <code>value</code>.</p>
-<div id="6c2ff686" class="cell" data-execution_count="9">
+<div id="c38ba733" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>schools.where(<span class="st">"Institution"</span>, <span class="st">"UC"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -836,7 +882,7 @@ Table methods return copies
 <td>UC</td>
 <td>Berkeley</td>
 <td>Alameda</td>
-<td>42519</td>
+<td>45307</td>
 <td>1869</td>
 <td>156</td>
 </tr>
@@ -845,7 +891,7 @@ Table methods return copies
 <td>UC</td>
 <td>Davis</td>
 <td>Yolo</td>
-<td>39152</td>
+<td>39679</td>
 <td>1905</td>
 <td>120</td>
 </tr>
@@ -854,7 +900,7 @@ Table methods return copies
 <td>UC</td>
 <td>Irvine</td>
 <td>Orange</td>
-<td>35220</td>
+<td>35937</td>
 <td>1965</td>
 <td>60</td>
 </tr>
@@ -863,7 +909,7 @@ Table methods return copies
 <td>UC</td>
 <td>Los Angeles</td>
 <td>Los Angeles</td>
-<td>45428</td>
+<td>46430</td>
 <td>1882</td>
 <td>143</td>
 </tr>
@@ -872,7 +918,7 @@ Table methods return copies
 <td>UC</td>
 <td>Merced</td>
 <td>Merced</td>
-<td>8544</td>
+<td>9110</td>
 <td>2005</td>
 <td>20</td>
 </tr>
@@ -881,7 +927,7 @@ Table methods return copies
 <td>UC</td>
 <td>Riverside</td>
 <td>Riverside</td>
-<td>23278</td>
+<td>26809</td>
 <td>1954</td>
 <td>71</td>
 </tr>
@@ -890,7 +936,7 @@ Table methods return copies
 <td>UC</td>
 <td>San Diego</td>
 <td>San Diego</td>
-<td>38798</td>
+<td>42006</td>
 <td>1960</td>
 <td>65</td>
 </tr>
@@ -899,7 +945,7 @@ Table methods return copies
 <td>UC</td>
 <td>Santa Barbara</td>
 <td>Santa Barbara</td>
-<td>24346</td>
+<td>26420</td>
 <td>1891</td>
 <td>134</td>
 </tr>
@@ -908,7 +954,7 @@ Table methods return copies
 <td>UC</td>
 <td>Santa Cruz</td>
 <td>Santa Cruz</td>
-<td>19700</td>
+<td>19478</td>
 <td>1965</td>
 <td>60</td>
 </tr>
@@ -917,7 +963,7 @@ Table methods return copies
 </div>
 </div>
 <p>By <strong>index</strong>: <code>tbl.take(row_indices)</code>. Create a new table of only the rows with an index specified in <code>row_indices</code>.</p>
-<div id="487165f0" class="cell" data-execution_count="10">
+<div id="456f6661" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>schools.take(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -934,31 +980,31 @@ Table methods return copies
 </thead>
 <tbody>
 <tr class="odd">
-<td>University of California, Davis</td>
-<td>UC</td>
-<td>Davis</td>
-<td>Yolo</td>
-<td>39152</td>
-<td>1905</td>
-<td>120</td>
+<td>California State University, Bakersfield</td>
+<td>CSU</td>
+<td>Bakersfield</td>
+<td>Kern</td>
+<td>9613</td>
+<td>1965</td>
+<td>60</td>
 </tr>
 <tr class="even">
-<td>University of California, Los Angeles</td>
-<td>UC</td>
-<td>Los Angeles</td>
-<td>Los Angeles</td>
-<td>45428</td>
-<td>1882</td>
-<td>143</td>
+<td>California State University Channel Islands</td>
+<td>CSU</td>
+<td>Camarillo</td>
+<td>Ventura</td>
+<td>6128</td>
+<td>2002</td>
+<td>23</td>
 </tr>
 <tr class="odd">
-<td>University of California, Riverside</td>
-<td>UC</td>
-<td>Riverside</td>
-<td>Riverside</td>
-<td>23278</td>
-<td>1954</td>
-<td>71</td>
+<td>California State University, Chico</td>
+<td>CSU</td>
+<td>Chico</td>
+<td>Butte</td>
+<td>14183</td>
+<td>1887</td>
+<td>138</td>
 </tr>
 </tbody>
 </table>
@@ -969,7 +1015,7 @@ Table methods return copies
 <section id="creating-new-tables" class="level2">
 <h2 class="anchored" data-anchor-id="creating-new-tables">Creating New Tables</h2>
 <p>So far we’ve used a table with pre-existing data. We can also make <strong>new Tables</strong> with a special function: <code>Table()</code>.</p>
-<div id="cf3bed07" class="cell" data-execution_count="11">
+<div id="252980e9" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>Table()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -979,7 +1025,7 @@ Table methods return copies
 </div>
 </div>
 <p>Check it out!!!</p>
-<div id="e6cb6db0" class="cell" data-execution_count="12">
+<div id="23d99eb7" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>states <span class="op">=</span> Table().with_columns(<span class="st">'State'</span>, np.array([<span class="st">'California'</span>, <span class="st">'New York'</span>, <span class="st">'Florida'</span>, <span class="st">'Texas'</span>, <span class="st">'Pennsylvania'</span>]),<span class="st">'Code'</span>, np.array([<span class="st">'CA'</span>, <span class="st">'NY'</span>, <span class="st">'FL'</span>, <span class="st">'TX'</span>, <span class="st">'PA'</span>]), <span class="st">'Population (millions)'</span>, np.array([<span class="fl">39.3</span>, <span class="fl">19.3</span>, <span class="fl">21.7</span>, <span class="fl">29.3</span>, <span class="fl">12.8</span>]))</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>states</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
@@ -1022,11 +1068,11 @@ Table methods return copies
 </div>
 </div>
 <p>…unfortunately, due to poor coding style, the above code is quite unreadable. Let’s use whitespace (new lines and indents) to delineate what we are doing:</p>
-<div id="555ae9a9" class="cell" data-execution_count="13">
+<div id="3ac5f43c" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>states <span class="op">=</span> Table().with_columns(</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">'State'</span>, np.array([<span class="st">'California'</span>, <span class="st">'New York'</span>, <span class="st">'Florida'</span>, <span class="st">'Texas'</span>, <span class="st">'Pennsylvania'</span>]),</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">'Code'</span>, np.array([<span class="st">'CA'</span>, <span class="st">'NY'</span>, <span class="st">'FL'</span>, <span class="st">'TX'</span>, <span class="st">'PA'</span>]),</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">'Population (millions)'</span>, np.array([<span class="fl">39.3</span>, <span class="fl">19.3</span>, <span class="fl">21.7</span>, <span class="fl">29.3</span>, <span class="fl">12.8</span>])</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">'State'</span>, make_array(<span class="st">'California'</span>, <span class="st">'New York'</span>, <span class="st">'Florida'</span>, <span class="st">'Texas'</span>, <span class="st">'Pennsylvania'</span>),</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">'Code'</span>, make_array(<span class="st">'CA'</span>, <span class="st">'NY'</span>, <span class="st">'FL'</span>, <span class="st">'TX'</span>, <span class="st">'PA'</span>),</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">'Population (millions)'</span>, make_array(<span class="fl">39.3</span>, <span class="fl">19.3</span>, <span class="fl">21.7</span>, <span class="fl">29.3</span>, <span class="fl">12.8</span>)</span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>states</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
@@ -1070,7 +1116,7 @@ Table methods return copies
 </div>
 <section id="method-chaining" class="level3">
 <h3 class="anchored" data-anchor-id="method-chaining">Method Chaining</h3>
-<p><strong>Method chaining</strong> in Python is when the object returned from one method becomes the object to use in the next method. In this case:</p>
+<p><strong>Method chaining</strong> in Python is when the object returned from one method becomes the object to use in the next method. In the above case:</p>
 <ol type="1">
 <li>Calling the <code>Table</code> returns an empty table.</li>
 <li>The method <code>with_columns</code> is called on the empty table object, returning a table with the columns State, Code, and Population.</li>
@@ -1112,7 +1158,7 @@ Attribute
 <p>In other words, attributes are named values tied to specific objects. To get these values, we must refer to them by their name using “dot” syntax.</p>
 </div>
 </div>
-<div id="1fb078ea" class="cell" data-execution_count="14">
+<div id="8330f4af" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>schools.num_rows</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>32</code></pre>
@@ -1132,18 +1178,18 @@ Method
 <p>The Python glossary definition above is a more opaque definition than we would like. But you can think of the methods we study in this class as functions that take into account the attributes and values of specific objects. In order to call them on a specific operation, we also use “dot” syntax. Because they are functions, we must use call expression syntax with parenthesis, and provide arguments as needed.</p>
 </div>
 </div>
-<div id="53691182" class="cell" data-execution_count="15">
+<div id="49bd82ee" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>schools.column(<span class="st">"Enrollment"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
-<pre><code>array([42519, 39152, 35220, 45428,  8544, 23278, 38798, 24346, 19700,
-        1017, 21812, 26443, 10493,  7095, 17488, 15741, 14525, 24995,
-       39774, 36846, 27685,  7079, 38716, 31131, 19973, 14511, 10214,
-        7774, 34881, 29586, 32828,  9201])</code></pre>
+<pre><code>array([ 6025,  9613, 45307,  6128, 16426, 14183, 39679, 23999, 40386,
+       13673, 35937, 38973, 46430, 26460,  9110, 37579, 27503, 26809,
+        6637, 31818, 19803, 42006, 37402, 25282, 35751, 22000, 15109,
+       26420, 19478,  7045, 10154,  1017])</code></pre>
 </div>
 </div>
 <p><strong>Which to syntax use</strong>? To determine which “dot” syntax to use, read the documentation. The entire <code>Table</code> class has been defined for us already, and the designers of the <code>datascience</code> package have predetermined which table features make sense to have as attributes, and which features make sense to return as values from a method call. But as a rule of thumb, if you need to specify any additional detail to get what you want, you will likely need to call a function: use table methods and pass in arguments. See the <code>column</code> method call above.</p>
 <p>Another key indicator is what happens when you use incorrect syntax:</p>
-<div id="82c0be2f" class="cell" data-execution_count="16">
+<div id="dfc5b440" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>schools.num_rows()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
@@ -1157,20 +1203,20 @@ Method
 </div>
 </div>
 <p>The above error message means that Python assumed you wanted to call a function <code>num_rows</code> (specifically, a method of the Table <code>schools</code>); however, when run, <code>num_rows</code> was actually an <code>int</code> data type attribute, and <code>int</code>s are not callable. Similarly, below:</p>
-<div id="a94e1fb9" class="cell" data-execution_count="17">
+<div id="44ddc78a" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>schools.column</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
-<pre><code>&lt;bound method Table.column of Name                                         | Institution | City          | County        | Enrollment | Founded | Years since founding
-University of California, Berkeley           | UC          | Berkeley      | Alameda       | 42519      | 1869    | 156
-University of California, Davis              | UC          | Davis         | Yolo          | 39152      | 1905    | 120
-University of California, Irvine             | UC          | Irvine        | Orange        | 35220      | 1965    | 60
-University of California, Los Angeles        | UC          | Los Angeles   | Los Angeles   | 45428      | 1882    | 143
-University of California, Merced             | UC          | Merced        | Merced        | 8544       | 2005    | 20
-University of California, Riverside          | UC          | Riverside     | Riverside     | 23278      | 1954    | 71
-University of California, San Diego          | UC          | San Diego     | San Diego     | 38798      | 1960    | 65
-University of California, Santa Barbara      | UC          | Santa Barbara | Santa Barbara | 24346      | 1891    | 134
-University of California, Santa Cruz         | UC          | Santa Cruz    | Santa Cruz    | 19700      | 1965    | 60
-California State University Maritime Academy | CSU         | Vallejo       | Solano        | 1017       | 1929    | 96
+<pre><code>&lt;bound method Table.column of Name                                              | Institution | City        | County      | Enrollment | Founded | Years since founding
+California State Polytechnic University, Humboldt | CSU         | Arcata      | Humboldt    | 6025       | 1913    | 112
+California State University, Bakersfield          | CSU         | Bakersfield | Kern        | 9613       | 1965    | 60
+University of California, Berkeley                | UC          | Berkeley    | Alameda     | 45307      | 1869    | 156
+California State University Channel Islands       | CSU         | Camarillo   | Ventura     | 6128       | 2002    | 23
+California State University, Dominguez Hills      | CSU         | Carson      | Los Angeles | 16426      | 1960    | 65
+California State University, Chico                | CSU         | Chico       | Butte       | 14183      | 1887    | 138
+University of California, Davis                   | UC          | Davis       | Yolo        | 39679      | 1905    | 120
+California State University, Fresno               | CSU         | Fresno      | Fresno      | 23999      | 1911    | 114
+California State University, Fullerton            | CSU         | Fullerton   | Orange      | 40386      | 1957    | 68
+California State University, East Bay             | CSU         | Hayward     | Alameda     | 13673      | 1957    | 68
 ... (22 rows omitted)&gt;</code></pre>
 </div>
 </div>

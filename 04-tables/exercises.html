@@ -273,6 +273,52 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../05-variables/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">L05: Variables in Social Science</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../05-variables/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Variables and Variable Types</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../05-variables/units-of-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Units of Analysis</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../06-variables-ii/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">L06: Causality vs. EDA</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../06-variables-ii/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Causality vs.&nbsp;EDA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../06-variables-ii/sample-population.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sample vs.&nbsp;Population</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../five-things.html" class="sidebar-item-text sidebar-link">
@@ -326,13 +372,13 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 
 
 <p>We work with the <code>schools</code> table from before.</p>
-<div id="7f94527c" class="cell" data-execution_count="1">
+<div id="8b645ea1" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datascience <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> Table.read_table(<span class="st">'data/cal_unis.csv'</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>schools</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>schools.show(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
@@ -346,89 +392,33 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </thead>
 <tbody>
 <tr class="odd">
+<td>California State Polytechnic University, Humboldt</td>
+<td>CSU</td>
+<td>Arcata</td>
+<td>Humboldt</td>
+<td>6025</td>
+<td>1913</td>
+</tr>
+<tr class="even">
+<td>California State University, Bakersfield</td>
+<td>CSU</td>
+<td>Bakersfield</td>
+<td>Kern</td>
+<td>9613</td>
+<td>1965</td>
+</tr>
+<tr class="odd">
 <td>University of California, Berkeley</td>
 <td>UC</td>
 <td>Berkeley</td>
 <td>Alameda</td>
-<td>42519</td>
+<td>45307</td>
 <td>1869</td>
-</tr>
-<tr class="even">
-<td>University of California, Davis</td>
-<td>UC</td>
-<td>Davis</td>
-<td>Yolo</td>
-<td>39152</td>
-<td>1905</td>
-</tr>
-<tr class="odd">
-<td>University of California, Irvine</td>
-<td>UC</td>
-<td>Irvine</td>
-<td>Orange</td>
-<td>35220</td>
-<td>1965</td>
-</tr>
-<tr class="even">
-<td>University of California, Los Angeles</td>
-<td>UC</td>
-<td>Los Angeles</td>
-<td>Los Angeles</td>
-<td>45428</td>
-<td>1882</td>
-</tr>
-<tr class="odd">
-<td>University of California, Merced</td>
-<td>UC</td>
-<td>Merced</td>
-<td>Merced</td>
-<td>8544</td>
-<td>2005</td>
-</tr>
-<tr class="even">
-<td>University of California, Riverside</td>
-<td>UC</td>
-<td>Riverside</td>
-<td>Riverside</td>
-<td>23278</td>
-<td>1954</td>
-</tr>
-<tr class="odd">
-<td>University of California, San Diego</td>
-<td>UC</td>
-<td>San Diego</td>
-<td>San Diego</td>
-<td>38798</td>
-<td>1960</td>
-</tr>
-<tr class="even">
-<td>University of California, Santa Barbara</td>
-<td>UC</td>
-<td>Santa Barbara</td>
-<td>Santa Barbara</td>
-<td>24346</td>
-<td>1891</td>
-</tr>
-<tr class="odd">
-<td>University of California, Santa Cruz</td>
-<td>UC</td>
-<td>Santa Cruz</td>
-<td>Santa Cruz</td>
-<td>19700</td>
-<td>1965</td>
-</tr>
-<tr class="even">
-<td>California State University Maritime Academy</td>
-<td>CSU</td>
-<td>Vallejo</td>
-<td>Solano</td>
-<td>1017</td>
-<td>1929</td>
 </tr>
 </tbody>
 </table>
 
-<p>... (22 rows omitted)</p>
+<p>... (29 rows omitted)</p>
 </div>
 </div>
 <p>Pull up the Python Reference and try these exercises yourself! They are roughly in order of increasing difficulty.</p>
@@ -447,7 +437,7 @@ Show Answer
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="8ecd35ec" class="cell" data-execution_count="2">
+<div id="19b1111c" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>schools.labels</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>('Name', 'Institution', 'City', 'County', 'Enrollment', 'Founded')</code></pre>
@@ -459,7 +449,37 @@ Show Answer
 </section>
 <section id="exercise-2-reorder-columns" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-2-reorder-columns">Exercise 2: Reorder columns</h2>
-<p>How do we reorder the columns to get the following table?</p>
+<p>How do we reorder the columns, as below?</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Name</strong></th>
+<th><strong>Founded</strong></th>
+<th><strong>Institution</strong></th>
+<th><strong>City</strong></th>
+<th><strong>County</strong></th>
+<th><strong>Enrollment</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
 <p>Hint: use one of <code>select</code>, <code>drop</code>, or <code>with_columns</code>.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Show Answer">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
@@ -473,7 +493,7 @@ Show Answer
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="956d2cdb" class="cell" data-execution_count="3">
+<div id="f8494c40" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>schools.select(</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Name"</span>, <span class="st">"Founded"</span>,</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Institution"</span>, <span class="st">"City"</span>,</span>
@@ -493,84 +513,84 @@ Show Answer
 </thead>
 <tbody>
 <tr class="odd">
+<td>California State Polytechnic University, Humboldt</td>
+<td>1913</td>
+<td>CSU</td>
+<td>Arcata</td>
+<td>Humboldt</td>
+<td>6025</td>
+</tr>
+<tr class="even">
+<td>California State University, Bakersfield</td>
+<td>1965</td>
+<td>CSU</td>
+<td>Bakersfield</td>
+<td>Kern</td>
+<td>9613</td>
+</tr>
+<tr class="odd">
 <td>University of California, Berkeley</td>
 <td>1869</td>
 <td>UC</td>
 <td>Berkeley</td>
 <td>Alameda</td>
-<td>42519</td>
+<td>45307</td>
 </tr>
 <tr class="even">
+<td>California State University Channel Islands</td>
+<td>2002</td>
+<td>CSU</td>
+<td>Camarillo</td>
+<td>Ventura</td>
+<td>6128</td>
+</tr>
+<tr class="odd">
+<td>California State University, Dominguez Hills</td>
+<td>1960</td>
+<td>CSU</td>
+<td>Carson</td>
+<td>Los Angeles</td>
+<td>16426</td>
+</tr>
+<tr class="even">
+<td>California State University, Chico</td>
+<td>1887</td>
+<td>CSU</td>
+<td>Chico</td>
+<td>Butte</td>
+<td>14183</td>
+</tr>
+<tr class="odd">
 <td>University of California, Davis</td>
 <td>1905</td>
 <td>UC</td>
 <td>Davis</td>
 <td>Yolo</td>
-<td>39152</td>
-</tr>
-<tr class="odd">
-<td>University of California, Irvine</td>
-<td>1965</td>
-<td>UC</td>
-<td>Irvine</td>
-<td>Orange</td>
-<td>35220</td>
+<td>39679</td>
 </tr>
 <tr class="even">
-<td>University of California, Los Angeles</td>
-<td>1882</td>
-<td>UC</td>
-<td>Los Angeles</td>
-<td>Los Angeles</td>
-<td>45428</td>
-</tr>
-<tr class="odd">
-<td>University of California, Merced</td>
-<td>2005</td>
-<td>UC</td>
-<td>Merced</td>
-<td>Merced</td>
-<td>8544</td>
-</tr>
-<tr class="even">
-<td>University of California, Riverside</td>
-<td>1954</td>
-<td>UC</td>
-<td>Riverside</td>
-<td>Riverside</td>
-<td>23278</td>
-</tr>
-<tr class="odd">
-<td>University of California, San Diego</td>
-<td>1960</td>
-<td>UC</td>
-<td>San Diego</td>
-<td>San Diego</td>
-<td>38798</td>
-</tr>
-<tr class="even">
-<td>University of California, Santa Barbara</td>
-<td>1891</td>
-<td>UC</td>
-<td>Santa Barbara</td>
-<td>Santa Barbara</td>
-<td>24346</td>
-</tr>
-<tr class="odd">
-<td>University of California, Santa Cruz</td>
-<td>1965</td>
-<td>UC</td>
-<td>Santa Cruz</td>
-<td>Santa Cruz</td>
-<td>19700</td>
-</tr>
-<tr class="even">
-<td>California State University Maritime Academy</td>
-<td>1929</td>
+<td>California State University, Fresno</td>
+<td>1911</td>
 <td>CSU</td>
-<td>Vallejo</td>
-<td>Solano</td>
-<td>1017</td>
+<td>Fresno</td>
+<td>Fresno</td>
+<td>23999</td>
+</tr>
+<tr class="odd">
+<td>California State University, Fullerton</td>
+<td>1957</td>
+<td>CSU</td>
+<td>Fullerton</td>
+<td>Orange</td>
+<td>40386</td>
+</tr>
+<tr class="even">
+<td>California State University, East Bay</td>
+<td>1957</td>
+<td>CSU</td>
+<td>Hayward</td>
+<td>Alameda</td>
+<td>13673</td>
 </tr>
 </tbody>
 </table>
@@ -584,10 +604,6 @@ Show Answer
 </section>
 <section id="exercise-3-filtering" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-3-filtering">Exercise 3: Filtering</h2>
-<p>Let’s reset the <code>schools</code> table to our original dataset before continuing.</p>
-<div id="0d203d8f" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> Table.read_table(<span class="st">'data/cal_unis.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 <div class="callout callout-style-default callout-note callout-titled" title="The schools table for reference, if you need it">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -600,8 +616,71 @@ The schools table for reference, if you need it
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="b949f918" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>schools</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fcd1019a" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>schools.show(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Institution</th>
+<th data-quarto-table-cell-role="th">City</th>
+<th data-quarto-table-cell-role="th">County</th>
+<th data-quarto-table-cell-role="th">Enrollment</th>
+<th data-quarto-table-cell-role="th">Founded</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>California State Polytechnic University, Humboldt</td>
+<td>CSU</td>
+<td>Arcata</td>
+<td>Humboldt</td>
+<td>6025</td>
+<td>1913</td>
+</tr>
+<tr class="even">
+<td>California State University, Bakersfield</td>
+<td>CSU</td>
+<td>Bakersfield</td>
+<td>Kern</td>
+<td>9613</td>
+<td>1965</td>
+</tr>
+<tr class="odd">
+<td>University of California, Berkeley</td>
+<td>UC</td>
+<td>Berkeley</td>
+<td>Alameda</td>
+<td>45307</td>
+<td>1869</td>
+</tr>
+</tbody>
+</table>
+
+<p>... (29 rows omitted)</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<ol type="1">
+<li>How do we get a table with only <strong>UC</strong> schools?</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Show Answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="b635cf6c" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>schools.where(<span class="st">"Institution"</span>, <span class="st">"UC"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
@@ -620,7 +699,7 @@ The schools table for reference, if you need it
 <td>UC</td>
 <td>Berkeley</td>
 <td>Alameda</td>
-<td>42519</td>
+<td>45307</td>
 <td>1869</td>
 </tr>
 <tr class="even">
@@ -628,7 +707,7 @@ The schools table for reference, if you need it
 <td>UC</td>
 <td>Davis</td>
 <td>Yolo</td>
-<td>39152</td>
+<td>39679</td>
 <td>1905</td>
 </tr>
 <tr class="odd">
@@ -636,7 +715,7 @@ The schools table for reference, if you need it
 <td>UC</td>
 <td>Irvine</td>
 <td>Orange</td>
-<td>35220</td>
+<td>35937</td>
 <td>1965</td>
 </tr>
 <tr class="even">
@@ -644,7 +723,7 @@ The schools table for reference, if you need it
 <td>UC</td>
 <td>Los Angeles</td>
 <td>Los Angeles</td>
-<td>45428</td>
+<td>46430</td>
 <td>1882</td>
 </tr>
 <tr class="odd">
@@ -652,7 +731,7 @@ The schools table for reference, if you need it
 <td>UC</td>
 <td>Merced</td>
 <td>Merced</td>
-<td>8544</td>
+<td>9110</td>
 <td>2005</td>
 </tr>
 <tr class="even">
@@ -660,7 +739,7 @@ The schools table for reference, if you need it
 <td>UC</td>
 <td>Riverside</td>
 <td>Riverside</td>
-<td>23278</td>
+<td>26809</td>
 <td>1954</td>
 </tr>
 <tr class="odd">
@@ -668,7 +747,7 @@ The schools table for reference, if you need it
 <td>UC</td>
 <td>San Diego</td>
 <td>San Diego</td>
-<td>38798</td>
+<td>42006</td>
 <td>1960</td>
 </tr>
 <tr class="even">
@@ -676,7 +755,7 @@ The schools table for reference, if you need it
 <td>UC</td>
 <td>Santa Barbara</td>
 <td>Santa Barbara</td>
-<td>24346</td>
+<td>26420</td>
 <td>1891</td>
 </tr>
 <tr class="odd">
@@ -684,31 +763,21 @@ The schools table for reference, if you need it
 <td>UC</td>
 <td>Santa Cruz</td>
 <td>Santa Cruz</td>
-<td>19700</td>
+<td>19478</td>
 <td>1965</td>
-</tr>
-<tr class="even">
-<td>California State University Maritime Academy</td>
-<td>CSU</td>
-<td>Vallejo</td>
-<td>Solano</td>
-<td>1017</td>
-<td>1929</td>
 </tr>
 </tbody>
 </table>
-
-<p>... (22 rows omitted)</p>
 </div>
 </div>
 </div>
 </div>
 </div>
-<ol type="1">
-<li>How do we get a table with all of the UC schools?</li>
+<ol start="2" type="1">
+<li>How do we get a table with all the schools in <strong>Los Angeles</strong>?</li>
 </ol>
 <div class="callout callout-style-default callout-note callout-titled" title="Show Answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -717,10 +786,10 @@ Show Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="fb3071e4" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>schools.where(<span class="st">"Institution"</span>, <span class="st">"UC"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="5e2be5cc" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>schools.where(<span class="st">"City"</span>, <span class="st">"Los Angeles"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
@@ -735,120 +804,11 @@ Show Answer
 </thead>
 <tbody>
 <tr class="odd">
-<td>University of California, Berkeley</td>
-<td>UC</td>
-<td>Berkeley</td>
-<td>Alameda</td>
-<td>42519</td>
-<td>1869</td>
-</tr>
-<tr class="even">
-<td>University of California, Davis</td>
-<td>UC</td>
-<td>Davis</td>
-<td>Yolo</td>
-<td>39152</td>
-<td>1905</td>
-</tr>
-<tr class="odd">
-<td>University of California, Irvine</td>
-<td>UC</td>
-<td>Irvine</td>
-<td>Orange</td>
-<td>35220</td>
-<td>1965</td>
-</tr>
-<tr class="even">
 <td>University of California, Los Angeles</td>
 <td>UC</td>
 <td>Los Angeles</td>
 <td>Los Angeles</td>
-<td>45428</td>
-<td>1882</td>
-</tr>
-<tr class="odd">
-<td>University of California, Merced</td>
-<td>UC</td>
-<td>Merced</td>
-<td>Merced</td>
-<td>8544</td>
-<td>2005</td>
-</tr>
-<tr class="even">
-<td>University of California, Riverside</td>
-<td>UC</td>
-<td>Riverside</td>
-<td>Riverside</td>
-<td>23278</td>
-<td>1954</td>
-</tr>
-<tr class="odd">
-<td>University of California, San Diego</td>
-<td>UC</td>
-<td>San Diego</td>
-<td>San Diego</td>
-<td>38798</td>
-<td>1960</td>
-</tr>
-<tr class="even">
-<td>University of California, Santa Barbara</td>
-<td>UC</td>
-<td>Santa Barbara</td>
-<td>Santa Barbara</td>
-<td>24346</td>
-<td>1891</td>
-</tr>
-<tr class="odd">
-<td>University of California, Santa Cruz</td>
-<td>UC</td>
-<td>Santa Cruz</td>
-<td>Santa Cruz</td>
-<td>19700</td>
-<td>1965</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-<ol start="2" type="1">
-<li>How do we get a table with all the schools in Los Angeles?</li>
-</ol>
-<div class="callout callout-style-default callout-note callout-titled" title="Show Answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Show Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="ceba6e2a" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>schools.where(<span class="st">"City"</span>, <span class="st">"Los Angeles"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">Name</th>
-<th data-quarto-table-cell-role="th">Institution</th>
-<th data-quarto-table-cell-role="th">City</th>
-<th data-quarto-table-cell-role="th">County</th>
-<th data-quarto-table-cell-role="th">Enrollment</th>
-<th data-quarto-table-cell-role="th">Founded</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>University of California, Los Angeles</td>
-<td>UC</td>
-<td>Los Angeles</td>
-<td>Los Angeles</td>
-<td>45428</td>
+<td>46430</td>
 <td>1882</td>
 </tr>
 <tr class="even">
@@ -856,7 +816,7 @@ Show Answer
 <td>CSU</td>
 <td>Los Angeles</td>
 <td>Los Angeles</td>
-<td>27685</td>
+<td>26460</td>
 <td>1947</td>
 </tr>
 </tbody>
@@ -869,7 +829,7 @@ Show Answer
 </section>
 <section id="exercise-4-rename-columns" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-4-rename-columns">Exercise 4: Rename Columns</h2>
-<p>How do we update <code>schools</code> such that the column Name is renamed University? <em>Hint</em>: Check out the method <code>relabeled</code>.</p>
+<p>How do we <strong>update</strong> <code>schools</code> such that the column Name is renamed University? <em>Hint</em>: Check out the method <code>relabeled</code>.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Show Answer">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -882,10 +842,10 @@ Show Answer
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="da6ca698" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> schools.relabeled(<span class="st">"Name"</span>, <span class="st">"University"</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>schools</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div id="d19617c5" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> schools.relabeled(<span class="st">"Name"</span>, <span class="st">"University"</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>schools.show(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
@@ -899,89 +859,33 @@ Show Answer
 </thead>
 <tbody>
 <tr class="odd">
+<td>California State Polytechnic University, Humboldt</td>
+<td>CSU</td>
+<td>Arcata</td>
+<td>Humboldt</td>
+<td>6025</td>
+<td>1913</td>
+</tr>
+<tr class="even">
+<td>California State University, Bakersfield</td>
+<td>CSU</td>
+<td>Bakersfield</td>
+<td>Kern</td>
+<td>9613</td>
+<td>1965</td>
+</tr>
+<tr class="odd">
 <td>University of California, Berkeley</td>
 <td>UC</td>
 <td>Berkeley</td>
 <td>Alameda</td>
-<td>42519</td>
+<td>45307</td>
 <td>1869</td>
-</tr>
-<tr class="even">
-<td>University of California, Davis</td>
-<td>UC</td>
-<td>Davis</td>
-<td>Yolo</td>
-<td>39152</td>
-<td>1905</td>
-</tr>
-<tr class="odd">
-<td>University of California, Irvine</td>
-<td>UC</td>
-<td>Irvine</td>
-<td>Orange</td>
-<td>35220</td>
-<td>1965</td>
-</tr>
-<tr class="even">
-<td>University of California, Los Angeles</td>
-<td>UC</td>
-<td>Los Angeles</td>
-<td>Los Angeles</td>
-<td>45428</td>
-<td>1882</td>
-</tr>
-<tr class="odd">
-<td>University of California, Merced</td>
-<td>UC</td>
-<td>Merced</td>
-<td>Merced</td>
-<td>8544</td>
-<td>2005</td>
-</tr>
-<tr class="even">
-<td>University of California, Riverside</td>
-<td>UC</td>
-<td>Riverside</td>
-<td>Riverside</td>
-<td>23278</td>
-<td>1954</td>
-</tr>
-<tr class="odd">
-<td>University of California, San Diego</td>
-<td>UC</td>
-<td>San Diego</td>
-<td>San Diego</td>
-<td>38798</td>
-<td>1960</td>
-</tr>
-<tr class="even">
-<td>University of California, Santa Barbara</td>
-<td>UC</td>
-<td>Santa Barbara</td>
-<td>Santa Barbara</td>
-<td>24346</td>
-<td>1891</td>
-</tr>
-<tr class="odd">
-<td>University of California, Santa Cruz</td>
-<td>UC</td>
-<td>Santa Cruz</td>
-<td>Santa Cruz</td>
-<td>19700</td>
-<td>1965</td>
-</tr>
-<tr class="even">
-<td>California State University Maritime Academy</td>
-<td>CSU</td>
-<td>Vallejo</td>
-<td>Solano</td>
-<td>1017</td>
-<td>1929</td>
 </tr>
 </tbody>
 </table>
 
-<p>... (22 rows omitted)</p>
+<p>... (29 rows omitted)</p>
 </div>
 </div>
 </div>
@@ -1000,10 +904,10 @@ Alternate Answer
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="d739f444" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> schools.with_column(<span class="st">"University"</span>, schools.column(<span class="st">"Name"</span>)).drop(<span class="st">"Name"</span>)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>schools</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
+<div id="8854cc0a" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> schools.with_column(<span class="st">"University"</span>, schools.column(<span class="st">"Name"</span>)).drop(<span class="st">"Name"</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>schools.show(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
@@ -1017,89 +921,33 @@ Alternate Answer
 </thead>
 <tbody>
 <tr class="odd">
-<td>UC</td>
-<td>Berkeley</td>
-<td>Alameda</td>
-<td>42519</td>
-<td>1869</td>
-<td>University of California, Berkeley</td>
-</tr>
-<tr class="even">
-<td>UC</td>
-<td>Davis</td>
-<td>Yolo</td>
-<td>39152</td>
-<td>1905</td>
-<td>University of California, Davis</td>
-</tr>
-<tr class="odd">
-<td>UC</td>
-<td>Irvine</td>
-<td>Orange</td>
-<td>35220</td>
-<td>1965</td>
-<td>University of California, Irvine</td>
-</tr>
-<tr class="even">
-<td>UC</td>
-<td>Los Angeles</td>
-<td>Los Angeles</td>
-<td>45428</td>
-<td>1882</td>
-<td>University of California, Los Angeles</td>
-</tr>
-<tr class="odd">
-<td>UC</td>
-<td>Merced</td>
-<td>Merced</td>
-<td>8544</td>
-<td>2005</td>
-<td>University of California, Merced</td>
-</tr>
-<tr class="even">
-<td>UC</td>
-<td>Riverside</td>
-<td>Riverside</td>
-<td>23278</td>
-<td>1954</td>
-<td>University of California, Riverside</td>
-</tr>
-<tr class="odd">
-<td>UC</td>
-<td>San Diego</td>
-<td>San Diego</td>
-<td>38798</td>
-<td>1960</td>
-<td>University of California, San Diego</td>
-</tr>
-<tr class="even">
-<td>UC</td>
-<td>Santa Barbara</td>
-<td>Santa Barbara</td>
-<td>24346</td>
-<td>1891</td>
-<td>University of California, Santa Barbara</td>
-</tr>
-<tr class="odd">
-<td>UC</td>
-<td>Santa Cruz</td>
-<td>Santa Cruz</td>
-<td>19700</td>
-<td>1965</td>
-<td>University of California, Santa Cruz</td>
+<td>CSU</td>
+<td>Arcata</td>
+<td>Humboldt</td>
+<td>6025</td>
+<td>1913</td>
+<td>California State Polytechnic University, Humboldt</td>
 </tr>
 <tr class="even">
 <td>CSU</td>
-<td>Vallejo</td>
-<td>Solano</td>
-<td>1017</td>
-<td>1929</td>
-<td>California State University Maritime Academy</td>
+<td>Bakersfield</td>
+<td>Kern</td>
+<td>9613</td>
+<td>1965</td>
+<td>California State University, Bakersfield</td>
+</tr>
+<tr class="odd">
+<td>UC</td>
+<td>Berkeley</td>
+<td>Alameda</td>
+<td>45307</td>
+<td>1869</td>
+<td>University of California, Berkeley</td>
 </tr>
 </tbody>
 </table>
 
-<p>... (22 rows omitted)</p>
+<p>... (29 rows omitted)</p>
 </div>
 </div>
 <p>Questions for you as you read the above code:</p>
@@ -1116,11 +964,11 @@ Alternate Answer
 <section id="exercise-5-debugging-show" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-5-debugging-show">Exercise 5: Debugging <code>show</code></h2>
 <p>The following cells exhibit a tricky, but potentially common bug. First, check out the Python Reference to understand what <code>show</code> does.</p>
-<div id="fdb19824" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> Table.read_table(<span class="st">'data/cal_unis.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="168a1d93" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> Table.read_table(<span class="st">'data/cal_unis.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="30129b11" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> schools.show(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="b40edd88" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> schools.show(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
@@ -1135,28 +983,28 @@ Alternate Answer
 </thead>
 <tbody>
 <tr class="odd">
+<td>California State Polytechnic University, Humboldt</td>
+<td>CSU</td>
+<td>Arcata</td>
+<td>Humboldt</td>
+<td>6025</td>
+<td>1913</td>
+</tr>
+<tr class="even">
+<td>California State University, Bakersfield</td>
+<td>CSU</td>
+<td>Bakersfield</td>
+<td>Kern</td>
+<td>9613</td>
+<td>1965</td>
+</tr>
+<tr class="odd">
 <td>University of California, Berkeley</td>
 <td>UC</td>
 <td>Berkeley</td>
 <td>Alameda</td>
-<td>42519</td>
+<td>45307</td>
 <td>1869</td>
-</tr>
-<tr class="even">
-<td>University of California, Davis</td>
-<td>UC</td>
-<td>Davis</td>
-<td>Yolo</td>
-<td>39152</td>
-<td>1905</td>
-</tr>
-<tr class="odd">
-<td>University of California, Irvine</td>
-<td>UC</td>
-<td>Irvine</td>
-<td>Orange</td>
-<td>35220</td>
-<td>1965</td>
 </tr>
 </tbody>
 </table>
@@ -1164,13 +1012,13 @@ Alternate Answer
 <p>... (29 rows omitted)</p>
 </div>
 </div>
-<div id="ca5a3968" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> schools.show(<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="8b6198a9" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> schools.show(<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[13]</span><span class="ansi-green-fg">, line 1</span>
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[12]</span><span class="ansi-green-fg">, line 1</span>
 <span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">1</span> schools = <span class="ansi-yellow-bg">schools</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">show</span>(<span class="ansi-green-fg">4</span>)
 
 <span class="ansi-red-fg">AttributeError</span>: 'NoneType' object has no attribute 'show'</pre>
@@ -1179,14 +1027,14 @@ Alternate Answer
 </div>
 <p>Like <code>print</code>, show is for display purposes. It does not return anything—i.e., it returns None. The second cell above therefore assigns schools to None!</p>
 <p>Despite this, <code>show</code>—just like <code>print</code>—is useful when you want to display intermediate output for debugging purposes.</p>
-<div id="a9ceccbf" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> Table.read_table(<span class="st">'data/cal_unis.csv'</span>)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>schools.show(<span class="dv">3</span>) <span class="co"># just the first three rows</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> schools.relabeled(<span class="st">"Name"</span>, <span class="st">"University"</span>)</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>schools.show(<span class="dv">3</span>) <span class="co"># and again</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> schools.with_columns(<span class="st">"Name"</span>, <span class="st">"City"</span>)</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>schools         <span class="co"># the last evaluated value in a cell</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>                <span class="co"># is displayed by default</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="9a0f33dc" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> Table.read_table(<span class="st">'data/cal_unis.csv'</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>schools.show(<span class="dv">3</span>) <span class="co"># just the first three rows</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> schools.relabeled(<span class="st">"Name"</span>, <span class="st">"University"</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>schools.show(<span class="dv">3</span>) <span class="co"># and again</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> schools.with_columns(<span class="st">"Name"</span>, <span class="st">"City"</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>schools         <span class="co"># the last evaluated value in a cell</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>                <span class="co"># is displayed by default</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
@@ -1201,28 +1049,28 @@ Alternate Answer
 </thead>
 <tbody>
 <tr class="odd">
+<td>California State Polytechnic University, Humboldt</td>
+<td>CSU</td>
+<td>Arcata</td>
+<td>Humboldt</td>
+<td>6025</td>
+<td>1913</td>
+</tr>
+<tr class="even">
+<td>California State University, Bakersfield</td>
+<td>CSU</td>
+<td>Bakersfield</td>
+<td>Kern</td>
+<td>9613</td>
+<td>1965</td>
+</tr>
+<tr class="odd">
 <td>University of California, Berkeley</td>
 <td>UC</td>
 <td>Berkeley</td>
 <td>Alameda</td>
-<td>42519</td>
+<td>45307</td>
 <td>1869</td>
-</tr>
-<tr class="even">
-<td>University of California, Davis</td>
-<td>UC</td>
-<td>Davis</td>
-<td>Yolo</td>
-<td>39152</td>
-<td>1905</td>
-</tr>
-<tr class="odd">
-<td>University of California, Irvine</td>
-<td>UC</td>
-<td>Irvine</td>
-<td>Orange</td>
-<td>35220</td>
-<td>1965</td>
 </tr>
 </tbody>
 </table>
@@ -1243,35 +1091,35 @@ Alternate Answer
 </thead>
 <tbody>
 <tr class="odd">
+<td>California State Polytechnic University, Humboldt</td>
+<td>CSU</td>
+<td>Arcata</td>
+<td>Humboldt</td>
+<td>6025</td>
+<td>1913</td>
+</tr>
+<tr class="even">
+<td>California State University, Bakersfield</td>
+<td>CSU</td>
+<td>Bakersfield</td>
+<td>Kern</td>
+<td>9613</td>
+<td>1965</td>
+</tr>
+<tr class="odd">
 <td>University of California, Berkeley</td>
 <td>UC</td>
 <td>Berkeley</td>
 <td>Alameda</td>
-<td>42519</td>
+<td>45307</td>
 <td>1869</td>
-</tr>
-<tr class="even">
-<td>University of California, Davis</td>
-<td>UC</td>
-<td>Davis</td>
-<td>Yolo</td>
-<td>39152</td>
-<td>1905</td>
-</tr>
-<tr class="odd">
-<td>University of California, Irvine</td>
-<td>UC</td>
-<td>Irvine</td>
-<td>Orange</td>
-<td>35220</td>
-<td>1965</td>
 </tr>
 </tbody>
 </table>
 
 <p>... (29 rows omitted)</p>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="14">
+<div class="cell-output cell-output-display" data-execution_count="13">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
@@ -1286,93 +1134,93 @@ Alternate Answer
 </thead>
 <tbody>
 <tr class="odd">
+<td>California State Polytechnic University, Humboldt</td>
+<td>CSU</td>
+<td>Arcata</td>
+<td>Humboldt</td>
+<td>6025</td>
+<td>1913</td>
+<td>City</td>
+</tr>
+<tr class="even">
+<td>California State University, Bakersfield</td>
+<td>CSU</td>
+<td>Bakersfield</td>
+<td>Kern</td>
+<td>9613</td>
+<td>1965</td>
+<td>City</td>
+</tr>
+<tr class="odd">
 <td>University of California, Berkeley</td>
 <td>UC</td>
 <td>Berkeley</td>
 <td>Alameda</td>
-<td>42519</td>
+<td>45307</td>
 <td>1869</td>
 <td>City</td>
 </tr>
 <tr class="even">
-<td>University of California, Davis</td>
-<td>UC</td>
-<td>Davis</td>
-<td>Yolo</td>
-<td>39152</td>
-<td>1905</td>
+<td>California State University Channel Islands</td>
+<td>CSU</td>
+<td>Camarillo</td>
+<td>Ventura</td>
+<td>6128</td>
+<td>2002</td>
 <td>City</td>
 </tr>
 <tr class="odd">
-<td>University of California, Irvine</td>
-<td>UC</td>
-<td>Irvine</td>
-<td>Orange</td>
-<td>35220</td>
-<td>1965</td>
-<td>City</td>
-</tr>
-<tr class="even">
-<td>University of California, Los Angeles</td>
-<td>UC</td>
+<td>California State University, Dominguez Hills</td>
+<td>CSU</td>
+<td>Carson</td>
 <td>Los Angeles</td>
-<td>Los Angeles</td>
-<td>45428</td>
-<td>1882</td>
-<td>City</td>
-</tr>
-<tr class="odd">
-<td>University of California, Merced</td>
-<td>UC</td>
-<td>Merced</td>
-<td>Merced</td>
-<td>8544</td>
-<td>2005</td>
-<td>City</td>
-</tr>
-<tr class="even">
-<td>University of California, Riverside</td>
-<td>UC</td>
-<td>Riverside</td>
-<td>Riverside</td>
-<td>23278</td>
-<td>1954</td>
-<td>City</td>
-</tr>
-<tr class="odd">
-<td>University of California, San Diego</td>
-<td>UC</td>
-<td>San Diego</td>
-<td>San Diego</td>
-<td>38798</td>
+<td>16426</td>
 <td>1960</td>
 <td>City</td>
 </tr>
 <tr class="even">
-<td>University of California, Santa Barbara</td>
-<td>UC</td>
-<td>Santa Barbara</td>
-<td>Santa Barbara</td>
-<td>24346</td>
-<td>1891</td>
+<td>California State University, Chico</td>
+<td>CSU</td>
+<td>Chico</td>
+<td>Butte</td>
+<td>14183</td>
+<td>1887</td>
 <td>City</td>
 </tr>
 <tr class="odd">
-<td>University of California, Santa Cruz</td>
+<td>University of California, Davis</td>
 <td>UC</td>
-<td>Santa Cruz</td>
-<td>Santa Cruz</td>
-<td>19700</td>
-<td>1965</td>
+<td>Davis</td>
+<td>Yolo</td>
+<td>39679</td>
+<td>1905</td>
 <td>City</td>
 </tr>
 <tr class="even">
-<td>California State University Maritime Academy</td>
+<td>California State University, Fresno</td>
 <td>CSU</td>
-<td>Vallejo</td>
-<td>Solano</td>
-<td>1017</td>
-<td>1929</td>
+<td>Fresno</td>
+<td>Fresno</td>
+<td>23999</td>
+<td>1911</td>
+<td>City</td>
+</tr>
+<tr class="odd">
+<td>California State University, Fullerton</td>
+<td>CSU</td>
+<td>Fullerton</td>
+<td>Orange</td>
+<td>40386</td>
+<td>1957</td>
+<td>City</td>
+</tr>
+<tr class="even">
+<td>California State University, East Bay</td>
+<td>CSU</td>
+<td>Hayward</td>
+<td>Alameda</td>
+<td>13673</td>
+<td>1957</td>
 <td>City</td>
 </tr>
 </tbody>

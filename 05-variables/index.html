@@ -30,6 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../05-variables/units-of-analysis.html" rel="next">
+<link href="../04-tables/none-print.html" rel="prev">
 <link href="../assets/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -83,12 +85,218 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 
-<body class="quarto-light">
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../05-variables/index.html">L05: Variables in Social Science</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../assets/data6.png" alt="Data 6 logo" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">DATA 6 <br><small>Course Notes</small></a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/data-6-berkeley/notes" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home / About</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../01-intro/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">L01: Introduction</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-intro/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-intro/jupyter-notebook.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Jupyter Notebooks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-intro/programming-basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programming Basics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../02-datatypes/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">L02: Data Types</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-datatypes/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Numeric and String Data Types</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-datatypes/rates-incidence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application: Rates and Incidence</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../03-arrays/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">L03: Arrays</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../03-arrays/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Arrays</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../03-arrays/numpy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NumPy and Array Functions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../04-tables/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">L04: Table Fundamentals</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../04-tables/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Table Fundamentals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../04-tables/exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Table Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../04-tables/none-print.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">None and Print</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../05-variables/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">L05: Variables in Social Science</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../05-variables/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Variables and Variable Types</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../05-variables/units-of-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Units of Analysis</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../06-variables-ii/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">L06: Causality vs. EDA</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../06-variables-ii/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Causality vs.&nbsp;EDA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../06-variables-ii/sample-population.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sample vs.&nbsp;Population</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../five-things.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5 Things to Know</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data 6 Python Reference</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -207,8 +415,13 @@ Figure&nbsp;2: Variable Types.
 <blockquote class="blockquote">
 <p>What unites both types of numerical variables is that the magnitude of the numbers have meaning and you can perform mathematical operations on them and the result also has meaning. It is possible and meaningful to talk about the average air temperature across three locations. It is also possible and meaningful to talk about the sum total number of people across ten households.</p>
 </blockquote>
-<p>Just because a variable has numbers for values does not make it numerical. Consider phone area codes: Berkeley is 510, San Francisco is 415, Palo Alto is 650, and so on. While area codes are numbers, you can’t do any arithmetic—comparative or otherwise—with them that “makes sense”: what does it mean to add area codes? have one area code (650) that is “larger” than another (510)?</p>
-<p><em>What is a discrete variable type, really?</em> If you think about it deeply from a Computer Science perspective, there will be cases in which continuous numerical variables may seem discrete: after all, price (in U.S. dollars) is counted to the cent, and so there are a discrete number of prices for, say, a pound of apples (we hope). However, in the data world we consider how the variable type may inform how we construct informative visualizations of the variable itself and compare it to other values. In short, variable typing informs our choice of using histograms vs.&nbsp;scatter plots, and so on. More later on this.</p>
+<p>Just because a variable has numbers for values does not make it numerical. Consider phone area codes: Berkeley is 510, San Francisco is 415, Palo Alto is 650, and so on. While area codes are numbers, you can’t do any arithmetic—comparative or otherwise—with them that “makes sense”: what does it mean to add area codes? have one area code (650) that is “larger” than another (510)? Area codes are therefore an example of a nominal categorical variable.</p>
+<p>Variable types are closely tied to measurement. Consider the following survey item from <a href="https://www.stat20.org/1-questions-and-data/02-taxonomy-of-data/notes">Stat 20</a>, which describes a common ordinal categorical variable in opinion surveys:</p>
+<blockquote class="blockquote">
+<p>Consider the question:“Do you strongly agree, agree, feel neutral about, disagree, or strongly disagree with the following statement: Dogs are better than cats?” When you record answers to this question, you’re recording measurements on a categorical variable that takes values “strongly agree”, “agree”, “neutral”, “disagree”, “strongly disagree”. Those are the levels of the categorical variable and they have a natural ordering: “strongly agree” is closer to “agree” than it is to “strongly disagree”.</p>
+</blockquote>
+<p>The above is an example of a <strong>Likert item</strong>. The researcher likely wanted a way to measure respondents’ sentiment of dogs and cats—an abstract concept. To do so, the researcher distributed a survey to respondents that <em>operationalized</em> this concept as a 5-point ordinal categorical variable. (There are of course other ways to measure this sentiment, such as by interviewing respondents and asking the open-ended question, “Dogs or cats?” but these yield a different set of possible responses and, consequently a different set of variables.)</p>
+<p><em>Aside: What is a discrete variable type, really?</em> If you think about it deeply from a Computer Science perspective, there will be cases in which continuous numerical variables may seem discrete: after all, price (in U.S. dollars) is counted to the cent, and so there are a discrete number of prices for, say, a pound of apples (we hope). However, in the data world we consider how the variable type may inform how we construct informative visualizations of the variable itself and compare it to other values. In short, variable typing informs our choice of using histograms vs.&nbsp;scatter plots, and so on. More later on this.</p>
 </section>
 <section id="external-reading" class="level2">
 <h2 class="anchored" data-anchor-id="external-reading">External Reading</h2>
@@ -626,6 +839,18 @@ Figure&nbsp;2: Variable Types.
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../04-tables/none-print.html" class="pagination-link" aria-label="None and Print">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">None and Print</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../05-variables/units-of-analysis.html" class="pagination-link" aria-label="Units of Analysis">
+        <span class="nav-page-text">Units of Analysis</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -635,7 +860,7 @@ Figure&nbsp;2: Variable Types.
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../index.html">
+    <a class="nav-link active" href="../index.html" aria-current="page">
 <p>Home / About / License</p>
 </a>
   </li>  
