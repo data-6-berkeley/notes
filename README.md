@@ -8,6 +8,14 @@ Quick reference:
 - Optional: `quarto render` builds `_site`.
 - `quarto publish gh-pages` to host `_site` on GitHub pages.
 
+## Python dependencies
+
+```
+datascience
+numpy
+seaborn
+```
+
 ## course-site-quarto
 This repository contains a Quarto-based template for class website. You can see a preview of it at [https://berkeley-cdss.github.io/course-site-quarto](https://berkeley-cdss.github.io/course-site-quarto). This template is intended to be forked and altered for other courses.
 
