@@ -253,36 +253,36 @@
     ]
   },
   {
-    "objectID": "06-variables-ii/deprecated-eda.html",
-    "href": "06-variables-ii/deprecated-eda.html",
+    "objectID": "06-observational-studies/deprecated-eda.html",
+    "href": "06-observational-studies/deprecated-eda.html",
     "title": "Exploratory Data Analysis - consider removing",
     "section": "",
     "text": "If we’re not going to be studying causal relationships in this class, what will we be looking at? In this course we will look deeply at a core component of Data Science: Exploratory Data Analysis, or EDA."
   },
   {
-    "objectID": "06-variables-ii/deprecated-eda.html#what-is-eda",
-    "href": "06-variables-ii/deprecated-eda.html#what-is-eda",
+    "objectID": "06-observational-studies/deprecated-eda.html#what-is-eda",
+    "href": "06-observational-studies/deprecated-eda.html#what-is-eda",
     "title": "Exploratory Data Analysis - consider removing",
     "section": "What is EDA?",
     "text": "What is EDA?\nExploratory Data Analysis (EDA) is like detective work. As coined by the famous American statistician and mathematician John Tukey (we will discuss Tukey numbers soon):\n\nExploratory data analysis is an attitude, a state of flexibility, a willingness to look for those things that we believe are not there, as well as those that we believe to be there.\n\nMore formally, Exploratory Data Analysis (EDA) is the process of understanding a new dataset. It is an open-ended, informal analysis that involves familiarizing ourselves with the variables present in the data, discovering potential hypotheses, and identifying possible issues with the data.\n\nWhat is Data Wrangling?\nA process very closely related to EDA is data wrangling, often called data cleaning. Data wrangling is the process of transforming raw data to facilitate subsequent analysis and can address issues like unclear structure or formatting, missing or corrupted values, unit conversions, and so on.\nEDA and data cleaning are often thought of as an “infinite loop,” with each process driving the other.\nFortunately, in our classes we will try our best to work with “clean” datasets. These datasets will often have already been preprocessed for cleaner analysis, allowing us to explore and ask questions much more easily than if we were stuck with messier data."
   },
   {
-    "objectID": "06-variables-ii/deprecated-index.html",
-    "href": "06-variables-ii/deprecated-index.html",
+    "objectID": "06-observational-studies/deprecated-index.html",
+    "href": "06-observational-studies/deprecated-index.html",
     "title": "Intro to Social Science Research",
     "section": "",
     "text": "Theory\nHypothesis\nData Collection\nData Analysis\nResults\n(and back)"
   },
   {
-    "objectID": "06-variables-ii/deprecated-index.html#the-scientific-method",
-    "href": "06-variables-ii/deprecated-index.html#the-scientific-method",
+    "objectID": "06-observational-studies/deprecated-index.html#the-scientific-method",
+    "href": "06-observational-studies/deprecated-index.html#the-scientific-method",
     "title": "Intro to Social Science Research",
     "section": "",
     "text": "Theory\nHypothesis\nData Collection\nData Analysis\nResults\n(and back)"
   },
   {
-    "objectID": "06-variables-ii/deprecated-index.html#theory-vs.-hypothesis",
-    "href": "06-variables-ii/deprecated-index.html#theory-vs.-hypothesis",
+    "objectID": "06-observational-studies/deprecated-index.html#theory-vs.-hypothesis",
+    "href": "06-observational-studies/deprecated-index.html#theory-vs.-hypothesis",
     "title": "Intro to Social Science Research",
     "section": "Theory vs. Hypothesis",
     "text": "Theory vs. Hypothesis\nTheory: A systematic set of related statements that accord with a worldview.\nWhen (social) scientists do research, we use theories 3 different ways: * Theories prevent us from being taken in by flukes. * Theories help us make sense of observed patterns in ways that can suggest other possibilities. * Theories direct our research efforts, pointing us toward likely discoveries through empirical observation.\nElements of a scientific sociological theory: * Concepts * Relations between concepts * Causal mechanisms\nHypothesis: The empirical instantiation of a theory, i.e., a testable statement of a relationship involving two concepts. * Hypotheses therefore involve variables, which are representations that capture the different dimensions, categories, or levels of a concept.\ninsert images of concept 1, concept 2, variable 1, variable 2"
@@ -758,117 +758,117 @@
     ]
   },
   {
-    "objectID": "06-variables-ii/sample-population.html",
-    "href": "06-variables-ii/sample-population.html",
+    "objectID": "06-observational-studies/sample-population.html",
+    "href": "06-observational-studies/sample-population.html",
     "title": "Sample vs. Population",
     "section": "",
     "text": "Given a research question, the population is the group you want to learn something about However, directly studying the population as a whole is often not possible! Data might not exist at that scale, or it might be too costly to collect, if it’s even possible to gather that information.\nMany times, we instead study a sample of the population. If the sample is a good representation of the population, we can make useful analyses at a much lower cost.\n\n\nThe set of individuals we actually draw our sample from is the sampling frame. Depending on how we select our sample, we may miss individuals from the population we’re interested in, and we might also include individuals that are not in the population.",
     "crumbs": [
-      "L06: Causality vs. EDA",
+      "L06: Observational Studies",
       "Sample vs. Population"
     ]
   },
   {
-    "objectID": "06-variables-ii/sample-population.html#population-vs.-sample",
-    "href": "06-variables-ii/sample-population.html#population-vs.-sample",
+    "objectID": "06-observational-studies/sample-population.html#population-vs.-sample",
+    "href": "06-observational-studies/sample-population.html#population-vs.-sample",
     "title": "Sample vs. Population",
     "section": "",
     "text": "Given a research question, the population is the group you want to learn something about However, directly studying the population as a whole is often not possible! Data might not exist at that scale, or it might be too costly to collect, if it’s even possible to gather that information.\nMany times, we instead study a sample of the population. If the sample is a good representation of the population, we can make useful analyses at a much lower cost.\n\n\nThe set of individuals we actually draw our sample from is the sampling frame. Depending on how we select our sample, we may miss individuals from the population we’re interested in, and we might also include individuals that are not in the population.",
     "crumbs": [
-      "L06: Causality vs. EDA",
+      "L06: Observational Studies",
       "Sample vs. Population"
     ]
   },
   {
-    "objectID": "06-variables-ii/sample-population.html#examples",
-    "href": "06-variables-ii/sample-population.html#examples",
+    "objectID": "06-observational-studies/sample-population.html#examples",
+    "href": "06-observational-studies/sample-population.html#examples",
     "title": "Sample vs. Population",
     "section": "Examples",
     "text": "Examples\n\n\n\n\n\n\n\nFigure 1: A sampling frame may include individuals not in our population.\n\n\n\n\n\nExamples of target populations and the collected samples.\n\n\n\n\n\n\nTarget Population\nCollected sample\n\n\n\n\nStudent body of the school\nA specific classroom of students at the school\n\n\nA bag of 100 marbles\n10 marbles from the bag\n\n\nComputing Education Research (CER) papers\nPapers published at the American Society of Engineering Education (ASEE) conference\n\n\n\nIn the last example of the table, it is possible some of the research papers published at the ASEE conference are not specific to CER and may perhaps be focused on education in other engineering fields, like mechanical engineering or civil engineering. The sampling frame may be inferred to be the ASEE conference, and then the sample collected would need to be adjusted to include just the CER papers we want.\n\nA longer example\nLet’s say you’re planning a social event for all Data Science-declared sophomores (second-years). Since you only have the budget to cater pizza, you want to figure out what pizza toppings Data Science sophomores enjoy, and buy pizza toppings according to how popular they are.\nIn order to figure out the most popular flavors, you survey every student walking into or out of Warren Hall (where Data Science course office hours are located) from 12PM to 1PM by asking what their favorite topping is. Assume that everyone responds.\n\nPopulation: Data Science sophomores\nSampling frame: Students walking into/out of Warren Hall between 12PM and 1PM\n\nIf we draw a sample from this sampling frame we may not get a representative sample because we will get respondents from not just the sophomore pool, but also freshman, juniors, seniors, non-Data Science majors, and generally many more students than our target population. These students may have different preferences than Data Science sophomores.",
     "crumbs": [
-      "L06: Causality vs. EDA",
+      "L06: Observational Studies",
       "Sample vs. Population"
     ]
   },
   {
-    "objectID": "06-variables-ii/sample-population.html#how-do-we-construct-representative-samples",
-    "href": "06-variables-ii/sample-population.html#how-do-we-construct-representative-samples",
+    "objectID": "06-observational-studies/sample-population.html#how-do-we-construct-representative-samples",
+    "href": "06-observational-studies/sample-population.html#how-do-we-construct-representative-samples",
     "title": "Sample vs. Population",
     "section": "How do we construct representative samples?",
     "text": "How do we construct representative samples?\nWe will (hopefully) get into this topic later this semester.",
     "crumbs": [
-      "L06: Causality vs. EDA",
+      "L06: Observational Studies",
       "Sample vs. Population"
     ]
   },
   {
-    "objectID": "06-variables-ii/index.html",
-    "href": "06-variables-ii/index.html",
+    "objectID": "06-observational-studies/index.html",
+    "href": "06-observational-studies/index.html",
     "title": "Causality vs. EDA",
     "section": "",
     "text": "Read Inferential Thinking\n\n\n\nRead all of Chapter 2, which describes in detail experimental setup and design. It covers a core story to data scientists: John Snow and the Broad Street Pump.\nBefore continuing, make sure that you are familiar with the following terminology:\n\nobservational study\ncausality\nassociation\ncomparison\ntreatment group\ncontrol group\nrandomized controlled trial (RCT)",
     "crumbs": [
-      "L06: Causality vs. EDA"
+      "L06: Observational Studies"
     ]
   },
   {
-    "objectID": "06-variables-ii/index.html#john-snow-and-the-broad-street-pump",
-    "href": "06-variables-ii/index.html#john-snow-and-the-broad-street-pump",
+    "objectID": "06-observational-studies/index.html#john-snow-and-the-broad-street-pump",
+    "href": "06-observational-studies/index.html#john-snow-and-the-broad-street-pump",
     "title": "Causality vs. EDA",
     "section": "",
     "text": "Read Inferential Thinking\n\n\n\nRead all of Chapter 2, which describes in detail experimental setup and design. It covers a core story to data scientists: John Snow and the Broad Street Pump.\nBefore continuing, make sure that you are familiar with the following terminology:\n\nobservational study\ncausality\nassociation\ncomparison\ntreatment group\ncontrol group\nrandomized controlled trial (RCT)",
     "crumbs": [
-      "L06: Causality vs. EDA"
+      "L06: Observational Studies"
     ]
   },
   {
-    "objectID": "06-variables-ii/index.html#randomized-controlled-trials-vs.-observational-studies",
-    "href": "06-variables-ii/index.html#randomized-controlled-trials-vs.-observational-studies",
+    "objectID": "06-observational-studies/index.html#randomized-controlled-trials-vs.-observational-studies",
+    "href": "06-observational-studies/index.html#randomized-controlled-trials-vs.-observational-studies",
     "title": "Causality vs. EDA",
     "section": "Randomized Controlled Trials vs. Observational Studies",
     "text": "Randomized Controlled Trials vs. Observational Studies\nIn the Broad Street Pump experiment, John Snow established a causal relationship (between what? Read Inferential Thinking Chapter 2 to find out) because he noted that there was no systematic difference between the two different groups observed other than along a single variable dimension.\nIn modern days, randomized controlled trials are excellent ways to compare two groups of otherwise similar individuals. However, in the majority of this class we will not be able to conduct a randomized controlled trial. This is because the datasets we analyze are almost all observational studies and not experiments. Moreover, these datasets are largely pre-existing materials collected by other researchers, and we may not know the entire picture of how they collected the data. As a result, in this class we seek to understand associations between variables, and we will almost never seek to establish causal relationships between variables.\nTo further understand causality, we encourage you to take inferential thinking courses like Data 8, Stat 20, and a wide range of Statistics courses.",
     "crumbs": [
-      "L06: Causality vs. EDA"
+      "L06: Observational Studies"
     ]
   },
   {
-    "objectID": "06-variables-ii/index.html#confounding",
-    "href": "06-variables-ii/index.html#confounding",
+    "objectID": "06-observational-studies/index.html#confounding",
+    "href": "06-observational-studies/index.html#confounding",
     "title": "Causality vs. EDA",
     "section": "Confounding",
     "text": "Confounding\nFrom Inferential Thinking, Ch 3.2 Establishing Causality:\n\nIn an observational study, if the treatment and control groups differ in ways other than the treatment, it is difficult to make conclusions about causality.\nAn underlying difference between the two groups (other than the treatment) is called a confounding factor, because it might confound you (that is, mess you up) when you try to reach a conclusion.\n\nConfounding occurs when two variables can be consistently associated with each other even when one does not cause the other.\nTo determine whether a confounding variable can account for the association between two variables, we can try to disaggregate by different values of the confounding variable.\nThis disaggregation process can be repeated exhaustively for a potentially infinite number of confounding variables. Researchers generally don’t do this. Instead, we usually rely on assumptions drawn from social science theory or findings from prior studies. This process can narrow our search of potential confounding variables that may influence the association between two variables.",
     "crumbs": [
-      "L06: Causality vs. EDA"
+      "L06: Observational Studies"
     ]
   },
   {
-    "objectID": "06-variables-ii/index.html#exploratory-data-analysis",
-    "href": "06-variables-ii/index.html#exploratory-data-analysis",
+    "objectID": "06-observational-studies/index.html#exploratory-data-analysis",
+    "href": "06-observational-studies/index.html#exploratory-data-analysis",
     "title": "Causality vs. EDA",
     "section": "Exploratory Data Analysis",
     "text": "Exploratory Data Analysis\nIf we’re not going to be studying causal relationships in this class, what will we be looking at? In this course we will look deeply at a core component of Data Science: Exploratory Data Analysis, or EDA.\nExploratory Data Analysis (EDA) is like detective work. As coined by the famous American statistician and mathematician John Tukey (we will discuss Tukey numbers soon):\n\nExploratory data analysis is an attitude, a state of flexibility, a willingness to look for those things that we believe are not there, as well as those that we believe to be there.\n\nMore formally, Exploratory Data Analysis (EDA) is the process of understanding a new dataset. It is an open-ended, informal analysis that involves familiarizing ourselves with the variables present in the data, discovering potential hypotheses, and identifying possible issues with the data.",
     "crumbs": [
-      "L06: Causality vs. EDA"
+      "L06: Observational Studies"
     ]
   },
   {
-    "objectID": "06-variables-ii/index.html#data-wrangling",
-    "href": "06-variables-ii/index.html#data-wrangling",
+    "objectID": "06-observational-studies/index.html#data-wrangling",
+    "href": "06-observational-studies/index.html#data-wrangling",
     "title": "Causality vs. EDA",
     "section": "Data Wrangling",
     "text": "Data Wrangling\nA process very closely related to EDA is data wrangling, often called data cleaning. Data wrangling is the process of transforming raw data to facilitate subsequent analysis and can address issues like unclear structure or formatting, missing or corrupted values, unit conversions, and so on.\nEDA and data cleaning are often thought of as an “infinite loop,” with each process driving the other.\nFortunately, in our classes we will try our best to work with “clean” datasets. These datasets will often have already been preprocessed for cleaner analysis, allowing us to explore and ask questions much more easily than if we were stuck with messier data.",
     "crumbs": [
-      "L06: Causality vs. EDA"
+      "L06: Observational Studies"
     ]
   },
   {
-    "objectID": "06-variables-ii/index.html#external-reading",
-    "href": "06-variables-ii/index.html#external-reading",
+    "objectID": "06-observational-studies/index.html#external-reading",
+    "href": "06-observational-studies/index.html#external-reading",
     "title": "Causality vs. EDA",
     "section": "External Reading",
     "text": "External Reading\n\n(mentioned in notes) Computational and Inferential Thinking, Ch 5.1\n“Chapter 15: From Concepts to Models.” Elizabeth Heger Boyle, Deborah Carr, Benjamin Cornwell, Shelley Correll, Robert Crosnoe, Jeremy Freese, and Waters, Mary C. 2017. The Art and Science of Social Research. New York: W. W. Norton & Company.",
     "crumbs": [
-      "L06: Causality vs. EDA"
+      "L06: Observational Studies"
     ]
   },
   {

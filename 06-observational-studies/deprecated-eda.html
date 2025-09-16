@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Sample vs.&nbsp;Population</title>
+<title>Exploratory Data Analysis - consider removing</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../five-things.html" rel="next">
-<link href="../06-variables-ii/index.html" rel="prev">
 <link href="../assets/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -85,242 +83,31 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 
-<body class="nav-sidebar docked quarto-light">
+<body class="quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../06-variables-ii/index.html">L06: Observational Studies</a></li><li class="breadcrumb-item"><a href="../06-variables-ii/sample-population.html">Sample vs.&nbsp;Population</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
-</header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="../index.html" class="sidebar-logo-link">
-      <img src="../assets/data6.png" alt="Data 6 logo" class="sidebar-logo py-0 d-lg-inline d-none">
-      </a>
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">DATA 6 <br><small>Course Notes</small></a> 
-        <div class="sidebar-tools-main">
-    <a href="https://github.com/data-6-berkeley/notes" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
-</div>
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Home / About</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../01-intro/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L01: Introduction</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../01-intro/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Course Introduction</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../01-intro/jupyter-notebook.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Jupyter Notebooks</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../01-intro/programming-basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Programming Basics</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../02-datatypes/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L02: Data Types</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../02-datatypes/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Numeric and String Data Types</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../02-datatypes/rates-incidence.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Application: Rates and Incidence</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../03-arrays/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L03: Arrays</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../03-arrays/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Arrays</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../03-arrays/numpy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">NumPy and Array Functions</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../04-tables/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L04: Table Fundamentals</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../04-tables/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Table Fundamentals</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../04-tables/exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Table Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../04-tables/none-print.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">None and Print</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../05-variables/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L05: Variables in Social Science</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../05-variables/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Variables and Variable Types</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../05-variables/units-of-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Units of Analysis</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../06-variables-ii/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L06: Observational Studies</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../06-variables-ii/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Causality vs.&nbsp;EDA</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../06-variables-ii/sample-population.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Sample vs.&nbsp;Population</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../five-things.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5 Things to Know</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../reference.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data 6 Python Reference</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#population-vs.-sample" id="toc-population-vs.-sample" class="nav-link active" data-scroll-target="#population-vs.-sample">Population vs.&nbsp;Sample</a>
+  <li><a href="#what-is-eda" id="toc-what-is-eda" class="nav-link active" data-scroll-target="#what-is-eda">What is EDA?</a>
   <ul class="collapse">
-  <li><a href="#sampling-frame" id="toc-sampling-frame" class="nav-link" data-scroll-target="#sampling-frame">Sampling Frame</a></li>
+  <li><a href="#what-is-data-wrangling" id="toc-what-is-data-wrangling" class="nav-link" data-scroll-target="#what-is-data-wrangling">What is Data Wrangling?</a></li>
   </ul></li>
-  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a>
-  <ul class="collapse">
-  <li><a href="#a-longer-example" id="toc-a-longer-example" class="nav-link" data-scroll-target="#a-longer-example">A longer example</a></li>
-  </ul></li>
-  <li><a href="#how-do-we-construct-representative-samples" id="toc-how-do-we-construct-representative-samples" class="nav-link" data-scroll-target="#how-do-we-construct-representative-samples">How do we construct representative samples?</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../06-variables-ii/index.html">L06: Observational Studies</a></li><li class="breadcrumb-item"><a href="../06-variables-ii/sample-population.html">Sample vs.&nbsp;Population</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Sample vs.&nbsp;Population</h1>
+<h1 class="title">Exploratory Data Analysis - consider removing</h1>
 </div>
 
 
@@ -337,73 +124,22 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </header>
 
 
-<section id="population-vs.-sample" class="level2">
-<h2 class="anchored" data-anchor-id="population-vs.-sample">Population vs.&nbsp;Sample</h2>
-<p>Given a research question, the <strong>population</strong> is the group you want to learn something about However, directly studying the population as a whole is often not possible! Data might not exist at that scale, or it might be too costly to collect, if it’s even possible to gather that information.</p>
-<p>Many times, we instead study a <strong>sample</strong> of the population. If the sample is a good representation of the population, we can make useful analyses at a much lower cost.</p>
-<section id="sampling-frame" class="level3">
-<h3 class="anchored" data-anchor-id="sampling-frame">Sampling Frame</h3>
-<p>The set of individuals we actually draw our sample from is the <strong>sampling frame</strong>. Depending on how we select our sample, we may miss individuals from the population we’re interested in, and we might also include individuals that are not in the population.</p>
-</section>
-</section>
-<section id="examples" class="level2">
-<h2 class="anchored" data-anchor-id="examples">Examples</h2>
-<div style="text-align: center">
-<div id="fig-inflation" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-inflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/sampling-frame.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-inflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: A sampling frame may include individuals not in our population.
-</figcaption>
-</figure>
-</div>
-</div>
-<table class="caption-top table">
-<caption>Examples of target populations and the collected samples.</caption>
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Target Population</th>
-<th>Collected sample</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Student body of the school</td>
-<td>A specific classroom of students at the school</td>
-</tr>
-<tr class="even">
-<td>A bag of 100 marbles</td>
-<td>10 marbles from the bag</td>
-</tr>
-<tr class="odd">
-<td>Computing Education Research (CER) papers</td>
-<td>Papers published at the American Society of Engineering Education (ASEE) conference</td>
-</tr>
-</tbody>
-</table>
-<p>In the last example of the table, it is possible some of the research papers published at the ASEE conference are not specific to CER and may perhaps be focused on education in other engineering fields, like mechanical engineering or civil engineering. The sampling frame may be inferred to be the ASEE conference, and then the sample collected would need to be adjusted to include just the CER papers we want.</p>
-<section id="a-longer-example" class="level3">
-<h3 class="anchored" data-anchor-id="a-longer-example">A longer example</h3>
-<p>Let’s say you’re planning a social event for all Data Science-declared sophomores (second-years). Since you only have the budget to cater pizza, you want to figure out what pizza toppings Data Science sophomores enjoy, and buy pizza toppings according to how popular they are.</p>
-<p>In order to figure out the most popular flavors, you survey every student walking into or out of Warren Hall (where Data Science course office hours are located) from 12PM to 1PM by asking what their favorite topping is. Assume that everyone responds.</p>
-<ul>
-<li><strong>Population</strong>: Data Science sophomores</li>
-<li><strong>Sampling frame</strong>: Students walking into/out of Warren Hall between 12PM and 1PM</li>
-</ul>
-<p>If we draw a sample from this sampling frame we may not get a <strong>representative</strong> sample because we will get respondents from not just the sophomore pool, but also freshman, juniors, seniors, non-Data Science majors, and generally many more students than our target population. These students may have different preferences than Data Science sophomores.</p>
-</section>
-</section>
-<section id="how-do-we-construct-representative-samples" class="level2">
-<h2 class="anchored" data-anchor-id="how-do-we-construct-representative-samples">How do we construct representative samples?</h2>
-<p>We will (hopefully) get into this topic later this semester.</p>
+<p>If we’re <em>not</em> going to be studying causal relationships in this class, what <em>will</em> we be looking at? In this course we will look deeply at a core component of Data Science: <strong>Exploratory Data Analysis</strong>, or <strong>EDA</strong>.</p>
+<section id="what-is-eda" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-eda">What is EDA?</h2>
+<p>Exploratory Data Analysis (EDA) is like detective work. As coined by the famous American statistician and mathematician <a href="https://en.wikipedia.org/wiki/John_Tukey">John Tukey</a> (we will discuss Tukey numbers soon):</p>
+<blockquote class="blockquote">
+<p>Exploratory data analysis is an attitude, a state of flexibility, a willingness to look for those things that we believe are not there, as well as those that we believe to be there.</p>
+</blockquote>
+<p>More formally, <strong>Exploratory Data Analysis (EDA)</strong> is the process of understanding a new dataset. It is an open-ended, informal analysis that involves familiarizing ourselves with the variables present in the data, discovering potential hypotheses, and identifying possible issues with the data.</p>
+<section id="what-is-data-wrangling" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-data-wrangling">What is Data Wrangling?</h3>
+<p>A process very closely related to EDA is <strong>data wrangling</strong>, often called <strong>data cleaning</strong>. Data wrangling is the process of transforming raw data to facilitate subsequent analysis and can address issues like unclear structure or formatting, missing or corrupted values, unit conversions, and so on.</p>
+<p>EDA and data cleaning are often thought of as an “infinite loop,” with each process driving the other.</p>
+<p>Fortunately, in our classes we will try our best to work with “clean” datasets. These datasets will often have already been preprocessed for cleaner analysis, allowing us to explore and ask questions much more easily than if we were stuck with messier data.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -479,7 +215,7 @@ Figure&nbsp;1: A sampling frame may include individuals not in our population.
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/data-6-berkeley\.github\.io\/notes\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -806,18 +542,6 @@ Figure&nbsp;1: A sampling frame may include individuals not in our population.
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../06-variables-ii/index.html" class="pagination-link" aria-label="L06: Observational Studies">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">L06: Observational Studies</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../five-things.html" class="pagination-link" aria-label="5 Things to Know">
-        <span class="nav-page-text">5 Things to Know</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -827,7 +551,7 @@ Figure&nbsp;1: A sampling frame may include individuals not in our population.
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link active" href="../index.html" aria-current="page">
+    <a class="nav-link" href="../index.html">
 <p>Home / About / License</p>
 </a>
   </li>  
