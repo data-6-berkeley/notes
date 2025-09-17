@@ -67,12 +67,12 @@ website:
             text: "Variables and Variable Types"
           - href: 05-variables/units-of-analysis.qmd
             text: "Units of Analysis"
-      - section: "L06: Observational Studies"
-        href: 06-observational-studies/index.qmd
+      - section: "L06: Variables II"
+        href: 06-variables-ii/index.qmd
         contents:
-          - href: 06-observational-studies/index.qmd
+          - href: 06-variables-ii/index.qmd
             text: "Causality vs. EDA"
-          - href: 06-observational-studies/sample-population.qmd
+          - href: 06-variables-ii/sample-population.qmd
             text: "Sample vs. Population"
       - href: five-things.qmd
         text: "5 Things to Know"
