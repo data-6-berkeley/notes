@@ -298,8 +298,8 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../06-observational-studies/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L06: Observational Studies</span></a>
+            <a href="../06-variables-ii/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">L06: Variables II</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -307,13 +307,13 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../06-observational-studies/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../06-variables-ii/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Causality vs.&nbsp;EDA</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../06-observational-studies/sample-population.html" class="sidebar-item-text sidebar-link">
+  <a href="../06-variables-ii/sample-population.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Sample vs.&nbsp;Population</span></a>
   </div>
 </li>
@@ -372,7 +372,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 
 
 <p>We work with the <code>schools</code> table from before.</p>
-<div id="e0e1d54c" class="cell" data-execution_count="1">
+<div id="ea19921e" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datascience <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -437,7 +437,7 @@ Show Answer
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="a634d2df" class="cell" data-execution_count="2">
+<div id="406e3c6a" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>schools.labels</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>('Name', 'Institution', 'City', 'County', 'Enrollment', 'Founded')</code></pre>
@@ -493,7 +493,7 @@ Show Answer
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="067fd86f" class="cell" data-execution_count="3">
+<div id="586427db" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>schools.select(</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Name"</span>, <span class="st">"Founded"</span>,</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Institution"</span>, <span class="st">"City"</span>,</span>
@@ -616,7 +616,7 @@ The schools table for reference, if you need it
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="d7c106d3" class="cell" data-execution_count="4">
+<div id="e3d99cdc" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>schools.show(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -679,7 +679,7 @@ Show Answer
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="135ac7ae" class="cell" data-execution_count="5">
+<div id="38c1e97c" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>schools.where(<span class="st">"Institution"</span>, <span class="st">"UC"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -788,7 +788,7 @@ Show Answer
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="464f4cee" class="cell" data-execution_count="6">
+<div id="effd4cdc" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>schools.where(<span class="st">"City"</span>, <span class="st">"Los Angeles"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -842,7 +842,7 @@ Show Answer
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="80be4892" class="cell" data-execution_count="7">
+<div id="f370eb5f" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> schools.relabeled(<span class="st">"Name"</span>, <span class="st">"University"</span>)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>schools.show(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -904,7 +904,7 @@ Alternate Answer
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="6681b853" class="cell" data-execution_count="9">
+<div id="645143bf" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> schools.with_column(<span class="st">"University"</span>, schools.column(<span class="st">"Name"</span>)).drop(<span class="st">"Name"</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>schools.show(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -964,10 +964,10 @@ Alternate Answer
 <section id="exercise-5-debugging-show" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-5-debugging-show">Exercise 5: Debugging <code>show</code></h2>
 <p>The following cells exhibit a tricky, but potentially common bug. First, check out the Python Reference to understand what <code>show</code> does.</p>
-<div id="02120138" class="cell" data-execution_count="10">
+<div id="298f0232" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> Table.read_table(<span class="st">'data/cal_unis.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="47c43c00" class="cell" data-execution_count="11">
+<div id="48cf6e69" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> schools.show(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -1012,7 +1012,7 @@ Alternate Answer
 <p>... (29 rows omitted)</p>
 </div>
 </div>
-<div id="beb85830" class="cell" data-execution_count="12">
+<div id="bdd19c37" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> schools.show(<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
@@ -1027,7 +1027,7 @@ Alternate Answer
 </div>
 <p>Like <code>print</code>, show is for display purposes. It does not return anything—i.e., it returns None. The second cell above therefore assigns schools to None!</p>
 <p>Despite this, <code>show</code>—just like <code>print</code>—is useful when you want to display intermediate output for debugging purposes.</p>
-<div id="413a7484" class="cell" data-execution_count="13">
+<div id="2a21d32c" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> Table.read_table(<span class="st">'data/cal_unis.csv'</span>)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>schools.show(<span class="dv">3</span>) <span class="co"># just the first three rows</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> schools.relabeled(<span class="st">"Name"</span>, <span class="st">"University"</span>)</span>
