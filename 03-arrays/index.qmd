@@ -32,7 +32,7 @@ We have previously discussed the idea of tables: a rectangular data structure wi
 
 ### Today's dataset
 
-The following table is drawn from the American Community Survey (ACS) of 2020. It shows education levels of adults 25 years or higher by state.
+The following table is drawn from the [American Community Survey (ACS) of 2020](https://data.census.gov/table/ACSST5Y2020.S1501?q=2020+education&t=Age+and+Sex:Educational+Attainment&g=010XX00US$0400000). It shows education levels of adults 25 years or higher by state.
   
 | State | Estimated total state population |Estimated high school graduate or higher (%) | Estimated bachelor's degree or higher (%) |
 | --- | --- | --- | --- |
@@ -156,7 +156,7 @@ Because of zero-indexing, the largest valid index is 4 for the five-element `int
 int_arr.item(5)
 ```
 
-In Python, we can also “count backwards” using **negative indexes**. -1 corresponds to the last element in a array; -2 corresponds to the second to last element in a array; and so on.
+In Python, we can also “count backwards” using **negative indexes**. -1 corresponds to the last element in an array; -2 corresponds to the second to last element in a array; and so on.
 
 ```{python}
 # functionally equivalent to int_arr.item(4)
