@@ -5,7 +5,7 @@ subtitle: "A special data type, and a valuable function"
 
 ## `None` type
 
-We have covered a few data types so far. There are  infinitely* many integers, floating point numbers, and strings. (*Actually finite, because of how computers store information. Take CS61C to learn more.)
+We have covered a few data types so far. There are *infinitely* many integers, floating point numbers, and strings. (Actually *finite*, because of how computers store information. Take [CS61C](https://cs61c.org/) to learn more.)
 
 However, for the `NoneType` data type, there is only one value: `None`.
 
@@ -41,6 +41,7 @@ Trace through the above program. Do you see how expressions are evaluated before
 ## Notebooks: Cell Output vs. `print`
 
 Cell output and `print` output seem very closely related:
+
 * Both evaluate expressions
 * Both display something in the notebook
 

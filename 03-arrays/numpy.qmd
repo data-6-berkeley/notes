@@ -111,6 +111,29 @@ After putting this statement at the top of our notebook, we can then prepend `np
 np.average(arr)
 ```
 
+::: {.callout-note title="Import aliases" collapse="true"}
+In Python, **you can name imported packages anything you like** using the `as` keyword. However, it's customary to use standard aliases so that your code is easier for others (and your future self) to read.
+
+For example, the NumPy library is conventionally imported as:
+
+```{python}
+import numpy as np
+```
+
+This is not required, you could write the import statement as:
+```{python}
+import numpy as magic
+```
+
+Though this would confuse most readers. Since instead of prepending `np`, you would use `magic`.
+
+```{python}
+magic.average(arr)
+```
+
+So while `np` isn't a special keyword, it’s a widely accepted community convention.
+:::
+
 ### NumPy Array Function Table
 
 There are many, many types of NumPy array functions; the below table only scratches the surface of what is possible. Again, instead of memorizing functions, we encourage you to learn how to read documentation by considering the following:
@@ -135,7 +158,7 @@ There are many, many types of NumPy array functions; the below table only scratc
 | `np.sort(arr)` | Sort the elements in `arr`. |
 : A subset of NumPy array functions. A full reference is in the Data 6 reference sheet.
 
-Refer to the lecture notebook for example call expressions involving these NumPy functions. Refer to the **Data 6 reference sheet** for all functions we will expect you to be familiar with (not memorize!) in this course.
+Refer to the lecture notebook for example call expressions involving these NumPy functions. Refer to the **[Data 6 reference sheet](../reference.html)** for all functions we will expect you to be familiar with (not memorize!) in this course.
 
 
 ## External Reading
