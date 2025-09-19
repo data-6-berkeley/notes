@@ -1,0 +1,151 @@
+---
+title: "Encoding"
+subtitle: "How data variables map to visual elements"
+---
+
+## What is Encoding?
+
+**Encoding** is a mapping from a variable to a visual element.
+
+Think of encoding as the bridge between your data and what people see on the screen. It's how we translate abstract numbers and categories into visual properties that humans can quickly understand.
+
+## Basic Example: Bar Charts
+
+In bar charts, **length** can visually encode a numerical variable.
+
+**Example**: Average age by group
+
+- **Data**: Average ages of 25, 30, 35, 40 years
+- **Visual encoding**: Bar length
+- **Interpretation**: Longer bar = higher average age
+
+:::{style="text-align: center"}
+![Bar Chart Example](images/barchart.png){#fig-barchart fig-align=center width=70%}
+:::
+
+This creates an intuitive mapping where the visual property (length) directly corresponds to the data value (age).
+
+## Visual Properties Available for Encoding
+
+Different visual elements can encode different types of information:
+
+| **Visual Property** | **Subtypes** | **Best For** | **Example Use** |
+|-------------------|--------------|--------------|----------------|
+| **Position** | • X-coordinate<br/>• Y-coordinate | Numerical data, categories | Scatter plots, bar charts |
+| **Size** | • Length<br/>• Area<br/>• Width | Numerical quantities | Bar lengths, bubble sizes |
+| **Color** | • Hue<br/>• Saturation<br/>• Brightness | Categories, ordered data | Category colors, heat maps |
+| **Shape** | • Symbols<br/>• Line styles | Categories | Different point shapes |
+| **Texture/Pattern** | • Fill patterns<br/>• Line textures | Categories (when color unavailable) | Striped bars, dotted lines |
+: Visual properties available for encoding data
+
+
+## Multiple Variables, Multiple Encodings
+
+Real visualizations often encode multiple variables simultaneously.
+
+
+## Matching Encodings to Variable Types
+
+As we learned when studying variables, different variable types (numerical vs. categorical, discrete vs. continuous, ordinal vs. nominal) have different properties. When creating visualizations, we need to match our encoding choices to these variable types.
+
+:::{style="text-align: center"}
+![Recall: Variable Types](images/variable_types.png){#fig-variable-types fig-align=center width=90%}
+:::
+
+::: {.callout-important title="Key Principle"}
+Not all encodings work well with all variable types. The effectiveness depends on how well the visual property matches the data type.
+:::
+
+| **Variable Type** | **Most Effective Encodings** | **Less Effective** | **Why** |
+|------------------|------------------------------|-------------------|---------|
+| **Numerical** | • Position (X, Y)<br/>• Length<br/>• Area | • Color hue<br/>• Shape | Humans can judge quantity differences |
+| **Categorical** | • Color hue<br/>• Shape<br/>• Position (grouping) | • Length<br/>• Area | Avoids implying false ordering |
+: Effectiveness of encodings by variable type
+
+::: {.callout-warning title="Common Mistake"}
+Using length or area for categorical variables implies ordering that may not exist!
+:::
+
+## Common Encoding Mistakes
+
+### What's Wrong with This?
+
+Imagine a bar chart showing car manufacturers:
+
+- Swedish cars: Tall bar
+- German cars: Medium bar  
+- Japanese cars: Short bar
+
+**Problem**: This graph implies that Swedish cars are "greater" than cars from other countries in some sense, when they're not. If the variable is just "country of origin" (nominal categorical), using length encoding suggests an ordering that doesn't exist.
+
+**Better approach**: Use a different encoding like color or position that doesn't imply ranking.
+
+### Key Principle
+**The variable type determines the types of plots (and hence, encodings) that are appropriate.**
+
+## Advanced Encoding Concepts
+
+### Redundant Encoding
+Sometimes it's helpful to encode the same variable in multiple ways:
+- Use both position AND color to show the same categorical variable
+- This makes the visualization more accessible and easier to read
+
+### Hierarchical Encoding
+Some visualizations encode multiple levels of information:
+- **Primary encoding**: The main message
+- **Secondary encoding**: Additional context or detail
+
+### Interactive Encoding
+Modern visualizations can change encodings based on user interaction:
+- Hover to reveal additional variables
+- Click to filter or highlight specific categories
+- Zoom to show different levels of detail
+
+## Tools and Implementation
+
+### Visualization Tools Overview
+
+**Without a computer**:
+- Drawing
+- Painting
+
+**With a computer**:
+
+*Without programming*:
+
+- **Photoshop**: For custom graphics
+- **Figma**: For design-focused visualizations  
+- **Tableau**: Popular business intelligence tool
+
+*With programming* (integrates well with data tables):
+
+- **matplotlib**: Traditional, flexible Python library
+- **seaborn**: Higher-level, statistical visualizations (built on matplotlib)
+- **plotly**: Modern, interactive visualizations
+- **D3.js**: Web-based, highly customizable (JavaScript)
+
+**Note**: Both matplotlib and seaborn are popular but considered "less modern" compared to newer interactive tools like plotly.
+
+## Best Practices for Encoding
+
+1. **Match encoding to data type**: Use appropriate visual properties for your variable types
+
+2. **Prioritize important information**: Use the most effective encodings for your primary message
+
+3. **Consider accessibility**: Ensure your encodings work for colorblind users, screen readers, etc.
+
+4. **Test with users**: What seems obvious to you might not be clear to your audience
+
+5. **Provide legends and labels**: Help users understand your encoding choices
+
+## Summary
+
+- **Encodings translate variables into visual properties** - they're the fundamental building blocks of data visualization
+
+- **Not all encodings work for all variables** - the effectiveness depends on matching visual properties to data types
+
+- **Multiple variables can be encoded simultaneously** - this allows rich, multidimensional visualizations
+
+- **Choose encodings thoughtfully** - consider your data types, audience, and message
+
+Over the next few weeks, we'll learn how to create several kinds of plots and learn when each encoding approach is most appropriate.

@@ -1,0 +1,40 @@
+---
+title: "Data Visualizations Introduction"
+subtitle: "What is a Visualization?"
+---
+
+Based on the definitions from leading researchers in the field, we can understand visualization through several key perspectives.
+
+> "the use of computer-generated, interactive, visual representations of data to amplify cognition."
+> 
+> — Card, Mackinlay, and Shneiderman 1999
+
+This definition captures several key aspects:
+
+- **Computer-generated**: Modern visualization leverages computational power
+- **Interactive**: Users can explore and manipulate the visual representations
+- **Visual representations**: Data is translated into visual forms
+- **Amplify cognition**: The goal is to enhance human understanding
+
+Building on this modern definition, another foundational perspective comes from Jacques Bertin:
+
+> "...finding the artificial memory that best supports our natural means of perception"
+> 
+> — Bertin 1967
+
+Bertin emphasizes that visualization should work with, not against, human perceptual abilities.
+
+## Why Visualization Matters
+
+Understanding these definitions helps us appreciate why visualization has become so important.
+
+They say a picture is worth a thousand words… right? In data science, this couldn't be more true.
+
+Visualization serves two primary purposes:
+
+1. **To further your own understanding** of your results
+2. **To communicate your results** with others
+
+Creating good visualizations is both an art and a science - there is often no single "correct" way to visualize data. However, we must be careful and deliberate when creating visualizations, especially when they will be used in real-world decision-making.
+
+To better understand these principles in action, let's examine how humans have used visual representations throughout history to understand and communicate complex information. The following examples demonstrate powerful uses of data visualization that have shaped our understanding of the world.
