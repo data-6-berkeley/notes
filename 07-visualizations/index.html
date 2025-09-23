@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Visualizations</title>
+<title>Introduction to Visualizations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../07-visualizations/examples.html" rel="next">
+<link href="../07-visualizations/encoding.html" rel="next">
 <link href="../06-variables-ii/sample-population.html" rel="prev">
 <link href="../assets/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
@@ -293,13 +293,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../07-visualizations/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Visualizations Introduction</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../07-visualizations/examples.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Examples of Visualizations</span></a>
+ <span class="menu-text">Visualizations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -334,6 +328,20 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   <ul>
   <li><a href="#what-is-a-visualization" id="toc-what-is-a-visualization" class="nav-link active" data-scroll-target="#what-is-a-visualization">What is a Visualization?</a></li>
   <li><a href="#why-visualization-matters" id="toc-why-visualization-matters" class="nav-link" data-scroll-target="#why-visualization-matters">Why Visualization Matters</a></li>
+  <li><a href="#historical-examples" id="toc-historical-examples" class="nav-link" data-scroll-target="#historical-examples">Historical Examples</a>
+  <ul class="collapse">
+  <li><a href="#the-worlds-first-map-6200-bc" id="toc-the-worlds-first-map-6200-bc" class="nav-link" data-scroll-target="#the-worlds-first-map-6200-bc">The World’s First Map (~6200 BC)</a></li>
+  <li><a href="#john-snows-cholera-map-1854" id="toc-john-snows-cholera-map-1854" class="nav-link" data-scroll-target="#john-snows-cholera-map-1854">John Snow’s Cholera Map (1854)</a></li>
+  <li><a href="#florence-nightingales-rose-diagram-1850s" id="toc-florence-nightingales-rose-diagram-1850s" class="nav-link" data-scroll-target="#florence-nightingales-rose-diagram-1850s">Florence Nightingale’s Rose Diagram (1850s)</a></li>
+  </ul></li>
+  <li><a href="#modern-examples" id="toc-modern-examples" class="nav-link" data-scroll-target="#modern-examples">Modern Examples</a>
+  <ul class="collapse">
+  <li><a href="#maya-lins-vietnam-war-memorial-1982" id="toc-maya-lins-vietnam-war-memorial-1982" class="nav-link" data-scroll-target="#maya-lins-vietnam-war-memorial-1982">Maya Lin’s Vietnam War Memorial (1982)</a></li>
+  <li><a href="#covid-19-case-tracking-2022" id="toc-covid-19-case-tracking-2022" class="nav-link" data-scroll-target="#covid-19-case-tracking-2022">COVID-19 Case Tracking (2022)</a></li>
+  </ul></li>
+  <li><a href="#reflection-questions" id="toc-reflection-questions" class="nav-link" data-scroll-target="#reflection-questions">Reflection Questions</a></li>
+  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next Steps</a></li>
+  <li><a href="#external-reading" id="toc-external-reading" class="nav-link" data-scroll-target="#external-reading">External Reading</a></li>
   </ul>
 </nav>
     </div>
@@ -342,8 +350,8 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Visualizations</h1>
-<p class="subtitle lead">What is a Visualization?</p>
+<h1 class="title">Introduction to Visualizations</h1>
+<p class="subtitle lead">A picture is worth a thousand words…</p>
 </div>
 
 
@@ -366,7 +374,6 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </section>
 <section id="why-visualization-matters" class="level2">
 <h2 class="anchored" data-anchor-id="why-visualization-matters">Why Visualization Matters</h2>
-<p>They say a picture is worth a thousand words… right? In data science, this couldn’t be more true.</p>
 <p>Visualization serves two primary purposes:</p>
 <ol type="1">
 <li><strong>To further your own understanding</strong> of your results</li>
@@ -374,6 +381,151 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </ol>
 <p>Creating good visualizations is both an art and a science. There is often no single “correct” way to visualize data. However, we must be careful and deliberate when creating visualizations, especially when they will be used in real-world decision-making.</p>
 <p>To better understand these principles in action, let’s examine how humans have used visual representations throughout history to understand and communicate complex information. The following examples in the next page demonstrate powerful uses of data visualization that have shaped our understanding of the world.</p>
+</section>
+<section id="historical-examples" class="level2">
+<h2 class="anchored" data-anchor-id="historical-examples">Historical Examples</h2>
+<section id="the-worlds-first-map-6200-bc" class="level3">
+<h3 class="anchored" data-anchor-id="the-worlds-first-map-6200-bc">The World’s First Map (~6200 BC)</h3>
+<p>What do you see when you look at this ancient artifact?</p>
+<div style="text-align: center">
+<div id="fig-ancient-map" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ancient-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/world-map.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ancient-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The World’s First Map
+</figcaption>
+</figure>
+</div>
+</div>
+<p>This is a map depicting the town of Konya, Turkey - supposedly the world’s first map, dating back to approximately 6200 BC. Even in prehistoric times, humans recognized the power of visual representation to communicate spatial relationships and important information.</p>
+</section>
+<section id="john-snows-cholera-map-1854" class="level3">
+<h3 class="anchored" data-anchor-id="john-snows-cholera-map-1854">John Snow’s Cholera Map (1854)</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Read _Inferential Thinking_">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Read <em>Inferential Thinking</em>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Read <a href="https://inferentialthinking.com/chapters/02/1/observation-and-visualization-john-snow-and-the-broad-street-pump.html">Ch 2.1</a>, which describes in detail John Snow’s groundbreaking use of data visualization during the 1854 cholera epidemic.</p>
+<p>This story demonstrates how <strong>observation and visualization</strong> can lead to life-saving discoveries, even when the underlying scientific theory (germ theory) wasn’t yet established.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="Data Visualization Saves Lives">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Data Visualization Saves Lives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>One of the most famous examples of data visualization directly saving human lives.</p>
+</div>
+</div>
+<p><strong>The Problem</strong>: In August 1854, a massive cholera outbreak was devastating the overcrowded SoHo district of London. Hundreds were dying within days, and the prevailing “miasma theory” blamed bad air and smells.</p>
+<p><strong>The Solution</strong>: Dr.&nbsp;John Snow was skeptical of the miasma theory and suspected contaminated water. He created a revolutionary approach that became standard in epidemiology: <strong>he drew a map</strong>.</p>
+<div style="text-align: center">
+<div id="fig-cholera-map" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cholera-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/john-snow-cholera-map.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cholera-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: John Snow’s Cholera Map
+</figcaption>
+</figure>
+</div>
+</div>
+<p><strong>What the map revealed</strong>:</p>
+<ul>
+<li>Deaths were clustered around the <strong>Broad Street pump</strong></li>
+<li>Houses closer to other pumps still used Broad Street (due to street layout)</li>
+<li>The Lion Brewery had no deaths (workers drank beer and had their own well)</li>
+<li>Scattered distant deaths were children who drank from the pump on their way to school</li>
+</ul>
+<p><strong>The Impact</strong>: Snow’s map convinced local authorities to remove the handle of the Broad Street pump. Later investigation revealed that a cesspit just feet away had been leaking sewage into the well, contaminating the water with cholera.</p>
+</section>
+<section id="florence-nightingales-rose-diagram-1850s" class="level3">
+<h3 class="anchored" data-anchor-id="florence-nightingales-rose-diagram-1850s">Florence Nightingale’s Rose Diagram (1850s)</h3>
+<p>Florence Nightingale wasn’t just a pioneering nurse, she was also an innovative data visualizer. During the Crimean War, she created what’s now called a “rose diagram” or “coxcomb chart” to visualize the causes of death among British soldiers.</p>
+<div style="text-align: center">
+<div id="fig-rose-diagram" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rose-diagram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/florence-nightingale-rose.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rose-diagram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Florence Nightingale’s Rose Diagram
+</figcaption>
+</figure>
+</div>
+</div>
+<p>Her visualization revealed a shocking truth: more soldiers were dying from preventable diseases than from battle wounds. This wasn’t just a pretty chart, it was a powerful argument that drove major reforms in military medical care. Nightingale understood that abstract statistics about mortality rates couldn’t compete with the visual impact of her rose petals, where the size of each segment made the disparity impossible to ignore.</p>
+</section>
+</section>
+<section id="modern-examples" class="level2">
+<h2 class="anchored" data-anchor-id="modern-examples">Modern Examples</h2>
+<section id="maya-lins-vietnam-war-memorial-1982" class="level3">
+<h3 class="anchored" data-anchor-id="maya-lins-vietnam-war-memorial-1982">Maya Lin’s Vietnam War Memorial (1982)</h3>
+<p>Not all data visualization involves charts and graphs. Maya Lin’s Vietnam War Memorial in Washington DC proves that data can be deeply emotional and memorial, not just analytical.</p>
+<div style="text-align: center">
+<div id="fig-vietnam-memorial" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-vietnam-memorial-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/veitnam-war-memorial.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-vietnam-memorial-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Vietnam War Memorial
+</figcaption>
+</figure>
+</div>
+</div>
+<p>Each of the 58,000+ names etched into the black granite represents one life lost. The chronological arrangement tells the story of the war’s progression through time, while the reflective surface creates an intimate connection between viewers and the data you literally see yourself reflected among the names. This memorial demonstrates that the most powerful visualizations don’t just inform us; they transform how we feel about the information.</p>
+</section>
+<section id="covid-19-case-tracking-2022" class="level3">
+<h3 class="anchored" data-anchor-id="covid-19-case-tracking-2022">COVID-19 Case Tracking (2022)</h3>
+<p>During the COVID-19 pandemic, data visualization became part of daily life. Suddenly, everyone from epidemiologists to elementary school students was reading line charts showing case trends and interpreting what those curves meant for their communities.</p>
+<div style="text-align: center">
+<div id="fig-covid-dashboard" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-covid-dashboard-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/coivd.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-covid-dashboard-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: COVID-19 Case Tracking
+</figcaption>
+</figure>
+</div>
+</div>
+<p>Google’s COVID tracking dashboard exemplified how modern visualization must be both accessible and updateable in real-time. The time series charts showed trends over months with clear visual indicators of peaks and valleys, but more importantly, they translated complex epidemiological data into something any concerned citizen could understand.</p>
+</section>
+</section>
+<section id="reflection-questions" class="level2">
+<h2 class="anchored" data-anchor-id="reflection-questions">Reflection Questions</h2>
+<p>As you think about these examples, consider:</p>
+<ul>
+<li>What made each visualization effective for its time and purpose?</li>
+<li>How might these visualizations be different if created with modern tools?</li>
+<li>What can we learn from these examples about designing effective visualizations today?</li>
+</ul>
+</section>
+<section id="next-steps" class="level2">
+<h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
+<p>Now that we’ve seen the power of visualization through these historical examples, let’s explore the theory behind what makes visualizations effective.</p>
+</section>
+<section id="external-reading" class="level2">
+<h2 class="anchored" data-anchor-id="external-reading">External Reading</h2>
+<ul>
+<li>(mentioned in notes) <em>Computational and Inferential Thinking</em>, <a href="https://inferentialthinking.com/chapters/02/1/observation-and-visualization-john-snow-and-the-broad-street-pump.html">Ch 2.1</a></li>
+</ul>
 
 
 </section>
@@ -785,8 +937,8 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../07-visualizations/examples.html" class="pagination-link" aria-label="Examples of Visualizations">
-        <span class="nav-page-text">Examples of Visualizations</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../07-visualizations/encoding.html" class="pagination-link" aria-label="Encoding">
+        <span class="nav-page-text">Encoding</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
