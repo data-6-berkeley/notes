@@ -1,0 +1,21 @@
+---
+title: "Data Visualizations Introduction"
+subtitle: "What is a Visualization?"
+---
+
+## What is a Visualization?
+
+A visualization is a way to represent data in a visual format. In practice, we use visualizations to explore patterns and communicate results.
+
+## Why Visualization Matters
+
+They say a picture is worth a thousand words… right? In data science, this couldn't be more true.
+
+Visualization serves two primary purposes:
+
+1. **To further your own understanding** of your results
+2. **To communicate your results** with others
+
+Creating good visualizations is both an art and a science. There is often no single "correct" way to visualize data. However, we must be careful and deliberate when creating visualizations, especially when they will be used in real-world decision-making.
+
+To better understand these principles in action, let's examine how humans have used visual representations throughout history to understand and communicate complex information. The following examples in the next page demonstrate powerful uses of data visualization that have shaped our understanding of the world.

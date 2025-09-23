@@ -74,6 +74,15 @@ website:
             text: "Causality vs. EDA"
           - href: 06-variables-ii/sample-population.qmd
             text: "Sample vs. Population"
+      - section: "L07: Visualizations"
+        href: 07-visualizations/index.qmd
+        contents:
+          - href: 07-visualizations/index.qmd
+            text: "Visualizations Introduction"
+          - href: 07-visualizations/examples.qmd
+            text: "Examples of Visualizations"
+          - href: 07-visualizations/encoding.qmd
+            text: "Encoding"
       - href: five-things.qmd
         text: "5 Things to Know"
       - href: reference.qmd
