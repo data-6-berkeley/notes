@@ -46,13 +46,13 @@ One of the most famous examples of data visualization directly saving human live
 
 ### Florence Nightingale's Rose Diagram (1850s)
 
-Florence Nightingale wasn't just a pioneering nurse - she was also an innovative data visualizer. During the Crimean War, she created what's now called a "rose diagram" or "coxcomb chart" to visualize the causes of death among British soldiers.
+Florence Nightingale wasn't just a pioneering nurse, she was also an innovative data visualizer. During the Crimean War, she created what's now called a "rose diagram" or "coxcomb chart" to visualize the causes of death among British soldiers.
 
 :::{style="text-align: center"}
 ![Florence Nightingale's Rose Diagram](images/florence-nightingale-rose.png){#fig-rose-diagram fig-align=center width=60%}
 :::
 
-Her visualization revealed a shocking truth: more soldiers were dying from preventable diseases than from battle wounds. This wasn't just a pretty chart—it was a powerful argument that drove major reforms in military medical care. Nightingale understood that abstract statistics about mortality rates couldn't compete with the visual impact of her rose petals, where the size of each segment made the disparity impossible to ignore.
+Her visualization revealed a shocking truth: more soldiers were dying from preventable diseases than from battle wounds. This wasn't just a pretty chart, it was a powerful argument that drove major reforms in military medical care. Nightingale understood that abstract statistics about mortality rates couldn't compete with the visual impact of her rose petals, where the size of each segment made the disparity impossible to ignore.
 
 ## Modern Examples
 
@@ -64,7 +64,7 @@ Not all data visualization involves charts and graphs. Maya Lin's Vietnam War Me
 ![Vietnam War Memorial](images/veitnam-war-memorial.png){#fig-vietnam-memorial fig-align=center width=70%}
 :::
 
-Each of the 58,000+ names etched into the black granite represents one life lost. The chronological arrangement tells the story of the war's progression through time, while the reflective surface creates an intimate connection between viewers and the data—you literally see yourself reflected among the names. This memorial demonstrates that the most powerful visualizations don't just inform us; they transform how we feel about the information.
+Each of the 58,000+ names etched into the black granite represents one life lost. The chronological arrangement tells the story of the war's progression through time, while the reflective surface creates an intimate connection between viewers and the data you literally see yourself reflected among the names. This memorial demonstrates that the most powerful visualizations don't just inform us; they transform how we feel about the information.
 
 ### COVID-19 Case Tracking (2022)
 
@@ -74,23 +74,7 @@ During the COVID-19 pandemic, data visualization became part of daily life. Sudd
 ![COVID-19 Case Tracking](images/coivd.png){#fig-covid-dashboard fig-align=center width=80%}
 :::
 
-Google's COVID tracking dashboard exemplified how modern visualization must be both accessible and updateable in real-time. The time series charts showed trends over months with clear visual indicators of peaks and valleys, but more importantly, they translated complex epidemiological data into something any concerned citizen could understand. This democratization of data visualization—where sophisticated statistical information becomes part of everyday conversation—represents a fundamental shift in how we communicate about public health.
-
-## What Makes These Examples Powerful?
-
-Looking across these historical examples, several patterns emerge:
-
-| **Principle** | **Description** | **Example** |
-|---------------|-----------------|-------------|
-| **Clarity of Purpose** | Each visualization had a clear goal | Snow's map: Find disease source |
-| **Appropriate Medium** | Used best available technology | Clay maps → Digital dashboards |
-| **Human-Centered Design** | Designed for human understanding | Nightingale's roses: Intuitive shapes |
-| **Actionable Insights** | Enable action, not just display | Vietnam Memorial: Emotional impact |
-: Key principles of effective visualization
-
-::: {.callout-warning title="Remember"}
-The best visualizations don't just show data - they enable action and understanding.
-:::
+Google's COVID tracking dashboard exemplified how modern visualization must be both accessible and updateable in real-time. The time series charts showed trends over months with clear visual indicators of peaks and valleys, but more importantly, they translated complex epidemiological data into something any concerned citizen could understand.
 
 ## Reflection Questions
 
