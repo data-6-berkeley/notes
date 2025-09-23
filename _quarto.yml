@@ -78,9 +78,7 @@ website:
         href: 07-visualizations/index.qmd
         contents:
           - href: 07-visualizations/index.qmd
-            text: "Visualizations Introduction"
-          - href: 07-visualizations/examples.qmd
-            text: "Examples of Visualizations"
+            text: "Visualizations"
           - href: 07-visualizations/encoding.qmd
             text: "Encoding"
       - href: five-things.qmd
