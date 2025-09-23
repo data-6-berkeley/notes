@@ -315,6 +315,35 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./07-visualizations/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">L07: Visualizations</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-visualizations/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Visualizations Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-visualizations/examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Examples of Visualizations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-visualizations/encoding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Encoding</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./five-things.html" class="sidebar-item-text sidebar-link">
@@ -382,7 +411,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <p>Of course, the Python Reference can only provide information about the basics of the functions you’ll use in Data 6. The best knowledge about functions comes from using these functions in code you write in labs or homeworks. If you get stuck when using a certain function, we encourage you to come to office hours or ask a question on Ed.</p>
 <section id="the-anatomy-of-a-function" class="level3">
 <h3 class="anchored" data-anchor-id="the-anatomy-of-a-function">The Anatomy of a Function</h3>
-<div id="d9c858d5" class="cell" data-execution_count="1">
+<div id="8ee07a88" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> my_function(num):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> num <span class="op">**</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -562,7 +591,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <td><code>np.sort(arr)</code></td>
 <td>Sorts an array in ascending order.</td>
 <td><strong>array</strong></td>
-<td><code>None</code></td>
+<td><code>None</code> (<code>arr</code> is sorted; no copy is made)</td>
 </tr>
 </tbody>
 </table>
@@ -693,7 +722,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <tr class="odd">
 <td><code>tbl.where(column, predicate)</code></td>
 <td>Creates a copy of <code>tbl</code> containing only the rows where the value of <code>column</code> matches the <code>predicate</code>. See <code>Table.where</code> predicates below.</td>
-<td>1. <strong>string</strong> or <strong>int</strong>: column name or index <br> 2. <code>are.(...)</code> predicate</td>
+<td>1. <strong>string</strong> or <strong>int</strong>: column name or index <br> 2. <code>are.(...)</code> predicate or exact-match value.</td>
 <td><strong>Table</strong>: a copy of the original table with only the rows that match the predicate</td>
 </tr>
 <tr class="even">

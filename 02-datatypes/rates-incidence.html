@@ -345,6 +345,35 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../07-visualizations/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">L07: Visualizations</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../07-visualizations/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Visualizations Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../07-visualizations/examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Examples of Visualizations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../07-visualizations/encoding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Encoding</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../five-things.html" class="sidebar-item-text sidebar-link">
@@ -639,7 +668,7 @@ Snippet of midyear population estimates, U.S. Census Bureau
 </div>
 </div>
 <p>Let’s use <a href="#eq-p100k" class="quarto-xref">Equation&nbsp;3</a> to compute TB incidence in the U.S. in 2020:</p>
-<div id="1228df64" class="cell" data-execution_count="1">
+<div id="2c98d9b6" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">7173</span> <span class="op">/</span> <span class="dv">331501080</span> <span class="op">*</span> <span class="dv">100000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>2.1637938555132306</code></pre>
@@ -647,7 +676,7 @@ Snippet of midyear population estimates, U.S. Census Bureau
 </div>
 <p>Rounding to the nearest tenth spot, we get the original quoted rate, 2.2!</p>
 <p>The previous cell makes little sense without the prior intense exposition. Python names and comments make everything more understandable:</p>
-<div id="92601bc1" class="cell" data-execution_count="2">
+<div id="af234671" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># compute incidence as cases per 100k</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>pop_2020 <span class="op">=</span> <span class="dv">331501080</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>tb_2020 <span class="op">=</span> <span class="dv">7173</span></span>

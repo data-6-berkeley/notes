@@ -15,7 +15,7 @@
     "href": "03-arrays/numpy.html#array-functions",
     "title": "NumPy and Array Functions",
     "section": "Array Functions",
-    "text": "Array Functions\nAs data scientists we may find it useful to perform operations on arrays beyond simple element-wise arithmetic operations. We can do so via a range of functions from different sources.\nHere are some starter arrays to get us going. What arrays are created?\n\nfrom datascience import *\n\nint_arr = make_array(3, -4, 0, 5, 2)\nstr_arr = make_array(\"cm\", \"m\", \"in\", \"ft\", \"yd\")\nempty_arr = make_array() # challenge\n\n\n\n\n\n\n\nArrays created\n\n\n\n\n\n\nint_arr\n\narray([ 3, -4,  0,  5,  2])\n\n\n\nstr_arr\n\narray(['cm', 'm', 'in', 'ft', 'yd'],\n      dtype='&lt;U2')\n\n\nAn empty array is one with no elements:\n\nempty_arr\n\narray([], dtype=float64)\n\n\n\n\n\nWe will describe the syntax and terminology of built-in and NumPy functions below, then provide a table of operations. Here’s how we suggest working through this section:\n\nDon’t memorize these functions!\nInstead, remember there are two types of functions for arrays: built-in functions and NumPy functions.\nGet familiar with two tables, copied below. Get familiar with reading this tabl documentation to understand how each function works.\nWhen writing your programs, look through these functions and see which function(s) can compose your solution.\n\n\nBuilt-in functions\nSome built-in functions (i.e., included with Python) can take in arrays as arguments.\nHere is a table of example built-in functions for arrays. Again, don’t memorize the functions. Rather, get familiar with reading and predicting their outputs.\n\nBuilt-in Python functions that take in array arguments.\n\n\n\n\n\n\nExpression and Return value\nExample(s)\n\n\n\n\nlen(arr) Length of an array, providing the number of elements it contains. Useful for determining the size of an array dynamically.\nlen(str_arr)   # 5  len(empty_arr) # 0\n\n\nmax(arr) The largest value within an array.\nmax(int_arr)    # 5  max(str_arr)   # 'yd'\n\n\nmin(arr) The smallest value within an array.\nmin(int_arr)\n\n\nsum(arr) Sum of all values in an array.\nsum(int_arr)   # 6  sum(str_arr)   # TypeError\n\n\n\n\n\n\n\n\n\nNote 1: Argument data types\n\n\n\n\n\nRemember that even though function names can be identical, call expressions can evaluate differently depending on the argument data type. len(arg), for example, returns an integer value indicating the “length” of the argument arg. If arg is a string, it returns the number of characters; if arg is an array, it returns the number of elements.\n\nlen(str_arr)\n\n5\n\n\n\nlen(str_arr.item(0)) # what is the argument here?\n\n2\n\n\n\n\n\n\n\n\n\n\n\nNote 2: Expressions with string arrays\n\n\n\n\n\nAs you may have noticed above, calling these functions on strings return some seemingly bizarre values. After all, what does it mean to get the maximum value of an array of strings?\nInstead of erroring out, the Pythonic convention is to consider alphabetic sorting as a way of ordering elements—hence, \"yd\" comes alphabetically after \"cm\" and \"ft\", and so on.\nWe will not cover string comparisons in detail in this course. If you are curious about these algorithms, we encourage you to take a Data Structures course!\n\n\n\nLet’s use these built-in functions to compute the average (mean) value of the below array. We will discuss measures of average much later in this course.\n\narr = make_array(30, -40, -4.5, 0, 35)\navg = sum(arr)/len(arr)\navg\n\n4.0999999999999996\n\n\nDue to approximations in how the computer stores and operates on floats, the above number is as close to 4.1 (the true numeric average) as we can get with our Python calculator. Take a computer systems or computer architecture course for more information!\n\n\nNumPy functions\nNumPy (pronounced “NUM-pie”) is a Python library with convenient and powerful modules and functions for manipulating arrays. Any time we want to use NumPy, we must write an import statement:\n\nimport numpy as np\n\narr = make_array(30, -40, -4.5, 0, 35)\narr\n\narray([ 30. , -40. ,  -4.5,   0. ,  35. ])\n\n\nAfter putting this statement at the top of our notebook, we can then prepend np. to call a NumPy function. The below NumPy function call computes averages much more conveniently than our clever (but verbose) expression with built-in function calls, though it still suffers from floating point approximations:\n\nnp.average(arr)\n\n4.0999999999999996\n\n\n\n\nNumPy Array Function Table\nThere are many, many types of NumPy array functions; the below table only scratches the surface of what is possible. Again, instead of memorizing functions, we encourage you to learn how to read documentation by considering the following:\n\nWhat is the function name? How does this name inform the function description?\nWhat is the return value of this function?\n\nIf the data type of the return value is an array, is it the same length as the original array? Is the function therefore operating element-wise on the original array?\nIf the data type of the return value is a single value, how is this value computed from the different elements of the original array?\n\nIs the function changing the contents of the original array?\n\n\nA subset of NumPy array functions. A full reference is in the Data 6 reference sheet.\n\n\n\n\n\n\nNumPy function\nDescription\n\n\n\n\nnp.average(arr)  np.mean(arr)\nThe average (i.e., mean) value of arr\n\n\nnp.sum(arr)\nThe sum of all elements in arr\n\n\nnp.prod(arr)\nThe product of all elements in arr\n\n\nnp.count_nonzero(arr)\nThe number of elements in arr that are not equal to 0\n\n\nnp.diff(arr)\nThe difference between each element and the previous one value of arr. Returns an array of length 1 less than the original.\n\n\nnp.cumsum(arr)\nThe cumulative sum of all elements in arr.\n\n\nnp.sqrt(arr)\nThe square roots of each element in arr.\n\n\nnp.log(arr)\nThe natural logarithm of each element in arr.\n\n\nnp.log10(arr)\nThe base-10 logarithm of each element in arr.\n\n\nnp.sort(arr)\nSort the elements in arr.\n\n\n\nRefer to the lecture notebook for example call expressions involving these NumPy functions. Refer to the Data 6 reference sheet for all functions we will expect you to be familiar with (not memorize!) in this course.",
+    "text": "Array Functions\nAs data scientists we may find it useful to perform operations on arrays beyond simple element-wise arithmetic operations. We can do so via a range of functions from different sources.\nHere are some starter arrays to get us going. What arrays are created?\n\nfrom datascience import *\n\nint_arr = make_array(3, -4, 0, 5, 2)\nstr_arr = make_array(\"cm\", \"m\", \"in\", \"ft\", \"yd\")\nempty_arr = make_array() # challenge\n\n\n\n\n\n\n\nArrays created\n\n\n\n\n\n\nint_arr\n\narray([ 3, -4,  0,  5,  2])\n\n\n\nstr_arr\n\narray(['cm', 'm', 'in', 'ft', 'yd'],\n      dtype='&lt;U2')\n\n\nAn empty array is one with no elements:\n\nempty_arr\n\narray([], dtype=float64)\n\n\n\n\n\nWe will describe the syntax and terminology of built-in and NumPy functions below, then provide a table of operations. Here’s how we suggest working through this section:\n\nDon’t memorize these functions!\nInstead, remember there are two types of functions for arrays: built-in functions and NumPy functions.\nGet familiar with two tables, copied below. Get familiar with reading this tabl documentation to understand how each function works.\nWhen writing your programs, look through these functions and see which function(s) can compose your solution.\n\n\nBuilt-in functions\nSome built-in functions (i.e., included with Python) can take in arrays as arguments.\nHere is a table of example built-in functions for arrays. Again, don’t memorize the functions. Rather, get familiar with reading and predicting their outputs.\n\nBuilt-in Python functions that take in array arguments.\n\n\n\n\n\n\nExpression and Return value\nExample(s)\n\n\n\n\nlen(arr) Length of an array, providing the number of elements it contains. Useful for determining the size of an array dynamically.\nlen(str_arr)   # 5  len(empty_arr) # 0\n\n\nmax(arr) The largest value within an array.\nmax(int_arr)    # 5  max(str_arr)   # 'yd'\n\n\nmin(arr) The smallest value within an array.\nmin(int_arr)\n\n\nsum(arr) Sum of all values in an array.\nsum(int_arr)   # 6  sum(str_arr)   # TypeError\n\n\n\n\n\n\n\n\n\nNote 1: Argument data types\n\n\n\n\n\nRemember that even though function names can be identical, call expressions can evaluate differently depending on the argument data type. len(arg), for example, returns an integer value indicating the “length” of the argument arg. If arg is a string, it returns the number of characters; if arg is an array, it returns the number of elements.\n\nlen(str_arr)\n\n5\n\n\n\nlen(str_arr.item(0)) # what is the argument here?\n\n2\n\n\n\n\n\n\n\n\n\n\n\nNote 2: Expressions with string arrays\n\n\n\n\n\nAs you may have noticed above, calling these functions on strings return some seemingly bizarre values. After all, what does it mean to get the maximum value of an array of strings?\nInstead of erroring out, the Pythonic convention is to consider alphabetic sorting as a way of ordering elements—hence, \"yd\" comes alphabetically after \"cm\" and \"ft\", and so on.\nWe will not cover string comparisons in detail in this course. If you are curious about these algorithms, we encourage you to take a Data Structures course!\n\n\n\nLet’s use these built-in functions to compute the average (mean) value of the below array. We will discuss measures of average much later in this course.\n\narr = make_array(30, -40, -4.5, 0, 35)\navg = sum(arr)/len(arr)\navg\n\n4.0999999999999996\n\n\nDue to approximations in how the computer stores and operates on floats, the above number is as close to 4.1 (the true numeric average) as we can get with our Python calculator. Take a computer systems or computer architecture course for more information!\n\n\nNumPy functions\nNumPy (pronounced “NUM-pie”) is a Python library with convenient and powerful modules and functions for manipulating arrays. Any time we want to use NumPy, we must write an import statement:\n\nimport numpy as np\n\narr = make_array(30, -40, -4.5, 0, 35)\narr\n\narray([ 30. , -40. ,  -4.5,   0. ,  35. ])\n\n\nAfter putting this statement at the top of our notebook, we can then prepend np. to call a NumPy function. The below NumPy function call computes averages much more conveniently than our clever (but verbose) expression with built-in function calls, though it still suffers from floating point approximations:\n\nnp.average(arr)\n\n4.0999999999999996\n\n\n\n\n\n\n\n\nImport aliases\n\n\n\n\n\nIn Python, you can name imported packages anything you like using the as keyword. However, it’s customary to use standard aliases so that your code is easier for others (and your future self) to read.\nFor example, the NumPy library is conventionally imported as:\n\nimport numpy as np\n\nThis is not required, you could write the import statement as:\n\nimport numpy as magic\n\nThough this would confuse most readers. Since instead of prepending np, you would use magic.\n\nmagic.average(arr)\n\n4.0999999999999996\n\n\nSo while np isn’t a special keyword, it’s a widely accepted community convention.\n\n\n\n\n\nNumPy Array Function Table\nThere are many, many types of NumPy array functions; the below table only scratches the surface of what is possible. Again, instead of memorizing functions, we encourage you to learn how to read documentation by considering the following:\n\nWhat is the function name? How does this name inform the function description?\nWhat is the return value of this function?\n\nIf the data type of the return value is an array, is it the same length as the original array? Is the function therefore operating element-wise on the original array?\nIf the data type of the return value is a single value, how is this value computed from the different elements of the original array?\n\nIs the function changing the contents of the original array?\n\n\nA subset of NumPy array functions. A full reference is in the Data 6 reference sheet.\n\n\n\n\n\n\nNumPy function\nDescription\n\n\n\n\nnp.average(arr)  np.mean(arr)\nThe average (i.e., mean) value of arr\n\n\nnp.sum(arr)\nThe sum of all elements in arr\n\n\nnp.prod(arr)\nThe product of all elements in arr\n\n\nnp.count_nonzero(arr)\nThe number of elements in arr that are not equal to 0\n\n\nnp.diff(arr)\nThe difference between each element and the previous one value of arr. Returns an array of length 1 less than the original.\n\n\nnp.cumsum(arr)\nThe cumulative sum of all elements in arr.\n\n\nnp.sqrt(arr)\nThe square roots of each element in arr.\n\n\nnp.log(arr)\nThe natural logarithm of each element in arr.\n\n\nnp.log10(arr)\nThe base-10 logarithm of each element in arr.\n\n\nnp.sort(arr)\nSort the elements in arr.\n\n\n\nRefer to the lecture notebook for example call expressions involving these NumPy functions. Refer to the Data 6 reference sheet for all functions we will expect you to be familiar with (not memorize!) in this course.",
     "crumbs": [
       "L03: Arrays",
       "NumPy and Array Functions"
@@ -180,13 +180,6 @@
     ]
   },
   {
-    "objectID": "staff.html",
-    "href": "staff.html",
-    "title": "Staff",
-    "section": "",
-    "text": "Office hours are subject to change.\nYou can attend OH of any staff member.\n\n\n\nInstructor: Gaston Sanchez gastonsanchez@berkeley.edu Office hours:  - Fri 4:10pm-5:10pm, Evans 309\n\n\nGSI: Calvin Carter calv2n@berkeley.edu Office hours: - Mon 2pm-4pm, Evans 434 - Wed 12pm-2pm, Evans 434\n\n\nGSI: Huong Vu huong_vu@berkeley.edu Office hours:  - Tue 3-5pm, Evans 434 - Thr 3-5pm, Evans 434\n\n\nGSI: Dylan Webb dylancw@berkeley.edu Office hours:  - Wed 2-5pm, Evans 434 - Fri 2-5pm, on Zoom\n\n\nTutor: David Sun davidzhongyisun@berkeley.edu Office hours:  - Tue 12:30-3pm, Evans 428 - Thr 1-3pm, Evans 446\n\n\nTutor: Evan Passalacqua evanqua@berkeley.edu Office hours:  - Mon 9-11am, Evans 426 - Wed 9-11am, Evans 426"
-  },
-  {
     "objectID": "04-tables/exercises.html",
     "href": "04-tables/exercises.html",
     "title": "Table Exercises",
@@ -336,7 +329,7 @@
     "href": "01-intro/programming-basics.html#summary",
     "title": "Programming Basics",
     "section": "Summary",
-    "text": "Summary\nWe write code to tell our computer what to do.\n\nIn this class, and in many other settings, we use the Python programming language.\nWe write all of our code in Jupyter Notebooks, which allow us to see the output of our code in the same document in which we wrote our code. They’re commonly used in data science.\n\nBasic Python can be thought of as a calculator language, that takes expressions and computes their values.\n\nWe learned several different arithmetic operators, each of which can be used in an expression.\nPython stores integers and decimals in different ways.\n\nDebugging and good style make good programmers.\n\nComments help make our code more readable and sustainable.\nChoose names that are concise but descriptive.\nWhen our code has an error, the error message can help us fix it.\n\n\nCommon Python operators for numeric data types\n\n\n\n\n\n\n\n\nOperator\nSymbol\nExample Expression\nExpression Value\n\n\n\n\nAddition\n+\n2 + 3\n5\n\n\nSubtraction\n-\n15 - 4\n11\n\n\nMultiplication\n*\n-2 * 9\n-18\n\n\nDivision\n/\n15 / 2\n7.5\n\n\nInteger division\nCuts off remainder\n//\n15 // 2\n\n\nRemainder/Modulo\n%\n19 % 3\n1  (19 ÷ 3 = 6 Remainder 1)\n\n\nExponentiation\n**\n3 ** 2\n9",
+    "text": "Summary\nWe write code to tell our computer what to do.\n\nIn this class, and in many other settings, we use the Python programming language.\nWe write all of our code in Jupyter Notebooks, which allow us to see the output of our code in the same document in which we wrote our code. They’re commonly used in data science.\n\nBasic Python can be thought of as a calculator language, that takes expressions and computes their values.\n\nWe learned several different arithmetic operators, each of which can be used in an expression.\nPython stores integers and decimals in different ways.\n\nDebugging and good style make good programmers.\n\nComments help make our code more readable and sustainable.\nChoose names that are concise but descriptive.\nWhen our code has an error, the error message can help us fix it.\n\n\nCommon Python operators for numeric data types\n\n\n\n\n\n\n\n\nOperator\nSymbol\nExample Expression\nExpression Value\n\n\n\n\nAddition\n+\n2 + 3\n5\n\n\nSubtraction\n-\n15 - 4\n11\n\n\nMultiplication\n*\n-2 * 9\n-18\n\n\nDivision\n/\n15 / 2\n7.5\n\n\nInteger division(Cuts off remainder)\n//\n15 // 2\n7\n\n\nRemainder/Modulo\n%\n19 % 3\n1  (19 ÷ 3 = 6 Remainder 1)\n\n\nExponentiation\n**\n3 ** 2\n9",
     "crumbs": [
       "L01: Introduction",
       "Programming Basics"
@@ -446,6 +439,233 @@
     ]
   },
   {
+    "objectID": "07-visualizations/encoding.html",
+    "href": "07-visualizations/encoding.html",
+    "title": "Encoding",
+    "section": "",
+    "text": "The theory behind creating effective visualizations lies in understanding encoding.",
+    "crumbs": [
+      "L07: Visualizations",
+      "Encoding"
+    ]
+  },
+  {
+    "objectID": "07-visualizations/encoding.html#what-is-encoding",
+    "href": "07-visualizations/encoding.html#what-is-encoding",
+    "title": "Encoding",
+    "section": "What is Encoding?",
+    "text": "What is Encoding?\nEncoding is a mapping from a variable to a visual element.\nThink of encoding as the bridge between your data and what people see on the screen. It’s how we translate abstract numbers and categories into visual properties that humans can quickly understand.",
+    "crumbs": [
+      "L07: Visualizations",
+      "Encoding"
+    ]
+  },
+  {
+    "objectID": "07-visualizations/encoding.html#basic-example-bar-charts",
+    "href": "07-visualizations/encoding.html#basic-example-bar-charts",
+    "title": "Encoding",
+    "section": "Basic Example: Bar Charts",
+    "text": "Basic Example: Bar Charts\nIn bar charts, length can visually encode a numerical variable.\n\n\n\n\n\n\n\nFigure 1: Bar Chart Example\n\n\n\n\nThis creates an intuitive mapping where the visual property (bar length) directly corresponds to the data value (average age).",
+    "crumbs": [
+      "L07: Visualizations",
+      "Encoding"
+    ]
+  },
+  {
+    "objectID": "07-visualizations/encoding.html#multiple-variables-multiple-encodings",
+    "href": "07-visualizations/encoding.html#multiple-variables-multiple-encodings",
+    "title": "Encoding",
+    "section": "Multiple Variables, Multiple Encodings",
+    "text": "Multiple Variables, Multiple Encodings\nOther visualizations can include multiple variables encoded simultaneously.\n\n\n\n\n\n\n\nFigure 2: Multiple Encodings in a Scatter Plot\n\n\n\n\n\nQuick Check: How Many Variables?\nLook at the scatter plot above. How many different variables are being encoded? What visual properties are being used?\n\n\n\n\n\n\nAnswer\n\n\n\n\n\nFour variables are being encoded:\n\nX-position: Variable 1 (horizontal axis data)\nY-position: Variable 2 (vertical axis data)\n\nSize of the dot: Variable 3 (represented by different bubble sizes)\nColor of the dot: Variable 4 (represented by different colors/hues)",
+    "crumbs": [
+      "L07: Visualizations",
+      "Encoding"
+    ]
+  },
+  {
+    "objectID": "07-visualizations/encoding.html#matching-encodings-to-variable-types",
+    "href": "07-visualizations/encoding.html#matching-encodings-to-variable-types",
+    "title": "Encoding",
+    "section": "Matching Encodings to Variable Types",
+    "text": "Matching Encodings to Variable Types\nAs we learned when studying variables, different variable types (numerical vs. categorical, discrete vs. continuous, ordinal vs. nominal) have different properties. When creating visualizations, we need to match our encoding choices to these variable types.\n\n\n\n\n\n\n\nFigure 3: Recall: Variable Types\n\n\n\n\n\n\n\n\n\n\nKey Principle\n\n\n\nNot all encodings work well with all variable types. The effectiveness depends on how well the visual property matches the data type.\n\n\nThe table below summarizes which visual encodings work best for different types of variables. Understanding these patterns will help you make better choices when designing your visualizations:\n\nEffectiveness of encodings by variable type\n\n\n\n\n\n\n\n\nVariable Type\nMost Effective Encodings\nLess Effective\nWhy\n\n\n\n\nNumerical\n• Position (X, Y)• Length• Area\n• Color hue• Shape\nHumans can judge quantity differences\n\n\nCategorical\n• Color hue• Shape• Position (grouping)\n• Length• Area\nAvoids implying false ordering",
+    "crumbs": [
+      "L07: Visualizations",
+      "Encoding"
+    ]
+  },
+  {
+    "objectID": "07-visualizations/encoding.html#common-encoding-mistakes",
+    "href": "07-visualizations/encoding.html#common-encoding-mistakes",
+    "title": "Encoding",
+    "section": "Common Encoding Mistakes",
+    "text": "Common Encoding Mistakes\n\nWhat’s Wrong with This?\n\n\n\n\n\n\n\nFigure 4: Problematic Car Manufacturer Chart\n\n\n\n\nProblem: This graph implies that Swedish cars are “greater” than cars from other countries in some sense, when they’re not. If the variable is just “country of origin” (nominal categorical), using length encoding suggests an ordering that doesn’t exist.\n\n\n\n\n\n\nKey Principle\n\n\n\nThe variable type determines the types of plots (and hence, encodings) that are appropriate.",
+    "crumbs": [
+      "L07: Visualizations",
+      "Encoding"
+    ]
+  },
+  {
+    "objectID": "07-visualizations/encoding.html#summary",
+    "href": "07-visualizations/encoding.html#summary",
+    "title": "Encoding",
+    "section": "Summary",
+    "text": "Summary\nEncodings translate variables into visual properties and serve as the fundamental building blocks of data visualization. However, not all encodings work for all variables - effectiveness depends on matching visual properties to data types. The power of encoding lies in how multiple variables can be encoded simultaneously, enabling rich, multidimensional visualizations. Success requires choosing encodings thoughtfully by considering your data types, audience, and message.\nOver the next few chapters, we’ll learn how to create several kinds of plots and learn when each encoding approach is most appropriate.",
+    "crumbs": [
+      "L07: Visualizations",
+      "Encoding"
+    ]
+  },
+  {
+    "objectID": "05-variables/index.html",
+    "href": "05-variables/index.html",
+    "title": "Variables and Variable Types",
+    "section": "",
+    "text": "In data science, a variable is a measurable feature, attribute, and/or representation of a concept. It can have different values for different individuals.\nVariables are often empirical measurements; they are metrics that researchers create to approximate the specific dimensions of an abstract concept of a research question.\nThe process of going from a concept, which may often be unmeasurable, to a definition of variable(s) and methods of measurement of these variable(s) is a process broadly referred to as operationalization.\n\nExamples of operationalizing concepts into variables\n\n\n\n\n\n\nConcept\nVariable(s)\n\n\n\n\nEducation level\nHighest degree earned\n\n\nFamily background\nHousehold income, in thousands of dollarsHousehold sizeParental/guardian immigrant status\n\n\n\nFrom the above it should be evident that the operationalization process has pitfalls! Wikipedia describes this issue well with an example operationalizing the concept “anger.” One operation could be directly asking each participant their anger level. However, this self-evaluation process is not only subjective (individuals may define their own anger levels differently) but also often impractical (e.g., surveys or interviews may be impossible in an experimental setting).\nIn summary, operationalization necessarily highlights certain dimensions of a concept, constructing certain precise dimensions and measurements while hiding or obscuring others. However, operationalization makes research practical. Through operational definitions, it constructs procedures for measuring and collecting data. By translating immeasurable concepts into numeric or categorical quantities, one can then conduct statistical and graphical analysis on the data.",
+    "crumbs": [
+      "L05: Variables in Social Science"
+    ]
+  },
+  {
+    "objectID": "05-variables/index.html#variables-operationalization-of-concepts",
+    "href": "05-variables/index.html#variables-operationalization-of-concepts",
+    "title": "Variables and Variable Types",
+    "section": "",
+    "text": "In data science, a variable is a measurable feature, attribute, and/or representation of a concept. It can have different values for different individuals.\nVariables are often empirical measurements; they are metrics that researchers create to approximate the specific dimensions of an abstract concept of a research question.\nThe process of going from a concept, which may often be unmeasurable, to a definition of variable(s) and methods of measurement of these variable(s) is a process broadly referred to as operationalization.\n\nExamples of operationalizing concepts into variables\n\n\n\n\n\n\nConcept\nVariable(s)\n\n\n\n\nEducation level\nHighest degree earned\n\n\nFamily background\nHousehold income, in thousands of dollarsHousehold sizeParental/guardian immigrant status\n\n\n\nFrom the above it should be evident that the operationalization process has pitfalls! Wikipedia describes this issue well with an example operationalizing the concept “anger.” One operation could be directly asking each participant their anger level. However, this self-evaluation process is not only subjective (individuals may define their own anger levels differently) but also often impractical (e.g., surveys or interviews may be impossible in an experimental setting).\nIn summary, operationalization necessarily highlights certain dimensions of a concept, constructing certain precise dimensions and measurements while hiding or obscuring others. However, operationalization makes research practical. Through operational definitions, it constructs procedures for measuring and collecting data. By translating immeasurable concepts into numeric or categorical quantities, one can then conduct statistical and graphical analysis on the data.",
+    "crumbs": [
+      "L05: Variables in Social Science"
+    ]
+  },
+  {
+    "objectID": "05-variables/index.html#variables-in-tabular-data",
+    "href": "05-variables/index.html#variables-in-tabular-data",
+    "title": "Variables and Variable Types",
+    "section": "Variables in Tabular Data",
+    "text": "Variables in Tabular Data\nWe will see that as data scientists, we may often start with a dataset involving data that have already been collected for us. These datasets may have been constructed to answer specific questions (we’ll get into the research methods a bit later) and later shared to the broader public for transparency and reproducibility.\nIt is challenging to use another person’s data! The concepts have already been operationalized into variables; or the quality of data may vary widely; or multiple data sources may be needed to construct a reasonable first step towards a new research question. We’ll see more benefits and drawbacks in our examples this semester.\nFor now, we focus on variables as they exist in tabular data. In most of the tabular datasets we will examine, variables correspond to columns of features. Each row is a record of a datapoint, with different values of variables measured for that datapoint.\n\n\n\n\n\n\n\nFigure 1: Variables as columns.",
+    "crumbs": [
+      "L05: Variables in Social Science"
+    ]
+  },
+  {
+    "objectID": "05-variables/index.html#variable-types",
+    "href": "05-variables/index.html#variable-types",
+    "title": "Variables and Variable Types",
+    "section": "Variable Types",
+    "text": "Variable Types\nVariable types are different from Python data types like string, int, etc. Variable types help us make more informed decisions about how to measure and analyze variables: to make comparisons, create visualizations, and draw conclusions.\n\nNumerical/Quantitative Variable: a variable that takes numbers as values and where the magnitude of the number has a quantitative meaning.\n\nDiscrete: A numerical variable that takes values that have jumps between them.\nContinuous: A numerical variable that takes values on an interval of the real number line.\n\nCategorical/Qualitative Variable: a variable that takes categories as values. Each unique category is called a level.\n\nOrdinal: A categorical variable with levels that have a natural ordering.\nNominal: A categorical variable with levels that have no ordering.\n\n\nFigure 2 has examples of each variable type.\n\n\n\n\n\n\n\nFigure 2: Variable Types.\n\n\n\n\nWhat do we mean by “meaningful” arithmetic? From Stat 20:\n\nWhat unites both types of numerical variables is that the magnitude of the numbers have meaning and you can perform mathematical operations on them and the result also has meaning. It is possible and meaningful to talk about the average air temperature across three locations. It is also possible and meaningful to talk about the sum total number of people across ten households.\n\nJust because a variable has numbers for values does not make it numerical. Consider phone area codes: Berkeley is 510, San Francisco is 415, Palo Alto is 650, and so on. While area codes are numbers, you can’t do any arithmetic—comparative or otherwise—with them that “makes sense”: what does it mean to add area codes? have one area code (650) that is “larger” than another (510)? Area codes are therefore an example of a nominal categorical variable.\nVariable types are closely tied to measurement. Consider the following survey item from Stat 20, which describes a common ordinal categorical variable in opinion surveys:\n\nConsider the question:“Do you strongly agree, agree, feel neutral about, disagree, or strongly disagree with the following statement: Dogs are better than cats?” When you record answers to this question, you’re recording measurements on a categorical variable that takes values “strongly agree”, “agree”, “neutral”, “disagree”, “strongly disagree”. Those are the levels of the categorical variable and they have a natural ordering: “strongly agree” is closer to “agree” than it is to “strongly disagree”.\n\nThe above is an example of a Likert item. The researcher likely wanted a way to measure respondents’ sentiment of dogs and cats—an abstract concept. To do so, the researcher distributed a survey to respondents that operationalized this concept as a 5-point ordinal categorical variable. (There are of course other ways to measure this sentiment, such as by interviewing respondents and asking the open-ended question, “Dogs or cats?” but these yield a different set of possible responses and, consequently a different set of variables.)\nAside: What is a discrete variable type, really? If you think about it deeply from a Computer Science perspective, there will be cases in which continuous numerical variables may seem discrete: after all, price (in U.S. dollars) is counted to the cent, and so there are a discrete number of prices for, say, a pound of apples (we hope). However, in the data world we consider how the variable type may inform how we construct informative visualizations of the variable itself and compare it to other values. In short, variable typing informs our choice of using histograms vs. scatter plots, and so on. More later on this.",
+    "crumbs": [
+      "L05: Variables in Social Science"
+    ]
+  },
+  {
+    "objectID": "05-variables/index.html#external-reading",
+    "href": "05-variables/index.html#external-reading",
+    "title": "Variables and Variable Types",
+    "section": "External Reading",
+    "text": "External Reading\n\n(mentioned in notes) “Chapter 4: From Concepts to Models.” Elizabeth Heger Boyle, Deborah Carr, Benjamin Cornwell, Shelley Correll, Robert Crosnoe, Jeremy Freese, and Waters, Mary C. 2017. The Art and Science of Social Research. New York: W. W. Norton & Company.\n(mentioned in notes) Stat 20 notes, Taxonomy of Data",
+    "crumbs": [
+      "L05: Variables in Social Science"
+    ]
+  },
+  {
+    "objectID": "05-variables/index.html#references",
+    "href": "05-variables/index.html#references",
+    "title": "Variables and Variable Types",
+    "section": "References",
+    "text": "References\nU.S. Census Bureau, “EDUCATIONAL ATTAINMENT,” American Community Survey 5-Year Estimates Subject Tables, Table S1501, 2020, https://data.census.gov/table/ACSST5Y2020.S1501?q=2020+education&t=Age+and+Sex:Educational+Attainment&g=010XX00US$0400000, accessed on August 24, 2025.\nU.S. Census Bureau, “Design and Methodology Report.” https://www.census.gov/programs-surveys/acs/methodology/design-and-methodology.html, accessed on September 2, 2025.\nU.S. Census Bureau, “Public Use Microdata Sample (PUMS).” https://www.census.gov/programs-surveys/acs/microdata.html, accessed on September 2, 2025.",
+    "crumbs": [
+      "L05: Variables in Social Science"
+    ]
+  },
+  {
+    "objectID": "reference.html",
+    "href": "reference.html",
+    "title": "🐍 Data 6 Python Reference",
+    "section": "",
+    "text": "If you’re new to reading documentation, looking at this page might feel a little overwhelming, but don’t worry — the point of this class is not to memorize all of these functions or their arguments. For exams and quizzes, you will be provided with a reference sheet that contains all of the functions you may need on the exam.\nHowever, we do expect you to understand how to use this Python Reference to understand new functions, and to help with debugging when things go wrong. Learning how to read and understand documentation is a key to becoming a good data scientist. In fact, even course staff continue to use the Python Reference to refresh their memory about certain functions.\nOf course, the Python Reference can only provide information about the basics of the functions you’ll use in Data 6. The best knowledge about functions comes from using these functions in code you write in labs or homeworks. If you get stuck when using a certain function, we encourage you to come to office hours or ask a question on Ed.\n\n\n\ndef my_function(num):\n    return num ** 3\n\nIn the function above, my_function is the name of the function, which takes one argument called num. The data type of the input is an int or float, and the function returns the number raised to the power 3, which is also an int or float.\n\n\n\n\nThe Function column tells you how to call the function and what arguments it accepts. Everything written in this font is code or refers to a particular argument in the function (e.g. num in np.sqrt(num)).\nThe Description column gives you a brief description of what the function does, including what each argument is used for\nThe Input column tells you what data type each argument needs to be. If you’re getting a TypeError, it might be because your inputs are of the wrong type. Data types are indicated in bold (e.g. string or Table).\nThe Output column tells you what the function returns and what data type it is.",
+    "crumbs": [
+      "Data 6 Python Reference"
+    ]
+  },
+  {
+    "objectID": "reference.html#understanding-this-documentation-page",
+    "href": "reference.html#understanding-this-documentation-page",
+    "title": "🐍 Data 6 Python Reference",
+    "section": "",
+    "text": "If you’re new to reading documentation, looking at this page might feel a little overwhelming, but don’t worry — the point of this class is not to memorize all of these functions or their arguments. For exams and quizzes, you will be provided with a reference sheet that contains all of the functions you may need on the exam.\nHowever, we do expect you to understand how to use this Python Reference to understand new functions, and to help with debugging when things go wrong. Learning how to read and understand documentation is a key to becoming a good data scientist. In fact, even course staff continue to use the Python Reference to refresh their memory about certain functions.\nOf course, the Python Reference can only provide information about the basics of the functions you’ll use in Data 6. The best knowledge about functions comes from using these functions in code you write in labs or homeworks. If you get stuck when using a certain function, we encourage you to come to office hours or ask a question on Ed.\n\n\n\ndef my_function(num):\n    return num ** 3\n\nIn the function above, my_function is the name of the function, which takes one argument called num. The data type of the input is an int or float, and the function returns the number raised to the power 3, which is also an int or float.\n\n\n\n\nThe Function column tells you how to call the function and what arguments it accepts. Everything written in this font is code or refers to a particular argument in the function (e.g. num in np.sqrt(num)).\nThe Description column gives you a brief description of what the function does, including what each argument is used for\nThe Input column tells you what data type each argument needs to be. If you’re getting a TypeError, it might be because your inputs are of the wrong type. Data types are indicated in bold (e.g. string or Table).\nThe Output column tells you what the function returns and what data type it is.",
+    "crumbs": [
+      "Data 6 Python Reference"
+    ]
+  },
+  {
+    "objectID": "reference.html#built-in-python-functions",
+    "href": "reference.html#built-in-python-functions",
+    "title": "🐍 Data 6 Python Reference",
+    "section": "Built-In Python Functions",
+    "text": "Built-In Python Functions\n\n\n\n\n\n\n\n\n\nFunction\nDescription\nInput\nOutput\n\n\n\n\nstr(val)\nConverts val to a string\nA value of any type (int, float, NoneType, etc.)\nThe value as a string\n\n\nint(num)\nConverts num to an int\nA numerical value (represented as a string or float)\nThe value as an int\n\n\nfloat(num)\nConverts num to a float\nA numerical value (represented as a string or int)\nThe value as a float\n\n\nlen(arr)\nReturns the length of arr\narray or list\nint: the length of the array or list\n\n\nmax(arr)\nReturns the maximum value in arr\narray or list\nThe maximum value the array (usually an int)\n\n\nmin(arr)\nReturns the minimum value in arr\narray or list\nThe minimum value the array (usually an int)\n\n\nsum(arr)\nReturns the sum of the values in arr\narray or list\nint or float: the sum of the values in the array\n\n\nabs(num)\nReturns the absolute value of num\nint or float\nint or float\n\n\nprint(input, ...)\nPrints the input. Multiple inputs can be passed, and they will be separated by spaces by default.\ninput: any inputs to print \nNone\n\n\ntype(object)\nReturns the type of object.\nobject: the object whose type is to be determined\ntype: the type of the object",
+    "crumbs": [
+      "Data 6 Python Reference"
+    ]
+  },
+  {
+    "objectID": "reference.html#numpy-array-functions",
+    "href": "reference.html#numpy-array-functions",
+    "title": "🐍 Data 6 Python Reference",
+    "section": "NumPy Array Functions",
+    "text": "NumPy Array Functions\n\n\n\n\n\n\n\n\n\nFunction\nDescription\nInput\nOutput\n\n\n\n\nmake_array(val1, val2, ...)\nMakes a NumPy array with the inputted values\nA sequence of values\nAn array with those values\n\n\nnp.mean(arr) or np.average(arr)\nCalculates the average value of arr\nAn array of numbers\nfloat: The average of the array\n\n\nnp.sum(arr)\nReturns the sum of the values in arr\narray\nint or float: the sum of the values in the array\n\n\nnp.prod(arr)\nReturns the product of the values in arr\narray\nint or float: the product of the values in the array\n\n\nnp.sqrt(num)\nCalculates the square root of num\nint or float\nfloat : the square root of the number\n\n\nnp.arange(stop), np.arange(start, stop), or np.arange(start, stop, step)\nCreates an array of sequential numbers starting at start, going up in increments of step, and going up to but excluding stop. Default start is 0, default step is 1\nint or float\narray\n\n\nnp.count_nonzero(arr)\nReturns the number of non-zero (or True) elements in an array\nAn array of values\nint: the number of non-zero values in arr\n\n\nnp.append(arr, item)\nAppends item to the end of arr. Does not modify the original array.\n1. array to append to  2. item to append (any type)\narray: a new array with the appended item\n\n\nnp.cumsum(arr)\nReturns the cumulative sum of the elements in arr, where each element is the sum of all preceding elements including itself\narray\narray: the cumulative sum of the values in the array\n\n\nnp.diff(arr)\nComputes the difference between consecutive elements in arr.\narray\narray: the differences between consecutive elements in the array containing len(arr) - 1 elements\n\n\nnp.sort(arr)\nSorts an array in ascending order.\narray\nNone (arr is sorted; no copy is made)",
+    "crumbs": [
+      "Data 6 Python Reference"
+    ]
+  },
+  {
+    "objectID": "reference.html#string-methods",
+    "href": "reference.html#string-methods",
+    "title": "🐍 Data 6 Python Reference",
+    "section": "String Methods",
+    "text": "String Methods\n\n\n\n\n\n\n\n\n\nFunction\nDescription\nInput\nOutput\n\n\n\n\nstr.split(separator, maxsplit)\nSplits str into a list of substrings using the specified separator. If separator is not provided, splits at any whitespace. You can also use the optional argument maxsplit to limit the number of splits.\n1. (Optional) separator: the delimiter used to split str  2. (Optional) maxsplit: maximum number of splits\nlist of substrings\n\n\nstr.join(iterable)\nConcatenates the elements in iterable (usually a list or array) into a single string, with each element separated by str.\niterable: an iterable of strings to join (can be an array or list of strings)\nstring: a single string formed by joining the elements of iterable with the separator str\n\n\nstr.replace(old, new)\nReturns a copy of the string with all occurrences of the substring old replaced by new.\nold: the substring to be replaced.  new: the substring to replace old with.\nstring: a new string where occurrences of old have been replaced by new.",
+    "crumbs": [
+      "Data 6 Python Reference"
+    ]
+  },
+  {
+    "objectID": "reference.html#tables-and-table-methods",
+    "href": "reference.html#tables-and-table-methods",
+    "title": "🐍 Data 6 Python Reference",
+    "section": "Tables and Table Methods",
+    "text": "Tables and Table Methods\n\n\n\nFunction\nDescription\nInput\nOutput\n\n\n\n\nTable()\nCreates an empty table, usually to extend with data\nNone\nAn empty Table\n\n\nTable().read_table(filename)\nCreate a table from a data file\nstring: the name of the file\n\n\n\ntbl.with_column(name, values) or tbl.with_columns(n1, v1, n2, v2, ...)\nAdds an extra column onto tbl with the label name and values as the column values\n1. string: name of the new column  2. array: values in the column\nTable: a copy of the original table with the new column(s)\n\n\ntbl.column(col)\nReturns the values in a column in tbl\nstring or int: the column name or index\narray: the values in that column\n\n\ntbl.num_rows\nCompute the number of rows in tbl\nNone\nint: the number of rows in the table\n\n\ntbl.num_columns\nCompute the number of columns in tbl\nNone\nint: the number of columns in the table\n\n\ntbl.labels\nReturns the labels in tbl\nNone\narray: the names of each column as strings\n\n\ntbl.select(col1, col2, ...)\nCreates a copy of tbl only with the selected columns\nstring or int: the column name(s) or index(es) to be included in the table\nTable with the selected columns\n\n\ntbl.drop(col1, col2, ...)\nCreates a copy of tbl without the selected columns\nstring or int: the column name(s) or index(es) to be dropped from the table\nTable without the selected columns\n\n\ntbl.relabeled(old_label, new_label)\nCreates a new table, changing the column name specified by old_label to new_label, and leaves the original table unchanged.\n1. string: the old column name  2. string the new column name\nTable: a copy of the original table with the changed column name\n\n\ntbl.show(n)\nDisplays the first n rows of tbl. If no argument is specified, the function defaults to showing the entire table\n(Optional) int: number of rows to be displayed\nNone (table is displayed)\n\n\ntbl.sort(column_name)\nSorts the rows of tbl by the values in the column_name column. Defaults to ascending order unless the optional argument descending=True is included.\n1. string or int: name or index of the column to sort  2. (Optional) descending=True\nTable: a copy of the original table with the column sorted\n\n\ntbl.where(column, predicate)\nCreates a copy of tbl containing only the rows where the value of column matches the predicate. See Table.where predicates below.\n1. string or int: column name or index  2. are.(...) predicate or exact-match value.\nTable: a copy of the original table with only the rows that match the predicate\n\n\ntbl.take(row_indices)\nCreates a table with only the rows at the given indices. row_indices is either an array of indices or an integer corresponding to one index.\nint or array: indices of rows to be included in the table\nTable: a copy of the original table with only the rows at the given indices\n\n\ntbl.apply(function) or tbl.apply(function, col1, col2, ...)\nReturns an array of values resulting from applying a function to each item in a column.\n1. Function: function to apply to column  2. (Optional) string or int: the column name(s) or index(es) to apply the function to\narray containing an element for each value in the original column after applying the function to it\n\n\ntbl.group(column_or_columns, function)\nGroups rows in tbl by unique values or combinations of values in a column(s). Multiple columns must be entered as an array of strings. Values in the other columns are aggregated by count (by default) or the optional argument function. You can visualize the group function here.\n1. string or array of strings: column(s) on which to group  2. (Optional) Function: function to aggregate values in cells (defaults to counting rows)\nTable a new groupped table\n\n\ntbl.pivot(col1, col2) or tbl.pivot(col1, col2, values, collect)\nCreates a pivot table where each unique value in col1 has its own column and each unique value in col2 has its own row. Counts or aggregates values from a third column, collected with some function. If the values and collect arguments are not included, pivot defaults to returning counts in the cells. You can visualize the pivot function here.\n1. string: name of the column in tbl whose unique values will make up the columns of the pivot table  2. string: name of column in tbl whose unique values will make up the rows of the pivot table  3. (Optional) string: name of the column in tbl that describes the values of cells in the pivot table  4. (Optional) Function: how the values are collected (e.g. sum or np.mean)\nTable: a new pivot table\n\n\ntblA.join(colA, tblB) or tblA.join(colA, tblB, colB)\nGenerate a table with the columns of tblA and tblB, containing rows for all values in colA and colB that appear in tblA and tblB, respectively. By default, colB is the same value as colA. colA and colB must be strings specifying column names.\n1. string: name of column in tblA with values to join on  2. Table: the other table  3. (Optional) string: the name of the shared column in tblB, if column names are different between the tables\nTable: a new combined table\n\n\ntbl.with_row(values)\nAdds a new row with the specified values to tbl\n1. list or array: values to add as a new row\nTable: a copy of the original table with the new row\n\n\ntbl.with_rows(list_of_rows)\nAdds multiple rows to tbl using a list of rows\n1. list of lists or arrays: each list/array represents a new row\nTable: a copy of the original table with the new rows",
+    "crumbs": [
+      "Data 6 Python Reference"
+    ]
+  },
+  {
+    "objectID": "reference.html#visualization-functions",
+    "href": "reference.html#visualization-functions",
+    "title": "🐍 Data 6 Python Reference",
+    "section": "Visualization Functions",
+    "text": "Visualization Functions\n\n\n\n\n\n\n\n\n\nFunction\nDescription\nInput\nOutput\n\n\n\n\ntbl.barh(categories) or tbl.barh(categories, values)\nDisplays a horizontal bar chart with bars for each category in the column categories. values specifies the column corresponding to the size of each bar, but is unnecessary if the table only has two columns. Optional argument overlay (default is True) specifies whether grouped bar charts should be overlaid or on separate plots.\n1. string: name of the column with categories  2. (Optional) string: name of the column with values corresponding to the categories\nNone: draws a bar chart\n\n\ntbl.hist(column)\nGenerates a histogram of the numerical values in column. Optional arguments group (to specify categorical column to group on), bins (to specify custom bins), and overlay to specify overlaid or separate histograms.\nstring: name of the column\nNone: draws a histogram\n\n\ntbl.plot(x_column, y_column) or tbl.plot(x_column)\nDraws a line plot consisting of one point for each row in tbl. If only x_column is specified, plot will plot the rest of the columns on the y-axis with different colored lines. Optional argument overlay (default is True) specifies whether multiple lines should be overlaid or on separate plots.\n1. string: name of the column on the x-axis  2. string: name of the column on the y-axis\nNone: draws a line graph\n\n\ntbl.scatter(x_column, y_column)\nDraws a scatter plot consisting of one point for each row in tbl. The optional argument fit_line=True can be included to draw a line of best fit through the scatter plot. The optional arguments group (to specify categorical column to group on) and sizes (to specify a numerical column for bubble sizes) can also be used to encode additional variables.\n1. string: name of the column on the x-axis  2. string: name of the column on the y-axis  3. (Optional) fit_line=True\nNone: draws a scatter plot",
+    "crumbs": [
+      "Data 6 Python Reference"
+    ]
+  },
+  {
+    "objectID": "reference.html#table.where-predicates",
+    "href": "reference.html#table.where-predicates",
+    "title": "🐍 Data 6 Python Reference",
+    "section": "Table.where Predicates",
+    "text": "Table.where Predicates\nThese functions can be passed in as the second argument to tbl.where(..) and act as a condition by which to select rows from tbl.\n\n\n\n\n\n\n\nPredicate\nDescription\n\n\n\n\nare.equal_to(Z)\nEqual to Z (can be an int, float or string)\n\n\nare.not_equal_to(Z)\nNot equal to ‘Z’ can be a number (int or float) or a string)\n\n\nare.above(x)\nGreater than x\n\n\nare.above_or_equal_to(x)\nGreater than or equal to x\n\n\nare.below(x)\nLess than x\n\n\nare.below_or_equal_to(x)\nLess than or equal to x\n\n\nare.between(x,y)\nGreater than or equal to x and less than y\n\n\nare.between_or_equal_to(x,y)\nGreater than or equal to x, and less than or equal to y\n\n\nare.strictly_between(x,y)\nGreater than x and less than y\n\n\nare.contained_in(A)\nTrue if it is a substring of A (if A is a string) or an element of A (if A is an array)\n\n\nare.containing(S)\nContains the string S",
+    "crumbs": [
+      "Data 6 Python Reference"
+    ]
+  },
+  {
+    "objectID": "reference.html#more-documentation",
+    "href": "reference.html#more-documentation",
+    "title": "🐍 Data 6 Python Reference",
+    "section": "More Documentation",
+    "text": "More Documentation\nThe Data 6 Python reference guide is based on the Data 8 Python Reference. More detailed Python documentation is available here.",
+    "crumbs": [
+      "Data 6 Python Reference"
+    ]
+  },
+  {
     "objectID": "05-variables/units-of-analysis.html",
     "href": "05-variables/units-of-analysis.html",
     "title": "Units of Analysis",
@@ -523,153 +743,99 @@
     ]
   },
   {
-    "objectID": "reference.html",
-    "href": "reference.html",
-    "title": "🐍 Data 6 Python Reference",
+    "objectID": "07-visualizations/examples.html",
+    "href": "07-visualizations/examples.html",
+    "title": "Examples of Visualizations",
     "section": "",
-    "text": "If you’re new to reading documentation, looking at this page might feel a little overwhelming, but don’t worry — the point of this class is not to memorize all of these functions or their arguments. For exams and quizzes, you will be provided with a reference sheet that contains all of the functions you may need on the exam.\nHowever, we do expect you to understand how to use this Python Reference to understand new functions, and to help with debugging when things go wrong. Learning how to read and understand documentation is a key to becoming a good data scientist. In fact, even course staff continue to use the Python Reference to refresh their memory about certain functions.\nOf course, the Python Reference can only provide information about the basics of the functions you’ll use in Data 6. The best knowledge about functions comes from using these functions in code you write in labs or homeworks. If you get stuck when using a certain function, we encourage you to come to office hours or ask a question on Ed.\n\n\n\ndef my_function(num):\n    return num ** 3\n\nIn the function above, my_function is the name of the function, which takes one argument called num. The data type of the input is an int or float, and the function returns the number raised to the power 3, which is also an int or float.\n\n\n\n\nThe Function column tells you how to call the function and what arguments it accepts. Everything written in this font is code or refers to a particular argument in the function (e.g. num in np.sqrt(num)).\nThe Description column gives you a brief description of what the function does, including what each argument is used for\nThe Input column tells you what data type each argument needs to be. If you’re getting a TypeError, it might be because your inputs are of the wrong type. Data types are indicated in bold (e.g. string or Table).\nThe Output column tells you what the function returns and what data type it is.",
+    "text": "What do you see when you look at this ancient artifact?\n\n\n\n\n\n\n\nFigure 1: The World’s First Map\n\n\n\n\nThis is a map depicting the town of Konya, Turkey - supposedly the world’s first map, dating back to approximately 6200 BC. Even in prehistoric times, humans recognized the power of visual representation to communicate spatial relationships and important information.\n\n\n\n\n\n\n\n\n\nRead Inferential Thinking\n\n\n\nRead Ch 2.1, which describes in detail John Snow’s groundbreaking use of data visualization during the 1854 cholera epidemic.\nThis story demonstrates how observation and visualization can lead to life-saving discoveries, even when the underlying scientific theory (germ theory) wasn’t yet established.\n\n\n\n\n\n\n\n\nData Visualization Saves Lives\n\n\n\nOne of the most famous examples of data visualization directly saving human lives.\n\n\nThe Problem: In August 1854, a massive cholera outbreak was devastating the overcrowded SoHo district of London. Hundreds were dying within days, and the prevailing “miasma theory” blamed bad air and smells.\nThe Solution: Dr. John Snow was skeptical of the miasma theory and suspected contaminated water. He created a revolutionary approach that became standard in epidemiology: he drew a map.\n\n\n\n\n\n\n\nFigure 2: John Snow’s Cholera Map\n\n\n\n\nWhat the map revealed:\n\nDeaths were clustered around the Broad Street pump\nHouses closer to other pumps still used Broad Street (due to street layout)\nThe Lion Brewery had no deaths (workers drank beer and had their own well)\nScattered distant deaths were children who drank from the pump on their way to school\n\nThe Impact: Snow’s map convinced local authorities to remove the handle of the Broad Street pump. Later investigation revealed that a cesspit just feet away had been leaking sewage into the well, contaminating the water with cholera.\n\n\n\nFlorence Nightingale wasn’t just a pioneering nurse, she was also an innovative data visualizer. During the Crimean War, she created what’s now called a “rose diagram” or “coxcomb chart” to visualize the causes of death among British soldiers.\n\n\n\n\n\n\n\nFigure 3: Florence Nightingale’s Rose Diagram\n\n\n\n\nHer visualization revealed a shocking truth: more soldiers were dying from preventable diseases than from battle wounds. This wasn’t just a pretty chart, it was a powerful argument that drove major reforms in military medical care. Nightingale understood that abstract statistics about mortality rates couldn’t compete with the visual impact of her rose petals, where the size of each segment made the disparity impossible to ignore.",
     "crumbs": [
-      "Data 6 Python Reference"
+      "L07: Visualizations",
+      "Examples of Visualizations"
     ]
   },
   {
-    "objectID": "reference.html#understanding-this-documentation-page",
-    "href": "reference.html#understanding-this-documentation-page",
-    "title": "🐍 Data 6 Python Reference",
+    "objectID": "07-visualizations/examples.html#historical-examples",
+    "href": "07-visualizations/examples.html#historical-examples",
+    "title": "Examples of Visualizations",
     "section": "",
-    "text": "If you’re new to reading documentation, looking at this page might feel a little overwhelming, but don’t worry — the point of this class is not to memorize all of these functions or their arguments. For exams and quizzes, you will be provided with a reference sheet that contains all of the functions you may need on the exam.\nHowever, we do expect you to understand how to use this Python Reference to understand new functions, and to help with debugging when things go wrong. Learning how to read and understand documentation is a key to becoming a good data scientist. In fact, even course staff continue to use the Python Reference to refresh their memory about certain functions.\nOf course, the Python Reference can only provide information about the basics of the functions you’ll use in Data 6. The best knowledge about functions comes from using these functions in code you write in labs or homeworks. If you get stuck when using a certain function, we encourage you to come to office hours or ask a question on Ed.\n\n\n\ndef my_function(num):\n    return num ** 3\n\nIn the function above, my_function is the name of the function, which takes one argument called num. The data type of the input is an int or float, and the function returns the number raised to the power 3, which is also an int or float.\n\n\n\n\nThe Function column tells you how to call the function and what arguments it accepts. Everything written in this font is code or refers to a particular argument in the function (e.g. num in np.sqrt(num)).\nThe Description column gives you a brief description of what the function does, including what each argument is used for\nThe Input column tells you what data type each argument needs to be. If you’re getting a TypeError, it might be because your inputs are of the wrong type. Data types are indicated in bold (e.g. string or Table).\nThe Output column tells you what the function returns and what data type it is.",
+    "text": "What do you see when you look at this ancient artifact?\n\n\n\n\n\n\n\nFigure 1: The World’s First Map\n\n\n\n\nThis is a map depicting the town of Konya, Turkey - supposedly the world’s first map, dating back to approximately 6200 BC. Even in prehistoric times, humans recognized the power of visual representation to communicate spatial relationships and important information.\n\n\n\n\n\n\n\n\n\nRead Inferential Thinking\n\n\n\nRead Ch 2.1, which describes in detail John Snow’s groundbreaking use of data visualization during the 1854 cholera epidemic.\nThis story demonstrates how observation and visualization can lead to life-saving discoveries, even when the underlying scientific theory (germ theory) wasn’t yet established.\n\n\n\n\n\n\n\n\nData Visualization Saves Lives\n\n\n\nOne of the most famous examples of data visualization directly saving human lives.\n\n\nThe Problem: In August 1854, a massive cholera outbreak was devastating the overcrowded SoHo district of London. Hundreds were dying within days, and the prevailing “miasma theory” blamed bad air and smells.\nThe Solution: Dr. John Snow was skeptical of the miasma theory and suspected contaminated water. He created a revolutionary approach that became standard in epidemiology: he drew a map.\n\n\n\n\n\n\n\nFigure 2: John Snow’s Cholera Map\n\n\n\n\nWhat the map revealed:\n\nDeaths were clustered around the Broad Street pump\nHouses closer to other pumps still used Broad Street (due to street layout)\nThe Lion Brewery had no deaths (workers drank beer and had their own well)\nScattered distant deaths were children who drank from the pump on their way to school\n\nThe Impact: Snow’s map convinced local authorities to remove the handle of the Broad Street pump. Later investigation revealed that a cesspit just feet away had been leaking sewage into the well, contaminating the water with cholera.\n\n\n\nFlorence Nightingale wasn’t just a pioneering nurse, she was also an innovative data visualizer. During the Crimean War, she created what’s now called a “rose diagram” or “coxcomb chart” to visualize the causes of death among British soldiers.\n\n\n\n\n\n\n\nFigure 3: Florence Nightingale’s Rose Diagram\n\n\n\n\nHer visualization revealed a shocking truth: more soldiers were dying from preventable diseases than from battle wounds. This wasn’t just a pretty chart, it was a powerful argument that drove major reforms in military medical care. Nightingale understood that abstract statistics about mortality rates couldn’t compete with the visual impact of her rose petals, where the size of each segment made the disparity impossible to ignore.",
     "crumbs": [
-      "Data 6 Python Reference"
+      "L07: Visualizations",
+      "Examples of Visualizations"
     ]
   },
   {
-    "objectID": "reference.html#built-in-python-functions",
-    "href": "reference.html#built-in-python-functions",
-    "title": "🐍 Data 6 Python Reference",
-    "section": "Built-In Python Functions",
-    "text": "Built-In Python Functions\n\n\n\n\n\n\n\n\n\nFunction\nDescription\nInput\nOutput\n\n\n\n\nstr(val)\nConverts val to a string\nA value of any type (int, float, NoneType, etc.)\nThe value as a string\n\n\nint(num)\nConverts num to an int\nA numerical value (represented as a string or float)\nThe value as an int\n\n\nfloat(num)\nConverts num to a float\nA numerical value (represented as a string or int)\nThe value as a float\n\n\nlen(arr)\nReturns the length of arr\narray or list\nint: the length of the array or list\n\n\nmax(arr)\nReturns the maximum value in arr\narray or list\nThe maximum value the array (usually an int)\n\n\nmin(arr)\nReturns the minimum value in arr\narray or list\nThe minimum value the array (usually an int)\n\n\nsum(arr)\nReturns the sum of the values in arr\narray or list\nint or float: the sum of the values in the array\n\n\nabs(num)\nReturns the absolute value of num\nint or float\nint or float\n\n\nprint(input, ...)\nPrints the input. Multiple inputs can be passed, and they will be separated by spaces by default.\ninput: any inputs to print \nNone\n\n\ntype(object)\nReturns the type of object.\nobject: the object whose type is to be determined\ntype: the type of the object",
+    "objectID": "07-visualizations/examples.html#modern-examples",
+    "href": "07-visualizations/examples.html#modern-examples",
+    "title": "Examples of Visualizations",
+    "section": "Modern Examples",
+    "text": "Modern Examples\n\nMaya Lin’s Vietnam War Memorial (1982)\nNot all data visualization involves charts and graphs. Maya Lin’s Vietnam War Memorial in Washington DC proves that data can be deeply emotional and memorial, not just analytical.\n\n\n\n\n\n\n\nFigure 4: Vietnam War Memorial\n\n\n\n\nEach of the 58,000+ names etched into the black granite represents one life lost. The chronological arrangement tells the story of the war’s progression through time, while the reflective surface creates an intimate connection between viewers and the data you literally see yourself reflected among the names. This memorial demonstrates that the most powerful visualizations don’t just inform us; they transform how we feel about the information.\n\n\nCOVID-19 Case Tracking (2022)\nDuring the COVID-19 pandemic, data visualization became part of daily life. Suddenly, everyone from epidemiologists to elementary school students was reading line charts showing case trends and interpreting what those curves meant for their communities.\n\n\n\n\n\n\n\nFigure 5: COVID-19 Case Tracking\n\n\n\n\nGoogle’s COVID tracking dashboard exemplified how modern visualization must be both accessible and updateable in real-time. The time series charts showed trends over months with clear visual indicators of peaks and valleys, but more importantly, they translated complex epidemiological data into something any concerned citizen could understand.",
     "crumbs": [
-      "Data 6 Python Reference"
+      "L07: Visualizations",
+      "Examples of Visualizations"
     ]
   },
   {
-    "objectID": "reference.html#numpy-array-functions",
-    "href": "reference.html#numpy-array-functions",
-    "title": "🐍 Data 6 Python Reference",
-    "section": "NumPy Array Functions",
-    "text": "NumPy Array Functions\n\n\n\n\n\n\n\n\n\nFunction\nDescription\nInput\nOutput\n\n\n\n\nmake_array(val1, val2, ...)\nMakes a NumPy array with the inputted values\nA sequence of values\nAn array with those values\n\n\nnp.mean(arr) or np.average(arr)\nCalculates the average value of arr\nAn array of numbers\nfloat: The average of the array\n\n\nnp.sum(arr)\nReturns the sum of the values in arr\narray\nint or float: the sum of the values in the array\n\n\nnp.prod(arr)\nReturns the product of the values in arr\narray\nint or float: the product of the values in the array\n\n\nnp.sqrt(num)\nCalculates the square root of num\nint or float\nfloat : the square root of the number\n\n\nnp.arange(stop), np.arange(start, stop), or np.arange(start, stop, step)\nCreates an array of sequential numbers starting at start, going up in increments of step, and going up to but excluding stop. Default start is 0, default step is 1\nint or float\narray\n\n\nnp.count_nonzero(arr)\nReturns the number of non-zero (or True) elements in an array\nAn array of values\nint: the number of non-zero values in arr\n\n\nnp.append(arr, item)\nAppends item to the end of arr. Does not modify the original array.\n1. array to append to  2. item to append (any type)\narray: a new array with the appended item\n\n\nnp.cumsum(arr)\nReturns the cumulative sum of the elements in arr, where each element is the sum of all preceding elements including itself\narray\narray: the cumulative sum of the values in the array\n\n\nnp.diff(arr)\nComputes the difference between consecutive elements in arr.\narray\narray: the differences between consecutive elements in the array containing len(arr) - 1 elements\n\n\nnp.sort(arr)\nSorts an array in ascending order.\narray\nNone",
+    "objectID": "07-visualizations/examples.html#reflection-questions",
+    "href": "07-visualizations/examples.html#reflection-questions",
+    "title": "Examples of Visualizations",
+    "section": "Reflection Questions",
+    "text": "Reflection Questions\nAs you think about these examples, consider:\n\nWhat made each visualization effective for its time and purpose?\nHow might these visualizations be different if created with modern tools?\nWhat can we learn from these examples about designing effective visualizations today?",
     "crumbs": [
-      "Data 6 Python Reference"
+      "L07: Visualizations",
+      "Examples of Visualizations"
     ]
   },
   {
-    "objectID": "reference.html#string-methods",
-    "href": "reference.html#string-methods",
-    "title": "🐍 Data 6 Python Reference",
-    "section": "String Methods",
-    "text": "String Methods\n\n\n\n\n\n\n\n\n\nFunction\nDescription\nInput\nOutput\n\n\n\n\nstr.split(separator, maxsplit)\nSplits str into a list of substrings using the specified separator. If separator is not provided, splits at any whitespace. You can also use the optional argument maxsplit to limit the number of splits.\n1. (Optional) separator: the delimiter used to split str  2. (Optional) maxsplit: maximum number of splits\nlist of substrings\n\n\nstr.join(iterable)\nConcatenates the elements in iterable (usually a list or array) into a single string, with each element separated by str.\niterable: an iterable of strings to join (can be an array or list of strings)\nstring: a single string formed by joining the elements of iterable with the separator str\n\n\nstr.replace(old, new)\nReturns a copy of the string with all occurrences of the substring old replaced by new.\nold: the substring to be replaced.  new: the substring to replace old with.\nstring: a new string where occurrences of old have been replaced by new.",
+    "objectID": "07-visualizations/examples.html#next-steps",
+    "href": "07-visualizations/examples.html#next-steps",
+    "title": "Examples of Visualizations",
+    "section": "Next Steps",
+    "text": "Next Steps\nNow that we’ve seen the power of visualization through these historical examples, let’s explore the theory behind what makes visualizations effective.",
     "crumbs": [
-      "Data 6 Python Reference"
+      "L07: Visualizations",
+      "Examples of Visualizations"
     ]
   },
   {
-    "objectID": "reference.html#tables-and-table-methods",
-    "href": "reference.html#tables-and-table-methods",
-    "title": "🐍 Data 6 Python Reference",
-    "section": "Tables and Table Methods",
-    "text": "Tables and Table Methods\n\n\n\nFunction\nDescription\nInput\nOutput\n\n\n\n\nTable()\nCreates an empty table, usually to extend with data\nNone\nAn empty Table\n\n\nTable().read_table(filename)\nCreate a table from a data file\nstring: the name of the file\n\n\n\ntbl.with_column(name, values) or tbl.with_columns(n1, v1, n2, v2, ...)\nAdds an extra column onto tbl with the label name and values as the column values\n1. string: name of the new column  2. array: values in the column\nTable: a copy of the original table with the new column(s)\n\n\ntbl.column(col)\nReturns the values in a column in tbl\nstring or int: the column name or index\narray: the values in that column\n\n\ntbl.num_rows\nCompute the number of rows in tbl\nNone\nint: the number of rows in the table\n\n\ntbl.num_columns\nCompute the number of columns in tbl\nNone\nint: the number of columns in the table\n\n\ntbl.labels\nReturns the labels in tbl\nNone\narray: the names of each column as strings\n\n\ntbl.select(col1, col2, ...)\nCreates a copy of tbl only with the selected columns\nstring or int: the column name(s) or index(es) to be included in the table\nTable with the selected columns\n\n\ntbl.drop(col1, col2, ...)\nCreates a copy of tbl without the selected columns\nstring or int: the column name(s) or index(es) to be dropped from the table\nTable without the selected columns\n\n\ntbl.relabeled(old_label, new_label)\nCreates a new table, changing the column name specified by old_label to new_label, and leaves the original table unchanged.\n1. string: the old column name  2. string the new column name\nTable: a copy of the original table with the changed column name\n\n\ntbl.show(n)\nDisplays the first n rows of tbl. If no argument is specified, the function defaults to showing the entire table\n(Optional) int: number of rows to be displayed\nNone (table is displayed)\n\n\ntbl.sort(column_name)\nSorts the rows of tbl by the values in the column_name column. Defaults to ascending order unless the optional argument descending=True is included.\n1. string or int: name or index of the column to sort  2. (Optional) descending=True\nTable: a copy of the original table with the column sorted\n\n\ntbl.where(column, predicate)\nCreates a copy of tbl containing only the rows where the value of column matches the predicate. See Table.where predicates below.\n1. string or int: column name or index  2. are.(...) predicate\nTable: a copy of the original table with only the rows that match the predicate\n\n\ntbl.take(row_indices)\nCreates a table with only the rows at the given indices. row_indices is either an array of indices or an integer corresponding to one index.\nint or array: indices of rows to be included in the table\nTable: a copy of the original table with only the rows at the given indices\n\n\ntbl.apply(function) or tbl.apply(function, col1, col2, ...)\nReturns an array of values resulting from applying a function to each item in a column.\n1. Function: function to apply to column  2. (Optional) string or int: the column name(s) or index(es) to apply the function to\narray containing an element for each value in the original column after applying the function to it\n\n\ntbl.group(column_or_columns, function)\nGroups rows in tbl by unique values or combinations of values in a column(s). Multiple columns must be entered as an array of strings. Values in the other columns are aggregated by count (by default) or the optional argument function. You can visualize the group function here.\n1. string or array of strings: column(s) on which to group  2. (Optional) Function: function to aggregate values in cells (defaults to counting rows)\nTable a new groupped table\n\n\ntbl.pivot(col1, col2) or tbl.pivot(col1, col2, values, collect)\nCreates a pivot table where each unique value in col1 has its own column and each unique value in col2 has its own row. Counts or aggregates values from a third column, collected with some function. If the values and collect arguments are not included, pivot defaults to returning counts in the cells. You can visualize the pivot function here.\n1. string: name of the column in tbl whose unique values will make up the columns of the pivot table  2. string: name of column in tbl whose unique values will make up the rows of the pivot table  3. (Optional) string: name of the column in tbl that describes the values of cells in the pivot table  4. (Optional) Function: how the values are collected (e.g. sum or np.mean)\nTable: a new pivot table\n\n\ntblA.join(colA, tblB) or tblA.join(colA, tblB, colB)\nGenerate a table with the columns of tblA and tblB, containing rows for all values in colA and colB that appear in tblA and tblB, respectively. By default, colB is the same value as colA. colA and colB must be strings specifying column names.\n1. string: name of column in tblA with values to join on  2. Table: the other table  3. (Optional) string: the name of the shared column in tblB, if column names are different between the tables\nTable: a new combined table\n\n\ntbl.with_row(values)\nAdds a new row with the specified values to tbl\n1. list or array: values to add as a new row\nTable: a copy of the original table with the new row\n\n\ntbl.with_rows(list_of_rows)\nAdds multiple rows to tbl using a list of rows\n1. list of lists or arrays: each list/array represents a new row\nTable: a copy of the original table with the new rows",
-    "crumbs": [
-      "Data 6 Python Reference"
-    ]
-  },
-  {
-    "objectID": "reference.html#visualization-functions",
-    "href": "reference.html#visualization-functions",
-    "title": "🐍 Data 6 Python Reference",
-    "section": "Visualization Functions",
-    "text": "Visualization Functions\n\n\n\n\n\n\n\n\n\nFunction\nDescription\nInput\nOutput\n\n\n\n\ntbl.barh(categories) or tbl.barh(categories, values)\nDisplays a horizontal bar chart with bars for each category in the column categories. values specifies the column corresponding to the size of each bar, but is unnecessary if the table only has two columns. Optional argument overlay (default is True) specifies whether grouped bar charts should be overlaid or on separate plots.\n1. string: name of the column with categories  2. (Optional) string: name of the column with values corresponding to the categories\nNone: draws a bar chart\n\n\ntbl.hist(column)\nGenerates a histogram of the numerical values in column. Optional arguments group (to specify categorical column to group on), bins (to specify custom bins), and overlay to specify overlaid or separate histograms.\nstring: name of the column\nNone: draws a histogram\n\n\ntbl.plot(x_column, y_column) or tbl.plot(x_column)\nDraws a line plot consisting of one point for each row in tbl. If only x_column is specified, plot will plot the rest of the columns on the y-axis with different colored lines. Optional argument overlay (default is True) specifies whether multiple lines should be overlaid or on separate plots.\n1. string: name of the column on the x-axis  2. string: name of the column on the y-axis\nNone: draws a line graph\n\n\ntbl.scatter(x_column, y_column)\nDraws a scatter plot consisting of one point for each row in tbl. The optional argument fit_line=True can be included to draw a line of best fit through the scatter plot. The optional arguments group (to specify categorical column to group on) and sizes (to specify a numerical column for bubble sizes) can also be used to encode additional variables.\n1. string: name of the column on the x-axis  2. string: name of the column on the y-axis  3. (Optional) fit_line=True\nNone: draws a scatter plot",
-    "crumbs": [
-      "Data 6 Python Reference"
-    ]
-  },
-  {
-    "objectID": "reference.html#table.where-predicates",
-    "href": "reference.html#table.where-predicates",
-    "title": "🐍 Data 6 Python Reference",
-    "section": "Table.where Predicates",
-    "text": "Table.where Predicates\nThese functions can be passed in as the second argument to tbl.where(..) and act as a condition by which to select rows from tbl.\n\n\n\n\n\n\n\nPredicate\nDescription\n\n\n\n\nare.equal_to(Z)\nEqual to Z (can be an int, float or string)\n\n\nare.not_equal_to(Z)\nNot equal to ‘Z’ can be a number (int or float) or a string)\n\n\nare.above(x)\nGreater than x\n\n\nare.above_or_equal_to(x)\nGreater than or equal to x\n\n\nare.below(x)\nLess than x\n\n\nare.below_or_equal_to(x)\nLess than or equal to x\n\n\nare.between(x,y)\nGreater than or equal to x and less than y\n\n\nare.between_or_equal_to(x,y)\nGreater than or equal to x, and less than or equal to y\n\n\nare.strictly_between(x,y)\nGreater than x and less than y\n\n\nare.contained_in(A)\nTrue if it is a substring of A (if A is a string) or an element of A (if A is an array)\n\n\nare.containing(S)\nContains the string S",
-    "crumbs": [
-      "Data 6 Python Reference"
-    ]
-  },
-  {
-    "objectID": "reference.html#more-documentation",
-    "href": "reference.html#more-documentation",
-    "title": "🐍 Data 6 Python Reference",
-    "section": "More Documentation",
-    "text": "More Documentation\nThe Data 6 Python reference guide is based on the Data 8 Python Reference. More detailed Python documentation is available here.",
-    "crumbs": [
-      "Data 6 Python Reference"
-    ]
-  },
-  {
-    "objectID": "05-variables/index.html",
-    "href": "05-variables/index.html",
-    "title": "Variables and Variable Types",
-    "section": "",
-    "text": "In data science, a variable is a measurable feature, attribute, and/or representation of a concept. It can have different values for different individuals.\nVariables are often empirical measurements; they are metrics that researchers create to approximate the specific dimensions of an abstract concept of a research question.\nThe process of going from a concept, which may often be unmeasurable, to a definition of variable(s) and methods of measurement of these variable(s) is a process broadly referred to as operationalization.\n\nExamples of operationalizing concepts into variables\n\n\n\n\n\n\nConcept\nVariable(s)\n\n\n\n\nEducation level\nHighest degree earned\n\n\nFamily background\nHousehold income, in thousands of dollarsHousehold sizeParental/guardian immigrant status\n\n\n\nFrom the above it should be evident that the operationalization process has pitfalls! Wikipedia describes this issue well with an example operationalizing the concept “anger.” One operation could be directly asking each participant their anger level. However, this self-evaluation process is not only subjective (individuals may define their own anger levels differently) but also often impractical (e.g., surveys or interviews may be impossible in an experimental setting).\nIn summary, operationalization necessarily highlights certain dimensions of a concept, constructing certain precise dimensions and measurements while hiding or obscuring others. However, operationalization makes research practical. Through operational definitions, it constructs procedures for measuring and collecting data. By translating immeasurable concepts into numeric or categorical quantities, one can then conduct statistical and graphical analysis on the data.",
-    "crumbs": [
-      "L05: Variables in Social Science"
-    ]
-  },
-  {
-    "objectID": "05-variables/index.html#variables-operationalization-of-concepts",
-    "href": "05-variables/index.html#variables-operationalization-of-concepts",
-    "title": "Variables and Variable Types",
-    "section": "",
-    "text": "In data science, a variable is a measurable feature, attribute, and/or representation of a concept. It can have different values for different individuals.\nVariables are often empirical measurements; they are metrics that researchers create to approximate the specific dimensions of an abstract concept of a research question.\nThe process of going from a concept, which may often be unmeasurable, to a definition of variable(s) and methods of measurement of these variable(s) is a process broadly referred to as operationalization.\n\nExamples of operationalizing concepts into variables\n\n\n\n\n\n\nConcept\nVariable(s)\n\n\n\n\nEducation level\nHighest degree earned\n\n\nFamily background\nHousehold income, in thousands of dollarsHousehold sizeParental/guardian immigrant status\n\n\n\nFrom the above it should be evident that the operationalization process has pitfalls! Wikipedia describes this issue well with an example operationalizing the concept “anger.” One operation could be directly asking each participant their anger level. However, this self-evaluation process is not only subjective (individuals may define their own anger levels differently) but also often impractical (e.g., surveys or interviews may be impossible in an experimental setting).\nIn summary, operationalization necessarily highlights certain dimensions of a concept, constructing certain precise dimensions and measurements while hiding or obscuring others. However, operationalization makes research practical. Through operational definitions, it constructs procedures for measuring and collecting data. By translating immeasurable concepts into numeric or categorical quantities, one can then conduct statistical and graphical analysis on the data.",
-    "crumbs": [
-      "L05: Variables in Social Science"
-    ]
-  },
-  {
-    "objectID": "05-variables/index.html#variables-in-tabular-data",
-    "href": "05-variables/index.html#variables-in-tabular-data",
-    "title": "Variables and Variable Types",
-    "section": "Variables in Tabular Data",
-    "text": "Variables in Tabular Data\nWe will see that as data scientists, we may often start with a dataset involving data that have already been collected for us. These datasets may have been constructed to answer specific questions (we’ll get into the research methods a bit later) and later shared to the broader public for transparency and reproducibility.\nIt is challenging to use another person’s data! The concepts have already been operationalized into variables; or the quality of data may vary widely; or multiple data sources may be needed to construct a reasonable first step towards a new research question. We’ll see more benefits and drawbacks in our examples this semester.\nFor now, we focus on variables as they exist in tabular data. In most of the tabular datasets we will examine, variables correspond to columns of features. Each row is a record of a datapoint, with different values of variables measured for that datapoint.\n\n\n\n\n\n\n\nFigure 1: Variables as columns.",
-    "crumbs": [
-      "L05: Variables in Social Science"
-    ]
-  },
-  {
-    "objectID": "05-variables/index.html#variable-types",
-    "href": "05-variables/index.html#variable-types",
-    "title": "Variables and Variable Types",
-    "section": "Variable Types",
-    "text": "Variable Types\nVariable types are different from Python data types like string, int, etc. Variable types help us make more informed decisions about how to measure and analyze variables: to make comparisons, create visualizations, and draw conclusions.\n\nNumerical/Quantitative Variable: a variable that takes numbers as values and where the magnitude of the number has a quantitative meaning.\n\nDiscrete: A numerical variable that takes values that have jumps between them.\nContinuous: A numerical variable that takes values on an interval of the real number line.\n\nCategorical/Qualitative Variable: a variable that takes categories as values. Each unique category is called a level.\n\nOrdinal: A categorical variable with levels that have a natural ordering.\nNominal: A categorical variable with levels that have no ordering.\n\n\nFigure 2 has examples of each variable type.\n\n\n\n\n\n\n\nFigure 2: Variable Types.\n\n\n\n\nWhat do we mean by “meaningful” arithmetic? From Stat 20:\n\nWhat unites both types of numerical variables is that the magnitude of the numbers have meaning and you can perform mathematical operations on them and the result also has meaning. It is possible and meaningful to talk about the average air temperature across three locations. It is also possible and meaningful to talk about the sum total number of people across ten households.\n\nJust because a variable has numbers for values does not make it numerical. Consider phone area codes: Berkeley is 510, San Francisco is 415, Palo Alto is 650, and so on. While area codes are numbers, you can’t do any arithmetic—comparative or otherwise—with them that “makes sense”: what does it mean to add area codes? have one area code (650) that is “larger” than another (510)? Area codes are therefore an example of a nominal categorical variable.\nVariable types are closely tied to measurement. Consider the following survey item from Stat 20, which describes a common ordinal categorical variable in opinion surveys:\n\nConsider the question:“Do you strongly agree, agree, feel neutral about, disagree, or strongly disagree with the following statement: Dogs are better than cats?” When you record answers to this question, you’re recording measurements on a categorical variable that takes values “strongly agree”, “agree”, “neutral”, “disagree”, “strongly disagree”. Those are the levels of the categorical variable and they have a natural ordering: “strongly agree” is closer to “agree” than it is to “strongly disagree”.\n\nThe above is an example of a Likert item. The researcher likely wanted a way to measure respondents’ sentiment of dogs and cats—an abstract concept. To do so, the researcher distributed a survey to respondents that operationalized this concept as a 5-point ordinal categorical variable. (There are of course other ways to measure this sentiment, such as by interviewing respondents and asking the open-ended question, “Dogs or cats?” but these yield a different set of possible responses and, consequently a different set of variables.)\nAside: What is a discrete variable type, really? If you think about it deeply from a Computer Science perspective, there will be cases in which continuous numerical variables may seem discrete: after all, price (in U.S. dollars) is counted to the cent, and so there are a discrete number of prices for, say, a pound of apples (we hope). However, in the data world we consider how the variable type may inform how we construct informative visualizations of the variable itself and compare it to other values. In short, variable typing informs our choice of using histograms vs. scatter plots, and so on. More later on this.",
-    "crumbs": [
-      "L05: Variables in Social Science"
-    ]
-  },
-  {
-    "objectID": "05-variables/index.html#external-reading",
-    "href": "05-variables/index.html#external-reading",
-    "title": "Variables and Variable Types",
+    "objectID": "07-visualizations/examples.html#external-reading",
+    "href": "07-visualizations/examples.html#external-reading",
+    "title": "Examples of Visualizations",
     "section": "External Reading",
-    "text": "External Reading\n\n(mentioned in notes) “Chapter 4: From Concepts to Models.” Elizabeth Heger Boyle, Deborah Carr, Benjamin Cornwell, Shelley Correll, Robert Crosnoe, Jeremy Freese, and Waters, Mary C. 2017. The Art and Science of Social Research. New York: W. W. Norton & Company.\n(mentioned in notes) Stat 20 notes, Taxonomy of Data",
+    "text": "External Reading\n\n(mentioned in notes) Computational and Inferential Thinking, Ch 2.1",
     "crumbs": [
-      "L05: Variables in Social Science"
+      "L07: Visualizations",
+      "Examples of Visualizations"
     ]
   },
   {
-    "objectID": "05-variables/index.html#references",
-    "href": "05-variables/index.html#references",
-    "title": "Variables and Variable Types",
-    "section": "References",
-    "text": "References\nU.S. Census Bureau, “EDUCATIONAL ATTAINMENT,” American Community Survey 5-Year Estimates Subject Tables, Table S1501, 2020, https://data.census.gov/table/ACSST5Y2020.S1501?q=2020+education&t=Age+and+Sex:Educational+Attainment&g=010XX00US$0400000, accessed on August 24, 2025.\nU.S. Census Bureau, “Design and Methodology Report.” https://www.census.gov/programs-surveys/acs/methodology/design-and-methodology.html, accessed on September 2, 2025.\nU.S. Census Bureau, “Public Use Microdata Sample (PUMS).” https://www.census.gov/programs-surveys/acs/microdata.html, accessed on September 2, 2025.",
+    "objectID": "07-visualizations/index.html",
+    "href": "07-visualizations/index.html",
+    "title": "Visualizations",
+    "section": "",
+    "text": "A visualization is a way to represent data in a visual format. In practice, we use visualizations to explore patterns and communicate results.",
     "crumbs": [
-      "L05: Variables in Social Science"
+      "L07: Visualizations"
+    ]
+  },
+  {
+    "objectID": "07-visualizations/index.html#what-is-a-visualization",
+    "href": "07-visualizations/index.html#what-is-a-visualization",
+    "title": "Visualizations",
+    "section": "",
+    "text": "A visualization is a way to represent data in a visual format. In practice, we use visualizations to explore patterns and communicate results.",
+    "crumbs": [
+      "L07: Visualizations"
+    ]
+  },
+  {
+    "objectID": "07-visualizations/index.html#why-visualization-matters",
+    "href": "07-visualizations/index.html#why-visualization-matters",
+    "title": "Visualizations",
+    "section": "Why Visualization Matters",
+    "text": "Why Visualization Matters\nThey say a picture is worth a thousand words… right? In data science, this couldn’t be more true.\nVisualization serves two primary purposes:\n\nTo further your own understanding of your results\nTo communicate your results with others\n\nCreating good visualizations is both an art and a science. There is often no single “correct” way to visualize data. However, we must be careful and deliberate when creating visualizations, especially when they will be used in real-world decision-making.\nTo better understand these principles in action, let’s examine how humans have used visual representations throughout history to understand and communicate complex information. The following examples in the next page demonstrate powerful uses of data visualization that have shaped our understanding of the world.",
+    "crumbs": [
+      "L07: Visualizations"
     ]
   },
   {
@@ -956,7 +1122,7 @@
     "href": "04-tables/none-print.html",
     "title": "None and Print",
     "section": "",
-    "text": "We have covered a few data types so far. There are infinitely* many integers, floating point numbers, and strings. (*Actually finite, because of how computers store information. Take CS61C to learn more.)\nHowever, for the NoneType data type, there is only one value: None.\n\nmy_var = None\ntype(my_var)\n\nNoneType\n\n\nNone is strange: Cells will not output expressions that evaluate to None.\nNone is also referred to as the null value.",
+    "text": "We have covered a few data types so far. There are infinitely many integers, floating point numbers, and strings. (Actually finite, because of how computers store information. Take CS61C to learn more.)\nHowever, for the NoneType data type, there is only one value: None.\n\nmy_var = None\ntype(my_var)\n\nNoneType\n\n\nNone is strange: Cells will not output expressions that evaluate to None.\nNone is also referred to as the null value.",
     "crumbs": [
       "L04: Table Fundamentals",
       "None and Print"
@@ -967,7 +1133,7 @@
     "href": "04-tables/none-print.html#none-type",
     "title": "None and Print",
     "section": "",
-    "text": "We have covered a few data types so far. There are infinitely* many integers, floating point numbers, and strings. (*Actually finite, because of how computers store information. Take CS61C to learn more.)\nHowever, for the NoneType data type, there is only one value: None.\n\nmy_var = None\ntype(my_var)\n\nNoneType\n\n\nNone is strange: Cells will not output expressions that evaluate to None.\nNone is also referred to as the null value.",
+    "text": "We have covered a few data types so far. There are infinitely many integers, floating point numbers, and strings. (Actually finite, because of how computers store information. Take CS61C to learn more.)\nHowever, for the NoneType data type, there is only one value: None.\n\nmy_var = None\ntype(my_var)\n\nNoneType\n\n\nNone is strange: Cells will not output expressions that evaluate to None.\nNone is also referred to as the null value.",
     "crumbs": [
       "L04: Table Fundamentals",
       "None and Print"
@@ -989,193 +1155,18 @@
     "href": "04-tables/none-print.html#notebooks-cell-output-vs.-print",
     "title": "None and Print",
     "section": "Notebooks: Cell Output vs. print",
-    "text": "Notebooks: Cell Output vs. print\nCell output and print output seem very closely related: * Both evaluate expressions * Both display something in the notebook\nHowever, they have subtle differences. We won’t expect you to know all of them. Instead, the purpose of this section is to get you used to tracing programs, where you closely consider Python’s order of execution of each statement, expression, function call, and so on.\nBecause the print output is intended for human view, it displays strings without quotes. Contrast this with the cell output, which includes the quotes.\n\nprint(2)\n\"Hello, world!\"\n\n2\n\n\n'Hello, world!'\n\n\n\nExercise 1\nThis is now super pedantic, but consider the following cells. Can you explain what is happening?\n\nmy_var\n\n\nprint(my_var)\n\nNone\n\n\n\n\n\n\n\n\nExplanation\n\n\n\n\n\nWhen print is evaluated as the last line in a cell, it displays the value of the evaluated argument (here, None). print returns None, so the cell does not additionally output anything,\n\n\n\n\n\nExercise 2\nTry this challenge on for size.\n\nprint(my_var)\nprint(3)\n45\n\nNone\n3\n\n\n45\n\n\n\n\n\n\n\n\nExplanation\n\n\n\n\n\nEach line explained:\n\nEvaluate the first print call expression. This prints the value of my_var to the screen, which evaluates to None. print returns None, but this second None is not output to the sceen because it is not the last line.\nEvaluate the second print call expression. This prints the value of 3 to the screen. print returns None, but this second None is not output to the sceen because it is not the last line.\nEvaluate the third expression, 45; because it is the last line, output to screen.\n\n\n\n\nYou’re thinking like a computer scientist now!",
+    "text": "Notebooks: Cell Output vs. print\nCell output and print output seem very closely related:\n\nBoth evaluate expressions\nBoth display something in the notebook\n\nHowever, they have subtle differences. We won’t expect you to know all of them. Instead, the purpose of this section is to get you used to tracing programs, where you closely consider Python’s order of execution of each statement, expression, function call, and so on.\nBecause the print output is intended for human view, it displays strings without quotes. Contrast this with the cell output, which includes the quotes.\n\nprint(2)\n\"Hello, world!\"\n\n2\n\n\n'Hello, world!'\n\n\n\nExercise 1\nThis is now super pedantic, but consider the following cells. Can you explain what is happening?\n\nmy_var\n\n\nprint(my_var)\n\nNone\n\n\n\n\n\n\n\n\nExplanation\n\n\n\n\n\nWhen print is evaluated as the last line in a cell, it displays the value of the evaluated argument (here, None). print returns None, so the cell does not additionally output anything,\n\n\n\n\n\nExercise 2\nTry this challenge on for size.\n\nprint(my_var)\nprint(3)\n45\n\nNone\n3\n\n\n45\n\n\n\n\n\n\n\n\nExplanation\n\n\n\n\n\nEach line explained:\n\nEvaluate the first print call expression. This prints the value of my_var to the screen, which evaluates to None. print returns None, but this second None is not output to the sceen because it is not the last line.\nEvaluate the second print call expression. This prints the value of 3 to the screen. print returns None, but this second None is not output to the sceen because it is not the last line.\nEvaluate the third expression, 45; because it is the last line, output to screen.\n\n\n\n\nYou’re thinking like a computer scientist now!",
     "crumbs": [
       "L04: Table Fundamentals",
       "None and Print"
     ]
   },
   {
-    "objectID": "syllabus.html",
-    "href": "syllabus.html",
-    "title": "Syllabus",
-    "section": "",
-    "text": "STAT 133 is an introductory-to-intermediate level course to computational data analysis with an emphasis on four major cornerstones:\n\n🔢 Understand common data formats, and principles of data manipulation (e.g. wrangling, reshaping, tidying)\n📊 Production of data visualizations and their role in data analysis projects\n💻 Learn basic principles for writing code, and programming concepts (with emphasis on data analysis)\n⚒️ Use computational tools to carry out the data analysis cycle, organize your workflow, and become familiar with reporting tools (via dynamic documents and web-apps)"
-  },
-  {
-    "objectID": "syllabus.html#description",
-    "href": "syllabus.html#description",
-    "title": "Syllabus",
-    "section": "",
-    "text": "STAT 133 is an introductory-to-intermediate level course to computational data analysis with an emphasis on four major cornerstones:\n\n🔢 Understand common data formats, and principles of data manipulation (e.g. wrangling, reshaping, tidying)\n📊 Production of data visualizations and their role in data analysis projects\n💻 Learn basic principles for writing code, and programming concepts (with emphasis on data analysis)\n⚒️ Use computational tools to carry out the data analysis cycle, organize your workflow, and become familiar with reporting tools (via dynamic documents and web-apps)"
-  },
-  {
-    "objectID": "syllabus.html#goals",
-    "href": "syllabus.html#goals",
-    "title": "Syllabus",
-    "section": "🎯 Goals",
-    "text": "🎯 Goals\nBy the end of the course, students will:\n\nConstruct and execute basic programs in R using elementary programming techniques and tidyverse packages.\nVisualize information and data using appropriate graphical techniques.\nImport data from files or the internet.\nMunge raw data into a tidy format.\nCreate visualizations using geospatial data.\nParse and analyze text documents.\nCreate reproducible documents.\nConstruct interactive web applications."
-  },
-  {
-    "objectID": "syllabus.html#expectations",
-    "href": "syllabus.html#expectations",
-    "title": "Syllabus",
-    "section": "🤞 Expectations",
-    "text": "🤞 Expectations\nThis is a computational data analysis course rather than a math or statistics or general programming course. Scripting-based data analysis is a broad topic, so it’s not possible for lecture to provide you with a specific recipe for every situation you may encounter.\nBecause STAT 133 is one of the core courses for Statistics majors, the underlying intention is to provide foundations for “computing with data” so that stat majors, as well as other data-dependent majors (e.g. Data Science, Applied Math, CogSci, Economics, etc), have the basic computational skills for subsequent upper division courses (e.g. STAT 150, 151A, 152, 153, 154, 155, 157, 158, 159).\nWe don’t expect that you become a jedi data scientist, an R ninja, or a super coder. That takes YEARS of practice, training, learning, and collaboration. Instead, we want to give you a good foundation around tools for computational data analysis."
-  },
-  {
-    "objectID": "syllabus.html#ℹ-prerequisites",
-    "href": "syllabus.html#ℹ-prerequisites",
-    "title": "Syllabus",
-    "section": "ℹ️ Prerequisites",
-    "text": "ℹ️ Prerequisites\nThis course does not have any prerequisites, although it would be nice if you have taken an introductory course in statistics (e.g. STAT 2, 20, 21, 131A).\nThe curriculum and format is designed specifically for students (ideally majoring in Statistics or minoring in Data Science) who have no-or-minimum programming experience. You also don’t need previous data analysis experience—although it helps if you do.\nStudents with some prior experience in either computational statistics or computing are welcome to enroll, though some parts of the course might feel extremely slow. We recommend that you take more advanced courses unless you need STAT 133 because of your major/minor’s requirements.\n\n\n\nCartoon by John McPherson"
-  },
-  {
-    "objectID": "syllabus.html#course-culture",
-    "href": "syllabus.html#course-culture",
-    "title": "Syllabus",
-    "section": "🏫 Course Culture",
-    "text": "🏫 Course Culture\nStudents taking STAT 133 come from a wide range of backgrounds. We hope to foster an inclusive and supportive learning environment based on curiosity rather than competition. All members of the course community—the instructor, GSIs, students, tutors, and readers—are expected to treat each other with courtesy and respect.\nYou will be interacting with course staff and fellow students in several different environments: in class, in lab, over the discussion forum, and in office hours. Some of these will be in person, some of them will be online, but the same expectations hold: be kind, be respectful, be professional.\nIf you are concerned about classroom environment issues created by other students or course staff, please come talk to us about it."
-  },
-  {
-    "objectID": "syllabus.html#textbooks",
-    "href": "syllabus.html#textbooks",
-    "title": "Syllabus",
-    "section": "📚 Textbooks",
-    "text": "📚 Textbooks\nWe’ll be using a handful of textbooks (most of them based on the notes I’ve authored for STAT 133 in the last 9 years):\n\nhttps://www.gastonsanchez.com/R-coding-basics/\nhttps://www.gastonsanchez.com/R-tidy-hurricanes/\nhttps://www.gastonsanchez.com/R-rolling-dice/\nhttps://www.gastonsanchez.com/R-for-strings/\nhttps://www.gastonsanchez.com/R-web-technologies/\nhttps://www.tidytextmining.com/ (by Julia Silge and David Robinson)"
-  },
-  {
-    "objectID": "syllabus.html#computational-tools",
-    "href": "syllabus.html#computational-tools",
-    "title": "Syllabus",
-    "section": "🔧 Computational Tools",
-    "text": "🔧 Computational Tools\nWe will be mainly using the computing and programming environment R (via RStudio) to analyze data in this class. We may also ask you to use a command line interface to interact with your operating system. You do need your own computer to use R and do the assignments.\nWe don’t expect that students have already been exposed to R. For those who come from Data 8 or some previous coding experience in python, the first labs will help you transfer that knowledge over to R. Both languages are excellent platforms for analyzing data, are widely used in data science, and have their individual strengths. R has been developed within the statistics community specifically for data analysis, while python is a general-purpose programming language but has large data analysis capabilities.\nThe lectures tend to be focused on the data analysis concepts, while learning how to apply/use them in R tend to be the focus of the labs and assignments. Do not be surprised or worried about not following the details of R code during class—that is not the point (furthermore, there will sometimes be code that is really specific to the instructional purposes of the lecture, e.g. to make a specific plot, and is beyond the scope of what you would be expected to understand or know how to do it by yourself)."
-  },
-  {
-    "objectID": "syllabus.html#waitlisted-students-and-late-joining",
-    "href": "syllabus.html#waitlisted-students-and-late-joining",
-    "title": "Syllabus",
-    "section": "⏳ Waitlisted Students and Late Joining",
-    "text": "⏳ Waitlisted Students and Late Joining\nIf you are on the waiting list or have a pending application or added the course late, you must still do all coursework and complete labs and homework by the deadlines. We will not be offering extensions/exceptions if you are admitted/enrolled into the course later. So it is your responsibility to stay up to date on the assignments.\nUnfortunately, doing all the work is not a guarantee of enrollment. You will only be enrolled if there is space in your lab. Enrollment will proceed by CalCentral."
-  },
-  {
-    "objectID": "syllabus.html#office-hours",
-    "href": "syllabus.html#office-hours",
-    "title": "Syllabus",
-    "section": "🚪 Office hours",
-    "text": "🚪 Office hours\nMe (the instructor) and the GSIs will offer office hours each week across a range of times. You are welcome to visit the office hours of any instructor, not just the ones of your GSI. We may adjust the office hour schedule throughout the semester as we understand student needs and preferences. Please check the office hours tab on the staff page to see the times of the various OH sessions.\nI should also say that OH are an opportunity to chat one-on-one with me. If you can, please come to my office hours! Coming to OH does not necessarily send a signal that you are behind or need extra help. On the contrary, coming to office hours early and often tends to co-occur with success in the course. I am happy to chat about the course material, statistics in general, careers in statistics, and whatever other statistics or data science topics are on your mind!"
-  },
-  {
-    "objectID": "syllabus.html#group-tutoring",
-    "href": "syllabus.html#group-tutoring",
-    "title": "Syllabus",
-    "section": "🎒 Group Tutoring",
-    "text": "🎒 Group Tutoring\nTutors will offer group tutoring sessions several times each week. This is an opportunity to finish up any assignments that you’ve started in class or review any topics that are confusing for you. You’re welcome to attend any session that works well for your schedule.\nGroup tutoring is a great place to go to meet other students and collaborate on assignments with tutors on hand to help you get unstuck."
-  },
-  {
-    "objectID": "syllabus.html#labs-10-of-final-grade",
-    "href": "syllabus.html#labs-10-of-final-grade",
-    "title": "Syllabus",
-    "section": "🔬 Labs (10% of final grade)",
-    "text": "🔬 Labs (10% of final grade)\n\nWeekly lab discussions are an essential part of the course and we will introduce concepts not necessarily covered in class.\nThursdays are the official days for lab section.\nYou must attend the lab section you are officially enrolled in.\nDuring lab, you will work on short-form assignments designed to apply the concepts on real and simulated data sets.\nWe have designed the labs to be completed within the allotted time (~2 hrs), assuming that you attend section.\nLab assignments will be released every Thursday (available in bCourses),\nThe due date is always on a Friday (please check the assignments tab in bCourses to keep track of deadlines).\nSolutions to lab assignments will be available a few days after their due date.\nWe will be giving credit on lab assignments based on completion.\nSubmissions within 24 hours after the deadline will receive a 15% deduction. Submissions that are 24 hours or more after the deadline will receive no credit.\nThe first lab assignment (lab-1) does not count toward your grade.\nOf all lab assignments (lab-2 to lab-14), your lowest 2 scores will be dropped in the calculation of your overall grade."
-  },
-  {
-    "objectID": "syllabus.html#problem-sets-35-of-final-grade",
-    "href": "syllabus.html#problem-sets-35-of-final-grade",
-    "title": "Syllabus",
-    "section": "📁 Problem Sets (35% of final grade)",
-    "text": "📁 Problem Sets (35% of final grade)\n\nThere will be 6 Problem-Set (PS) assignments (available in bCourses).\nPS are long-form assignments designed to apply the concepts you’ve learned in class and lab.\nStarting on week-2 they will be assigned every week, until week-7.\nThe due date is always on a Friday (please check the assignments tab in bCourses to keep track of deadlines).\nYou must write your own answers (using your own words and/or code). Copy and plagiarism will not be tolerated (see Academic Honesty policy).\nIf you don’t submit all required files, you will receive an automatic 10% deduction.\nIf you submit the incorrect files, you will receive no credit.\nSolutions will become available a few days (e.g. 3-4 days) after the due date.\nWe will drop the lowest Problem-Set assignment score in the calculation of your overall grade."
-  },
-  {
-    "objectID": "syllabus.html#app-projects-27-of-final-grade",
-    "href": "syllabus.html#app-projects-27-of-final-grade",
-    "title": "Syllabus",
-    "section": "📂 App Projects (27% of final grade)",
-    "text": "📂 App Projects (27% of final grade)\n\nThere will be about 3 Shiny App projects.\nThese are larger assignments intended to combine many of the ideas from the course, in order to create interactive web-apps.\nAs part of the submission you will have to record a video (with screen and face capture) in which you describe how to use your app, and explain the performed analysis and some of the obtained results.\nStarting on week-8 app projects will be assigned about every two weeks, until the end of instruction.\nWe will not drop any of the App assignment scores in the calculation of your overall grade."
-  },
-  {
-    "objectID": "syllabus.html#late-policy-and-hw-assignment-extensions",
-    "href": "syllabus.html#late-policy-and-hw-assignment-extensions",
-    "title": "Syllabus",
-    "section": "🕚 Late Policy and HW Assignment Extensions",
-    "text": "🕚 Late Policy and HW Assignment Extensions\nIf you cannot turn in a HW assignment on time, our default policy is:\n\nSubmissions within 24 hours after the deadline will receive a 15% deduction.\nSubmissions within 48 hours after the deadline will receive a 30% deduction.\nSubmissions that are 48 hours or more after the deadline will receive no credit.\n\nRequesting an extension: If you need to request an extension, regardless of your DSP status, fill out this google form. Submissions to this form will be visible only to the course staff members.\n\nAny first-time request for a 1-day extension on a problem set assignment, made before an assignment’s deadline, will be guaranteed to be approved, so long as it is made in good faith.\nAny first-time request for a 1-day extension on a shiny app assignment, made before an assignment’s deadline, will be guaranteed to be approved, so long as it is made in good faith.\nAny occasional request for a 2-day extension (requested before an assignment’s deadline) made by a student with a DSP accommodation for assignment extensions will be approved automatically.\n\nAlso, please keep in mind that we are dropping the lowest score of your six Problem-set assignments (do not confuse with App projects). This policy is in place to take care of any extenuating circumstances that prevent you from submitting one of these assignments.\nPlease plan ahead and pace yourself. Don’t wait until the last day to do an assignment. Don’t wait until the last minute to submit your assignments."
-  },
-  {
-    "objectID": "syllabus.html#midterm-7-of-final-grade",
-    "href": "syllabus.html#midterm-7-of-final-grade",
-    "title": "Syllabus",
-    "section": "📝 Midterm (7% of final grade)",
-    "text": "📝 Midterm (7% of final grade)\n\nThere will be one midterm assigned on Wed Mar-5th.\nMore information about the midterm will be announced as we approach its due date.\nUnless you have approved accommodations, we won’t be able to provide any extensions if you miss the midterm."
-  },
-  {
-    "objectID": "syllabus.html#final-exam-21-of-final-grade",
-    "href": "syllabus.html#final-exam-21-of-final-grade",
-    "title": "Syllabus",
-    "section": "📝 Final Exam (21% of final grade)",
-    "text": "📝 Final Exam (21% of final grade)\n\nThere will be one final exam.\nThe final exam will be on Wed May-14th (7pm-10pm), as scheduled by the University.\nMore information about the final exam will be provided as we approach its due date.\nUnless you have accommodations as determined by the university and approved by the instructor, you must take the exam at the date and times provided here.\nPlease check your course schedule and make sure that you can take the final exam on the scheduled date. Otherwise, do not take the class if you are not available at this date."
-  },
-  {
-    "objectID": "syllabus.html#grading-structure",
-    "href": "syllabus.html#grading-structure",
-    "title": "Syllabus",
-    "section": "💯 Grading Structure",
-    "text": "💯 Grading Structure\nGrades will be assigned using the following weighted components:\n\n10% Lab (drop 2 lowest scores)\n35% Psets (drop lowest score)\n8% App1 (no drop)\n9% App2 (no drop)\n10% App3 (no drop)\n7% Midterm\n21% Final Exam\n\n\nTo complete the course, you must take the final exam.\nTo try to keep grading consistent across semesters, I may occasionally curve an individual assignment. I will do this only if I made the assignment or exam harder than I intended, and no one’s scores will decrease as a result of the curve. This will happen very rarely, probably not at all.\nTo give you a rough idea of the grading scheme, the assignment of letter grades in previous semesters has been as follows:\n\n😀 90-100% (Excellent) A-/A/A+ range\n🙂 80-90% (Good) B-/B/B+ range\n😐 70-80% (Fair) C-/C/C+ range\n🙁 60-70% (Deficient) D\n😞 Below 60% (Failed) F\n\nIf you are taking the class pass-fail, the cut-oﬀ for passing is 70% (C-).\nAs a matter of course policy, I do not round up when calculating letter grades. Ex: if your overall score is 79.9999%, then the highest letter grade that you can expect is a C+, not a B-.\nThere is no curve; your grade will depend only on how well you do, and not on how well everyone else does.\nLetter grades are final; I don’t enter into negotiations with students about grades.\nPlease do not engage in grade grubbing.\nAlso, please remember that we grade your course performance, not your personal worth."
-  },
-  {
-    "objectID": "syllabus.html#generative-a.i.-policy",
-    "href": "syllabus.html#generative-a.i.-policy",
-    "title": "Syllabus",
-    "section": "⚠️ Generative A.I. Policy",
-    "text": "⚠️ Generative A.I. Policy\nGenerative A.I. refers to artificial intelligence technologies, like those used for ChatGPT and similar, that can draw on a large corpus of training data to create new written, visual, or audio content.\nThere are two principles we use to guide our class policy on AI use:\n\nCognitive dimension: Working with AI should not reduce your ability to think clearly. The use of AI should facilitate—rather than hinder—learning.\nEthical dimension: Students using AI should be transparent about their use and make sure it aligns with academic integrity.\n\nIn this course, we’ll be developing skills that are important to practice on your own. Because use of generative A.I. may inhibit the development of those skills, the use of these tools is permitted in this course for the following activities:\n\nBrainstorming and refining your ideas;\nFine tuning your exploratory/research questions;\nDrafting an outline to organize your thoughts;\nChecking syntax errors or bugs in your code; and\nPolishing your spelling and grammar.\n\nThe use of generative A.I. tools is not permitted in this course for the following activities:\n\nImpersonating you in classroom contexts, such as by using the tool to compose discussion board prompts assigned to you or content that you put into a discussion forum/chat.\nAttempting to pass off AI-generated work as your own.\nWriting a draft of your assignment.\nWriting entire blocks of code, functions, or scripts to complete class assignments.\n\nPlease keep in mind that use of generative A.I. tools can impede your learning by generating ideas for you before you had a chance to think of your own ideas; inhibiting the development of your own writing skills; generating factually inaccurate statements or fictional reference sources; etc.\nIf you are unsure of whether and how much of a submission has been AI-generated, or whether you are in violation of a certain policy, please reach out to us and ask for guidance."
-  },
-  {
-    "objectID": "syllabus.html#academic-honesty",
-    "href": "syllabus.html#academic-honesty",
-    "title": "Syllabus",
-    "section": "☝️ Academic Honesty",
-    "text": "☝️ Academic Honesty\nYou should not share your code or answers, directly or indirectly, with other students. Doing so doesn’t help them; it just sets them up for trouble on exams. Feel free to discuss the problems with others beforehand, but not the solutions. Please complete your own work and keep it to yourself (e.g. avoid sharing it in hosting platforms like Github or similar). If you suspect other people may be plagiarizing you, let us know ASAP.\nWe expect you to do your own work and to uphold the standards of intellectual integrity. Collaborating on homework is fine and we encourage you to work together—but copying is not, nor is having somebody else submit assignments for you. Likewise, obtaining and/or using solutions from previous years or from the internet, if such happen to be available, is considered cheating.\nBeyond the templates or starting code provided by the teaching staff, any writing, code, media, or other submissions not explicitly identified as AI-generated will be assumed as original to the student. Submitting AI-generated work without identifying it as such will be considered a violation of the Code of Student Conduct.\nCheating will not be tolerated. Any evidence of academic misconduct will result in a score of zero (0) on the entire assignment or examination, and a failing letter grade. We will always report incidences of cheating to the Center for Student Conduct.\nIf you are having trouble with an assignment or studying for an exam, or if you are uncertain about permissible and impermissible conduct or collaboration, please contact us.\nRather than copying someone else’s work, ask for help. You are not alone in this course! The course staff is here to help you succeed. If you invest the time to learn the material and complete the projects, you won’t need to copy any answers."
-  },
-  {
-    "objectID": "syllabus.html#email-policy",
-    "href": "syllabus.html#email-policy",
-    "title": "Syllabus",
-    "section": "✉️ Email Policy",
-    "text": "✉️ Email Policy\nIf you wish for your email to make it into our inbox, the subject of your email must contain the text: Stat 133.\nPlease refer to my email guidelines for more information: communication via email"
-  },
-  {
-    "objectID": "syllabus.html#special-accommodations",
-    "href": "syllabus.html#special-accommodations",
-    "title": "Syllabus",
-    "section": "🚸 Special Accommodations",
-    "text": "🚸 Special Accommodations\nStudents needing accommodations for any physical, psychological, or learning disability, should contact the teaching staff during the first two weeks of the semester, and see http://dsp.berkeley.edu to learn about Berkeley’s policy. If you are a DSP student, please contact us at least three weeks prior to a midterm or final so that we can work out acceptable accommodations.\nFor relevant DSP accommodations that provide occasional extensions on assignments, please see the above Late Policy."
-  },
-  {
-    "objectID": "syllabus.html#incomplete-grade",
-    "href": "syllabus.html#incomplete-grade",
-    "title": "Syllabus",
-    "section": "❗Incomplete Grade",
-    "text": "❗Incomplete Grade\nUnder emergency/special circumstances, students may petition me to receive an Incomplete grade. By University policy, for a student to get an Incomplete requires (i) that the student was performing passing-level work until the time that (ii) something happened that—through no fault of the student—prevented the student from completing the coursework. If you take the final, you completed the course, even if you took it while ill, exhausted, mourning, etc. The time to talk to me about incomplete grades is BEFORE you take the final (several weeks before), when the situation that prevents you from finishing the course presents itself. Please clearly state your reasoning in your comments to me.\nIt is your responsibility to develop good time management skills, good studying habits, know your limits, and learn to ask for professional help. Life happens. Social, family, cultural, scholar, and individual circumstances can affect your performance (both positive and negatively). If you find yourself in a situation that raises concerns about passing the course, please contact me as soon as possible.\nAbove all, please-please-please do not wait till the end of the semester to share your concerns about passing the course because it will be too late by then."
-  },
-  {
-    "objectID": "syllabus.html#safe-and-inclusive-environment",
-    "href": "syllabus.html#safe-and-inclusive-environment",
-    "title": "Syllabus",
-    "section": "🌻 Safe and Inclusive Environment",
-    "text": "🌻 Safe and Inclusive Environment\nWhenever a faculty member, staff member, post-doc, or GSI is responsible for the supervision of a student, a personal relationship between them of a romantic or sexual nature, even if consensual, is against university policy. Any such relationship jeopardizes the integrity of the educational process.\nAlthough faculty and staff can act as excellent resources for students, you should be aware that they are required to report any violations of this campus policy. If you wish to have a confidential discussion on matters related to this policy, you may contact the Confidential Care Advocates on campus for support related to counseling or sensitive issues. Appointments can be made by calling (510) 642-1988.\nThe classroom, lab, and work place should be safe and inclusive environments for everyone. The Office for the Prevention of Harassment and Discrimination (OPHD) is responsible for ensuring the University provides an environment for faculty, staff and students that is free from discrimination and harassment on the basis of categories including race, color, national origin, age, sex, gender, gender identity, and sexual orientation. Questions or concerns? Call (510) 643-7985, email ask_ophd@berkeley.edu, or go to https://svsh.berkeley.edu/."
-  },
-  {
-    "objectID": "syllabus.html#last-but-not-least",
-    "href": "syllabus.html#last-but-not-least",
-    "title": "Syllabus",
-    "section": "🎉 Last But Not Least",
-    "text": "🎉 Last But Not Least\nThe main goal of STAT 133 is that you should learn, and have a fantastic experience doing so. Please keep that goal in mind throughout the semester."
-  },
-  {
     "objectID": "02-datatypes/index.html",
     "href": "02-datatypes/index.html",
     "title": "Data Types",
     "section": "",
-    "text": "Read Inferential Thinking\n\n\n\nRead Ch 4 intro and Ch 4.1, which describes in detail how Python evaluates expressions involving numeric data types.\nBefore continuing, make sure you understand the following:\n\nEvery value has a type (data type), and the built-in type function returns the type of the result of any expression.\nIn Python, integers are called int values. Real numbers are called float values. These are flexible but have some computational limitations.\nThe type of an expression is the type of its final value.\nWhen a float value is combined with an int value using some arithmetic operator, then the result is always a float value.\n\n\n\n\n\nYou have seen this table before.\n\nCommon Python operators for numeric data types\n\n\n\n\n\n\n\n\nOperator\nSymbol\nExample Expression\nExpression Value\n\n\n\n\nAddition\n+\n2 + 3\n5\n\n\nSubtraction\n-\n15 - 4\n11\n\n\nMultiplication\n*\n-2 * 9\n-18\n\n\nDivision\n/\n15 / 2\n7.5\n\n\nInteger division\nCuts off remainder\n//\n15 // 2\n\n\nRemainder/Modulo\n%\n19 % 3\n1  (19 ÷ 3 = 6 Remainder 1)\n\n\nExponentiation\n**\n3 ** 2\n9",
+    "text": "Read Inferential Thinking\n\n\n\nRead Ch 4 intro and Ch 4.1, which describes in detail how Python evaluates expressions involving numeric data types.\nBefore continuing, make sure you understand the following:\n\nEvery value has a type (data type), and the built-in type function returns the type of the result of any expression.\nIn Python, integers are called int values. Real numbers are called float values. These are flexible but have some computational limitations.\nThe type of an expression is the type of its final value.\nWhen a float value is combined with an int value using some arithmetic operator, then the result is always a float value.\n\n\n\n\n\nYou have seen this table before.\n\nCommon Python operators for numeric data types\n\n\n\n\n\n\n\n\nOperator\nSymbol\nExample Expression\nExpression Value\n\n\n\n\nAddition\n+\n2 + 3\n5\n\n\nSubtraction\n-\n15 - 4\n11\n\n\nMultiplication\n*\n-2 * 9\n-18\n\n\nDivision\n/\n15 / 2\n7.5\n\n\nInteger division(Cuts off remainder)\n//\n15 // 2\n7\n\n\nRemainder/Modulo\n%\n19 % 3\n1  (19 ÷ 3 = 6 Remainder 1)\n\n\nExponentiation\n**\n3 ** 2\n9",
     "crumbs": [
       "L02: Data Types"
     ]
@@ -1185,7 +1176,7 @@
     "href": "02-datatypes/index.html#numeric-data-types",
     "title": "Data Types",
     "section": "",
-    "text": "Read Inferential Thinking\n\n\n\nRead Ch 4 intro and Ch 4.1, which describes in detail how Python evaluates expressions involving numeric data types.\nBefore continuing, make sure you understand the following:\n\nEvery value has a type (data type), and the built-in type function returns the type of the result of any expression.\nIn Python, integers are called int values. Real numbers are called float values. These are flexible but have some computational limitations.\nThe type of an expression is the type of its final value.\nWhen a float value is combined with an int value using some arithmetic operator, then the result is always a float value.\n\n\n\n\n\nYou have seen this table before.\n\nCommon Python operators for numeric data types\n\n\n\n\n\n\n\n\nOperator\nSymbol\nExample Expression\nExpression Value\n\n\n\n\nAddition\n+\n2 + 3\n5\n\n\nSubtraction\n-\n15 - 4\n11\n\n\nMultiplication\n*\n-2 * 9\n-18\n\n\nDivision\n/\n15 / 2\n7.5\n\n\nInteger division\nCuts off remainder\n//\n15 // 2\n\n\nRemainder/Modulo\n%\n19 % 3\n1  (19 ÷ 3 = 6 Remainder 1)\n\n\nExponentiation\n**\n3 ** 2\n9",
+    "text": "Read Inferential Thinking\n\n\n\nRead Ch 4 intro and Ch 4.1, which describes in detail how Python evaluates expressions involving numeric data types.\nBefore continuing, make sure you understand the following:\n\nEvery value has a type (data type), and the built-in type function returns the type of the result of any expression.\nIn Python, integers are called int values. Real numbers are called float values. These are flexible but have some computational limitations.\nThe type of an expression is the type of its final value.\nWhen a float value is combined with an int value using some arithmetic operator, then the result is always a float value.\n\n\n\n\n\nYou have seen this table before.\n\nCommon Python operators for numeric data types\n\n\n\n\n\n\n\n\nOperator\nSymbol\nExample Expression\nExpression Value\n\n\n\n\nAddition\n+\n2 + 3\n5\n\n\nSubtraction\n-\n15 - 4\n11\n\n\nMultiplication\n*\n-2 * 9\n-18\n\n\nDivision\n/\n15 / 2\n7.5\n\n\nInteger division(Cuts off remainder)\n//\n15 // 2\n7\n\n\nRemainder/Modulo\n%\n19 % 3\n1  (19 ÷ 3 = 6 Remainder 1)\n\n\nExponentiation\n**\n3 ** 2\n9",
     "crumbs": [
       "L02: Data Types"
     ]
@@ -1275,7 +1266,7 @@
     "href": "03-arrays/index.html#indexing",
     "title": "Arrays",
     "section": "Indexing",
-    "text": "Indexing\nWhen people stand in a line, each person has a position. Similarly, each element (i.e., value) of an array has a position – called its index. Python, like many programming languages, is zero-indexed. This means that in an array, the first element has index 0, not 1.\nIn the int_arr array below, the first element (3) has index 0; the last element (2) has index 4.\n\nint_arr = make_array(3, -4, 0, 5, 2)\nint_arr\n\narray([ 3, -4,  0,  5,  2])\n\n\n\nThe Array Method item()\nAn array method is just like a function, but it must operate on an array using “dot” syntax. So the call looks like:\nname_of_array.method(arguments)\nWe will discuss many more methods once we introduce tables, but for now let’s learn our first method to index arrays.\nWe can access an element in an array by using its index and the item() method:\n\nint_arr.item(0)\n\n3\n\n\n\nint_arr.item(3)\n\n5\n\n\nBecause of zero-indexing, the largest valid index is 4 for the five-element int_arr array:\n\nint_arr.item(5)\n\n\n---------------------------------------------------------------------------\nIndexError                                Traceback (most recent call last)\nCell In[13], line 1\n----&gt; 1 int_arr.item(5)\n\nIndexError: index 5 is out of bounds for axis 0 with size 5\n\n\n\nIn Python, we can also “count backwards” using negative indexes. -1 corresponds to the last element in a array; -2 corresponds to the second to last element in a array; and so on.\n\n# functionally equivalent to int_arr.item(4)\nint_arr.item(-1)\n\n2",
+    "text": "Indexing\nWhen people stand in a line, each person has a position. Similarly, each element (i.e., value) of an array has a position – called its index. Python, like many programming languages, is zero-indexed. This means that in an array, the first element has index 0, not 1.\nIn the int_arr array below, the first element (3) has index 0; the last element (2) has index 4.\n\nint_arr = make_array(3, -4, 0, 5, 2)\nint_arr\n\narray([ 3, -4,  0,  5,  2])\n\n\n\nThe Array Method item()\nAn array method is just like a function, but it must operate on an array using “dot” syntax. So the call looks like:\nname_of_array.method(arguments)\nWe will discuss many more methods once we introduce tables, but for now let’s learn our first method to index arrays.\nWe can access an element in an array by using its index and the item() method:\n\nint_arr.item(0)\n\n3\n\n\n\nint_arr.item(3)\n\n5\n\n\nBecause of zero-indexing, the largest valid index is 4 for the five-element int_arr array:\n\nint_arr.item(5)\n\n\n---------------------------------------------------------------------------\nIndexError                                Traceback (most recent call last)\nCell In[13], line 1\n----&gt; 1 int_arr.item(5)\n\nIndexError: index 5 is out of bounds for axis 0 with size 5\n\n\n\nIn Python, we can also “count backwards” using negative indexes. -1 corresponds to the last element in an array; -2 corresponds to the second to last element in a array; and so on.\n\n# functionally equivalent to int_arr.item(4)\nint_arr.item(-1)\n\n2",
     "crumbs": [
       "L03: Arrays"
     ]
