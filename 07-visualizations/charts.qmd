@@ -1,0 +1,10 @@
+---
+title: "Bar Charts, Scatter Plots, Line Graphs"
+subtitle: "Three basic visualizations"
+---
+
+## External Reading
+
+This note is entirely based on the external readings:
+
+* _Computational and Inferential Thinking_, [Ch 7](https://inferentialthinking.com/chapters/07/Visualization.html), [7.1](https://inferentialthinking.com/chapters/07/1/Visualizing_Categorical_Distributions.html)

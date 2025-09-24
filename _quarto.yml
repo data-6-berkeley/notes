@@ -81,6 +81,8 @@ website:
             text: "Visualizations"
           - href: 07-visualizations/encoding.qmd
             text: "Encoding"
+          - href: 07-visualizations/charts.qmd
+            text: "Bar Charts, Scatter Plots, Line Graphs"
       - href: five-things.qmd
         text: "5 Things to Know"
       - href: reference.qmd
