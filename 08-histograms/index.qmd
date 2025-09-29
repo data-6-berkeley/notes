@@ -1,0 +1,66 @@
+---
+title: "Histograms"
+subtitle: "Distributions and the Area principle"
+---
+
+There is an existing chapter that fully describes histograms. We highly recommend you read the textbook, then review the Data 6 lecture notebook.
+
+## Ranges
+
+`np.arange` is a NumPy function useful for producing sequences of equally spaced numbers. Read the chapter for more details.
+
+::: {.callout-note title="Read _Inferential Thinking_"}
+ Read [Ch 5.2](https://inferentialthinking.com/chapters/05/2/Ranges.html), which describes the `np.arange` function.
+:::
+
+Before continuing, make sure that you:
+* Know that the full function signature of `np.arange(start, end, step)`.
+* Know what the default arguments for `start` and/or `step` are when you pass in one or two arguments.
+* Remember that a range always includes its `start` value, but does not include its `end` value. It counts up by `step`, and it stops before it gets to the `end`.
+
+
+## Histograms
+
+::: {.callout-note title="Read _Inferential Thinking_"}
+ Read [Ch 7.2](https://inferentialthinking.com/chapters/07/2/Visualizing_Numerical_Distributions.html), which describes histograms in detail.
+:::
+
+Before continuing, make sure that you:
+ 
+* Understand terminology related to histograms:
+  * Bins (lower bound, upper bound)
+  * Density, area, proportion.
+* Can use the area principle to explain histogram shape and bin area/dimensions.
+* Can compute area and proportion from bin dimensions.
+* Can interpret bin density as a measure of bin "crowdedness" with respect to the distribution.
+* Can determine use cases for using bar charts over histograms, and vice versa.
+* Can use the `hist` method and specify the optional parameter `density` as `True` or `False`
+
+## Lecture Notebook
+
+This notebook mostly covers the `hist` Table method in the `datascience` package. See the [Data 6 Python Reference](../reference.html) for full information.
+
+`tbl.hist(column)`: This table method has many optional arguments, but we highlight the most important ones here:
+
+* `bins`: Specify bounds of bins, as an array. All but the last element of the array specifies bin lower bounds; the last element specifies the upper bound of the rightmost bin. If not specified, the default produces 10 equally spaced bins.
+* `density`: **Boolean** value (`True` or `False`). `True` by default calculates height as percent per unit. If `False`, calculates height as count in bin.
+
+
+<!-- ## `hist` Table method reference
+
+We will not test the details of this method other than what is on the [Data 6 Python Reference](../reference.html), but we are sharing the full description here.
+
+```{python}
+#| include: false
+from datascience import *
+schools = Table.read_table('data/cones.csv')
+```
+
+```{python}
+Table.hist?
+``` -->
+
+## External Reading
+
+* (mentioned in notes) _Computational and Inferential Thinking_, [Ch 5.2](https://inferentialthinking.com/chapters/05/2/Ranges.html)
+* (mentioned in notes) _Computational and Inferential Thinking_, [Ch 2.1](https://inferentialthinking.com/chapters/02/1/observation-and-visualization-john-snow-and-the-broad-street-pump.html)

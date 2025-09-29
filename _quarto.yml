@@ -83,6 +83,11 @@ website:
             text: "Encoding"
           - href: 07-visualizations/charts.qmd
             text: "Bar Charts, Scatter Plots, Line Graphs"
+      - section: "L08: Histograms"
+        href: 08-histograms/index.qmd
+        contents:
+          - href: 08-histograms/index.qmd
+            text: "Histograms"
       - href: five-things.qmd
         text: "5 Things to Know"
       - href: reference.qmd

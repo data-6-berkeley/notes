@@ -39,7 +39,7 @@ Look at the scatter plot above. How many different variables are being encoded? 
 
 - **X-position**: Variable 1 (horizontal axis data)
 - **Y-position**: Variable 2 (vertical axis data)  
-- **Size of the dot**: Variable 3 (represented by different bubble sizes)
+- **Size of the dot**: Variable 3 (represented by different bubble sizes). Note that this is *area*. More later...
 - **Color of the dot**: Variable 4 (represented by different colors/hues)
 :::
 
