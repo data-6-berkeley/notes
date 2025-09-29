@@ -336,6 +336,29 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
  <span class="menu-text">Encoding</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-visualizations/charts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bar Charts, Scatter Plots, Line Graphs</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./08-histograms/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">L08: Histograms</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-histograms/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Histograms</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -405,7 +428,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <p>Of course, the Python Reference can only provide information about the basics of the functions you’ll use in Data 6. The best knowledge about functions comes from using these functions in code you write in labs or homeworks. If you get stuck when using a certain function, we encourage you to come to office hours or ask a question on Ed.</p>
 <section id="the-anatomy-of-a-function" class="level3">
 <h3 class="anchored" data-anchor-id="the-anatomy-of-a-function">The Anatomy of a Function</h3>
-<div id="20a534ed" class="cell" data-execution_count="1">
+<div id="bb0bf40a" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> my_function(num):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> num <span class="op">**</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -726,36 +749,42 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <td><strong>Table</strong>: a copy of the original table with only the rows at the given indices</td>
 </tr>
 <tr class="odd">
+<td><code>tbl.bin(column_name_or_index), tbl.bin(column_name_or_index, bins)</code></td>
+<td>Groups values into intervals, known as bins. Results in a two-column table that contains the number of rows in each bin. The first column lists the left endpoints of the bins, except in the last row. If the <code>bins</code> argument isn’t used, default is to produce 10 equally wide bins between the min and max values of the data.</td>
+<td>1. <strong>string</strong> or <strong>int</strong>: column name(s) or index(es) <br> 2. (Optional) <strong>array</strong> of ints/floats denoting bin boundaries or an int of the number of bins you want</td>
+<td><strong>Table</strong>: a new table of counts per bin</td>
+</tr>
+<tr class="even">
 <td><code>tbl.apply(function)</code> or <code>tbl.apply(function, col1, col2, ...)</code></td>
 <td>Returns an <strong>array</strong> of values resulting from applying a function to each item in a column.</td>
 <td>1. <strong>Function</strong>: function to apply to column <br> 2. (Optional) <strong>string</strong> or <strong>int</strong>: the column name(s) or index(es) to apply the function to</td>
 <td><strong>array</strong> containing an element for each value in the original column after applying the function to it</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>tbl.group(column_or_columns, function)</code></td>
 <td>Groups rows in <code>tbl</code> by unique values or combinations of values in a column(s). Multiple columns must be entered as an array of strings. Values in the other columns are aggregated by count (by default) or the optional argument <code>function</code>. You can visualize the <code>group</code> function <a href="http://data8.org/interactive_table_functions/">here</a>.</td>
 <td>1. <strong>string</strong> or <strong>array of strings</strong>: column(s) on which to group <br> 2. (Optional) <strong>Function</strong>: function to aggregate values in cells (defaults to counting rows)</td>
 <td><strong>Table</strong> a new groupped table</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>tbl.pivot(col1, col2)</code> or <code>tbl.pivot(col1, col2, values, collect)</code></td>
 <td>Creates a pivot table where each unique value in <code>col1</code> has its own column and each unique value in <code>col2</code> has its own row. Counts or aggregates values from a third column, collected with some function. If the <code>values</code> and <code>collect</code> arguments are not included, <code>pivot</code> defaults to returning counts in the cells. You can visualize the <code>pivot</code> function <a href="http://data8.org/interactive_table_functions/">here</a>.</td>
 <td>1. <strong>string</strong>: name of the column in <code>tbl</code> whose unique values will make up the columns of the pivot table <br> 2. <strong>string</strong>: name of column in <code>tbl</code> whose unique values will make up the rows of the pivot table <br> 3. (Optional) <strong>string</strong>: name of the column in <code>tbl</code> that describes the values of cells in the pivot table <br> 4. (Optional) <strong>Function</strong>: how the values are collected (e.g.&nbsp;<code>sum</code> or <code>np.mean</code>)</td>
 <td><strong>Table</strong>: a new pivot table</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>tblA.join(colA, tblB)</code> or <code>tblA.join(colA, tblB, colB)</code></td>
 <td>Generate a table with the columns of <code>tblA</code> and <code>tblB</code>, containing rows for all values in <code>colA</code> and <code>colB</code> that appear in <code>tblA</code> and <code>tblB</code>, respectively. By default, <code>colB</code> is the same value as <code>colA</code>. <code>colA</code> and <code>colB</code> must be strings specifying column names.</td>
 <td>1. <strong>string</strong>: name of column in <code>tblA</code> with values to join on <br> 2. <strong>Table</strong>: the other table <br> 3. (Optional) <strong>string</strong>: the name of the shared column in <code>tblB</code>, if column names are different between the tables</td>
 <td><strong>Table</strong>: a new combined table</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>tbl.with_row(values)</code></td>
 <td>Adds a new row with the specified <code>values</code> to <code>tbl</code></td>
 <td>1. <strong>list</strong> or <strong>array</strong>: values to add as a new row</td>
 <td><strong>Table</strong>: a copy of the original table with the new row</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>tbl.with_rows(list_of_rows)</code></td>
 <td>Adds multiple rows to <code>tbl</code> using a list of rows</td>
 <td>1. <strong>list</strong> of <strong>lists</strong> or <strong>arrays</strong>: each list/array represents a new row</td>
@@ -790,7 +819,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </tr>
 <tr class="even">
 <td><code>tbl.hist(column)</code></td>
-<td>Generates a histogram of the numerical values in <code>column</code>. Optional arguments <code>group</code> (to specify categorical column to group on), <code>bins</code> (to specify custom bins), and <code>overlay</code> to specify overlaid or separate histograms.</td>
+<td>Generates a histogram of the numerical values in <code>column</code>. Optional arguments <code>density</code> (<code>False</code>: plots counts; default <code>True</code>), <code>group</code> (to specify categorical column to group on), <code>bins</code> (to specify custom bins), and <code>overlay</code> to specify overlaid or separate histograms.</td>
 <td><strong>string</strong>: name of the column</td>
 <td>None: draws a histogram</td>
 </tr>

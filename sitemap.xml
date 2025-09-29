@@ -13,32 +13,36 @@
     <lastmod>2025-09-15T23:56:25.145Z</lastmod>
   </url>
   <url>
-    <loc>https://data-6-berkeley.github.io/notes/04-tables/exercises.html</loc>
-    <lastmod>2025-09-10T17:53:52.472Z</lastmod>
+    <loc>https://data-6-berkeley.github.io/notes/04-tables/none-print.html</loc>
+    <lastmod>2025-09-23T20:16:05.941Z</lastmod>
   </url>
   <url>
-    <loc>https://data-6-berkeley.github.io/notes/06-variables-ii/deprecated-eda.html</loc>
-    <lastmod>2025-09-16T21:21:47.143Z</lastmod>
+    <loc>https://data-6-berkeley.github.io/notes/04-tables/index.html</loc>
+    <lastmod>2025-09-10T16:59:46.850Z</lastmod>
   </url>
   <url>
-    <loc>https://data-6-berkeley.github.io/notes/06-variables-ii/deprecated-index.html</loc>
-    <lastmod>2025-09-07T21:59:10.104Z</lastmod>
+    <loc>https://data-6-berkeley.github.io/notes/06-variables-ii/index.html</loc>
+    <lastmod>2025-09-16T21:21:58.309Z</lastmod>
   </url>
   <url>
-    <loc>https://data-6-berkeley.github.io/notes/01-intro/programming-basics.html</loc>
-    <lastmod>2025-09-23T20:16:05.939Z</lastmod>
+    <loc>https://data-6-berkeley.github.io/notes/06-variables-ii/sample-population.html</loc>
+    <lastmod>2025-09-16T20:56:31.723Z</lastmod>
   </url>
   <url>
-    <loc>https://data-6-berkeley.github.io/notes/01-intro/deprecated-index.html</loc>
-    <lastmod>2025-08-27T17:53:52.022Z</lastmod>
+    <loc>https://data-6-berkeley.github.io/notes/01-intro/index.html</loc>
+    <lastmod>2025-09-07T22:00:01.483Z</lastmod>
   </url>
   <url>
-    <loc>https://data-6-berkeley.github.io/notes/index.html</loc>
-    <lastmod>2025-09-18T00:46:57.844Z</lastmod>
+    <loc>https://data-6-berkeley.github.io/notes/01-intro/jupyter-notebook.html</loc>
+    <lastmod>2025-08-20T20:12:34.553Z</lastmod>
   </url>
   <url>
-    <loc>https://data-6-berkeley.github.io/notes/07-visualizations/encoding.html</loc>
-    <lastmod>2025-09-23T22:13:54.750Z</lastmod>
+    <loc>https://data-6-berkeley.github.io/notes/07-visualizations/index.html</loc>
+    <lastmod>2025-09-23T22:23:59.902Z</lastmod>
+  </url>
+  <url>
+    <loc>https://data-6-berkeley.github.io/notes/07-visualizations/charts.html</loc>
+    <lastmod>2025-09-24T01:22:57.927Z</lastmod>
   </url>
   <url>
     <loc>https://data-6-berkeley.github.io/notes/05-variables/units-of-analysis.html</loc>
@@ -46,39 +50,43 @@
   </url>
   <url>
     <loc>https://data-6-berkeley.github.io/notes/reference.html</loc>
-    <lastmod>2025-09-23T22:13:48.085Z</lastmod>
+    <lastmod>2025-09-29T17:16:06.943Z</lastmod>
   </url>
   <url>
     <loc>https://data-6-berkeley.github.io/notes/05-variables/index.html</loc>
     <lastmod>2025-09-16T20:09:34.907Z</lastmod>
   </url>
   <url>
-    <loc>https://data-6-berkeley.github.io/notes/07-visualizations/index.html</loc>
-    <lastmod>2025-09-23T22:23:59.902Z</lastmod>
+    <loc>https://data-6-berkeley.github.io/notes/07-visualizations/encoding.html</loc>
+    <lastmod>2025-09-29T16:58:08.906Z</lastmod>
   </url>
   <url>
-    <loc>https://data-6-berkeley.github.io/notes/01-intro/jupyter-notebook.html</loc>
-    <lastmod>2025-08-20T20:12:34.553Z</lastmod>
+    <loc>https://data-6-berkeley.github.io/notes/index.html</loc>
+    <lastmod>2025-09-18T00:46:57.844Z</lastmod>
   </url>
   <url>
-    <loc>https://data-6-berkeley.github.io/notes/01-intro/index.html</loc>
-    <lastmod>2025-09-07T22:00:01.483Z</lastmod>
+    <loc>https://data-6-berkeley.github.io/notes/01-intro/deprecated-index.html</loc>
+    <lastmod>2025-08-27T17:53:52.022Z</lastmod>
   </url>
   <url>
-    <loc>https://data-6-berkeley.github.io/notes/06-variables-ii/sample-population.html</loc>
-    <lastmod>2025-09-16T20:56:31.723Z</lastmod>
+    <loc>https://data-6-berkeley.github.io/notes/01-intro/programming-basics.html</loc>
+    <lastmod>2025-09-23T20:16:05.939Z</lastmod>
   </url>
   <url>
-    <loc>https://data-6-berkeley.github.io/notes/06-variables-ii/index.html</loc>
-    <lastmod>2025-09-16T21:21:58.309Z</lastmod>
+    <loc>https://data-6-berkeley.github.io/notes/06-variables-ii/deprecated-index.html</loc>
+    <lastmod>2025-09-07T21:59:10.104Z</lastmod>
   </url>
   <url>
-    <loc>https://data-6-berkeley.github.io/notes/04-tables/index.html</loc>
-    <lastmod>2025-09-10T16:59:46.850Z</lastmod>
+    <loc>https://data-6-berkeley.github.io/notes/06-variables-ii/deprecated-eda.html</loc>
+    <lastmod>2025-09-16T21:21:47.143Z</lastmod>
   </url>
   <url>
-    <loc>https://data-6-berkeley.github.io/notes/04-tables/none-print.html</loc>
-    <lastmod>2025-09-23T20:16:05.941Z</lastmod>
+    <loc>https://data-6-berkeley.github.io/notes/04-tables/exercises.html</loc>
+    <lastmod>2025-09-10T17:53:52.472Z</lastmod>
+  </url>
+  <url>
+    <loc>https://data-6-berkeley.github.io/notes/08-histograms/index.html</loc>
+    <lastmod>2025-09-29T17:42:32.958Z</lastmod>
   </url>
   <url>
     <loc>https://data-6-berkeley.github.io/notes/02-datatypes/index.html</loc>

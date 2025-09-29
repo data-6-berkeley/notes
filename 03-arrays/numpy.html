@@ -337,6 +337,29 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
  <span class="menu-text">Encoding</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../07-visualizations/charts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bar Charts, Scatter Plots, Line Graphs</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../08-histograms/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">L08: Histograms</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../08-histograms/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Histograms</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -403,7 +426,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <h2 class="anchored" data-anchor-id="array-functions">Array Functions</h2>
 <p>As data scientists we may find it useful to perform operations on arrays beyond simple element-wise arithmetic operations. We can do so via a range of functions from different sources.</p>
 <p>Here are some starter arrays to get us going. What arrays are created?</p>
-<div id="705e5714" class="cell" data-execution_count="1">
+<div id="6230cc1c" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datascience <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>int_arr <span class="op">=</span> make_array(<span class="dv">3</span>, <span class="op">-</span><span class="dv">4</span>, <span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">2</span>)</span>
@@ -422,13 +445,13 @@ Arrays created
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="d2dafc07" class="cell" data-execution_count="2">
+<div id="d9f76a25" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>int_arr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>array([ 3, -4,  0,  5,  2])</code></pre>
 </div>
 </div>
-<div id="68c816fb" class="cell" data-execution_count="3">
+<div id="5c8f03f7" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>str_arr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>array(['cm', 'm', 'in', 'ft', 'yd'],
@@ -436,7 +459,7 @@ Arrays created
 </div>
 </div>
 <p>An <strong>empty</strong> array is one with no elements:</p>
-<div id="2ced5287" class="cell" data-execution_count="4">
+<div id="b58dac13" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>empty_arr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>array([], dtype=float64)</code></pre>
@@ -500,13 +523,13 @@ Note 1: Argument data types
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Remember that even though function names can be identical, call expressions can evaluate differently depending on the argument data type. <code>len(arg)</code>, for example, returns an integer value indicating the “length” of the argument <code>arg</code>. If <code>arg</code> is a string, it returns the number of characters; if <code>arg</code> is an array, it returns the number of elements.</p>
-<div id="c248f460" class="cell" data-execution_count="5">
+<div id="8d7bb580" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(str_arr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>5</code></pre>
 </div>
 </div>
-<div id="2be91d8a" class="cell" data-execution_count="6">
+<div id="949085c1" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(str_arr.item(<span class="dv">0</span>)) <span class="co"># what is the argument here?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>2</code></pre>
@@ -534,7 +557,7 @@ Note 2: Expressions with string arrays
 </div>
 </div>
 <p>Let’s use these built-in functions to compute the <em>average</em> (<em>mean</em>) value of the below array. We will discuss measures of average much later in this course.</p>
-<div id="07d8ecc4" class="cell" data-execution_count="7">
+<div id="6f2e4720" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> make_array(<span class="dv">30</span>, <span class="op">-</span><span class="dv">40</span>, <span class="op">-</span><span class="fl">4.5</span>, <span class="dv">0</span>, <span class="dv">35</span>)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>avg <span class="op">=</span> <span class="bu">sum</span>(arr)<span class="op">/</span><span class="bu">len</span>(arr)</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>avg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -547,7 +570,7 @@ Note 2: Expressions with string arrays
 <section id="numpy-functions" class="level3">
 <h3 class="anchored" data-anchor-id="numpy-functions">NumPy functions</h3>
 <p>NumPy (pronounced “NUM-pie”) is a Python library with convenient and powerful modules and functions for manipulating arrays. Any time we want to use NumPy, we must write an import statement:</p>
-<div id="32d72170" class="cell" data-execution_count="8">
+<div id="149ace4d" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> make_array(<span class="dv">30</span>, <span class="op">-</span><span class="dv">40</span>, <span class="op">-</span><span class="fl">4.5</span>, <span class="dv">0</span>, <span class="dv">35</span>)</span>
@@ -557,7 +580,7 @@ Note 2: Expressions with string arrays
 </div>
 </div>
 <p>After putting this statement at the top of our notebook, we can then prepend <code>np.</code> to call a NumPy function. The below NumPy function call computes averages much more conveniently than our clever (but verbose) expression with built-in function calls, though it still suffers from floating point approximations:</p>
-<div id="bb2d4603" class="cell" data-execution_count="9">
+<div id="cfa369c2" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>np.average(arr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>4.0999999999999996</code></pre>
@@ -577,15 +600,15 @@ Import aliases
 <div class="callout-body-container callout-body">
 <p>In Python, <strong>you can name imported packages anything you like</strong> using the <code>as</code> keyword. However, it’s customary to use standard aliases so that your code is easier for others (and your future self) to read.</p>
 <p>For example, the NumPy library is conventionally imported as:</p>
-<div id="981dd298" class="cell" data-execution_count="10">
+<div id="2112e737" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This is not required, you could write the import statement as:</p>
-<div id="9f30defa" class="cell" data-execution_count="11">
+<div id="a289a8bb" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> magic</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Though this would confuse most readers. Since instead of prepending <code>np</code>, you would use <code>magic</code>.</p>
-<div id="7f0dfe1b" class="cell" data-execution_count="12">
+<div id="0282260c" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>magic.average(arr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>4.0999999999999996</code></pre>

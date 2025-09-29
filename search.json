@@ -180,339 +180,428 @@
     ]
   },
   {
-    "objectID": "04-tables/exercises.html",
-    "href": "04-tables/exercises.html",
-    "title": "Table Exercises",
+    "objectID": "04-tables/none-print.html",
+    "href": "04-tables/none-print.html",
+    "title": "None and Print",
     "section": "",
-    "text": "We work with the schools table from before.\nfrom datascience import *\nimport numpy as np\n\nschools = Table.read_table('data/cal_unis.csv')\nschools.show(3)\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\nHumboldt\n6025\n1913\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n\n\n\n\n... (29 rows omitted)\nPull up the Python Reference and try these exercises yourself! They are roughly in order of increasing difficulty.",
+    "text": "We have covered a few data types so far. There are infinitely many integers, floating point numbers, and strings. (Actually finite, because of how computers store information. Take CS61C to learn more.)\nHowever, for the NoneType data type, there is only one value: None.\n\nmy_var = None\ntype(my_var)\n\nNoneType\n\n\nNone is strange: Cells will not output expressions that evaluate to None.\nNone is also referred to as the null value.",
     "crumbs": [
       "L04: Table Fundamentals",
-      "Table Exercises"
+      "None and Print"
     ]
   },
   {
-    "objectID": "04-tables/exercises.html#exercise-1-variable-names",
-    "href": "04-tables/exercises.html#exercise-1-variable-names",
-    "title": "Table Exercises",
-    "section": "Exercise 1: Variable names",
-    "text": "Exercise 1: Variable names\nHow do we get all the column labels of schools?\n\n\n\n\n\n\nShow Answer\n\n\n\n\n\n\nschools.labels\n\n('Name', 'Institution', 'City', 'County', 'Enrollment', 'Founded')",
+    "objectID": "04-tables/none-print.html#none-type",
+    "href": "04-tables/none-print.html#none-type",
+    "title": "None and Print",
+    "section": "",
+    "text": "We have covered a few data types so far. There are infinitely many integers, floating point numbers, and strings. (Actually finite, because of how computers store information. Take CS61C to learn more.)\nHowever, for the NoneType data type, there is only one value: None.\n\nmy_var = None\ntype(my_var)\n\nNoneType\n\n\nNone is strange: Cells will not output expressions that evaluate to None.\nNone is also referred to as the null value.",
     "crumbs": [
       "L04: Table Fundamentals",
-      "Table Exercises"
+      "None and Print"
     ]
   },
   {
-    "objectID": "04-tables/exercises.html#exercise-2-reorder-columns",
-    "href": "04-tables/exercises.html#exercise-2-reorder-columns",
-    "title": "Table Exercises",
-    "section": "Exercise 2: Reorder columns",
-    "text": "Exercise 2: Reorder columns\nHow do we reorder the columns, as below?\n\n\n\n\n\n\n\n\n\n\n\nName\nFounded\nInstitution\nCity\nCounty\nEnrollment\n\n\n\n\n…\n…\n…\n…\n…\n…\n\n\n\nHint: use one of select, drop, or with_columns.\n\n\n\n\n\n\nShow Answer\n\n\n\n\n\n\nschools.select(\n  \"Name\", \"Founded\",\n  \"Institution\", \"City\",\n  \"County\", \"Enrollment\"\n)\n\n\n\n\nName\nFounded\nInstitution\nCity\nCounty\nEnrollment\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\n1913\nCSU\nArcata\nHumboldt\n6025\n\n\nCalifornia State University, Bakersfield\n1965\nCSU\nBakersfield\nKern\n9613\n\n\nUniversity of California, Berkeley\n1869\nUC\nBerkeley\nAlameda\n45307\n\n\nCalifornia State University Channel Islands\n2002\nCSU\nCamarillo\nVentura\n6128\n\n\nCalifornia State University, Dominguez Hills\n1960\nCSU\nCarson\nLos Angeles\n16426\n\n\nCalifornia State University, Chico\n1887\nCSU\nChico\nButte\n14183\n\n\nUniversity of California, Davis\n1905\nUC\nDavis\nYolo\n39679\n\n\nCalifornia State University, Fresno\n1911\nCSU\nFresno\nFresno\n23999\n\n\nCalifornia State University, Fullerton\n1957\nCSU\nFullerton\nOrange\n40386\n\n\nCalifornia State University, East Bay\n1957\nCSU\nHayward\nAlameda\n13673\n\n\n\n\n... (22 rows omitted)",
+    "objectID": "04-tables/none-print.html#the-print-function",
+    "href": "04-tables/none-print.html#the-print-function",
+    "title": "None and Print",
+    "section": "The print function",
+    "text": "The print function\nThe print function displays values to the screen (in this case, our Jupyter notebook). Each call to print displays information on a new line.\n\nprint(2)\nprint(\"Hello, world!\")\n\n2\nHello, world!\n\n\nprint lets us to see information about executed statements that are not just the last line of the cell. Could you see why this would be a useful feature for debugging?\nprint is ultra-convenient because it can take as many arguments as you want.\n\nx = 3\ny = 4\nprint(x, \"+\", y, \"is equal to\", x + y)\n\n3 + 4 is equal to 7\n\n\nTrace through the above program. Do you see how expressions are evaluated before printing?",
     "crumbs": [
       "L04: Table Fundamentals",
-      "Table Exercises"
+      "None and Print"
     ]
   },
   {
-    "objectID": "04-tables/exercises.html#exercise-3-filtering",
-    "href": "04-tables/exercises.html#exercise-3-filtering",
-    "title": "Table Exercises",
-    "section": "Exercise 3: Filtering",
-    "text": "Exercise 3: Filtering\n\n\n\n\n\n\nThe schools table for reference, if you need it\n\n\n\n\n\n\nschools.show(3)\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\nHumboldt\n6025\n1913\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n\n\n\n\n... (29 rows omitted)\n\n\n\n\n\n\nHow do we get a table with only UC schools?\n\n\n\n\n\n\n\nShow Answer\n\n\n\n\n\n\nschools.where(\"Institution\", \"UC\")\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\n\n\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n\n\nUniversity of California, Davis\nUC\nDavis\nYolo\n39679\n1905\n\n\nUniversity of California, Irvine\nUC\nIrvine\nOrange\n35937\n1965\n\n\nUniversity of California, Los Angeles\nUC\nLos Angeles\nLos Angeles\n46430\n1882\n\n\nUniversity of California, Merced\nUC\nMerced\nMerced\n9110\n2005\n\n\nUniversity of California, Riverside\nUC\nRiverside\nRiverside\n26809\n1954\n\n\nUniversity of California, San Diego\nUC\nSan Diego\nSan Diego\n42006\n1960\n\n\nUniversity of California, Santa Barbara\nUC\nSanta Barbara\nSanta Barbara\n26420\n1891\n\n\nUniversity of California, Santa Cruz\nUC\nSanta Cruz\nSanta Cruz\n19478\n1965\n\n\n\n\n\n\n\n\n\nHow do we get a table with all the schools in Los Angeles?\n\n\n\n\n\n\n\nShow Answer\n\n\n\n\n\n\nschools.where(\"City\", \"Los Angeles\")\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\n\n\n\n\nUniversity of California, Los Angeles\nUC\nLos Angeles\nLos Angeles\n46430\n1882\n\n\nCalifornia State University, Los Angeles\nCSU\nLos Angeles\nLos Angeles\n26460\n1947",
+    "objectID": "04-tables/none-print.html#notebooks-cell-output-vs.-print",
+    "href": "04-tables/none-print.html#notebooks-cell-output-vs.-print",
+    "title": "None and Print",
+    "section": "Notebooks: Cell Output vs. print",
+    "text": "Notebooks: Cell Output vs. print\nCell output and print output seem very closely related:\n\nBoth evaluate expressions\nBoth display something in the notebook\n\nHowever, they have subtle differences. We won’t expect you to know all of them. Instead, the purpose of this section is to get you used to tracing programs, where you closely consider Python’s order of execution of each statement, expression, function call, and so on.\nBecause the print output is intended for human view, it displays strings without quotes. Contrast this with the cell output, which includes the quotes.\n\nprint(2)\n\"Hello, world!\"\n\n2\n\n\n'Hello, world!'\n\n\n\nExercise 1\nThis is now super pedantic, but consider the following cells. Can you explain what is happening?\n\nmy_var\n\n\nprint(my_var)\n\nNone\n\n\n\n\n\n\n\n\nExplanation\n\n\n\n\n\nWhen print is evaluated as the last line in a cell, it displays the value of the evaluated argument (here, None). print returns None, so the cell does not additionally output anything,\n\n\n\n\n\nExercise 2\nTry this challenge on for size.\n\nprint(my_var)\nprint(3)\n45\n\nNone\n3\n\n\n45\n\n\n\n\n\n\n\n\nExplanation\n\n\n\n\n\nEach line explained:\n\nEvaluate the first print call expression. This prints the value of my_var to the screen, which evaluates to None. print returns None, but this second None is not output to the sceen because it is not the last line.\nEvaluate the second print call expression. This prints the value of 3 to the screen. print returns None, but this second None is not output to the sceen because it is not the last line.\nEvaluate the third expression, 45; because it is the last line, output to screen.\n\n\n\n\nYou’re thinking like a computer scientist now!",
     "crumbs": [
       "L04: Table Fundamentals",
-      "Table Exercises"
+      "None and Print"
     ]
   },
   {
-    "objectID": "04-tables/exercises.html#exercise-4-rename-columns",
-    "href": "04-tables/exercises.html#exercise-4-rename-columns",
-    "title": "Table Exercises",
-    "section": "Exercise 4: Rename Columns",
-    "text": "Exercise 4: Rename Columns\nHow do we update schools such that the column Name is renamed University? Hint: Check out the method relabeled.\n\n\n\n\n\n\nShow Answer\n\n\n\n\n\n\nschools = schools.relabeled(\"Name\", \"University\")\nschools.show(3)\n\n\n\n\nUniversity\nInstitution\nCity\nCounty\nEnrollment\nFounded\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\nHumboldt\n6025\n1913\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n\n\n\n\n... (29 rows omitted)\n\n\n\n\n\nThere are many ways to approach a problem. Suppose you didn’t know the method relabeled existed:\n\n\n\n\n\n\nAlternate Answer\n\n\n\n\n\n\nschools = schools.with_column(\"University\", schools.column(\"Name\")).drop(\"Name\")\nschools.show(3)\n\n\n\n\nInstitution\nCity\nCounty\nEnrollment\nFounded\nUniversity\n\n\n\n\nCSU\nArcata\nHumboldt\n6025\n1913\nCalifornia State Polytechnic University, Humboldt\n\n\nCSU\nBakersfield\nKern\n9613\n1965\nCalifornia State University, Bakersfield\n\n\nUC\nBerkeley\nAlameda\n45307\n1869\nUniversity of California, Berkeley\n\n\n\n\n... (29 rows omitted)\n\n\nQuestions for you as you read the above code:\n\nWhat methods are being chained together here? Which is executed first, with_column or drop?\nWhen is the column method being called?\nWhat would happen if you switched the two methods? (try it out)\nWhy is University now the last column?",
-    "crumbs": [
-      "L04: Table Fundamentals",
-      "Table Exercises"
-    ]
-  },
-  {
-    "objectID": "04-tables/exercises.html#exercise-5-debugging-show",
-    "href": "04-tables/exercises.html#exercise-5-debugging-show",
-    "title": "Table Exercises",
-    "section": "Exercise 5: Debugging show",
-    "text": "Exercise 5: Debugging show\nThe following cells exhibit a tricky, but potentially common bug. First, check out the Python Reference to understand what show does.\n\nschools = Table.read_table('data/cal_unis.csv')\n\n\nschools = schools.show(3)\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\nHumboldt\n6025\n1913\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n\n\n\n\n... (29 rows omitted)\n\n\n\nschools = schools.show(4)\n\n\n---------------------------------------------------------------------------\nAttributeError                            Traceback (most recent call last)\nCell In[12], line 1\n----&gt; 1 schools = schools.show(4)\n\nAttributeError: 'NoneType' object has no attribute 'show'\n\n\n\nLike print, show is for display purposes. It does not return anything—i.e., it returns None. The second cell above therefore assigns schools to None!\nDespite this, show—just like print—is useful when you want to display intermediate output for debugging purposes.\n\nschools = Table.read_table('data/cal_unis.csv')\nschools.show(3) # just the first three rows\nschools = schools.relabeled(\"Name\", \"University\")\nschools.show(3) # and again\nschools = schools.with_columns(\"Name\", \"City\")\nschools         # the last evaluated value in a cell\n                # is displayed by default\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\nHumboldt\n6025\n1913\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n\n\n\n\n... (29 rows omitted)\n\n\n\n\n\nUniversity\nInstitution\nCity\nCounty\nEnrollment\nFounded\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\nHumboldt\n6025\n1913\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n\n\n\n\n... (29 rows omitted)\n\n\n\n\n\nUniversity\nInstitution\nCity\nCounty\nEnrollment\nFounded\nName\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\nHumboldt\n6025\n1913\nCity\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\nCity\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\nCity\n\n\nCalifornia State University Channel Islands\nCSU\nCamarillo\nVentura\n6128\n2002\nCity\n\n\nCalifornia State University, Dominguez Hills\nCSU\nCarson\nLos Angeles\n16426\n1960\nCity\n\n\nCalifornia State University, Chico\nCSU\nChico\nButte\n14183\n1887\nCity\n\n\nUniversity of California, Davis\nUC\nDavis\nYolo\n39679\n1905\nCity\n\n\nCalifornia State University, Fresno\nCSU\nFresno\nFresno\n23999\n1911\nCity\n\n\nCalifornia State University, Fullerton\nCSU\nFullerton\nOrange\n40386\n1957\nCity\n\n\nCalifornia State University, East Bay\nCSU\nHayward\nAlameda\n13673\n1957\nCity\n\n\n\n\n... (22 rows omitted)",
-    "crumbs": [
-      "L04: Table Fundamentals",
-      "Table Exercises"
-    ]
-  },
-  {
-    "objectID": "06-variables-ii/deprecated-eda.html",
-    "href": "06-variables-ii/deprecated-eda.html",
-    "title": "Exploratory Data Analysis - consider removing",
+    "objectID": "04-tables/index.html",
+    "href": "04-tables/index.html",
+    "title": "Table Fundamentals",
     "section": "",
-    "text": "If we’re not going to be studying causal relationships in this class, what will we be looking at? In this course we will look deeply at a core component of Data Science: Exploratory Data Analysis, or EDA."
+    "text": "Read Inferential Thinking\n\n\n\nRead Ch 6 intro, which describes the Table object type from the datascience library.\nThis is a very dense chapter, as it has lots of Python syntax. We will review it in detail. Before moving on, we encourage you to focus on the following questions:\n\nWhat is the syntax of the with_columns method? How does this method make a table?\nWhat are some table methods?\nWhat Python expression gets you the number of rows? a specific column? (bonus) How does the syntax differ between these two cases?\nIf you are new to programming, it is easy to get lost in the syntax of Python! For today, we will therefore focus on a few high-level goals:\nIn other words, you will not be expected to memorize all aspects of Tables (it’s as if we have a theme in this class…)! But you will have natural impulses for understanding and working with tabular data, many of which directly map to specific Table methods and attributes. To write Python code, then, you will need to learn to work with documentation to do this translation, and—when the precise methods don’t exist—construct new algorithms to achieve what you want. The more familiar you are with the documentation—and consequently, what is possible with Tables—the more you can focus on algorithmic thinking.",
+    "crumbs": [
+      "L04: Table Fundamentals"
+    ]
   },
   {
-    "objectID": "06-variables-ii/deprecated-eda.html#what-is-eda",
-    "href": "06-variables-ii/deprecated-eda.html#what-is-eda",
-    "title": "Exploratory Data Analysis - consider removing",
-    "section": "What is EDA?",
-    "text": "What is EDA?\nExploratory Data Analysis (EDA) is like detective work. As coined by the famous American statistician and mathematician John Tukey (we will discuss Tukey numbers soon):\n\nExploratory data analysis is an attitude, a state of flexibility, a willingness to look for those things that we believe are not there, as well as those that we believe to be there.\n\nMore formally, Exploratory Data Analysis (EDA) is the process of understanding a new dataset. It is an open-ended, informal analysis that involves familiarizing ourselves with the variables present in the data, discovering potential hypotheses, and identifying possible issues with the data.\n\nWhat is Data Wrangling?\nA process very closely related to EDA is data wrangling, often called data cleaning. Data wrangling is the process of transforming raw data to facilitate subsequent analysis and can address issues like unclear structure or formatting, missing or corrupted values, unit conversions, and so on.\nEDA and data cleaning are often thought of as an “infinite loop,” with each process driving the other.\nFortunately, in our classes we will try our best to work with “clean” datasets. These datasets will often have already been preprocessed for cleaner analysis, allowing us to explore and ask questions much more easily than if we were stuck with messier data."
+    "objectID": "04-tables/index.html#definitions",
+    "href": "04-tables/index.html#definitions",
+    "title": "Table Fundamentals",
+    "section": "Definitions",
+    "text": "Definitions\nTo begin, recall the terminology we have been using to describe tables so far:\n\nTable: Retangular data structure.\n\nColumns (vertical) correspond to variables (AKA features, or attributes) that measure and operationalize social concepts. We discuss variables and social concepts more in another note.\nRows (horizontal) correspond to records (AKA entries), which are specific values of variables for a given individual, group, etc.—whatever your unit of analysis is.\n\n\nWe work with the datascience package’s Table.\n\nfrom datascience import *\nimport numpy as np",
+    "crumbs": [
+      "L04: Table Fundamentals"
+    ]
   },
   {
-    "objectID": "06-variables-ii/deprecated-index.html",
-    "href": "06-variables-ii/deprecated-index.html",
-    "title": "Intro to Social Science Research",
+    "objectID": "04-tables/index.html#todays-dataset-schools",
+    "href": "04-tables/index.html#todays-dataset-schools",
+    "title": "Table Fundamentals",
+    "section": "Today’s Dataset: Schools",
+    "text": "Today’s Dataset: Schools\nThis lecture we will return to the dataset of public universities in California (Wikipedia).\nTo work with this table, we first load it in from a file called data/cal_unis.csv.\n\nschools = Table.read_table('data/cal_unis.csv')\n\nLet’s break down what we meant by “load it in”: * The right-hand-side of the assignment calls a function that returns a datascience Table object from the provided data file. * The left-hand-side of the assignment assigns this object to the Python name schools. * After this assignment statement, then we can use schools as the particular Table object that has the tabular data we want.\nRunning the below cell evaluates schools and displays that tabular data to us:\n\nschools\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\nHumboldt\n6025\n1913\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n\n\nCalifornia State University Channel Islands\nCSU\nCamarillo\nVentura\n6128\n2002\n\n\nCalifornia State University, Dominguez Hills\nCSU\nCarson\nLos Angeles\n16426\n1960\n\n\nCalifornia State University, Chico\nCSU\nChico\nButte\n14183\n1887\n\n\nUniversity of California, Davis\nUC\nDavis\nYolo\n39679\n1905\n\n\nCalifornia State University, Fresno\nCSU\nFresno\nFresno\n23999\n1911\n\n\nCalifornia State University, Fullerton\nCSU\nFullerton\nOrange\n40386\n1957\n\n\nCalifornia State University, East Bay\nCSU\nHayward\nAlameda\n13673\n1957\n\n\n\n\n... (22 rows omitted)\n\n\nLet’s get to exploring and understanding our tabular data!",
+    "crumbs": [
+      "L04: Table Fundamentals"
+    ]
+  },
+  {
+    "objectID": "04-tables/index.html#find-table-dimensions",
+    "href": "04-tables/index.html#find-table-dimensions",
+    "title": "Table Fundamentals",
+    "section": "Find Table Dimensions",
+    "text": "Find Table Dimensions\nFirst off: How many rows and columns are in our schools table?\n\nprint(schools.num_rows)\nprint(schools.num_columns)\n\n32\n6\n\n\nWhat variables are being recorded?\n\nprint(schools.labels)\n\n('Name', 'Institution', 'City', 'County', 'Enrollment', 'Founded')\n\n\nWe didn’t conjure these expressions out of nowhere. Instead, we:\n\nLooked at the Data 6 Python Reference page\nScrolled down to the “Tables and Table Methods” section\nSkimmed the reference until we found documentation that seemed close to what we want\nTranslated the name tbl into schools.\nTried it out\n\nBonus: You’ll notice the “dot” syntax for accessing these values, also known as table attributes. See the Bonus last section for a more detailed explanation of this programming terminology.",
+    "crumbs": [
+      "L04: Table Fundamentals"
+    ]
+  },
+  {
+    "objectID": "04-tables/index.html#column-first-paradigm",
+    "href": "04-tables/index.html#column-first-paradigm",
+    "title": "Table Fundamentals",
+    "section": "Column-First Paradigm",
+    "text": "Column-First Paradigm\nBecause columns represent variables, we will take a column-first approach to tables.\nTo extract, delete, or make columns from a table named tbl:\n\ntbl.select(...) returns a new table with a subset of columns.\ntbl.drop(...) and returns a new table without a subset of columns\ntbl.with_columns(...) returns a new table with additional new column(s).\n\n\nschools.select('Name', 'Enrollment')\n\n\n\n\nName\nEnrollment\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\n6025\n\n\nCalifornia State University, Bakersfield\n9613\n\n\nUniversity of California, Berkeley\n45307\n\n\nCalifornia State University Channel Islands\n6128\n\n\nCalifornia State University, Dominguez Hills\n16426\n\n\nCalifornia State University, Chico\n14183\n\n\nUniversity of California, Davis\n39679\n\n\nCalifornia State University, Fresno\n23999\n\n\nCalifornia State University, Fullerton\n40386\n\n\nCalifornia State University, East Bay\n13673\n\n\n\n\n... (22 rows omitted)\n\n\n\nschools.drop('Founded', 'County')\n\n\n\n\nName\nInstitution\nCity\nEnrollment\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\n6025\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\n9613\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\n45307\n\n\nCalifornia State University Channel Islands\nCSU\nCamarillo\n6128\n\n\nCalifornia State University, Dominguez Hills\nCSU\nCarson\n16426\n\n\nCalifornia State University, Chico\nCSU\nChico\n14183\n\n\nUniversity of California, Davis\nUC\nDavis\n39679\n\n\nCalifornia State University, Fresno\nCSU\nFresno\n23999\n\n\nCalifornia State University, Fullerton\nCSU\nFullerton\n40386\n\n\nCalifornia State University, East Bay\nCSU\nHayward\n13673\n\n\n\n\n... (22 rows omitted)\n\n\nNote: The above two cells were run in sequence. Each table method returns a new table, so our original table schools is unchanged.\n\nModifying Tables\n\n\n\n\n\n\nTable methods return copies\n\n\n\nAll table methods return copies of information from the original table! This paradigm is quite useful for data analysis. From Inferential Thinking:\n\n[Table methods] create new smaller tables that share the same data. The fact that the original table is preserved is useful! You can generate multiple different tables that only consider certain columns without worrying that one analysis will affect the other.\n\n\n\nIf we would like to modify the original table, then we must re-assign schools to the new return value:\n\nschools = schools.with_columns(\n    \"Years since founding\",\n    2025 - schools.column(\"Founded\")\n)\nschools\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\nYears since founding\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\nHumboldt\n6025\n1913\n112\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\n60\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n156\n\n\nCalifornia State University Channel Islands\nCSU\nCamarillo\nVentura\n6128\n2002\n23\n\n\nCalifornia State University, Dominguez Hills\nCSU\nCarson\nLos Angeles\n16426\n1960\n65\n\n\nCalifornia State University, Chico\nCSU\nChico\nButte\n14183\n1887\n138\n\n\nUniversity of California, Davis\nUC\nDavis\nYolo\n39679\n1905\n120\n\n\nCalifornia State University, Fresno\nCSU\nFresno\nFresno\n23999\n1911\n114\n\n\nCalifornia State University, Fullerton\nCSU\nFullerton\nOrange\n40386\n1957\n68\n\n\nCalifornia State University, East Bay\nCSU\nHayward\nAlameda\n13673\n1957\n68\n\n\n\n\n... (22 rows omitted)",
+    "crumbs": [
+      "L04: Table Fundamentals"
+    ]
+  },
+  {
+    "objectID": "04-tables/index.html#filtering-rows",
+    "href": "04-tables/index.html#filtering-rows",
+    "title": "Table Fundamentals",
+    "section": "Filtering Rows",
+    "text": "Filtering Rows\nOften we would like to perform row filtering, where we only extract row entries that match a specific feature.\nBy exact match: tbl.where(column, value). Create a new table of only the rows where column column matches the value value.\n\nschools.where(\"Institution\", \"UC\")\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\nYears since founding\n\n\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n156\n\n\nUniversity of California, Davis\nUC\nDavis\nYolo\n39679\n1905\n120\n\n\nUniversity of California, Irvine\nUC\nIrvine\nOrange\n35937\n1965\n60\n\n\nUniversity of California, Los Angeles\nUC\nLos Angeles\nLos Angeles\n46430\n1882\n143\n\n\nUniversity of California, Merced\nUC\nMerced\nMerced\n9110\n2005\n20\n\n\nUniversity of California, Riverside\nUC\nRiverside\nRiverside\n26809\n1954\n71\n\n\nUniversity of California, San Diego\nUC\nSan Diego\nSan Diego\n42006\n1960\n65\n\n\nUniversity of California, Santa Barbara\nUC\nSanta Barbara\nSanta Barbara\n26420\n1891\n134\n\n\nUniversity of California, Santa Cruz\nUC\nSanta Cruz\nSanta Cruz\n19478\n1965\n60\n\n\n\n\n\nBy index: tbl.take(row_indices). Create a new table of only the rows with an index specified in row_indices.\n\nschools.take(1, 3, 5)\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\nYears since founding\n\n\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\n60\n\n\nCalifornia State University Channel Islands\nCSU\nCamarillo\nVentura\n6128\n2002\n23\n\n\nCalifornia State University, Chico\nCSU\nChico\nButte\n14183\n1887\n138\n\n\n\n\n\nAre rows zero-indexed or one-indexed? Why?",
+    "crumbs": [
+      "L04: Table Fundamentals"
+    ]
+  },
+  {
+    "objectID": "04-tables/index.html#creating-new-tables",
+    "href": "04-tables/index.html#creating-new-tables",
+    "title": "Table Fundamentals",
+    "section": "Creating New Tables",
+    "text": "Creating New Tables\nSo far we’ve used a table with pre-existing data. We can also make new Tables with a special function: Table().\n\nTable()\n\n\n\n\n\n\n\nCheck it out!!!\n\nstates = Table().with_columns('State', np.array(['California', 'New York', 'Florida', 'Texas', 'Pennsylvania']),'Code', np.array(['CA', 'NY', 'FL', 'TX', 'PA']), 'Population (millions)', np.array([39.3, 19.3, 21.7, 29.3, 12.8]))\nstates\n\n\n\n\nState\nCode\nPopulation (millions)\n\n\n\n\nCalifornia\nCA\n39.3\n\n\nNew York\nNY\n19.3\n\n\nFlorida\nFL\n21.7\n\n\nTexas\nTX\n29.3\n\n\nPennsylvania\nPA\n12.8\n\n\n\n\n\n…unfortunately, due to poor coding style, the above code is quite unreadable. Let’s use whitespace (new lines and indents) to delineate what we are doing:\n\nstates = Table().with_columns(\n  'State', make_array('California', 'New York', 'Florida', 'Texas', 'Pennsylvania'),\n  'Code', make_array('CA', 'NY', 'FL', 'TX', 'PA'),\n  'Population (millions)', make_array(39.3, 19.3, 21.7, 29.3, 12.8)\n)\nstates\n\n\n\n\nState\nCode\nPopulation (millions)\n\n\n\n\nCalifornia\nCA\n39.3\n\n\nNew York\nNY\n19.3\n\n\nFlorida\nFL\n21.7\n\n\nTexas\nTX\n29.3\n\n\nPennsylvania\nPA\n12.8\n\n\n\n\n\n\nMethod Chaining\nMethod chaining in Python is when the object returned from one method becomes the object to use in the next method. In the above case:\n\nCalling the Table returns an empty table.\nThe method with_columns is called on the empty table object, returning a table with the columns State, Code, and Population.\nThis return value is then assigned to states.\n\n\n\n\n\n\n\nWhitespace formatting\n\n\n\nNote the closed parenthesis on the final line. This helps “match” parentheses together.",
+    "crumbs": [
+      "L04: Table Fundamentals"
+    ]
+  },
+  {
+    "objectID": "04-tables/index.html#bonus-methods-vs.-attributes",
+    "href": "04-tables/index.html#bonus-methods-vs.-attributes",
+    "title": "Table Fundamentals",
+    "section": "Bonus: Methods vs. Attributes",
+    "text": "Bonus: Methods vs. Attributes\nReturn to the third focus question from the Inferential Thinking reading.\n\nWhat Python expression gets you the number of rows? a specific column? (bonus) How does the syntax differ between these two cases?\n\nThe textbook wording “overloads” two different Python syntax constructs. From the Python glossary:\n\n\n\n\n\n\nAttribute\n\n\n\nAttribute: A value associated with an object which is usually referenced by name using dotted expressions. For example, if an object o has an attribute a it would be referenced as o.a.\nIn other words, attributes are named values tied to specific objects. To get these values, we must refer to them by their name using “dot” syntax.\n\n\n\nschools.num_rows\n\n32\n\n\n\n\n\n\n\n\nMethod\n\n\n\nMethod A function which is defined inside a class body.\nThe Python glossary definition above is a more opaque definition than we would like. But you can think of the methods we study in this class as functions that take into account the attributes and values of specific objects. In order to call them on a specific operation, we also use “dot” syntax. Because they are functions, we must use call expression syntax with parenthesis, and provide arguments as needed.\n\n\n\nschools.column(\"Enrollment\")\n\narray([ 6025,  9613, 45307,  6128, 16426, 14183, 39679, 23999, 40386,\n       13673, 35937, 38973, 46430, 26460,  9110, 37579, 27503, 26809,\n        6637, 31818, 19803, 42006, 37402, 25282, 35751, 22000, 15109,\n       26420, 19478,  7045, 10154,  1017])\n\n\nWhich to syntax use? To determine which “dot” syntax to use, read the documentation. The entire Table class has been defined for us already, and the designers of the datascience package have predetermined which table features make sense to have as attributes, and which features make sense to return as values from a method call. But as a rule of thumb, if you need to specify any additional detail to get what you want, you will likely need to call a function: use table methods and pass in arguments. See the column method call above.\nAnother key indicator is what happens when you use incorrect syntax:\n\nschools.num_rows()\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[16], line 1\n----&gt; 1 schools.num_rows()\n\nTypeError: 'int' object is not callable\n\n\n\nThe above error message means that Python assumed you wanted to call a function num_rows (specifically, a method of the Table schools); however, when run, num_rows was actually an int data type attribute, and ints are not callable. Similarly, below:\n\nschools.column\n\n&lt;bound method Table.column of Name                                              | Institution | City        | County      | Enrollment | Founded | Years since founding\nCalifornia State Polytechnic University, Humboldt | CSU         | Arcata      | Humboldt    | 6025       | 1913    | 112\nCalifornia State University, Bakersfield          | CSU         | Bakersfield | Kern        | 9613       | 1965    | 60\nUniversity of California, Berkeley                | UC          | Berkeley    | Alameda     | 45307      | 1869    | 156\nCalifornia State University Channel Islands       | CSU         | Camarillo   | Ventura     | 6128       | 2002    | 23\nCalifornia State University, Dominguez Hills      | CSU         | Carson      | Los Angeles | 16426      | 1960    | 65\nCalifornia State University, Chico                | CSU         | Chico       | Butte       | 14183      | 1887    | 138\nUniversity of California, Davis                   | UC          | Davis       | Yolo        | 39679      | 1905    | 120\nCalifornia State University, Fresno               | CSU         | Fresno      | Fresno      | 23999      | 1911    | 114\nCalifornia State University, Fullerton            | CSU         | Fullerton   | Orange      | 40386      | 1957    | 68\nCalifornia State University, East Bay             | CSU         | Hayward     | Alameda     | 13673      | 1957    | 68\n... (22 rows omitted)&gt;\n\n\nThe above statement did not error, but it did not output a column, either. Rather, it output a method of a table, but it didn’t call this method.",
+    "crumbs": [
+      "L04: Table Fundamentals"
+    ]
+  },
+  {
+    "objectID": "06-variables-ii/index.html",
+    "href": "06-variables-ii/index.html",
+    "title": "Causality vs. EDA",
     "section": "",
-    "text": "Theory\nHypothesis\nData Collection\nData Analysis\nResults\n(and back)"
+    "text": "Read Inferential Thinking\n\n\n\nRead all of Chapter 2, which describes in detail experimental setup and design. It covers a core story to data scientists: John Snow and the Broad Street Pump.\nBefore continuing, make sure that you are familiar with the following terminology:\n\nobservational study\ncausality\nassociation\ncomparison\ntreatment group\ncontrol group\nrandomized controlled trial (RCT)",
+    "crumbs": [
+      "L06: Variables II"
+    ]
   },
   {
-    "objectID": "06-variables-ii/deprecated-index.html#the-scientific-method",
-    "href": "06-variables-ii/deprecated-index.html#the-scientific-method",
-    "title": "Intro to Social Science Research",
+    "objectID": "06-variables-ii/index.html#john-snow-and-the-broad-street-pump",
+    "href": "06-variables-ii/index.html#john-snow-and-the-broad-street-pump",
+    "title": "Causality vs. EDA",
     "section": "",
-    "text": "Theory\nHypothesis\nData Collection\nData Analysis\nResults\n(and back)"
-  },
-  {
-    "objectID": "06-variables-ii/deprecated-index.html#theory-vs.-hypothesis",
-    "href": "06-variables-ii/deprecated-index.html#theory-vs.-hypothesis",
-    "title": "Intro to Social Science Research",
-    "section": "Theory vs. Hypothesis",
-    "text": "Theory vs. Hypothesis\nTheory: A systematic set of related statements that accord with a worldview.\nWhen (social) scientists do research, we use theories 3 different ways: * Theories prevent us from being taken in by flukes. * Theories help us make sense of observed patterns in ways that can suggest other possibilities. * Theories direct our research efforts, pointing us toward likely discoveries through empirical observation.\nElements of a scientific sociological theory: * Concepts * Relations between concepts * Causal mechanisms\nHypothesis: The empirical instantiation of a theory, i.e., a testable statement of a relationship involving two concepts. * Hypotheses therefore involve variables, which are representations that capture the different dimensions, categories, or levels of a concept.\ninsert images of concept 1, concept 2, variable 1, variable 2"
-  },
-  {
-    "objectID": "01-intro/programming-basics.html",
-    "href": "01-intro/programming-basics.html",
-    "title": "Programming Basics",
-    "section": "",
-    "text": "Let’s get programming!\nThe first goal of this lecture is to demonstrate that some Python programming is as familiar as using a calculator, which you have likely used before.\nThe second goal is to introduce programming terminology—expressions, names, assignments, data types, etc. Learning this terminology is like learning grammar; these terms help us describe precisely what our programs are doing. Getting a handle on the terminology earlier will make it easier to describe the programming concepts. But it does take some memorization…!",
+    "text": "Read Inferential Thinking\n\n\n\nRead all of Chapter 2, which describes in detail experimental setup and design. It covers a core story to data scientists: John Snow and the Broad Street Pump.\nBefore continuing, make sure that you are familiar with the following terminology:\n\nobservational study\ncausality\nassociation\ncomparison\ntreatment group\ncontrol group\nrandomized controlled trial (RCT)",
     "crumbs": [
-      "L01: Introduction",
-      "Programming Basics"
+      "L06: Variables II"
     ]
   },
   {
-    "objectID": "01-intro/programming-basics.html#expressions",
-    "href": "01-intro/programming-basics.html#expressions",
-    "title": "Programming Basics",
-    "section": "Expressions",
-    "text": "Expressions\n\n\n\n\n\n\nRead Inferential Thinking\n\n\n\nRead Ch 3.1, which describes in detail how Python evaluates numeric expressions.\nBefore continuing, make sure you understand the terminology:\n\nexpression\nevaluation\nsyntax\noperators\noperands\n\n\n\n\nSummary of Numeric Operators\n\nCommon Python operators for numeric data types\n\n\n\n\n\n\n\n\nOperator\nSymbol\nExample Expression\nExpression Value\n\n\n\n\nAddition\n+\n2 + 3\n5\n\n\nSubtraction\n-\n15 - 4\n11\n\n\nMultiplication\n*\n-2 * 9\n-18\n\n\nDivision\n/\n15 / 2\n7.5\n\n\nInteger division(Cuts off remainder)\n//\n15 // 2\n7\n\n\nRemainder/Modulo\n%\n19 % 3\n1  (19 ÷ 3 = 6 Remainder 1)\n\n\nExponentiation\n**\n3 ** 2\n9",
+    "objectID": "06-variables-ii/index.html#randomized-controlled-trials-vs.-observational-studies",
+    "href": "06-variables-ii/index.html#randomized-controlled-trials-vs.-observational-studies",
+    "title": "Causality vs. EDA",
+    "section": "Randomized Controlled Trials vs. Observational Studies",
+    "text": "Randomized Controlled Trials vs. Observational Studies\nIn the Broad Street Pump experiment, John Snow established a causal relationship (between what? Read Inferential Thinking Chapter 2 to find out) because he noted that there was no systematic difference between the two different groups observed other than along a single variable dimension.\nIn modern days, randomized controlled trials are excellent ways to compare two groups of otherwise similar individuals. However, in the majority of this class we will not be able to conduct a randomized controlled trial. This is because the datasets we analyze are almost all observational studies and not experiments. Moreover, these datasets are largely pre-existing materials collected by other researchers, and we may not know the entire picture of how they collected the data. As a result, in this class we seek to understand associations between variables, and we will almost never seek to establish causal relationships between variables.\nTo further understand causality, we encourage you to take inferential thinking courses like Data 8, Stat 20, and a wide range of Statistics courses.",
     "crumbs": [
-      "L01: Introduction",
-      "Programming Basics"
+      "L06: Variables II"
     ]
   },
   {
-    "objectID": "01-intro/programming-basics.html#names-and-call-expressions",
-    "href": "01-intro/programming-basics.html#names-and-call-expressions",
-    "title": "Programming Basics",
-    "section": "Names and Call Expressions",
-    "text": "Names and Call Expressions\n\n\n\n\n\n\nRead Inferential Thinking\n\n\n\nRead Ch 3.2 and Ch 3.3, which define names and call expressions.\nBefore continuing, make sure you understand the following:\n\nIn Python, a name can be given to a value using an assignment statement (which involves the assignment operator, =).\nA function is a named operation.\nA call expression invokes functions: a function is called on arguments, the argument values are passed into the function; the function then returns the final value to the larger call expression.\nIn Jupyter Notebooks, placing a ? after a function name will bring up a built-in description of that function.\nMost functions in Python are stored in modules (e.g., math) that can be imported via import then called with a dot (e.g., math.log(10)).\n\nTerminology:\n\nname\nassignment statement\nfunction, arguments, return value\ncall expression\n\n\n\nOne analogy for names is suitcase tags. Consider the following assignment statement:\n\nx = 3\n\nThis statement assigns the name x to the value 3. Like a suitcase tag, the name x is bound to the value 3.\n\nx\n\n3\n\n\nPython first evaluates the expression on the right-hand side of the = assignment operator, then binds the name x to the resulting value.\nThe below statement re-assigns the name x. Think of this as moving the suitcase tag to a different suitcase.\n\nx = 1 + 2 * 3 - 4 // 5\nx\n\n7\n\n\n\nA note on function calls\nWe will use the term function call interchangeably with call expression. You will see why when we talk more about defining our own functions\n\n\n\n\n\n\nAssignment statements are not expressions!\n\n\n\nStatements, when executed, do something. Expressions are a type of statement that, when executed, evaluate to values. In Jupyter Notebook code cells, if the last statement in a cell is not an expression, executing that last statement will not produce an output.\nThe first cell above does not end in an expression and therefore does not produce output. The second cell above has two statements; the last one is an expression, which is displayed in the cell output.\n\n\nConsider the below Python code:\n\nx = 4\ny = max(-2, 9) + x\n\nPython executes these two statements sequentially: first, Line 1 is an assignment statement that assigns the name x to 4. Then, Line 2 assigns the name y to the result of evaluating the right-hand-side.",
+    "objectID": "06-variables-ii/index.html#confounding",
+    "href": "06-variables-ii/index.html#confounding",
+    "title": "Causality vs. EDA",
+    "section": "Confounding",
+    "text": "Confounding\nFrom Inferential Thinking, Ch 3.2 Establishing Causality:\n\nIn an observational study, if the treatment and control groups differ in ways other than the treatment, it is difficult to make conclusions about causality.\nAn underlying difference between the two groups (other than the treatment) is called a confounding factor, because it might confound you (that is, mess you up) when you try to reach a conclusion.\n\nConfounding occurs when two variables can be consistently associated with each other even when one does not cause the other.\nTo determine whether a confounding variable can account for the association between two variables, we can try to disaggregate by different values of the confounding variable.\nThis disaggregation process can be repeated exhaustively for a potentially infinite number of confounding variables. Researchers generally don’t do this. Instead, we usually rely on assumptions drawn from social science theory or findings from prior studies. This process can narrow our search of potential confounding variables that may influence the association between two variables.",
     "crumbs": [
-      "L01: Introduction",
-      "Programming Basics"
+      "L06: Variables II"
     ]
   },
   {
-    "objectID": "01-intro/programming-basics.html#style-and-debugging",
-    "href": "01-intro/programming-basics.html#style-and-debugging",
-    "title": "Programming Basics",
-    "section": "Style and Debugging",
-    "text": "Style and Debugging\nYou may have noticed by now that Jupyter Notebooks are not just by computers to run code. Data scientists also use notebooks to understand how the code facilitates data analysis. We’d therefore like to establish two habits early:\n\nProgramming Style and Comments\nProgramming style involves writing code that is self-evident and understandable by other human beings. It is not sufficient for your code to be functional, i.e., perform the correct computation. It should also be readable and interpretable, for others to reuse and adapt.\nGood style practices can involve comments, meaningful names, whitespace, markdown cells interspersed with code cells, etc. Ch 3.2 of Inferential Thinking describes meaningful names; we discuss comments below.\nComments are used to explain what code does. Good programmers write code that is self-evident and use comments only where necessary.\nIn Python, you can write comments in the same line as code (“in-line” comments) using #:\n\n3 + 4     # simple arithmetic\n\n7\n\n\nThe above shows that both code and comments can be on the same line. In that line, anything after # is a comment and is not evaluated.\n\n\nDebugging\nDebugging is the process of fixing errors, i.e., bugs, in code. Debugging is a huge process and can take up the majority of your coding time.\nErrors in your code can pop up for any number of reasons! Here are some tips:\nTest your code early and often. If you write a lot of code before testing, then you have that much more code to debug and check. Instead, write a bit, test and check, and keep writing. This will require you to know how to decompose, or break down, your solutions into multiple steps that you can test individually. Once you’re comfortable with one step, move onto the next step. That’s right—it’s abstraction!_ Debugging your code will help you better understand computational concepts.\nGet familiar with reading error messages. When Python errors, it may give messages that are initially cryptic. Try the following.\n\nTake a deep breath.\nActually read the message—don’t just focus on what you think it might say. The error message will often include a meaningful name (e.g., SyntaxError or ZeroDivisionError), the line, and an arrow (marked by ^) to where the error occurred.\nThen, try to explain to yourself why this error occurred, before fixing the error. Many beginning programmers will want skip this step, opting to throw everything at the wall and then, once things are fixed, explain what happened. Instead, slow down and try to understand the problem first. Then the solution will be straightforward.\n\nTrace your code, but not at the expense of testing. Code tracing is the process of analyzing Python code, statement by statement and line by line, to understand program execution. This is a visual process and can sometimes be helped along by diagrams. Learning to trace code is learning procedural thinking—it is a key skill that helps break down exactly what your code is doing. Once you get the hang of tracing your code, you may be tempted to debug by just staring at your code—don’t do this! Instead, develop a healthy balance between developing an understanding of your code and testing if your code does what you expect.\n\n\nPractice with Errors\nTry these on for size:\nSyntax errors are errors in writing “valid” Python that cannot even create nonsensical Python code.\n\n3 ** / 4\n\n\n  Cell In[6], line 1\n    3 ** / 4\n         ^\nSyntaxError: invalid syntax\n\n\n\n\nWhy might the below code not error? (Hint: What does - represent?)\n\n9 ** - .5\n\n0.3333333333333333\n\n\nOnce you fix syntax errors, you may still encounter functionality errors, which can be errors caused during execution that leads to your program crashing. Here’s one common one:\n\n5 / 0\n\n\n---------------------------------------------------------------------------\nZeroDivisionError                         Traceback (most recent call last)\nCell In[8], line 1\n----&gt; 1 5 / 0\n\nZeroDivisionError: division by zero\n\n\n\n```",
-    "crumbs": [
-      "L01: Introduction",
-      "Programming Basics"
-    ]
-  },
-  {
-    "objectID": "01-intro/programming-basics.html#summary",
-    "href": "01-intro/programming-basics.html#summary",
-    "title": "Programming Basics",
-    "section": "Summary",
-    "text": "Summary\nWe write code to tell our computer what to do.\n\nIn this class, and in many other settings, we use the Python programming language.\nWe write all of our code in Jupyter Notebooks, which allow us to see the output of our code in the same document in which we wrote our code. They’re commonly used in data science.\n\nBasic Python can be thought of as a calculator language, that takes expressions and computes their values.\n\nWe learned several different arithmetic operators, each of which can be used in an expression.\nPython stores integers and decimals in different ways.\n\nDebugging and good style make good programmers.\n\nComments help make our code more readable and sustainable.\nChoose names that are concise but descriptive.\nWhen our code has an error, the error message can help us fix it.\n\n\nCommon Python operators for numeric data types\n\n\n\n\n\n\n\n\nOperator\nSymbol\nExample Expression\nExpression Value\n\n\n\n\nAddition\n+\n2 + 3\n5\n\n\nSubtraction\n-\n15 - 4\n11\n\n\nMultiplication\n*\n-2 * 9\n-18\n\n\nDivision\n/\n15 / 2\n7.5\n\n\nInteger division(Cuts off remainder)\n//\n15 // 2\n7\n\n\nRemainder/Modulo\n%\n19 % 3\n1  (19 ÷ 3 = 6 Remainder 1)\n\n\nExponentiation\n**\n3 ** 2\n9",
-    "crumbs": [
-      "L01: Introduction",
-      "Programming Basics"
-    ]
-  },
-  {
-    "objectID": "01-intro/programming-basics.html#external-reading",
-    "href": "01-intro/programming-basics.html#external-reading",
-    "title": "Programming Basics",
-    "section": "External Reading",
-    "text": "External Reading\n\n(mentioned in notes) Computational and Inferential Thinking, Ch 3.1, Ch 3.2, Ch 3.3\n(optional) Nick Parlante. Python Guide Python Math.",
-    "crumbs": [
-      "L01: Introduction",
-      "Programming Basics"
-    ]
-  },
-  {
-    "objectID": "01-intro/deprecated-index.html",
-    "href": "01-intro/deprecated-index.html",
-    "title": "Course Introduction",
-    "section": "",
-    "text": "Consider this class as an application of computational thinking to data science. Naturally, Data Science can cover multiple contexts, and in this one we focus on social science contexts.\nThree pillars:\n\nComputer Science: Computational Thinking\nData Science: Exploratory data analysis.\nSocial Science: Computational Social Science\n\n(need to translate into learning objectives, but you get it)\nThis course can serve as a precursor to a statistics and inference course like Data 8 or as a standalone introduction to computational thinking for social scientists."
-  },
-  {
-    "objectID": "01-intro/deprecated-index.html#what-will-i-learn-in-this-course",
-    "href": "01-intro/deprecated-index.html#what-will-i-learn-in-this-course",
-    "title": "Course Introduction",
-    "section": "",
-    "text": "Consider this class as an application of computational thinking to data science. Naturally, Data Science can cover multiple contexts, and in this one we focus on social science contexts.\nThree pillars:\n\nComputer Science: Computational Thinking\nData Science: Exploratory data analysis.\nSocial Science: Computational Social Science\n\n(need to translate into learning objectives, but you get it)\nThis course can serve as a precursor to a statistics and inference course like Data 8 or as a standalone introduction to computational thinking for social scientists."
-  },
-  {
-    "objectID": "01-intro/deprecated-index.html#computational-thinking",
-    "href": "01-intro/deprecated-index.html#computational-thinking",
-    "title": "Course Introduction",
-    "section": "Computational Thinking",
-    "text": "Computational Thinking\n\nWhat is it?\n\nDefine computational thinking\n\nCommunications of the ACM, Jeanette Wing (PDF) and this follow-up article\n\nComputational Thinking is the thought processes involved in formulating problems and their solutions so that the solutions are represented in a form that can be effectively carried out by an information-processing agent (Cuny, Snyder, and Wing, 2010).\n\n\n\nAbstraction: A Core Concept\nWhat does this definition mean in the age of data?\n\nDefine abstraction\n\n\n“Abstraction gives us the power to scale and deal with complexity.” (Wing, 2010)"
-  },
-  {
-    "objectID": "01-intro/deprecated-index.html#exploratory-data-analysis",
-    "href": "01-intro/deprecated-index.html#exploratory-data-analysis",
-    "title": "Course Introduction",
+    "objectID": "06-variables-ii/index.html#exploratory-data-analysis",
+    "href": "06-variables-ii/index.html#exploratory-data-analysis",
+    "title": "Causality vs. EDA",
     "section": "Exploratory Data Analysis",
-    "text": "Exploratory Data Analysis\nSee Data 8 book: Chapter 1\n\nData Science is about drawing useful conclusions from large and diverse data sets through exploration, prediction, and inference. Exploration involves identifying patterns in information. Prediction involves using information we know to make informed guesses about values we wish we knew. Inference involves quantifying our degree of certainty: will the patterns that we found in our data also appear in new observations? How accurate are our predictions? Our primary tools for exploration are visualizations and descriptive statistics, for prediction are machine learning and optimization, and for inference are statistical tests and models.\n\nFrom Data 8 (1.1 Introduction):\n\nData are descriptions of the world around us, collected through observation and stored on computers. Computers enable us to infer properties of the world from these descriptions. Data science is the discipline of drawing conclusions from data using computation."
+    "text": "Exploratory Data Analysis\nIf we’re not going to be studying causal relationships in this class, what will we be looking at? In this course we will look deeply at a core component of Data Science: Exploratory Data Analysis, or EDA.\nExploratory Data Analysis (EDA) is like detective work. As coined by the famous American statistician and mathematician John Tukey (we will discuss Tukey numbers soon):\n\nExploratory data analysis is an attitude, a state of flexibility, a willingness to look for those things that we believe are not there, as well as those that we believe to be there.\n\nMore formally, Exploratory Data Analysis (EDA) is the process of understanding a new dataset. It is an open-ended, informal analysis that involves familiarizing ourselves with the variables present in the data, discovering potential hypotheses, and identifying possible issues with the data.",
+    "crumbs": [
+      "L06: Variables II"
+    ]
   },
   {
-    "objectID": "01-intro/deprecated-index.html#computational-social-science",
-    "href": "01-intro/deprecated-index.html#computational-social-science",
+    "objectID": "06-variables-ii/index.html#data-wrangling",
+    "href": "06-variables-ii/index.html#data-wrangling",
+    "title": "Causality vs. EDA",
+    "section": "Data Wrangling",
+    "text": "Data Wrangling\nA process very closely related to EDA is data wrangling, often called data cleaning. Data wrangling is the process of transforming raw data to facilitate subsequent analysis and can address issues like unclear structure or formatting, missing or corrupted values, unit conversions, and so on.\nEDA and data cleaning are often thought of as an “infinite loop,” with each process driving the other.\nFortunately, in our classes we will try our best to work with “clean” datasets. These datasets will often have already been preprocessed for cleaner analysis, allowing us to explore and ask questions much more easily than if we were stuck with messier data.",
+    "crumbs": [
+      "L06: Variables II"
+    ]
+  },
+  {
+    "objectID": "06-variables-ii/index.html#external-reading",
+    "href": "06-variables-ii/index.html#external-reading",
+    "title": "Causality vs. EDA",
+    "section": "External Reading",
+    "text": "External Reading\n\n(mentioned in notes) Computational and Inferential Thinking, Ch 5.1\n“Chapter 15: From Concepts to Models.” Elizabeth Heger Boyle, Deborah Carr, Benjamin Cornwell, Shelley Correll, Robert Crosnoe, Jeremy Freese, and Waters, Mary C. 2017. The Art and Science of Social Research. New York: W. W. Norton & Company.",
+    "crumbs": [
+      "L06: Variables II"
+    ]
+  },
+  {
+    "objectID": "06-variables-ii/sample-population.html",
+    "href": "06-variables-ii/sample-population.html",
+    "title": "Sample vs. Population",
+    "section": "",
+    "text": "Given a research question, the population is the group you want to learn something about However, directly studying the population as a whole is often not possible! Data might not exist at that scale, or it might be too costly to collect, if it’s even possible to gather that information.\nMany times, we instead study a sample of the population. If the sample is a good representation of the population, we can make useful analyses at a much lower cost.\n\n\nThe set of individuals we actually draw our sample from is the sampling frame. Depending on how we select our sample, we may miss individuals from the population we’re interested in, and we might also include individuals that are not in the population.",
+    "crumbs": [
+      "L06: Variables II",
+      "Sample vs. Population"
+    ]
+  },
+  {
+    "objectID": "06-variables-ii/sample-population.html#population-vs.-sample",
+    "href": "06-variables-ii/sample-population.html#population-vs.-sample",
+    "title": "Sample vs. Population",
+    "section": "",
+    "text": "Given a research question, the population is the group you want to learn something about However, directly studying the population as a whole is often not possible! Data might not exist at that scale, or it might be too costly to collect, if it’s even possible to gather that information.\nMany times, we instead study a sample of the population. If the sample is a good representation of the population, we can make useful analyses at a much lower cost.\n\n\nThe set of individuals we actually draw our sample from is the sampling frame. Depending on how we select our sample, we may miss individuals from the population we’re interested in, and we might also include individuals that are not in the population.",
+    "crumbs": [
+      "L06: Variables II",
+      "Sample vs. Population"
+    ]
+  },
+  {
+    "objectID": "06-variables-ii/sample-population.html#examples",
+    "href": "06-variables-ii/sample-population.html#examples",
+    "title": "Sample vs. Population",
+    "section": "Examples",
+    "text": "Examples\n\n\n\n\n\n\n\nFigure 1: A sampling frame may include individuals not in our population.\n\n\n\n\n\nExamples of target populations and the collected samples.\n\n\n\n\n\n\nTarget Population\nCollected sample\n\n\n\n\nStudent body of the school\nA specific classroom of students at the school\n\n\nA bag of 100 marbles\n10 marbles from the bag\n\n\nComputing Education Research (CER) papers\nPapers published at the American Society of Engineering Education (ASEE) conference\n\n\n\nIn the last example of the table, it is possible some of the research papers published at the ASEE conference are not specific to CER and may perhaps be focused on education in other engineering fields, like mechanical engineering or civil engineering. The sampling frame may be inferred to be the ASEE conference, and then the sample collected would need to be adjusted to include just the CER papers we want.\n\nA longer example\nLet’s say you’re planning a social event for all Data Science-declared sophomores (second-years). Since you only have the budget to cater pizza, you want to figure out what pizza toppings Data Science sophomores enjoy, and buy pizza toppings according to how popular they are.\nIn order to figure out the most popular flavors, you survey every student walking into or out of Warren Hall (where Data Science course office hours are located) from 12PM to 1PM by asking what their favorite topping is. Assume that everyone responds.\n\nPopulation: Data Science sophomores\nSampling frame: Students walking into/out of Warren Hall between 12PM and 1PM\n\nIf we draw a sample from this sampling frame we may not get a representative sample because we will get respondents from not just the sophomore pool, but also freshman, juniors, seniors, non-Data Science majors, and generally many more students than our target population. These students may have different preferences than Data Science sophomores.",
+    "crumbs": [
+      "L06: Variables II",
+      "Sample vs. Population"
+    ]
+  },
+  {
+    "objectID": "06-variables-ii/sample-population.html#how-do-we-construct-representative-samples",
+    "href": "06-variables-ii/sample-population.html#how-do-we-construct-representative-samples",
+    "title": "Sample vs. Population",
+    "section": "How do we construct representative samples?",
+    "text": "How do we construct representative samples?\nWe will (hopefully) get into this topic later this semester.",
+    "crumbs": [
+      "L06: Variables II",
+      "Sample vs. Population"
+    ]
+  },
+  {
+    "objectID": "01-intro/index.html",
+    "href": "01-intro/index.html",
     "title": "Course Introduction",
-    "section": "Computational Social Science",
-    "text": "Computational Social Science\nWhat does it mean to study social phenomena?\nResearch methodologies: quantitative data, qualitative data\nMost methods contain a mix of both\nHow Define experiments\nIn the real world"
+    "section": "",
+    "text": "Check out our slides for today! No additional notes!",
+    "crumbs": [
+      "L01: Introduction"
+    ]
   },
   {
-    "objectID": "01-intro/deprecated-index.html#external-reading",
-    "href": "01-intro/deprecated-index.html#external-reading",
+    "objectID": "01-intro/index.html#what-will-i-learn-in-this-course",
+    "href": "01-intro/index.html#what-will-i-learn-in-this-course",
+    "title": "Course Introduction",
+    "section": "",
+    "text": "Check out our slides for today! No additional notes!",
+    "crumbs": [
+      "L01: Introduction"
+    ]
+  },
+  {
+    "objectID": "01-intro/index.html#external-reading",
+    "href": "01-intro/index.html#external-reading",
     "title": "Course Introduction",
     "section": "External Reading",
-    "text": "External Reading\n\nComputational and Inferential Thinking, Ch 1.1"
+    "text": "External Reading\n\nComputational and Inferential Thinking, Ch 1.1",
+    "crumbs": [
+      "L01: Introduction"
+    ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "About these Course Notes",
+    "objectID": "01-intro/jupyter-notebook.html",
+    "href": "01-intro/jupyter-notebook.html",
+    "title": "Jupyter Notebooks",
     "section": "",
-    "text": "These course notes were compiled and created for Data 6: Introduction to Computational Thinking with Data Science and Society. This is an introductory, interdisciplinary course that focuses on the principles of computational thinking for the purposes exploratory data analysis and computational social science.",
+    "text": "This course uses the Python 3 programming language in the Jupyter Notebook environment. By the end of this note, you’ll understand what that means.",
     "crumbs": [
-      "Home / About"
+      "L01: Introduction",
+      "Jupyter Notebooks"
     ]
   },
   {
-    "objectID": "index.html#disclaimer-is-this-a-textbook",
-    "href": "index.html#disclaimer-is-this-a-textbook",
-    "title": "About these Course Notes",
-    "section": "Disclaimer: Is this a textbook?",
-    "text": "Disclaimer: Is this a textbook?\nThese lecture notes are exactly that—lecture notes. That means that while they may follow the beats of class, they may not contain all the context needed to fully understand the course material and its theoretically underpinnings. This is a limitation of this curriculum being new and interdisciplinary. We source from many other foundational texts as needed; these textbook chapters are linked within the lecture notes themselves. You are expected to read these external links.",
+    "objectID": "01-intro/jupyter-notebook.html#python-3",
+    "href": "01-intro/jupyter-notebook.html#python-3",
+    "title": "Jupyter Notebooks",
+    "section": "Python 3",
+    "text": "Python 3\nFrom Wikipedia:\n\nA computer program is a [set or sequence] of instructions in a programming language.\n\nCode refers to a computer program written in a particular programming language. In this class, we use the Python 3 programming language. It is powerful and widely used in many computing applications, from web development, scripting, and scientific computing to data science and machine learning. It’s also extremely popular worldwide (Statista, 2025).\nComputer programs are nothing more than recipes: we write programs that tell the computer exactly what to do, and it does exactly that—nothing more, and nothing less.\nYou may be wondering—how can computers be simultaneously so powerful and so primitive? Why does everything in today’s age involve computers or computational technology? In part, this “age of computing” can considered as a complex system of advanced programs run on powerful computing machines to transform complex data. All three of these components involve human scientists and engineers: to write and design the programs, to collect and structure the data, and to design and build the computing machines.",
     "crumbs": [
-      "Home / About"
+      "L01: Introduction",
+      "Jupyter Notebooks"
     ]
   },
   {
-    "objectID": "index.html#course-links",
-    "href": "index.html#course-links",
-    "title": "About these Course Notes",
-    "section": "Course Links",
-    "text": "Course Links\ndata6.org: Syllabi and assignments for semesters at UC Berkeley.\nWe strongly recommend supplementing the notes presented here with the fantastic foundational texts prepared by UC Berkeley faculty instructors in Stat 20, Data 8, and CS 61A:\n\nData 8: Computational and Inferential Thinking: The Foundations of Data Science, 2nd Edition, by Ani Adhikari, John DeNero, David Wagner.\nCS 61A: Composing Programs, by John DeNero.\nStat 20: Course Notes by Andrew Bray.",
+    "objectID": "01-intro/jupyter-notebook.html#jupyter-notebooks",
+    "href": "01-intro/jupyter-notebook.html#jupyter-notebooks",
+    "title": "Jupyter Notebooks",
+    "section": "Jupyter Notebooks",
+    "text": "Jupyter Notebooks\nIn order to run computer programs, we need a way to execute code written in a programming language on a computer. Development, also known as process of designing, iterating, and testing computer programs, often takes place in an environment which can support all of these tasks.\nThe environment we will use is Jupyter Notebook, which allows us to write and run code within a single .ipynb document (i.e., notebook). They also allow us to embedded text and code.\n\n\n\n\n\n\n\nFigure 1: An example of a Jupyter Notebook.\n\n\n\n\nThere’s a lot going on in the above Jupyter Notebook screenshot: there is code, there is output from running code, there are pictures, and there is (non-code) text. We’ll get to understanding all of these components in due time.\nBut this screenshot also elucidates why a tool like Jupyter Notebook is so important to doing data science work. Data Science often requires the use of computation and visualizations and the production of written reports. Notebooks support all three of these, in the same document.\n\n\n\n\n\n\nAside\n\n\n\n\n\nThe Project Jupyter community actually started at UC Berkeley. Professor Fernando Perez of Statistics created an interactive Python environment as part of his graduate studies in Physics, and the rest is history.\n\n\n\n\n\n\n\n\n\nAside 2\n\n\n\n\n\nAside 2: Jupyter can run things other than Python—in fact, Jupyter’s namesake is the three core languages it supports: Julia, Python, and R.\n\n\n\nIf you take more Computer Science and Data Science classes, you will learn about more tools for programming and statistics. In this class we will focus on using Jupyter Notebooks to develop Python code.",
     "crumbs": [
-      "Home / About"
+      "L01: Introduction",
+      "Jupyter Notebooks"
     ]
   },
   {
-    "objectID": "index.html#license",
-    "href": "index.html#license",
-    "title": "About these Course Notes",
-    "section": "License",
-    "text": "License\nThe contents of this work are licensed for free consumption under the following license: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International",
+    "objectID": "01-intro/jupyter-notebook.html#datahub",
+    "href": "01-intro/jupyter-notebook.html#datahub",
+    "title": "Jupyter Notebooks",
+    "section": "DataHub",
+    "text": "DataHub\nDataHub is the web-based environment we will use in this course for developing and running Jupyter Notebooks. Some features:\n\nDataHub is a Berkeley-hosted server that runs Jupyter notebooks.\nAll students have their own DataHub “container”; think of this as your own virtual computer.\nThis is where you will work on all assignments.\nYou will not need to install anything locally (meaning that you could theoretically do all assignments for this class on your phone, but we recommend giving your fingers and your eyes a break). All you need is a web browser.\nCourse staff can access everything in your DataHub to help debug your code.\n\n\n\n\n\n\n\nAccess DataHub\n\n\n\nIn this class, there are two common ways to develop Jupyter Notebooks:\n\nGo to http://datahub.berkeley.edu. Make a new notebook, or open an existing one.\nFrom our course website, often by clicking on code links or assignment links. These will often create a copy of a notebook skeleton, which you can then run or edit.\n\n\n\nGenerally, we will not be creating notebooks from scratch. Instead, the course staff have helped write scaffolding code and instructions for activities that are designed to help you understand the fundamentals.",
     "crumbs": [
-      "Home / About"
+      "L01: Introduction",
+      "Jupyter Notebooks"
     ]
   },
   {
-    "objectID": "index.html#acknowledgments",
-    "href": "index.html#acknowledgments",
-    "title": "About these Course Notes",
-    "section": "Acknowledgments",
-    "text": "Acknowledgments\nMany faculty instructors and teaching assistants have contributed to the creation of Data 6. Special thanks to Suraj Rampure for one of the early iterations of this course.\nThis material is based upon work supported by the U.S. National Science Foundation under award Nos. 2245877, 2245878, 2245879, and the California Learning Lab. Please read more about our DUBOIS project activities here: https://dubois-ctds.github.io/",
+    "objectID": "01-intro/jupyter-notebook.html#jupyter-notebook-internals",
+    "href": "01-intro/jupyter-notebook.html#jupyter-notebook-internals",
+    "title": "Jupyter Notebooks",
+    "section": "Jupyter Notebook Internals",
+    "text": "Jupyter Notebook Internals\n\n\n\n\n\n\nCaution\n\n\n\nIf you have not yet tried interacting with your first Jupyter Notebook yet, this section will not make much sense. We recommend skipping ahead to the next set of notes, then coming back and referring to this as you build more notebooks.\n\n\nJupyter Notebooks are made up of cells. There are two main types of cells:\nCode cells. This is where you write and execute code. When run, Python code cells are evaluated as a Python code snippet, one line at a time. The cell output displayed is the value of the last evaluated expression:\n\n\n\n\n\n\n\nFigure 2: Both expressions are evaluated, but the result of the last expression’s evaluation is considered the output of the code cell.\n\n\n\n\nWe will discuss this output/display phenomenon more in future notes.\nTo run a code cell, you can either hit the “Run” button in the Toolbar, or you can use a keyboard shortcut: &lt;SHIFT&gt;+&lt;ENTER&gt;, which runs the cell and advances to the next cell. We recommend keyboard shortcuts; see below.\nMarkdown cells. This is where you write text and images that aren’t Python code. Markdown is a language used for formatting text. A Markdown cell will always display its formatting when it is not in edit mode.\n\n\n\n\n\n\n\nFigure 3: Left screenshot shows un-evaluated code cell and raw Markdown cell; right screenshot shows evaluated code cell and formatted text. To render formatted text for a selected markdown cell, exit editing mode for that cell. This screenshot starts with the code cell selected, then runs both that code cell and “runs” the markdown cell below.\n\n\n\n\nHere is a guide to Markdown formatting. You’ll explore Markdown more in lab.\n\nKeyboard Shortcuts\nWhile you can manage most of your notebook development by leveraging the Toolbar, many programmers (including me!) prefer using keyboard shortcuts. This minimizes use of the mouse/trackpad and keeps the hands on the keyboard. Together with stretching and taking breaks, keyboard shortcuts will reduce wrist cramps and improve your programming concentration.\nEdit mode vs. command mode: Hit the &lt;ESCAPE&gt; key on your keyboard to switch from edit mode to command mode. Keyboard shortcuts are specific to the mode you’re using:\n\nEdit mode: when you’re actively typing in the cell. Undo is &lt;CTRL/CMD&gt; + Z.\nCommand mode: when you’re not actively typing in the cell. Undo is z.\n\n\n\n\n\n\n\n\n\nAction\nMode\nKeyboard shortcut\n\n\n\n\nRun cell + jump to next cell*\nEither (puts you in edit mode)\n&lt;SHIFT&gt; + &lt;ENTER&gt;\n\n\nRun cell + stay on this cell\nEither (puts you in edit mode)\n&lt;CTRL/CMD&gt; + &lt;ENTER&gt;\n\n\nSave notebook\nEither\n&lt;CTRL/CMD&gt; + &lt;S&gt;\n\n\nSwitch to command mode*\nEither (puts you in command mode)\n&lt;ESCAPE&gt;\n\n\nSwitch to edit mode*\nCommand\n&lt;ENTER&gt;\n\n\nComment out the current line\nEdit\n&lt;CTRL/CMD&gt; + /\n\n\nCreate new cell above/below\nCommand\nA/B\n\n\nDelete cell\nCommand\nDD\n\n\nConvert cell to Markdown\nCommand\nM\n\n\nConvert cell to code\nCommand\nY\n\n\nShow all shortcuts\nCommand\nH\n\n\n\nThe above table should be used as a reference throughout the semester; don’t try to memorize these right now. And remember, you don’t have to use these shortcuts; you can always use the toolbar. Regardless, we’ve annotated the most useful keyboard shortcuts with an asterisk (*).\nThere are plenty more keyboard shortcuts available. Let us know if you find a good guide.",
     "crumbs": [
-      "Home / About"
+      "L01: Introduction",
+      "Jupyter Notebooks"
     ]
   },
   {
-    "objectID": "07-visualizations/encoding.html",
-    "href": "07-visualizations/encoding.html",
-    "title": "Encoding",
+    "objectID": "07-visualizations/index.html",
+    "href": "07-visualizations/index.html",
+    "title": "Introduction to Visualizations",
     "section": "",
-    "text": "The theory behind creating effective visualizations lies in understanding encoding.",
+    "text": "A visualization is a way to represent data in a visual format. In practice, we use visualizations to explore patterns and communicate results.",
     "crumbs": [
-      "L07: Visualizations",
-      "Encoding"
+      "L07: Visualizations"
     ]
   },
   {
-    "objectID": "07-visualizations/encoding.html#what-is-encoding",
-    "href": "07-visualizations/encoding.html#what-is-encoding",
-    "title": "Encoding",
-    "section": "What is Encoding?",
-    "text": "What is Encoding?\nEncoding is a mapping from a variable to a visual element.\nThink of encoding as the bridge between your data and what people see on the screen. It’s how we translate abstract numbers and categories into visual properties that humans can quickly understand.",
+    "objectID": "07-visualizations/index.html#what-is-a-visualization",
+    "href": "07-visualizations/index.html#what-is-a-visualization",
+    "title": "Introduction to Visualizations",
+    "section": "",
+    "text": "A visualization is a way to represent data in a visual format. In practice, we use visualizations to explore patterns and communicate results.",
     "crumbs": [
-      "L07: Visualizations",
-      "Encoding"
+      "L07: Visualizations"
     ]
   },
   {
-    "objectID": "07-visualizations/encoding.html#basic-example-bar-charts",
-    "href": "07-visualizations/encoding.html#basic-example-bar-charts",
-    "title": "Encoding",
-    "section": "Basic Example: Bar Charts",
-    "text": "Basic Example: Bar Charts\nIn bar charts, length can visually encode a numerical variable.\n\n\n\n\n\n\n\nFigure 1: Bar Chart Example\n\n\n\n\nThis creates an intuitive mapping where the visual property (bar length) directly corresponds to the data value (average age).",
+    "objectID": "07-visualizations/index.html#why-visualization-matters",
+    "href": "07-visualizations/index.html#why-visualization-matters",
+    "title": "Introduction to Visualizations",
+    "section": "Why Visualization Matters",
+    "text": "Why Visualization Matters\nVisualization serves two primary purposes:\n\nTo further your own understanding of your results\nTo communicate your results with others\n\nCreating good visualizations is both an art and a science. There is often no single “correct” way to visualize data. However, we must be careful and deliberate when creating visualizations, especially when they will be used in real-world decision-making.\nTo better understand these principles in action, let’s examine how humans have used visual representations throughout history to understand and communicate complex information. The following examples in the next page demonstrate powerful uses of data visualization that have shaped our understanding of the world.",
     "crumbs": [
-      "L07: Visualizations",
-      "Encoding"
+      "L07: Visualizations"
     ]
   },
   {
-    "objectID": "07-visualizations/encoding.html#multiple-variables-multiple-encodings",
-    "href": "07-visualizations/encoding.html#multiple-variables-multiple-encodings",
-    "title": "Encoding",
-    "section": "Multiple Variables, Multiple Encodings",
-    "text": "Multiple Variables, Multiple Encodings\nOther visualizations can include multiple variables encoded simultaneously.\n\n\n\n\n\n\n\nFigure 2: Multiple Encodings in a Scatter Plot\n\n\n\n\n\nQuick Check: How Many Variables?\nLook at the scatter plot above. How many different variables are being encoded? What visual properties are being used?\n\n\n\n\n\n\nAnswer\n\n\n\n\n\nFour variables are being encoded:\n\nX-position: Variable 1 (horizontal axis data)\nY-position: Variable 2 (vertical axis data)\n\nSize of the dot: Variable 3 (represented by different bubble sizes)\nColor of the dot: Variable 4 (represented by different colors/hues)",
+    "objectID": "07-visualizations/index.html#historical-examples",
+    "href": "07-visualizations/index.html#historical-examples",
+    "title": "Introduction to Visualizations",
+    "section": "Historical Examples",
+    "text": "Historical Examples\n\nThe World’s First Map (~6200 BC)\nWhat do you see when you look at this ancient artifact?\n\n\n\n\n\n\n\nFigure 1: The World’s First Map\n\n\n\n\nThis is a map depicting the town of Konya, Turkey - supposedly the world’s first map, dating back to approximately 6200 BC. Even in prehistoric times, humans recognized the power of visual representation to communicate spatial relationships and important information.\n\n\nJohn Snow’s Cholera Map (1854)\n\n\n\n\n\n\nRead Inferential Thinking\n\n\n\nRead Ch 2.1, which describes in detail John Snow’s groundbreaking use of data visualization during the 1854 cholera epidemic.\nThis story demonstrates how observation and visualization can lead to life-saving discoveries, even when the underlying scientific theory (germ theory) wasn’t yet established.\n\n\n\n\n\n\n\n\nData Visualization Saves Lives\n\n\n\nOne of the most famous examples of data visualization directly saving human lives.\n\n\nThe Problem: In August 1854, a massive cholera outbreak was devastating the overcrowded SoHo district of London. Hundreds were dying within days, and the prevailing “miasma theory” blamed bad air and smells.\nThe Solution: Dr. John Snow was skeptical of the miasma theory and suspected contaminated water. He created a revolutionary approach that became standard in epidemiology: he drew a map.\n\n\n\n\n\n\n\nFigure 2: John Snow’s Cholera Map\n\n\n\n\nWhat the map revealed:\n\nDeaths were clustered around the Broad Street pump\nHouses closer to other pumps still used Broad Street (due to street layout)\nThe Lion Brewery had no deaths (workers drank beer and had their own well)\nScattered distant deaths were children who drank from the pump on their way to school\n\nThe Impact: Snow’s map convinced local authorities to remove the handle of the Broad Street pump. Later investigation revealed that a cesspit just feet away had been leaking sewage into the well, contaminating the water with cholera.\n\n\nFlorence Nightingale’s Rose Diagram (1850s)\nFlorence Nightingale wasn’t just a pioneering nurse, she was also an innovative data visualizer. During the Crimean War, she created what’s now called a “rose diagram” or “coxcomb chart” to visualize the causes of death among British soldiers.\n\n\n\n\n\n\n\nFigure 3: Florence Nightingale’s Rose Diagram\n\n\n\n\nHer visualization revealed a shocking truth: more soldiers were dying from preventable diseases than from battle wounds. This wasn’t just a pretty chart, it was a powerful argument that drove major reforms in military medical care. Nightingale understood that abstract statistics about mortality rates couldn’t compete with the visual impact of her rose petals, where the size of each segment made the disparity impossible to ignore.",
     "crumbs": [
-      "L07: Visualizations",
-      "Encoding"
+      "L07: Visualizations"
     ]
   },
   {
-    "objectID": "07-visualizations/encoding.html#matching-encodings-to-variable-types",
-    "href": "07-visualizations/encoding.html#matching-encodings-to-variable-types",
-    "title": "Encoding",
-    "section": "Matching Encodings to Variable Types",
-    "text": "Matching Encodings to Variable Types\nAs we learned when studying variables, different variable types (numerical vs. categorical, discrete vs. continuous, ordinal vs. nominal) have different properties. When creating visualizations, we need to match our encoding choices to these variable types.\n\n\n\n\n\n\n\nFigure 3: Recall: Variable Types\n\n\n\n\n\n\n\n\n\n\nKey Principle\n\n\n\nNot all encodings work well with all variable types. The effectiveness depends on how well the visual property matches the data type.\n\n\nThe table below summarizes which visual encodings work best for different types of variables. Understanding these patterns will help you make better choices when designing your visualizations:\n\nEffectiveness of encodings by variable type\n\n\n\n\n\n\n\n\nVariable Type\nMost Effective Encodings\nLess Effective\nWhy\n\n\n\n\nNumerical\n• Position (X, Y)• Length• Area\n• Color hue• Shape\nHumans can judge quantity differences\n\n\nCategorical\n• Color hue• Shape• Position (grouping)\n• Length• Area\nAvoids implying false ordering",
+    "objectID": "07-visualizations/index.html#modern-examples",
+    "href": "07-visualizations/index.html#modern-examples",
+    "title": "Introduction to Visualizations",
+    "section": "Modern Examples",
+    "text": "Modern Examples\n\nMaya Lin’s Vietnam War Memorial (1982)\nNot all data visualization involves charts and graphs. Maya Lin’s Vietnam War Memorial in Washington DC proves that data can be deeply emotional and memorial, not just analytical.\n\n\n\n\n\n\n\nFigure 4: Vietnam War Memorial\n\n\n\n\nEach of the 58,000+ names etched into the black granite represents one life lost. The chronological arrangement tells the story of the war’s progression through time, while the reflective surface creates an intimate connection between viewers and the data you literally see yourself reflected among the names. This memorial demonstrates that the most powerful visualizations don’t just inform us; they transform how we feel about the information.\n\n\nCOVID-19 Case Tracking (2022)\nDuring the COVID-19 pandemic, data visualization became part of daily life. Suddenly, everyone from epidemiologists to elementary school students was reading line charts showing case trends and interpreting what those curves meant for their communities.\n\n\n\n\n\n\n\nFigure 5: COVID-19 Case Tracking\n\n\n\n\nGoogle’s COVID tracking dashboard exemplified how modern visualization must be both accessible and updateable in real-time. The time series charts showed trends over months with clear visual indicators of peaks and valleys, but more importantly, they translated complex epidemiological data into something any concerned citizen could understand.",
     "crumbs": [
-      "L07: Visualizations",
-      "Encoding"
+      "L07: Visualizations"
     ]
   },
   {
-    "objectID": "07-visualizations/encoding.html#common-encoding-mistakes",
-    "href": "07-visualizations/encoding.html#common-encoding-mistakes",
-    "title": "Encoding",
-    "section": "Common Encoding Mistakes",
-    "text": "Common Encoding Mistakes\n\nWhat’s Wrong with This?\n\n\n\n\n\n\n\nFigure 4: Problematic Car Manufacturer Chart\n\n\n\n\nProblem: This graph implies that Swedish cars are “greater” than cars from other countries in some sense, when they’re not. If the variable is just “country of origin” (nominal categorical), using length encoding suggests an ordering that doesn’t exist.\n\n\n\n\n\n\nKey Principle\n\n\n\nThe variable type determines the types of plots (and hence, encodings) that are appropriate.",
+    "objectID": "07-visualizations/index.html#reflection-questions",
+    "href": "07-visualizations/index.html#reflection-questions",
+    "title": "Introduction to Visualizations",
+    "section": "Reflection Questions",
+    "text": "Reflection Questions\nAs you think about these examples, consider:\n\nWhat made each visualization effective for its time and purpose?\nHow might these visualizations be different if created with modern tools?\nWhat can we learn from these examples about designing effective visualizations today?",
     "crumbs": [
-      "L07: Visualizations",
-      "Encoding"
+      "L07: Visualizations"
     ]
   },
   {
-    "objectID": "07-visualizations/encoding.html#summary",
-    "href": "07-visualizations/encoding.html#summary",
-    "title": "Encoding",
-    "section": "Summary",
-    "text": "Summary\nEncodings translate variables into visual properties and serve as the fundamental building blocks of data visualization. However, not all encodings work for all variables - effectiveness depends on matching visual properties to data types. The power of encoding lies in how multiple variables can be encoded simultaneously, enabling rich, multidimensional visualizations. Success requires choosing encodings thoughtfully by considering your data types, audience, and message.\nOver the next few chapters, we’ll learn how to create several kinds of plots and learn when each encoding approach is most appropriate.",
+    "objectID": "07-visualizations/index.html#next-steps",
+    "href": "07-visualizations/index.html#next-steps",
+    "title": "Introduction to Visualizations",
+    "section": "Next Steps",
+    "text": "Next Steps\nNow that we’ve seen the power of visualization through these historical examples, let’s explore the theory behind what makes visualizations effective.",
+    "crumbs": [
+      "L07: Visualizations"
+    ]
+  },
+  {
+    "objectID": "07-visualizations/index.html#external-reading",
+    "href": "07-visualizations/index.html#external-reading",
+    "title": "Introduction to Visualizations",
+    "section": "External Reading",
+    "text": "External Reading\n\n(mentioned in notes) Computational and Inferential Thinking, Ch 2.1",
+    "crumbs": [
+      "L07: Visualizations"
+    ]
+  },
+  {
+    "objectID": "07-visualizations/charts.html",
+    "href": "07-visualizations/charts.html",
+    "title": "Bar Charts, Scatter Plots, Line Graphs",
+    "section": "",
+    "text": "This note is entirely based on the external readings:\n\nComputational and Inferential Thinking, Ch 7, 7.1",
     "crumbs": [
       "L07: Visualizations",
-      "Encoding"
+      "Bar Charts, Scatter Plots, Line Graphs"
+    ]
+  },
+  {
+    "objectID": "07-visualizations/charts.html#external-reading",
+    "href": "07-visualizations/charts.html#external-reading",
+    "title": "Bar Charts, Scatter Plots, Line Graphs",
+    "section": "",
+    "text": "This note is entirely based on the external readings:\n\nComputational and Inferential Thinking, Ch 7, 7.1",
+    "crumbs": [
+      "L07: Visualizations",
+      "Bar Charts, Scatter Plots, Line Graphs"
     ]
   },
   {
@@ -647,7 +736,7 @@
     "href": "reference.html#tables-and-table-methods",
     "title": "🐍 Data 6 Python Reference",
     "section": "Tables and Table Methods",
-    "text": "Tables and Table Methods\n\n\n\nFunction\nDescription\nInput\nOutput\n\n\n\n\nTable()\nCreates an empty table, usually to extend with data\nNone\nAn empty Table\n\n\nTable().read_table(filename)\nCreate a table from a data file\nstring: the name of the file\n\n\n\ntbl.with_column(name, values) or tbl.with_columns(n1, v1, n2, v2, ...)\nAdds an extra column onto tbl with the label name and values as the column values\n1. string: name of the new column  2. array: values in the column\nTable: a copy of the original table with the new column(s)\n\n\ntbl.column(col)\nReturns the values in a column in tbl\nstring or int: the column name or index\narray: the values in that column\n\n\ntbl.num_rows\nCompute the number of rows in tbl\nNone\nint: the number of rows in the table\n\n\ntbl.num_columns\nCompute the number of columns in tbl\nNone\nint: the number of columns in the table\n\n\ntbl.labels\nReturns the labels in tbl\nNone\narray: the names of each column as strings\n\n\ntbl.select(col1, col2, ...)\nCreates a copy of tbl only with the selected columns\nstring or int: the column name(s) or index(es) to be included in the table\nTable with the selected columns\n\n\ntbl.drop(col1, col2, ...)\nCreates a copy of tbl without the selected columns\nstring or int: the column name(s) or index(es) to be dropped from the table\nTable without the selected columns\n\n\ntbl.relabeled(old_label, new_label)\nCreates a new table, changing the column name specified by old_label to new_label, and leaves the original table unchanged.\n1. string: the old column name  2. string the new column name\nTable: a copy of the original table with the changed column name\n\n\ntbl.show(n)\nDisplays the first n rows of tbl. If no argument is specified, the function defaults to showing the entire table\n(Optional) int: number of rows to be displayed\nNone (table is displayed)\n\n\ntbl.sort(column_name)\nSorts the rows of tbl by the values in the column_name column. Defaults to ascending order unless the optional argument descending=True is included.\n1. string or int: name or index of the column to sort  2. (Optional) descending=True\nTable: a copy of the original table with the column sorted\n\n\ntbl.where(column, predicate)\nCreates a copy of tbl containing only the rows where the value of column matches the predicate. See Table.where predicates below.\n1. string or int: column name or index  2. are.(...) predicate or exact-match value.\nTable: a copy of the original table with only the rows that match the predicate\n\n\ntbl.take(row_indices)\nCreates a table with only the rows at the given indices. row_indices is either an array of indices or an integer corresponding to one index.\nint or array: indices of rows to be included in the table\nTable: a copy of the original table with only the rows at the given indices\n\n\ntbl.apply(function) or tbl.apply(function, col1, col2, ...)\nReturns an array of values resulting from applying a function to each item in a column.\n1. Function: function to apply to column  2. (Optional) string or int: the column name(s) or index(es) to apply the function to\narray containing an element for each value in the original column after applying the function to it\n\n\ntbl.group(column_or_columns, function)\nGroups rows in tbl by unique values or combinations of values in a column(s). Multiple columns must be entered as an array of strings. Values in the other columns are aggregated by count (by default) or the optional argument function. You can visualize the group function here.\n1. string or array of strings: column(s) on which to group  2. (Optional) Function: function to aggregate values in cells (defaults to counting rows)\nTable a new groupped table\n\n\ntbl.pivot(col1, col2) or tbl.pivot(col1, col2, values, collect)\nCreates a pivot table where each unique value in col1 has its own column and each unique value in col2 has its own row. Counts or aggregates values from a third column, collected with some function. If the values and collect arguments are not included, pivot defaults to returning counts in the cells. You can visualize the pivot function here.\n1. string: name of the column in tbl whose unique values will make up the columns of the pivot table  2. string: name of column in tbl whose unique values will make up the rows of the pivot table  3. (Optional) string: name of the column in tbl that describes the values of cells in the pivot table  4. (Optional) Function: how the values are collected (e.g. sum or np.mean)\nTable: a new pivot table\n\n\ntblA.join(colA, tblB) or tblA.join(colA, tblB, colB)\nGenerate a table with the columns of tblA and tblB, containing rows for all values in colA and colB that appear in tblA and tblB, respectively. By default, colB is the same value as colA. colA and colB must be strings specifying column names.\n1. string: name of column in tblA with values to join on  2. Table: the other table  3. (Optional) string: the name of the shared column in tblB, if column names are different between the tables\nTable: a new combined table\n\n\ntbl.with_row(values)\nAdds a new row with the specified values to tbl\n1. list or array: values to add as a new row\nTable: a copy of the original table with the new row\n\n\ntbl.with_rows(list_of_rows)\nAdds multiple rows to tbl using a list of rows\n1. list of lists or arrays: each list/array represents a new row\nTable: a copy of the original table with the new rows",
+    "text": "Tables and Table Methods\n\n\n\nFunction\nDescription\nInput\nOutput\n\n\n\n\nTable()\nCreates an empty table, usually to extend with data\nNone\nAn empty Table\n\n\nTable().read_table(filename)\nCreate a table from a data file\nstring: the name of the file\n\n\n\ntbl.with_column(name, values) or tbl.with_columns(n1, v1, n2, v2, ...)\nAdds an extra column onto tbl with the label name and values as the column values\n1. string: name of the new column  2. array: values in the column\nTable: a copy of the original table with the new column(s)\n\n\ntbl.column(col)\nReturns the values in a column in tbl\nstring or int: the column name or index\narray: the values in that column\n\n\ntbl.num_rows\nCompute the number of rows in tbl\nNone\nint: the number of rows in the table\n\n\ntbl.num_columns\nCompute the number of columns in tbl\nNone\nint: the number of columns in the table\n\n\ntbl.labels\nReturns the labels in tbl\nNone\narray: the names of each column as strings\n\n\ntbl.select(col1, col2, ...)\nCreates a copy of tbl only with the selected columns\nstring or int: the column name(s) or index(es) to be included in the table\nTable with the selected columns\n\n\ntbl.drop(col1, col2, ...)\nCreates a copy of tbl without the selected columns\nstring or int: the column name(s) or index(es) to be dropped from the table\nTable without the selected columns\n\n\ntbl.relabeled(old_label, new_label)\nCreates a new table, changing the column name specified by old_label to new_label, and leaves the original table unchanged.\n1. string: the old column name  2. string the new column name\nTable: a copy of the original table with the changed column name\n\n\ntbl.show(n)\nDisplays the first n rows of tbl. If no argument is specified, the function defaults to showing the entire table\n(Optional) int: number of rows to be displayed\nNone (table is displayed)\n\n\ntbl.sort(column_name)\nSorts the rows of tbl by the values in the column_name column. Defaults to ascending order unless the optional argument descending=True is included.\n1. string or int: name or index of the column to sort  2. (Optional) descending=True\nTable: a copy of the original table with the column sorted\n\n\ntbl.where(column, predicate)\nCreates a copy of tbl containing only the rows where the value of column matches the predicate. See Table.where predicates below.\n1. string or int: column name or index  2. are.(...) predicate or exact-match value.\nTable: a copy of the original table with only the rows that match the predicate\n\n\ntbl.take(row_indices)\nCreates a table with only the rows at the given indices. row_indices is either an array of indices or an integer corresponding to one index.\nint or array: indices of rows to be included in the table\nTable: a copy of the original table with only the rows at the given indices\n\n\ntbl.bin(column_name_or_index), tbl.bin(column_name_or_index, bins)\nGroups values into intervals, known as bins. Results in a two-column table that contains the number of rows in each bin. The first column lists the left endpoints of the bins, except in the last row. If the bins argument isn’t used, default is to produce 10 equally wide bins between the min and max values of the data.\n1. string or int: column name(s) or index(es)  2. (Optional) array of ints/floats denoting bin boundaries or an int of the number of bins you want\nTable: a new table of counts per bin\n\n\ntbl.apply(function) or tbl.apply(function, col1, col2, ...)\nReturns an array of values resulting from applying a function to each item in a column.\n1. Function: function to apply to column  2. (Optional) string or int: the column name(s) or index(es) to apply the function to\narray containing an element for each value in the original column after applying the function to it\n\n\ntbl.group(column_or_columns, function)\nGroups rows in tbl by unique values or combinations of values in a column(s). Multiple columns must be entered as an array of strings. Values in the other columns are aggregated by count (by default) or the optional argument function. You can visualize the group function here.\n1. string or array of strings: column(s) on which to group  2. (Optional) Function: function to aggregate values in cells (defaults to counting rows)\nTable a new groupped table\n\n\ntbl.pivot(col1, col2) or tbl.pivot(col1, col2, values, collect)\nCreates a pivot table where each unique value in col1 has its own column and each unique value in col2 has its own row. Counts or aggregates values from a third column, collected with some function. If the values and collect arguments are not included, pivot defaults to returning counts in the cells. You can visualize the pivot function here.\n1. string: name of the column in tbl whose unique values will make up the columns of the pivot table  2. string: name of column in tbl whose unique values will make up the rows of the pivot table  3. (Optional) string: name of the column in tbl that describes the values of cells in the pivot table  4. (Optional) Function: how the values are collected (e.g. sum or np.mean)\nTable: a new pivot table\n\n\ntblA.join(colA, tblB) or tblA.join(colA, tblB, colB)\nGenerate a table with the columns of tblA and tblB, containing rows for all values in colA and colB that appear in tblA and tblB, respectively. By default, colB is the same value as colA. colA and colB must be strings specifying column names.\n1. string: name of column in tblA with values to join on  2. Table: the other table  3. (Optional) string: the name of the shared column in tblB, if column names are different between the tables\nTable: a new combined table\n\n\ntbl.with_row(values)\nAdds a new row with the specified values to tbl\n1. list or array: values to add as a new row\nTable: a copy of the original table with the new row\n\n\ntbl.with_rows(list_of_rows)\nAdds multiple rows to tbl using a list of rows\n1. list of lists or arrays: each list/array represents a new row\nTable: a copy of the original table with the new rows",
     "crumbs": [
       "Data 6 Python Reference"
     ]
@@ -657,7 +746,7 @@
     "href": "reference.html#visualization-functions",
     "title": "🐍 Data 6 Python Reference",
     "section": "Visualization Functions",
-    "text": "Visualization Functions\n\n\n\n\n\n\n\n\n\nFunction\nDescription\nInput\nOutput\n\n\n\n\ntbl.barh(categories) or tbl.barh(categories, values)\nDisplays a horizontal bar chart with bars for each category in the column categories. values specifies the column corresponding to the size of each bar, but is unnecessary if the table only has two columns. Optional argument overlay (default is True) specifies whether grouped bar charts should be overlaid or on separate plots.\n1. string: name of the column with categories  2. (Optional) string: name of the column with values corresponding to the categories\nNone: draws a bar chart\n\n\ntbl.hist(column)\nGenerates a histogram of the numerical values in column. Optional arguments group (to specify categorical column to group on), bins (to specify custom bins), and overlay to specify overlaid or separate histograms.\nstring: name of the column\nNone: draws a histogram\n\n\ntbl.plot(x_column, y_column) or tbl.plot(x_column)\nDraws a line plot consisting of one point for each row in tbl. If only x_column is specified, plot will plot the rest of the columns on the y-axis with different colored lines. Optional argument overlay (default is True) specifies whether multiple lines should be overlaid or on separate plots.\n1. string: name of the column on the x-axis  2. string: name of the column on the y-axis\nNone: draws a line graph\n\n\ntbl.scatter(x_column, y_column)\nDraws a scatter plot consisting of one point for each row in tbl. The optional argument fit_line=True can be included to draw a line of best fit through the scatter plot. The optional arguments group (to specify categorical column to group on) and sizes (to specify a numerical column for bubble sizes) can also be used to encode additional variables.\n1. string: name of the column on the x-axis  2. string: name of the column on the y-axis  3. (Optional) fit_line=True\nNone: draws a scatter plot",
+    "text": "Visualization Functions\n\n\n\n\n\n\n\n\n\nFunction\nDescription\nInput\nOutput\n\n\n\n\ntbl.barh(categories) or tbl.barh(categories, values)\nDisplays a horizontal bar chart with bars for each category in the column categories. values specifies the column corresponding to the size of each bar, but is unnecessary if the table only has two columns. Optional argument overlay (default is True) specifies whether grouped bar charts should be overlaid or on separate plots.\n1. string: name of the column with categories  2. (Optional) string: name of the column with values corresponding to the categories\nNone: draws a bar chart\n\n\ntbl.hist(column)\nGenerates a histogram of the numerical values in column. Optional arguments density (False: plots counts; default True), group (to specify categorical column to group on), bins (to specify custom bins), and overlay to specify overlaid or separate histograms.\nstring: name of the column\nNone: draws a histogram\n\n\ntbl.plot(x_column, y_column) or tbl.plot(x_column)\nDraws a line plot consisting of one point for each row in tbl. If only x_column is specified, plot will plot the rest of the columns on the y-axis with different colored lines. Optional argument overlay (default is True) specifies whether multiple lines should be overlaid or on separate plots.\n1. string: name of the column on the x-axis  2. string: name of the column on the y-axis\nNone: draws a line graph\n\n\ntbl.scatter(x_column, y_column)\nDraws a scatter plot consisting of one point for each row in tbl. The optional argument fit_line=True can be included to draw a line of best fit through the scatter plot. The optional arguments group (to specify categorical column to group on) and sizes (to specify a numerical column for bubble sizes) can also be used to encode additional variables.\n1. string: name of the column on the x-axis  2. string: name of the column on the y-axis  3. (Optional) fit_line=True\nNone: draws a scatter plot",
     "crumbs": [
       "Data 6 Python Reference"
     ]
@@ -743,406 +832,389 @@
     ]
   },
   {
-    "objectID": "07-visualizations/index.html",
-    "href": "07-visualizations/index.html",
-    "title": "Introduction to Visualizations",
+    "objectID": "07-visualizations/encoding.html",
+    "href": "07-visualizations/encoding.html",
+    "title": "Encoding",
     "section": "",
-    "text": "A visualization is a way to represent data in a visual format. In practice, we use visualizations to explore patterns and communicate results.",
+    "text": "The theory behind creating effective visualizations lies in understanding encoding.",
     "crumbs": [
-      "L07: Visualizations"
+      "L07: Visualizations",
+      "Encoding"
     ]
   },
   {
-    "objectID": "07-visualizations/index.html#what-is-a-visualization",
-    "href": "07-visualizations/index.html#what-is-a-visualization",
-    "title": "Introduction to Visualizations",
+    "objectID": "07-visualizations/encoding.html#what-is-encoding",
+    "href": "07-visualizations/encoding.html#what-is-encoding",
+    "title": "Encoding",
+    "section": "What is Encoding?",
+    "text": "What is Encoding?\nEncoding is a mapping from a variable to a visual element.\nThink of encoding as the bridge between your data and what people see on the screen. It’s how we translate abstract numbers and categories into visual properties that humans can quickly understand.",
+    "crumbs": [
+      "L07: Visualizations",
+      "Encoding"
+    ]
+  },
+  {
+    "objectID": "07-visualizations/encoding.html#basic-example-bar-charts",
+    "href": "07-visualizations/encoding.html#basic-example-bar-charts",
+    "title": "Encoding",
+    "section": "Basic Example: Bar Charts",
+    "text": "Basic Example: Bar Charts\nIn bar charts, length can visually encode a numerical variable.\n\n\n\n\n\n\n\nFigure 1: Bar Chart Example\n\n\n\n\nThis creates an intuitive mapping where the visual property (bar length) directly corresponds to the data value (average age).",
+    "crumbs": [
+      "L07: Visualizations",
+      "Encoding"
+    ]
+  },
+  {
+    "objectID": "07-visualizations/encoding.html#multiple-variables-multiple-encodings",
+    "href": "07-visualizations/encoding.html#multiple-variables-multiple-encodings",
+    "title": "Encoding",
+    "section": "Multiple Variables, Multiple Encodings",
+    "text": "Multiple Variables, Multiple Encodings\nOther visualizations can include multiple variables encoded simultaneously.\n\n\n\n\n\n\n\nFigure 2: Multiple Encodings in a Scatter Plot\n\n\n\n\n\nQuick Check: How Many Variables?\nLook at the scatter plot above. How many different variables are being encoded? What visual properties are being used?\n\n\n\n\n\n\nAnswer\n\n\n\n\n\nFour variables are being encoded:\n\nX-position: Variable 1 (horizontal axis data)\nY-position: Variable 2 (vertical axis data)\n\nSize of the dot: Variable 3 (represented by different bubble sizes). Note that this is area. More later…\nColor of the dot: Variable 4 (represented by different colors/hues)",
+    "crumbs": [
+      "L07: Visualizations",
+      "Encoding"
+    ]
+  },
+  {
+    "objectID": "07-visualizations/encoding.html#matching-encodings-to-variable-types",
+    "href": "07-visualizations/encoding.html#matching-encodings-to-variable-types",
+    "title": "Encoding",
+    "section": "Matching Encodings to Variable Types",
+    "text": "Matching Encodings to Variable Types\nAs we learned when studying variables, different variable types (numerical vs. categorical, discrete vs. continuous, ordinal vs. nominal) have different properties. When creating visualizations, we need to match our encoding choices to these variable types.\n\n\n\n\n\n\n\nFigure 3: Recall: Variable Types\n\n\n\n\n\n\n\n\n\n\nKey Principle\n\n\n\nNot all encodings work well with all variable types. The effectiveness depends on how well the visual property matches the data type.\n\n\nThe table below summarizes which visual encodings work best for different types of variables. Understanding these patterns will help you make better choices when designing your visualizations:\n\nEffectiveness of encodings by variable type\n\n\n\n\n\n\n\n\nVariable Type\nMost Effective Encodings\nLess Effective\nWhy\n\n\n\n\nNumerical\n• Position (X, Y)• Length• Area\n• Color hue• Shape\nHumans can judge quantity differences\n\n\nCategorical\n• Color hue• Shape• Position (grouping)\n• Length• Area\nAvoids implying false ordering",
+    "crumbs": [
+      "L07: Visualizations",
+      "Encoding"
+    ]
+  },
+  {
+    "objectID": "07-visualizations/encoding.html#common-encoding-mistakes",
+    "href": "07-visualizations/encoding.html#common-encoding-mistakes",
+    "title": "Encoding",
+    "section": "Common Encoding Mistakes",
+    "text": "Common Encoding Mistakes\n\nWhat’s Wrong with This?\n\n\n\n\n\n\n\nFigure 4: Problematic Car Manufacturer Chart\n\n\n\n\nProblem: This graph implies that Swedish cars are “greater” than cars from other countries in some sense, when they’re not. If the variable is just “country of origin” (nominal categorical), using length encoding suggests an ordering that doesn’t exist.\n\n\n\n\n\n\nKey Principle\n\n\n\nThe variable type determines the types of plots (and hence, encodings) that are appropriate.",
+    "crumbs": [
+      "L07: Visualizations",
+      "Encoding"
+    ]
+  },
+  {
+    "objectID": "07-visualizations/encoding.html#summary",
+    "href": "07-visualizations/encoding.html#summary",
+    "title": "Encoding",
+    "section": "Summary",
+    "text": "Summary\nEncodings translate variables into visual properties and serve as the fundamental building blocks of data visualization. However, not all encodings work for all variables - effectiveness depends on matching visual properties to data types. The power of encoding lies in how multiple variables can be encoded simultaneously, enabling rich, multidimensional visualizations. Success requires choosing encodings thoughtfully by considering your data types, audience, and message.\nOver the next few chapters, we’ll learn how to create several kinds of plots and learn when each encoding approach is most appropriate.",
+    "crumbs": [
+      "L07: Visualizations",
+      "Encoding"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "About these Course Notes",
     "section": "",
-    "text": "A visualization is a way to represent data in a visual format. In practice, we use visualizations to explore patterns and communicate results.",
+    "text": "These course notes were compiled and created for Data 6: Introduction to Computational Thinking with Data Science and Society. This is an introductory, interdisciplinary course that focuses on the principles of computational thinking for the purposes exploratory data analysis and computational social science.",
     "crumbs": [
-      "L07: Visualizations"
+      "Home / About"
     ]
   },
   {
-    "objectID": "07-visualizations/index.html#why-visualization-matters",
-    "href": "07-visualizations/index.html#why-visualization-matters",
-    "title": "Introduction to Visualizations",
-    "section": "Why Visualization Matters",
-    "text": "Why Visualization Matters\nVisualization serves two primary purposes:\n\nTo further your own understanding of your results\nTo communicate your results with others\n\nCreating good visualizations is both an art and a science. There is often no single “correct” way to visualize data. However, we must be careful and deliberate when creating visualizations, especially when they will be used in real-world decision-making.\nTo better understand these principles in action, let’s examine how humans have used visual representations throughout history to understand and communicate complex information. The following examples in the next page demonstrate powerful uses of data visualization that have shaped our understanding of the world.",
+    "objectID": "index.html#disclaimer-is-this-a-textbook",
+    "href": "index.html#disclaimer-is-this-a-textbook",
+    "title": "About these Course Notes",
+    "section": "Disclaimer: Is this a textbook?",
+    "text": "Disclaimer: Is this a textbook?\nThese lecture notes are exactly that—lecture notes. That means that while they may follow the beats of class, they may not contain all the context needed to fully understand the course material and its theoretically underpinnings. This is a limitation of this curriculum being new and interdisciplinary. We source from many other foundational texts as needed; these textbook chapters are linked within the lecture notes themselves. You are expected to read these external links.",
     "crumbs": [
-      "L07: Visualizations"
+      "Home / About"
     ]
   },
   {
-    "objectID": "07-visualizations/index.html#historical-examples",
-    "href": "07-visualizations/index.html#historical-examples",
-    "title": "Introduction to Visualizations",
-    "section": "Historical Examples",
-    "text": "Historical Examples\n\nThe World’s First Map (~6200 BC)\nWhat do you see when you look at this ancient artifact?\n\n\n\n\n\n\n\nFigure 1: The World’s First Map\n\n\n\n\nThis is a map depicting the town of Konya, Turkey - supposedly the world’s first map, dating back to approximately 6200 BC. Even in prehistoric times, humans recognized the power of visual representation to communicate spatial relationships and important information.\n\n\nJohn Snow’s Cholera Map (1854)\n\n\n\n\n\n\nRead Inferential Thinking\n\n\n\nRead Ch 2.1, which describes in detail John Snow’s groundbreaking use of data visualization during the 1854 cholera epidemic.\nThis story demonstrates how observation and visualization can lead to life-saving discoveries, even when the underlying scientific theory (germ theory) wasn’t yet established.\n\n\n\n\n\n\n\n\nData Visualization Saves Lives\n\n\n\nOne of the most famous examples of data visualization directly saving human lives.\n\n\nThe Problem: In August 1854, a massive cholera outbreak was devastating the overcrowded SoHo district of London. Hundreds were dying within days, and the prevailing “miasma theory” blamed bad air and smells.\nThe Solution: Dr. John Snow was skeptical of the miasma theory and suspected contaminated water. He created a revolutionary approach that became standard in epidemiology: he drew a map.\n\n\n\n\n\n\n\nFigure 2: John Snow’s Cholera Map\n\n\n\n\nWhat the map revealed:\n\nDeaths were clustered around the Broad Street pump\nHouses closer to other pumps still used Broad Street (due to street layout)\nThe Lion Brewery had no deaths (workers drank beer and had their own well)\nScattered distant deaths were children who drank from the pump on their way to school\n\nThe Impact: Snow’s map convinced local authorities to remove the handle of the Broad Street pump. Later investigation revealed that a cesspit just feet away had been leaking sewage into the well, contaminating the water with cholera.\n\n\nFlorence Nightingale’s Rose Diagram (1850s)\nFlorence Nightingale wasn’t just a pioneering nurse, she was also an innovative data visualizer. During the Crimean War, she created what’s now called a “rose diagram” or “coxcomb chart” to visualize the causes of death among British soldiers.\n\n\n\n\n\n\n\nFigure 3: Florence Nightingale’s Rose Diagram\n\n\n\n\nHer visualization revealed a shocking truth: more soldiers were dying from preventable diseases than from battle wounds. This wasn’t just a pretty chart, it was a powerful argument that drove major reforms in military medical care. Nightingale understood that abstract statistics about mortality rates couldn’t compete with the visual impact of her rose petals, where the size of each segment made the disparity impossible to ignore.",
+    "objectID": "index.html#course-links",
+    "href": "index.html#course-links",
+    "title": "About these Course Notes",
+    "section": "Course Links",
+    "text": "Course Links\ndata6.org: Syllabi and assignments for semesters at UC Berkeley.\nWe strongly recommend supplementing the notes presented here with the fantastic foundational texts prepared by UC Berkeley faculty instructors in Stat 20, Data 8, and CS 61A:\n\nData 8: Computational and Inferential Thinking: The Foundations of Data Science, 2nd Edition, by Ani Adhikari, John DeNero, David Wagner.\nCS 61A: Composing Programs, by John DeNero.\nStat 20: Course Notes by Andrew Bray.",
     "crumbs": [
-      "L07: Visualizations"
+      "Home / About"
     ]
   },
   {
-    "objectID": "07-visualizations/index.html#modern-examples",
-    "href": "07-visualizations/index.html#modern-examples",
-    "title": "Introduction to Visualizations",
-    "section": "Modern Examples",
-    "text": "Modern Examples\n\nMaya Lin’s Vietnam War Memorial (1982)\nNot all data visualization involves charts and graphs. Maya Lin’s Vietnam War Memorial in Washington DC proves that data can be deeply emotional and memorial, not just analytical.\n\n\n\n\n\n\n\nFigure 4: Vietnam War Memorial\n\n\n\n\nEach of the 58,000+ names etched into the black granite represents one life lost. The chronological arrangement tells the story of the war’s progression through time, while the reflective surface creates an intimate connection between viewers and the data you literally see yourself reflected among the names. This memorial demonstrates that the most powerful visualizations don’t just inform us; they transform how we feel about the information.\n\n\nCOVID-19 Case Tracking (2022)\nDuring the COVID-19 pandemic, data visualization became part of daily life. Suddenly, everyone from epidemiologists to elementary school students was reading line charts showing case trends and interpreting what those curves meant for their communities.\n\n\n\n\n\n\n\nFigure 5: COVID-19 Case Tracking\n\n\n\n\nGoogle’s COVID tracking dashboard exemplified how modern visualization must be both accessible and updateable in real-time. The time series charts showed trends over months with clear visual indicators of peaks and valleys, but more importantly, they translated complex epidemiological data into something any concerned citizen could understand.",
+    "objectID": "index.html#license",
+    "href": "index.html#license",
+    "title": "About these Course Notes",
+    "section": "License",
+    "text": "License\nThe contents of this work are licensed for free consumption under the following license: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International",
     "crumbs": [
-      "L07: Visualizations"
+      "Home / About"
     ]
   },
   {
-    "objectID": "07-visualizations/index.html#reflection-questions",
-    "href": "07-visualizations/index.html#reflection-questions",
-    "title": "Introduction to Visualizations",
-    "section": "Reflection Questions",
-    "text": "Reflection Questions\nAs you think about these examples, consider:\n\nWhat made each visualization effective for its time and purpose?\nHow might these visualizations be different if created with modern tools?\nWhat can we learn from these examples about designing effective visualizations today?",
+    "objectID": "index.html#acknowledgments",
+    "href": "index.html#acknowledgments",
+    "title": "About these Course Notes",
+    "section": "Acknowledgments",
+    "text": "Acknowledgments\nMany faculty instructors and teaching assistants have contributed to the creation of Data 6. Special thanks to Suraj Rampure for one of the early iterations of this course.\nThis material is based upon work supported by the U.S. National Science Foundation under award Nos. 2245877, 2245878, 2245879, and the California Learning Lab. Please read more about our DUBOIS project activities here: https://dubois-ctds.github.io/",
     "crumbs": [
-      "L07: Visualizations"
+      "Home / About"
     ]
   },
   {
-    "objectID": "07-visualizations/index.html#next-steps",
-    "href": "07-visualizations/index.html#next-steps",
-    "title": "Introduction to Visualizations",
-    "section": "Next Steps",
-    "text": "Next Steps\nNow that we’ve seen the power of visualization through these historical examples, let’s explore the theory behind what makes visualizations effective.",
-    "crumbs": [
-      "L07: Visualizations"
-    ]
-  },
-  {
-    "objectID": "07-visualizations/index.html#external-reading",
-    "href": "07-visualizations/index.html#external-reading",
-    "title": "Introduction to Visualizations",
-    "section": "External Reading",
-    "text": "External Reading\n\n(mentioned in notes) Computational and Inferential Thinking, Ch 2.1",
-    "crumbs": [
-      "L07: Visualizations"
-    ]
-  },
-  {
-    "objectID": "01-intro/jupyter-notebook.html",
-    "href": "01-intro/jupyter-notebook.html",
-    "title": "Jupyter Notebooks",
-    "section": "",
-    "text": "This course uses the Python 3 programming language in the Jupyter Notebook environment. By the end of this note, you’ll understand what that means.",
-    "crumbs": [
-      "L01: Introduction",
-      "Jupyter Notebooks"
-    ]
-  },
-  {
-    "objectID": "01-intro/jupyter-notebook.html#python-3",
-    "href": "01-intro/jupyter-notebook.html#python-3",
-    "title": "Jupyter Notebooks",
-    "section": "Python 3",
-    "text": "Python 3\nFrom Wikipedia:\n\nA computer program is a [set or sequence] of instructions in a programming language.\n\nCode refers to a computer program written in a particular programming language. In this class, we use the Python 3 programming language. It is powerful and widely used in many computing applications, from web development, scripting, and scientific computing to data science and machine learning. It’s also extremely popular worldwide (Statista, 2025).\nComputer programs are nothing more than recipes: we write programs that tell the computer exactly what to do, and it does exactly that—nothing more, and nothing less.\nYou may be wondering—how can computers be simultaneously so powerful and so primitive? Why does everything in today’s age involve computers or computational technology? In part, this “age of computing” can considered as a complex system of advanced programs run on powerful computing machines to transform complex data. All three of these components involve human scientists and engineers: to write and design the programs, to collect and structure the data, and to design and build the computing machines.",
-    "crumbs": [
-      "L01: Introduction",
-      "Jupyter Notebooks"
-    ]
-  },
-  {
-    "objectID": "01-intro/jupyter-notebook.html#jupyter-notebooks",
-    "href": "01-intro/jupyter-notebook.html#jupyter-notebooks",
-    "title": "Jupyter Notebooks",
-    "section": "Jupyter Notebooks",
-    "text": "Jupyter Notebooks\nIn order to run computer programs, we need a way to execute code written in a programming language on a computer. Development, also known as process of designing, iterating, and testing computer programs, often takes place in an environment which can support all of these tasks.\nThe environment we will use is Jupyter Notebook, which allows us to write and run code within a single .ipynb document (i.e., notebook). They also allow us to embedded text and code.\n\n\n\n\n\n\n\nFigure 1: An example of a Jupyter Notebook.\n\n\n\n\nThere’s a lot going on in the above Jupyter Notebook screenshot: there is code, there is output from running code, there are pictures, and there is (non-code) text. We’ll get to understanding all of these components in due time.\nBut this screenshot also elucidates why a tool like Jupyter Notebook is so important to doing data science work. Data Science often requires the use of computation and visualizations and the production of written reports. Notebooks support all three of these, in the same document.\n\n\n\n\n\n\nAside\n\n\n\n\n\nThe Project Jupyter community actually started at UC Berkeley. Professor Fernando Perez of Statistics created an interactive Python environment as part of his graduate studies in Physics, and the rest is history.\n\n\n\n\n\n\n\n\n\nAside 2\n\n\n\n\n\nAside 2: Jupyter can run things other than Python—in fact, Jupyter’s namesake is the three core languages it supports: Julia, Python, and R.\n\n\n\nIf you take more Computer Science and Data Science classes, you will learn about more tools for programming and statistics. In this class we will focus on using Jupyter Notebooks to develop Python code.",
-    "crumbs": [
-      "L01: Introduction",
-      "Jupyter Notebooks"
-    ]
-  },
-  {
-    "objectID": "01-intro/jupyter-notebook.html#datahub",
-    "href": "01-intro/jupyter-notebook.html#datahub",
-    "title": "Jupyter Notebooks",
-    "section": "DataHub",
-    "text": "DataHub\nDataHub is the web-based environment we will use in this course for developing and running Jupyter Notebooks. Some features:\n\nDataHub is a Berkeley-hosted server that runs Jupyter notebooks.\nAll students have their own DataHub “container”; think of this as your own virtual computer.\nThis is where you will work on all assignments.\nYou will not need to install anything locally (meaning that you could theoretically do all assignments for this class on your phone, but we recommend giving your fingers and your eyes a break). All you need is a web browser.\nCourse staff can access everything in your DataHub to help debug your code.\n\n\n\n\n\n\n\nAccess DataHub\n\n\n\nIn this class, there are two common ways to develop Jupyter Notebooks:\n\nGo to http://datahub.berkeley.edu. Make a new notebook, or open an existing one.\nFrom our course website, often by clicking on code links or assignment links. These will often create a copy of a notebook skeleton, which you can then run or edit.\n\n\n\nGenerally, we will not be creating notebooks from scratch. Instead, the course staff have helped write scaffolding code and instructions for activities that are designed to help you understand the fundamentals.",
-    "crumbs": [
-      "L01: Introduction",
-      "Jupyter Notebooks"
-    ]
-  },
-  {
-    "objectID": "01-intro/jupyter-notebook.html#jupyter-notebook-internals",
-    "href": "01-intro/jupyter-notebook.html#jupyter-notebook-internals",
-    "title": "Jupyter Notebooks",
-    "section": "Jupyter Notebook Internals",
-    "text": "Jupyter Notebook Internals\n\n\n\n\n\n\nCaution\n\n\n\nIf you have not yet tried interacting with your first Jupyter Notebook yet, this section will not make much sense. We recommend skipping ahead to the next set of notes, then coming back and referring to this as you build more notebooks.\n\n\nJupyter Notebooks are made up of cells. There are two main types of cells:\nCode cells. This is where you write and execute code. When run, Python code cells are evaluated as a Python code snippet, one line at a time. The cell output displayed is the value of the last evaluated expression:\n\n\n\n\n\n\n\nFigure 2: Both expressions are evaluated, but the result of the last expression’s evaluation is considered the output of the code cell.\n\n\n\n\nWe will discuss this output/display phenomenon more in future notes.\nTo run a code cell, you can either hit the “Run” button in the Toolbar, or you can use a keyboard shortcut: &lt;SHIFT&gt;+&lt;ENTER&gt;, which runs the cell and advances to the next cell. We recommend keyboard shortcuts; see below.\nMarkdown cells. This is where you write text and images that aren’t Python code. Markdown is a language used for formatting text. A Markdown cell will always display its formatting when it is not in edit mode.\n\n\n\n\n\n\n\nFigure 3: Left screenshot shows un-evaluated code cell and raw Markdown cell; right screenshot shows evaluated code cell and formatted text. To render formatted text for a selected markdown cell, exit editing mode for that cell. This screenshot starts with the code cell selected, then runs both that code cell and “runs” the markdown cell below.\n\n\n\n\nHere is a guide to Markdown formatting. You’ll explore Markdown more in lab.\n\nKeyboard Shortcuts\nWhile you can manage most of your notebook development by leveraging the Toolbar, many programmers (including me!) prefer using keyboard shortcuts. This minimizes use of the mouse/trackpad and keeps the hands on the keyboard. Together with stretching and taking breaks, keyboard shortcuts will reduce wrist cramps and improve your programming concentration.\nEdit mode vs. command mode: Hit the &lt;ESCAPE&gt; key on your keyboard to switch from edit mode to command mode. Keyboard shortcuts are specific to the mode you’re using:\n\nEdit mode: when you’re actively typing in the cell. Undo is &lt;CTRL/CMD&gt; + Z.\nCommand mode: when you’re not actively typing in the cell. Undo is z.\n\n\n\n\n\n\n\n\n\nAction\nMode\nKeyboard shortcut\n\n\n\n\nRun cell + jump to next cell*\nEither (puts you in edit mode)\n&lt;SHIFT&gt; + &lt;ENTER&gt;\n\n\nRun cell + stay on this cell\nEither (puts you in edit mode)\n&lt;CTRL/CMD&gt; + &lt;ENTER&gt;\n\n\nSave notebook\nEither\n&lt;CTRL/CMD&gt; + &lt;S&gt;\n\n\nSwitch to command mode*\nEither (puts you in command mode)\n&lt;ESCAPE&gt;\n\n\nSwitch to edit mode*\nCommand\n&lt;ENTER&gt;\n\n\nComment out the current line\nEdit\n&lt;CTRL/CMD&gt; + /\n\n\nCreate new cell above/below\nCommand\nA/B\n\n\nDelete cell\nCommand\nDD\n\n\nConvert cell to Markdown\nCommand\nM\n\n\nConvert cell to code\nCommand\nY\n\n\nShow all shortcuts\nCommand\nH\n\n\n\nThe above table should be used as a reference throughout the semester; don’t try to memorize these right now. And remember, you don’t have to use these shortcuts; you can always use the toolbar. Regardless, we’ve annotated the most useful keyboard shortcuts with an asterisk (*).\nThere are plenty more keyboard shortcuts available. Let us know if you find a good guide.",
-    "crumbs": [
-      "L01: Introduction",
-      "Jupyter Notebooks"
-    ]
-  },
-  {
-    "objectID": "01-intro/index.html",
-    "href": "01-intro/index.html",
+    "objectID": "01-intro/deprecated-index.html",
+    "href": "01-intro/deprecated-index.html",
     "title": "Course Introduction",
     "section": "",
-    "text": "Check out our slides for today! No additional notes!",
-    "crumbs": [
-      "L01: Introduction"
-    ]
+    "text": "Consider this class as an application of computational thinking to data science. Naturally, Data Science can cover multiple contexts, and in this one we focus on social science contexts.\nThree pillars:\n\nComputer Science: Computational Thinking\nData Science: Exploratory data analysis.\nSocial Science: Computational Social Science\n\n(need to translate into learning objectives, but you get it)\nThis course can serve as a precursor to a statistics and inference course like Data 8 or as a standalone introduction to computational thinking for social scientists."
   },
   {
-    "objectID": "01-intro/index.html#what-will-i-learn-in-this-course",
-    "href": "01-intro/index.html#what-will-i-learn-in-this-course",
+    "objectID": "01-intro/deprecated-index.html#what-will-i-learn-in-this-course",
+    "href": "01-intro/deprecated-index.html#what-will-i-learn-in-this-course",
     "title": "Course Introduction",
     "section": "",
-    "text": "Check out our slides for today! No additional notes!",
-    "crumbs": [
-      "L01: Introduction"
-    ]
+    "text": "Consider this class as an application of computational thinking to data science. Naturally, Data Science can cover multiple contexts, and in this one we focus on social science contexts.\nThree pillars:\n\nComputer Science: Computational Thinking\nData Science: Exploratory data analysis.\nSocial Science: Computational Social Science\n\n(need to translate into learning objectives, but you get it)\nThis course can serve as a precursor to a statistics and inference course like Data 8 or as a standalone introduction to computational thinking for social scientists."
   },
   {
-    "objectID": "01-intro/index.html#external-reading",
-    "href": "01-intro/index.html#external-reading",
+    "objectID": "01-intro/deprecated-index.html#computational-thinking",
+    "href": "01-intro/deprecated-index.html#computational-thinking",
     "title": "Course Introduction",
-    "section": "External Reading",
-    "text": "External Reading\n\nComputational and Inferential Thinking, Ch 1.1",
-    "crumbs": [
-      "L01: Introduction"
-    ]
+    "section": "Computational Thinking",
+    "text": "Computational Thinking\n\nWhat is it?\n\nDefine computational thinking\n\nCommunications of the ACM, Jeanette Wing (PDF) and this follow-up article\n\nComputational Thinking is the thought processes involved in formulating problems and their solutions so that the solutions are represented in a form that can be effectively carried out by an information-processing agent (Cuny, Snyder, and Wing, 2010).\n\n\n\nAbstraction: A Core Concept\nWhat does this definition mean in the age of data?\n\nDefine abstraction\n\n\n“Abstraction gives us the power to scale and deal with complexity.” (Wing, 2010)"
   },
   {
-    "objectID": "06-variables-ii/sample-population.html",
-    "href": "06-variables-ii/sample-population.html",
-    "title": "Sample vs. Population",
-    "section": "",
-    "text": "Given a research question, the population is the group you want to learn something about However, directly studying the population as a whole is often not possible! Data might not exist at that scale, or it might be too costly to collect, if it’s even possible to gather that information.\nMany times, we instead study a sample of the population. If the sample is a good representation of the population, we can make useful analyses at a much lower cost.\n\n\nThe set of individuals we actually draw our sample from is the sampling frame. Depending on how we select our sample, we may miss individuals from the population we’re interested in, and we might also include individuals that are not in the population.",
-    "crumbs": [
-      "L06: Variables II",
-      "Sample vs. Population"
-    ]
-  },
-  {
-    "objectID": "06-variables-ii/sample-population.html#population-vs.-sample",
-    "href": "06-variables-ii/sample-population.html#population-vs.-sample",
-    "title": "Sample vs. Population",
-    "section": "",
-    "text": "Given a research question, the population is the group you want to learn something about However, directly studying the population as a whole is often not possible! Data might not exist at that scale, or it might be too costly to collect, if it’s even possible to gather that information.\nMany times, we instead study a sample of the population. If the sample is a good representation of the population, we can make useful analyses at a much lower cost.\n\n\nThe set of individuals we actually draw our sample from is the sampling frame. Depending on how we select our sample, we may miss individuals from the population we’re interested in, and we might also include individuals that are not in the population.",
-    "crumbs": [
-      "L06: Variables II",
-      "Sample vs. Population"
-    ]
-  },
-  {
-    "objectID": "06-variables-ii/sample-population.html#examples",
-    "href": "06-variables-ii/sample-population.html#examples",
-    "title": "Sample vs. Population",
-    "section": "Examples",
-    "text": "Examples\n\n\n\n\n\n\n\nFigure 1: A sampling frame may include individuals not in our population.\n\n\n\n\n\nExamples of target populations and the collected samples.\n\n\n\n\n\n\nTarget Population\nCollected sample\n\n\n\n\nStudent body of the school\nA specific classroom of students at the school\n\n\nA bag of 100 marbles\n10 marbles from the bag\n\n\nComputing Education Research (CER) papers\nPapers published at the American Society of Engineering Education (ASEE) conference\n\n\n\nIn the last example of the table, it is possible some of the research papers published at the ASEE conference are not specific to CER and may perhaps be focused on education in other engineering fields, like mechanical engineering or civil engineering. The sampling frame may be inferred to be the ASEE conference, and then the sample collected would need to be adjusted to include just the CER papers we want.\n\nA longer example\nLet’s say you’re planning a social event for all Data Science-declared sophomores (second-years). Since you only have the budget to cater pizza, you want to figure out what pizza toppings Data Science sophomores enjoy, and buy pizza toppings according to how popular they are.\nIn order to figure out the most popular flavors, you survey every student walking into or out of Warren Hall (where Data Science course office hours are located) from 12PM to 1PM by asking what their favorite topping is. Assume that everyone responds.\n\nPopulation: Data Science sophomores\nSampling frame: Students walking into/out of Warren Hall between 12PM and 1PM\n\nIf we draw a sample from this sampling frame we may not get a representative sample because we will get respondents from not just the sophomore pool, but also freshman, juniors, seniors, non-Data Science majors, and generally many more students than our target population. These students may have different preferences than Data Science sophomores.",
-    "crumbs": [
-      "L06: Variables II",
-      "Sample vs. Population"
-    ]
-  },
-  {
-    "objectID": "06-variables-ii/sample-population.html#how-do-we-construct-representative-samples",
-    "href": "06-variables-ii/sample-population.html#how-do-we-construct-representative-samples",
-    "title": "Sample vs. Population",
-    "section": "How do we construct representative samples?",
-    "text": "How do we construct representative samples?\nWe will (hopefully) get into this topic later this semester.",
-    "crumbs": [
-      "L06: Variables II",
-      "Sample vs. Population"
-    ]
-  },
-  {
-    "objectID": "06-variables-ii/index.html",
-    "href": "06-variables-ii/index.html",
-    "title": "Causality vs. EDA",
-    "section": "",
-    "text": "Read Inferential Thinking\n\n\n\nRead all of Chapter 2, which describes in detail experimental setup and design. It covers a core story to data scientists: John Snow and the Broad Street Pump.\nBefore continuing, make sure that you are familiar with the following terminology:\n\nobservational study\ncausality\nassociation\ncomparison\ntreatment group\ncontrol group\nrandomized controlled trial (RCT)",
-    "crumbs": [
-      "L06: Variables II"
-    ]
-  },
-  {
-    "objectID": "06-variables-ii/index.html#john-snow-and-the-broad-street-pump",
-    "href": "06-variables-ii/index.html#john-snow-and-the-broad-street-pump",
-    "title": "Causality vs. EDA",
-    "section": "",
-    "text": "Read Inferential Thinking\n\n\n\nRead all of Chapter 2, which describes in detail experimental setup and design. It covers a core story to data scientists: John Snow and the Broad Street Pump.\nBefore continuing, make sure that you are familiar with the following terminology:\n\nobservational study\ncausality\nassociation\ncomparison\ntreatment group\ncontrol group\nrandomized controlled trial (RCT)",
-    "crumbs": [
-      "L06: Variables II"
-    ]
-  },
-  {
-    "objectID": "06-variables-ii/index.html#randomized-controlled-trials-vs.-observational-studies",
-    "href": "06-variables-ii/index.html#randomized-controlled-trials-vs.-observational-studies",
-    "title": "Causality vs. EDA",
-    "section": "Randomized Controlled Trials vs. Observational Studies",
-    "text": "Randomized Controlled Trials vs. Observational Studies\nIn the Broad Street Pump experiment, John Snow established a causal relationship (between what? Read Inferential Thinking Chapter 2 to find out) because he noted that there was no systematic difference between the two different groups observed other than along a single variable dimension.\nIn modern days, randomized controlled trials are excellent ways to compare two groups of otherwise similar individuals. However, in the majority of this class we will not be able to conduct a randomized controlled trial. This is because the datasets we analyze are almost all observational studies and not experiments. Moreover, these datasets are largely pre-existing materials collected by other researchers, and we may not know the entire picture of how they collected the data. As a result, in this class we seek to understand associations between variables, and we will almost never seek to establish causal relationships between variables.\nTo further understand causality, we encourage you to take inferential thinking courses like Data 8, Stat 20, and a wide range of Statistics courses.",
-    "crumbs": [
-      "L06: Variables II"
-    ]
-  },
-  {
-    "objectID": "06-variables-ii/index.html#confounding",
-    "href": "06-variables-ii/index.html#confounding",
-    "title": "Causality vs. EDA",
-    "section": "Confounding",
-    "text": "Confounding\nFrom Inferential Thinking, Ch 3.2 Establishing Causality:\n\nIn an observational study, if the treatment and control groups differ in ways other than the treatment, it is difficult to make conclusions about causality.\nAn underlying difference between the two groups (other than the treatment) is called a confounding factor, because it might confound you (that is, mess you up) when you try to reach a conclusion.\n\nConfounding occurs when two variables can be consistently associated with each other even when one does not cause the other.\nTo determine whether a confounding variable can account for the association between two variables, we can try to disaggregate by different values of the confounding variable.\nThis disaggregation process can be repeated exhaustively for a potentially infinite number of confounding variables. Researchers generally don’t do this. Instead, we usually rely on assumptions drawn from social science theory or findings from prior studies. This process can narrow our search of potential confounding variables that may influence the association between two variables.",
-    "crumbs": [
-      "L06: Variables II"
-    ]
-  },
-  {
-    "objectID": "06-variables-ii/index.html#exploratory-data-analysis",
-    "href": "06-variables-ii/index.html#exploratory-data-analysis",
-    "title": "Causality vs. EDA",
+    "objectID": "01-intro/deprecated-index.html#exploratory-data-analysis",
+    "href": "01-intro/deprecated-index.html#exploratory-data-analysis",
+    "title": "Course Introduction",
     "section": "Exploratory Data Analysis",
-    "text": "Exploratory Data Analysis\nIf we’re not going to be studying causal relationships in this class, what will we be looking at? In this course we will look deeply at a core component of Data Science: Exploratory Data Analysis, or EDA.\nExploratory Data Analysis (EDA) is like detective work. As coined by the famous American statistician and mathematician John Tukey (we will discuss Tukey numbers soon):\n\nExploratory data analysis is an attitude, a state of flexibility, a willingness to look for those things that we believe are not there, as well as those that we believe to be there.\n\nMore formally, Exploratory Data Analysis (EDA) is the process of understanding a new dataset. It is an open-ended, informal analysis that involves familiarizing ourselves with the variables present in the data, discovering potential hypotheses, and identifying possible issues with the data.",
-    "crumbs": [
-      "L06: Variables II"
-    ]
+    "text": "Exploratory Data Analysis\nSee Data 8 book: Chapter 1\n\nData Science is about drawing useful conclusions from large and diverse data sets through exploration, prediction, and inference. Exploration involves identifying patterns in information. Prediction involves using information we know to make informed guesses about values we wish we knew. Inference involves quantifying our degree of certainty: will the patterns that we found in our data also appear in new observations? How accurate are our predictions? Our primary tools for exploration are visualizations and descriptive statistics, for prediction are machine learning and optimization, and for inference are statistical tests and models.\n\nFrom Data 8 (1.1 Introduction):\n\nData are descriptions of the world around us, collected through observation and stored on computers. Computers enable us to infer properties of the world from these descriptions. Data science is the discipline of drawing conclusions from data using computation."
   },
   {
-    "objectID": "06-variables-ii/index.html#data-wrangling",
-    "href": "06-variables-ii/index.html#data-wrangling",
-    "title": "Causality vs. EDA",
-    "section": "Data Wrangling",
-    "text": "Data Wrangling\nA process very closely related to EDA is data wrangling, often called data cleaning. Data wrangling is the process of transforming raw data to facilitate subsequent analysis and can address issues like unclear structure or formatting, missing or corrupted values, unit conversions, and so on.\nEDA and data cleaning are often thought of as an “infinite loop,” with each process driving the other.\nFortunately, in our classes we will try our best to work with “clean” datasets. These datasets will often have already been preprocessed for cleaner analysis, allowing us to explore and ask questions much more easily than if we were stuck with messier data.",
-    "crumbs": [
-      "L06: Variables II"
-    ]
+    "objectID": "01-intro/deprecated-index.html#computational-social-science",
+    "href": "01-intro/deprecated-index.html#computational-social-science",
+    "title": "Course Introduction",
+    "section": "Computational Social Science",
+    "text": "Computational Social Science\nWhat does it mean to study social phenomena?\nResearch methodologies: quantitative data, qualitative data\nMost methods contain a mix of both\nHow Define experiments\nIn the real world"
   },
   {
-    "objectID": "06-variables-ii/index.html#external-reading",
-    "href": "06-variables-ii/index.html#external-reading",
-    "title": "Causality vs. EDA",
+    "objectID": "01-intro/deprecated-index.html#external-reading",
+    "href": "01-intro/deprecated-index.html#external-reading",
+    "title": "Course Introduction",
     "section": "External Reading",
-    "text": "External Reading\n\n(mentioned in notes) Computational and Inferential Thinking, Ch 5.1\n“Chapter 15: From Concepts to Models.” Elizabeth Heger Boyle, Deborah Carr, Benjamin Cornwell, Shelley Correll, Robert Crosnoe, Jeremy Freese, and Waters, Mary C. 2017. The Art and Science of Social Research. New York: W. W. Norton & Company.",
-    "crumbs": [
-      "L06: Variables II"
-    ]
+    "text": "External Reading\n\nComputational and Inferential Thinking, Ch 1.1"
   },
   {
-    "objectID": "04-tables/index.html",
-    "href": "04-tables/index.html",
-    "title": "Table Fundamentals",
+    "objectID": "01-intro/programming-basics.html",
+    "href": "01-intro/programming-basics.html",
+    "title": "Programming Basics",
     "section": "",
-    "text": "Read Inferential Thinking\n\n\n\nRead Ch 6 intro, which describes the Table object type from the datascience library.\nThis is a very dense chapter, as it has lots of Python syntax. We will review it in detail. Before moving on, we encourage you to focus on the following questions:\n\nWhat is the syntax of the with_columns method? How does this method make a table?\nWhat are some table methods?\nWhat Python expression gets you the number of rows? a specific column? (bonus) How does the syntax differ between these two cases?\nIf you are new to programming, it is easy to get lost in the syntax of Python! For today, we will therefore focus on a few high-level goals:\nIn other words, you will not be expected to memorize all aspects of Tables (it’s as if we have a theme in this class…)! But you will have natural impulses for understanding and working with tabular data, many of which directly map to specific Table methods and attributes. To write Python code, then, you will need to learn to work with documentation to do this translation, and—when the precise methods don’t exist—construct new algorithms to achieve what you want. The more familiar you are with the documentation—and consequently, what is possible with Tables—the more you can focus on algorithmic thinking.",
+    "text": "Let’s get programming!\nThe first goal of this lecture is to demonstrate that some Python programming is as familiar as using a calculator, which you have likely used before.\nThe second goal is to introduce programming terminology—expressions, names, assignments, data types, etc. Learning this terminology is like learning grammar; these terms help us describe precisely what our programs are doing. Getting a handle on the terminology earlier will make it easier to describe the programming concepts. But it does take some memorization…!",
     "crumbs": [
-      "L04: Table Fundamentals"
+      "L01: Introduction",
+      "Programming Basics"
     ]
   },
   {
-    "objectID": "04-tables/index.html#definitions",
-    "href": "04-tables/index.html#definitions",
-    "title": "Table Fundamentals",
-    "section": "Definitions",
-    "text": "Definitions\nTo begin, recall the terminology we have been using to describe tables so far:\n\nTable: Retangular data structure.\n\nColumns (vertical) correspond to variables (AKA features, or attributes) that measure and operationalize social concepts. We discuss variables and social concepts more in another note.\nRows (horizontal) correspond to records (AKA entries), which are specific values of variables for a given individual, group, etc.—whatever your unit of analysis is.\n\n\nWe work with the datascience package’s Table.\n\nfrom datascience import *\nimport numpy as np",
+    "objectID": "01-intro/programming-basics.html#expressions",
+    "href": "01-intro/programming-basics.html#expressions",
+    "title": "Programming Basics",
+    "section": "Expressions",
+    "text": "Expressions\n\n\n\n\n\n\nRead Inferential Thinking\n\n\n\nRead Ch 3.1, which describes in detail how Python evaluates numeric expressions.\nBefore continuing, make sure you understand the terminology:\n\nexpression\nevaluation\nsyntax\noperators\noperands\n\n\n\n\nSummary of Numeric Operators\n\nCommon Python operators for numeric data types\n\n\n\n\n\n\n\n\nOperator\nSymbol\nExample Expression\nExpression Value\n\n\n\n\nAddition\n+\n2 + 3\n5\n\n\nSubtraction\n-\n15 - 4\n11\n\n\nMultiplication\n*\n-2 * 9\n-18\n\n\nDivision\n/\n15 / 2\n7.5\n\n\nInteger division(Cuts off remainder)\n//\n15 // 2\n7\n\n\nRemainder/Modulo\n%\n19 % 3\n1  (19 ÷ 3 = 6 Remainder 1)\n\n\nExponentiation\n**\n3 ** 2\n9",
     "crumbs": [
-      "L04: Table Fundamentals"
+      "L01: Introduction",
+      "Programming Basics"
     ]
   },
   {
-    "objectID": "04-tables/index.html#todays-dataset-schools",
-    "href": "04-tables/index.html#todays-dataset-schools",
-    "title": "Table Fundamentals",
-    "section": "Today’s Dataset: Schools",
-    "text": "Today’s Dataset: Schools\nThis lecture we will return to the dataset of public universities in California (Wikipedia).\nTo work with this table, we first load it in from a file called data/cal_unis.csv.\n\nschools = Table.read_table('data/cal_unis.csv')\n\nLet’s break down what we meant by “load it in”: * The right-hand-side of the assignment calls a function that returns a datascience Table object from the provided data file. * The left-hand-side of the assignment assigns this object to the Python name schools. * After this assignment statement, then we can use schools as the particular Table object that has the tabular data we want.\nRunning the below cell evaluates schools and displays that tabular data to us:\n\nschools\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\nHumboldt\n6025\n1913\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n\n\nCalifornia State University Channel Islands\nCSU\nCamarillo\nVentura\n6128\n2002\n\n\nCalifornia State University, Dominguez Hills\nCSU\nCarson\nLos Angeles\n16426\n1960\n\n\nCalifornia State University, Chico\nCSU\nChico\nButte\n14183\n1887\n\n\nUniversity of California, Davis\nUC\nDavis\nYolo\n39679\n1905\n\n\nCalifornia State University, Fresno\nCSU\nFresno\nFresno\n23999\n1911\n\n\nCalifornia State University, Fullerton\nCSU\nFullerton\nOrange\n40386\n1957\n\n\nCalifornia State University, East Bay\nCSU\nHayward\nAlameda\n13673\n1957\n\n\n\n\n... (22 rows omitted)\n\n\nLet’s get to exploring and understanding our tabular data!",
+    "objectID": "01-intro/programming-basics.html#names-and-call-expressions",
+    "href": "01-intro/programming-basics.html#names-and-call-expressions",
+    "title": "Programming Basics",
+    "section": "Names and Call Expressions",
+    "text": "Names and Call Expressions\n\n\n\n\n\n\nRead Inferential Thinking\n\n\n\nRead Ch 3.2 and Ch 3.3, which define names and call expressions.\nBefore continuing, make sure you understand the following:\n\nIn Python, a name can be given to a value using an assignment statement (which involves the assignment operator, =).\nA function is a named operation.\nA call expression invokes functions: a function is called on arguments, the argument values are passed into the function; the function then returns the final value to the larger call expression.\nIn Jupyter Notebooks, placing a ? after a function name will bring up a built-in description of that function.\nMost functions in Python are stored in modules (e.g., math) that can be imported via import then called with a dot (e.g., math.log(10)).\n\nTerminology:\n\nname\nassignment statement\nfunction, arguments, return value\ncall expression\n\n\n\nOne analogy for names is suitcase tags. Consider the following assignment statement:\n\nx = 3\n\nThis statement assigns the name x to the value 3. Like a suitcase tag, the name x is bound to the value 3.\n\nx\n\n3\n\n\nPython first evaluates the expression on the right-hand side of the = assignment operator, then binds the name x to the resulting value.\nThe below statement re-assigns the name x. Think of this as moving the suitcase tag to a different suitcase.\n\nx = 1 + 2 * 3 - 4 // 5\nx\n\n7\n\n\n\nA note on function calls\nWe will use the term function call interchangeably with call expression. You will see why when we talk more about defining our own functions\n\n\n\n\n\n\nAssignment statements are not expressions!\n\n\n\nStatements, when executed, do something. Expressions are a type of statement that, when executed, evaluate to values. In Jupyter Notebook code cells, if the last statement in a cell is not an expression, executing that last statement will not produce an output.\nThe first cell above does not end in an expression and therefore does not produce output. The second cell above has two statements; the last one is an expression, which is displayed in the cell output.\n\n\nConsider the below Python code:\n\nx = 4\ny = max(-2, 9) + x\n\nPython executes these two statements sequentially: first, Line 1 is an assignment statement that assigns the name x to 4. Then, Line 2 assigns the name y to the result of evaluating the right-hand-side.",
     "crumbs": [
-      "L04: Table Fundamentals"
+      "L01: Introduction",
+      "Programming Basics"
     ]
   },
   {
-    "objectID": "04-tables/index.html#find-table-dimensions",
-    "href": "04-tables/index.html#find-table-dimensions",
-    "title": "Table Fundamentals",
-    "section": "Find Table Dimensions",
-    "text": "Find Table Dimensions\nFirst off: How many rows and columns are in our schools table?\n\nprint(schools.num_rows)\nprint(schools.num_columns)\n\n32\n6\n\n\nWhat variables are being recorded?\n\nprint(schools.labels)\n\n('Name', 'Institution', 'City', 'County', 'Enrollment', 'Founded')\n\n\nWe didn’t conjure these expressions out of nowhere. Instead, we:\n\nLooked at the Data 6 Python Reference page\nScrolled down to the “Tables and Table Methods” section\nSkimmed the reference until we found documentation that seemed close to what we want\nTranslated the name tbl into schools.\nTried it out\n\nBonus: You’ll notice the “dot” syntax for accessing these values, also known as table attributes. See the Bonus last section for a more detailed explanation of this programming terminology.",
+    "objectID": "01-intro/programming-basics.html#style-and-debugging",
+    "href": "01-intro/programming-basics.html#style-and-debugging",
+    "title": "Programming Basics",
+    "section": "Style and Debugging",
+    "text": "Style and Debugging\nYou may have noticed by now that Jupyter Notebooks are not just by computers to run code. Data scientists also use notebooks to understand how the code facilitates data analysis. We’d therefore like to establish two habits early:\n\nProgramming Style and Comments\nProgramming style involves writing code that is self-evident and understandable by other human beings. It is not sufficient for your code to be functional, i.e., perform the correct computation. It should also be readable and interpretable, for others to reuse and adapt.\nGood style practices can involve comments, meaningful names, whitespace, markdown cells interspersed with code cells, etc. Ch 3.2 of Inferential Thinking describes meaningful names; we discuss comments below.\nComments are used to explain what code does. Good programmers write code that is self-evident and use comments only where necessary.\nIn Python, you can write comments in the same line as code (“in-line” comments) using #:\n\n3 + 4     # simple arithmetic\n\n7\n\n\nThe above shows that both code and comments can be on the same line. In that line, anything after # is a comment and is not evaluated.\n\n\nDebugging\nDebugging is the process of fixing errors, i.e., bugs, in code. Debugging is a huge process and can take up the majority of your coding time.\nErrors in your code can pop up for any number of reasons! Here are some tips:\nTest your code early and often. If you write a lot of code before testing, then you have that much more code to debug and check. Instead, write a bit, test and check, and keep writing. This will require you to know how to decompose, or break down, your solutions into multiple steps that you can test individually. Once you’re comfortable with one step, move onto the next step. That’s right—it’s abstraction!_ Debugging your code will help you better understand computational concepts.\nGet familiar with reading error messages. When Python errors, it may give messages that are initially cryptic. Try the following.\n\nTake a deep breath.\nActually read the message—don’t just focus on what you think it might say. The error message will often include a meaningful name (e.g., SyntaxError or ZeroDivisionError), the line, and an arrow (marked by ^) to where the error occurred.\nThen, try to explain to yourself why this error occurred, before fixing the error. Many beginning programmers will want skip this step, opting to throw everything at the wall and then, once things are fixed, explain what happened. Instead, slow down and try to understand the problem first. Then the solution will be straightforward.\n\nTrace your code, but not at the expense of testing. Code tracing is the process of analyzing Python code, statement by statement and line by line, to understand program execution. This is a visual process and can sometimes be helped along by diagrams. Learning to trace code is learning procedural thinking—it is a key skill that helps break down exactly what your code is doing. Once you get the hang of tracing your code, you may be tempted to debug by just staring at your code—don’t do this! Instead, develop a healthy balance between developing an understanding of your code and testing if your code does what you expect.\n\n\nPractice with Errors\nTry these on for size:\nSyntax errors are errors in writing “valid” Python that cannot even create nonsensical Python code.\n\n3 ** / 4\n\n\n  Cell In[6], line 1\n    3 ** / 4\n         ^\nSyntaxError: invalid syntax\n\n\n\n\nWhy might the below code not error? (Hint: What does - represent?)\n\n9 ** - .5\n\n0.3333333333333333\n\n\nOnce you fix syntax errors, you may still encounter functionality errors, which can be errors caused during execution that leads to your program crashing. Here’s one common one:\n\n5 / 0\n\n\n---------------------------------------------------------------------------\nZeroDivisionError                         Traceback (most recent call last)\nCell In[8], line 1\n----&gt; 1 5 / 0\n\nZeroDivisionError: division by zero\n\n\n\n```",
     "crumbs": [
-      "L04: Table Fundamentals"
+      "L01: Introduction",
+      "Programming Basics"
     ]
   },
   {
-    "objectID": "04-tables/index.html#column-first-paradigm",
-    "href": "04-tables/index.html#column-first-paradigm",
-    "title": "Table Fundamentals",
-    "section": "Column-First Paradigm",
-    "text": "Column-First Paradigm\nBecause columns represent variables, we will take a column-first approach to tables.\nTo extract, delete, or make columns from a table named tbl:\n\ntbl.select(...) returns a new table with a subset of columns.\ntbl.drop(...) and returns a new table without a subset of columns\ntbl.with_columns(...) returns a new table with additional new column(s).\n\n\nschools.select('Name', 'Enrollment')\n\n\n\n\nName\nEnrollment\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\n6025\n\n\nCalifornia State University, Bakersfield\n9613\n\n\nUniversity of California, Berkeley\n45307\n\n\nCalifornia State University Channel Islands\n6128\n\n\nCalifornia State University, Dominguez Hills\n16426\n\n\nCalifornia State University, Chico\n14183\n\n\nUniversity of California, Davis\n39679\n\n\nCalifornia State University, Fresno\n23999\n\n\nCalifornia State University, Fullerton\n40386\n\n\nCalifornia State University, East Bay\n13673\n\n\n\n\n... (22 rows omitted)\n\n\n\nschools.drop('Founded', 'County')\n\n\n\n\nName\nInstitution\nCity\nEnrollment\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\n6025\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\n9613\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\n45307\n\n\nCalifornia State University Channel Islands\nCSU\nCamarillo\n6128\n\n\nCalifornia State University, Dominguez Hills\nCSU\nCarson\n16426\n\n\nCalifornia State University, Chico\nCSU\nChico\n14183\n\n\nUniversity of California, Davis\nUC\nDavis\n39679\n\n\nCalifornia State University, Fresno\nCSU\nFresno\n23999\n\n\nCalifornia State University, Fullerton\nCSU\nFullerton\n40386\n\n\nCalifornia State University, East Bay\nCSU\nHayward\n13673\n\n\n\n\n... (22 rows omitted)\n\n\nNote: The above two cells were run in sequence. Each table method returns a new table, so our original table schools is unchanged.\n\nModifying Tables\n\n\n\n\n\n\nTable methods return copies\n\n\n\nAll table methods return copies of information from the original table! This paradigm is quite useful for data analysis. From Inferential Thinking:\n\n[Table methods] create new smaller tables that share the same data. The fact that the original table is preserved is useful! You can generate multiple different tables that only consider certain columns without worrying that one analysis will affect the other.\n\n\n\nIf we would like to modify the original table, then we must re-assign schools to the new return value:\n\nschools = schools.with_columns(\n    \"Years since founding\",\n    2025 - schools.column(\"Founded\")\n)\nschools\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\nYears since founding\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\nHumboldt\n6025\n1913\n112\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\n60\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n156\n\n\nCalifornia State University Channel Islands\nCSU\nCamarillo\nVentura\n6128\n2002\n23\n\n\nCalifornia State University, Dominguez Hills\nCSU\nCarson\nLos Angeles\n16426\n1960\n65\n\n\nCalifornia State University, Chico\nCSU\nChico\nButte\n14183\n1887\n138\n\n\nUniversity of California, Davis\nUC\nDavis\nYolo\n39679\n1905\n120\n\n\nCalifornia State University, Fresno\nCSU\nFresno\nFresno\n23999\n1911\n114\n\n\nCalifornia State University, Fullerton\nCSU\nFullerton\nOrange\n40386\n1957\n68\n\n\nCalifornia State University, East Bay\nCSU\nHayward\nAlameda\n13673\n1957\n68\n\n\n\n\n... (22 rows omitted)",
+    "objectID": "01-intro/programming-basics.html#summary",
+    "href": "01-intro/programming-basics.html#summary",
+    "title": "Programming Basics",
+    "section": "Summary",
+    "text": "Summary\nWe write code to tell our computer what to do.\n\nIn this class, and in many other settings, we use the Python programming language.\nWe write all of our code in Jupyter Notebooks, which allow us to see the output of our code in the same document in which we wrote our code. They’re commonly used in data science.\n\nBasic Python can be thought of as a calculator language, that takes expressions and computes their values.\n\nWe learned several different arithmetic operators, each of which can be used in an expression.\nPython stores integers and decimals in different ways.\n\nDebugging and good style make good programmers.\n\nComments help make our code more readable and sustainable.\nChoose names that are concise but descriptive.\nWhen our code has an error, the error message can help us fix it.\n\n\nCommon Python operators for numeric data types\n\n\n\n\n\n\n\n\nOperator\nSymbol\nExample Expression\nExpression Value\n\n\n\n\nAddition\n+\n2 + 3\n5\n\n\nSubtraction\n-\n15 - 4\n11\n\n\nMultiplication\n*\n-2 * 9\n-18\n\n\nDivision\n/\n15 / 2\n7.5\n\n\nInteger division(Cuts off remainder)\n//\n15 // 2\n7\n\n\nRemainder/Modulo\n%\n19 % 3\n1  (19 ÷ 3 = 6 Remainder 1)\n\n\nExponentiation\n**\n3 ** 2\n9",
     "crumbs": [
-      "L04: Table Fundamentals"
+      "L01: Introduction",
+      "Programming Basics"
     ]
   },
   {
-    "objectID": "04-tables/index.html#filtering-rows",
-    "href": "04-tables/index.html#filtering-rows",
-    "title": "Table Fundamentals",
-    "section": "Filtering Rows",
-    "text": "Filtering Rows\nOften we would like to perform row filtering, where we only extract row entries that match a specific feature.\nBy exact match: tbl.where(column, value). Create a new table of only the rows where column column matches the value value.\n\nschools.where(\"Institution\", \"UC\")\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\nYears since founding\n\n\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n156\n\n\nUniversity of California, Davis\nUC\nDavis\nYolo\n39679\n1905\n120\n\n\nUniversity of California, Irvine\nUC\nIrvine\nOrange\n35937\n1965\n60\n\n\nUniversity of California, Los Angeles\nUC\nLos Angeles\nLos Angeles\n46430\n1882\n143\n\n\nUniversity of California, Merced\nUC\nMerced\nMerced\n9110\n2005\n20\n\n\nUniversity of California, Riverside\nUC\nRiverside\nRiverside\n26809\n1954\n71\n\n\nUniversity of California, San Diego\nUC\nSan Diego\nSan Diego\n42006\n1960\n65\n\n\nUniversity of California, Santa Barbara\nUC\nSanta Barbara\nSanta Barbara\n26420\n1891\n134\n\n\nUniversity of California, Santa Cruz\nUC\nSanta Cruz\nSanta Cruz\n19478\n1965\n60\n\n\n\n\n\nBy index: tbl.take(row_indices). Create a new table of only the rows with an index specified in row_indices.\n\nschools.take(1, 3, 5)\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\nYears since founding\n\n\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\n60\n\n\nCalifornia State University Channel Islands\nCSU\nCamarillo\nVentura\n6128\n2002\n23\n\n\nCalifornia State University, Chico\nCSU\nChico\nButte\n14183\n1887\n138\n\n\n\n\n\nAre rows zero-indexed or one-indexed? Why?",
+    "objectID": "01-intro/programming-basics.html#external-reading",
+    "href": "01-intro/programming-basics.html#external-reading",
+    "title": "Programming Basics",
+    "section": "External Reading",
+    "text": "External Reading\n\n(mentioned in notes) Computational and Inferential Thinking, Ch 3.1, Ch 3.2, Ch 3.3\n(optional) Nick Parlante. Python Guide Python Math.",
     "crumbs": [
-      "L04: Table Fundamentals"
+      "L01: Introduction",
+      "Programming Basics"
     ]
   },
   {
-    "objectID": "04-tables/index.html#creating-new-tables",
-    "href": "04-tables/index.html#creating-new-tables",
-    "title": "Table Fundamentals",
-    "section": "Creating New Tables",
-    "text": "Creating New Tables\nSo far we’ve used a table with pre-existing data. We can also make new Tables with a special function: Table().\n\nTable()\n\n\n\n\n\n\n\nCheck it out!!!\n\nstates = Table().with_columns('State', np.array(['California', 'New York', 'Florida', 'Texas', 'Pennsylvania']),'Code', np.array(['CA', 'NY', 'FL', 'TX', 'PA']), 'Population (millions)', np.array([39.3, 19.3, 21.7, 29.3, 12.8]))\nstates\n\n\n\n\nState\nCode\nPopulation (millions)\n\n\n\n\nCalifornia\nCA\n39.3\n\n\nNew York\nNY\n19.3\n\n\nFlorida\nFL\n21.7\n\n\nTexas\nTX\n29.3\n\n\nPennsylvania\nPA\n12.8\n\n\n\n\n\n…unfortunately, due to poor coding style, the above code is quite unreadable. Let’s use whitespace (new lines and indents) to delineate what we are doing:\n\nstates = Table().with_columns(\n  'State', make_array('California', 'New York', 'Florida', 'Texas', 'Pennsylvania'),\n  'Code', make_array('CA', 'NY', 'FL', 'TX', 'PA'),\n  'Population (millions)', make_array(39.3, 19.3, 21.7, 29.3, 12.8)\n)\nstates\n\n\n\n\nState\nCode\nPopulation (millions)\n\n\n\n\nCalifornia\nCA\n39.3\n\n\nNew York\nNY\n19.3\n\n\nFlorida\nFL\n21.7\n\n\nTexas\nTX\n29.3\n\n\nPennsylvania\nPA\n12.8\n\n\n\n\n\n\nMethod Chaining\nMethod chaining in Python is when the object returned from one method becomes the object to use in the next method. In the above case:\n\nCalling the Table returns an empty table.\nThe method with_columns is called on the empty table object, returning a table with the columns State, Code, and Population.\nThis return value is then assigned to states.\n\n\n\n\n\n\n\nWhitespace formatting\n\n\n\nNote the closed parenthesis on the final line. This helps “match” parentheses together.",
-    "crumbs": [
-      "L04: Table Fundamentals"
-    ]
-  },
-  {
-    "objectID": "04-tables/index.html#bonus-methods-vs.-attributes",
-    "href": "04-tables/index.html#bonus-methods-vs.-attributes",
-    "title": "Table Fundamentals",
-    "section": "Bonus: Methods vs. Attributes",
-    "text": "Bonus: Methods vs. Attributes\nReturn to the third focus question from the Inferential Thinking reading.\n\nWhat Python expression gets you the number of rows? a specific column? (bonus) How does the syntax differ between these two cases?\n\nThe textbook wording “overloads” two different Python syntax constructs. From the Python glossary:\n\n\n\n\n\n\nAttribute\n\n\n\nAttribute: A value associated with an object which is usually referenced by name using dotted expressions. For example, if an object o has an attribute a it would be referenced as o.a.\nIn other words, attributes are named values tied to specific objects. To get these values, we must refer to them by their name using “dot” syntax.\n\n\n\nschools.num_rows\n\n32\n\n\n\n\n\n\n\n\nMethod\n\n\n\nMethod A function which is defined inside a class body.\nThe Python glossary definition above is a more opaque definition than we would like. But you can think of the methods we study in this class as functions that take into account the attributes and values of specific objects. In order to call them on a specific operation, we also use “dot” syntax. Because they are functions, we must use call expression syntax with parenthesis, and provide arguments as needed.\n\n\n\nschools.column(\"Enrollment\")\n\narray([ 6025,  9613, 45307,  6128, 16426, 14183, 39679, 23999, 40386,\n       13673, 35937, 38973, 46430, 26460,  9110, 37579, 27503, 26809,\n        6637, 31818, 19803, 42006, 37402, 25282, 35751, 22000, 15109,\n       26420, 19478,  7045, 10154,  1017])\n\n\nWhich to syntax use? To determine which “dot” syntax to use, read the documentation. The entire Table class has been defined for us already, and the designers of the datascience package have predetermined which table features make sense to have as attributes, and which features make sense to return as values from a method call. But as a rule of thumb, if you need to specify any additional detail to get what you want, you will likely need to call a function: use table methods and pass in arguments. See the column method call above.\nAnother key indicator is what happens when you use incorrect syntax:\n\nschools.num_rows()\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[16], line 1\n----&gt; 1 schools.num_rows()\n\nTypeError: 'int' object is not callable\n\n\n\nThe above error message means that Python assumed you wanted to call a function num_rows (specifically, a method of the Table schools); however, when run, num_rows was actually an int data type attribute, and ints are not callable. Similarly, below:\n\nschools.column\n\n&lt;bound method Table.column of Name                                              | Institution | City        | County      | Enrollment | Founded | Years since founding\nCalifornia State Polytechnic University, Humboldt | CSU         | Arcata      | Humboldt    | 6025       | 1913    | 112\nCalifornia State University, Bakersfield          | CSU         | Bakersfield | Kern        | 9613       | 1965    | 60\nUniversity of California, Berkeley                | UC          | Berkeley    | Alameda     | 45307      | 1869    | 156\nCalifornia State University Channel Islands       | CSU         | Camarillo   | Ventura     | 6128       | 2002    | 23\nCalifornia State University, Dominguez Hills      | CSU         | Carson      | Los Angeles | 16426      | 1960    | 65\nCalifornia State University, Chico                | CSU         | Chico       | Butte       | 14183      | 1887    | 138\nUniversity of California, Davis                   | UC          | Davis       | Yolo        | 39679      | 1905    | 120\nCalifornia State University, Fresno               | CSU         | Fresno      | Fresno      | 23999      | 1911    | 114\nCalifornia State University, Fullerton            | CSU         | Fullerton   | Orange      | 40386      | 1957    | 68\nCalifornia State University, East Bay             | CSU         | Hayward     | Alameda     | 13673      | 1957    | 68\n... (22 rows omitted)&gt;\n\n\nThe above statement did not error, but it did not output a column, either. Rather, it output a method of a table, but it didn’t call this method.",
-    "crumbs": [
-      "L04: Table Fundamentals"
-    ]
-  },
-  {
-    "objectID": "04-tables/none-print.html",
-    "href": "04-tables/none-print.html",
-    "title": "None and Print",
+    "objectID": "06-variables-ii/deprecated-index.html",
+    "href": "06-variables-ii/deprecated-index.html",
+    "title": "Intro to Social Science Research",
     "section": "",
-    "text": "We have covered a few data types so far. There are infinitely many integers, floating point numbers, and strings. (Actually finite, because of how computers store information. Take CS61C to learn more.)\nHowever, for the NoneType data type, there is only one value: None.\n\nmy_var = None\ntype(my_var)\n\nNoneType\n\n\nNone is strange: Cells will not output expressions that evaluate to None.\nNone is also referred to as the null value.",
-    "crumbs": [
-      "L04: Table Fundamentals",
-      "None and Print"
-    ]
+    "text": "Theory\nHypothesis\nData Collection\nData Analysis\nResults\n(and back)"
   },
   {
-    "objectID": "04-tables/none-print.html#none-type",
-    "href": "04-tables/none-print.html#none-type",
-    "title": "None and Print",
+    "objectID": "06-variables-ii/deprecated-index.html#the-scientific-method",
+    "href": "06-variables-ii/deprecated-index.html#the-scientific-method",
+    "title": "Intro to Social Science Research",
     "section": "",
-    "text": "We have covered a few data types so far. There are infinitely many integers, floating point numbers, and strings. (Actually finite, because of how computers store information. Take CS61C to learn more.)\nHowever, for the NoneType data type, there is only one value: None.\n\nmy_var = None\ntype(my_var)\n\nNoneType\n\n\nNone is strange: Cells will not output expressions that evaluate to None.\nNone is also referred to as the null value.",
+    "text": "Theory\nHypothesis\nData Collection\nData Analysis\nResults\n(and back)"
+  },
+  {
+    "objectID": "06-variables-ii/deprecated-index.html#theory-vs.-hypothesis",
+    "href": "06-variables-ii/deprecated-index.html#theory-vs.-hypothesis",
+    "title": "Intro to Social Science Research",
+    "section": "Theory vs. Hypothesis",
+    "text": "Theory vs. Hypothesis\nTheory: A systematic set of related statements that accord with a worldview.\nWhen (social) scientists do research, we use theories 3 different ways: * Theories prevent us from being taken in by flukes. * Theories help us make sense of observed patterns in ways that can suggest other possibilities. * Theories direct our research efforts, pointing us toward likely discoveries through empirical observation.\nElements of a scientific sociological theory: * Concepts * Relations between concepts * Causal mechanisms\nHypothesis: The empirical instantiation of a theory, i.e., a testable statement of a relationship involving two concepts. * Hypotheses therefore involve variables, which are representations that capture the different dimensions, categories, or levels of a concept.\ninsert images of concept 1, concept 2, variable 1, variable 2"
+  },
+  {
+    "objectID": "06-variables-ii/deprecated-eda.html",
+    "href": "06-variables-ii/deprecated-eda.html",
+    "title": "Exploratory Data Analysis - consider removing",
+    "section": "",
+    "text": "If we’re not going to be studying causal relationships in this class, what will we be looking at? In this course we will look deeply at a core component of Data Science: Exploratory Data Analysis, or EDA."
+  },
+  {
+    "objectID": "06-variables-ii/deprecated-eda.html#what-is-eda",
+    "href": "06-variables-ii/deprecated-eda.html#what-is-eda",
+    "title": "Exploratory Data Analysis - consider removing",
+    "section": "What is EDA?",
+    "text": "What is EDA?\nExploratory Data Analysis (EDA) is like detective work. As coined by the famous American statistician and mathematician John Tukey (we will discuss Tukey numbers soon):\n\nExploratory data analysis is an attitude, a state of flexibility, a willingness to look for those things that we believe are not there, as well as those that we believe to be there.\n\nMore formally, Exploratory Data Analysis (EDA) is the process of understanding a new dataset. It is an open-ended, informal analysis that involves familiarizing ourselves with the variables present in the data, discovering potential hypotheses, and identifying possible issues with the data.\n\nWhat is Data Wrangling?\nA process very closely related to EDA is data wrangling, often called data cleaning. Data wrangling is the process of transforming raw data to facilitate subsequent analysis and can address issues like unclear structure or formatting, missing or corrupted values, unit conversions, and so on.\nEDA and data cleaning are often thought of as an “infinite loop,” with each process driving the other.\nFortunately, in our classes we will try our best to work with “clean” datasets. These datasets will often have already been preprocessed for cleaner analysis, allowing us to explore and ask questions much more easily than if we were stuck with messier data."
+  },
+  {
+    "objectID": "04-tables/exercises.html",
+    "href": "04-tables/exercises.html",
+    "title": "Table Exercises",
+    "section": "",
+    "text": "We work with the schools table from before.\nfrom datascience import *\nimport numpy as np\n\nschools = Table.read_table('data/cal_unis.csv')\nschools.show(3)\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\nHumboldt\n6025\n1913\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n\n\n\n\n... (29 rows omitted)\nPull up the Python Reference and try these exercises yourself! They are roughly in order of increasing difficulty.",
     "crumbs": [
       "L04: Table Fundamentals",
-      "None and Print"
+      "Table Exercises"
     ]
   },
   {
-    "objectID": "04-tables/none-print.html#the-print-function",
-    "href": "04-tables/none-print.html#the-print-function",
-    "title": "None and Print",
-    "section": "The print function",
-    "text": "The print function\nThe print function displays values to the screen (in this case, our Jupyter notebook). Each call to print displays information on a new line.\n\nprint(2)\nprint(\"Hello, world!\")\n\n2\nHello, world!\n\n\nprint lets us to see information about executed statements that are not just the last line of the cell. Could you see why this would be a useful feature for debugging?\nprint is ultra-convenient because it can take as many arguments as you want.\n\nx = 3\ny = 4\nprint(x, \"+\", y, \"is equal to\", x + y)\n\n3 + 4 is equal to 7\n\n\nTrace through the above program. Do you see how expressions are evaluated before printing?",
+    "objectID": "04-tables/exercises.html#exercise-1-variable-names",
+    "href": "04-tables/exercises.html#exercise-1-variable-names",
+    "title": "Table Exercises",
+    "section": "Exercise 1: Variable names",
+    "text": "Exercise 1: Variable names\nHow do we get all the column labels of schools?\n\n\n\n\n\n\nShow Answer\n\n\n\n\n\n\nschools.labels\n\n('Name', 'Institution', 'City', 'County', 'Enrollment', 'Founded')",
     "crumbs": [
       "L04: Table Fundamentals",
-      "None and Print"
+      "Table Exercises"
     ]
   },
   {
-    "objectID": "04-tables/none-print.html#notebooks-cell-output-vs.-print",
-    "href": "04-tables/none-print.html#notebooks-cell-output-vs.-print",
-    "title": "None and Print",
-    "section": "Notebooks: Cell Output vs. print",
-    "text": "Notebooks: Cell Output vs. print\nCell output and print output seem very closely related:\n\nBoth evaluate expressions\nBoth display something in the notebook\n\nHowever, they have subtle differences. We won’t expect you to know all of them. Instead, the purpose of this section is to get you used to tracing programs, where you closely consider Python’s order of execution of each statement, expression, function call, and so on.\nBecause the print output is intended for human view, it displays strings without quotes. Contrast this with the cell output, which includes the quotes.\n\nprint(2)\n\"Hello, world!\"\n\n2\n\n\n'Hello, world!'\n\n\n\nExercise 1\nThis is now super pedantic, but consider the following cells. Can you explain what is happening?\n\nmy_var\n\n\nprint(my_var)\n\nNone\n\n\n\n\n\n\n\n\nExplanation\n\n\n\n\n\nWhen print is evaluated as the last line in a cell, it displays the value of the evaluated argument (here, None). print returns None, so the cell does not additionally output anything,\n\n\n\n\n\nExercise 2\nTry this challenge on for size.\n\nprint(my_var)\nprint(3)\n45\n\nNone\n3\n\n\n45\n\n\n\n\n\n\n\n\nExplanation\n\n\n\n\n\nEach line explained:\n\nEvaluate the first print call expression. This prints the value of my_var to the screen, which evaluates to None. print returns None, but this second None is not output to the sceen because it is not the last line.\nEvaluate the second print call expression. This prints the value of 3 to the screen. print returns None, but this second None is not output to the sceen because it is not the last line.\nEvaluate the third expression, 45; because it is the last line, output to screen.\n\n\n\n\nYou’re thinking like a computer scientist now!",
+    "objectID": "04-tables/exercises.html#exercise-2-reorder-columns",
+    "href": "04-tables/exercises.html#exercise-2-reorder-columns",
+    "title": "Table Exercises",
+    "section": "Exercise 2: Reorder columns",
+    "text": "Exercise 2: Reorder columns\nHow do we reorder the columns, as below?\n\n\n\n\n\n\n\n\n\n\n\nName\nFounded\nInstitution\nCity\nCounty\nEnrollment\n\n\n\n\n…\n…\n…\n…\n…\n…\n\n\n\nHint: use one of select, drop, or with_columns.\n\n\n\n\n\n\nShow Answer\n\n\n\n\n\n\nschools.select(\n  \"Name\", \"Founded\",\n  \"Institution\", \"City\",\n  \"County\", \"Enrollment\"\n)\n\n\n\n\nName\nFounded\nInstitution\nCity\nCounty\nEnrollment\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\n1913\nCSU\nArcata\nHumboldt\n6025\n\n\nCalifornia State University, Bakersfield\n1965\nCSU\nBakersfield\nKern\n9613\n\n\nUniversity of California, Berkeley\n1869\nUC\nBerkeley\nAlameda\n45307\n\n\nCalifornia State University Channel Islands\n2002\nCSU\nCamarillo\nVentura\n6128\n\n\nCalifornia State University, Dominguez Hills\n1960\nCSU\nCarson\nLos Angeles\n16426\n\n\nCalifornia State University, Chico\n1887\nCSU\nChico\nButte\n14183\n\n\nUniversity of California, Davis\n1905\nUC\nDavis\nYolo\n39679\n\n\nCalifornia State University, Fresno\n1911\nCSU\nFresno\nFresno\n23999\n\n\nCalifornia State University, Fullerton\n1957\nCSU\nFullerton\nOrange\n40386\n\n\nCalifornia State University, East Bay\n1957\nCSU\nHayward\nAlameda\n13673\n\n\n\n\n... (22 rows omitted)",
     "crumbs": [
       "L04: Table Fundamentals",
-      "None and Print"
+      "Table Exercises"
+    ]
+  },
+  {
+    "objectID": "04-tables/exercises.html#exercise-3-filtering",
+    "href": "04-tables/exercises.html#exercise-3-filtering",
+    "title": "Table Exercises",
+    "section": "Exercise 3: Filtering",
+    "text": "Exercise 3: Filtering\n\n\n\n\n\n\nThe schools table for reference, if you need it\n\n\n\n\n\n\nschools.show(3)\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\nHumboldt\n6025\n1913\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n\n\n\n\n... (29 rows omitted)\n\n\n\n\n\n\nHow do we get a table with only UC schools?\n\n\n\n\n\n\n\nShow Answer\n\n\n\n\n\n\nschools.where(\"Institution\", \"UC\")\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\n\n\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n\n\nUniversity of California, Davis\nUC\nDavis\nYolo\n39679\n1905\n\n\nUniversity of California, Irvine\nUC\nIrvine\nOrange\n35937\n1965\n\n\nUniversity of California, Los Angeles\nUC\nLos Angeles\nLos Angeles\n46430\n1882\n\n\nUniversity of California, Merced\nUC\nMerced\nMerced\n9110\n2005\n\n\nUniversity of California, Riverside\nUC\nRiverside\nRiverside\n26809\n1954\n\n\nUniversity of California, San Diego\nUC\nSan Diego\nSan Diego\n42006\n1960\n\n\nUniversity of California, Santa Barbara\nUC\nSanta Barbara\nSanta Barbara\n26420\n1891\n\n\nUniversity of California, Santa Cruz\nUC\nSanta Cruz\nSanta Cruz\n19478\n1965\n\n\n\n\n\n\n\n\n\nHow do we get a table with all the schools in Los Angeles?\n\n\n\n\n\n\n\nShow Answer\n\n\n\n\n\n\nschools.where(\"City\", \"Los Angeles\")\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\n\n\n\n\nUniversity of California, Los Angeles\nUC\nLos Angeles\nLos Angeles\n46430\n1882\n\n\nCalifornia State University, Los Angeles\nCSU\nLos Angeles\nLos Angeles\n26460\n1947",
+    "crumbs": [
+      "L04: Table Fundamentals",
+      "Table Exercises"
+    ]
+  },
+  {
+    "objectID": "04-tables/exercises.html#exercise-4-rename-columns",
+    "href": "04-tables/exercises.html#exercise-4-rename-columns",
+    "title": "Table Exercises",
+    "section": "Exercise 4: Rename Columns",
+    "text": "Exercise 4: Rename Columns\nHow do we update schools such that the column Name is renamed University? Hint: Check out the method relabeled.\n\n\n\n\n\n\nShow Answer\n\n\n\n\n\n\nschools = schools.relabeled(\"Name\", \"University\")\nschools.show(3)\n\n\n\n\nUniversity\nInstitution\nCity\nCounty\nEnrollment\nFounded\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\nHumboldt\n6025\n1913\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n\n\n\n\n... (29 rows omitted)\n\n\n\n\n\nThere are many ways to approach a problem. Suppose you didn’t know the method relabeled existed:\n\n\n\n\n\n\nAlternate Answer\n\n\n\n\n\n\nschools = schools.with_column(\"University\", schools.column(\"Name\")).drop(\"Name\")\nschools.show(3)\n\n\n\n\nInstitution\nCity\nCounty\nEnrollment\nFounded\nUniversity\n\n\n\n\nCSU\nArcata\nHumboldt\n6025\n1913\nCalifornia State Polytechnic University, Humboldt\n\n\nCSU\nBakersfield\nKern\n9613\n1965\nCalifornia State University, Bakersfield\n\n\nUC\nBerkeley\nAlameda\n45307\n1869\nUniversity of California, Berkeley\n\n\n\n\n... (29 rows omitted)\n\n\nQuestions for you as you read the above code:\n\nWhat methods are being chained together here? Which is executed first, with_column or drop?\nWhen is the column method being called?\nWhat would happen if you switched the two methods? (try it out)\nWhy is University now the last column?",
+    "crumbs": [
+      "L04: Table Fundamentals",
+      "Table Exercises"
+    ]
+  },
+  {
+    "objectID": "04-tables/exercises.html#exercise-5-debugging-show",
+    "href": "04-tables/exercises.html#exercise-5-debugging-show",
+    "title": "Table Exercises",
+    "section": "Exercise 5: Debugging show",
+    "text": "Exercise 5: Debugging show\nThe following cells exhibit a tricky, but potentially common bug. First, check out the Python Reference to understand what show does.\n\nschools = Table.read_table('data/cal_unis.csv')\n\n\nschools = schools.show(3)\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\nHumboldt\n6025\n1913\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n\n\n\n\n... (29 rows omitted)\n\n\n\nschools = schools.show(4)\n\n\n---------------------------------------------------------------------------\nAttributeError                            Traceback (most recent call last)\nCell In[12], line 1\n----&gt; 1 schools = schools.show(4)\n\nAttributeError: 'NoneType' object has no attribute 'show'\n\n\n\nLike print, show is for display purposes. It does not return anything—i.e., it returns None. The second cell above therefore assigns schools to None!\nDespite this, show—just like print—is useful when you want to display intermediate output for debugging purposes.\n\nschools = Table.read_table('data/cal_unis.csv')\nschools.show(3) # just the first three rows\nschools = schools.relabeled(\"Name\", \"University\")\nschools.show(3) # and again\nschools = schools.with_columns(\"Name\", \"City\")\nschools         # the last evaluated value in a cell\n                # is displayed by default\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\nHumboldt\n6025\n1913\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n\n\n\n\n... (29 rows omitted)\n\n\n\n\n\nUniversity\nInstitution\nCity\nCounty\nEnrollment\nFounded\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\nHumboldt\n6025\n1913\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n\n\n\n\n... (29 rows omitted)\n\n\n\n\n\nUniversity\nInstitution\nCity\nCounty\nEnrollment\nFounded\nName\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\nHumboldt\n6025\n1913\nCity\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\nCity\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\nCity\n\n\nCalifornia State University Channel Islands\nCSU\nCamarillo\nVentura\n6128\n2002\nCity\n\n\nCalifornia State University, Dominguez Hills\nCSU\nCarson\nLos Angeles\n16426\n1960\nCity\n\n\nCalifornia State University, Chico\nCSU\nChico\nButte\n14183\n1887\nCity\n\n\nUniversity of California, Davis\nUC\nDavis\nYolo\n39679\n1905\nCity\n\n\nCalifornia State University, Fresno\nCSU\nFresno\nFresno\n23999\n1911\nCity\n\n\nCalifornia State University, Fullerton\nCSU\nFullerton\nOrange\n40386\n1957\nCity\n\n\nCalifornia State University, East Bay\nCSU\nHayward\nAlameda\n13673\n1957\nCity\n\n\n\n\n... (22 rows omitted)",
+    "crumbs": [
+      "L04: Table Fundamentals",
+      "Table Exercises"
+    ]
+  },
+  {
+    "objectID": "08-histograms/index.html",
+    "href": "08-histograms/index.html",
+    "title": "Histograms",
+    "section": "",
+    "text": "There is an existing chapter that fully describes histograms. We highly recommend you read the textbook, then review the Data 6 lecture notebook.",
+    "crumbs": [
+      "L08: Histograms"
+    ]
+  },
+  {
+    "objectID": "08-histograms/index.html#ranges",
+    "href": "08-histograms/index.html#ranges",
+    "title": "Histograms",
+    "section": "Ranges",
+    "text": "Ranges\nnp.arange is a NumPy function useful for producing sequences of equally spaced numbers. Read the chapter for more details.\n\n\n\n\n\n\nRead Inferential Thinking\n\n\n\nRead Ch 5.2, which describes the np.arange function.\n\n\nBefore continuing, make sure that you: * Know that the full function signature of np.arange(start, end, step). * Know what the default arguments for start and/or step are when you pass in one or two arguments. * Remember that a range always includes its start value, but does not include its end value. It counts up by step, and it stops before it gets to the end.",
+    "crumbs": [
+      "L08: Histograms"
+    ]
+  },
+  {
+    "objectID": "08-histograms/index.html#histograms",
+    "href": "08-histograms/index.html#histograms",
+    "title": "Histograms",
+    "section": "Histograms",
+    "text": "Histograms\n\n\n\n\n\n\nRead Inferential Thinking\n\n\n\nRead Ch 7.2, which describes histograms in detail.\n\n\nBefore continuing, make sure that you:\n\nUnderstand terminology related to histograms:\n\nBins (lower bound, upper bound)\nDensity, area, proportion.\n\nCan use the area principle to explain histogram shape and bin area/dimensions.\nCan compute area and proportion from bin dimensions.\nCan interpret bin density as a measure of bin “crowdedness” with respect to the distribution.\nCan determine use cases for using bar charts over histograms, and vice versa.\nCan use the hist method and specify the optional parameter density as True or False",
+    "crumbs": [
+      "L08: Histograms"
+    ]
+  },
+  {
+    "objectID": "08-histograms/index.html#lecture-notebook",
+    "href": "08-histograms/index.html#lecture-notebook",
+    "title": "Histograms",
+    "section": "Lecture Notebook",
+    "text": "Lecture Notebook\nThis notebook mostly covers the hist Table method in the datascience package. See the Data 6 Python Reference for full information.\ntbl.hist(column): This table method has many optional arguments, but we highlight the most important ones here:\n\nbins: Specify bounds of bins, as an array. All but the last element of the array specifies bin lower bounds; the last element specifies the upper bound of the rightmost bin. If not specified, the default produces 10 equally spaced bins.\ndensity: Boolean value (True or False). True by default calculates height as percent per unit. If False, calculates height as count in bin.",
+    "crumbs": [
+      "L08: Histograms"
+    ]
+  },
+  {
+    "objectID": "08-histograms/index.html#external-reading",
+    "href": "08-histograms/index.html#external-reading",
+    "title": "Histograms",
+    "section": "External Reading",
+    "text": "External Reading\n\n(mentioned in notes) Computational and Inferential Thinking, Ch 5.2\n(mentioned in notes) Computational and Inferential Thinking, Ch 2.1",
+    "crumbs": [
+      "L08: Histograms"
     ]
   },
   {

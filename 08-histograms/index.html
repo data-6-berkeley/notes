@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Types</title>
+<title>Histograms</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -65,8 +30,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../02-datatypes/rates-incidence.html" rel="next">
-<link href="../01-intro/programming-basics.html" rel="prev">
+<link href="../five-things.html" rel="next">
+<link href="../07-visualizations/charts.html" rel="prev">
 <link href="../assets/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -129,7 +94,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../02-datatypes/index.html">L02: Data Types</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../08-histograms/index.html">L08: Histograms</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -197,16 +162,16 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../02-datatypes/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../02-datatypes/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">L02: Data Types</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02-datatypes/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../02-datatypes/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Numeric and String Data Types</span></a>
   </div>
 </li>
@@ -347,16 +312,16 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../08-histograms/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../08-histograms/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">L08: Histograms</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../08-histograms/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../08-histograms/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Histograms</span></a>
   </div>
 </li>
@@ -384,13 +349,9 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#numeric-data-types" id="toc-numeric-data-types" class="nav-link active" data-scroll-target="#numeric-data-types">Numeric Data Types</a>
-  <ul class="collapse">
-  <li><a href="#summary-of-numeric-operators" id="toc-summary-of-numeric-operators" class="nav-link" data-scroll-target="#summary-of-numeric-operators">Summary of Numeric Operators</a></li>
-  </ul></li>
-  <li><a href="#strings" id="toc-strings" class="nav-link" data-scroll-target="#strings">Strings</a></li>
-  <li><a href="#boolean-data-type" id="toc-boolean-data-type" class="nav-link" data-scroll-target="#boolean-data-type">Boolean Data Type</a></li>
-  <li><a href="#typecasting" id="toc-typecasting" class="nav-link" data-scroll-target="#typecasting">Typecasting</a></li>
+  <li><a href="#ranges" id="toc-ranges" class="nav-link active" data-scroll-target="#ranges">Ranges</a></li>
+  <li><a href="#histograms" id="toc-histograms" class="nav-link" data-scroll-target="#histograms">Histograms</a></li>
+  <li><a href="#lecture-notebook" id="toc-lecture-notebook" class="nav-link" data-scroll-target="#lecture-notebook">Lecture Notebook</a></li>
   <li><a href="#external-reading" id="toc-external-reading" class="nav-link" data-scroll-target="#external-reading">External Reading</a></li>
   </ul>
 </nav>
@@ -400,8 +361,8 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Data Types</h1>
-<p class="subtitle lead">int, float, str, bool</p>
+<h1 class="title">Histograms</h1>
+<p class="subtitle lead">Distributions and the Area principle</p>
 </div>
 
 
@@ -418,8 +379,10 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </header>
 
 
-<section id="numeric-data-types" class="level2">
-<h2 class="anchored" data-anchor-id="numeric-data-types">Numeric Data Types</h2>
+<p>There is an existing chapter that fully describes histograms. We highly recommend you read the textbook, then review the Data 6 lecture notebook.</p>
+<section id="ranges" class="level2">
+<h2 class="anchored" data-anchor-id="ranges">Ranges</h2>
+<p><code>np.arange</code> is a NumPy function useful for producing sequences of equally spaced numbers. Read the chapter for more details.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Read _Inferential Thinking_">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -430,84 +393,13 @@ Read <em>Inferential Thinking</em>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Read <a href="https://inferentialthinking.com/chapters/04/Data_Types.html">Ch 4 intro</a> and <a href="https://inferentialthinking.com/chapters/04/1/Numbers.html">Ch 4.1</a>, which describes in detail how Python evaluates expressions involving <strong>numeric data types</strong>.</p>
-<p>Before continuing, make sure you understand the following:</p>
-<ul>
-<li>Every value has a type (<strong>data type</strong>), and the built-in type function returns the type of the result of any expression.</li>
-<li>In Python, integers are called <code>int</code> values. Real numbers are called <code>float</code> values. These are flexible but have some computational limitations.</li>
-<li>The <code>type</code> of an expression is the type of its final value.</li>
-<li>When a <code>float</code> value is combined with an <code>int</code> value using some arithmetic operator, then the result is always a <code>float</code> value.</li>
-</ul>
+<p>Read <a href="https://inferentialthinking.com/chapters/05/2/Ranges.html">Ch 5.2</a>, which describes the <code>np.arange</code> function.</p>
 </div>
 </div>
-<section id="summary-of-numeric-operators" class="level3">
-<h3 class="anchored" data-anchor-id="summary-of-numeric-operators">Summary of Numeric Operators</h3>
-<p>You have seen this table before.</p>
-<table class="caption-top table">
-<caption>Common Python operators for numeric data types</caption>
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Operator</th>
-<th>Symbol</th>
-<th>Example Expression</th>
-<th>Expression Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Addition</td>
-<td><code>+</code></td>
-<td><code>2 + 3</code></td>
-<td>5</td>
-</tr>
-<tr class="even">
-<td>Subtraction</td>
-<td><code>-</code></td>
-<td><code>15 - 4</code></td>
-<td><code>11</code></td>
-</tr>
-<tr class="odd">
-<td>Multiplication</td>
-<td><code>*</code></td>
-<td><code>-2 * 9</code></td>
-<td><code>-18</code></td>
-</tr>
-<tr class="even">
-<td>Division</td>
-<td><code>/</code></td>
-<td><code>15 / 2</code></td>
-<td><code>7.5</code></td>
-</tr>
-<tr class="odd">
-<td>Integer division<br>(Cuts off remainder)</td>
-<td><code>//</code></td>
-<td><code>15 // 2</code></td>
-<td><code>7</code></td>
-</tr>
-<tr class="even">
-<td>Remainder/Modulo</td>
-<td><code>%</code></td>
-<td><code>19 % 3</code></td>
-<td><code>1</code> <br> (19 ÷ 3 = 6 Remainder 1)</td>
-</tr>
-<tr class="odd">
-<td>Exponentiation</td>
-<td><code>**</code></td>
-<td><code>3 ** 2</code></td>
-<td><code>9</code></td>
-</tr>
-</tbody>
-</table>
+<p>Before continuing, make sure that you: * Know that the full function signature of <code>np.arange(start, end, step)</code>. * Know what the default arguments for <code>start</code> and/or <code>step</code> are when you pass in one or two arguments. * Remember that a range always includes its <code>start</code> value, but does not include its <code>end</code> value. It counts up by <code>step</code>, and it stops before it gets to the <code>end</code>.</p>
 </section>
-</section>
-<section id="strings" class="level2">
-<h2 class="anchored" data-anchor-id="strings">Strings</h2>
+<section id="histograms" class="level2">
+<h2 class="anchored" data-anchor-id="histograms">Histograms</h2>
 <div class="callout callout-style-default callout-note callout-titled" title="Read _Inferential Thinking_">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -518,78 +410,44 @@ Read <em>Inferential Thinking</em>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Read <a href="https://inferentialthinking.com/chapters/04/2/Strings.html">Ch 4.2</a> which describes the <strong>string data type</strong>.</p>
-<p>Before continuing, make sure you understand the following:</p>
+<p>Read <a href="https://inferentialthinking.com/chapters/07/2/Visualizing_Numerical_Distributions.html">Ch 7.2</a>, which describes histograms in detail.</p>
+</div>
+</div>
+<p>Before continuing, make sure that you:</p>
 <ul>
-<li>A string is a text data type. It can use single quotes or double quotes.</li>
-<li>The meaning of an expression depends both upon its structure and the types of values that are being combined.</li>
+<li>Understand terminology related to histograms:
+<ul>
+<li>Bins (lower bound, upper bound)</li>
+<li>Density, area, proportion.</li>
+</ul></li>
+<li>Can use the area principle to explain histogram shape and bin area/dimensions.</li>
+<li>Can compute area and proportion from bin dimensions.</li>
+<li>Can interpret bin density as a measure of bin “crowdedness” with respect to the distribution.</li>
+<li>Can determine use cases for using bar charts over histograms, and vice versa.</li>
+<li>Can use the <code>hist</code> method and specify the optional parameter <code>density</code> as <code>True</code> or <code>False</code></li>
 </ul>
-</div>
-</div>
-<p><strong>Concatenation operation</strong>: The <code>+</code> operator works differently on string data types. Instead of adding numerically, it “adds textually,” which is more formally called <strong>concatenation</strong>:</p>
-<div id="c1ee5193" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="op">+</span> <span class="dv">3</span>  <span class="co"># addition</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>5</code></pre>
-</div>
-</div>
-<div id="8a0d179b" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">'hello'</span> <span class="op">+</span> <span class="st">"donuts"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>'hellodonuts'</code></pre>
-</div>
-</div>
-<p><strong>Length function</strong>: There is one function not shown above that would be useful to you know, and that is <code>len(s)</code>, which takes a string argument and returns its length.</p>
-<div id="a8055b29" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">"hello world"</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(s)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
-<pre><code>11</code></pre>
-</div>
-</div>
 </section>
-<section id="boolean-data-type" class="level2">
-<h2 class="anchored" data-anchor-id="boolean-data-type">Boolean Data Type</h2>
-<p>The Boolean data type (<code>bool</code>) has exactly two values: <code>True</code> and <code>False</code>. Note that boolean values are <em>not</em> strings!</p>
-<div id="0baf2513" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>True</code></pre>
-</div>
-</div>
-<div id="8b7a94eb" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>bool</code></pre>
-</div>
-</div>
-<p>In our current view of Python as an advanced calculator, it may be unclear why such a special data type is needed. We will find soon that it is very useful to have a special data type to represent whether something is true or false.</p>
-</section>
-<section id="typecasting" class="level2">
-<h2 class="anchored" data-anchor-id="typecasting">Typecasting</h2>
-<p>We can also <strong>typecast</strong>, or convert values between data types. These typecasting functions take in one typed argument and return another typed argument, then return that value as a different type. The function name is generally the type. Note that data type conversion is only valid “when it makes sense.” We’ll talk about this more later.</p>
-<div id="9eb3b4d1" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">3</span>       <span class="co"># what type is x?</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">str</span>(x)      <span class="co"># returns a value of type string</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
-<pre><code>'3'</code></pre>
-</div>
-</div>
-<div id="59ca20a0" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">"5"</span>       <span class="co"># what type is x?</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">float</span>(s)      <span class="co"># what type is returned?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>5.0</code></pre>
-</div>
-</div>
+<section id="lecture-notebook" class="level2">
+<h2 class="anchored" data-anchor-id="lecture-notebook">Lecture Notebook</h2>
+<p>This notebook mostly covers the <code>hist</code> Table method in the <code>datascience</code> package. See the <a href="../reference.html">Data 6 Python Reference</a> for full information.</p>
+<p><code>tbl.hist(column)</code>: This table method has many optional arguments, but we highlight the most important ones here:</p>
+<ul>
+<li><code>bins</code>: Specify bounds of bins, as an array. All but the last element of the array specifies bin lower bounds; the last element specifies the upper bound of the rightmost bin. If not specified, the default produces 10 equally spaced bins.</li>
+<li><code>density</code>: <strong>Boolean</strong> value (<code>True</code> or <code>False</code>). <code>True</code> by default calculates height as percent per unit. If <code>False</code>, calculates height as count in bin.</li>
+</ul>
+<!-- ## `hist` Table method reference
+
+We will not test the details of this method other than what is on the [Data 6 Python Reference](../reference.html), but we are sharing the full description here.
+
+
+Table.hist?
+``` -->
 </section>
 <section id="external-reading" class="level2">
 <h2 class="anchored" data-anchor-id="external-reading">External Reading</h2>
 <ul>
-<li>(mentioned in notes) <em>Computational and Inferential Thinking</em>, <a href="https://inferentialthinking.com/chapters/04/Data_Types.html">Ch 4 intro</a>, <a href="https://inferentialthinking.com/chapters/04/1/Numbers.html">Ch 4.1</a>, <a href="https://inferentialthinking.com/chapters/04/2/Strings.html">Ch 4.2</a></li>
-<li>(optional) Tomas Beuzen. <em>Python Programming for Data Science</em> <a href="https://www.tomasbeuzen.com/python-programming-for-data-science/chapters/chapter1-basics.html#basic-python-data-types">Ch 1.2</a>.</li>
+<li>(mentioned in notes) <em>Computational and Inferential Thinking</em>, <a href="https://inferentialthinking.com/chapters/05/2/Ranges.html">Ch 5.2</a></li>
+<li>(mentioned in notes) <em>Computational and Inferential Thinking</em>, <a href="https://inferentialthinking.com/chapters/02/1/observation-and-visualization-john-snow-and-the-broad-street-pump.html">Ch 2.1</a></li>
 </ul>
 
 
@@ -997,13 +855,13 @@ Read <em>Inferential Thinking</em>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../01-intro/programming-basics.html" class="pagination-link" aria-label="Programming Basics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Programming Basics</span>
+      <a href="../07-visualizations/charts.html" class="pagination-link" aria-label="Bar Charts, Scatter Plots, Line Graphs">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Bar Charts, Scatter Plots, Line Graphs</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../02-datatypes/rates-incidence.html" class="pagination-link" aria-label="Application: Rates and Incidence">
-        <span class="nav-page-text">Application: Rates and Incidence</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../five-things.html" class="pagination-link" aria-label="5 Things to Know">
+        <span class="nav-page-text">5 Things to Know</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
