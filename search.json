@@ -1170,7 +1170,7 @@
   {
     "objectID": "08-histograms/index.html",
     "href": "08-histograms/index.html",
-    "title": "Histograms",
+    "title": "Histograms and Ranges",
     "section": "",
     "text": "There is an existing chapter that fully describes histograms. We highly recommend you read the textbook, then review the Data 6 lecture notebook.",
     "crumbs": [
@@ -1180,7 +1180,7 @@
   {
     "objectID": "08-histograms/index.html#ranges",
     "href": "08-histograms/index.html#ranges",
-    "title": "Histograms",
+    "title": "Histograms and Ranges",
     "section": "Ranges",
     "text": "Ranges\nnp.arange is a NumPy function useful for producing sequences of equally spaced numbers. Read the chapter for more details.\n\n\n\n\n\n\nRead Inferential Thinking\n\n\n\nRead Ch 5.2, which describes the np.arange function.\n\n\nBefore continuing, make sure that you: * Know that the full function signature of np.arange(start, end, step). * Know what the default arguments for start and/or step are when you pass in one or two arguments. * Remember that a range always includes its start value, but does not include its end value. It counts up by step, and it stops before it gets to the end.",
     "crumbs": [
@@ -1190,9 +1190,9 @@
   {
     "objectID": "08-histograms/index.html#histograms",
     "href": "08-histograms/index.html#histograms",
-    "title": "Histograms",
+    "title": "Histograms and Ranges",
     "section": "Histograms",
-    "text": "Histograms\n\n\n\n\n\n\nRead Inferential Thinking\n\n\n\nRead Ch 7.2, which describes histograms in detail.\n\n\nBefore continuing, make sure that you:\n\nUnderstand terminology related to histograms:\n\nBins (lower bound, upper bound)\nDensity, area, proportion.\n\nCan use the area principle to explain histogram shape and bin area/dimensions.\nCan compute area and proportion from bin dimensions.\nCan interpret bin density as a measure of bin “crowdedness” with respect to the distribution.\nCan determine use cases for using bar charts over histograms, and vice versa.\nCan use the hist method and specify the optional parameter density as True or False",
+    "text": "Histograms\n\n\n\n\n\n\nRead Inferential Thinking\n\n\n\nRead Ch 7.2, which describes histograms in detail.\n\n\nBefore continuing, make sure that you:\n\nUnderstand terminology related to histograms:\n\nBins (lower bound, upper bound)\nDensity, area, proportion.\n\nCan use the area principle to explain histogram shape and bar density, area, and dimensions.\nCan compute area and proportion from bar dimensions.\nCan determine use cases for using bar charts over histograms, and vice versa.\nCan use the hist method and specify the optional parameter density as True or False",
     "crumbs": [
       "L08: Histograms"
     ]
@@ -1200,7 +1200,7 @@
   {
     "objectID": "08-histograms/index.html#lecture-notebook",
     "href": "08-histograms/index.html#lecture-notebook",
-    "title": "Histograms",
+    "title": "Histograms and Ranges",
     "section": "Lecture Notebook",
     "text": "Lecture Notebook\nThis notebook mostly covers the hist Table method in the datascience package. See the Data 6 Python Reference for full information.\ntbl.hist(column): This table method has many optional arguments, but we highlight the most important ones here:\n\nbins: Specify bounds of bins, as an array. All but the last element of the array specifies bin lower bounds; the last element specifies the upper bound of the rightmost bin. If not specified, the default produces 10 equally spaced bins.\ndensity: Boolean value (True or False). True by default calculates height as percent per unit. If False, calculates height as count in bin.",
     "crumbs": [
@@ -1210,7 +1210,7 @@
   {
     "objectID": "08-histograms/index.html#external-reading",
     "href": "08-histograms/index.html#external-reading",
-    "title": "Histograms",
+    "title": "Histograms and Ranges",
     "section": "External Reading",
     "text": "External Reading\n\n(mentioned in notes) Computational and Inferential Thinking, Ch 5.2\n(mentioned in notes) Computational and Inferential Thinking, Ch 2.1",
     "crumbs": [
