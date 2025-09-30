@@ -1,0 +1,7 @@
+---
+title: "[Lab01\_Lec03] Evaluation, Names, and Data Types"
+subtitle: "Lecture 03"
+---
+
+This chapter covers the key concepts from Lecture 03.
+

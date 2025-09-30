@@ -1,0 +1,146 @@
+---
+title: "[Lec 10] Data 6 Fall 2024 - Taking and Filtering Rows"
+---
+
+## Slide 1: Taking and 
+Filtering Rows
+
+- Data 6 Fall 2024
+- LECTURE 10
+- Getting subsets of table rows to answer questions.
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+
+## Slide 2: Week 4
+
+- Homework 1 is due tonight!
+- Reading 2 Assignment is due next Thursday!
+- Week 4 Survey is due next Monday!
+- Announcements!
+
+## Slide 3: Today’s Roadmap
+
+- Review: .take()
+- Booleans
+- Filtering with .where()
+- Lecture 10, Data 6 Fall 2024
+
+## Slide 4: Review: .take()
+
+- 1. Review: .take()
+- 2. Booleans
+- 3. Filtering with .where()
+- ➤
+
+## Slide 5: Row Index
+
+- Rows, like columns, have indexes. Like everything else in Python, rows are 0-indexed.
+
+## Slide 6: .take()
+
+- The method
+- t.take(row\_indices)
+- returns a new table with only the rows specified by row\_indices.
+- If row\_indices is a single integer, it returns a table with just one row – the row at index row\_indices.
+- If row\_indices is an array, it returns a table with all of the rows at positions specified by row\_indices.
+- .take is often used in conjunction with NumPy array ranges!
+
+## Slide 7: .take() with Arrays
+
+- Incidentally, the .take method works on arrays too, not just tables.
+- That means you can reverse the order of .take and .column and still get the same result.
+- ⚠️ This interchangeability does not generally hold true with other methods, so be careful!
+
+## Slide 8: Booleans
+
+- 1. Review: .take()
+- 2. Booleans
+- 3. Filtering with .where()
+- ➤
+
+## Slide 9: bool
+
+- The bool, or Boolean type, has only two values: True and False. No other values have this type.
+- True, and False are Python keywords.
+- They have special meanings and cannot be
+- used as names.
+- In this regard, they’re similar to values 3, -15.2, and "zebra".
+
+## Slide 10: Boolean Data
+
+- In data science, boolean values can be used represent a binary variable:
+- yes/no, on/off, high/low, etc.
+
+## Slide 11: Using Boolean Values
+
+- True and False are technically numeric values:you can cast them to integers and floats,and use them in arithmetic expressions.
+- True is equivalent to 1.
+- False is equivalent to 0.
+- Like other data types, it can be stored in arrays.
+
+## Slide 12: Filtering with .where()
+
+- 1. Review: .take()
+- 2. Booleans
+- 3. Filtering with .where()
+- ➤
+
+## Slide 13: Review: Filtering Rows
+
+- Often times, we will have a table and will want to access only the rows where some condition is true. For example, given our SAT data, we may want all of the rows where…
+- The combined SAT score is above 1800 (remember, this data is on the old 2400 scale).
+- The state name is equal to “California”.
+- The state name contains “Dakota”.
+- The math SAT score is between 580 and 600.
+- Accessing a subset of our data is called filtering. The method t.where will help us filter.
+- .where is the most important table method we will learn in this class.
+- ✅ Exact Match .where()
+
+## Slide 14: Review: Filtering Rows
+
+- Often times, we will have a table and will want to access only the rows where some condition is true. For example, given our SAT data, we may want all of the rows where…
+- The combined SAT score is above 1800 (remember, this data is on the old 2400 scale).
+- The state name is equal to “California”.
+- The state name contains “Dakota”.
+- The math SAT score is between 580 and 600.
+- Accessing a subset of our data is called filtering. The method t.where will help us filter.
+- .where is the most important table method we will learn in this class.
+- ✅ Exact Match .where()
+- We will now use .where to performconditional match, meaning we get rows whose columns meet a particular condition!
+
+## Slide 15: Table.where Predicates
+
+- The method t.where(label, value) returns a new table that contains only the rows whose label field/attribute exactly matches value.
+- This method is shorthand for the Table.where predicate structure: 	t.where(label, are.equal\_to(value))
+- This structure chooses the rows for which the “predicate” is True,and filters out the rows for which the predicate is False.
+- A couple of examples will make this syntax easier to understand.
+
+## Slide 16: Example
+
+## Slide 17: Table.where Predicates Reference
+
+- The method t.where(column, pred) creates a new table with only the rows from t  where column satisfies the predicate pred. See the Python Reference™ for all possible predicates; here are some of the main ones:
+- Adding not\_ to any of the above to negates the predicate, e.g. are.not\_equal\_to(z).
+
+## Slide 18: Multiple Predicates with Method Chaining
+
+- Sometimes we may want only the rows where multiple conditions are true. For instance, we may want all rows where…
+- The participation rate is above 20% and the combined SAT score is above 1500.
+- The participation rate is below 10%, the combined SAT score is above 1600, and the state is in the Deep South.
+- No problem: just method chain .where multiple times!
+
+## Slide 19: ‹\#›
+
+## Slide 20: In Conclusion…
+
+## Slide 21: Summary
+
+## Slide 22: Recap
+
+- .take()
+- Booleans
+- .where()
+- https://forms.gle/G9UVKN4unatCLWC66
+- Working with Rows
+- Joining Tables
+- Next Time
+

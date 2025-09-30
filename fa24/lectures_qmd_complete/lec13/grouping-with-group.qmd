@@ -1,0 +1,107 @@
+---
+title: "Grouping with .group"
+subtitle: "From Lecture 13"
+---
+
+## Grouping, Pivoting
+
+- Data 6 Fall 2024
+- LECTURE 12
+- Extracting and aggregating information from tables.
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+
+## Grouping with .group
+
+- 1. Grouping with .group
+- 2. Grouping by Multiple Columns
+- 3. Pivot Tables with .pivot
+- ➤
+
+## Aggregating with .group()
+
+- The term “group” in data science is most commonly associated with data aggregation and disaggregation.
+- Aggregation: A process in which information is gathered and expressed in collective or summary form.
+- Useful for getting information about groups based on variables (age, profession, income) while simultaneously preserving confidentiality of individuals
+- Disaggregation (aka disentanglement): A process of taking aggregated data and breaking it down into smaller information units.
+- Useful to highlight outcomes that pertain to individual subsets of results/outcomes (e.g., gender, location, socio-cultural/ethnic background, age groups, etc.) to expose hidden trends
+- Source
+
+<details><summary>Speaker notes</summary>
+
+https://www.nccih.ca/docs/context/FS-ImportanceDisaggregatedData-EN.pdf
+
+</details>
+
+## .group()
+
+- Question: What is the relationship between the table on the right and the table on the left?
+- Answer: Same data, different unit of analysis. The right table is an aggregated view of the	       left table, grouped by artist.
+
+## .group()
+
+- The method t.group(column) counts the number of rows for each unique value in column, and returns a two-column table with the results.
+- Note: t.group(column) only keeps the column column, the frequency counts, and no others.
+
+## group + sort + take = ❤️
+
+- This is a common pattern: grouping and then sorting, and then taking.
+- Here, it gives us the 10 artists with the most songs in the Spotify Daily Top 200 streams table.
+- top\_10\_artists = streams.group('artist\_names') \
+- .sort('count',
+- descending=True) \
+- .take(np.arange(10))
+
+## Advanced Grouping
+
+- 1. Grouping with .group
+- 2. Grouping by Multiple Columns
+- 3. Pivot Tables with .pivot
+- ➤
+
+## gm.group('Brand', np.mean)
+
+- gm.group('Brand', np.mean)
+
+## .group
+
+- The method t.group(column, collect) combines/aggregates all rows with the same value for column into a single row in the resulting table, according to the function collect.
+- The collect argument is optional.
+  - len: number of grouped values (default).
+  - list: list of all grouped values.
+  - sum: total of all grouped values.
+  - np.mean: average of all grouped values.
+- collect can be function that works on arrays!
+  - You can write your own functions if you need to.
+  - If it doesn’t work with non-numeric values (like sum), it skips non-numeric columns.
+
+## Which Columns Should We Group By?
+
+- It usually only makes sense to group by columns that store categorical information that is shared across multiple rows.
+- If you had a bunch of dogs, you could group by
+- Breed.
+- Size (small, medium, large).
+- Sex.
+- Color.
+- It wouldn’t make sense to group by weight in pounds, since every dog will have a slightly different weight and two dogs having the exact same weight doesn’t tell you much.
+
+## Grouping by Multiple Columns
+
+- 1. Grouping with .group
+- 2. Grouping by Multiple Columns
+- 3. Pivot Tables with .pivot
+- ➤
+
+## Grouping by Multiple Columns
+
+- If we pass a list of column names as the first argument to group:
+- t.group(column\_or\_columns, collect)
+- the resulting table has one row for every unique combination of values in the specified columns.
+- Just as before, if we call group with a single argument (a list or array), we get back counts. We can specify a collect function if we want to.
+- One row for every combination of Manufacturer and Brand.
+
+## Grouping by More Than Two Columns
+
+- You can group by any number of columns, but we rarely group by more than two columns as the results tend to be less meaningful.
+- Here, Manufacturer doesn’t tell us much.
+
+

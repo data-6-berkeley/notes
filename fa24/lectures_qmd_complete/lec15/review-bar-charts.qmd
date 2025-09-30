@@ -1,0 +1,41 @@
+---
+title: "Review: Bar Charts"
+subtitle: "From Lecture 15"
+---
+
+## Bar Charts
+
+- Display all values of a categorical variable, along with their respective frequencies.
+- One bar for each category
+- Choose the order of bars
+- Length of bar is the frequency (percent or count) of individuals in that category.
+- Not a bar chart; each respondent could pick more answer, so the bars represent overlapping groups..
+- A bar chart that plots the distribution of the categorical variable Cookie.
+- Percents of survey respondents on “a major reason they would find it difficult to quarantine themselves for at least 14 days”
+- Source: Pew Research
+
+## Debugging bar charts
+
+- 1. Categorical Distributions
+- 2. Bar Charts
+- 3. Grouped Bar Charts
+- ➤
+
+## Better bar charts
+
+- 1. Categorical Distributions
+- 2. Bar Charts
+- 3. Grouped Bar Charts
+- ➤
+
+## Bar Charts vs. Histograms
+
+- Bar charts visualize the distribution of a categorical variable, or the relationship between a categorical variable and a numerical variable.
+- Length of bar corresponds to value.
+- Width of bar means nothing.
+- Histograms visualize the distribution of a numerical variable.
+- Length of bar corresponds to number of values within bin.
+- Width of bar corresponds to the width of the bin.
+  - Wider bin → more values within bin → smoother histogram.
+
+

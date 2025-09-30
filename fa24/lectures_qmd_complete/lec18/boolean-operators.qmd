@@ -1,0 +1,31 @@
+---
+title: "Boolean Operators"
+subtitle: "From Lecture 18"
+---
+
+## Comparison Operators
+
+- Each of these comparisons evaluate to True if the statement holds, and False if it doesn’t.
+
+## Boolean Operators
+
+- 1. Comparisons
+- 2. Boolean Operators
+- 3. Truth Tables
+- ➤
+
+## Boolean operators
+
+- Boolean operators allow us to combine the result of multiple booleans.
+- and and or operate on two (or more) operands; not operates on just one.
+
+## Compound boolean expressions
+
+- Things can get pretty wacky!
+- 3 < 4 <= 5                  \# True
+- 3 < 4 > 2 < 11 > -1         \# True
+- 3 < 4 < 2 > 11 > -1         \# False
+- But again, just because you can do something doesn’t mean you should.
+- The first line is fine, but don’t use the latter two.
+
+

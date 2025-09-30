@@ -1,0 +1,47 @@
+---
+title: "Simpson’s Paradox"
+subtitle: "From Lecture 16"
+---
+
+## Simpson’s Paradox
+
+- ➤
+- 1973 UC Berkeley Graduate Admissions
+- Simpson’s Paradox
+
+## Simpson’s Paradox
+
+- Simpson’s paradox is a phenomenon where a trend appears to go one way in data, but when disaggregated into groups the trend appears to reverse direction or disappear.
+- Simpson’s paradox involves at least three variables:
+- The observed outcome variable
+- The observed explanatory variable
+- The lurking (or confounding) explanatory variable
+- (less of a paradox; more of a lesson to analyze not just the whole, but also the parts)
+- Wikipedia [link]
+
+## Simpson’s Paradox: Example
+
+- When taken as a whole, women seem to have a lower admission rate than men.
+- Freedman, Pisani, and Purves. “Sex Bias in Graduate Admissions.” Statistics (1978) Chapter 2.  pp. 17-20.
+- Bickel, Hammel, and O’Connell. “Sex Bias in Graduate Admissions:” Data from Berkeley“ Science vol. 187 (1975) pp. 398-404.
+- Wikipedia [link]
+- When split by departments, women actually have a higher admission rate than men in many different departments (4 of the largest 6).
+- Greater percentage of successful applicantsthan the other listed gender
+- Greater number of applicants than the other listed gender
+
+## Simpson’s Paradox: Visualized
+
+- When taken as a whole, women seem to have a lower admission rate than men.
+- Freedman, Pisani, and Purves. “Sex Bias in Graduate Admissions.” Statistics (1978) Chapter 2.  pp. 17-20.
+- Bickel, Hammel, and O’Connell. “Sex Bias in Graduate Admissions:” Data from Berkeley“ Science vol. 187 (1975) pp. 398-404.
+- Wikipedia [link]
+- When split by departments, women actually have a higher admission rate than men in many different departments (4 of the largest 6).
+- https://setosa.io/simpsons/
+
+<details><summary>Speaker notes</summary>
+
+NOTE: to get rid of unprofessional caption on a website, once you open the URL then right-click, hit “Inspect”, then double-click/edit to remove the offensive text.
+
+</details>
+
+

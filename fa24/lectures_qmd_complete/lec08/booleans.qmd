@@ -1,0 +1,13 @@
+---
+title: "Booleans"
+subtitle: "From Lecture 08"
+---
+
+## Booleans
+
+- 1. Review: .take()
+- 2. Booleans
+- 3. Filtering with .where()
+- ➤
+
+

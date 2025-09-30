@@ -1,0 +1,24 @@
+---
+title: "select, drop, and add columns"
+subtitle: "From Lecture 07"
+---
+
+## Select, drop, and add columns
+
+- ➤
+- 1. Table Attributes and Methods
+- 2. select, drop, and add columns
+- 3. Create new tables
+- 5. More Table Methods and Documentation
+- 6. Demo: WNBA Data
+
+## Reorder Columns
+
+- How do we reorder the columns to get the following table?
+- Hint: use one of .select, .drop, or .with\_columns.
+
+## Reorder Columns: Solution
+
+- How do we reorder the columns to get the following table?
+
+

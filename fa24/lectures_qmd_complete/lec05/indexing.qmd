@@ -1,0 +1,33 @@
+---
+title: "Indexing"
+subtitle: "From Lecture 05"
+---
+
+## NumPy, Indexing, Variables in Data Science
+
+- Data 6 Fall 2024
+- LECTURE 05
+- What it means to work with data.
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+
+## Indexing
+
+- ➤
+- 1. Array Functions
+- 2. NumPy
+- 3. Indexing
+
+## Array Indexing
+
+- We can access an element in an array by using its index and the item() method:
+- arr.item(index)
+- Though int\_arr has 5 elements, the largest valid index is 4.
+
+## Negative Indexing
+
+- We can also “count backwards” using negative indexes.
+- -1 corresponds to the last element in a array.
+- -2 corresponds to the second last element in a array.
+- And so on...
+
+

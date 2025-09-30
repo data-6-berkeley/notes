@@ -1,0 +1,181 @@
+---
+title: "[Lec 16] Data 6 Fall 2024 - Bickel Case Study"
+---
+
+## Slide 1: Bickel Case Study
+
+- Data 6 Fall 2024
+- LECTURE 16
+- Simpson’s paradox explained through visualization.
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+- data6.org/fa24/syllabus/\#acknowledgements-
+
+## Slide 2: ‹\#›
+
+## Slide 3: Week 9
+
+- Homework 3 released tonight
+- Reading assignment 4 released tonight
+- Announcements!
+
+## Slide 4: Today’s Roadmap
+
+- Wrap up numerical variables & multiple variables
+- 1973 UC Berkeley Graduate Admissions
+- Simpson’s Paradox
+- Lecture 16, Data 6 Fall 2024
+
+## Slide 5: Practice
+
+- 1973 UC Berkeley Graduate Admissions
+- Simpson’s Paradox
+- ➤
+
+## Slide 6: table = Table().with\_columns("Names", make\_array("Albert", "Albert", "Ben", "Ben", "Ben"),
+                            "Mile Time", make\_array(8.1, 8.1, 9, 9, 7),
+                            "Average Heart Rate", make\_array(120, 150, 140, 180, 190),
+                            "Date", make\_array("1/1/24", "1/2/24", "1/1/24", "1/2/24", "1/2/24"))
+
+## Slide 7: ‹\#›
+
+## Slide 8: Write an expression that evaluates to Albert’s the maximum heart rate across all his runs.
+
+- 150
+
+<details><summary>Speaker notes</summary>
+
+max(table.where("Names", "Albert").column("Average Heart Rate"))
+
+</details>
+
+## Slide 9: Write an expression that gives us a count of the number of times that Albert and Ben went on a run.
+
+<details><summary>Speaker notes</summary>
+
+max(table.where("Names", "Albert").column("Average Heart Rate"))
+
+</details>
+
+## Slide 10: Plot it!
+
+- ←grouped\_table
+
+## Slide 11: Write an expression that shows the minimum heart rate for each runner across each date.
+
+<details><summary>Speaker notes</summary>
+
+max(table.where("Names", "Albert").column("Average Heart Rate"))
+
+</details>
+
+## Slide 12: Generate this histogram:
+p.s. The x axis goes until 13.5 (inclusive)
+
+## Slide 13: 1973 UC Berkeley Graduate Admissions
+
+- 1973 UC Berkeley Graduate Admissions
+- Simpson’s Paradox
+- ➤
+
+## Slide 14: UC Berkeley, Fall 1973
+
+- UC Berkeley graduate admissions data from the Fall of 1973.
+- Admissions data disaggregated by the six largest departments, labeled A through F.
+- Freedman, Pisani, and Purves. “Sex Bias in Graduate Admissions.” Statistics (1978) Chapter 2.  pp. 17-20.
+- Bickel, Hammel, and O’Connell. “Sex Bias in Graduate Admissions:” Data from Berkeley“ Science vol. 187 (1975) pp. 398-404.
+- Wikipedia [link]
+- Greater percentage of successful applicantsthan the other listed gender
+- Greater number of applicants than the other listed gender
+
+## Slide 15: Data Talk
+
+- What do you notice?
+- What do you wonder?
+- What story does this tell, especially about the community this data may impact?
+- What narratives/information are we missing?
+- Freedman, Pisani, and Purves. “Sex Bias in Graduate Admissions.” Statistics (1978) Chapter 2.  pp. 17-20.
+- Bickel, Hammel, and O’Connell. “Sex Bias in Graduate Admissions:” Data from Berkeley“ Science vol. 187 (1975) pp. 398-404.
+- Wikipedia [link]
+- Greater percentage of successful applicantsthan the other listed gender
+- Greater number of applicants than the other listed gender
+
+## Slide 16: Gender Ratio?
+
+- What does this data not present or represent?
+- In late 2020, the University of California began providing at minimum three equally recognized gender options to both students and employees: male, female, and nonbinary. [link]
+- Freedman, Pisani, and Purves. “Sex Bias in Graduate Admissions.” Statistics (1978) Chapter 2.  pp. 17-20.
+- Bickel, Hammel, and O’Connell. “Sex Bias in Graduate Admissions:” Data from Berkeley“ Science vol. 187 (1975) pp. 398-404.
+- Wikipedia [link]
+- Greater percentage of successful applicantsthan the other listed gender
+- Greater number of applicants than the other listed gender
+
+## Slide 17: Simpson’s Paradox
+
+- ➤
+- 1973 UC Berkeley Graduate Admissions
+- Simpson’s Paradox
+
+## Slide 18: Simpson’s Paradox
+
+- Simpson’s paradox is a phenomenon where a trend appears to go one way in data, but when disaggregated into groups the trend appears to reverse direction or disappear.
+- Simpson’s paradox involves at least three variables:
+- The observed outcome variable
+- The observed explanatory variable
+- The lurking (or confounding) explanatory variable
+- (less of a paradox; more of a lesson to analyze not just the whole, but also the parts)
+- Wikipedia [link]
+
+## Slide 19: Simpson’s Paradox: Example
+
+- When taken as a whole, women seem to have a lower admission rate than men.
+- Freedman, Pisani, and Purves. “Sex Bias in Graduate Admissions.” Statistics (1978) Chapter 2.  pp. 17-20.
+- Bickel, Hammel, and O’Connell. “Sex Bias in Graduate Admissions:” Data from Berkeley“ Science vol. 187 (1975) pp. 398-404.
+- Wikipedia [link]
+- When split by departments, women actually have a higher admission rate than men in many different departments (4 of the largest 6).
+- Greater percentage of successful applicantsthan the other listed gender
+- Greater number of applicants than the other listed gender
+
+## Slide 20: Simpson’s Paradox: Visualized
+
+- When taken as a whole, women seem to have a lower admission rate than men.
+- Freedman, Pisani, and Purves. “Sex Bias in Graduate Admissions.” Statistics (1978) Chapter 2.  pp. 17-20.
+- Bickel, Hammel, and O’Connell. “Sex Bias in Graduate Admissions:” Data from Berkeley“ Science vol. 187 (1975) pp. 398-404.
+- Wikipedia [link]
+- When split by departments, women actually have a higher admission rate than men in many different departments (4 of the largest 6).
+- https://setosa.io/simpsons/
+
+<details><summary>Speaker notes</summary>
+
+NOTE: to get rid of unprofessional caption on a website, once you open the URL then right-click, hit “Inspect”, then double-click/edit to remove the offensive text.
+
+</details>
+
+## Slide 21: Unpacking Visualizations
+
+- Figure 1 from the original paper in 1973.
+- How many variables are being shown in this figure? What are they?
+- The diagonal line drawn in this figure is a regression line to help visualize a trend (more in Data 8). What trend is the line trying to show?
+- Bickel, Hammel, and O’Connell. “Sex Bias in Graduate Admissions:” Data from Berkeley“ Science vol. 187 (1975) pp. 398-404.
+
+## Slide 22: Original Study (Bickel et al.)
+
+- This study is one of the classic instances of Simpson’s paradox. Bickel et al. further suggest that researching whether bias or discrimination occurs is nuanced and often misleading.
+- Assumption 1 is broken through social claims—that sexism occurs before admissions:
+- “Women are shunted by their socialization and education toward fields of graduate study that are generally more crowded, less productive of completed degrees, and less well funded, and that frequently offer poorer professional employment prospects.”
+- The study explores and undermines two assumptions that the admissions process is biased:
+- Male and female applicants have the same skills and qualifications for graduate school.
+- The \# of male and female applicants do not vary based on the specific field of study.
+- Given both assumptions, our initial takeaway is that the admissions process is biased.
+- Assumption 2 is broken by showing that when disaggregated by field of study, Simpson’s paradox appears.
+- Bickel, Hammel, and O’Connell. “Sex Bias in Graduate Admissions:” Data from Berkeley“ Science vol. 187 (1975) pp. 398-404.
+
+## Slide 23: Recap
+
+- 1973 UC Berkeley Graduate Admissions
+- Simpson’s Paradox
+- https://docs.google.com/forms/d/e/1FAIpQLSeQHliacz6dmHKtXHMZfe2WYeP4gclfLl4LpBZD81YxKYcmHA/viewform?usp=sf\_link
+- Quick Check
+- Quiz 1
+- Sorting and Filtering Rows
+- Next Time
+

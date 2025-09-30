@@ -1,0 +1,13 @@
+---
+title: "Taking and Filtering Rows"
+subtitle: "Lecture 08"
+---
+
+This chapter covers the key concepts from Lecture 08.
+
+## Topics Covered
+
+* [Review: .take()](review-take.qmd)
+* [Booleans](booleans.qmd)
+* [Filtering with .where()](filtering-with-where.qmd)
+

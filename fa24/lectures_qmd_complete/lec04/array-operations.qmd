@@ -1,0 +1,73 @@
+---
+title: "Array Operations"
+subtitle: "From Lecture 04"
+---
+
+## Arrays and Variables
+
+- Data 6 Fall 2024
+- LECTURE 04
+- Storing many values in a single name.
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+
+## Arrays
+
+- 1. NoneType
+- 2. Arrays
+- 3. Variables in Data Science
+- ➤
+
+## An Array Is a Sequential Collection of Values
+
+- multiple values organized together
+- arranged like a line/queue
+- Use make\_array() to create arrays.
+- Values in an array must all be of the same data type, and Python will cast appropriately.
+- Array with 4 ints
+- Array with 4 floats
+- Array with 3 strs
+
+## An Array Is a Sequential Collection of Values
+
+- Arrays allow us to write code that performs computation on many pieces of data at once.
+- Python can assign an entire arrayof values to a single name.
+- The order of a array is fixed (i.e., they will be arranged in the order specified when building the array), and values can be repeated.
+- multiple values organized together
+- arranged like a line/queue
+- Use make\_array() to create arrays.
+- Values in an array must all be of the same data type, and Python will cast appropriately.
+- Array with 4 ints
+- Array with 4 floats
+- Array with 3 strs
+
+## Array Operations
+
+- 1. NoneType
+- 2. Arrays
+- 3. Variables in Data Science
+- ➤
+
+## Arithmetic on Arrays: 
+
+Evaluation Returns a New Array
+
+- ⚠️ Evaluating array expressions returns a new array; it does not change the original array.
+
+## Arithmetic on Arrays: 
+
+Evaluation Returns a New Array
+
+- ⚠️ Evaluating array expressions returns a new array; it does not change the original array.
+- Array Arithmetic is Element-Wise
+- 1) Arithmetic with an array and a numeric value
+
+## Arithmetic on Arrays: 
+
+Evaluation Returns a New Array
+
+- ⚠️ Evaluating array expressions returns a new array; it does not change the original array.
+- Array Arithmetic is Element-Wise
+- 1) Arithmetic with an array and a numeric value
+- 2) Arithmetic with two arrays of equal length (same number of values).
+
+

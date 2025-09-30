@@ -1,0 +1,14 @@
+---
+title: "NumPy, Indexing, Variables in Data Science"
+subtitle: "Lecture 05"
+---
+
+This chapter covers the key concepts from Lecture 05.
+
+## Topics Covered
+
+* [Array Functions](array-functions.qmd)
+* [NumPy](numpy.qmd)
+* [Indexing](indexing.qmd)
+* [Variables in Data Science](variables-in-data-science.qmd)
+

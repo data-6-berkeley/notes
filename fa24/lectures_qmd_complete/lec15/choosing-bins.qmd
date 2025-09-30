@@ -1,0 +1,26 @@
+---
+title: "Choosing Bins"
+subtitle: "From Lecture 15"
+---
+
+## A Note on Bins
+
+- By looking at a histogram, we cannot tell how values are distributed within a bin.
+
+## Choosing Bins
+
+- 1. Review: Bar Charts
+- 2. NumPy Array Ranges
+- 3. Numerical Distributions, Histograms
+- 4. Choosing Bins
+- 5. Overlaid and Side-by-Side Histograms
+- ➤
+
+## Bins
+
+- .hist chooses bins by default for us.
+- The resulting histogram often looks nice, but has non-integer bins which are harder for us to interpret.
+- We can choose our own bins.
+- We will only consider histograms where all bins have equal width, though it is possible to draw histograms where bins have unequal width.
+
+

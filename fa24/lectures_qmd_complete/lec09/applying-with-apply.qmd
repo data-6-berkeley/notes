@@ -1,0 +1,43 @@
+---
+title: "Applying with .apply"
+subtitle: "From Lecture 09"
+---
+
+## Applying
+
+- Data 6 Fall 2024
+- LECTURE 9
+- Writing functions to augment our tables.
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+
+## Applying with .apply
+
+- 1. Motivation
+- 2. Applying with .apply
+- 3. Masking with Boolean Arrays
+- ➤
+
+## .apply()
+
+- The method
+- t.apply(function, column\_or\_columns)
+- applies function to every element in column\_or\_columns, and returns an array with the results.
+- If you only supply one column name, function should only take one argument.
+- If you supply X column names, function should take X arguments.
+
+## Masking with 
+
+Boolean Arrays
+
+- 1. Motivation
+- 2. Applying with .apply
+- 3. Masking with Boolean Arrays
+- ➤
+
+## Masks with Tables
+
+- We can achieve the same behavior with tables – by using where with just a single argument.
+- Previously, where required two arguments.
+- Just one argument: a list of booleans.
+
+

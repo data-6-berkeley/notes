@@ -1,0 +1,332 @@
+---
+title: "[Lec 17] Data 6 Fall 2024 - Visualizing Two Numerical Variables"
+---
+
+## Slide 1: Visualizing Two Numerical Variables
+
+- Data 6 Fall 2024
+- LECTURE 17
+- Scatter plots and line plots.
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+- data6.org/fa24/syllabus/\#acknowledgements-
+
+## Slide 2: Week 9
+
+- Let’s have a great class :)
+- Homework 3 has released – due 10/31 11 PM
+- Reading 4 has released – due 10/31 11PM
+- Homework 3 Clarifications
+- np.median will be added to Reference Sheet
+- Q3b: please make sure that the rows are “Gender” and the columns are “Admission”
+- Announcements!
+
+## Slide 3: Today’s Roadmap
+
+- Review: Histograms
+- Review: Overlaid and Side-by-Side Histograms
+- Review: Grouped Bar Charts
+- Scatter Plots
+- Customizing Scatter Plots
+- Line Plots
+- Multiple Line Plots
+- Lecture 17, Data 6 Fall 2024
+
+## Slide 4: Review: Histograms
+
+- 1. Review: Histograms
+- 2. Overlaid and Side-by-Side Histograms
+- 3. Grouped Bar Charts
+- 4. Scatter Plots
+- 5. Customizing Scatter Plots
+- 6. Line Plots
+- 7. Multiple Line Plots
+- ➤
+
+## Slide 5: Today’s Data
+
+- Our first dataset today comes from Basketball Reference. It contains per-game averages of players in the 2019-2020 NBA season.
+- 'Player'(str) : name.
+- 'Pos'(str) : general position (either Forward or Guard).
+- 'Tm'(str) : abbreviated team.
+- 'PTS'(float): average number of points scored per game.
+- 'TRB'(float): average number of rebounds per game.
+- 'AST'(float): average number of assists per game.
+- '3PA'(float): average number of three-point shots attempted per game.
+- '3P%'(float): average proportion of three-point shots that go in.
+
+## Slide 6: Overlaid and Side-by-Side Histograms
+
+- 1. Review: Histograms
+- 2. Overlaid and Side-by-Side Histograms
+- 3. Grouped Bar Charts
+- 4. Scatter Plots
+- 5. Customizing Scatter Plots
+- 6. Line Plots
+- 7. Multiple Line Plots
+- ➤
+
+## Slide 7: Histograms
+
+- A histogram visualizes the distribution of a numerical variable by binning. The method
+- t.hist(column, density = False)
+- creates a histogram of the column column of t. This column must contain numerical values.
+- It automatically chooses bins for us. We can change them.
+- We will always set  density = False.
+
+## Slide 8: group and overlay
+
+- We can create grouped histograms by using the group and overlay arguments in hist.
+- To create one histogram for every unique category in some categorical column, assign the group argument to the name of the categorical column.
+- t.hist(column, density = False, group = categorical\_column)
+- By default, the above creates multiple histograms on the same set of axes. If you would rather have multiple individual histograms, set the overlay argument to False.
+- t.hist(column, density = False, group = categorical\_column, overlay = False)
+- What if we want to show the distribution of a numerical variable, grouped by some categorical variable? For example, tips on weekends vs. tips on weekdays?
+
+## Slide 9: Example
+
+- It can be hard to compare two distributions if one has significantly more observations than the other.
+- When comparing distributions, compare the shape, not the absolute heights.
+
+## Slide 10: Grouped Bar Charts
+
+- 1. Review: Histograms
+- 2. Overlaid and Side-by-Side Histograms
+- 3. Grouped Bar Charts
+- 4. Scatter Plots
+- 5. Customizing Scatter Plots
+- 6. Line Plots
+- 7. Multiple Line Plots
+- ➤
+
+## Slide 11: Separate Bar Charts
+
+- top\_10.barh('track\_name', 'rank')
+- top\_10.barh('track\_name', 'peak\_rank')
+- Spotify keeps track of each song’s “peak rank”, which is a song’s lowest rank since its release on the platform.
+- With our current tools, we’d likely make two different plots, which are difficult to compare:
+
+## Slide 12: Grouped Bar Charts
+
+- top\_10.select('rank',
+- 'track\_name',
+- 'peak\_rank') \
+- .barh('track\_name')
+- We can use t.select() to build a “narrower” table with one categorical variable + several variables.
+- If the table we call barh on has multiple numerical columns, it will draw bars for each of them, and each column will get its own color!
+
+## Slide 13: barh() Optional Parameter: overlay
+
+- top\_10.select('rank',
+- 'track\_name',
+- 'peak\_rank') \
+- .barh('track\_name', overlay = False)
+- barh() also has an optional parameter: overlay.
+- If not supplied, then by default barh will plot all numerical variables as bars on the same plot.
+- If supplied (overlay = False), then barh will plot each numerical variable on separate plots.
+
+## Slide 14: Scatter Plots
+
+- 1. Review: Histograms
+- 2. Overlaid and Side-by-Side Histograms
+- 3. Grouped Bar Charts
+- 4. Scatter Plots
+- 5. Customizing Scatter Plots
+- 6. Line Plots
+- 7. Multiple Line Plots
+- ➤
+
+## Slide 15: Question
+
+- What if we want to visualize two numerical variables at once?
+- Height vs. weight
+- Tip vs. total bill
+- Number of rebounds vs. number of points
+- So far, we’ve visualized the following combinations of variables:
+- Bar Chart: One categorical variable, one numerical variable
+  - Top songs on Spotify
+- Histogram: One numerical variable
+  - Distribution of tips
+  - Frequency of cookies
+
+## Slide 16: Scatter Plots
+
+- Scatter plots are used to visualize two numerical variables at once. To create a scatter plot from a table, you need two columns:
+- A numerical column for the x-axis.
+- A numerical column for the y-axis.
+- The resulting graph has one point for every row in your table.
+- We call this a graph of “y vs. x”
+
+## Slide 17: .scatter()
+
+- The method t.scatter(column\_for\_x, column\_for\_y)
+- creates a scatter plot using the specified columns. Both columns must contain numerical values.
+- If only column\_for\_x is provided, a separate scatter plot is drawn for every other column in t (similar to the behavior of barh).
+- “On average, as the number of points a player averages increases, the number of assists they average also increases.”
+
+## Slide 18: ‹\#›
+
+- Quick Check !!
+- Fill in the blanks to create the scatter plot showing three point attempts (“3PA”) vs. rebounds (“TRB”) for Forwards.
+- nba.where(..., ...).scatter(..., ...)
+
+## Slide 19: Example
+
+- How do we get this cool line? :D
+
+## Slide 20: Customizing Scatter Plots
+
+- 1. Review: Histograms
+- 2. Overlaid and Side-by-Side Histograms
+- 3. Grouped Bar Charts
+- 4. Scatter Plots
+- 5. Customizing Scatter Plots
+- 6. Line Plots
+- 7. Multiple Line Plots
+- ➤
+
+## Slide 21: Encoding
+
+- As with barh and hist, we can use xaxis\_title, yaxis\_title, title, width, and height to tweak scatter plots.
+- We can also take things a step further, by changing the following properties for each point:
+- Size – make all points bigger, or make size proportional to some other numerical variable (e.g. older players have larger points).
+- Color – different colors for different categories (e.g. one color for forwards, one color for guards).
+- Labels – labeling each point according to a category (name, position, team, etc.).
+
+## Slide 22: Point Size
+
+- As 3PA increases, point size increases.
+- There are two relevant arguments:
+- s (int): assign this to change the default size of all points.
+- sizes (str): assign this to the name of a numerical column in your table; point sizes will be proportional to the values in this column.
+
+## Slide 23: Point Color
+
+- “Guards tend to have fewer rebounds and more three-point attempts than forwards.”
+- group (str): assign this to the name of a categorical column in your table.
+- Point colors will be determined according to the category.
+- Effectively two separate scatter plots sharing the same axis.
+
+## Slide 24: Labels
+
+- labels (str): assign this to the name of any column in your table.
+  - Each point will be labeled according to its value.
+  - The more points you have, the harder the labels will be to read.
+- You cannot combine labels and group.
+  - Not currently implemented in datascience.
+  - Can combine labels and sizes, and most other encodings.
+
+## Slide 25: (untitled)
+
+## Slide 26: Line Plots
+
+- 1. Review: Histograms
+- 2. Overlaid and Side-by-Side Histograms
+- 3. Grouped Bar Charts
+- 4. Scatter Plots
+- 5. Customizing Scatter Plots
+- 6. Line Plots
+- 7. Multiple Line Plots
+- ➤
+
+## Slide 27: New dataset
+
+- Our second dataset also comes from Basketball Reference. This dataset contains team-based average statistics for each year.
+- A little bit about our new dataset:
+- 'Season': the second calendar year for each season (e.g. `2018` refers to the 2017-18 season).
+- 'FGA': the average number of field goal attempts (shot attempts) per game.
+- 'Pace': the average number of times a team had possession of the ball per game.
+
+## Slide 28: Motivating Line Plots
+
+- While a scatter plot would theoretically work in such a scenario, there are some key differences that lead us to another type of plot.
+- There’s only one y for every x.
+  - There’s only one number of COVID cases per day.
+  - There can be many people with the same height when graphing weight vs. height.
+- We want to emphasize a trend by “connecting the dots”.
+  - 🤔
+- What if we want to visualize two numerical variables, but one of them is time?
+- COVID cases per day in Alameda County.
+- Average rainfall for each month of the year in San Diego.
+
+## Slide 29: .plot()
+
+- “The league slowed down in the late 90s and early 2000s, but is speeding back up.”
+- The method t.plot(column\_for\_x, column\_for\_y)
+- creates a line plot using the specified columns. Both columns must contain numerical values.
+- column\_for\_x should contain some time-based variable.
+- If only column\_for\_x is provided, a separate line plot is drawn for every other column in t (similar to the behavior of barh and scatter).
+
+## Slide 30: Examples
+
+- “The three-point shot has rapidly increased in popularity over the past decade.”
+
+## Slide 31: Multiple Line Plots
+
+- 1. Review: Histograms
+- 2. Overlaid and Side-by-Side Histograms
+- 3. Grouped Bar Charts
+- 4. Scatter Plots
+- 5. Customizing Scatter Plots
+- 6. Line Plots
+- 7. Multiple Line Plots
+- ➤
+
+## Slide 32: Multiple Line Plots
+
+- If we provide plot with only a single column name, it will draw lines for every other column in your table.
+- If you want to do this, make sure to select columns first!
+
+## Slide 33: In Conclusion…
+
+## Slide 34: Scatter Plots vs. Line Plots
+
+- Line plots visualize the relationship between two numerical variables — one of them is ordered.
+- x-axis generally represents time or distance.
+- There should only be one y value for every x value.
+- Useful for identifying trends over time
+- Scatter plots visualize the relationship between any two numerical variables.
+- No need to have unique x (or y) values.
+- Useful for identifying patterns between variables
+
+## Slide 35: Overlaid Bar Charts vs. Overlaid Histograms
+
+- Overlaid Histograms visualize the relationship between one continuous numerical variable and one categorical variable
+- There should only be one y value for every x value.
+- Useful for comparing numerical distributions
+- Overlaid Bar Charts visualize the relationship of two or more categorical variables (normally same categories).
+- Useful for comparing categorical distributions
+
+## Slide 36: Summary: scatter
+
+- The method t.scatter(column\_for\_x, column\_for\_y)creates a scatter plot using the specified columns. Both columns must contain numerical values.
+- Optional arguments, in addition to xaxis\_title, width, etc:
+- s (int): changes default size of all points.
+- sizes (str): point sizes will be proportional to the values in this numerical column.
+- group (str): points will be colored according to category in this categorical column.
+- labels (str): points will be labeled according to their value in this column.
+
+## Slide 37: Summary: plot
+
+- The method t.plot(column\_for\_x, column\_for\_y)creates a line plot using the specified columns. Both columns must contain numerical values.
+- column\_for\_x should contain some time-based variable.
+- If only column\_for\_x is provided, a separate line plot is drawn for every other column in t (similar to the behavior of barh and scatter).
+  - See Slide 32 for an example. We didn’t demo this behavior for scatter.
+- Optional arguments, in addition to xaxis\_title, width, etc:
+- overlay (bool): If drawing multiple lines, setting overlay to False will draw multiple separate plots.
+
+## Slide 38: Recap
+
+- Review: Histograms
+- Review: Overlaid and Side-by-Side Histograms
+- Review: Grouped Bar Charts
+- Scatter Plots
+- Customizing Scatter Plots
+- Line Plots
+- Multiple Line Plots
+- Comparisons
+- Control
+- Next Time
+- https://docs.google.com/forms/d/e/1FAIpQLSc1o\_RQNjcXnE5hvVBiiRkEdaPycXDzII5OXOo\_Bl\_k-1U3kg/viewform
+
+## Slide 39: THANK YOU !!
+

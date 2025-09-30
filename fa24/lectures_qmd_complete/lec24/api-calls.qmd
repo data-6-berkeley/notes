@@ -1,0 +1,28 @@
+---
+title: "API Calls"
+subtitle: "From Lecture 24"
+---
+
+## API Calls
+
+- ➤
+- 1. LLMs
+- 2. Local LLMs Demo
+- 3. Training Data
+- 4. AI Chatbot Demo
+- 5. Risks
+- 6. Improvements
+- 7. API Calls
+
+## API Calls (Demo)
+
+- ➤
+- 1. LLMs
+- 2. Local LLMs Demo
+- 3. Training Data
+- 4. AI Chatbot Demo
+- 5. Risks
+- 6. Improvements
+- 7. API Calls
+
+

@@ -1,0 +1,104 @@
+---
+title: "Materials-Based Research"
+subtitle: "From Lecture 06"
+---
+
+## Intro to Social Science Research
+
+- Data 6 Fall 2024
+- LECTURE 06
+- From social theory to working with data.
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+
+## Social Science Research
+
+- ➤
+- Units of Analysis
+- Social Science Research
+- Materials-Based Research
+- Aggregation and Disaggregation
+
+## Theory, Research, and Hypotheses
+
+- Theory - a systematic set of related statements that accord with a worldview.
+- When (social) scientists do research, we use theories 3 different ways:
+- Theories prevent us from being taken in by flukes.
+- Theories help us make sense of observed patterns in ways that can suggest other possibilities.
+- Theories direct our research efforts, pointing us toward likely discoveries through empirical observation.
+- From SOC 5: Evaluation of Evidence
+
+## Research Question? Theory? Hypothesis?
+
+- For the purposes of this class, we’ll make the following distinction:
+- A research question is an exploratory question about a social concept to guide how we collect data OR make sense of existing data.
+- A theory is an associative statement that links together social concepts.
+- A hypothesis is an empirical instantiation of a theory, i.e., a testable statement involving a relationship between two variables, each of which represents a social concept.
+
+## Research Question? Theory? Hypothesis?
+
+- For the purposes of this class, we’ll make the following distinction:
+- A research question is an exploratory question about a social concept to guide how we collect data OR make sense of existing data.
+- A theory is an associative statement that links together social concepts.
+- A hypothesis is an empirical instantiation of a theory, i.e., a testable statement involving a relationship between two variables, each of which represents a social concept.
+- In materials based research, the research question guides how we make observations about existing data, from which we then formulate theories and test hypotheses.
+
+## Materials-Based Research
+
+- ➤
+- Units of Analysis
+- Social Science Research
+- Materials-Based Research
+- Aggregation and Disaggregation
+
+## Gathering Data for Research and Analysis
+
+- Conduct surveys, experiments, interviews, ethnography,measurements…
+- Data
+- Conceptualize variables
+- Pose research question and theory
+- +
+- +
+- All data are created/generated from human input:
+- Definition of variables
+- Research design and measurement
+- However, the researcher and data scientist are often not the same person.Data scientists therefore need to consider the context of how researchers generated data from existing materials.
+
+<details><summary>Speaker notes</summary>
+
+SOC 5 textbook p. 29
+
+Surveys: Participants answer a series of questions
+Experiments: trying an intervention, measuring outcomes, etc.
+Interviews: researchers actively talk to participants, generally messier data than surveys
+Ethnography: participant observation (passive)
+
+</details>
+
+## Gathering Data for Research and Analysis
+
+- A researcher considers both validity and generalizability throughout the data gathering process.
+- Conduct surveys, experiments, interviews, ethnography,measurements…
+- Data
+- Conceptualize variables
+- Pose research question and theory
+- +
+- +
+- Validity A quality of a measure concerning how accurate it is.
+- Internal Validity: How accurately are we measuring the defined concepts?
+- External Validity:
+  - How representative is the group being studied?
+  - How “real” is this study?
+- Generalizability The extent to which results or conclusions based on one population can be applied to others.
+
+<details><summary>Speaker notes</summary>
+
+SOC 5 textbook p. 29
+
+Surveys: Participants answer a series of questions
+Experiments: trying an intervention, measuring outcomes, etc.
+Interviews: researchers actively talk to participants, generally messier data than surveys
+Ethnography: participant observation (passive)
+
+</details>
+
+

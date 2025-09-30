@@ -1,0 +1,35 @@
+---
+title: "Demo: WNBA Data"
+subtitle: "From Lecture 07"
+---
+
+## Data 6 Content
+
+- Module 1
+- Introduction to Python and Jupyter Notebooks
+- Module 2
+- Arrays & Table Methods
+- Module 3
+- Data Visualization
+- Module 4
+- Societal Context & Final Project
+
+## Exploratory Data Analysis
+
+- John Tukey (1915-2000) was a Princeton Mathematician & Statisticianand an Early Data Scientist. He coined the phrase Exploratory Data Analysis (EDA).
+- [Data Analysis & Statistics, Tukey 1965; Image from LIFE Magazine]
+- EDA is like detective work:
+- Exploratory data analysis is an attitude, a state offlexibility, a willingness to look for those things thatwe believe are not there, as well as those thatwe believe to be there.
+- Today we will perform EDA by analyzing tables using Python.
+
+<details><summary>Speaker notes</summary>
+
+divide-and-conquer algorithm that recursively breaks down a DFT 
+
+John Tukey, Princeton mathematician and statistician, inventor of the Fast Fourier Transform and father of Exploratory Data Analysis.  Also coined the word “bit”.
+
+Emphasis courtesy Jeff Heer, U. Washington
+
+</details>
+
+

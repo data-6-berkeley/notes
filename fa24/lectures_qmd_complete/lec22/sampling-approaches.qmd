@@ -1,0 +1,90 @@
+---
+title: "Sampling Approaches"
+subtitle: "From Lecture 22"
+---
+
+## Sampling and CSS
+
+- Data 6 Fall 2024
+- LECTURE 22
+- Thinking about representation.
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+
+## Population vs. Sampling Frame vs. Sample
+
+- Given a research question, the population is the group you want to learn something about.
+  - However, directly studying the population as a whole is often not possible! Data might not exist at that scale, or it might be too costly to collect, if it’s even possible to gather that information.
+- So, we want to use a sample from the population to make inferences.
+  - If the sample is a good representation of the population, we can make useful analyses at a much lower cost.
+- Depending on how we select our sample, we may miss individuals from the population we’re interested in, and we might also include individuals that are not in the population.
+  - The list we actually draw our sample from is the sampling frame.
+
+## Population vs. Sampling Frame vs. Sample
+
+- Examples:
+  - A classroom of students in a school.
+    - Sample: classroom
+    - Population: student body of the school
+  - Picking out 10 marbles from a bag with 100 marbles.
+    - Sample: 10 marbles
+    - Population: bag of marbles
+  - Published papers in an academic journal.
+    - Sample: published papers in the journal
+    - Population: all research happening in the field
+- Sampling Frame: All classrooms
+- Sampling Frame: All marbles
+- Sampling Frame: All accessible papers
+
+## Population vs. Sampling Frame vs. Sample
+
+- Let’s say you’re planning a social event for all second-year students at your school. Since you only have the budget to cater pizza, you want to figure out what pizza toppings second-year students enjoy, and buy pizza toppings according to how popular they are.
+  - Our population is second-year students. Since our social event is for second-year students, the preferences of students that are not second-years is not relevant.
+- In order to figure out the most popular flavors, you survey every student walking into the cafeteria from 12 PM to 1 PM by asking what their favorite topping is. Assume that everyone responds.
+  - Our sampling frame is students walking into the cafeteria between 12 and 1.
+
+## Population vs. Sampling Frame vs. Sample
+
+- If we draw a sample from this sampling frame, is our sample representative? Why or why not?
+  - Not necessarily. Our survey will include the responses of students that are not second-years, who might have different preferences than the second-years.
+- How can we change our sampling method to make our sample look more like our population?
+  - We could send out an email to only second-year students, only record the response of second-year students, conduct the survey in more locations…
+- If a sample is representative, then it looks like the population. In this case, our sample may not be very representative.
+- Are our results generalizable?
+  - Maybe! For example, first-year students might have similar pizza preferences, but professors might not.
+
+## Sampling Approaches
+
+- ➤
+- 1. Recap
+- 2. Sample Setting
+- 3. Biases
+- 4. Sampling Approaches
+
+## Simple Random Sampling
+
+- Sample drawn uniformly at random, without replacement
+- Every subset of the population has the same chance of being chosen from the sampling frame
+  - Each individual has the same probability of selection as any other individual
+  - Each pair has the same probability of selection as any other pair
+  - Each trio has the same probability of selection as any other trio…
+
+## Complex Sampling
+
+- Stratified random sampling: Divide populations into subgroups (these are the strata) based on population characteristics, then draw random sample from each strata.
+  - Characteristics within each strata should be homogenous, but characteristics between different strata should be heterogeneous
+  - Requires detailed population information, which may not be readily available
+  - Improves representativeness by carefully curating the makeup of the sampling frame
+
+## Quota Sampling
+
+- Quota sampling is a non-probability sampling technique where you arbitrarily select a sample that includes a specific number of samples from particular categories.
+  - Example: You’re a classical musician who wants to know what piece of music other orchestra members want to play. In order to figure this out, you ask the first two violin players, first two trumpet players, first flute player, first three viola players, and first percussionist you see at rehearsal.
+  - Easier to do than stratified random sampling, with similar intentions
+
+## Snowball Sampling
+
+- Snowball sampling is a non-probabilistic sampling method where existing study subjects recruit future subjects from among their acquaintances, such as through a referral program.
+  - Useful when study subjects have a rare characteristic that you are interested in studying. The concept of homophily is why it’s easier to find subjects with the rare characteristic by referral.
+  - This could lead to skewed results due to in-group bias and bias introduced through the non-probabilistic method of constructing the sample.
+
+

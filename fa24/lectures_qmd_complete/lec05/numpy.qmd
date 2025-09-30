@@ -1,0 +1,53 @@
+---
+title: "NumPy"
+subtitle: "From Lecture 05"
+---
+
+## NumPy, Indexing, Variables in Data Science
+
+- Data 6 Fall 2024
+- LECTURE 05
+- What it means to work with data.
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+
+## NumPy
+
+- ➤
+- 1. Array Functions
+- 2. NumPy
+- 3. Indexing
+- 4. Materials-Based Research
+
+## NumPy: A Convenient Function Library
+
+- Earlier, we computed averages using built-in Python functions:
+- arr = make\_array(30, -40, -4.5, 0, 35)
+- avg = sum(arr)/len(arr)
+- avg
+- In [2]:
+- Computing averages of array elements happens a lot in data science!
+- The NumPy package function np.average() is human-readable and convenient.
+- 4.1
+- Out [2]:
+
+## The NumPy package
+
+- NumPy (pronounced “num pie”) is a Python package\* with convenient andpowerful functions for manipulating arrays.
+- \*For our purposes, “library”, “package”, and “module” all mean similar things.
+- We generally put this import statement at the top of our notebook,then prepend np. to call a NumPy function.
+
+## Element-wise NumPy Functions
+
+- NumPy functions
+- Many of these functions work on both arrays and individual numbers.
+- We’ll point you to NumPy functions as they come up; you don’t need to memorize them. The course website has a list of some of them.
+- N-length array
+- N-length array
+
+## Common NumPy Functions
+
+- NumPy functions
+- N-length array
+- N-length array
+
+

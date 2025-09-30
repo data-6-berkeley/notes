@@ -1,0 +1,14 @@
+---
+title: "Lecture 20 More Iteration"
+subtitle: "Lecture 20"
+---
+
+This chapter covers the key concepts from Lecture 20.
+
+## Topics Covered
+
+* [Review: For Loops](review-for-loops.qmd)
+* [While Loops](while-loops.qmd)
+* [Examples](examples.qmd)
+* [Demo: Sorting an Array](demo-sorting-an-array.qmd)
+

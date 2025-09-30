@@ -1,0 +1,224 @@
+---
+title: "[Lec 14] Data 6 Fall 2024 - Functions"
+---
+
+## Slide 1: Functions
+
+- Data 6 Fall 2024
+- LECTURE 11
+- Breaking programs into smaller pieces.
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+
+## Slide 2: Week 5
+
+- Reading 2 due Thursday at 11 PM
+  - No grace period!!
+- Homework 1 grades will be released tonight
+- Announcements!
+
+## Slide 3: Today’s Roadmap
+
+- Functions and Parameters
+- Parameter Scope and Return Values
+- String Methods
+- Demo
+- Lecture 11, Data 6 Fall 2024
+
+## Slide 4: Advanced Table Work
+
+- Tables
+
+## Slide 5: Functions and Parameters
+
+- 1. Functions and Parameters
+- 2. Parameter Scope and Return Values
+- 3. String Methods
+- 4. Demo
+- ➤
+
+## Slide 6: Motivation
+
+- We’ve used a few of Python’s built-in functions so far.
+- int('-14')              \# Evaluates to -14
+- abs(-14)                \# Evaluates to 14
+- max(-14, 15)            \# Evaluates to 15
+- print('zoology')        \# Prints zoology, evaluates to None
+- These functions return a value or have some side effect (e.g. printing).
+
+## Slide 7: Motivation
+
+- Right now, if we want to perform a calculation for different values, we need to copy-and-paste our code.
+
+## Slide 8: Functions
+
+- A key facet of Python and many other programming languages is the concept of a function.
+- Functions are a way to divide our code into small subparts to prevent us from writing repetitive code. They abstract away the complexity of operations, kind of like a toaster:
+
+## Slide 9: Functions
+
+- Functions are a way to divide our code into small subparts to prevent us from writing repetitive code.
+- def calc\_grade(bins, scores):
+- return sum(bins \* scores/100)
+- calc\_grade(data6\_bins, data6\_scores) \# Evaluates to 100
+- calc\_grade(data8\_bins, data8\_scores) \# Evaluates to 91.75
+
+## Slide 10: Defining New Functions
+
+- All function definitions use the same syntax structure.
+- def calc\_grade(bins, scores):
+- return sum(bins \* scores/100)
+- def is a keyword in Python. It means “define”.
+- calc\_grade is the name of our new function.
+- Our function has two parameters: bins and scores.
+- After the first line, we must indent using 4 spaces or one tab.
+- The return keyword determines what our function outputs.
+
+## Slide 11: Parameters
+
+- Parameters are the names that a function requires as an input, that are defined in its “signature”.
+- Parameters are placeholders for the values that will be passed into the function when it is called.
+- \# This function has one parameter, x.
+- \# When we call the function, the value we pass in
+- \# as an argument will replace x in the computation.
+- def triple(x):
+- return x\*3
+
+## Slide 12: (untitled)
+
+## Slide 13: Examples
+
+- \# Functions can have zero parameters!
+- def always\_true():
+- return True
+- \# The body of a function can be
+- \# longer than one line.
+- def pythagorean(a, b):
+- c\_squared = a\*\*2 + b\*\*2
+- return c\_squared\*\*0.5
+
+## Slide 14: Indentation
+
+- This is the first time we’ve written code where indentation is required.
+- Fortunately, when defining a function in a Jupyter Notebook, indentation usually happens automatically.
+
+## Slide 15: ‹\#›
+
+- Suppose we define the function mystery as follows.
+- def mystery(t):
+- return t + '0'
+- What will be the values of alpha, beta, and charlie be after running the following code? If the function call errors, write Error.
+- alpha = mystery('19')
+- beta = mystery(19)
+- charlie = mystery('1' + '9')
+
+## Slide 16: Parameter Scope and Return Values
+
+- 1. Functions and Parameters
+- 2. Parameter Scope and Return Values
+- 3. String Methods
+- 4. Demo
+- ➤
+
+## Slide 17: Scope
+
+- The names you choose for a function’s parameters are only known to that function (known as “local scope”). The rest of your notebook is unaffected by parameter names.
+
+## Slide 18: Scope
+
+- Similarly, you can choose parameter names that also exist as names outside of your function.
+- We do this sometimes, but it can get confusing.
+
+## Slide 19: Scope
+
+- You can also use names that don’t overlap with parameter names within your function.
+- In such cases, the function looks “outside” of its definition to the rest of your notebook to see if it can find that name anywhere.
+
+## Slide 20: Aside: “Out of Scope”
+
+- In Data 6 (and other CS/DS classes), when we say a concept is “out of scope”, this is where it comes from.
+
+## Slide 21: Operators Are Evaluated First, then Operands
+
+- Remember, operators are evaluated first to determine what function is being called, then the operands.
+
+## Slide 22: Be Careful...
+
+- If you call a function with the wrong number of arguments, Python will give you an error.
+- Some functions, like print and min, can take varying numbers of arguments. We’ll see how to define these later.
+
+## Slide 23: A Word on Vocabulary
+
+- This is not a class where you should try and memorize vocabulary. With that said, things may be a little hazy.
+- def minmax(a, b, c):
+- return min(a, b) == max(b, c)
+- result = minmax(3, 3 + 4, int(True))
+
+## Slide 24: Return Values
+
+- Functions are not required to “return” anything. If a function doesn’t explicitly return anything, it will return None (like print).
+
+## Slide 25: Return Statements
+
+- Once we reach a return keyword, our function is done running. Nothing after it is run.
+
+## Slide 26: ‹\#›
+
+- What is the value of total after running this code?
+- total = 3
+- def square\_and\_cube(a, b):
+- return a\*\*2 + total\*\*b
+- total = square\_and\_cube(1, 2)
+
+## Slide 27: String Methods
+
+- 1. Functions and Parameters
+- 2. Parameter Scope and Return Values
+- 3. String Methods
+- 4. Demo
+- ➤
+
+## Slide 28: Methods
+
+- Methods are functions with slightly different syntax.
+- 'ian'.upper()         \# Evaluates to 'IAN'
+- Methods use “dot notation”.
+- In our class, we will not write any methods of our own; we’ll only write functions of our own.
+- However, many of the data types we will deal with have built-in methods that we will use.
+
+## Slide 29: String Methods
+
+- Just like tables have table methods, strings have string methods that can be used on any string. For now, here are some methods that work on strings that you should know.
+- Assume that the line s = 'JuNiOR12' has been run.
+- There are many more, but we will use them as they become relevant.
+
+## Slide 30: .split
+
+- str.split(separator) is used to separate (or split) parts of the string str into separate elements in a list based on the separator string. If no separator is specified, the method will default to splitting by “ ” (the space character).
+
+## Slide 31: .join
+
+- str.join(arr\_of\_strings) is used to join together the strings in the array arr\_of\_strings into a single string separated by str. str.join can be thought of as the opposite of str.split.
+
+## Slide 32: In Conclusion…
+
+## Slide 33: Summary
+
+- Functions are a way to divide our code into small subparts to prevent us from writing repetitive code.
+- The inputs to a function are known as parameters.
+- To specify a function’s output, we use the return keyword.
+- Parameters are a little nuanced:
+- They are only visible to the body of your function; the rest of your notebook can’t use them.
+- Operands are evaluated before being passed into your function.
+- Methods are like functions. String methods help us manipulate strings.
+
+## Slide 34: Recap
+
+- Functions
+- Function Parameters
+- Return Values
+- String Methods
+- Form
+- Grouping
+- Pivoting
+- Next Time
+

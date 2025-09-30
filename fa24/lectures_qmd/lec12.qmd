@@ -1,0 +1,122 @@
+---
+title: "[DATA 6] Quiz 1 Review"
+---
+
+## Slide 1: Review Section
+
+- Data 6 Fall 2024
+- Quiz 1 Review
+
+## Slide 2: Choose your adventure… nevermind i like the questions i made
+
+- Arithmetic
+- Functions and Scope
+- String Operations
+- Array and Table operations
+- Social Sciences Research
+
+## Slide 3: Arithmetic
+
+- Suppose we have the following integer, stored in the name `n`.
+- Using arithmetic, write expressions to represent…
+- How to retrieve the last digit of `n`
+  - For example, if n == 30, we should get 0
+- How to add 3 to n, then multiply n by 5
+  - For example, if n == 30, we should get 165
+- How to divide n by 10 while keeping n as an integer without using floor division
+  - For example, if n == 30, we should get 3
+- If n is an odd number, round it up to the next largest even number. If n is an even number, keep it the same.
+- n % 10
+- (n + 3) \* 5
+- int(n / 10)
+- n + n % 2
+
+## Slide 4: Functions and Scope
+
+## Slide 5: Functions and Scope
+
+- What names exist in the global frame?
+  - i, so, dizzy
+- What are the formal parameters to dizzy?
+  - you, am, so
+- What is printed out?
+  - dizzy
+  - None i
+  - dizzy
+  - None am
+  - dizzy
+
+## Slide 6: String Operations
+
+- Is this statement true or false?
+- Any call to replace and split is always interchangeable (i.e. s.split().replace(\_, \_) is the same as s.replace(\_, \_).split())
+- False. Split returns a list to us, which has no replace method (which would error). Replace returns a string to us, which can then be split.
+
+## Slide 7: ‹\#›
+
+- What most accurately describes chatGPT’s response?
+- Both the evaluation and the example are correct
+- The evaluation is correct, but the example is incorrect
+- Both the evaluation and the example are incorrect
+- Note: Assume that the arguments to replace can be either the same or different.
+
+## Slide 8: Array and Table Operations
+
+- Add a column to a table called `tbl` called “Difference from Mean” that computes the difference between the values in the column called “Value” and the average value of the “Value” column. Your code should be able to handle different data in `tbl` (do not hardcode).
+- Do this in one line of code.
+
+## Slide 9: Solution:
+
+## Slide 10: Filtering and Sorting
+
+- Assume that tbl has been properly updated. Re-assign tbl to filter out all the rows from tbl where the Value is exactly the mean or the Value is negative. Your code should be able to handle different data in `tbl` (do not hardcode).
+- Do this in one line of code.
+
+## Slide 11: Solution:
+
+## Slide 12: A lil join…
+
+- Suppose we have the following two tables: tbl and tbl\_2. How many rows are in the resulting output if we were to do tbl.join(“Value”, tbl\_2)?
+- tbl
+- tbl\_2
+
+## Slide 13: Solution:
+
+- Explanation: We look through tbl for every corresponding value in tbl2. Starting with -2, we see two matches in tbl\_2 (giving us the first two rows). The second -2 also sees two matches in tbl\_2 (giving us the next two rows). Finally, we have one match for 4. There are no matches for 8, 8, and 2.
+
+## Slide 14: Social Science Research
+
+- Jedi observes that traffic tends to be heavier on the weekdays, not the weekends.
+
+## Slide 15: Group 1
+
+- Form an exploratory research question around this observation.
+- "How does traffic volume differ between weekdays and weekends, and what factors might influence these patterns?"
+- What is an example of an associative hypothesis you could make?
+- Traffic is heavier on weekdays compared to weekends.
+- Causal hypothesis?
+- Traffic is heavier on weekdays compared to weekends due to the number of people commuting to work on weekdays.
+- Are your variables considered categorical, numerical, or something else?
+  - Number of people commuting to work - numerical
+  - Traffic - depends on how we decide to measure it, usually numerical. Could be categorical if we group it into “light, medium, heavy.”
+- Theory?
+- Structured schedules during the week lead to increased road usage, while more flexible and relaxed activities on weekends result in lighter traffic.
+
+## Slide 16: Group 2
+
+- Suppose that the causal hypothesis is that increases in traffic can be attributed to the number of people who need to go to work on weekdays. Jedi decides to sit outside at the nearest freeway in Berkeley and count the number of cars he can see over the span of an hour on Monday, and compare that to the number of cars he can see over the span of an hour on Saturday. He also estimates who is going to work based on the outfit they are wearing.
+- What is a potential confounding variable?
+  - Monday could have some special holiday happening, which may affect the amount of traffic (and the number of people going to work)
+- Name something that could threaten this study’s internal validity.
+  - Jedi’s counting may not be completely accurate. He also has no way of gauging exactly who is going to work versus something else (outfits are not a perfect proxy).
+- Name something that could threaten this study’s external validity.
+  - This is only a snapshot of one hour in one day in one location. This could be mitigated by studying a given location over multiple periods of time in multiple locations.
+
+## Slide 17: Group 3
+
+- Jedi decides to sit outside at the nearest freeway in Berkeley and count the number of cars he can see over the span of an hour on Monday.
+- Name one way Jedi can roll up (aggregate) this study. What else could he do?
+  - Collect data from other locations/times as well
+- Name one way Jedi can drill down (disaggregate) this study. What else could he do?
+  - Break up that hour into smaller time chunks, or separate out people going to work by occupation/some other factor
+

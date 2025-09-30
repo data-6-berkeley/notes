@@ -3,3 +3,5 @@
 .*.swp
 .*.swo
 *.quarto_ipynb
+venv/
+**/*.quarto_ipynb

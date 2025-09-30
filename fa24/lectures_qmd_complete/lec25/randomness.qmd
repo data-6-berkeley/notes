@@ -1,0 +1,27 @@
+---
+title: "Randomness"
+subtitle: "From Lecture 25"
+---
+
+## Sampling and Randomness
+
+- Data 6 Fall 2024
+- LECTURE 25
+- A quick dive into some statistics.
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+
+## Randomness
+
+- 1. Randomness
+- 2. Simulation
+- 3. Repeated Simulations
+- ➤
+
+## Computation and Randomness
+
+- Question: What problem does this pose?
+- Answer: Computers cannot, on their own, generate truly random numbers. So… now what? 🤔
+- Computer programs take our instructions (code) and execute them. Their outputs are entirely predictable.
+- Randomness is the lack of pattern or predictability in events. (Some events may be more likely than others.)
+
+

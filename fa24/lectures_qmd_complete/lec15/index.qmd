@@ -1,0 +1,19 @@
+---
+title: "Visualizing Categorical and Numerical Variables"
+subtitle: "Lecture 15"
+---
+
+This chapter covers the key concepts from Lecture 15.
+
+## Topics Covered
+
+* [Categorical Variables](categorical-variables.qmd)
+* [Categorical Distributions](categorical-distributions.qmd)
+* [Bar Charts](bar-charts.qmd)
+* [Grouped Bar Charts](grouped-bar-charts.qmd)
+* [Numerical Variables](numerical-variables.qmd)
+* [Review: Bar Charts](review-bar-charts.qmd)
+* [Numerical Distributions, Histograms](numerical-distributions-histograms.qmd)
+* [Choosing Bins](choosing-bins.qmd)
+* [Overlaid and Side-by-Side Histograms](overlaid-and-side-by-side-histograms.qmd)
+

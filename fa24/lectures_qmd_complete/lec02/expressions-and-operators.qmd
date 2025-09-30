@@ -1,0 +1,37 @@
+---
+title: "Expressions and Operators"
+subtitle: "From Lecture 02"
+---
+
+## Expressions and Operators
+
+- 1. Programming in Python
+- 2. Arithmetic
+- 3. Jupyter Shortcuts
+- 4. Comments, Data Types, and Errors
+- ➤
+
+## Common Python Operators
+
+- ✅
+
+## Common Python Operators
+
+- Wait, why are there two division operators?
+
+## Arithmetic operators with ints and floats
+
+- When you add, subtract, and multiply int’s, the result will always be an int.
+- Anytime you use a float in a calculation, the result is a float.
+
+## Two Different Division Operators + Modulo
+
+- When you add, subtract, and multiply int’s, the result will always be an int.
+- Anytime you use a float in a calculation, the result is a float.
+- Python has several division-related operators:
+- “Regular” division /
+- Integer division, //
+- Modulo operator, %
+- What is the modulo operator?
+
+

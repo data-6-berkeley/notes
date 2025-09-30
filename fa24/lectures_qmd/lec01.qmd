@@ -1,0 +1,339 @@
+---
+title: "[Lec 01] Data 6 Fall 2024 - Introduction"
+---
+
+## Slide 1: Introduction
+
+- Data 6 Fall 2024
+- LECTURE 01
+- Defining data science and computational thinking, and discussing course learning objectives and logistics.
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+- data6.org/fa24/syllabus/\#acknowledgements-
+
+## Slide 2: Jedi Tsang
+
+- Instructor | jedidiahtsang@berkeley.edu
+- Poli Sci + Computer Science ‘23
+- Recently graduated M.S. in EECS
+- Going down the teaching track!
+- Research: how we teach computing ethics (CS195)
+- 11th semester (!!) teaching at Cal, although the first few years of undergrad was very different from the last few years.
+- Interests: Volleyball, Teamfight Tactics, Public Policy (particularly California campaign finance), and of course, computing education :)
+- data6.org/fa24/staff
+
+## Slide 3: Data 6 Course Staff
+
+- Su Min Park
+- uGSI | m.suminpark@berkeley.edu
+- hello hello:) I am a super senior from Seoul, South Korea studying Data Science and Sociology.
+- Elizabeth Feng
+- Tutor | elizabeth.feng@berkeley.edu
+- Hi everyone! I’m a sophomore majoring in Data Science from Oakland, CA.
+- Kenneth Llontop
+- Tutor | kennethllontop@berkeley.edu
+- Hey! I’m Kenneth, and I am a sophomore from LA studying EECS.
+- data6.org/fa24/staff
+- Isabella Duong
+- uGSI | isabella.duong@berkeley.edu
+- hiii! im a junior studying Computer Science!
+
+<details><summary>Speaker notes</summary>
+
+10:20
+
+</details>
+
+## Slide 4: Getting to Know You
+
+<details><summary>Speaker notes</summary>
+
+10:15
+
+</details>
+
+## Slide 5: Some questions we can ask:
+
+- What class year are you?
+  - 1st years: 20
+  - 2nd years: 6
+  - 3rd year/1st year transfers: 6
+  - 4th year/2nd year transfer: 5
+  - Extension students: 10
+- What major are you?
+  - Data Science - 3
+  - CS/EECS - 10
+  - Cog Sci - 1
+  - Math - 6
+  - Stats - 3
+- Do you prefer cats, dogs, neither, or both?
+  - Cats: 10
+  - Dogs: 20
+  - Neither: 1
+  - Both: 10
+
+## Slide 6: So…we just created some data!
+
+- Using this information, what sort of questions might we ask about the data?
+- …and how the heck do we find the answers to these questions?
+
+## Slide 7: Today’s Roadmap
+
+- What is data science? What is computational thinking?
+- What will you learn in this class?
+- How will this class be run?
+- Lecture 01, Data 6 Fall 2024
+
+## Slide 8: What is Data Science?
+
+- 1. What is data science?
+- 2. What will you learn in this class?
+- 3. How will this class be run?
+- 4. Fun demo
+- ➤
+
+## Slide 9: What is data science?
+
+- Learning about the world from data using computation
+- Learning how to ask the “right” questions
+  - When we group data and analyze it, we bring a set of assumptions
+  - When we asked what our “major” is, made an assumption that people have a major
+- Using data to predict future outcomes
+
+## Slide 10: Creator of Data 100
+
+- Creator of Data 100
+- Joey Gonzalez
+- “Data Science is the application of data centric, computational, and inferential thinking to:
+- Understand the world
+- Solve problems”
+
+## Slide 11: Data science is a fundamentally interdisciplinary field
+
+- by Drew Conway in 2010 (link)
+
+## Slide 12: Data 6 Version
+
+- Statistics and inference
+- Domain knowledge and social contexts
+- Computational Thinking
+- DS
+- Machine Learning
+- Engineering
+- Research
+
+## Slide 13: Example Questions in Data Science
+
+- Data science is all about asking questions and answering them with data.
+- Is the world getting better or worse?
+- Is the use of the COMPAS algorithm for prison sentencing fair?
+- Where should we put docking ports for our bikes?
+- What should we eat to avoid dying early of heart disease?
+- Do immigrants from poor countries have a positive or negative impact on the economy?
+- Will there be a third? fourth? wave of COVID-19?
+
+## Slide 14: Computational Thinking
+
+- Creator of WolframAlpha
+- Stephen Wolfram
+- “Computational thinking is about formulating things with enough clarity, and in a systematic enough way, that one can tell a computer how to do them.”
+
+## Slide 15: In Other Words:
+
+- Computer science and computational thinking aren’t inherently about computers! They’re just tools.
+- Computational thinking involves an element of creativity, as there are often many ways to solve a given problem.
+
+<details><summary>Speaker notes</summary>
+
+10:20
+
+</details>
+
+## Slide 16: Social Implications: 
+Data science drives policy and public understanding
+
+## Slide 17: Social Implications: 
+Unconscious and implicit bias
+
+- What do you notice? Why might this be happening?
+- A “depixelizer” (link) was built that takes pixelated images and generates images that are perceptually realistic and downscale correctly.
+
+## Slide 18: Content and Learning Objectives
+
+- 1. What is data science?
+- 2. What will you learn in this class?
+- 3. How will this class be run?
+- 4. Fun demo
+- ➤
+
+## Slide 19: Introduction to Computational Thinking with Data
+
+- As the title suggests, this class will teach you how to make computers to do interesting things involving data.
+- In order to tell our computers what to do, we will use the Python programming language.
+- While at points it may feel like this is a class about Python, this class is really about teaching you how to solve problems, particularly those involving real-world data.
+- At the end of the semester, you will be strong computational thinkers, and will be able to apply the skills you’ve learned to projects of your own.
+
+## Slide 20: Data 6 Content
+
+## Slide 21: Where does this course fit?
+
+- There are many different ways to get started with data science and computer science, and each of them has their own purpose and benefits.
+- Data 6
+- Data 8
+- CS 10
+- CS 61A
+- You will leave this course with applicable skills that you can use even if you don’t take any future CS/DS courses.
+
+## Slide 22: Course Logistics
+
+- 1. What is data science?
+- 2. What will you learn in this class?
+- 3. How will this class be run?
+- 4. Fun demo
+- ➤
+
+<details><summary>Speaker notes</summary>
+
+10:25
+
+</details>
+
+## Slide 23: Technology
+
+- We will not be using bCourses at all (besides reading files)!
+- Course website (data6.org/fa24): where all content is posted.
+  - No textbook! (all materials available online)
+- Ed (edstem.org): discussion forum where all announcements will be sent and where you will get help on assignments.
+  - Questions about course material? Post here!
+- DataHub (datahub.berkeley.edu): where you access all code. More on this soon!
+- Gradescope (gradescope.com): where you submit assignments and look at your grades. More next week!
+
+## Slide 24: Course components
+
+## Slide 25: Participation
+
+- Weekly Surveys (2.5% of your overall grade)
+- Quick Checks (2.5% of your overall grade)
+- Participation is worth 5% of your final grade. The Participation category consists of:
+
+## Slide 26: Quick Checks
+
+- During each lecture, there will be a few points at which we stop and ask you to answer a short question. We call these questions Quick Checks. They serve two purposes:
+- For us to gauge how well the class understands the material we’re currently covering
+- For you to gauge how well you understand the material we’re currently covering
+- Quick Checks are graded on completion, not correctness! All you need to do is submit the QC for each lecture and you get credit. No drops and each quick check will be at some point in lecture.
+
+## Slide 27: Labs
+
+- You learn data science by doing, not just by reading or listening. As such, a large component of your grade is labs!
+- Labs will involve a mix of programming problems (graded by the computer) and written problems (for your edification).
+- There will be 13 labs (no lab on week 1 and 14)
+- Labs will be released on Wednesday morning and will be due the same night.
+  - We anticipate getting through most (if not all) of the lab during lecture
+  - 24 hour grace period
+  - If you need an extension email data6@berkeley.edu before the deadline
+- We will go over how to access and submit labs next Wednesday
+
+## Slide 28: Homeworks
+
+- You learn data science by doing, not just by reading or listening. As such, the biggest component of your grade is homeworks!
+- Homeworks will involve a mix of programming problems (graded by the computer) and written problems (graded by course staff).
+- There will be four homeworks
+- Homeworks will be released on Mondays and will be due the following Thursday at 11:00 PM.
+  - Late submissions: 30% off per day, max 2 days late.
+  - If you need an extension email data6@berkeley.edu before the deadline
+- We will go over how to access and submit homeworks on Friday
+
+## Slide 29: Final Project
+
+- You learn data science by doing, not just by reading or listening. As such, a final project gives you a chance to showcase what you have learned.
+- The final project will involve a mix of programming problems (computer graded), short written problems (graded by course staff), and a write-up (graded by course staff).
+- We will go over more details as well as how to access and submit the final project when it’s released.
+
+## Slide 30: Readings
+
+- You learn data science by doing, not just by reading or listening. However, readings are important to expose you to a variety of viewpoints.
+- Reading assignments are meant to be reflective in nature and designed to complement the content covered each week in lecture with a focus on ethical and social issues.
+- Readings will be released on Mondays and will be due the following Thursday at 11:00 PM.
+  - Readings should be completed in advance of discussion, so come prepared
+
+## Slide 31: Quizzes and Exams
+
+- We will have two quizzes that will take place during lecture time. Each quiz is worth 10% of your overall grade. Quizzes are intended to test your understanding of key concepts, but are not intended to ‘trick’ you.
+- Quiz 1: Monday, 10/7
+- Quiz 2: Friday, 11/15
+- We will also have a final exam, worth 20% of your overall grade. The final exam will take place on Friday, December 20th from 3-6 PM.
+- We’ll try to write a 90 minute exam instead of taking up the full 3 hours.
+
+## Slide 32: Grading
+
+- We want you to focus on learning key data science concepts and enjoying the class (and your summer)! We don’t want you to have to stress about grades, so we’ve tried to structure assignments in a low-stakes way.
+- If you complete the assignments, participate in class, and keep up with the content, you’ll do fine. (We promise)
+- You can read more about our grading policy on the syllabus
+
+## Slide 33: Campus Resources
+
+- Accommodations
+- Everyone learns differently, and supporting each student individually is part of our job as instructors. We will make every effort to accommodate students to ensure that you can learn safely and comfortably. To learn more about how to register with the campus Disabled Students Program (DSP), visit dsp.berkeley.edu
+- Wellness
+- Your health and wellbeing is more important than anything, especially this course. We don’t want Data 6 to be a source of stress or anxiety, so please reach out to us if you are feeling overwhelmed by anything in the class.
+- If you or anyone you know is ever in need of mental health care, you should contact UHS Counseling and Psychological Services (CAPS).
+- uhs.berkeley.edu/caps
+- uhs.berkeley.edu/counseling/urgent
+
+## Slide 34: Advice for Data 6
+
+<details><summary>Speaker notes</summary>
+
+10:35
+
+</details>
+
+## Slide 35: Pace
+
+- Each lecture, we will introduce one new “tool” into your programming toolkit. Especially at the start, this will be challenging.
+- We will try and take things slow – we know that this is your first time programming.
+- There’s no rush – if you need us to slow down, please tell us! We want to make sure you really get it.
+- But also don’t worry if you don’t understand something on the ‘first try’. You will get a lot of practice through labs and homeworks as well.
+
+## Slide 36: Advice from Course Staff
+
+- Don’t be afraid to ask questions!
+- Come to office hours!
+- Start a study or homework group
+- Keep up with the lectures
+- Take breaks!
+- Use the Python Reference
+
+## Slide 37: You can do this — period.
+
+- We are here to support you! data6.org/fa24/staff
+
+## Slide 38: In Conclusion…
+
+<details><summary>Speaker notes</summary>
+
+10:50-10:55
+
+</details>
+
+## Slide 39: Recap
+
+- What is data science? What is computational thinking?
+- What will you learn in this class?
+- How will this class be run?
+- What is code?
+- How do we run code?
+- Arithmetic.
+- Running our first programs.
+- Comments, number types, and errors.
+- Next Time
+
+## Slide 40: Week 1
+
+- Make sure to fill out the welcome survey, posted on Ed tonight! Due by Tuesday, September 2nd at 11 PM
+- Make an introductory post! Due by Tuesday, September 2nd at 11 PM
+- Quick Checks start on Friday
+- (Optional) Add songs to the collaborative playlist for pre-lecture vibes
+  - https://open.spotify.com/playlist/134DozgaTBxHXXta3fvydW?si=ad9e10b2e86d48d2&pt=fc545d61d6ebd5e6ce36910eabdc475a
+- Announcements!
+

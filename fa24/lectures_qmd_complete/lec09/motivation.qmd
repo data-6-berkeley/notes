@@ -1,0 +1,13 @@
+---
+title: "Motivation"
+subtitle: "From Lecture 09"
+---
+
+## Motivation
+
+- 1. Motivation
+- 2. Applying with .apply
+- 3. Masking with Boolean Arrays
+- ➤
+
+

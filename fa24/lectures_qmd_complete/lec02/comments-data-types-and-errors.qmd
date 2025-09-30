@@ -1,0 +1,60 @@
+---
+title: "Comments, Data Types, and Errors"
+subtitle: "From Lecture 02"
+---
+
+## DataHub
+
+- We access all code in this class by going to
+- datahub.berkeley.edu
+- DataHub is a Berkeley-hosted server that runs Jupyter notebooks. All students have their own DataHub “container”; think of this as your own virtual computer.
+- This is where you will work on all assignments.
+- You will not need to install anything locally (meaning that you could theoretically do all assignments for this class on your phone). All you need is a web browser.
+- Course staff can access everything in your DataHub to help debug your code.
+- Works like magic! Let’s go there now.
+
+## Why write code as a data scientist?
+
+- Compute
+- Visualize
+- Share
+
+## Comments, Data Types, and Errors
+
+- 1. Programming in Python
+- 2. Arithmetic
+- 3. Jupyter Shortcuts
+- 4. Comments, Data Types, and Errors
+- ➤
+
+## Comments
+
+- Which version do you prefer?
+- Comments are used to explain what code does. Good programmers write code that is self-evident and use comments only where necessary. In assignments, we’ll also use comments to provide you with instructions.
+
+## Comments
+
+- Which version do you prefer?
+- Comments are used to explain what code does. Good programmers write code that is self-evident and use comments only where necessary. In assignments, we’ll also use comments to provide you with instructions.
+- You can have both code and comments on the same line.
+- Anything on a line after \# is a comment and is not evaluated.
+
+## Data Types
+
+- We glossed over something earlier:
+- There are two different number data types to represent numbers in Python:
+- The data type of a value determines how Python evaluates expressions involving that value
+
+## Errors
+
+- This will happen a lot: a central goal in this class is to learn how to interpret and address error messages.
+- …we get an error message.
+- If we try dividing by 0…
+
+## Syntax errors
+
+- Syntax errors create nonsensical Python code. These errors will soon become your close friends.
+- Notice that the error message tells you where in your code the error occurred (with a line number and an arrow). Use that!
+- Explore the code! Experimentation is encouraged. Hypothesize, edit/run code, and observe results
+
+

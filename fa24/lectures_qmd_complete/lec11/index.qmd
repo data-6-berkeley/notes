@@ -1,0 +1,14 @@
+---
+title: "Functions"
+subtitle: "Lecture 11"
+---
+
+This chapter covers the key concepts from Lecture 11.
+
+## Topics Covered
+
+* [Functions and Parameters](functions-and-parameters.qmd)
+* [Parameter Scope and Return Values](parameter-scope-and-return-values.qmd)
+* [String Methods](string-methods.qmd)
+* [Demo](demo.qmd)
+

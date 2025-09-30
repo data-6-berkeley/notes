@@ -1,0 +1,30 @@
+---
+title: "Truthy Values"
+subtitle: "From Lecture 18"
+---
+
+## Truthy Values
+
+- 1. Motivation
+- 2. If and If-Else Statements
+- 3. Elif
+- 4. Truthy Values
+- 5. Demo
+- ➤
+
+## Truthy Values
+
+- It turns out that almost everything evaluates to True when converted to bool.
+- These are pretty much the only exceptions (these all evaluate to False):
+- False
+- ''(the empty string)
+- 0 (and hence 0.0)
+- None
+- Generally things that are empty (empty lists, sets, dictionaries, etc)
+- If something evaluates to True when converted to bool, we call it a truthy value. Otherwise, we call it a falsy value.
+
+## Truthy Values in Practice
+
+- Conditional statements use the truthiness of an expression.
+
+

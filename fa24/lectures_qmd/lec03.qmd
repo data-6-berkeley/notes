@@ -1,0 +1,207 @@
+---
+title: "[Lab01\_Lec03] Data 6 Fall 2024 - Evaluation, Names, and Data Types"
+---
+
+## Slide 1: Evaluation, Names, Data Types
+
+- Data 6 Fall 2024
+- LECTURE 03
+- All about values: how to manipulate them, how to bind them, and what kinds exist.
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+
+## Slide 2: Week 2
+
+- Will be posted on EdStem from here on out!
+- Week 2 Announcements
+- Announcements!
+
+## Slide 3: Call Expressions
+
+- 1. Call Expressions
+- 2. Names and Assignment Statements
+- 3. Conversion and Casting
+- 4. The print() function
+- ➤
+
+## Slide 4: Call Expressions
+
+- Call expressions in Python apply a function to some arguments.
+- Also called function calls.
+- To evaluate a function call in Python:
+- Evaluate the operands (what is passed into the function), to determine the arguments.
+  - In the first example, the arguments to max are 2 and 3.
+  - In the second example, the arguments to max are 4 and 1.
+- Call the function on the arguments.
+- max(2, 3)               \# Evaluates to 3
+- max(4, min(1, 9))       \# Evaluates to 4
+- -abs(max(4, 5, -1))     \# Evaluates to -5
+
+## Slide 5: Notes on Functions
+
+- We’ve seen a few functions so far: abs, max, min.
+- There are many functions built-in to Python, but sometimes we need to use functions that Python doesn’t already know about.
+- We can use import statements; we’ll learn about this in a few weeks.
+- We’ll also write our own functions!!! …in a few weeks.
+- Side note: +, -, \*, / and the other arithmetic operators we saw last lecture are also functions; you’ll learn how to implement these in a future class.
+
+## Slide 6: Names and Assignment Statements
+
+- 1. Call Expressions
+- 2. Names and Assignment Statements
+- 3. Conversion and Casting
+- 4. The print() function
+- ➤
+
+## Slide 7: “Storing” Values by Assigning Names
+
+- So far we’ve seen how Python evaluates expressions into values:
+- expression
+- value
+
+## Slide 8: “Storing” Values by Assigning Names
+
+- This is called an assignment statement.
+- So far we’ve seen how Python evaluates expressions into values:
+- expression
+- value
+- A critical aspect of a programming language is its ability to “store” and “retrieve” values.
+- In Python, storage and retrieval of values is done by bindingnames to values with the assignment operator (=).
+- 3
+- x
+- x = 3
+
+## Slide 9: Assignment Statements
+
+- x = 3
+- \*no animals were harmed in the making of these vinyl suitcases
+- name
+- value
+- assignment
+
+<details><summary>Speaker notes</summary>
+
+Google: python suitcase for images
+Python paradigm uses names and values
+You may hear the word variable used in other computing contexts, but we have a specific definition of variable in this class that we’ll come to in a few lectures
+
+</details>
+
+## Slide 10: Assignment Statements
+
+- x
+- 3
+- x = 3
+- Like a suitcase tag, the name xis bound to the value 3.
+- \*no animals were harmed in the making of these vinyl suitcases
+- 3
+- x
+- name
+- value
+- analogy
+- assignment
+
+<details><summary>Speaker notes</summary>
+
+Google: python suitcase for images
+Python paradigm uses names and values
+You may hear the word variable used in other computing contexts, but we have a specific definition of variable in this class that we’ll come to in a few lectures
+
+</details>
+
+## Slide 11: Assignment Statements
+
+- x = 3
+- Like a suitcase tag, the name xis bound to the value 3.
+- \*no animals were harmed in the making of these vinyl suitcases
+- name
+- value
+- assignment
+- x = 1 + 2 \* 3 - 4 // 5
+- Python first evaluates the right hand expression, then binds the name x to the resulting value.
+
+<details><summary>Speaker notes</summary>
+
+Google: python suitcase for images
+Python paradigm uses names and values
+You may hear the word variable used in other computing contexts, but we have a specific definition of variable in this class that we’ll come to in a few lectures
+
+</details>
+
+## Slide 12: Assignment Statements
+
+- x = 3
+- Like a suitcase tag, the name xis bound to the value 3.
+- \*no animals were harmed in the making of these vinyl suitcases
+- name
+- value
+- assignment
+- x = 1 + 2 \* 3 - 4 // 5
+- Python first evaluates the right hand expression, then binds the name x to the resulting value.
+- Assignment statements do not return anything. They just bind a name to a value.
+
+<details><summary>Speaker notes</summary>
+
+Google: python suitcase for images
+Python paradigm uses names and values
+You may hear the word variable used in other computing contexts, but we have a specific definition of variable in this class that we’ll come to in a few lectures
+
+</details>
+
+## Slide 13: Naming
+
+- There are some rules on names.
+- They can contain uppercase and lowercase letters, the digits 0-9, and underscores.
+  - Allowed: how\_are\_you, my\_AGE\_is\_21, NETFLIXPASSWORD
+  - Not allowed: HOW-ARE-YOU, ily!, AG&\*OED
+- They cannot start with a number.
+  - Allowed: my\_AGE\_is\_21, \_21\_is\_my\_AGE
+  - Not allowed: 21\_is\_my\_AGE
+- They are case sensitive!
+  - All different: Dog, DOG, dog, dOG
+
+## Slide 14: Naming
+
+- There are some rules on names.
+- They can contain uppercase and lowercase letters, the digits 0-9, and underscores.
+  - Allowed: how\_are\_you, my\_AGE\_is\_21, NETFLIXPASSWORD
+  - Not allowed: HOW-ARE-YOU, ily!, AG&\*OED
+- They cannot start with a number.
+  - Allowed: my\_AGE\_is\_21, \_21\_is\_my\_AGE
+  - Not allowed: 21\_is\_my\_AGE
+- They are case sensitive!
+  - All different: Dog, DOG, dog, dOG
+- \# Good
+- seconds\_per\_hour = 60 \* 60
+- hours\_per\_year = 24 \* 365
+- seconds\_per\_year = seconds\_per\_hour \* hours\_per\_year
+- \# Not good
+- i\_love\_chocolate = 60 \* 60 \* 24 \* 365
+- Choose names that are concise but descriptive.
+
+## Slide 15: Conversion and Casting
+
+- 1. Call Expressions
+- 2. Names and Assignment Statements
+- 3. Conversion and Casting
+- 5. The print() function
+- ➤
+
+## Slide 16: Typecasting
+
+- We can also typecast, or convert values between data types. Note that data type conversion is only valid “when it makes sense.”
+- int(x)      \# Returns x as an integer
+- float(x)    \# Returns x as a float
+
+## Slide 17: Recap
+
+- Call Expressions
+- Names and Assignment Statements
+- Conversion and Casting
+- NoneType
+- Strings
+- Casting with Strings
+- print()
+- Arrays
+- Variables in Data Science
+- Next Time
+

@@ -1,0 +1,20 @@
+---
+title: "Arithmetic"
+subtitle: "From Lecture 02"
+---
+
+## Jupyter Notebooks, Arithmetic
+
+- Data 6 Fall 2024
+- LECTURE 02
+- Getting familiar with our computing environment, and
+- writing our first Python programs.
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+- data6.org/fa24/syllabus/\#acknowledgements-
+
+## Arithmetic operators with ints and floats
+
+- When you add, subtract, and multiply int’s, the result will always be an int.
+- Anytime you use a float in a calculation, the result is a float.
+
+

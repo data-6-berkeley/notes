@@ -1,0 +1,180 @@
+---
+title: "[Lec 24] Data 6 Fall 2024 - LLMs"
+---
+
+## Slide 1: Large Language Models
+
+- Data 6 Fall 2024
+- LECTURE 24
+- LLMs, Prompt Engineering, and the Open AI API
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+- data6.org/fa24/syllabus/\#acknowledgements-
+
+## Slide 2: Week 14
+
+- Survey due tonight
+- Course evals - 1% extra credit if we hit at least 80% participation rate :D
+- Final Project Part 2 due December 9th, released tonight
+- Relies heavily on a good understanding of dictionaries - I will link a quick Jupyter Notebook if you’d like to familiarize yourself before jumping in
+- Announcements!
+
+## Slide 3: Today’s Roadmap
+
+- LLMs
+- Local LLMs Demo
+- Training Data
+- AI Chatbot Demo
+- Risks
+- Improvements
+- API Calls
+- Lecture 24, Data 6 Fall 2024
+
+## Slide 4: Large Language Models (LLMs)
+
+- 1. LLMs
+- 2. Local LLMs Demo
+- 3. Training Data
+- 4. AI Chatbot Demo
+- 5. Risks
+- 6. Improvements
+- ➤
+
+## Slide 5: Artificial Intelligence: the capability of computer systems or algorithms to imitate intelligent human behavior
+Machine Learning: a computational method that is a subfield of artificial intelligence and that enables a computer to learn to perform tasks by analyzing a large dataset without being explicitly programmed
+Deep Learning: a form of machine learning in which the computer network rapidly teaches itself to understand a concept with/without human intervention by performing a large number of iterative calculations on an extremely large dataset
+Generative AI: generating new content (such as images or text) in response to a submitted prompt (such as a query) by learning from a large reference database of examples
+
+- Artificial Intelligence: the capability of computer systems or algorithms to imitate intelligent human behavior
+- Machine Learning: a computational method that is a subfield of artificial intelligence and that enables a computer to learn to perform tasks by analyzing a large dataset without being explicitly programmed
+- Deep Learning: a form of machine learning in which the computer network rapidly teaches itself to understand a concept with/without human intervention by performing a large number of iterative calculations on an extremely large dataset
+- Generative AI: generating new content (such as images or text) in response to a submitted prompt (such as a query) by learning from a large reference database of examples
+- Artificial Intelligence: 1956
+- Machine Learning: 1959
+- Deep Learning: 1986
+- Generative AI: 2021
+- A brief history
+
+## Slide 6: ‹\#›
+
+## Slide 7: What is a LLM?
+
+## Slide 8: Defining Large Language Models (LLMs)
+
+- Question: What is a LLM?
+- Answer: A LLM is a type of artificial intelligence (AI) program that can recognize and generate text, among other tasks. LLMs are trained on huge sets of data — hence the name "large." LLMs are built on machine learning: specifically, a type of neural network called a transformer model.
+- Generative Pretrained Transformer (GPT)
+- are LLMs
+- So… you’ve potentially used LLMs (hopefully following academic guidelines).
+
+## Slide 9: Examples of hosted LLMs
+
+## Slide 10: Training Data
+
+- ➤
+- 1. LLMs
+- 2. Local LLMs Demo
+- 3. Training Data
+- 4. AI Chatbot Demo
+- 5. Risks
+- 6. Improvements
+
+## Slide 11: What data does ChatGPT use to train its model?
+
+- Dataset used to teach machine learning models
+- Publicly available data
+  - Public data repos
+  - Social media
+  - YouTube videos
+- Third parties / crowdsourcing
+- Training Data
+- Web Scraping: process of using bots to extract content and data from a website
+
+## Slide 12: Discussion
+
+- Can we run out of publicly available data?
+- Is the training data LLMs use, representative of the world?
+
+## Slide 13: AI Chatbot Demo
+https://data6-llm-79214fa7cb82.herokuapp.com/
+
+- ➤
+- 1. LLMs
+- 2. Local LLMs Demo
+- 3. Training Data
+- 4. AI Chatbot Demo
+- 5. Risks
+- 6. Improvements
+
+## Slide 14: Risks
+
+- ➤
+- 1. LLMs
+- 2. Local LLMs Demo
+- 3. Training Data
+- 4. AI Chatbot Demo
+- 5. Risks
+- 6. Improvements
+
+## Slide 15: Potential Risks with LLMs
+
+- Copyright
+- Poor Training Data → Made up information
+- Impersonation
+
+## Slide 16: Improvements
+
+- ➤
+- 1. LLMs
+- 2. Local LLMs Demo
+- 3. Training Data
+- 4. AI Chatbot Demo
+- 5. Risks
+- 6. Improvements
+
+## Slide 17: Improvements
+
+- Improved course prompt engineering
+- Representative training data
+- Government intervention?
+  - Company policies
+
+## Slide 18: API Calls
+
+- ➤
+- 1. LLMs
+- 2. Local LLMs Demo
+- 3. Training Data
+- 4. AI Chatbot Demo
+- 5. Risks
+- 6. Improvements
+- 7. API Calls
+
+## Slide 19: What is an API?
+
+- Application Programming Interface
+- Essentially, we’re using code that someone else has written.
+- Open AI uses a web API, which means that we need access to the internet in order to use the API
+  - You usually access web APIs via HTTP requests, but thankfully we’re given a bit of abstraction :)
+
+## Slide 20: Quick (Technical) Aside: Default Values
+
+- When defining functions, you can specify default functionality.
+- Example:
+
+## Slide 21: API Calls (Demo)
+
+- ➤
+- 1. LLMs
+- 2. Local LLMs Demo
+- 3. Training Data
+- 4. AI Chatbot Demo
+- 5. Risks
+- 6. Improvements
+- 7. API Calls
+
+## Slide 22: DO NOT LEAK YOUR API KEYS >:(
+
+## Slide 23: In Conclusion…
+
+## Slide 24: Happy Thanksgiving! I am thankful for all of you :D
+

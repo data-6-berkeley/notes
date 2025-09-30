@@ -1,0 +1,29 @@
+---
+title: "AI Chatbot Demo"
+subtitle: "From Lecture 24"
+---
+
+## AI Chatbot Demo
+
+https://data6-llm-79214fa7cb82.herokuapp.com/
+
+- ➤
+- 1. LLMs
+- 2. Local LLMs Demo
+- 3. Training Data
+- 4. AI Chatbot Demo
+- 5. Risks
+- 6. Improvements
+
+## API Calls (Demo)
+
+- ➤
+- 1. LLMs
+- 2. Local LLMs Demo
+- 3. Training Data
+- 4. AI Chatbot Demo
+- 5. Risks
+- 6. Improvements
+- 7. API Calls
+
+

@@ -1,0 +1,171 @@
+---
+title: "[Lec 19] Data 6 Fall 2024 - Iteration"
+---
+
+## Slide 1: Iteration
+
+- Data 6 Fall 2024
+- LECTURE 19
+- Doing things over and over and over again.
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+
+## Slide 2: Week 10
+
+- Nothing! Enjoy your weekend :)
+- Announcements!
+
+## Slide 3: Today’s Roadmap
+
+- Motivation
+- For Loops
+- Ranges
+- Lecture 19, Data 6 Fall 2024
+
+## Slide 4: Motivation
+
+- 1. Motivation
+- 2. For Loops
+- 3. Ranges
+- ➤
+
+## Slide 5: Repeating Code
+
+- What do we do when we want to run the same line(s) of code multiple times?
+- For loops allow us to repeat code!
+
+## Slide 6: Wonderful Berkeley Weather
+
+- We have Berkeley high temperatures for the past two weeks (7/7-7/20) in the berk\_temps array. In Berkeley, it is considered ‘hot’ if the temperature is >= 70 degrees, ‘cold’ if the temperature is <= 65 degrees, and ‘just right’ otherwise.
+- How can we check the temperature for all 14 days?
+
+## Slide 7: Wonderful Berkeley Weather
+
+- We have Berkeley high temperatures for the past two weeks (7/7-7/20) in the berk\_temps array. In Berkeley, it is considered ‘hot’ if the temperature is >= 70 degrees, ‘cold’ if the temperature is <= 65 degrees, and ‘just right’ otherwise.
+- How can we check the temperature for all 14 days?
+
+## Slide 8: For Loops
+
+- 1. Motivation
+- 2. For Loops
+- 3. Ranges
+- ➤
+
+## Slide 9: Berkeley Temperatures
+
+- To “iterate” over a sequence of values means to do something with each value, one at a time.
+- Iteration
+- [ 72,
+- 72,
+- 70,
+- 70,
+- 66,
+- 73,
+- 70,
+- 72,
+- 66,
+- 68,
+- 66,
+- 70,
+- 66,
+- 70 ]
+- https://tinyurl.com/data6-iteration
+
+## Slide 10: Iteration vs. Loops
+
+## Slide 11: Two Types of Loops
+
+- Loops allow us to repeat the execution of code.
+- There are two types of loops in Python: the while loop and the for loop.
+- while <boolean expression>:
+- <while body>
+- “While this condition is true, repeat this code.”
+- for <elem> in <sequence>:
+- <for body>
+- “For each element of this sequence, repeat this code.”
+- Sequences include arrays, lists, strings and more.
+
+## Slide 12: For Loops
+
+- The simplest version of a for loop is also referred to as a “for each” loop.
+- The name after “for” (in this case n) is assigned to each value in the sequence, one at a time.
+- In the first iteration, n is 2.
+- In the second iteration, n is 4.
+- In the third iteration, n is 6.
+- In the fourth iteration, n is 8.
+
+## Slide 13: More For Loops
+
+## Slide 14: Example: Fares
+
+- Suppose we have a data set of Titanic survivors, with information about the fare (ticket price) they paid.
+- Write a function that, given a list of fares and a threshold, returns the number of fares that are above the threshold.
+- \# Evaluates to 4, since 4 nums are >3
+- count\_above([1, 2, 5, 8, 7, 9], 3)
+- \# Evaluates to 0, since 0 nums are >10
+- count\_above([4, 8, 2, 1], 10)
+
+## Slide 15: Solution
+
+## Slide 16: Questions?
+
+## Slide 17: Quick Check 1
+
+- Describe, in one sentence, what the function not\_sure does.
+- def not\_sure(word):
+- output = ''
+- for letter in word:
+- if letter in 'aeiou':
+- output += letter
+- return output
+
+## Slide 18: For Loops with Strings
+
+## Slide 19: Ranges and For Loops
+
+- 1. Motivation
+- 2. For Loops
+- 3. Ranges
+- ➤
+
+## Slide 20: Recall: np.arange()
+
+- Array ranges work like indexing:inclusive of the starting position, and exclusive of the ending position.
+- The NumPy function np.arange() creates a sequence of numbers.
+
+## Slide 21: Ranges and For Loops
+
+- If don’t have an array we’re working with but still want to repeat code a certain number of times, what can we do?
+
+## Slide 22: More Array Range Examples
+
+## Slide 23: Another Useful Tool: np.append()
+
+- Printing from for loops is cool, but the real power is when we use for loops to change or add values in arrays.
+- We can use np.append(arr, value) to add value onto the end of the array arr.
+
+## Slide 24: In Conclusion…
+
+## Slide 25: Summary
+
+- For loops perform one iteration for each element of a sequence.
+- This is very useful when working with arrays
+- If we don’t have an array we’re working with, we can use np.arange() to make a range to iterate over
+- We can use np.append() to add onto the end of an array
+- while <boolean expression>:
+- <while body>
+- “While this condition is true, repeat this code.”
+- for <elem> in <sequence>:
+- <for body>
+- “For each element of this sequence, repeat this code.”
+
+## Slide 26: Recap
+
+- Next Time
+- Iteration
+  - For Loops
+- https://forms.gle/YrRPZdoSFgx3dfRJ8
+- Quick Check
+- Iteration
+  - While Loops
+  - Dealing with Missing Values
+

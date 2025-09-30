@@ -1,0 +1,17 @@
+---
+title: "Arrays and Variables"
+subtitle: "Lecture 04"
+---
+
+This chapter covers the key concepts from Lecture 04.
+
+## Topics Covered
+
+* [Strings](strings.qmd)
+* [NoneType](nonetype.qmd)
+* [print()](print.qmd)
+* [Display vs. Output](display-vs-output.qmd)
+* [Arrays](arrays.qmd)
+* [Array Operations](array-operations.qmd)
+* [Variables in Data Science](variables-in-data-science.qmd)
+

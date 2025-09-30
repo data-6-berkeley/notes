@@ -1,0 +1,23 @@
+---
+title: "Example: Incidence"
+subtitle: "From Lecture 02"
+---
+
+## Example: Incidence
+
+- 1. Programming in Python
+- 2. Arithmetic
+- 3. Jupyter Shortcuts
+- 4. Comments, Data Types, and Errors
+- ➤
+
+## Incidence Rate
+
+- Use Python to validate these values:
+- 2020 incidence
+- 2021 incidence
+- †TB incidence is computed as “Cases per 100,000 persons using mid-year population estimates from the U.S. Census Bureau.”
+- CDC MMWR source
+- U.S. Census population estimates source (2019), source (2020-2021)
+
+

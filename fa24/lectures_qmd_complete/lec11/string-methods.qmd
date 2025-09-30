@@ -1,0 +1,28 @@
+---
+title: "String Methods"
+subtitle: "From Lecture 11"
+---
+
+## String Methods
+
+- 1. Functions and Parameters
+- 2. Parameter Scope and Return Values
+- 3. String Methods
+- 4. Demo
+- ➤
+
+## Methods
+
+- Methods are functions with slightly different syntax.
+- 'ian'.upper()         \# Evaluates to 'IAN'
+- Methods use “dot notation”.
+- In our class, we will not write any methods of our own; we’ll only write functions of our own.
+- However, many of the data types we will deal with have built-in methods that we will use.
+
+## String Methods
+
+- Just like tables have table methods, strings have string methods that can be used on any string. For now, here are some methods that work on strings that you should know.
+- Assume that the line s = 'JuNiOR12' has been run.
+- There are many more, but we will use them as they become relevant.
+
+

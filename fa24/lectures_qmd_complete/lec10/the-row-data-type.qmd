@@ -1,0 +1,13 @@
+---
+title: "The Row Data Type"
+subtitle: "From Lecture 10"
+---
+
+## The Row Data Type
+
+- 1. Joining
+- 2. Demo
+- 3. The Row Data Type
+- ➤
+
+

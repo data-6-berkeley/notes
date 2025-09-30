@@ -1,0 +1,48 @@
+---
+title: "Where Do We Write Code?"
+subtitle: "From Lecture 02"
+---
+
+## What is Python Code?
+
+- 1. Programming in Python
+- 2. Arithmetic
+- 3. Jupyter Shortcuts
+- 4. Comments, Data Types, and Errors
+- ➤
+
+## What is a computer program? What is code?
+
+- Code refers to a computer program writtenin a particular programming language.
+- In this class, we use the Python language to write Python code.
+- A computer program is a [set or sequence] of instructions in a programming language.				[Wikipedia]
+- Computer programs are nothing more than recipes: we write programs that tell the computer exactly what to do, and it does exactly that – nothing more, and nothing less.
+- Common (cold) take: computers are dumb.
+
+## Where Do We Write Code?
+
+- 1. Programming in Python
+- 2. Arithmetic
+- 3. Jupyter Shortcuts
+- 4. Comments, Data Types, and Errors
+- ➤
+
+## Where do we write code?
+
+- Traditionally, code is written in a text editor or IDE, and then run in a command-line interface.
+- VS Code, a popular text editor.
+- Command Line Interface
+- While we could do everything in command-line interfaces, they aren’t the best suited for data science work, which often requires visualizations and written reports.
+
+## Where do we write code?
+
+- Jupyter Notebooks allow us to write and run code within a single document. They also allow us to embedded text and code. We will use these exclusively!
+- You will learn about more coding tools if you take more CS/DS classes.
+
+## Why write code as a data scientist?
+
+- Compute
+- Visualize
+- Share
+
+

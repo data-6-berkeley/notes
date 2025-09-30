@@ -1,0 +1,504 @@
+---
+title: "[Lec 06] Data 6 Fall 2024 - Introduction to Social Science Research"
+---
+
+## Slide 1: Intro to Social Science Research
+
+- Data 6 Fall 2024
+- LECTURE 06
+- From social theory to working with data.
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+
+## Slide 2: Today’s Roadmap
+
+- Units of Analysis
+- Social Science Research
+- Materials-Based Research
+- Aggregation and Disaggregation
+- Lecture 06, Data 6 Fall 2024
+
+## Slide 3: Warmup: Compare/Contrast
+
+- For each of the below, discuss the implications of question/statement (a) vs. statement (b):
+- (a) What is the level of educational attainment in 2020 among US resident adults?(b) Educational attainment among US resident adults tends to vary by geographic region.
+- (a) US resident adults residing in coastal cities are more likely to complete college compared to US resident adults residing in rural regions.(b) For US resident adults, coastal city residence is likely to determine college completion rates.
+- (a) US resident adults residing in coastal cities are more likely to complete college compared to US resident adults residing in rural regions.(b) Educational attainment among US resident adults varies by geographic region.
+
+<details><summary>Speaker notes</summary>
+
+Goal help students start thinking about differences between research questions, theories, and hypotheses with a relatable example before it’s introduced
+Research Question in (a) vs. Theory in (b)
+Associative Hypothesis in (a) vs Causal Hypothesis in (b)
+Associative Hypothesis in (a) vs Theory in (b)
+
+</details>
+
+## Slide 4: Today
+
+- Exploratory Data Analysis
+- Exploratory research question
+- Observation
+- Theory
+- Hypothesis
+- Data collection
+- Data analysis
+- Results
+- The Scientific Method
+- Data analysis
+
+## Slide 5: Review: Variables
+
+- In data science, a variable is a measurable feature, attribute, and/or representation of a concept. It can have different values for different individuals.
+- variable
+- Variables are empirical measurements; they are often metrics that researchers create to approximate the specific dimensions of an abstract concept of a research question.
+
+<details><summary>Speaker notes</summary>
+
+“Data” are systematically collected elements of information about the
+world. They can be qualitative or quantitative in style. Sometimes data
+are collected to evaluate a very specific theory, but not so infrequently,
+scholars collect data before knowing precisely what they are interested
+in finding out. Moreover, even if data are collected to evaluate a specific hypothesis, researchers may ultimately be interested in questions
+that had not occurred to them previously.
+
+</details>
+
+## Slide 6: Units of Analysis
+
+- ➤
+- Units of Analysis
+- Social Science Research
+- Materials-Based Research
+- Aggregation and Disaggregation
+
+## Slide 7: Units of Analysis
+
+- The types of entities we are analyzing:
+- Individuals
+- Groups (families, classes, gangs, ...)
+- Localities (cities, counties, countries, …)
+- Organizations, industries, political units, social artifacts, etc.
+
+<details><summary>Speaker notes</summary>
+
+SOC5 Lecture 2
+
+</details>
+
+## Slide 8: Units of Analysis
+
+- The types of entities we are analyzing:
+- Individuals
+- Groups (families, classes, gangs, ...)
+- Localities (cities, counties, countries, …)
+- Organizations, industries, political units, social artifacts, etc.
+- Income
+- individualincomehousehold incomeaverage income
+- Race/Ethnicity
+- \# People
+- individualrace/ethnicity–population demographics
+- –\# memberspopulation size
+- Unit of analysis is directly linked to the concept of “variables”.Variables describe the unit of analysis.
+
+<details><summary>Speaker notes</summary>
+
+SOC5 Lecture 2
+
+</details>
+
+## Slide 9: Matching: What is the unit of analysis?
+
+- Are schools in poorer neighborhoods more prone to violence than schools in richer neighborhoods?
+- Are women more likely than men to be religious?
+- Do records that win Grammy awards sell more than otherwise-similar records that do not win Grammy awards?
+- Are married couples richer than non-married cohabiting couples?
+- Individuals
+- Couples
+- Married couples
+- Non-married couples
+- Families
+- Gender groups
+- Neighborhoods
+- Schools
+- Records
+- Grammy awards
+- Religions
+- Something else
+- From SOC 5: Evaluation of Evidence
+
+<details><summary>Speaker notes</summary>
+
+Schools
+Gender groups
+Records
+Couples
+
+</details>
+
+## Slide 10: Social Science Research
+
+- ➤
+- Units of Analysis
+- Social Science Research
+- Materials-Based Research
+- Aggregation and Disaggregation
+
+## Slide 11: The Scientific Method
+
+- Theory
+- Hypothesis
+- Data collection
+- Data analysis
+- Results
+
+## Slide 12: Theory, Research, and Hypotheses
+
+- Theory - a systematic set of related statements that accord with a worldview.
+- When (social) scientists do research, we use theories 3 different ways:
+- Theories prevent us from being taken in by flukes.
+- Theories help us make sense of observed patterns in ways that can suggest other possibilities.
+- Theories direct our research efforts, pointing us toward likely discoveries through empirical observation.
+- From SOC 5: Evaluation of Evidence
+
+## Slide 13: Theory and Hypotheses
+
+- Elements of a scientific sociological theory:
+- Concepts
+- Relations between concepts
+- Causal mechanisms
+- Concept 1
+- Concept 2
+- Hypothesis: The empirical instantiation of a theory, i.e., a testable statement of a relationship involving two concepts.
+- Hypotheses therefore involve variables, which are representations that capture the different dimensions, categories, or levels of a concept.
+- Variable 1
+- Variable 2
+
+## Slide 14: From Concepts to Variables
+
+- Concept 1
+- Concept 2
+- Variable 1
+- Variable 2
+- Concept 1: 	Family background
+- Concept 2:	Education
+- Theory: A child’s family background impacts how much education the child attains.
+- Variable 1: 	Family income
+- Variable 2:	College degree vs. None
+- Hypothesis: Children from families with higher incomes are more likely to go to college.
+
+## Slide 15: What good theories have in common
+
+- They can be tested as hypotheses using empirical data.
+  - Empirical data – data gathered through some observation plan.
+- They apply to units outside/beyond the sample that is currently under study.
+- They make probabilistic, not deterministic, predictions (i.e., hypotheses). Examples:
+  - Men are more likely than women to be over-confident.
+  - In countries where women have higher status, women’s and men’s math scores tend to be more similar.
+
+## Slide 16: Research Question? Theory? Hypothesis?
+
+- For the purposes of this class, we’ll make the following distinction:
+- A research question is an exploratory question about a social concept to guide how we collect data OR make sense of existing data.
+- A theory is an associative statement that links together social concepts.
+- A hypothesis is an empirical instantiation of a theory, i.e., a testable statement involving a relationship between two variables, each of which represents a social concept.
+
+## Slide 17: Research Question? Theory? Hypothesis?
+
+- For the purposes of this class, we’ll make the following distinction:
+- A research question is an exploratory question about a social concept to guide how we collect data OR make sense of existing data.
+- A theory is an associative statement that links together social concepts.
+- A hypothesis is an empirical instantiation of a theory, i.e., a testable statement involving a relationship between two variables, each of which represents a social concept.
+- In materials based research, the research question guides how we make observations about existing data, from which we then formulate theories and test hypotheses.
+
+## Slide 18: Causality? Or by association?
+
+- Causal relationship: Changing one variable causes a change in the other variable.
+- A college education tends to increase one’s income as an adult.
+- Associative relationship: As one variable changes, the other variable also changes.
+- A person with college education is more likely to have higher income as an adult than a person without college education.
+- Proving causality is very difficult:
+- Other variables (e.g., confounding variables) can make two concepts appear related.
+- Generally, assessing causality in relationships requires advanced statistics and sound research methods.
+- In this class, we will explore associative relationships between concepts/variables through visualization.
+- Take Data 8 to learn statistical approaches!
+
+## Slide 19: Identifying Confounding Variables
+
+- Confounding variables can be linked to other concepts in a way that makes two concepts appear related (even when they are not).
+- Translate a concept into a variable
+- Define the variable domain (i.e., all possible values)
+- Consider other factors that may influence the outcomes of the study, and repeat
+- What is the level of educational attainment in 2020 among US resident adults?
+- Pose the Research Question
+- US geographic region
+- Educational attainment level
+- ?
+- Other social systems?
+
+## Slide 20: Identifying Confounding Variables
+
+- These are just a few confounding variables measured in the ACS. What kinds of confounding variables would likely not be measured in a government study?
+- What is the level of educational attainment in 2020 among US resident adults?
+- Pose the Research Question
+- Race/Ethnicity
+- White alone
+- White alone, not Hispanic or Latino
+- Black alone
+- American Indian or Alaska Native alone
+- Asian alone
+- Native Hawaiian and Other Pacific Islander Alone
+- Some other race alone
+- Two or more races
+- Hispanic or Latino Origin
+- Sex
+- Male
+- Female
+- Income/Earnings
+- (numeric amount)
+- US geographic region
+- Educational attainment level
+- ?
+
+<details><summary>Speaker notes</summary>
+
+https://www.nationalgeographic.com/culture/article/race-ethnicity “Race” is usually associated with biology and linked with physical characteristics such as skin color or hair texture. “Ethnicity” is linked with cultural expression and identification. However, both are social constructs used to categorize and characterize seemingly distinct populations.
+
+</details>
+
+## Slide 21: Quick check: Matching
+
+- What is the level of educational attainment in 2020 among US resident adults?
+- Educational attainment among US resident adults tends to vary by geographic region.
+- Educational attainment
+- College completion rate
+- US resident adults residing in coastal cities are more likely to complete college compared to US resident adults residing in rural regions.
+- For US resident adults, coastal city residence is likely to determine college completion rates.
+- Note: The variable College completion rate is only one measure of educational attainment. There are many!!
+- Exploratory research question
+- Causal hypothesis
+- Hypothesis of association
+- Theory
+- Concept
+- Variable
+- Something else
+
+<details><summary>Speaker notes</summary>
+
+Exploratory research question
+Theory
+Concept
+Variable
+Hypothesis of association
+Causal hypothesis
+
+</details>
+
+## Slide 22: Materials-Based Research
+
+- ➤
+- Units of Analysis
+- Social Science Research
+- Materials-Based Research
+- Aggregation and Disaggregation
+
+## Slide 23: Where does a data scientist come in?
+
+- Exploratory Data Analysis
+- Exploratory research question
+- Observation
+- Theory
+- Hypothesis
+- Data collection
+- Data analysis
+- Results
+- The Scientific Method
+- Data analysis
+
+## Slide 24: Gathering Data for Research and Analysis
+
+- Conduct surveys, experiments, interviews, ethnography,measurements…
+- Data
+- Conceptualize variables
+- Pose research question and theory
+- +
+- +
+- All data are created/generated from human input:
+- Definition of variables
+- Research design and measurement
+- However, the researcher and data scientist are often not the same person.Data scientists therefore need to consider the context of how researchers generated data from existing materials.
+
+<details><summary>Speaker notes</summary>
+
+SOC 5 textbook p. 29
+
+Surveys: Participants answer a series of questions
+Experiments: trying an intervention, measuring outcomes, etc.
+Interviews: researchers actively talk to participants, generally messier data than surveys
+Ethnography: participant observation (passive)
+
+</details>
+
+## Slide 25: Gathering Data for Research and Analysis
+
+- A researcher considers both validity and generalizability throughout the data gathering process.
+- Conduct surveys, experiments, interviews, ethnography,measurements…
+- Data
+- Conceptualize variables
+- Pose research question and theory
+- +
+- +
+- Validity A quality of a measure concerning how accurate it is.
+- Internal Validity: How accurately are we measuring the defined concepts?
+- External Validity:
+  - How representative is the group being studied?
+  - How “real” is this study?
+- Generalizability The extent to which results or conclusions based on one population can be applied to others.
+
+<details><summary>Speaker notes</summary>
+
+SOC 5 textbook p. 29
+
+Surveys: Participants answer a series of questions
+Experiments: trying an intervention, measuring outcomes, etc.
+Interviews: researchers actively talk to participants, generally messier data than surveys
+Ethnography: participant observation (passive)
+
+</details>
+
+## Slide 26: Using Existing Data from a Different Context
+
+- If we did not create the original dataset, we will need to separately consider whether the data are valid and generalizable for our own research question.
+- Conduct surveys, experiments, interviews, ethnography,measurements…
+- Data
+- Conceptualize variables
+- +
+- +
+- Validity A quality of a measure concerning how accurate it is.
+- Internal Validity: How accurately are we measuring the defined concepts?
+- External Validity:
+  - How representative is the group being studied?
+  - How “real” is this study?
+- Generalizability The extent to which results or conclusions based on one population can be applied to others.
+- Pose research question and theory
+
+<details><summary>Speaker notes</summary>
+
+SOC 5 textbook p. 29
+
+Surveys: Participants answer a series of questions
+Experiments: trying an intervention, measuring outcomes, etc.
+Interviews: researchers actively talk to participants, generally messier data than surveys
+Ethnography: participant observation (passive)
+
+</details>
+
+## Slide 27: Using Existing Data
+
+- Pros
+- Inexpensive – the data are there; you just have to gain access to them
+- Data can be reused and combined with other data
+- Effective for social description of large and heterogeneous populations
+- Can study phenomena that unfold over extended periods of time.
+- The data are often nonreactive (i.e. the subjects will not be disrupted by the study)
+
+## Slide 28: Using Existing Data
+
+- Can only study measurable phenomena (for which variables were recorded)
+- Threat to internal validity: No control over creation process from concept to variable
+- Threat to external validity: Potential bias in what is available.
+- Which groups were studied
+- Selective deposit/survival: what was archived
+- No control over quality of data
+- Cons
+
+<details><summary>Speaker notes</summary>
+
+SOC 5 Lecture 23 Fall 2019
+Cannot study some phenomena:  only those that can be tapped by technologies that generate archives (reading, writing, listening, talking); not private, unconscious, nonconformist, or socially unacceptable phenomena. 
+Potential bias in what is available (& therefore threats to external validity): 
+Bias due to selective deposit:  records and artifacts put in archives are not representative of all the things produced by a society. 
+Bias due to selective survival:  some records and artifacts disappear or disintegrate over time (crumbling paper, fabric, etc.) 
+The researcher cannot control the quality of recording (reliability, precision, accuracy). The researcher may not know how the data were created.  
+The researcher cannot control the measures directly  may have to work hard to develop valid measures. 
+No random assignment to values of the IVs  threats to internal validity.
+
+</details>
+
+## Slide 29: Aggregation and Disaggregation
+
+- ➤
+- Units of Analysis
+- Social Science Research
+- Materials-Based Research
+- Aggregation and Disaggregation
+
+## Slide 30: Back to the ACS
+
+- Household survey
+- Private dataset by household
+- Public dataset by geographic region
+- aggregation
+- Table 1
+- Table 2
+- (last lecture)
+
+## Slide 31: Individual Level (Private Dataset)
+
+- ACS 2020
+
+## Slide 32: Translating between Units of Analysis
+
+- Aggregation - “Roll up” a variable measured on a fine-grained unit of analysis (e.g., individuals) into a variable on a coarser-grained unit of analysis (e.g., groups)
+- Income of many individuals in geographic regions → average income by region
+- Usually done through counting or averaging
+- Disaggregation - “Drill down” a variable measured on a coarser-grained unit of analysis (e.g., region) into a variable on a coarser-grained unit of analysis (e.g., groups within that region)
+- Generally performed to identify confounding (or mediating) variables to disentangle the impact of certain variables
+- Average income by geographic region → average income by race/ethnicity by region
+- How to do this?
+- Without fine-grained data, it is impossible to go from a high-level, aggregated view of data down to a lower-level, disaggregated view!
+
+## Slide 33: ACS
+
+- Private dataset by household
+- Public dataset by geographic region
+- aggregation
+- disaggregation?
+- Cannot be done without additional data! Why?
+- straightforward: counting, averages
+
+## Slide 34: Disaggregation and Privacy
+
+- Public dataset by geographic region
+- The ACS main webpage [link] provides an aggregated view of data by region and specific disaggregations by income and sex.
+- By doing so, researchers can find it difficult (if not impossible) to disentangle the impact of certain variables, e.g., by race/ethnicity.
+- ACS has therefore also released ACS Public Use Microdata Sample (PUMS) [link] which releases a smaller sample of records from individual people and/or housing units.
+- Why the distinction?
+- Releasing fine-grained data about individuals is a privacy issue.
+  - It puts individuals in that dataset at risk of being identified beyond the research.
+  - In particular, small, already vulnerable populations are often more easily identified.
+- PUMS therefore uses a combination of privacy-preserving techniques such as differential privacy and synthetic data [source1, source2]
+- Table 2
+
+## Slide 35: In Conclusion…
+
+## Slide 36: Summary
+
+- Units of Analysis describe the level of aggregation of our data
+  - We can roll up or drill down depending on the demands of our research question
+- In Social Science Research we generate theories to guide our research and link together concepts
+- We test those theories by developing hypotheses that link measurable variables
+  - Our hypotheses can be either causal or associative though causal hypotheses are harder to prove
+- Sometime, we (data scientists) can work with existing data gathered by researchers
+  - But oftentimes, that data is limited in its validity and generalizability
+  - It is also important to understand the multiple units of analysis that we can use to answer questions, ranging from the individual level to the population level
+
+## Slide 37: Recap
+
+- Units of Analysis
+- Theories
+- Hypothesis
+- Materials-Based Research
+- https://docs.google.com/forms/d/e/1FAIpQLSdo2KH1OojSxiV-4eXYec4kba29YphQ7wwLmDa0MZxH6mHENw/viewform?usp=sf\_link
+- Table Fundamentals
+- Next Time
+

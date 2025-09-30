@@ -1,0 +1,22 @@
+---
+title: "Categorical Variables"
+subtitle: "From Lecture 15"
+---
+
+## Visualizing Categorical and Numerical Variables
+
+- Data 6 Fall 2024
+- LECTURE 15
+- All about histograms and bar charts.
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+
+## Summary (Categorical Variables)
+
+- Bar charts are used to display the distribution of a categorical variable, or the relationship between a categorical variable and one or more numerical variables.
+- The method t.barh(column\_for\_categories) creates a bar chart with:
+- The values of the column column\_for\_categories as the categories on the y-axis. This column should contain a categorical variable, and values should be unique.
+- Bars for every other column in t. These columns should contain numerical variables.
+  - Multiple other columns → grouped bar chart.
+- Bars should be sorted depending on the type of the categorical variable.
+
+

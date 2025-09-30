@@ -1,0 +1,13 @@
+---
+title: "Iteration"
+subtitle: "Lecture 19"
+---
+
+This chapter covers the key concepts from Lecture 19.
+
+## Topics Covered
+
+* [Motivation](motivation.qmd)
+* [For Loops](for-loops.qmd)
+* [Ranges](ranges.qmd)
+

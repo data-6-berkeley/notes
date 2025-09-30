@@ -1,0 +1,14 @@
+---
+title: "Introduction to Social Science Research"
+subtitle: "Lecture 06"
+---
+
+This chapter covers the key concepts from Lecture 06.
+
+## Topics Covered
+
+* [Units of Analysis](units-of-analysis.qmd)
+* [Social Science Research](social-science-research.qmd)
+* [Materials-Based Research](materials-based-research.qmd)
+* [Aggregation and Disaggregation](aggregation-and-disaggregation.qmd)
+

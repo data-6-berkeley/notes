@@ -1,0 +1,27 @@
+---
+title: "Training Data"
+subtitle: "From Lecture 24"
+---
+
+## Training Data
+
+- ➤
+- 1. LLMs
+- 2. Local LLMs Demo
+- 3. Training Data
+- 4. AI Chatbot Demo
+- 5. Risks
+- 6. Improvements
+
+## What data does ChatGPT use to train its model?
+
+- Dataset used to teach machine learning models
+- Publicly available data
+  - Public data repos
+  - Social media
+  - YouTube videos
+- Third parties / crowdsourcing
+- Training Data
+- Web Scraping: process of using bots to extract content and data from a website
+
+

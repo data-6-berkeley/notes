@@ -1,0 +1,30 @@
+---
+title: "Computational Social Science"
+subtitle: "From Lecture 22"
+---
+
+## Computational Social Science
+
+- ➤
+- 1. Recap
+- 2. Sample Setting
+- 3. Biases
+- 4. Sampling Approaches
+
+## What is Computational Social Science?
+
+<details><summary>Speaker notes</summary>
+
+A little useless…
+
+</details>
+
+## What is Computational Social Science?
+
+<details><summary>Speaker notes</summary>
+
+Source: https://direct.mit.edu/coli/article/50/1/237/118498/Can-Large-Language-Models-Transform-Computational
+
+</details>
+
+

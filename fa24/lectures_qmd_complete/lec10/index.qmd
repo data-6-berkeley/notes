@@ -1,0 +1,13 @@
+---
+title: "Joining and Row Methods"
+subtitle: "Lecture 10"
+---
+
+This chapter covers the key concepts from Lecture 10.
+
+## Topics Covered
+
+* [Joining](joining.qmd)
+* [Demo](demo.qmd)
+* [The Row Data Type](the-row-data-type.qmd)
+

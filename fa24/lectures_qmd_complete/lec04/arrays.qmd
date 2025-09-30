@@ -1,0 +1,43 @@
+---
+title: "Arrays"
+subtitle: "From Lecture 04"
+---
+
+## Arrays and Variables
+
+- Data 6 Fall 2024
+- LECTURE 04
+- Storing many values in a single name.
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+
+## Arrays
+
+- 1. NoneType
+- 2. Arrays
+- 3. Variables in Data Science
+- ➤
+
+## Arithmetic on Arrays: 
+
+Evaluation Returns a New Array
+
+- ⚠️ Evaluating array expressions returns a new array; it does not change the original array.
+
+## Arithmetic on Arrays: 
+
+Evaluation Returns a New Array
+
+- ⚠️ Evaluating array expressions returns a new array; it does not change the original array.
+- Array Arithmetic is Element-Wise
+- 1) Arithmetic with an array and a numeric value
+
+## Arithmetic on Arrays: 
+
+Evaluation Returns a New Array
+
+- ⚠️ Evaluating array expressions returns a new array; it does not change the original array.
+- Array Arithmetic is Element-Wise
+- 1) Arithmetic with an array and a numeric value
+- 2) Arithmetic with two arrays of equal length (same number of values).
+
+

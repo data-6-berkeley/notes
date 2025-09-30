@@ -1,0 +1,17 @@
+---
+title: "Ranges"
+subtitle: "From Lecture 19"
+---
+
+## Ranges and For Loops
+
+- 1. Motivation
+- 2. For Loops
+- 3. Ranges
+- ➤
+
+## Ranges and For Loops
+
+- If don’t have an array we’re working with but still want to repeat code a certain number of times, what can we do?
+
+
