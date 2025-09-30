@@ -517,7 +517,7 @@ Read <em>Inferential Thinking</em>
 <h2 class="anchored" data-anchor-id="creating-arrays">Creating arrays</h2>
 <p>Each of these table columns can be represented by an array.</p>
 <p>Below, we create a new array for the column “Estimated high school graduate or higher (%)” and assign the returned array to a single name, <code>hs_or_higher</code>. This simple assignment statement is abstraction at work! Also note that the import statement gives us access to array functions with the <code>datascience</code> module, including <code>make_array</code>, which returns a new array with the provided argument values.</p>
-<div id="9ee55fe3" class="cell" data-execution_count="1">
+<div id="5cdd3fb4" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datascience <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>hs_or_higher <span class="op">=</span> make_array(<span class="fl">86.9</span>, <span class="fl">83.9</span>, <span class="fl">88.5</span>, <span class="fl">87.2</span>, <span class="fl">84.4</span>)</span>
@@ -528,7 +528,7 @@ Read <em>Inferential Thinking</em>
 </div>
 <p>Let’s make a few more arrays.</p>
 <p>The array data type (as shown below) is a bit esoteric for now; we will discuss what NumPy (<code>np</code>) is very soon.</p>
-<div id="1f64c689" class="cell" data-execution_count="2">
+<div id="5d501707" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>bs_or_higher <span class="op">=</span> make_array(<span class="fl">26.2</span>, <span class="fl">34.7</span>, <span class="fl">30.5</span>, <span class="fl">37.5</span>, <span class="fl">30.7</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(bs_or_higher)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -536,7 +536,7 @@ Read <em>Inferential Thinking</em>
 </div>
 </div>
 <p>When creating the state names array of strings below, what do you observe about the datatype, <code>dtype</code>? Hint: Count the number of characters in each string.</p>
-<div id="24eba60f" class="cell" data-execution_count="3">
+<div id="a3ee353b" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>states <span class="op">=</span> make_array(<span class="st">"Alabama"</span>, <span class="st">"California"</span>, <span class="st">"Florida"</span>, <span class="st">"New York"</span>, <span class="st">"Texas"</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>states</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -545,7 +545,7 @@ Read <em>Inferential Thinking</em>
 </div>
 </div>
 <p>When creating the state population array below, why might we decide to make an integer array, as opposed to a string array?</p>
-<div id="0043de54" class="cell" data-execution_count="4">
+<div id="f66e251d" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>state_pop <span class="op">=</span> make_array(<span class="dv">3344006</span>, <span class="dv">26665143</span>, <span class="dv">15255326</span>, <span class="dv">13649157</span>, <span class="dv">18449851</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>state_pop</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
@@ -566,14 +566,14 @@ More array details
 <div class="callout-body-container callout-body">
 <p>The order of an array is fixed (i.e., they will be arranged in the order specified when building the array), and values can be repeated.</p>
 <p>Array with 4 <code>int</code>s:</p>
-<div id="f1d418ac" class="cell" data-execution_count="5">
+<div id="83a3ac39" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>make_array(<span class="dv">5</span>, <span class="op">-</span><span class="dv">1</span>, <span class="fl">0.3</span>, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>array([ 5. , -1. ,  0.3,  5. ])</code></pre>
 </div>
 </div>
 <p>Values in an array must all be of the same data type, and the <code>make_array</code> function will cast appropriately. Below, all values can be represented by strings:</p>
-<div id="7de0098f" class="cell" data-execution_count="6">
+<div id="b75f7b7a" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>make_array(<span class="dv">4</span>, <span class="op">-</span><span class="fl">4.5</span>, <span class="st">"not a number"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>array(['4', '-4.5', 'not a number'],
@@ -581,7 +581,7 @@ More array details
 </div>
 </div>
 <p>Incidentally, we can clean up our code stylistically by makine line breaks after each argument:</p>
-<div id="85842e3f" class="cell" data-execution_count="7">
+<div id="4b142d9c" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>make_array(<span class="st">"hello"</span>,</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>           <span class="st">"world"</span>,</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>           <span class="st">"!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -598,14 +598,14 @@ More array details
 <h2 class="anchored" data-anchor-id="element-wise-arithmetic">Element-wise arithmetic</h2>
 <p>Arrays allow us to write code that performs <strong>the same operation on many pieces of data at once</strong>. We can therefore easily use arithmetic operations on elements of numeric arrays where it “makes sense” (see sidenote).</p>
 <p>To compute the estimated percentage by state of adults 25 years or higher that have not graduated high school, we can create a new array by performing arithmetic with an <strong>array and a numeric value</strong>:</p>
-<div id="3f6d28c1" class="cell" data-execution_count="8">
+<div id="28bc601d" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="dv">100</span> <span class="op">-</span> hs_or_higher</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>array([ 13.1,  16.1,  11.5,  12.8,  15.6])</code></pre>
 </div>
 </div>
 <p>To compute the estimated number by state of adults 25 years or higher with bachelor’s degrees, we can create a new array by performing arithmetic with <strong>two arrays</strong>:</p>
-<div id="e9572fdb" class="cell" data-execution_count="9">
+<div id="f6d4d8da" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>bs_or_higher <span class="op">/</span> <span class="dv">100</span> <span class="op">*</span> state_pop</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>array([  876129.572,  9252804.621,  4652874.43 ,  5118433.875,  5664104.257])</code></pre>
@@ -617,7 +617,7 @@ More array details
 <h2 class="anchored" data-anchor-id="indexing">Indexing</h2>
 <p>When people stand in a line, each person has a position. Similarly, each <strong>element</strong> (i.e., value) of an array has a position – called its <strong>index</strong>. Python, like many programming languages, is <strong>zero-indexed</strong>. This means that in an array, the first element has index 0, not 1.</p>
 <p>In the <code>int_arr</code> array below, the first element (<code>3</code>) has index 0; the last element (<code>2</code>) has index 4.</p>
-<div id="da963f76" class="cell" data-execution_count="10">
+<div id="22b95103" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>int_arr <span class="op">=</span> make_array(<span class="dv">3</span>, <span class="op">-</span><span class="dv">4</span>, <span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">2</span>)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>int_arr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
@@ -630,20 +630,20 @@ More array details
 <pre><code>name_of_array.method(arguments)</code></pre>
 <p>We will discuss many more methods once we introduce tables, but for now let’s learn our first method to index arrays.</p>
 <p>We can access an element in an array by using its index and the <code>item()</code> method:</p>
-<div id="9b4edac0" class="cell" data-execution_count="11">
+<div id="46356301" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>int_arr.item(<span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>3</code></pre>
 </div>
 </div>
-<div id="8cac6c27" class="cell" data-execution_count="12">
+<div id="e6a72b92" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>int_arr.item(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>5</code></pre>
 </div>
 </div>
 <p>Because of zero-indexing, the largest valid index is 4 for the five-element <code>int_arr</code> array:</p>
-<div id="194b1bb0" class="cell" data-execution_count="13">
+<div id="5ec085ac" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>int_arr.item(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
@@ -657,7 +657,7 @@ More array details
 </div>
 </div>
 <p>In Python, we can also “count backwards” using <strong>negative indexes</strong>. -1 corresponds to the last element in an array; -2 corresponds to the second to last element in a array; and so on.</p>
-<div id="fc9a2750" class="cell" data-execution_count="14">
+<div id="081a603e" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># functionally equivalent to int_arr.item(4)</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>int_arr.item(<span class="op">-</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">

@@ -434,7 +434,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <p>Of course, the Python Reference can only provide information about the basics of the functions you’ll use in Data 6. The best knowledge about functions comes from using these functions in code you write in labs or homeworks. If you get stuck when using a certain function, we encourage you to come to office hours or ask a question on Ed.</p>
 <section id="the-anatomy-of-a-function" class="level3">
 <h3 class="anchored" data-anchor-id="the-anatomy-of-a-function">The Anatomy of a Function</h3>
-<div id="3e95c78d" class="cell" data-execution_count="1">
+<div id="02e4c9d3" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> my_function(num):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> num <span class="op">**</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -836,9 +836,9 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <td>None: draws a histogram</td>
 </tr>
 <tr class="odd">
-<td><code>tbl.plot(x_column, y_column)</code> or <code>tbl.plot(x_column)</code></td>
+<td><code>tbl.plot(x_column, y_column)</code> or <code>tbl.plot(x_column)</code> or <code>tbl.plot(x_column, [y_column1, ...])</code></td>
 <td>Draws a line plot consisting of one point for each row in <code>tbl</code>. If only <code>x_column</code> is specified, <code>plot</code> will plot the rest of the columns on the y-axis with different colored lines. Optional argument <code>overlay</code> (default is <code>True</code>) specifies whether multiple lines should be overlaid or on separate plots.</td>
-<td>1. <strong>string</strong>: name of the column on the x-axis <br> 2. <strong>string</strong>: name of the column on the y-axis</td>
+<td>1. <strong>string</strong>: name of the column on the x-axis <br> 2. <strong>string</strong> or <strong>array of strings</strong>: name of the column(s) on the y-axis</td>
 <td>None: draws a line graph</td>
 </tr>
 <tr class="even">
