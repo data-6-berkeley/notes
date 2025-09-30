@@ -87,7 +87,9 @@ website:
         href: 08-histograms/index.qmd
         contents:
           - href: 08-histograms/index.qmd
-            text: "Histograms"
+            text: "Histograms and Ranges"
+          - href: 08-histograms/exercises.qmd
+            text: "Exercises"
       - href: five-things.qmd
         text: "5 Things to Know"
       - href: reference.qmd

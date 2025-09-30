@@ -1,0 +1,328 @@
+---
+title: "Histogram Exercises"
+subtitle: "Lecture notebook"
+---
+
+```{python}
+#| include: false
+from datascience import *
+import numpy as np
+import warnings
+warnings.filterwarnings("ignore")
+
+%matplotlib inline
+import matplotlib.pyplot as plots
+plots.style.use('fivethirtyeight')
+plots.rcParams["patch.force_edgecolor"] = True
+```
+
+This is an export of the lecture notebook for today. Pay special attention to the Histogram section, where we demo the optional `density` argument to the `hist` Table method.
+
+## Ranges are sequences of consecutive numbers
+
+Equivalent:
+```{python}
+make_array(0,1,2,3,4,5,6)
+```
+
+```{python}
+np.arange(7)
+```
+
+`np.arange` can take one, two, or three arguments. From the `docstring`, with some light editing:
+
+```
+    arange([start,] stop[, step,])
+    
+    Return evenly spaced values within a given interval.
+    
+    ``arange`` can be called with a varying number of positional arguments:
+    
+    * ``arange(stop)``: Values are generated within the half-open interval
+      ``[0, stop)`` (in other words, the interval including `start` but
+      excluding `stop`).
+    * ``arange(start, stop)``: Values are generated within the half-open
+      interval ``[start, stop)``.
+    * ``arange(start, stop, step)`` Values are generated within the half-open
+      interval ``[start, stop)``, with spacing between values given by
+      ``step``.
+    
+    Parameters
+    ----------
+    start : integer or real, optional
+        Start of interval.  The interval includes this value.  The default 
+        start value is 0.
+    stop : integer or real
+        End of interval.  The interval does not include this value, except 
+        in some cases where `step` is not an integer and floating point
+        round-off affects the length of `out`.
+    step : integer or real, optional
+        Spacing between values.  For any output `out`, this is the distance 
+        between two adjacent values, ``out[i+1] - out[i]``.  The default 
+        step size is 1.  If `step` is specified as a position argument, 
+        `start` must also be given.
+    
+    Returns
+    -------
+    arange : ndarray
+        Array of evenly spaced values.
+    
+        For floating point arguments, the length of the result is 
+        ``ceil((stop - start)/step)``.  Because of floating point overflow,
+        this rule may result in the last element of `out` being greater 
+        than `stop`.
+```
+
+To read the above documentation in a Jupyter Notebook, run `np.arange?` in a code cell.
+
+### What Will Python Do? (WWPD) - 5 minutes
+
+```{python}
+np.arange(9)
+```
+
+```{python}
+np.arange(0, 9, 3)
+```
+
+```{python}
+np.arange(5, 11)
+```
+
+```{python}
+np.arange(0, 1, 0.1)
+```
+```{python}
+np.arange(20, 0, -2)
+```
+
+## Distributions
+
+### Every variable has a distribution
+
+* `Title`: title of the movie
+* `Studio`: name of the studio that produced the movie
+* `Gross`: domestic box office gross in dollars
+* `Gross (Adjusted)`: the gross amount that would have been earned from ticket sales at 2016 prices
+* `Year`: release year of the movie.
+
+
+```{python}
+top_movies = Table.read_table('data/top_movies_2017.csv')
+top_movies.show(6)
+```
+
+
+Visualize the distribution of studios responsible for the highest grossing movies as of 2017.
+
+```{python}
+studio_distribution = top_movies.group('Studio')
+studio_distribution.show(6)
+```
+
+```{python}
+studio_distribution.barh('Studio')
+```
+
+Let's revisualize this barchart to display just the top five studios. In the below code, note how `.take` is used with `np.arange`:
+
+```{python}
+studio_distribution.sort('count', descending=True).take(np.arange(5)).barh('Studio')
+print("Five studios are largely responsible for the highest grossing movies")
+```
+
+Note that the above bar chart does not display the entire distribution of movies and studios---just the top five.
+
+## Histograms: The Area Principle
+
+Visualize the distribution of how long the highest grossing movies as of 2017 have been out (in years).
+
+```{python}
+ages = 2025 - top_movies.column('Year')
+top_movies = top_movies.with_column('Age', ages)
+top_movies
+```
+
+Before visualizing anything, let's look at the table itself.
+
+```{python}
+top_movies.select('Title', 'Age').show(6)
+```
+
+```{python}
+min(ages), max(ages)
+```
+
+## Histogram: Counts
+
+If you want to make equally sized bins, `np.arange()` is a great tool to help you.
+```{python}
+top_movies.hist('Age', bins = np.arange(0, 110, 10), unit = 'Year', density=False)
+```
+
+## Histograms: Density
+
+```{python}
+# default is density=True
+top_movies.hist('Age', bins = np.arange(0, 110, 10), unit = 'Year')
+```
+
+Hm...what is this `density` parameter? This is our first instance of a **Boolean** data type, which takes on the values of `True` or `False`.
+
+Verify that the bar areas are proportional to the counts in each bin:
+
+```{python}
+top_movies_binned = top_movies.bin('Age', bins=np.arange(0, 110, 10))
+top_movies_binned.show()
+```
+
+### Custom bins
+
+You can also pick your own bins. These are just bins that we picked out:
+
+```{python}
+my_bins = make_array(0, 5, 10, 15, 25, 40, 65, 101)
+```
+You may then use the `bin` table method to make a table having your bins, along with the number of observations within each.
+
+
+```{python}
+binned_data = top_movies.bin('Age', bins = my_bins)
+binned_data
+```
+
+**Note:** The last "bin" does not include any observations!!
+
+### Now, plot the histogram!
+
+```{python}
+top_movies.hist('Age', bins = my_bins, unit = 'Year')
+```
+
+#### **Discussion Question (1 min)**: Compare the bins $[25, 40)$ and $[40, 65)$. 
+
+- Which one has more movies?
+- Which one is more crowded?
+
+## [Practice] Histogram Challenge Tasks
+
+I would not worry about the technical details of the code until next week! Right now, I just want you to see the different styles of bar chart that we might use.
+
+### **Task**: Find the height of the $[40,65)$ bin in the histogram above.
+
+$$\text{height} = \frac{\text{percent}}{\text{width}}$$
+
+Add a column containing what percent of movies are in each bin (the **area** of each bin)
+
+
+```{python}
+num_rows = top_movies.num_rows
+binned_data = binned_data.with_column(
+                'Percent',
+                100*binned_data.column('Age count')/num_rows)
+binned_data.show()
+```
+
+
+```{python}
+percent = binned_data.where('bin', 40).column('Percent').item(0)
+```
+
+
+```{python}
+width = 65 - 40
+height = percent / width
+height
+```
+
+### **Task**: Find the heights of the (rest of the) bins.
+
+$$\text{height} = \frac{\text{percent}}{\text{width}}$$
+
+Remember that the last row in the table does not represent a bin!
+
+
+```{python}
+height_table = binned_data.take(np.arange(binned_data.num_rows - 1))
+height_table 
+```
+
+Remember `np.diff`?
+
+
+```{python}
+bin_widths = np.diff(binned_data.column('bin'))
+```
+
+
+```{python}
+bin_widths
+```
+
+
+```{python}
+height_table = height_table.with_column('Width', bin_widths)
+height_table
+```
+
+
+```{python}
+height_table = height_table.with_column('Height',
+                                        height_table.column('Percent')/height_table.column('Width'))
+height_table
+```
+
+To check our work one last time, let's see if the numbers in the last column match the heights of the histogram:
+
+
+```{python}
+top_movies.hist('Age', bins = my_bins, unit = 'Year')
+```
+
+## [Practice] Bar chart variants
+
+### One categorical attribute
+
+```{python}
+cones = Table.read_table('data/cones.csv')
+cones
+```
+
+
+```{python}
+flavor_table = cones.group('Flavor')
+flavor_table
+```
+
+
+```{python}
+flavor_table.barh('Flavor')
+```
+
+### One categorical attribute, one numerical attribute
+
+
+```{python}
+cone_average_price_table = cones.drop('Color').group('Flavor', np.average)
+cone_average_price_table
+```
+
+
+```{python}
+cone_average_price_table.barh('Flavor')
+```
+
+### Two categorical attributes
+
+(We will cover `pivot` in more detail next week)
+
+
+```{python}
+cones_pivot_table = cones.pivot('Flavor','Color')
+cones_pivot_table
+```
+
+
+```{python}
+cones_pivot_table.barh('Color')
+```

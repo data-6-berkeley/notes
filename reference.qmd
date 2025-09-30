@@ -41,6 +41,7 @@ In the function above, `my_function` is the name of the function, which takes on
 | `min(arr)` | Returns the minimum value in `arr` | **array** or **list** | The minimum value the array (usually an **int**) |
 | `sum(arr)` | Returns the sum of the values in `arr` | **array** or **list** | **int** or **float**: the sum of the values in the array |
 | `abs(num)` | Returns the absolute value of `num` | **int** or **float** | **int** or **float** |
+| `round(number)` or `round(number, ndigits)` | Returns `number` rounded to the nearest integer. If optional `ndigits` is provided, rounds to `ndigits` precision after the decimal point. | **int** or **float** | **int** or **float** |
 | `print(input, ...)` | Prints the `input`. Multiple inputs can be passed, and they will be separated by spaces by default. | **input**: any inputs to print <br>| **None**|
 | `type(object)` | Returns the type of `object`. | **object**: the object whose type is to be determined | **type**: the type of the object|
 
