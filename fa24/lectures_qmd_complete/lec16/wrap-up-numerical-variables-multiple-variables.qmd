@@ -1,0 +1,7 @@
+---
+title: "Wrap up numerical variables & multiple variables"
+subtitle: "From Lecture 16"
+---
+
+
+

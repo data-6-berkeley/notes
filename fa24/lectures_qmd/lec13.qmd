@@ -1,0 +1,275 @@
+---
+title: "[Lec 12 and 13] Data 6 Fall 2024 - Grouping and Pivoting"
+---
+
+## Slide 1: Grouping, Pivoting
+
+- Data 6 Fall 2024
+- LECTURE 12
+- Extracting and aggregating information from tables.
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+
+## Slide 2: Week 7
+
+- Reading assignment 3 released
+- Quiz 1 scores released
+- Lecture 13
+- A note on double jeopardy
+- Clarifications
+- Survey due next Monday!
+- Announcements!
+
+## Slide 3: On Exam Scores…
+
+- Exam scores are out!
+- A few observations on my end:
+- Left skewed-distribution
+  - Will focus on a lot more practice before building onto examples
+- Social sciences research & scope had a lower average than most other questions
+
+## Slide 4: On the usage of AI
+
+- If you choose to use generative AI on your coding assignments (homeworks, labs, projects), that’s your choice
+  - I think there are situations where it is helpful/useful! I’ve also tried to show you cases where it has failed
+- Please don’t use generative AI to summarize or write any part of your reading responses
+  - It’s what makes us human. Our humanity, our experiences, our understanding of the world around us…
+- A brief aside…
+
+## Slide 5: Today’s Roadmap
+
+- Higher order functions
+- Grouping with .group
+- Grouping by Multiple Columns
+- Pivot Tables with .pivot
+- Lecture 12, Data 6 Fall 2024
+
+## Slide 6: Higher order functions
+
+- 1. Higher order functions
+- 2.Grouping with .group
+- 3. Grouping by Multiple Columns
+- 4. Pivot Tables with .pivot
+- ➤
+
+## Slide 7: Higher Order Functions
+
+- Higher order functions are functions that can take in a function as an input or returns a function as an output.
+- We’ll be focusing on the first case: functions that take in inputs.
+- What is an example of a method that takes in a function as a parameter that we’ve used in this class?
+- Source
+
+## Slide 8: Higher order functions: Demo
+
+- Demo link here
+- Source
+
+## Slide 9: Grouping with .group
+
+- 1. Grouping with .group
+- 2. Grouping by Multiple Columns
+- 3. Pivot Tables with .pivot
+- ➤
+
+## Slide 10: Aggregating with .group()
+
+- The term “group” in data science is most commonly associated with data aggregation and disaggregation.
+- Aggregation: A process in which information is gathered and expressed in collective or summary form.
+- Useful for getting information about groups based on variables (age, profession, income) while simultaneously preserving confidentiality of individuals
+- Disaggregation (aka disentanglement): A process of taking aggregated data and breaking it down into smaller information units.
+- Useful to highlight outcomes that pertain to individual subsets of results/outcomes (e.g., gender, location, socio-cultural/ethnic background, age groups, etc.) to expose hidden trends
+- Source
+
+<details><summary>Speaker notes</summary>
+
+https://www.nccih.ca/docs/context/FS-ImportanceDisaggregatedData-EN.pdf
+
+</details>
+
+## Slide 11: .group()
+
+- Question: What is the relationship between the table on the right and the table on the left?
+- Answer: Same data, different unit of analysis. The right table is an aggregated view of the	       left table, grouped by artist.
+
+## Slide 12: .group()
+
+- The method t.group(column) counts the number of rows for each unique value in column, and returns a two-column table with the results.
+- Note: t.group(column) only keeps the column column, the frequency counts, and no others.
+
+## Slide 13: Quick Check 1
+
+- Fill in the blanks to create “Top 10 Artists”: The 10 artists with the most songs in the Spotify Daily Top 200 streams table.
+- top\_10\_artists = streams.group(...).sort(..., descending=...)
+- .take(np.arange(...))
+
+## Slide 14: group + sort + take = ❤️
+
+- This is a common pattern: grouping and then sorting, and then taking.
+- Here, it gives us the 10 artists with the most songs in the Spotify Daily Top 200 streams table.
+- top\_10\_artists = streams.group('artist\_names') \
+- .sort('count',
+- descending=True) \
+- .take(np.arange(10))
+
+## Slide 15: Advanced Grouping
+
+- 1. Grouping with .group
+- 2. Grouping by Multiple Columns
+- 3. Pivot Tables with .pivot
+- ➤
+
+## Slide 16: Today’s Data: 2021 Cars
+
+- Today we’ll use data from the US Department of Energy that contains basic information about all 2021 model-year cars sold in the US.
+- Click here for the source.
+- Click here for a spreadsheet version of the data.
+- Note:
+- Manufacturer is who owns the Brand.
+  - GM owns Buick, Cadillac, Chevrolet, GMC.
+- Displacement is the engine size in liters.
+- MPG is miles per gallon.
+
+## Slide 17: Question: What is the relationship between the table on the right and the table on the left?
+
+- Question: What is the relationship between the table on the right and the table on the left?
+
+## Slide 18: Question: What is the relationship between the table on the right and the table on the left now?
+
+- Question: What is the relationship between the table on the right and the table on the left now?
+
+## Slide 19: mean:
+
+- mean:
+- 6
+- 20.5
+
+## Slide 20: ‹\#›
+
+## Slide 21: ‹\#›
+
+## Slide 22: gm.group('Brand', np.mean)
+
+- gm.group('Brand', np.mean)
+
+## Slide 23: .group
+
+- The method t.group(column, collect) combines/aggregates all rows with the same value for column into a single row in the resulting table, according to the function collect.
+- The collect argument is optional.
+  - len: number of grouped values (default).
+  - list: list of all grouped values.
+  - sum: total of all grouped values.
+  - np.mean: average of all grouped values.
+- collect can be function that works on arrays!
+  - You can write your own functions if you need to.
+  - If it doesn’t work with non-numeric values (like sum), it skips non-numeric columns.
+
+## Slide 24: You can’t sum strings, so the 'Model sum' column is empty.
+
+- You can’t sum strings, so the 'Model sum' column is empty.
+- We get the same numbers (2, 3, 3, 1) if we don’t specify a collect function.
+- Example
+
+## Slide 25: Translating Between Units of Analysis
+
+- Suppose we have data on 4-year R1 higher education institutions across the United States.
+- Disaggregation is impossible unless we have data at a finer-grained unit of analysis to begin with.
+
+## Slide 26: Which Columns Should We Group By?
+
+- It usually only makes sense to group by columns that store categorical information that is shared across multiple rows.
+- If you had a bunch of dogs, you could group by
+- Breed.
+- Size (small, medium, large).
+- Sex.
+- Color.
+- It wouldn’t make sense to group by weight in pounds, since every dog will have a slightly different weight and two dogs having the exact same weight doesn’t tell you much.
+
+## Slide 27: Questions?
+
+## Slide 28: Quick Check 2
+
+- Fill in the blanks so that the following evaluates to the average miles per gallon for all 6-cylinder vehicles in cars.
+- cars.group('Cylinders', \_\_\_\_) \
+- .where(\_\_\_\_, 6) \
+- .column(\_\_\_\_) \
+- .\_\_\_\_
+
+## Slide 29: Grouping by Multiple Columns
+
+- 1. Grouping with .group
+- 2. Grouping by Multiple Columns
+- 3. Pivot Tables with .pivot
+- ➤
+
+## Slide 30: Question: What is the relationship between the table on the right and the table on the left?
+
+- Question: What is the relationship between the table on the right and the table on the left?
+
+## Slide 31: Grouping by Multiple Columns
+
+- If we pass a list of column names as the first argument to group:
+- t.group(column\_or\_columns, collect)
+- the resulting table has one row for every unique combination of values in the specified columns.
+- Just as before, if we call group with a single argument (a list or array), we get back counts. We can specify a collect function if we want to.
+- One row for every combination of Manufacturer and Brand.
+
+## Slide 32: Question: What do the numbers in this table mean?
+
+- Question: What do the numbers in this table mean?
+
+## Slide 33: Grouping by More Than Two Columns
+
+- You can group by any number of columns, but we rarely group by more than two columns as the results tend to be less meaningful.
+- Here, Manufacturer doesn’t tell us much.
+
+## Slide 34: Pivot Tables
+
+- 1. Grouping with .group
+- 2. Grouping by Multiple Columns
+- 3. Pivot Tables with .pivot
+- ➤
+
+## Slide 35: Review: Grouping
+
+## Slide 36: Question: What is the relationship between the table on the right and the table on the left?
+
+- Question: What is the relationship between the table on the right and the table on the left?
+
+## Slide 37: cars.pivot('Cylinders', 'Brand')
+
+- cars.pivot('Cylinders', 'Brand')
+- cars
+
+## Slide 38: .pivot()
+
+- The method t.pivot(columns, rows) is an alternative to grouping by exactly two columns.
+- First argument: the column from t you want to make up the columns of the output.
+  - Each unique value in the column columns will get its own column.
+- Second argument: the column from t you want to make up the rows of the output.
+  - Each unique value in the column rows will get its own row.
+
+## Slide 39: .pivot()
+
+- Like with group, the default with pivot is to count the number of occurrences of a particular combination. But we can provide two optional arguments:
+- t.pivot(columns, rows, values, collect)
+- This creates a new table where
+- The columns are specified by columns.
+- The rows are specified by rows.
+- The entries are specified by values, combined using the function collect.
+- For example:
+- t.pivot('Cylinders', 'Brand', 'MPG', np.mean)
+- describes the average MPG for every combination of Brand and Cylinders.
+
+## Slide 40: ‹\#›
+
+## Slide 41: In Conclusion…
+
+## Slide 42: Summary
+
+## Slide 43: Recap
+
+- Grouping
+- Pivoting
+- Lecture 13 Quick Check: https://docs.google.com/forms/d/e/1FAIpQLScye9GWqHkpQk51s09v7NjX5nyVbtIdpEnQpCWgLcjP2JUeaA/viewform?usp=sf\_link
+- Wrapping up pivoting!
+- Next Time
+

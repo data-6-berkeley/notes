@@ -1,0 +1,51 @@
+---
+title: "Review: .take()"
+subtitle: "From Lecture 08"
+---
+
+## Review: .take()
+
+- 1. Review: .take()
+- 2. Booleans
+- 3. Filtering with .where()
+- ➤
+
+## .take()
+
+- The method
+- t.take(row\_indices)
+- returns a new table with only the rows specified by row\_indices.
+- If row\_indices is a single integer, it returns a table with just one row – the row at index row\_indices.
+- If row\_indices is an array, it returns a table with all of the rows at positions specified by row\_indices.
+- .take is often used in conjunction with NumPy array ranges!
+
+## .take() with Arrays
+
+- Incidentally, the .take method works on arrays too, not just tables.
+- That means you can reverse the order of .take and .column and still get the same result.
+- ⚠️ This interchangeability does not generally hold true with other methods, so be careful!
+
+## Review: Filtering Rows
+
+- Often times, we will have a table and will want to access only the rows where some condition is true. For example, given our SAT data, we may want all of the rows where…
+- The combined SAT score is above 1800 (remember, this data is on the old 2400 scale).
+- The state name is equal to “California”.
+- The state name contains “Dakota”.
+- The math SAT score is between 580 and 600.
+- Accessing a subset of our data is called filtering. The method t.where will help us filter.
+- .where is the most important table method we will learn in this class.
+- ✅ Exact Match .where()
+
+## Review: Filtering Rows
+
+- Often times, we will have a table and will want to access only the rows where some condition is true. For example, given our SAT data, we may want all of the rows where…
+- The combined SAT score is above 1800 (remember, this data is on the old 2400 scale).
+- The state name is equal to “California”.
+- The state name contains “Dakota”.
+- The math SAT score is between 580 and 600.
+- Accessing a subset of our data is called filtering. The method t.where will help us filter.
+- .where is the most important table method we will learn in this class.
+- ✅ Exact Match .where()
+- We will now use .where to performconditional match, meaning we get rows whose columns meet a particular condition!
+
+

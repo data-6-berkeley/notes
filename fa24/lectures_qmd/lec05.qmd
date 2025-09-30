@@ -1,0 +1,365 @@
+---
+title: "[Lec 05] Data 6 Fall 2024 - NumPy, Indexing, Variables in Data Science"
+---
+
+## Slide 1: NumPy, Indexing, Variables in Data Science
+
+- Data 6 Fall 2024
+- LECTURE 05
+- What it means to work with data.
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+
+## Slide 2: Week 3
+
+- Check Ed!
+- Announcements!
+
+## Slide 3: Today’s Roadmap
+
+- Array Functions
+- NumPy
+- Indexing
+- Variables in Data Science
+- Lecture 05, Data 6 Fall 2024
+
+## Slide 4: Quick Check Review
+
+- 1. Array Functions
+- 2. NumPy
+- 3. Indexing
+- ➤
+
+## Slide 5: Array Functions
+
+- 1. Array Functions
+- 2. NumPy
+- 3. Indexing
+- ➤
+
+## Slide 6: Standard Functions
+
+## Slide 7: Standard Functions
+
+- While the function names are identical to what we saw for int/float/strs, the call expressions evaluate differently with our new array data type.
+
+## Slide 8: NumPy
+
+- ➤
+- 1. Array Functions
+- 2. NumPy
+- 3. Indexing
+- 4. Materials-Based Research
+
+## Slide 9: NumPy: A Convenient Function Library
+
+- Earlier, we computed averages using built-in Python functions:
+- arr = make\_array(30, -40, -4.5, 0, 35)
+- avg = sum(arr)/len(arr)
+- avg
+- In [2]:
+- Computing averages of array elements happens a lot in data science!
+- The NumPy package function np.average() is human-readable and convenient.
+- 4.1
+- Out [2]:
+
+## Slide 10: The NumPy package
+
+- NumPy (pronounced “num pie”) is a Python package\* with convenient andpowerful functions for manipulating arrays.
+- \*For our purposes, “library”, “package”, and “module” all mean similar things.
+- We generally put this import statement at the top of our notebook,then prepend np. to call a NumPy function.
+
+## Slide 11: Element-wise NumPy Functions
+
+- NumPy functions
+- Many of these functions work on both arrays and individual numbers.
+- We’ll point you to NumPy functions as they come up; you don’t need to memorize them. The course website has a list of some of them.
+- N-length array
+- N-length array
+
+## Slide 12: Common NumPy Functions
+
+- NumPy functions
+- N-length array
+- N-length array
+
+## Slide 13: Even More Functions
+
+- NumPy functions
+- N-length array
+- N-length array
+
+## Slide 14: Questions About Functions?
+
+- Data 6 Python Reference™
+
+## Slide 15: Side Note: The datascience Package
+
+- datascience package import statement:
+- The slightly different syntax allows us to call package functions without prepending datascience.
+- The make\_array() functionis from this package!
+- Fun fact: The datascience package was written by UC Berkeley specifically for data science education. It’s designed to support many Python packages like NumPy.
+- “Import everything”
+
+## Slide 16: Indexing
+
+- ➤
+- 1. Array Functions
+- 2. NumPy
+- 3. Indexing
+
+## Slide 17: Array Methods
+
+- Methods are functions that we call with “dot” syntax. There are several array methods that make it easy to calculate values of interest.
+- Terminology note: Method calls are where the function operates directly on the array arr.
+- In these examples, method calls are equivalent to the NumPy package functions.
+- The most common array method is item(), which is used for array indexing.
+
+## Slide 18: An Element’s Index Is Its Position in an Array
+
+- When people stand in a line, each person has a position.
+- Similarly, each element (i.e., value) of an array has a position – called its index.
+- Person 1
+- Person 7
+- Python, like most programming languages, is 0-indexed. This means that in an array, the first element has index 0, not 1.
+- Index 0
+- Index 6
+- Indices
+- 0   1   2   3   4
+- For a length-5 array:
+
+## Slide 19: Array Indexing
+
+- We can access an element in an array by using its index and the item() method:
+- arr.item(index)
+- Though int\_arr has 5 elements, the largest valid index is 4.
+
+## Slide 20: Negative Indexing
+
+- We can also “count backwards” using negative indexes.
+- -1 corresponds to the last element in a array.
+- -2 corresponds to the second last element in a array.
+- And so on...
+
+## Slide 21: Questions?
+
+## Slide 22: Variables in Data Science
+
+- ➤
+
+## Slide 23: Terminology: Data, Tabular Data, and Records
+
+- A dataset is a collection of data.
+- “[Data] are systematically collected elements of information about the world.”
+- – King, Keohane, and Verba. Designing Social Inquiry (1994).
+- In this course we will often use tabular data:
+- Columns
+- Rows (also known as records).
+- row
+- column
+
+<details><summary>Speaker notes</summary>
+
+“Data” are systematically collected elements of information about the
+world. They can be qualitative or quantitative in style. Sometimes data
+are collected to evaluate a very specific theory, but not so infrequently,
+scholars collect data before knowing precisely what they are interested
+in finding out. Moreover, even if data are collected to evaluate a specific hypothesis, researchers may ultimately be interested in questions
+that had not occurred to them previously.
+
+</details>
+
+## Slide 24: Terminology: Variables
+
+- In data science, a variable is a measurable feature, attribute, and/or representation of a concept. It can have different values for different individuals.
+- variable
+
+<details><summary>Speaker notes</summary>
+
+“Data” are systematically collected elements of information about the
+world. They can be qualitative or quantitative in style. Sometimes data
+are collected to evaluate a very specific theory, but not so infrequently,
+scholars collect data before knowing precisely what they are interested
+in finding out. Moreover, even if data are collected to evaluate a specific hypothesis, researchers may ultimately be interested in questions
+that had not occurred to them previously.
+
+</details>
+
+## Slide 25: Terminology: Variables
+
+- In data science, a variable is a measurable feature, attribute, and/or representation of a concept. It can have different values for different individuals.
+- A column contains/captures all measurements for a particular variable from our dataset.
+- Example 1: This column represents the estimated number of people 25 years or older in each state. Values are positive integers.
+- variable
+
+<details><summary>Speaker notes</summary>
+
+“Data” are systematically collected elements of information about the
+world. They can be qualitative or quantitative in style. Sometimes data
+are collected to evaluate a very specific theory, but not so infrequently,
+scholars collect data before knowing precisely what they are interested
+in finding out. Moreover, even if data are collected to evaluate a specific hypothesis, researchers may ultimately be interested in questions
+that had not occurred to them previously.
+
+</details>
+
+## Slide 26: Terminology: Variables
+
+- In data science, a variable is a measurable feature, attribute, and/or representation of a concept. It can have different values for different individuals.
+- A column contains/captures all measurements for a particular variable from our dataset.
+- Example 2: This column represents the recorded sex of each respondent.           Values are binary categories.
+- variable
+
+<details><summary>Speaker notes</summary>
+
+“Data” are systematically collected elements of information about the
+world. They can be qualitative or quantitative in style. Sometimes data
+are collected to evaluate a very specific theory, but not so infrequently,
+scholars collect data before knowing precisely what they are interested
+in finding out. Moreover, even if data are collected to evaluate a specific hypothesis, researchers may ultimately be interested in questions
+that had not occurred to them previously.
+
+</details>
+
+## Slide 27: Terminology: Variables
+
+- In data science, a variable is a measurable feature, attribute, and/or representation of a concept. It can have different values for different individuals.
+- variable
+- Variables are empirical measurements; they are often metrics that researchers create to approximate the specific dimensions of an abstract concept of a research question.
+- Side note: In computer science, Python names are also called variables. However, in this class we’ll always try to refer to Python names as names to avoid confusing it with the data science definition of a variable.
+
+<details><summary>Speaker notes</summary>
+
+“Data” are systematically collected elements of information about the
+world. They can be qualitative or quantitative in style. Sometimes data
+are collected to evaluate a very specific theory, but not so infrequently,
+scholars collect data before knowing precisely what they are interested
+in finding out. Moreover, even if data are collected to evaluate a specific hypothesis, researchers may ultimately be interested in questions
+that had not occurred to them previously.
+
+</details>
+
+## Slide 28: Case Study: American Community Survey (2020)
+
+- Important uses at local and national level:
+- Distribution of federal/state funds
+- Economic development (infrastructure, hospitals, schools, bridges, etc.)
+- Emergency management
+- Variables are empirical measurements; they are often metrics that researchers create to approximate the specific dimensions of an abstract concept of a research question.
+- Conducted annually by the US Census Bureau.
+- Mailed to a sample of ~3.5 million household addressesin 50 states + DC + Puerto Rico.
+- ACS builds on Census questions and also asks questions on education, employment,internet access, and transportation.
+- About the ACS
+
+## Slide 29: Research Question and Data Collection
+
+- The definition of variables is impacted not only by researchers’ interests, but also the process and limitations of data collection.
+- What is the level of educational attainment in 2020 among US resident adults?
+- Pose the Research Question
+- Household survey
+- Private dataset by household
+- Public dataset by geographic region
+- aggregation
+- Table 1
+- Table 2
+- (this lecture)
+
+## Slide 30: Defining Concepts in the Research Question
+
+- Translate a concept into a variable
+- Define the variable domain (i.e., all possible values)
+- Consider other factors that may influence the outcomes of the study, and repeat
+- What is the level of educational attainment in 2020 among US resident adults?
+- Pose the Research Question
+- Concept: 	Education
+- Variable: 	Highest degree received by academic institution
+- Less than high school graduate
+- High school graduate (includes equivalency)
+- Some college or associate’s degree
+- Bachelor’s degree
+- Graduate or professional degree
+- Variable domains can be categorical, numeric, or qualitative! In this course we focus on the first two.
+
+## Slide 31: Defining Concepts in the Research Question
+
+- Translate a concept into a variable
+- Define the variable domain (i.e., all possible values)
+- Consider other factors that may influence the outcomes of the study, and repeat
+- What is the level of educational attainment in 2020 among US resident adults?
+- Pose the Research Question
+- Concept: 	US resident
+- Variable: 	Address
+- US Postal address of a residence [where the survey is mailed]
+- Concept: 	Adult
+- Variable: 	Age bracket
+- Below 18
+- 18 to 25 (“young adult”)
+- 25 and up
+- [recorded from age]
+
+## Slide 32: Identifying Confounding Variables
+
+- Confounding variables can be linked to other concepts in a way that makes two concepts appear related (even when they are not).
+- Translate a concept into a variable
+- Define the variable domain (i.e., all possible values)
+- Consider other factors that may influence the outcomes of the study, and repeat
+- What is the level of educational attainment in 2020 among US resident adults?
+- Pose the Research Question
+- US geographic region
+- Educational attainment level
+- ?
+- Other social systems?
+
+## Slide 33: Identifying Confounding Variables
+
+- These are just a few confounding variables measured in the ACS. What kinds of confounding variables would likely not be measured in a government study?
+- What is the level of educational attainment in 2020 among US resident adults?
+- Pose the Research Question
+- Race/Ethnicity
+- White alone
+- White alone, not Hispanic or Latino
+- Black alone
+- American Indian or Alaska Native alone
+- Asian alone
+- Native Hawaiian and Other Pacific Islander Alone
+- Some other race alone
+- Two or more races
+- Hispanic or Latino Origin
+- Sex
+- Male
+- Female
+- Income/Earnings
+- (numeric amount)
+- US geographic region
+- Educational attainment level
+- ?
+
+<details><summary>Speaker notes</summary>
+
+https://www.nationalgeographic.com/culture/article/race-ethnicity “Race” is usually associated with biology and linked with physical characteristics such as skin color or hair texture. “Ethnicity” is linked with cultural expression and identification. However, both are social constructs used to categorize and characterize seemingly distinct populations.
+
+</details>
+
+## Slide 34: In Conclusion…
+
+## Slide 35: Summary
+
+- Array functions allow us to operate on and aggregate data in arrays
+- While some functions are built-in to Python, others come from the NumPy library, which contains many useful array methods
+- To retrieve a specific element/item in an array, you use the element’s index
+  - Remember that indices start at 0, not 1
+- In data science, a variable is a measurable feature, attribute, and/or representation of a concept
+  - We will use “name” to refer to Python names and “variable” to refer to data science variables
+- The context of our data matter a lot, and we should always examine the impact of data science on society
+
+## Slide 36: Recap
+
+- Array Functions
+- NumPy
+- Indexing
+- Variables in Data Science
+- https://forms.gle/KBHypkDihQdLRyrB9
+- Tables!
+- Columns and Variables
+- Table Methods
+- Next Time
+

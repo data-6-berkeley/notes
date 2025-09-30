@@ -1,0 +1,14 @@
+---
+title: "Introduction to Visualization"
+subtitle: "Lecture 14"
+---
+
+This chapter covers the key concepts from Lecture 14.
+
+## Topics Covered
+
+* [Examples of Visualizations](examples-of-visualizations.qmd)
+* [What is Visualization?](what-is-visualization.qmd)
+* [Variable Types](variable-types.qmd)
+* [Encoding](encoding.qmd)
+

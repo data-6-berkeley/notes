@@ -1,0 +1,14 @@
+---
+title: "Examples of Visualizations"
+subtitle: "From Lecture 14"
+---
+
+## Examples of Visualizations
+
+- 1. Examples of Visualization
+- 2. What is Visualization?
+- 3. Variable Types
+- 4. Encoding
+- ➤
+
+

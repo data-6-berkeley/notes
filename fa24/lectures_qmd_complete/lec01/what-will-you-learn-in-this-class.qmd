@@ -1,0 +1,43 @@
+---
+title: "What will you learn in this class?"
+subtitle: "From Lecture 01"
+---
+
+## What is Data Science?
+
+- 1. What is data science?
+- 2. What will you learn in this class?
+- 3. How will this class be run?
+- 4. Fun demo
+- ➤
+
+## What is data science?
+
+- Learning about the world from data using computation
+- Learning how to ask the “right” questions
+  - When we group data and analyze it, we bring a set of assumptions
+  - When we asked what our “major” is, made an assumption that people have a major
+- Using data to predict future outcomes
+
+## Content and Learning Objectives
+
+- 1. What is data science?
+- 2. What will you learn in this class?
+- 3. How will this class be run?
+- 4. Fun demo
+- ➤
+
+## Where does this course fit?
+
+- There are many different ways to get started with data science and computer science, and each of them has their own purpose and benefits.
+- Data 6
+- Data 8
+- CS 10
+- CS 61A
+- You will leave this course with applicable skills that you can use even if you don’t take any future CS/DS courses.
+
+## You can do this — period.
+
+- We are here to support you! data6.org/fa24/staff
+
+

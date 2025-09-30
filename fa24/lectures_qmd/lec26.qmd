@@ -1,0 +1,203 @@
+---
+title: "[Lec 26] Data 6 Fall 2024 - Conclusion"
+---
+
+## Slide 1: Conclusion
+
+- Data 6 Fall 2024
+- LECTURE 26
+- The end of Data 6 🥲
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+- data6.org/fa24/syllabus/\#acknowledgements-
+
+## Slide 2: Today’s Roadmap
+
+- Final Exam Logistics
+- What You Learned
+- Where To Go From Here
+- Staff Ask Us Anything
+- Lecture 26, Data 6 Fall 2024
+
+## Slide 3: Extra Credit - you need 80%!
+
+## Slide 4: Announcements
+
+- Office Hours
+  - Monday 3-5 PM @ Memorial Glade w/snacks
+  - Thursday 12-2 @ Soda 781
+  - Friday 2-4 @ Moffit 503
+- Review Session (Mostly practice rather than teaching)
+  - Weeks 1-9: Tuesday 5-7 PM  online
+  - Weeks 10-15: TBD online
+- Final Survey
+  - Separate from course evals, worth participation credit
+
+## Slide 5: Stickers (you will receive them at the final exam)
+
+- 1. Final Exam Logistics
+- 2. What You Learned
+- 3. Where To Go From Here
+- 4. Staff Ask Us Anything
+- ➤
+
+## Slide 6: Final Exam Logistics
+
+- 1. Final Exam Logistics
+- 2. What You Learned
+- 3. Where To Go From Here
+- 4. Staff Ask Us Anything
+- ➤
+
+## Slide 7: Final Exam Logistics
+
+- The main final exam will take place on Friday, December 20th at 3 PM in Wheeler 222
+- The exam will last 1 hour and 50 minutes (2 hours 45 minutes for 150% time)
+- What to Bring
+- Pencils or pens
+- Cal1 Card (for Student ID \#)
+- We will provide printed cheat sheets
+- You can bring two front and back sides of a cheat sheet if you’d like
+- What to Expect
+- Similar structure to Quiz 1 and Quiz 2, but twice as long
+- Covers all content minus readings (plus Guest Lecture)
+- Mix of multiple choice, true/false, short answer, and coding questions
+
+## Slide 8: What Did You Learn?
+
+- 1. Final Exam Logistics
+- 2. What You Learned
+- 3. Where To Go From Here
+- 4. Staff Ask Us Anything
+- ➤
+
+## Slide 9: https://tinyurl.com/data6last
+
+## Slide 10: Big Ideas
+
+## Slide 11: ‹\#›
+
+- Statistics and inference
+- Domain knowledge and social contexts
+- Computational Thinking
+- DS
+- Machine Learning
+- Engineering
+- Research
+- Where we spent most of our time.
+- Visualization and simulations.
+- Social science discussions.
+
+## Slide 12: Data 6 “Modules”
+
+- Module 1
+- Introduction to Python and Jupyter Notebooks
+- Module 2
+- Data Visualization
+- Module 3
+- Working with Tables
+- Module 4
+- Simulation, Randomness, LLMs
+
+## Slide 13: Where To Go From Here
+
+- 1. Final Exam Logistics
+- 2. What You Learned
+- 3. Where To Go From Here
+- 4. Staff Ask Us Anything
+- ➤
+
+## Slide 14: Where Do You Go From Here?
+
+- There are numerous possibilities. Do the one that makes you happy!
+- Pretend like you never took this class and continue learning about ideas that truly interest you.
+- Don’t take any other data science courses, but try and use what you’ve learned in this class in your field of interest.
+- Take Data 8 and minor in data science while majoring in your field of interest.
+- Take Data 8 and major in data science while also majoring in your field of interest, or major in just data science.
+- Take CS 61A and major in computer science (and another major).
+- Look into a computer science or data science graduate program
+- Whichever route you choose, you’re more than equipped to handle what’s in front of you.
+
+## Slide 15: More About DS/CS Courses
+
+## Slide 16: Data 8: Foundations of Data Science
+
+- Exploration
+- Inference
+- Prediction
+- Identifying patterns in data
+- Uses visualizations
+- Using data to draw reliable conclusions about the world
+- Uses statistics
+- Making informed guesses about unobserved data
+- Uses machine learning
+- Learning about the world from data using computation.
+
+<details><summary>Speaker notes</summary>
+
+Summer Data 8 
+Courtesy of Data 8
+
+</details>
+
+## Slide 17: Data 8 Connector Courses
+
+<details><summary>Speaker notes</summary>
+
+Many members of our teams got more involved in the data science community by taking these classes.
+Show the connection of Data Science to various other fields.
+Usually 2 units, many feature term projects, legal studies, cognitive science, geography, sports analytics, immunotherapy
+Courtesy of Data 8
+
+</details>
+
+## Slide 18: CS 61A and CS 88
+
+- CS 61A is a 4 unit programming course
+  - Introduction (and deep dive) into Python (and other programming languages)
+  - Students with no programming experience can do well, but having taken a coding course like Data 6 beforehand will help your understanding
+  - Goes deeper into programming topics, does not focus on data science principles
+  - Aimed at people who want general programming experience and for people studying the computer sciences
+- Data C88C is a 3 unit programming course designed for students who took Data 8
+  - Covers similar topics as CS 61A (many shared assignments), but omits the ideas that are not core to data science
+
+<details><summary>Speaker notes</summary>
+
+Isaac
+
+</details>
+
+## Slide 19: Data science major vs. minor
+
+- Major Requirements
+- Core Data Science Classes  - Data 8, 100, 140/Stat 134
+- Computational/Inferential Depth - includes CS 61A or 88, 61B
+- Human Context and Ethics
+- Domain Emphasis - great for double majoring!
+- Minor Requirements
+- Core Data Science Classes  - Data 8, 100
+- Computational/Inferential Depth - includes CS 61A or 88, lower division probability
+- Human Context and Ethics
+- Electives
+
+## Slide 20: Upper Division Courses – Data 100 and Data 140
+
+- Data 100: Principles and Techniques of Data Science (Required)
+- Prereqs: Data 8, CS 61A or CS 88, linear algebra (concurrent ok)
+- Practical: Industry-standard data manipulation (pandas, SQL, regex), visualization, and introductory machine learning – need this to work as a data analyst
+- Theoretical: Theory behind core statistical techniques (complements Data 140)
+- Data 140: Probability for Data Science (Satisfies DS probability requirement)
+- Prereqs: Data 8, calculus, linear algebra (concurrent ok)
+- Theoretical background for advanced statistical methods, including machine learning
+- Not crucial for working as a data analyst, but necessary if you want to do any kind of modeling or advanced statistics
+- Take them in either order!
+
+<details><summary>Speaker notes</summary>
+
+Data 100 covers a wide range of topics - you begin with pandas, then visualization, EDA and then jump into ML. A student gets to see a lot of sides what it is like to be a data scientist. It empowers students with a lot of practical skills that they can utilize in doing projects on their own.
+
+</details>
+
+## Slide 21: ‹\#›
+
+## Slide 22: Ask Us Anything
+

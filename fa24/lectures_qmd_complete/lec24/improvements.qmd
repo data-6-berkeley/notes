@@ -1,0 +1,23 @@
+---
+title: "Improvements"
+subtitle: "From Lecture 24"
+---
+
+## Improvements
+
+- ➤
+- 1. LLMs
+- 2. Local LLMs Demo
+- 3. Training Data
+- 4. AI Chatbot Demo
+- 5. Risks
+- 6. Improvements
+
+## Improvements
+
+- Improved course prompt engineering
+- Representative training data
+- Government intervention?
+  - Company policies
+
+

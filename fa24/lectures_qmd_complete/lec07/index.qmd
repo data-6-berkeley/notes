@@ -1,0 +1,15 @@
+---
+title: "Table Fundamentals"
+subtitle: "Lecture 07"
+---
+
+This chapter covers the key concepts from Lecture 07.
+
+## Topics Covered
+
+* [Table Attributes and Methods](table-attributes-and-methods.qmd)
+* [select, drop, and add columns](select-drop-and-add-columns.qmd)
+* [Create new tables](create-new-tables.qmd)
+* [More Table Methods and Documentation](more-table-methods-and-documentation.qmd)
+* [Demo: WNBA Data](demo-wnba-data.qmd)
+

@@ -1,0 +1,41 @@
+---
+title: "print()"
+subtitle: "From Lecture 04"
+---
+
+## print()
+
+- 1. NoneType
+- 2. Arrays
+- 3. Variables in Data Science
+- ➤
+
+## A very useful function for human display: print()
+
+- The print() function displays values.
+- Works even if it’s not thelast line of a cell!
+- Strings are displayed without quotes
+
+## A very useful function for human display: print()
+
+- Terminology going forward:
+- Print means display
+- Output means cell output
+- The print() function displays values.
+- Works even if it’s not thelast line of a cell!
+- Strings are displayed without quotes
+- ⚠️ Note ⚠️
+- Print displays values.It does not produce cell output!
+
+## Review of print() and Typecasting
+
+- If your lines of code are too long, use the\ character to break code into multiple lines.
+- There are two common ways to print strings:
+- Multiple arguments
+- Python inserts a space character for display
+- Arguments can be different data types
+- String concatenation
+- Programmer must insert space character for display
+- One string argument, so all values must be cast to string
+
+

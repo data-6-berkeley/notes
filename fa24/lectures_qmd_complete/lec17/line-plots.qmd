@@ -1,0 +1,85 @@
+---
+title: "Line Plots"
+subtitle: "From Lecture 17"
+---
+
+## Scatter Plots
+
+- 1. Review: Histograms
+- 2. Overlaid and Side-by-Side Histograms
+- 3. Grouped Bar Charts
+- 4. Scatter Plots
+- 5. Customizing Scatter Plots
+- 6. Line Plots
+- 7. Multiple Line Plots
+- ➤
+
+## Scatter Plots
+
+- Scatter plots are used to visualize two numerical variables at once. To create a scatter plot from a table, you need two columns:
+- A numerical column for the x-axis.
+- A numerical column for the y-axis.
+- The resulting graph has one point for every row in your table.
+- We call this a graph of “y vs. x”
+
+## Customizing Scatter Plots
+
+- 1. Review: Histograms
+- 2. Overlaid and Side-by-Side Histograms
+- 3. Grouped Bar Charts
+- 4. Scatter Plots
+- 5. Customizing Scatter Plots
+- 6. Line Plots
+- 7. Multiple Line Plots
+- ➤
+
+## Line Plots
+
+- 1. Review: Histograms
+- 2. Overlaid and Side-by-Side Histograms
+- 3. Grouped Bar Charts
+- 4. Scatter Plots
+- 5. Customizing Scatter Plots
+- 6. Line Plots
+- 7. Multiple Line Plots
+- ➤
+
+## Motivating Line Plots
+
+- While a scatter plot would theoretically work in such a scenario, there are some key differences that lead us to another type of plot.
+- There’s only one y for every x.
+  - There’s only one number of COVID cases per day.
+  - There can be many people with the same height when graphing weight vs. height.
+- We want to emphasize a trend by “connecting the dots”.
+  - 🤔
+- What if we want to visualize two numerical variables, but one of them is time?
+- COVID cases per day in Alameda County.
+- Average rainfall for each month of the year in San Diego.
+
+## Multiple Line Plots
+
+- 1. Review: Histograms
+- 2. Overlaid and Side-by-Side Histograms
+- 3. Grouped Bar Charts
+- 4. Scatter Plots
+- 5. Customizing Scatter Plots
+- 6. Line Plots
+- 7. Multiple Line Plots
+- ➤
+
+## Multiple Line Plots
+
+- If we provide plot with only a single column name, it will draw lines for every other column in your table.
+- If you want to do this, make sure to select columns first!
+
+## Scatter Plots vs. Line Plots
+
+- Line plots visualize the relationship between two numerical variables — one of them is ordered.
+- x-axis generally represents time or distance.
+- There should only be one y value for every x value.
+- Useful for identifying trends over time
+- Scatter plots visualize the relationship between any two numerical variables.
+- No need to have unique x (or y) values.
+- Useful for identifying patterns between variables
+
+

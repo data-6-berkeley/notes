@@ -1,0 +1,115 @@
+---
+title: "[Lec 10] Data 6 Fall 2024 - Joining and Row Methods"
+---
+
+## Slide 1: Joining and 
+Row Methods
+
+- Data 6 Fall 2024
+- LECTURE 10
+- Combining multiple sources of data.
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+
+## Slide 2: Week 6
+
+- See Ed!
+- Edwin!
+- Announcements!
+
+## Slide 3: Today’s Roadmap
+
+- Joining
+- Demo
+- The Row Data Type
+- Lecture 13, Data 6 Summer 2024
+
+## Slide 4: Joining Tables
+
+- 1. Joining
+- 2. Demo
+- 3. The Row Data Type
+- ➤
+
+## Slide 5: Question: If I sold all of the phones in my inventory, what would my revenue be?
+
+- Question: If I sold all of the phones in my inventory, what would my revenue be?
+
+## Slide 6: .join()
+
+- The method
+- table\_1.join('column 1', table\_2, 'column 2')
+- combines table\_1 and table\_2 into a larger table, by looking for matches in 'column 1' of table\_1 and 'column 2' of table\_2 and combining matching rows.
+
+## Slide 7: phones.join('Model', inventory, 'Handset')
+
+- phones.join('Model', inventory, 'Handset')
+
+## Slide 8: phones.join('Model', inventory, 'Handset')
+
+- phones.join('Model', inventory, 'Handset')
+- No matches!
+
+## Slide 9: phones.join('Model', inventory, 'Handset')
+
+- phones.join('Model', inventory, 'Handset')
+
+## Slide 10: phones.join('Model', inventory, 'Handset')
+
+- phones.join('Model', inventory, 'Handset')
+
+## Slide 11: Some Considerations
+
+## Slide 12: Followup
+
+- Beware: joining won’t always give you the result you’re looking for.
+- Here, it seems odd that we have multiple rows for Sandy with different regions. But that’s how join works!
+
+## Slide 13: Disclaimer
+
+- Python doesn’t know what columns to join by – we need to tell it.
+- It doesn’t know that it makes sense to join two tables by area code if you don’t tell it to.
+- Your role is important!
+- If you try and join on columns that have no shared elements, the result will be an empty table.
+
+## Slide 14: The Row Data Type
+
+- 1. Joining
+- 2. Demo
+- 3. The Row Data Type
+- ➤
+
+## Slide 15: Rows vs. Columns
+
+- We know that columns are stored as arrays.
+- Question: Are rows stored as arrays too?
+- Answer: No – elements in arrays must all be of the same type, but each row can have multiple types of values.
+- So what are rows stored as, then?
+
+## Slide 16: t.row(index)
+
+- The method
+- t.row(index)
+- returns the Row at the provided index.
+- Rows are not arrays!
+- They can have elements ofdifferent types.
+- You can use still use the .item method to get an element by index.
+
+## Slide 17: t.with\_row(s)
+
+- The methods t.with\_row(lst) returns a new table with an additional row.
+- If we want to add a single row to t, we call t.with\_row(lst) where lst is a series of elements in square brackets [ and ].
+- We add rows far less frequently than we add columns, but these methods are still good to know.
+- In Python, lists are very similar to arrays, but can contain multiple data types
+
+## Slide 18: In Conclusion…
+
+## Slide 19: Summary
+
+## Slide 20: Recap
+
+- Working with Rows
+- Joining Tables
+- https://forms.gle/5uLP8MMnfSAHnxATA
+- Group, Pivot
+- Next Time
+

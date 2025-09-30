@@ -1,0 +1,12 @@
+---
+title: "Sampling and Computational Social Science"
+subtitle: "Lecture 22"
+---
+
+This chapter covers the key concepts from Lecture 22.
+
+## Topics Covered
+
+* [Computational Social Science](computational-social-science.qmd)
+* [Sampling Approaches](sampling-approaches.qmd)
+

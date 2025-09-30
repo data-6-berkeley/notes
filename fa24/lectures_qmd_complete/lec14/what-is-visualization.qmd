@@ -1,0 +1,66 @@
+---
+title: "What is Visualization?"
+subtitle: "From Lecture 14"
+---
+
+## Introduction to Visualization
+
+- Data 6 Fall 2024
+- LECTURE 14
+- They say a picture is worth a thousand words… right?
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+
+## Examples of Visualizations
+
+- 1. Examples of Visualization
+- 2. What is Visualization?
+- 3. Variable Types
+- 4. Encoding
+- ➤
+
+## Florence Nightingale’s visualization depicting deaths in the Crimean war (1850s).
+
+- Florence Nightingale’s visualization depicting deaths in the Crimean war (1850s).
+
+## What is Visualization?
+
+- 1. Examples of Visualization
+- 2. What is Visualization?
+- 3. Variable Types
+- 4. Encoding
+- ➤
+
+## What’s the point of visualization?
+
+- Creating good visualizations is an art as much it is a science; there is often no “correct” way to visualize data.
+- We must be careful and deliberate when visualizing data, especially if our visualizations are going to be used in the real-world.
+- If you want to look at some creative, sophisticated visualizations, see
+- The John Hunter Excellence in Plotting Contest.
+
+## What’s Wrong?
+
+- This graph implies that Swedish cars are “greater” than cars from other countries in some sense, when they’re not.
+- The variable type determines the types of plots (and hence, encodings) that are appropriate.
+- Over the next few weeks, we will learn how to create several kinds of plots and learn when each is appropriate.
+
+## Visualization tools
+
+- Without a computer:
+  - Drawing
+  - Painting
+- With a computer:
+  - Without programming:
+    - Photoshop
+    - Figma
+    - Tableau
+  - With programming:
+    - matplotlib
+    - seaborn
+    - plotly
+    - D3.js
+- There are many Python visualization libraries that integrate well with tables.
+- This is nowhere near a comprehensive list!
+- Both are popular but less “modern”
+- Newer, and can create interactive visualizations.
+
+

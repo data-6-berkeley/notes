@@ -1,0 +1,13 @@
+---
+title: "Motivation"
+subtitle: "From Lecture 19"
+---
+
+## Motivation
+
+- 1. Motivation
+- 2. For Loops
+- 3. Ranges
+- ➤
+
+

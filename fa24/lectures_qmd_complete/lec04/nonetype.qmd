@@ -1,0 +1,38 @@
+---
+title: "NoneType"
+subtitle: "From Lecture 04"
+---
+
+## NoneType
+
+- 1. NoneType
+- 2. Arrays
+- 3. Variables in Data Science
+- ➤
+
+## NoneType
+
+- There are infinitely\* many integers, floating point numbers, and strings.
+- However, for the NoneType data type, there is only one value: None.
+- \*Actually a finite number because of how computers store information; take CS61C to learn more!
+- None is strange:
+- Cells will not output expressions thatevaluate to None.
+- None can be displayed (i.e., printed).
+- None is also referred to as the “null value.”
+
+## NoneType
+
+- There are infinitely\* many integers, floating point numbers, and strings.
+- However, for the NoneType data type, there is only one value: None.
+- \*Actually a finite number because of how computers store information; take CS61C to learn more!
+- print() returns None, therefore when evaluated as the last line in a cell:
+- Print displays the value of the evaluated argument
+- But the cell does not output anything!
+- display
+- output
+- None is strange:
+- Cells will not output expressions thatevaluate to None.
+- None can be displayed (i.e., printed).
+- None is also referred to as the “null value.”
+
+

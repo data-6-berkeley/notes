@@ -1,0 +1,48 @@
+---
+title: "Programming in Python"
+subtitle: "From Lecture 02"
+---
+
+## What is Python Code?
+
+- 1. Programming in Python
+- 2. Arithmetic
+- 3. Jupyter Shortcuts
+- 4. Comments, Data Types, and Errors
+- ➤
+
+## Why Python?
+
+- Popular.
+- Variety of uses.
+  - Web development.
+  - Scientific computing.
+  - Data science and machine learning.
+  - Not really used for developing applications.
+- Data 8, CS61A, and more!
+- Easy to dive right in!
+
+## Python as a calculator
+
+- For now, think of Python as a calculator:
+- Calculators take expressions and compute values.
+- 17
+- -1 + 3.14
+- 2 \*\* 3
+- (17 - 14) / 2
+- 15 % 2
+- The following are all expressions.
+- Notes:
+- Expressions consist of values (like 2) and operators (like + and \*\*).
+- Expressions evaluate to values.
+- expression
+
+## Common Python Operators
+
+- ✅
+
+## Common Python Operators
+
+- Wait, why are there two division operators?
+
+

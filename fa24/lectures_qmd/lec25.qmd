@@ -1,0 +1,260 @@
+---
+title: "[Lec 25] Data 6 Fall 2024 - Sampling and Randomness"
+---
+
+## Slide 1: Sampling and Randomness
+
+- Data 6 Fall 2024
+- LECTURE 25
+- A quick dive into some statistics.
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+
+## Slide 2: https://tinyurl.com/data6check
+
+## Slide 3: Week 15
+
+- Course evals - 1% extra credit if we hit at least 80% participation rate :D
+- Final Project Part 2 due December 9th
+  - Reminder about OH and EdStem!
+- OH on the glade - sometime during RRR week (likely Monday since that’s the project deadline)
+  - I will bring snacks & a volleyball
+- Announcements!
+
+## Slide 4: Today’s Roadmap
+
+- Sampling
+- Randomness
+- Lecture 25, Data 6 Fall 2024
+
+## Slide 5: Quick Aside: break keyword
+
+- 1. Randomness
+- 2. Simulation
+- 3. Repeated Simulations
+- ➤
+
+## Slide 6: Let’s go to the notebook…
+
+- I didn’t cover the break keyword, which is used in the Final Project part 2
+- The break keyword must be used within some sort of iteration (while or for loop)
+  - As soon as we encounter the break keyword, we exit out of the loop
+  - If used in a nested loop, we only exit from the innermost loop
+
+## Slide 7: Exam Prep: Dictionaries
+
+- 1. Randomness
+- 2. Simulation
+- 3. Repeated Simulations
+- ➤
+
+## Slide 8: Dictionary Review
+
+- Good practice for the final project + exam :D (see speaker notes for the Python Tutor link)
+
+<details><summary>Speaker notes</summary>
+
+https://pythontutor.com/cp/composingprograms.html\#code=check%20%3D%20%7B%7D%0A%0Afor%20i%20in%20np.arange%281,%20100%29%3A%0A%20%20%20%20if%20i%20%25%204%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20break%0A%20%20%20%20check%5Bstr%28i%29%5D%20%3D%20i%0A%0Aprint%28check%5B0%5D%29%0Aprint%28check%5B%221%22%5D%29%0Aprint%28check%5B1%5D%29%0A%0A%0A&cumulative=true&mode=edit&origin=composingprograms.js&py=3&rawInputLstJSON=%5B%5D
+
+</details>
+
+## Slide 9: Sample Setting
+
+- ➤
+- 1. Recap
+- 2. Sample Setting
+- 3. Biases
+- 4. Sampling Approaches
+
+## Slide 10: Why talk about samples?
+
+- If you want to create your own dataset, rather than use materials-based research
+- Remember the concepts of external validity/generalizability!
+
+## Slide 11: What is a Sample?
+
+- A sample is a subset of the population used to make inferences about the overall group.
+- Examples:
+  - A classroom of students in a school.
+    - Sample: classroom
+    - Population: student body of the school
+  - Picking out 10 marbles from a bag with 100 marbles.
+    - Sample: 10 marbles
+    - Population: bag of marbles
+  - Published papers in an academic journal.
+    - Sample: published papers in the journal
+    - Population: all research happening in the field
+
+## Slide 12: Motivating Question
+
+- Why would would we need to take a sample? What are the pros and cons?
+
+## Slide 13: Population vs. Sampling Frame vs. Sample
+
+- Given a research question, the population is the group you want to learn something about.
+  - However, directly studying the population as a whole is often not possible! Data might not exist at that scale, or it might be too costly to collect, if it’s even possible to gather that information.
+- So, we want to use a sample from the population to make inferences.
+  - If the sample is a good representation of the population, we can make useful analyses at a much lower cost.
+- Depending on how we select our sample, we may miss individuals from the population we’re interested in, and we might also include individuals that are not in the population.
+  - The list we actually draw our sample from is the sampling frame.
+
+## Slide 14: Population vs. Sampling Frame vs. Sample
+
+- Examples:
+  - A classroom of students in a school.
+    - Sample: classroom
+    - Population: student body of the school
+  - Picking out 10 marbles from a bag with 100 marbles.
+    - Sample: 10 marbles
+    - Population: bag of marbles
+  - Published papers in an academic journal.
+    - Sample: published papers in the journal
+    - Population: all research happening in the field
+- Sampling Frame: All classrooms
+- Sampling Frame: All marbles
+- Sampling Frame: All accessible papers
+
+## Slide 15: Visualizing the Relationship
+
+- Population
+- Sampling Frame
+- Sample
+
+## Slide 16: Population vs. Sampling Frame vs. Sample
+
+- Let’s say you’re planning a social event for all second-year students at your school. Since you only have the budget to cater pizza, you want to figure out what pizza toppings second-year students enjoy, and buy pizza toppings according to how popular they are.
+  - Our population is second-year students. Since our social event is for second-year students, the preferences of students that are not second-years is not relevant.
+- In order to figure out the most popular flavors, you survey every student walking into the cafeteria from 12 PM to 1 PM by asking what their favorite topping is. Assume that everyone responds.
+  - Our sampling frame is students walking into the cafeteria between 12 and 1.
+
+## Slide 17: Population vs. Sampling Frame vs. Sample
+
+- If we draw a sample from this sampling frame, is our sample representative? Why or why not?
+  - Not necessarily. Our survey will include the responses of students that are not second-years, who might have different preferences than the second-years.
+- How can we change our sampling method to make our sample look more like our population?
+  - We could send out an email to only second-year students, only record the response of second-year students, conduct the survey in more locations…
+- If a sample is representative, then it looks like the population. In this case, our sample may not be very representative.
+- Are our results generalizable?
+  - Maybe! For example, first-year students might have similar pizza preferences, but professors might not.
+
+## Slide 18: Key Terms
+
+- Population: the group you want to learn something about
+- Sampling frame: the list from which the sample is taken
+  - Remember that this is not necessarily the same as the population!
+- Sample: a subset of the sampling frame used to make inferences about the population
+- Representativeness: how similar a sample is to the intended population
+- Generalizability: the degree to which your results can be applied to a broader population or domain of interest, based on your sampling and data collection methods
+
+## Slide 19: Sampling Approaches
+
+- ➤
+- 1. Recap
+- 2. Sample Setting
+- 3. Biases
+- 4. Sampling Approaches
+
+## Slide 20: Probabilistic Sampling Methods
+
+## Slide 21: Simple Random Sampling
+
+- Sample drawn uniformly at random, without replacement
+- Every subset of the population has the same chance of being chosen from the sampling frame
+  - Each individual has the same probability of selection as any other individual
+  - Each pair has the same probability of selection as any other pair
+  - Each trio has the same probability of selection as any other trio…
+
+## Slide 22: Complex Sampling
+
+- Stratified random sampling: Divide populations into subgroups (these are the strata) based on population characteristics, then draw random sample from each strata.
+  - Characteristics within each strata should be homogenous, but characteristics between different strata should be heterogeneous
+  - Requires detailed population information, which may not be readily available
+  - Improves representativeness by carefully curating the makeup of the sampling frame
+
+## Slide 23: Non-Probabilistic Sampling Methods
+
+## Slide 24: Quota Sampling
+
+- Quota sampling is a non-probability sampling technique where you arbitrarily select a sample that includes a specific number of samples from particular categories.
+  - Example: You’re a classical musician who wants to know what piece of music other orchestra members want to play. In order to figure this out, you ask the first two violin players, first two trumpet players, first flute player, first three viola players, and first percussionist you see at rehearsal.
+  - Easier to do than stratified random sampling, with similar intentions
+
+## Slide 25: Snowball Sampling
+
+- Snowball sampling is a non-probabilistic sampling method where existing study subjects recruit future subjects from among their acquaintances, such as through a referral program.
+  - Useful when study subjects have a rare characteristic that you are interested in studying. The concept of homophily is why it’s easier to find subjects with the rare characteristic by referral.
+  - This could lead to skewed results due to in-group bias and bias introduced through the non-probabilistic method of constructing the sample.
+
+## Slide 26: In Summary…
+
+- Random sampling is better when you have a clearly defined, homogenous population
+  - Stratified random sampling allows us to identify subgroups within a population for better representation and generalizability, but requires more granular data
+- Non-probabilistic sampling is better when your sampling frame is smaller, but introduces more selection bias
+
+## Slide 27: Randomness
+
+- 1. Randomness
+- 2. Simulation
+- 3. Repeated Simulations
+- ➤
+
+## Slide 28: What Is Randomness?
+
+## Slide 29: What Phenomena are Random?
+
+- The lack of pattern or predictability.
+- Dice roll
+- Coin flip
+- Lottery
+- Horse races?
+- Weather?
+- Grades?
+- Who wins the World Cup?
+- Randomness
+- Are some things ‘more random’ than others?
+
+## Slide 30: Computation and Randomness
+
+- Question: What problem does this pose?
+- Answer: Computers cannot, on their own, generate truly random numbers. So… now what? 🤔
+- Computer programs take our instructions (code) and execute them. Their outputs are entirely predictable.
+- Randomness is the lack of pattern or predictability in events. (Some events may be more likely than others.)
+
+## Slide 31: Generating Random Numbers
+
+- Because computers rely on predictable instructions, we need to be clever about how we introduce randomness in our programs.
+- There are two types of random number generators.
+- True Random Number Generators
+- Generate random numbers through some truly random physical process.
+- Rolling a dice.
+- Measuring atmospheric noise caused by lightning.
+- Pros: Truly random.
+- Cons: Expensive to get this information into a computer (but can be done).
+- Pseudo-Random Number Generators
+- Generate numbers that seem random using mathematical formulas or pre-determined lists.
+- Entirely determined by a “seed” (can be thought of as a key).
+- Pros: Easy to generate lots of numbers. 		 We will use these.
+- Cons: Not technically random.
+
+## Slide 32: np.random
+
+- np.random is a submodule of numpy that contains functions involving random numbers and random selection. Here are some useful functions. Determinism = having some replicable sequence.
+
+## Slide 33: Some Examples
+
+## Slide 34: In Conclusion…
+
+## Slide 35: Summary
+
+- np.random is a submodule for generating pseudo-random numbers.
+  - np.random.randint generates random integer(s).
+  - np.random.choice randomly selects elements from an array.
+  - np.random.seed sets the seed of a cell..
+- Randomness underpins the field of statistics, which is an integral component of data science.
+
+## Slide 36: Recap
+
+- Next Time
+- Samples
+- Randomness
+- Lab on randomness and simulations
+

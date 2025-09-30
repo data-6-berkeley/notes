@@ -1,0 +1,16 @@
+---
+title: "Comparisons and Control"
+subtitle: "Lecture 18"
+---
+
+This chapter covers the key concepts from Lecture 18.
+
+## Topics Covered
+
+* [Comparisons](comparisons.qmd)
+* [Boolean Operators](boolean-operators.qmd)
+* [Truth Tables](truth-tables.qmd)
+* [If and If-Else Statements](if-and-if-else-statements.qmd)
+* [Elif](elif.qmd)
+* [Truthy Values](truthy-values.qmd)
+

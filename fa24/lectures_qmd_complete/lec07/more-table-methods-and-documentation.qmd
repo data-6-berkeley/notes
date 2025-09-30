@@ -1,0 +1,133 @@
+---
+title: "More Table Methods and Documentation"
+subtitle: "From Lecture 07"
+---
+
+## Table Fundamentals
+
+- Data 6 Fall 2024
+- LECTURE 07
+- Learning how to work with tables in Python.
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+
+## Review: Table
+
+- Review: In this course, we often start with tabular data and perform EDA:
+- Columns
+- Rows (also known as records).
+- row
+- column
+
+<details><summary>Speaker notes</summary>
+
+“Data” are systematically collected elements of information about the
+world. They can be qualitative or quantitative in style. Sometimes data
+are collected to evaluate a very specific theory, but not so infrequently,
+scholars collect data before knowing precisely what they are interested
+in finding out. Moreover, even if data are collected to evaluate a specific hypothesis, researchers may ultimately be interested in questions
+that had not occurred to them previously.
+
+</details>
+
+## Table Attributes and Methods
+
+- 1. Table Attributes and Methods
+- 2. select, drop, and add columns
+- 3. Create new tables
+- 5. More Table Methods and Documentation
+- 6. Demo: WNBA Data
+- ➤
+
+## First, assign a Table to a name
+
+- To work with this table, we first load it in from a file called data/cal\_unis.csv:
+- schools = Table.read\_table('data/cal\_unis.csv')
+- This lecture we will return to the dataset of public four-year colleges and universities in California (source):
+- assigns RHS value to schools name
+- returns a datascience Table from the given data file
+- Then we use schools to call Table methods and attributes.
+- Always assign your table to a name!
+
+## Next, use the documentation
+
+- We start with asking early questions about the table, such as \# rows, \# columns, and getting specific columns.
+- Note the return types!
+- Note the different syntax (more later).
+- Access Fa24 datascience documentation: here
+
+## Attributes vs. Methods
+
+- Table attributes
+- Properties/ characteristics of the given data type (in this case, datascience.Table)
+- Table methods
+- Functions that are called on a given data science table (in this case, schools)
+- All table methods return copies of information from the original table!
+- Very important Python  datascience library paradigm
+
+## Create new tables
+
+- ➤
+- 1. Table Attributes and Methods
+- 2. select, drop, and add columns
+- 3. Create new tables
+- 4. More Table Methods and Documentation
+- 5. Demo: WNBA Data
+
+## More Table Methods and Documentation
+
+- ➤
+- 1. Table Attributes and Methods
+- 2. select, drop, and add columns
+- 3. Create new tables
+- 4. More Table Methods and Documentation
+- 5. Demo: WNBA Data
+
+## (1/3) Navigating documentation
+
+- Early programmers often find documentation the most challenging.
+- Suppose we have our schools table:
+- How do we get all the column labels of schools?
+- How do we update schools such that the column Name is renamed University?
+
+## (1/3) Navigating documentation
+
+- Early programmers often find documentation the most challenging.
+- Suppose we have our schools table:
+- How do we get all the column labels of schools?
+- How do we update schools such that the column Name is renamed University?
+- Python tuple datatype(fixed, ordered list of values)
+
+## (2/3) Navigating documentation:Filtering with where
+
+- Often times, we will want to filter the rows of a table based on a specific condition, i.e., get only the rows where some condition is true.
+- How do we get a table with all of the UC schools?
+- How do we get a table with all the schools in Los Angeles?
+- \# 1
+- \# 2
+- We will learn more complicated uses of .where later in the course (“Predicates”), but for now we filter only on exact matches.
+
+## (3/3) Navigating documentation:Be careful with .show
+
+- The following cells exhibit a tricky, but potentially common bug.
+- When run in sequence, why does the last cell throw an error?
+- Despite this, what might be a good use case for using .show?
+
+## (3/3) Navigating documentation:Be careful with .show
+
+- The following cells exhibit a tricky, but potentially common bug.
+- When run in sequence, why does the last cell throw an error?
+- .show is purely for display purposes. It does not return anything—i.e., it returns None.
+- The second cell therefore assigns schools to None!
+
+## (3/3) Navigating documentation:Be careful with .show
+
+- The following cells exhibit a tricky, but potentially common bug.
+- When run in sequence, why does the last cell throw an error?
+- Despite this, what might be a good use case for using .show?
+- .show is useful when you want to display intermediate output for debugging purposes.
+
+## Even More Practice
+
+- (There are a few extra exercises in today’s lecture notebook for you to check out on your own time.)
+
+

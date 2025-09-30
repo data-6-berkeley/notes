@@ -1,0 +1,45 @@
+---
+title: "For Loops"
+subtitle: "From Lecture 19"
+---
+
+## For Loops
+
+- 1. Motivation
+- 2. For Loops
+- 3. Ranges
+- ➤
+
+## Two Types of Loops
+
+- Loops allow us to repeat the execution of code.
+- There are two types of loops in Python: the while loop and the for loop.
+- while <boolean expression>:
+- <while body>
+- “While this condition is true, repeat this code.”
+- for <elem> in <sequence>:
+- <for body>
+- “For each element of this sequence, repeat this code.”
+- Sequences include arrays, lists, strings and more.
+
+## For Loops
+
+- The simplest version of a for loop is also referred to as a “for each” loop.
+- The name after “for” (in this case n) is assigned to each value in the sequence, one at a time.
+- In the first iteration, n is 2.
+- In the second iteration, n is 4.
+- In the third iteration, n is 6.
+- In the fourth iteration, n is 8.
+
+## Ranges and For Loops
+
+- 1. Motivation
+- 2. For Loops
+- 3. Ranges
+- ➤
+
+## Ranges and For Loops
+
+- If don’t have an array we’re working with but still want to repeat code a certain number of times, what can we do?
+
+

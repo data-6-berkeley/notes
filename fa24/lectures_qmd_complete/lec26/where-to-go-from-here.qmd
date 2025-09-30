@@ -1,0 +1,25 @@
+---
+title: "Where To Go From Here"
+subtitle: "From Lecture 26"
+---
+
+## Where To Go From Here
+
+- 1. Final Exam Logistics
+- 2. What You Learned
+- 3. Where To Go From Here
+- 4. Staff Ask Us Anything
+- ➤
+
+## Where Do You Go From Here?
+
+- There are numerous possibilities. Do the one that makes you happy!
+- Pretend like you never took this class and continue learning about ideas that truly interest you.
+- Don’t take any other data science courses, but try and use what you’ve learned in this class in your field of interest.
+- Take Data 8 and minor in data science while majoring in your field of interest.
+- Take Data 8 and major in data science while also majoring in your field of interest, or major in just data science.
+- Take CS 61A and major in computer science (and another major).
+- Look into a computer science or data science graduate program
+- Whichever route you choose, you’re more than equipped to handle what’s in front of you.
+
+

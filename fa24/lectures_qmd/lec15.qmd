@@ -1,0 +1,323 @@
+---
+title: "[Lec 15] Data 6 Fall 2024 - Visualizing Categorical and Numerical Variables"
+---
+
+## Slide 1: Visualizing Categorical and Numerical Variables
+
+- Data 6 Fall 2024
+- LECTURE 15
+- All about histograms and bar charts.
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+
+## Slide 2: Week 8
+
+- If you cannot make a mandatory social sciences discussion, please email data6@berkeley.edu and we’ll see what we can do
+- HW3 will be released tomorrow and the deadline will be pushed back to match the Reading 4 deadline (10/31)
+- Assign your pages!
+- Announcements!
+
+## Slide 3: No Exam Prep Question Today :(
+
+## Slide 4: Today’s Roadmap
+
+- Categorical Variables
+  - Categorical Distributions
+  - Bar Charts
+  - Grouped Bar Charts
+- Numerical Variables
+  - Review: Bar Charts
+  - Numerical Distributions, Histograms
+  - Choosing Bins
+  - Overlaid and Side-by-Side Histograms
+- Lecture 09, Data 6 Fall 2024
+
+## Slide 5: Variable Types and Distributions
+
+- 1. Categorical Distributions
+- 2. Bar Charts
+- 3. Grouped Bar Charts
+- ➤
+
+## Slide 6: Variable Types for Visualization
+
+- Recall that in data science, a variable is a measurable feature, attribute, and/or representation of a concept. It can have different values for different individuals.
+- The type of a variable determines which visualizations are appropriate.
+- Numerical (or quantitative): Variables that have values from a numerical scale, where differences are meaningful and values can be ordered.
+  - Examples: Number of cars, number of counties, GPA, price, temperature
+- Categorical (or qualitative): Variables that have descriptive values
+  - Examples: Highest degree attained, colors, political affiliation
+- Just because the values are numerical does not mean that the variable is of numerical type!
+  - Example: Student ID numbers can be stored in an int, but performing arithmetic on these numbers is meaningless.
+
+## Slide 7: Variable Distributions
+
+- Given a specific dataset, a variable has a distribution:
+- For each different value of the variable, the frequency of individuals that have that value.
+- Frequency: number or percent of individuals (depends on definition of “individual”; more later)
+- A distribution table of the categorical variable Cookie. Each row represents a different value of Cookie.
+- A bar chart that plots the distribution of the categorical variable Cookie.
+
+## Slide 8: Bar Charts
+
+- Display all values of a categorical variable, along with their respective frequencies.
+- One bar for each category
+- Choose the order of bars
+- Length of bar is the frequency (percent or count) of individuals in that category.
+- Not a bar chart; each respondent could pick more answer, so the bars represent overlapping groups..
+- A bar chart that plots the distribution of the categorical variable Cookie.
+- Percents of survey respondents on “a major reason they would find it difficult to quarantine themselves for at least 14 days”
+- Source: Pew Research
+
+## Slide 9: .barh( )
+
+- The method
+- t.barh(column\_for\_categories)
+- creates a bar chart with:
+- The values of the column column\_for\_categories as the categories on the y-axis. This column should contain a categorical variable, and values should be unique.
+- Bars for every other column in t, assuming all other columns are numerical variables.
+- cookies.barh('Cookie')
+
+## Slide 10: Debugging bar charts
+
+- 1. Categorical Distributions
+- 2. Bar Charts
+- 3. Grouped Bar Charts
+- ➤
+
+## Slide 11: Spotify Dataset
+
+- Spotify Charts
+- Kaggle Dataset
+
+## Slide 12: What’s wrong?
+
+- Kaggle Dataset
+- ValueError: The column 'artist\_names' contains non-numerical values. A plot cannot be drawn for this column.
+- top\_10.barh("track\_name")
+
+## Slide 13: What’s wrong? Fix
+
+- Kaggle Dataset
+- top\_10.barh("track\_name", “streams”)
+- We had to ensure we were solely plotting the right columns
+- .barh only works with numerical columns for plotting
+
+## Slide 14: What’s wrong?
+
+- Kaggle Dataset
+- release\_year.barh('released\_year', 'count')
+
+## Slide 15: What’s wrong?
+
+- Kaggle Dataset
+- release\_year.sort(“released\_year”).barh('released\_year', 'count')
+- A valid bar chart—if not a bit hard to interpret!
+- What could make this better:
+- Sort categories in yearly order
+- Or sort categories in order of numerical value (here, count)
+
+## Slide 16: Better bar charts
+
+- 1. Categorical Distributions
+- 2. Bar Charts
+- 3. Grouped Bar Charts
+- ➤
+
+## Slide 17: Top 952 (\# streams) → Top 10 (days on chart)
+
+- The Kaggle Dataset in streams actually contains the “Top” 952 songs from each day.
+- The resulting bar chart is unreadable:
+- Instead:
+- What if we wanted just the top 10?
+- What if we wanted the top 10 by in\_spotify\_charts, not by \# streams?
+- …
+- …
+- (200 bars)
+- streams.barh(
+- "track\_name",
+- "streams")
+- Plotting the right visualization requires creating the right table!
+
+<details><summary>Speaker notes</summary>
+
+Insert demo
+
+</details>
+
+## Slide 18: Takeaways
+
+- Plotting the right visualization requires creating the right table.
+- With method chaining, Python evaluates method calls left-to-right.
+- To plot our top 10 by \# of days on chart:
+  - Start with the existing streams table (top 952 by streams)
+  - Sort by \# of days on chart, descending
+  - Take the first 10 rows
+    - Note np.arange(10) argument, i.e., rows 0 to 9
+  - Plot the resulting bar chart
+- (streams
+- .sort("streams",
+- descending=True)
+- .take(np.arange(10))
+- .barh("track\_name", "streams")
+- )
+
+## Slide 19: Visualization Note: Bar Order
+
+- Depending on the type of categorical variable we’re displaying, we may want to sort the bars of our bar charts differently.
+- Which to use? Depends on what you want to express through your visualization.
+
+## Slide 20: Is this a bar chart?
+
+- top\_10.barh('artist\_names', 'streams')
+
+## Slide 21: Is this a bar chart?
+
+- top\_10.barh('artist\_names', 'streams')
+- No!
+- There is not a distinct numerical value for each category in the artist\_names variable. Put another way, our categorical values (“artist\_names”) are not unique.
+- Our plot can’t particularly be interpreted; what differentiates these bars?
+
+## Slide 22: Three-Step Process for Visualization
+
+- This process will apply to all visualizations we create in this class, not just today’s bar charts:
+- Pre-Process
+- Create a table with only the columns necessary to create the visualization
+- Choose the Plot Type
+- Call the correct visualization (depending on variable type)
+- Customize the Plot
+- Provide the correct arguments for visual customization
+- ✅
+- ✅
+
+## Slide 23: Summary (Categorical Variables)
+
+- Bar charts are used to display the distribution of a categorical variable, or the relationship between a categorical variable and one or more numerical variables.
+- The method t.barh(column\_for\_categories) creates a bar chart with:
+- The values of the column column\_for\_categories as the categories on the y-axis. This column should contain a categorical variable, and values should be unique.
+- Bars for every other column in t. These columns should contain numerical variables.
+  - Multiple other columns → grouped bar chart.
+- Bars should be sorted depending on the type of the categorical variable.
+
+## Slide 24: Numerical Distributions, Histograms
+
+- 1. Review: Bar Charts
+- 2. Numerical Distributions, Histograms
+- 3. Choosing Bins
+- 4. Overlaid and Side-by-Side Histograms
+- ➤
+
+## Slide 25: Towards Numerical Distributions
+
+- Bar charts visualize the distribution of a categorical variable, or the relationship between a categorical variable and one or more numerical variables.
+- Bar charts cannot display the distribution of a numerical variable.
+- Question: How might we display the distribution of a numerical variable?
+- Answer: One solution is to combine ranges of values into bins.
+
+## Slide 26: Binning
+
+- Binning is counting the number of numerical values that fall within ranges, called “bins”.
+- A bin is defined by a left endpoint (lower bound) and right endpoint (upper bound).
+- A value falls in a bin if it is greater than or equal to the left endpoint and less than the right endpoint.
+  - [a, b): a is included, b is not.
+- The width of a bin is its right endpoint minus its left endpoint.
+- 72, 61, 63, 74, 68, 67, 65, 73, 65, 62, 66
+
+## Slide 27: Histograms
+
+- A histogram visualizes the distribution of a numerical variable by binning. The method
+- t.hist(column, density = False)
+- creates a histogram of the column column of t. This column must contain numerical values.
+- It automatically chooses bins for us. We can change them.
+
+## Slide 28: Example
+
+- Telling us that the number of tips between $1.90 and $2.80 is 79.
+
+## Slide 29: Why do we need density = False?
+
+- By setting density = False, the resulting histogram shows counts on the y-axis (i.e. number of observations per bin).
+- The default, density = True, creates a histogram with “percent per unit”.
+  - The details of this are out of scope.
+    - Data 8 will teach you about these types of histograms.
+
+## Slide 30: Quick Check
+
+- Answer the following questions about this histogram of (fake) heights. If you don’t believe it’s possible to answer the question, write “can’t tell”.
+- How many heights are between 60 inches (inclusive) and 64 inches (exclusive)?
+- How many heights are between 62 inches (inclusive) and 68 inches (exclusive)?
+
+## Slide 31: A Note on Bins
+
+- By looking at a histogram, we cannot tell how values are distributed within a bin.
+
+## Slide 32: Choosing Bins
+
+- 1. Review: Bar Charts
+- 2. NumPy Array Ranges
+- 3. Numerical Distributions, Histograms
+- 4. Choosing Bins
+- 5. Overlaid and Side-by-Side Histograms
+- ➤
+
+## Slide 33: Bins
+
+- .hist chooses bins by default for us.
+- The resulting histogram often looks nice, but has non-integer bins which are harder for us to interpret.
+- We can choose our own bins.
+- We will only consider histograms where all bins have equal width, though it is possible to draw histograms where bins have unequal width.
+
+## Slide 34: np.arange()
+
+- If we only need a few bins, we can make an array of bins by hand, like in the previous example.
+- But if we want more than a handful of bins, it will be tiring to create them by hand. Instead, we can use np.arange to create an array of equally spaced values.
+
+## Slide 35: Example
+
+- It’s a good idea to determine the min and max values in a column before choosing bins, to make sure your bins encompass the entire range.
+
+## Slide 36: Tradeoff
+
+- The width of each bin used dramatically changes the resulting histogram.
+- Narrow Bins → many bins, each with few values. Resulting histogram is choppy.
+- Wide Bins → few bins, each with many values. Resulting histogram is smooth.
+- In practice, it’s up to you to choose the bin size of your histogram.
+- Width = 3
+- Width = 7
+- Width = 10
+
+## Slide 37: In Conclusion…
+
+## Slide 38: Bar Charts vs. Histograms
+
+- Bar charts visualize the distribution of a categorical variable, or the relationship between a categorical variable and a numerical variable.
+- Length of bar corresponds to value.
+- Width of bar means nothing.
+- Histograms visualize the distribution of a numerical variable.
+- Length of bar corresponds to number of values within bin.
+- Width of bar corresponds to the width of the bin.
+  - Wider bin → more values within bin → smoother histogram.
+
+## Slide 39: Summary
+
+- A histogram visualizes the distribution of a numerical variable by binning. The method
+- t.hist(column, density = False)
+- creates a histogram of the column column of t. This column must contain numerical values.
+- Optional arguments:
+- bins (array): allows us to manually select bins. Frequently used with np.arange.
+- group (string): allows us to draw separate histograms, one for each unique value in the specified categorical column.
+- overlay (boolean): only used in conjunction with group. If False, draws histograms on separate axes rather than on top of one another.
+
+## Slide 40: Recap
+
+- Bar Charts
+- Distributions
+- Customizing Visualizations
+- Numerical Distributions
+- Histograms
+- Bins
+- Overlaid Plots
+- Quick check: https://forms.gle/crxx77jiEfqx3HXYA
+- Visualizing Multiple Variables
+- Scatter Plots
+- Next Time
+

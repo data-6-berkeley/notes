@@ -1,0 +1,15 @@
+---
+title: "Elif"
+subtitle: "From Lecture 18"
+---
+
+## Elif
+
+- 1. Motivation
+- 2. If and If-Else Statements
+- 3. Elif
+- 4. Truthy Values
+- 5. Demo
+- ➤
+
+

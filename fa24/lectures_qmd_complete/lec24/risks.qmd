@@ -1,0 +1,22 @@
+---
+title: "Risks"
+subtitle: "From Lecture 24"
+---
+
+## Risks
+
+- ➤
+- 1. LLMs
+- 2. Local LLMs Demo
+- 3. Training Data
+- 4. AI Chatbot Demo
+- 5. Risks
+- 6. Improvements
+
+## Potential Risks with LLMs
+
+- Copyright
+- Poor Training Data → Made up information
+- Impersonation
+
+

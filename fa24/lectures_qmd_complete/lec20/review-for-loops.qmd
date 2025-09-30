@@ -1,0 +1,40 @@
+---
+title: "Review: For Loops"
+subtitle: "From Lecture 20"
+---
+
+## Review: For Loops
+
+- 1. Review: For Loops
+- 2. While Loops
+- 3. Examples
+- 4. Demo: Sorting an Array
+- ➤
+
+## While Loops
+
+- 1. Review: For Loops
+- 2. While Loops
+- 3. Examples
+- 4. Demo: Sorting an Array
+- ➤
+
+## Two Types of Loops
+
+- Loops allow us to repeat the execution of code.
+- There are two types of loops in Python: the while loop and the for loop.
+- while <boolean expression>:
+- <while body>
+- “While this condition is true, repeat this code.”
+- for <elem> in <sequence>:
+- <for body>
+- “For each element of this sequence, repeat this code.”
+- Sequences include arrays, lists, strings and more.
+
+## While Loops
+
+- While loops repeat the code in their body while a certain boolean expression is True.
+- While loops are often used when we don’t know how many times we need our loop to repeat
+- We often keep track of some sort of counter and check it is above, below, or equal to a certain value.
+
+

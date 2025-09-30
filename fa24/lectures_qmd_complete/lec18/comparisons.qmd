@@ -1,0 +1,30 @@
+---
+title: "Comparisons"
+subtitle: "From Lecture 18"
+---
+
+## Comparisons and Control
+
+- Data 6 Fall 2024
+- LECTURE 18
+- Expanding our programming toolkit.
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+
+## Comparisons
+
+- 1. Comparisons
+- 2. Boolean Operators
+- 3. Truth Tables
+- ➤
+
+## Comparisons
+
+- Naturally, we will want to compare values in our code.
+- \# is age at least age\_limit?
+- age\_limit = 21
+- age = 17
+- \# is password\_guess equal to true\_password?
+- true\_password = 'qwerty1093x!'
+- password\_guess = 'QWERTY1093x!'
+
+

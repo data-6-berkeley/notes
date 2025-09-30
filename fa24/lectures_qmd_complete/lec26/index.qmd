@@ -1,0 +1,14 @@
+---
+title: "Conclusion"
+subtitle: "Lecture 26"
+---
+
+This chapter covers the key concepts from Lecture 26.
+
+## Topics Covered
+
+* [Final Exam Logistics](final-exam-logistics.qmd)
+* [What You Learned](what-you-learned.qmd)
+* [Where To Go From Here](where-to-go-from-here.qmd)
+* [Staff Ask Us Anything](staff-ask-us-anything.qmd)
+

@@ -1,0 +1,30 @@
+---
+title: "LLMs"
+subtitle: "From Lecture 24"
+---
+
+## Large Language Models (LLMs)
+
+- 1. LLMs
+- 2. Local LLMs Demo
+- 3. Training Data
+- 4. AI Chatbot Demo
+- 5. Risks
+- 6. Improvements
+- ➤
+
+## Defining Large Language Models (LLMs)
+
+- Question: What is a LLM?
+- Answer: A LLM is a type of artificial intelligence (AI) program that can recognize and generate text, among other tasks. LLMs are trained on huge sets of data — hence the name "large." LLMs are built on machine learning: specifically, a type of neural network called a transformer model.
+- Generative Pretrained Transformer (GPT)
+- are LLMs
+- So… you’ve potentially used LLMs (hopefully following academic guidelines).
+
+## Potential Risks with LLMs
+
+- Copyright
+- Poor Training Data → Made up information
+- Impersonation
+
+

@@ -1,0 +1,195 @@
+---
+title: "[Lec 14] Data 6 Fall 2024 - Introduction to Visualization"
+---
+
+## Slide 1: Introduction to Visualization
+
+- Data 6 Fall 2024
+- LECTURE 14
+- They say a picture is worth a thousand words… right?
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+
+## Slide 2: Week 8
+
+- Announcements!
+
+## Slide 3: Today’s Roadmap
+
+- Examples of Visualizations
+- What is Visualization?
+- Variable Types
+- Encoding
+- Lecture 14, Data 6 Fall 2024
+
+## Slide 4: Data 6 Content
+
+- Module 1
+- Introduction to Python and Jupyter Notebooks
+- Module 2
+- Arrays & Table Methods
+- Module 3
+- Data Visualization
+- Module 4
+- Societal Context & Final Project
+
+## Slide 5: Examples of Visualizations
+
+- 1. Examples of Visualization
+- 2. What is Visualization?
+- 3. Variable Types
+- 4. Encoding
+- ➤
+
+## Slide 6: What do you see?
+
+## Slide 7: A map depicting the town of Konya, Turkey. Supposedly the world’s first map (~6200 BC).
+
+- A map depicting the town of Konya, Turkey. Supposedly the world’s first map (~6200 BC).
+
+## Slide 8: John Snow’s map depicting cholera cases in SoHo, London (1854).
+
+- John Snow’s map depicting cholera cases in SoHo, London (1854).
+- Bars correspond to Cholera cases
+- This map helped to determine that the Broad Street water pump was the source of a massive Cholera outbreak.
+
+## Slide 9: Florence Nightingale’s visualization depicting deaths in the Crimean war (1850s).
+
+- Florence Nightingale’s visualization depicting deaths in the Crimean war (1850s).
+
+## Slide 10: Maya Lin’s Vietnam War Memorial in Washington DC (1982).
+
+- Maya Lin’s Vietnam War Memorial in Washington DC (1982).
+
+## Slide 11: Daily COVID cases in California, per Google (Summer 2022).
+
+- Daily COVID cases in California, per Google (Summer 2022).
+
+## Slide 12: What is Visualization?
+
+- 1. Examples of Visualization
+- 2. What is Visualization?
+- 3. Variable Types
+- 4. Encoding
+- ➤
+
+## Slide 13: What is Visualization?
+
+## Slide 14: Visualizations are for humans
+
+## Slide 15: Visualize, then quantify!
+
+- These datasets all have several statistical properties in common – means, standard deviations, and correlations – but look very different when plotted.
+- Visualization complements statistics. You can explore this more in future statistics courses.
+
+## Slide 16: What’s the point of visualization?
+
+- Creating good visualizations is an art as much it is a science; there is often no “correct” way to visualize data.
+- We must be careful and deliberate when visualizing data, especially if our visualizations are going to be used in the real-world.
+- If you want to look at some creative, sophisticated visualizations, see
+- The John Hunter Excellence in Plotting Contest.
+
+## Slide 17: Variable Types
+
+- 1. Examples of Visualization
+- 2. What is Visualization?
+- 3. Variable Types
+- 4. Encoding
+- ➤
+
+## Slide 18: Variable Types
+
+- Suppose we have some data and want to create a visualization.
+- Question: How do we know what kind of visualization to create? 🤔
+- Answer: It depends on the type(s) of information we want to visualize.
+  - Bar charts work sometimes. But not all the time!
+- Where we are visualizing different variables (features) of a dataset, a lot depends on the type(s) of variables we’re working with:
+- Variable types are different from data types like string, int, Table, etc.
+- In the next few slides we’ll study the different variable feature types, in order to make more informed decisions when creating visualizations.
+
+## Slide 19: Can do arithmetic with.
+
+- Can do arithmetic with.
+- Cannot do arithmetic with.
+- Variable Type
+
+## Slide 20: Example: Area Codes
+
+- Just because a variable has numbers for values does not make it numerical.
+- Similarly, a numerical variable might be stored as a string – in that case, you’ll need to convert the corresponding values to ints or floats, depending on what is appropriate.
+- Warning: a categorical variable can have numbers for values!
+
+## Slide 21: Quick Check 1
+
+- Determine the variable feature type of each of the following variables.
+- Fuel economy in miles per gallon.
+- Number of semesters at Berkeley.
+- Class standing (freshman, sophomore, etc.).
+- Income bracket (low, medium, high).
+- Bank account number.
+
+## Slide 22: Encoding
+
+- 1. Examples of Visualization
+- 2. What is Visualization?
+- 3. Variable Types
+- 4. Encoding
+- ➤
+
+## Slide 23: Encoding
+
+- An encoding is a mapping from a variable to a visual element.
+- For instance, in bar charts, length can visually encode a numerical variable (here, the average age).
+- Longer bar = higher average age.
+
+## Slide 24: ‹\#›
+
+- How many variables are being encoded in this plot?
+
+## Slide 25: What’s Wrong?
+
+- This graph implies that Swedish cars are “greater” than cars from other countries in some sense, when they’re not.
+- The variable type determines the types of plots (and hence, encodings) that are appropriate.
+- Over the next few weeks, we will learn how to create several kinds of plots and learn when each is appropriate.
+
+## Slide 26: In Conclusion…
+
+## Slide 27: Summary
+
+- It is often easier to discern patterns in our data when we visualize it rather than looking at it in a table.
+  - We visualize to further our understanding of our results and to communicate our results with others.
+- There are two main kinds of statistical variable types – numerical and categorical.
+  - Numerical variables are either discrete or continuous, while categorical variables are either ordinal or nominal.
+  - Categorical variables may be stored as numbers! (area codes)
+- Encodings translate variables into visual properties.
+    - Not all encodings work for all variables – we’ll learn more about this soon.
+
+## Slide 28: Coming Up…
+
+## Slide 29: Visualization tools
+
+- Without a computer:
+  - Drawing
+  - Painting
+- With a computer:
+  - Without programming:
+    - Photoshop
+    - Figma
+    - Tableau
+  - With programming:
+    - matplotlib
+    - seaborn
+    - plotly
+    - D3.js
+- There are many Python visualization libraries that integrate well with tables.
+- This is nowhere near a comprehensive list!
+- Both are popular but less “modern”
+- Newer, and can create interactive visualizations.
+
+## Slide 30: Recap
+
+- Introduction to Visualization
+- Quick Check
+- https://forms.gle/9NGfvX38vUzZfZob8
+- Visualizing categorical variables
+- Next Time
+
