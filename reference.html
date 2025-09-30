@@ -359,6 +359,12 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
  <span class="menu-text">Histograms and Ranges</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-histograms/exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -428,7 +434,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <p>Of course, the Python Reference can only provide information about the basics of the functions you’ll use in Data 6. The best knowledge about functions comes from using these functions in code you write in labs or homeworks. If you get stuck when using a certain function, we encourage you to come to office hours or ask a question on Ed.</p>
 <section id="the-anatomy-of-a-function" class="level3">
 <h3 class="anchored" data-anchor-id="the-anatomy-of-a-function">The Anatomy of a Function</h3>
-<div id="a6df29bd" class="cell" data-execution_count="1">
+<div id="3e95c78d" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> my_function(num):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> num <span class="op">**</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -512,12 +518,18 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <td><strong>int</strong> or <strong>float</strong></td>
 </tr>
 <tr class="odd">
+<td><code>round(number)</code> or <code>round(number, ndigits)</code></td>
+<td>Returns <code>number</code> rounded to the nearest integer. If optional <code>ndigits</code> is provided, rounds to <code>ndigits</code> precision after the decimal point.</td>
+<td><strong>int</strong> or <strong>float</strong></td>
+<td><strong>int</strong> or <strong>float</strong></td>
+</tr>
+<tr class="even">
 <td><code>print(input, ...)</code></td>
 <td>Prints the <code>input</code>. Multiple inputs can be passed, and they will be separated by spaces by default.</td>
 <td><strong>input</strong>: any inputs to print <br></td>
 <td><strong>None</strong></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>type(object)</code></td>
 <td>Returns the type of <code>object</code>.</td>
 <td><strong>object</strong>: the object whose type is to be determined</td>

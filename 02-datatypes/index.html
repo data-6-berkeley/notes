@@ -360,6 +360,12 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
  <span class="menu-text">Histograms and Ranges</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../08-histograms/exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -527,20 +533,20 @@ Read <em>Inferential Thinking</em>
 </div>
 </div>
 <p><strong>Concatenation operation</strong>: The <code>+</code> operator works differently on string data types. Instead of adding numerically, it “adds textually,” which is more formally called <strong>concatenation</strong>:</p>
-<div id="0f3efa00" class="cell" data-execution_count="1">
+<div id="e21e9bac" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="op">+</span> <span class="dv">3</span>  <span class="co"># addition</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>5</code></pre>
 </div>
 </div>
-<div id="c6e7bfd1" class="cell" data-execution_count="2">
+<div id="13142931" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">'hello'</span> <span class="op">+</span> <span class="st">"donuts"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>'hellodonuts'</code></pre>
 </div>
 </div>
 <p><strong>Length function</strong>: There is one function not shown above that would be useful to you know, and that is <code>len(s)</code>, which takes a string argument and returns its length.</p>
-<div id="531b8d63" class="cell" data-execution_count="3">
+<div id="94d6dc64" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">"hello world"</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(s)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -551,14 +557,14 @@ Read <em>Inferential Thinking</em>
 <section id="boolean-data-type" class="level2">
 <h2 class="anchored" data-anchor-id="boolean-data-type">Boolean Data Type</h2>
 <p>The Boolean data type (<code>bool</code>) has exactly two values: <code>True</code> and <code>False</code>. Note that boolean values are <em>not</em> strings!</p>
-<div id="ff39e6f4" class="cell" data-execution_count="4">
+<div id="0a307a5e" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="va">True</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="23bbc91f" class="cell" data-execution_count="5">
+<div id="67cce3ce" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="va">False</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
@@ -570,14 +576,14 @@ Read <em>Inferential Thinking</em>
 <section id="typecasting" class="level2">
 <h2 class="anchored" data-anchor-id="typecasting">Typecasting</h2>
 <p>We can also <strong>typecast</strong>, or convert values between data types. These typecasting functions take in one typed argument and return another typed argument, then return that value as a different type. The function name is generally the type. Note that data type conversion is only valid “when it makes sense.” We’ll talk about this more later.</p>
-<div id="1826e66b" class="cell" data-execution_count="6">
+<div id="543a2362" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">3</span>       <span class="co"># what type is x?</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">str</span>(x)      <span class="co"># returns a value of type string</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>'3'</code></pre>
 </div>
 </div>
-<div id="413f05af" class="cell" data-execution_count="7">
+<div id="72f79c92" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">"5"</span>       <span class="co"># what type is x?</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">float</span>(s)      <span class="co"># what type is returned?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
