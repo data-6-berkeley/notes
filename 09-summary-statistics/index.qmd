@@ -1,0 +1,62 @@
+---
+title: "Percentiles and Box Plots"
+subtitle: "Order statistics"
+---
+
+## Summary Statistics
+
+**Summary statistics** are used to summarize a set of observations. These numbers often describe data distributions, though they are certainly not replacements for visualizations, which can describe the entire distribution in more interpretable detail.
+
+For categorical variables, one summary statistic is the most common value that appears in the dataset.
+
+For numerical variables, there are many more summary statistics that collectively describe **center** and **spread**. We'll discuss these in much more detail soon, but first we must introduce a statistical concept called **percentiles**.
+
+## Percentiles
+
+::: {.callout-note title="Read _Inferential Thinking_"}
+ Read [Ch 13.1](https://inferentialthinking.com/chapters/13/1/Percentiles.html), which defines percentiles.
+:::
+
+Before continuing, make sure that you:
+
+* Understand the definition of percentile:
+
+  > The $p$-th percentile of a collection is the smallest value in the collection that is at least as large as $p$% of all the values.
+* Can compute a given percentile from a small array, e.g., `array([ 6,  7,  9, 12, 17])`
+
+### Five-number summary
+
+As described in the chapter above, percentiles describe quartiles:
+
+* First quartile ("Q1"): 25th percentile
+* Median: 50th percentile
+* Third quartile ("Q2"): 75th percentile
+
+The **five-number summary** is defined as:
+* Minimum
+* First quartile
+* Median
+* Third quartile
+* Maximum
+
+**Challenge**: What pecentiles are the minimum and maximum, respectively? Use the definition of percentile in the textbook.
+
+## Box Plots
+
+A **box plot**---also known as a box-and-whisker plot--- is a visual representation of the five-number summary. 
+
+Refer to the [Fall 2025 lecture slides](https://docs.google.com/presentation/d/19heoEFT4o65jGiWT0kUhDIZQke_xOw7h1uK0PrnVkc4/edit?slide=id.g387c21d64ba_0_947#slide=id.g387c21d64ba_0_947) for a description of box plots. The accompanying lecture notebook has an activity to aid you in interpreting box plots.
+
+::: {.callout-important title="In this course"}
+You will not need to write code to plot box plots, but you should be able to draw them by hand given a five-number summary. You should also be able to interpret and compare sets of box plots.
+:::
+
+### When to use box plots?
+
+Box plots are somewhat between a histogram and summary statistics in terms of interpretability. By ordering and visualizing the five-number summary, box plots help data scientsts understand where data are concentrated (e.g., in the interquartile range), and whether the data exhibits some skew (e.g., in the whiskers).
+
+Box plots are an abstraction of the histogram---effectively, it plots four equally-sized bins of data on one-dimension. Box plots are therefore often used to compare different subsets of distributions to one another. But to understand more about any given distribution, plot a histogram, or look at individual records.
+
+## External Reading
+
+* (mentioned in notes) _Computational and Inferential Thinking_, [Ch 13.1](https://inferentialthinking.com/chapters/13/1/Percentiles.html)

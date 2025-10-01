@@ -1,0 +1,85 @@
+---
+title: "Center and Spread"
+subtitle: "Mean, Median, Standard Deviation, Range, ..."
+---
+
+## Summary Statistics, continued
+
+Beyond visualization, what are ways to summarize and interpret distributions? One we have seen thus far is a five-number summary. but how can we quantify natural concepts like "center" and "spread"?
+
+One view:
+
+* "center": the median
+* "spread": the interquartile range
+
+
+Another view:
+
+* "center": the mean/average
+* "spread": the standard deviation
+
+We will focus more on the former view in this course, though you will certainly encounter the latter view in the wild and in future courses like Data 8.
+
+## Center
+
+### Median
+
+The median of a given array of data is its 50th percentile. See the previous note for more details.
+
+### Mean
+
+::: {.callout-note title="Read _Inferential Thinking_"}
+ Read [Ch 14.1](https://inferentialthinking.com/chapters/14/1/Properties_of_the_Mean.html), which discusses means in detail.
+:::
+
+Before continuing, make sure that you:
+
+* Understand the definition of **mean** and **skew**
+* Can compute the mean of small arrays, e.g., `make_array(1, 1, 1, 0)`
+* Can interpret distribution skew based on means and medians
+
+To summarize skew:
+
+> if the histogram has a tail on one side (the formal term is “skewed”), then the mean is pulled away from the median in the direction of the tail.
+
+As an additional detail (which we will not expect you to remember):
+* If the histogram has a one-sided tail on the left, we say the distribution exhibits left skew.
+* If the histogram has a one-sided tail on the right, we say the distribution exhibits right skew.
+* If the histogram looks mostly balanced, we say the distribution is symmetric.
+
+## Spread
+
+**Spread**, or **variability**, means how values in a distribution vary with respect to each other.
+
+### Ranges
+
+Ranges are one way to quantify spread.
+
+**Range** is the difference between the maximum and minimum data entries in the set.
+
+> Range = (Max. data entry) – (Min. data entry)
+
+**Interquartile range** (IQR) is the difference between the third and first quartiles in the set.
+
+> IQR = (Third quartile) – (First quartile)
+
+## Standard Deviation
+
+::: {.callout-important title="In this course"}
+We cover standard deviations in this course only for completeness. However, because this course does not discuss in detail notions of estimation, standard error, law of large numbers, etc., we will not particularly assess your knowledge of standard deviations---beyond you knowing that it is a measure of spread. 
+:::
+
+::: {.callout-note title="Read _Inferential Thinking_"}
+ Read [Ch 14.2](https://inferentialthiCannking.com/chapters/14/2/Variability.html), which discusses the standard deviation.
+:::
+
+Before continuing, make sure that you:
+* Understand the definition of **standard deviation.**
+* Can compute the standard deviation of small arrays, e.g., `make_array(1, 2, 2, 10)`
+* Can use `np.std` to compute the standard deviation of a general array.
+
+
+## External Reading
+
+* (mentioned in notes) _Computational and Inferential Thinking_, [Ch 14.1](https://inferentialthinking.com/chapters/14/1/Properties_of_the_Mean.html)
+* (mentioned in notes) _Computational and Inferential Thinking_, [Ch 14.2](https://inferentialthiCannking.com/chapters/14/2/Variability.html)
