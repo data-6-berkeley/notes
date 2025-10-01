@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>[Lec 12 and 13] Data 6 Fall 2024 - Grouping and Pivoting</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-753e6901f2c274e22bcfe03890f74e5f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-CES9J82GLL"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
+</script>
+<!--<script async src=”https://siteimproveanalytics.com/js/siteanalyze_6294756.js”></script>-->
+
+
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#slide-1-grouping-pivoting" id="toc-slide-1-grouping-pivoting" class="nav-link active" data-scroll-target="#slide-1-grouping-pivoting">Slide 1: Grouping, Pivoting</a></li>
+  <li><a href="#slide-2-week-7" id="toc-slide-2-week-7" class="nav-link" data-scroll-target="#slide-2-week-7">Slide 2: Week 7</a></li>
+  <li><a href="#slide-3-on-exam-scores" id="toc-slide-3-on-exam-scores" class="nav-link" data-scroll-target="#slide-3-on-exam-scores">Slide 3: On Exam Scores…</a></li>
+  <li><a href="#slide-4-on-the-usage-of-ai" id="toc-slide-4-on-the-usage-of-ai" class="nav-link" data-scroll-target="#slide-4-on-the-usage-of-ai">Slide 4: On the usage of AI</a></li>
+  <li><a href="#slide-5-todays-roadmap" id="toc-slide-5-todays-roadmap" class="nav-link" data-scroll-target="#slide-5-todays-roadmap">Slide 5: Today’s Roadmap</a></li>
+  <li><a href="#slide-6-higher-order-functions" id="toc-slide-6-higher-order-functions" class="nav-link" data-scroll-target="#slide-6-higher-order-functions">Slide 6: Higher order functions</a></li>
+  <li><a href="#slide-7-higher-order-functions" id="toc-slide-7-higher-order-functions" class="nav-link" data-scroll-target="#slide-7-higher-order-functions">Slide 7: Higher Order Functions</a></li>
+  <li><a href="#slide-8-higher-order-functions-demo" id="toc-slide-8-higher-order-functions-demo" class="nav-link" data-scroll-target="#slide-8-higher-order-functions-demo">Slide 8: Higher order functions: Demo</a></li>
+  <li><a href="#slide-9-grouping-with-.group" id="toc-slide-9-grouping-with-.group" class="nav-link" data-scroll-target="#slide-9-grouping-with-.group">Slide 9: Grouping with .group</a></li>
+  <li><a href="#slide-10-aggregating-with-.group" id="toc-slide-10-aggregating-with-.group" class="nav-link" data-scroll-target="#slide-10-aggregating-with-.group">Slide 10: Aggregating with .group()</a></li>
+  <li><a href="#slide-11-.group" id="toc-slide-11-.group" class="nav-link" data-scroll-target="#slide-11-.group">Slide 11: .group()</a></li>
+  <li><a href="#slide-12-.group" id="toc-slide-12-.group" class="nav-link" data-scroll-target="#slide-12-.group">Slide 12: .group()</a></li>
+  <li><a href="#slide-13-quick-check-1" id="toc-slide-13-quick-check-1" class="nav-link" data-scroll-target="#slide-13-quick-check-1">Slide 13: Quick Check 1</a></li>
+  <li><a href="#slide-14-group-sort-take" id="toc-slide-14-group-sort-take" class="nav-link" data-scroll-target="#slide-14-group-sort-take">Slide 14: group + sort + take = ❤️</a></li>
+  <li><a href="#slide-15-advanced-grouping" id="toc-slide-15-advanced-grouping" class="nav-link" data-scroll-target="#slide-15-advanced-grouping">Slide 15: Advanced Grouping</a></li>
+  <li><a href="#slide-16-todays-data-2021-cars" id="toc-slide-16-todays-data-2021-cars" class="nav-link" data-scroll-target="#slide-16-todays-data-2021-cars">Slide 16: Today’s Data: 2021 Cars</a></li>
+  <li><a href="#slide-17-question-what-is-the-relationship-between-the-table-on-the-right-and-the-table-on-the-left" id="toc-slide-17-question-what-is-the-relationship-between-the-table-on-the-right-and-the-table-on-the-left" class="nav-link" data-scroll-target="#slide-17-question-what-is-the-relationship-between-the-table-on-the-right-and-the-table-on-the-left">Slide 17: Question: What is the relationship between the table on the right and the table on the left?</a></li>
+  <li><a href="#slide-18-question-what-is-the-relationship-between-the-table-on-the-right-and-the-table-on-the-left-now" id="toc-slide-18-question-what-is-the-relationship-between-the-table-on-the-right-and-the-table-on-the-left-now" class="nav-link" data-scroll-target="#slide-18-question-what-is-the-relationship-between-the-table-on-the-right-and-the-table-on-the-left-now">Slide 18: Question: What is the relationship between the table on the right and the table on the left now?</a></li>
+  <li><a href="#slide-19-mean" id="toc-slide-19-mean" class="nav-link" data-scroll-target="#slide-19-mean">Slide 19: mean:</a></li>
+  <li><a href="#slide-20" id="toc-slide-20" class="nav-link" data-scroll-target="#slide-20">Slide 20: ‹#›</a></li>
+  <li><a href="#slide-21" id="toc-slide-21" class="nav-link" data-scroll-target="#slide-21">Slide 21: ‹#›</a></li>
+  <li><a href="#slide-22-gm.groupbrand-np.mean" id="toc-slide-22-gm.groupbrand-np.mean" class="nav-link" data-scroll-target="#slide-22-gm.groupbrand-np.mean">Slide 22: gm.group(‘Brand’, np.mean)</a></li>
+  <li><a href="#slide-23-.group" id="toc-slide-23-.group" class="nav-link" data-scroll-target="#slide-23-.group">Slide 23: .group</a></li>
+  <li><a href="#slide-24-you-cant-sum-strings-so-the-model-sum-column-is-empty." id="toc-slide-24-you-cant-sum-strings-so-the-model-sum-column-is-empty." class="nav-link" data-scroll-target="#slide-24-you-cant-sum-strings-so-the-model-sum-column-is-empty.">Slide 24: You can’t sum strings, so the ‘Model sum’ column is empty.</a></li>
+  <li><a href="#slide-25-translating-between-units-of-analysis" id="toc-slide-25-translating-between-units-of-analysis" class="nav-link" data-scroll-target="#slide-25-translating-between-units-of-analysis">Slide 25: Translating Between Units of Analysis</a></li>
+  <li><a href="#slide-26-which-columns-should-we-group-by" id="toc-slide-26-which-columns-should-we-group-by" class="nav-link" data-scroll-target="#slide-26-which-columns-should-we-group-by">Slide 26: Which Columns Should We Group By?</a></li>
+  <li><a href="#slide-27-questions" id="toc-slide-27-questions" class="nav-link" data-scroll-target="#slide-27-questions">Slide 27: Questions?</a></li>
+  <li><a href="#slide-28-quick-check-2" id="toc-slide-28-quick-check-2" class="nav-link" data-scroll-target="#slide-28-quick-check-2">Slide 28: Quick Check 2</a></li>
+  <li><a href="#slide-29-grouping-by-multiple-columns" id="toc-slide-29-grouping-by-multiple-columns" class="nav-link" data-scroll-target="#slide-29-grouping-by-multiple-columns">Slide 29: Grouping by Multiple Columns</a></li>
+  <li><a href="#slide-30-question-what-is-the-relationship-between-the-table-on-the-right-and-the-table-on-the-left" id="toc-slide-30-question-what-is-the-relationship-between-the-table-on-the-right-and-the-table-on-the-left" class="nav-link" data-scroll-target="#slide-30-question-what-is-the-relationship-between-the-table-on-the-right-and-the-table-on-the-left">Slide 30: Question: What is the relationship between the table on the right and the table on the left?</a></li>
+  <li><a href="#slide-31-grouping-by-multiple-columns" id="toc-slide-31-grouping-by-multiple-columns" class="nav-link" data-scroll-target="#slide-31-grouping-by-multiple-columns">Slide 31: Grouping by Multiple Columns</a></li>
+  <li><a href="#slide-32-question-what-do-the-numbers-in-this-table-mean" id="toc-slide-32-question-what-do-the-numbers-in-this-table-mean" class="nav-link" data-scroll-target="#slide-32-question-what-do-the-numbers-in-this-table-mean">Slide 32: Question: What do the numbers in this table mean?</a></li>
+  <li><a href="#slide-33-grouping-by-more-than-two-columns" id="toc-slide-33-grouping-by-more-than-two-columns" class="nav-link" data-scroll-target="#slide-33-grouping-by-more-than-two-columns">Slide 33: Grouping by More Than Two Columns</a></li>
+  <li><a href="#slide-34-pivot-tables" id="toc-slide-34-pivot-tables" class="nav-link" data-scroll-target="#slide-34-pivot-tables">Slide 34: Pivot Tables</a></li>
+  <li><a href="#slide-35-review-grouping" id="toc-slide-35-review-grouping" class="nav-link" data-scroll-target="#slide-35-review-grouping">Slide 35: Review: Grouping</a></li>
+  <li><a href="#slide-36-question-what-is-the-relationship-between-the-table-on-the-right-and-the-table-on-the-left" id="toc-slide-36-question-what-is-the-relationship-between-the-table-on-the-right-and-the-table-on-the-left" class="nav-link" data-scroll-target="#slide-36-question-what-is-the-relationship-between-the-table-on-the-right-and-the-table-on-the-left">Slide 36: Question: What is the relationship between the table on the right and the table on the left?</a></li>
+  <li><a href="#slide-37-cars.pivotcylinders-brand" id="toc-slide-37-cars.pivotcylinders-brand" class="nav-link" data-scroll-target="#slide-37-cars.pivotcylinders-brand">Slide 37: cars.pivot(‘Cylinders’, ‘Brand’)</a></li>
+  <li><a href="#slide-38-.pivot" id="toc-slide-38-.pivot" class="nav-link" data-scroll-target="#slide-38-.pivot">Slide 38: .pivot()</a></li>
+  <li><a href="#slide-39-.pivot" id="toc-slide-39-.pivot" class="nav-link" data-scroll-target="#slide-39-.pivot">Slide 39: .pivot()</a></li>
+  <li><a href="#slide-40" id="toc-slide-40" class="nav-link" data-scroll-target="#slide-40">Slide 40: ‹#›</a></li>
+  <li><a href="#slide-41-in-conclusion" id="toc-slide-41-in-conclusion" class="nav-link" data-scroll-target="#slide-41-in-conclusion">Slide 41: In Conclusion…</a></li>
+  <li><a href="#slide-42-summary" id="toc-slide-42-summary" class="nav-link" data-scroll-target="#slide-42-summary">Slide 42: Summary</a></li>
+  <li><a href="#slide-43-recap" id="toc-slide-43-recap" class="nav-link" data-scroll-target="#slide-43-recap">Slide 43: Recap</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">[Lec 12 and 13] Data 6 Fall 2024 - Grouping and Pivoting</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="slide-1-grouping-pivoting" class="level2">
+<h2 class="anchored" data-anchor-id="slide-1-grouping-pivoting">Slide 1: Grouping, Pivoting</h2>
+<ul>
+<li>Data 6 Fall 2024</li>
+<li>LECTURE 12</li>
+<li>Extracting and aggregating information from tables.</li>
+<li>Developed by students and faculty at UC Berkeley and Tuskegee University</li>
+</ul>
+</section>
+<section id="slide-2-week-7" class="level2">
+<h2 class="anchored" data-anchor-id="slide-2-week-7">Slide 2: Week 7</h2>
+<ul>
+<li>Reading assignment 3 released</li>
+<li>Quiz 1 scores released</li>
+<li>Lecture 13</li>
+<li>A note on double jeopardy</li>
+<li>Clarifications</li>
+<li>Survey due next Monday!</li>
+<li>Announcements!</li>
+</ul>
+</section>
+<section id="slide-3-on-exam-scores" class="level2">
+<h2 class="anchored" data-anchor-id="slide-3-on-exam-scores">Slide 3: On Exam Scores…</h2>
+<ul>
+<li>Exam scores are out!</li>
+<li>A few observations on my end:</li>
+<li>Left skewed-distribution
+<ul>
+<li>Will focus on a lot more practice before building onto examples</li>
+</ul></li>
+<li>Social sciences research &amp; scope had a lower average than most other questions</li>
+</ul>
+</section>
+<section id="slide-4-on-the-usage-of-ai" class="level2">
+<h2 class="anchored" data-anchor-id="slide-4-on-the-usage-of-ai">Slide 4: On the usage of AI</h2>
+<ul>
+<li>If you choose to use generative AI on your coding assignments (homeworks, labs, projects), that’s your choice
+<ul>
+<li>I think there are situations where it is helpful/useful! I’ve also tried to show you cases where it has failed</li>
+</ul></li>
+<li>Please don’t use generative AI to summarize or write any part of your reading responses
+<ul>
+<li>It’s what makes us human. Our humanity, our experiences, our understanding of the world around us…</li>
+</ul></li>
+<li>A brief aside…</li>
+</ul>
+</section>
+<section id="slide-5-todays-roadmap" class="level2">
+<h2 class="anchored" data-anchor-id="slide-5-todays-roadmap">Slide 5: Today’s Roadmap</h2>
+<ul>
+<li>Higher order functions</li>
+<li>Grouping with .group</li>
+<li>Grouping by Multiple Columns</li>
+<li>Pivot Tables with .pivot</li>
+<li>Lecture 12, Data 6 Fall 2024</li>
+</ul>
+</section>
+<section id="slide-6-higher-order-functions" class="level2">
+<h2 class="anchored" data-anchor-id="slide-6-higher-order-functions">Slide 6: Higher order functions</h2>
+<ul>
+<li><ol type="1">
+<li>Higher order functions</li>
+</ol></li>
+<li>2.Grouping with .group</li>
+<li><ol start="3" type="1">
+<li>Grouping by Multiple Columns</li>
+</ol></li>
+<li><ol start="4" type="1">
+<li>Pivot Tables with .pivot</li>
+</ol></li>
+<li>➤</li>
+</ul>
+</section>
+<section id="slide-7-higher-order-functions" class="level2">
+<h2 class="anchored" data-anchor-id="slide-7-higher-order-functions">Slide 7: Higher Order Functions</h2>
+<ul>
+<li>Higher order functions are functions that can take in a function as an input or returns a function as an output.</li>
+<li>We’ll be focusing on the first case: functions that take in inputs.</li>
+<li>What is an example of a method that takes in a function as a parameter that we’ve used in this class?</li>
+<li>Source</li>
+</ul>
+</section>
+<section id="slide-8-higher-order-functions-demo" class="level2">
+<h2 class="anchored" data-anchor-id="slide-8-higher-order-functions-demo">Slide 8: Higher order functions: Demo</h2>
+<ul>
+<li>Demo link here</li>
+<li>Source</li>
+</ul>
+</section>
+<section id="slide-9-grouping-with-.group" class="level2">
+<h2 class="anchored" data-anchor-id="slide-9-grouping-with-.group">Slide 9: Grouping with .group</h2>
+<ul>
+<li><ol type="1">
+<li>Grouping with .group</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>Grouping by Multiple Columns</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li>Pivot Tables with .pivot</li>
+</ol></li>
+<li>➤</li>
+</ul>
+</section>
+<section id="slide-10-aggregating-with-.group" class="level2">
+<h2 class="anchored" data-anchor-id="slide-10-aggregating-with-.group">Slide 10: Aggregating with .group()</h2>
+<ul>
+<li>The term “group” in data science is most commonly associated with data aggregation and disaggregation.</li>
+<li>Aggregation: A process in which information is gathered and expressed in collective or summary form.</li>
+<li>Useful for getting information about groups based on variables (age, profession, income) while simultaneously preserving confidentiality of individuals</li>
+<li>Disaggregation (aka disentanglement): A process of taking aggregated data and breaking it down into smaller information units.</li>
+<li>Useful to highlight outcomes that pertain to individual subsets of results/outcomes (e.g., gender, location, socio-cultural/ethnic background, age groups, etc.) to expose hidden trends</li>
+<li>Source</li>
+</ul>
+<details>
+<summary>
+Speaker notes
+</summary>
+<p>https://www.nccih.ca/docs/context/FS-ImportanceDisaggregatedData-EN.pdf</p>
+</details>
+</section>
+<section id="slide-11-.group" class="level2">
+<h2 class="anchored" data-anchor-id="slide-11-.group">Slide 11: .group()</h2>
+<ul>
+<li>Question: What is the relationship between the table on the right and the table on the left?</li>
+<li>Answer: Same data, different unit of analysis. The right table is an aggregated view of the left table, grouped by artist.</li>
+</ul>
+</section>
+<section id="slide-12-.group" class="level2">
+<h2 class="anchored" data-anchor-id="slide-12-.group">Slide 12: .group()</h2>
+<ul>
+<li>The method t.group(column) counts the number of rows for each unique value in column, and returns a two-column table with the results.</li>
+<li>Note: t.group(column) only keeps the column column, the frequency counts, and no others.</li>
+</ul>
+</section>
+<section id="slide-13-quick-check-1" class="level2">
+<h2 class="anchored" data-anchor-id="slide-13-quick-check-1">Slide 13: Quick Check 1</h2>
+<ul>
+<li>Fill in the blanks to create “Top 10 Artists”: The 10 artists with the most songs in the Spotify Daily Top 200 streams table.</li>
+<li>top_10_artists = streams.group(…).sort(…, descending=…)</li>
+<li>.take(np.arange(…))</li>
+</ul>
+</section>
+<section id="slide-14-group-sort-take" class="level2">
+<h2 class="anchored" data-anchor-id="slide-14-group-sort-take">Slide 14: group + sort + take = ❤️</h2>
+<ul>
+<li>This is a common pattern: grouping and then sorting, and then taking.</li>
+<li>Here, it gives us the 10 artists with the most songs in the Spotify Daily Top 200 streams table.</li>
+<li>top_10_artists = streams.group(‘artist_names’)<br>
+</li>
+<li>.sort(‘count’,</li>
+<li>descending=True)<br>
+</li>
+<li>.take(np.arange(10))</li>
+</ul>
+</section>
+<section id="slide-15-advanced-grouping" class="level2">
+<h2 class="anchored" data-anchor-id="slide-15-advanced-grouping">Slide 15: Advanced Grouping</h2>
+<ul>
+<li><ol type="1">
+<li>Grouping with .group</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>Grouping by Multiple Columns</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li>Pivot Tables with .pivot</li>
+</ol></li>
+<li>➤</li>
+</ul>
+</section>
+<section id="slide-16-todays-data-2021-cars" class="level2">
+<h2 class="anchored" data-anchor-id="slide-16-todays-data-2021-cars">Slide 16: Today’s Data: 2021 Cars</h2>
+<ul>
+<li>Today we’ll use data from the US Department of Energy that contains basic information about all 2021 model-year cars sold in the US.</li>
+<li>Click here for the source.</li>
+<li>Click here for a spreadsheet version of the data.</li>
+<li>Note:</li>
+<li>Manufacturer is who owns the Brand.
+<ul>
+<li>GM owns Buick, Cadillac, Chevrolet, GMC.</li>
+</ul></li>
+<li>Displacement is the engine size in liters.</li>
+<li>MPG is miles per gallon.</li>
+</ul>
+</section>
+<section id="slide-17-question-what-is-the-relationship-between-the-table-on-the-right-and-the-table-on-the-left" class="level2">
+<h2 class="anchored" data-anchor-id="slide-17-question-what-is-the-relationship-between-the-table-on-the-right-and-the-table-on-the-left">Slide 17: Question: What is the relationship between the table on the right and the table on the left?</h2>
+<ul>
+<li>Question: What is the relationship between the table on the right and the table on the left?</li>
+</ul>
+</section>
+<section id="slide-18-question-what-is-the-relationship-between-the-table-on-the-right-and-the-table-on-the-left-now" class="level2">
+<h2 class="anchored" data-anchor-id="slide-18-question-what-is-the-relationship-between-the-table-on-the-right-and-the-table-on-the-left-now">Slide 18: Question: What is the relationship between the table on the right and the table on the left now?</h2>
+<ul>
+<li>Question: What is the relationship between the table on the right and the table on the left now?</li>
+</ul>
+</section>
+<section id="slide-19-mean" class="level2">
+<h2 class="anchored" data-anchor-id="slide-19-mean">Slide 19: mean:</h2>
+<ul>
+<li>mean:</li>
+<li>6</li>
+<li>20.5</li>
+</ul>
+</section>
+<section id="slide-20" class="level2">
+<h2 class="anchored" data-anchor-id="slide-20">Slide 20: ‹#›</h2>
+</section>
+<section id="slide-21" class="level2">
+<h2 class="anchored" data-anchor-id="slide-21">Slide 21: ‹#›</h2>
+</section>
+<section id="slide-22-gm.groupbrand-np.mean" class="level2">
+<h2 class="anchored" data-anchor-id="slide-22-gm.groupbrand-np.mean">Slide 22: gm.group(‘Brand’, np.mean)</h2>
+<ul>
+<li>gm.group(‘Brand’, np.mean)</li>
+</ul>
+</section>
+<section id="slide-23-.group" class="level2">
+<h2 class="anchored" data-anchor-id="slide-23-.group">Slide 23: .group</h2>
+<ul>
+<li>The method t.group(column, collect) combines/aggregates all rows with the same value for column into a single row in the resulting table, according to the function collect.</li>
+<li>The collect argument is optional.
+<ul>
+<li>len: number of grouped values (default).</li>
+<li>list: list of all grouped values.</li>
+<li>sum:&nbsp;total of all grouped values.</li>
+<li>np.mean: average of all grouped values.</li>
+</ul></li>
+<li>collect can be function that works on arrays!
+<ul>
+<li>You can write your own functions if you need to.</li>
+<li>If it doesn’t work with non-numeric values (like sum), it skips non-numeric columns.</li>
+</ul></li>
+</ul>
+</section>
+<section id="slide-24-you-cant-sum-strings-so-the-model-sum-column-is-empty." class="level2">
+<h2 class="anchored" data-anchor-id="slide-24-you-cant-sum-strings-so-the-model-sum-column-is-empty.">Slide 24: You can’t sum strings, so the ‘Model sum’ column is empty.</h2>
+<ul>
+<li>You can’t sum strings, so the ‘Model sum’ column is empty.</li>
+<li>We get the same numbers (2, 3, 3, 1) if we don’t specify a collect function.</li>
+<li>Example</li>
+</ul>
+</section>
+<section id="slide-25-translating-between-units-of-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="slide-25-translating-between-units-of-analysis">Slide 25: Translating Between Units of Analysis</h2>
+<ul>
+<li>Suppose we have data on 4-year R1 higher education institutions across the United States.</li>
+<li>Disaggregation is impossible unless we have data at a finer-grained unit of analysis to begin with.</li>
+</ul>
+</section>
+<section id="slide-26-which-columns-should-we-group-by" class="level2">
+<h2 class="anchored" data-anchor-id="slide-26-which-columns-should-we-group-by">Slide 26: Which Columns Should We Group By?</h2>
+<ul>
+<li>It usually only makes sense to group by columns that store categorical information that is shared across multiple rows.</li>
+<li>If you had a bunch of dogs, you could group by</li>
+<li>Breed.</li>
+<li>Size (small, medium, large).</li>
+<li>Sex.</li>
+<li>Color.</li>
+<li>It wouldn’t make sense to group by weight in pounds, since every dog will have a slightly different weight and two dogs having the exact same weight doesn’t tell you much.</li>
+</ul>
+</section>
+<section id="slide-27-questions" class="level2">
+<h2 class="anchored" data-anchor-id="slide-27-questions">Slide 27: Questions?</h2>
+</section>
+<section id="slide-28-quick-check-2" class="level2">
+<h2 class="anchored" data-anchor-id="slide-28-quick-check-2">Slide 28: Quick Check 2</h2>
+<ul>
+<li>Fill in the blanks so that the following evaluates to the average miles per gallon for all 6-cylinder vehicles in cars.</li>
+<li>cars.group(‘Cylinders’, ____)<br>
+</li>
+<li>.where(____, 6)<br>
+</li>
+<li>.column(____)<br>
+</li>
+<li>.____</li>
+</ul>
+</section>
+<section id="slide-29-grouping-by-multiple-columns" class="level2">
+<h2 class="anchored" data-anchor-id="slide-29-grouping-by-multiple-columns">Slide 29: Grouping by Multiple Columns</h2>
+<ul>
+<li><ol type="1">
+<li>Grouping with .group</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>Grouping by Multiple Columns</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li>Pivot Tables with .pivot</li>
+</ol></li>
+<li>➤</li>
+</ul>
+</section>
+<section id="slide-30-question-what-is-the-relationship-between-the-table-on-the-right-and-the-table-on-the-left" class="level2">
+<h2 class="anchored" data-anchor-id="slide-30-question-what-is-the-relationship-between-the-table-on-the-right-and-the-table-on-the-left">Slide 30: Question: What is the relationship between the table on the right and the table on the left?</h2>
+<ul>
+<li>Question: What is the relationship between the table on the right and the table on the left?</li>
+</ul>
+</section>
+<section id="slide-31-grouping-by-multiple-columns" class="level2">
+<h2 class="anchored" data-anchor-id="slide-31-grouping-by-multiple-columns">Slide 31: Grouping by Multiple Columns</h2>
+<ul>
+<li>If we pass a list of column names as the first argument to group:</li>
+<li>t.group(column_or_columns, collect)</li>
+<li>the resulting table has one row for every unique combination of values in the specified columns.</li>
+<li>Just as before, if we call group with a single argument (a list or array), we get back counts. We can specify a collect function if we want to.</li>
+<li>One row for every combination of Manufacturer and Brand.</li>
+</ul>
+</section>
+<section id="slide-32-question-what-do-the-numbers-in-this-table-mean" class="level2">
+<h2 class="anchored" data-anchor-id="slide-32-question-what-do-the-numbers-in-this-table-mean">Slide 32: Question: What do the numbers in this table mean?</h2>
+<ul>
+<li>Question: What do the numbers in this table mean?</li>
+</ul>
+</section>
+<section id="slide-33-grouping-by-more-than-two-columns" class="level2">
+<h2 class="anchored" data-anchor-id="slide-33-grouping-by-more-than-two-columns">Slide 33: Grouping by More Than Two Columns</h2>
+<ul>
+<li>You can group by any number of columns, but we rarely group by more than two columns as the results tend to be less meaningful.</li>
+<li>Here, Manufacturer doesn’t tell us much.</li>
+</ul>
+</section>
+<section id="slide-34-pivot-tables" class="level2">
+<h2 class="anchored" data-anchor-id="slide-34-pivot-tables">Slide 34: Pivot Tables</h2>
+<ul>
+<li><ol type="1">
+<li>Grouping with .group</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>Grouping by Multiple Columns</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li>Pivot Tables with .pivot</li>
+</ol></li>
+<li>➤</li>
+</ul>
+</section>
+<section id="slide-35-review-grouping" class="level2">
+<h2 class="anchored" data-anchor-id="slide-35-review-grouping">Slide 35: Review: Grouping</h2>
+</section>
+<section id="slide-36-question-what-is-the-relationship-between-the-table-on-the-right-and-the-table-on-the-left" class="level2">
+<h2 class="anchored" data-anchor-id="slide-36-question-what-is-the-relationship-between-the-table-on-the-right-and-the-table-on-the-left">Slide 36: Question: What is the relationship between the table on the right and the table on the left?</h2>
+<ul>
+<li>Question: What is the relationship between the table on the right and the table on the left?</li>
+</ul>
+</section>
+<section id="slide-37-cars.pivotcylinders-brand" class="level2">
+<h2 class="anchored" data-anchor-id="slide-37-cars.pivotcylinders-brand">Slide 37: cars.pivot(‘Cylinders’, ‘Brand’)</h2>
+<ul>
+<li>cars.pivot(‘Cylinders’, ‘Brand’)</li>
+<li>cars</li>
+</ul>
+</section>
+<section id="slide-38-.pivot" class="level2">
+<h2 class="anchored" data-anchor-id="slide-38-.pivot">Slide 38: .pivot()</h2>
+<ul>
+<li>The method t.pivot(columns, rows) is an alternative to grouping by exactly two columns.</li>
+<li>First argument: the column from t you want to make up the columns of the output.
+<ul>
+<li>Each unique value in the column columns will get its own column.</li>
+</ul></li>
+<li>Second argument: the column from t you want to make up the rows of the output.
+<ul>
+<li>Each unique value in the column rows will get its own row.</li>
+</ul></li>
+</ul>
+</section>
+<section id="slide-39-.pivot" class="level2">
+<h2 class="anchored" data-anchor-id="slide-39-.pivot">Slide 39: .pivot()</h2>
+<ul>
+<li>Like with group, the default with pivot is to count the number of occurrences of a particular combination. But we can provide two optional arguments:</li>
+<li>t.pivot(columns, rows, values, collect)</li>
+<li>This creates a new table where</li>
+<li>The columns are specified by columns.</li>
+<li>The rows are specified by rows.</li>
+<li>The entries are specified by values, combined using the function collect.</li>
+<li>For example:</li>
+<li>t.pivot(‘Cylinders’, ‘Brand’, ‘MPG’, np.mean)</li>
+<li>describes the average MPG for every combination of Brand and Cylinders.</li>
+</ul>
+</section>
+<section id="slide-40" class="level2">
+<h2 class="anchored" data-anchor-id="slide-40">Slide 40: ‹#›</h2>
+</section>
+<section id="slide-41-in-conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="slide-41-in-conclusion">Slide 41: In Conclusion…</h2>
+</section>
+<section id="slide-42-summary" class="level2">
+<h2 class="anchored" data-anchor-id="slide-42-summary">Slide 42: Summary</h2>
+</section>
+<section id="slide-43-recap" class="level2">
+<h2 class="anchored" data-anchor-id="slide-43-recap">Slide 43: Recap</h2>
+<ul>
+<li>Grouping</li>
+<li>Pivoting</li>
+<li>Lecture 13 Quick Check: https://docs.google.com/forms/d/e/1FAIpQLScye9GWqHkpQk51s09v7NjX5nyVbtIdpEnQpCWgLcjP2JUeaA/viewform?usp=sf_link</li>
+<li>Wrapping up pivoting!</li>
+<li>Next Time</li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/data-6-berkeley\.github\.io\/notes\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../../index.html">
+<p>Home / About / License</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://github.com/data-6-berkeley">
+<p>GitHub</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://dap.berkeley.edu/get-help/report-web-accessibility-issue">
+<p>Accessibility</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://ophd.berkeley.edu/policies-and-procedures/nondiscrimination-policy-statement">
+<p>Nondiscrimination</p>
+</a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>[Lec 19] Data 6 Fall 2024 - Iteration</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-753e6901f2c274e22bcfe03890f74e5f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-CES9J82GLL"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
+</script>
+<!--<script async src=”https://siteimproveanalytics.com/js/siteanalyze_6294756.js”></script>-->
+
+
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#slide-1-iteration" id="toc-slide-1-iteration" class="nav-link active" data-scroll-target="#slide-1-iteration">Slide 1: Iteration</a></li>
+  <li><a href="#slide-2-week-10" id="toc-slide-2-week-10" class="nav-link" data-scroll-target="#slide-2-week-10">Slide 2: Week 10</a></li>
+  <li><a href="#slide-3-todays-roadmap" id="toc-slide-3-todays-roadmap" class="nav-link" data-scroll-target="#slide-3-todays-roadmap">Slide 3: Today’s Roadmap</a></li>
+  <li><a href="#slide-4-motivation" id="toc-slide-4-motivation" class="nav-link" data-scroll-target="#slide-4-motivation">Slide 4: Motivation</a></li>
+  <li><a href="#slide-5-repeating-code" id="toc-slide-5-repeating-code" class="nav-link" data-scroll-target="#slide-5-repeating-code">Slide 5: Repeating Code</a></li>
+  <li><a href="#slide-6-wonderful-berkeley-weather" id="toc-slide-6-wonderful-berkeley-weather" class="nav-link" data-scroll-target="#slide-6-wonderful-berkeley-weather">Slide 6: Wonderful Berkeley Weather</a></li>
+  <li><a href="#slide-7-wonderful-berkeley-weather" id="toc-slide-7-wonderful-berkeley-weather" class="nav-link" data-scroll-target="#slide-7-wonderful-berkeley-weather">Slide 7: Wonderful Berkeley Weather</a></li>
+  <li><a href="#slide-8-for-loops" id="toc-slide-8-for-loops" class="nav-link" data-scroll-target="#slide-8-for-loops">Slide 8: For Loops</a></li>
+  <li><a href="#slide-9-berkeley-temperatures" id="toc-slide-9-berkeley-temperatures" class="nav-link" data-scroll-target="#slide-9-berkeley-temperatures">Slide 9: Berkeley Temperatures</a></li>
+  <li><a href="#slide-10-iteration-vs.-loops" id="toc-slide-10-iteration-vs.-loops" class="nav-link" data-scroll-target="#slide-10-iteration-vs.-loops">Slide 10: Iteration vs.&nbsp;Loops</a></li>
+  <li><a href="#slide-11-two-types-of-loops" id="toc-slide-11-two-types-of-loops" class="nav-link" data-scroll-target="#slide-11-two-types-of-loops">Slide 11: Two Types of Loops</a></li>
+  <li><a href="#slide-12-for-loops" id="toc-slide-12-for-loops" class="nav-link" data-scroll-target="#slide-12-for-loops">Slide 12: For Loops</a></li>
+  <li><a href="#slide-13-more-for-loops" id="toc-slide-13-more-for-loops" class="nav-link" data-scroll-target="#slide-13-more-for-loops">Slide 13: More For Loops</a></li>
+  <li><a href="#slide-14-example-fares" id="toc-slide-14-example-fares" class="nav-link" data-scroll-target="#slide-14-example-fares">Slide 14: Example: Fares</a></li>
+  <li><a href="#slide-15-solution" id="toc-slide-15-solution" class="nav-link" data-scroll-target="#slide-15-solution">Slide 15: Solution</a></li>
+  <li><a href="#slide-16-questions" id="toc-slide-16-questions" class="nav-link" data-scroll-target="#slide-16-questions">Slide 16: Questions?</a></li>
+  <li><a href="#slide-17-quick-check-1" id="toc-slide-17-quick-check-1" class="nav-link" data-scroll-target="#slide-17-quick-check-1">Slide 17: Quick Check 1</a></li>
+  <li><a href="#slide-18-for-loops-with-strings" id="toc-slide-18-for-loops-with-strings" class="nav-link" data-scroll-target="#slide-18-for-loops-with-strings">Slide 18: For Loops with Strings</a></li>
+  <li><a href="#slide-19-ranges-and-for-loops" id="toc-slide-19-ranges-and-for-loops" class="nav-link" data-scroll-target="#slide-19-ranges-and-for-loops">Slide 19: Ranges and For Loops</a></li>
+  <li><a href="#slide-20-recall-np.arange" id="toc-slide-20-recall-np.arange" class="nav-link" data-scroll-target="#slide-20-recall-np.arange">Slide 20: Recall: np.arange()</a></li>
+  <li><a href="#slide-21-ranges-and-for-loops" id="toc-slide-21-ranges-and-for-loops" class="nav-link" data-scroll-target="#slide-21-ranges-and-for-loops">Slide 21: Ranges and For Loops</a></li>
+  <li><a href="#slide-22-more-array-range-examples" id="toc-slide-22-more-array-range-examples" class="nav-link" data-scroll-target="#slide-22-more-array-range-examples">Slide 22: More Array Range Examples</a></li>
+  <li><a href="#slide-23-another-useful-tool-np.append" id="toc-slide-23-another-useful-tool-np.append" class="nav-link" data-scroll-target="#slide-23-another-useful-tool-np.append">Slide 23: Another Useful Tool: np.append()</a></li>
+  <li><a href="#slide-24-in-conclusion" id="toc-slide-24-in-conclusion" class="nav-link" data-scroll-target="#slide-24-in-conclusion">Slide 24: In Conclusion…</a></li>
+  <li><a href="#slide-25-summary" id="toc-slide-25-summary" class="nav-link" data-scroll-target="#slide-25-summary">Slide 25: Summary</a></li>
+  <li><a href="#slide-26-recap" id="toc-slide-26-recap" class="nav-link" data-scroll-target="#slide-26-recap">Slide 26: Recap</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">[Lec 19] Data 6 Fall 2024 - Iteration</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="slide-1-iteration" class="level2">
+<h2 class="anchored" data-anchor-id="slide-1-iteration">Slide 1: Iteration</h2>
+<ul>
+<li>Data 6 Fall 2024</li>
+<li>LECTURE 19</li>
+<li>Doing things over and over and over again.</li>
+<li>Developed by students and faculty at UC Berkeley and Tuskegee University</li>
+</ul>
+</section>
+<section id="slide-2-week-10" class="level2">
+<h2 class="anchored" data-anchor-id="slide-2-week-10">Slide 2: Week 10</h2>
+<ul>
+<li>Nothing! Enjoy your weekend :)</li>
+<li>Announcements!</li>
+</ul>
+</section>
+<section id="slide-3-todays-roadmap" class="level2">
+<h2 class="anchored" data-anchor-id="slide-3-todays-roadmap">Slide 3: Today’s Roadmap</h2>
+<ul>
+<li>Motivation</li>
+<li>For Loops</li>
+<li>Ranges</li>
+<li>Lecture 19, Data 6 Fall 2024</li>
+</ul>
+</section>
+<section id="slide-4-motivation" class="level2">
+<h2 class="anchored" data-anchor-id="slide-4-motivation">Slide 4: Motivation</h2>
+<ul>
+<li><ol type="1">
+<li>Motivation</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>For Loops</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li>Ranges</li>
+</ol></li>
+<li>➤</li>
+</ul>
+</section>
+<section id="slide-5-repeating-code" class="level2">
+<h2 class="anchored" data-anchor-id="slide-5-repeating-code">Slide 5: Repeating Code</h2>
+<ul>
+<li>What do we do when we want to run the same line(s) of code multiple times?</li>
+<li>For loops allow us to repeat code!</li>
+</ul>
+</section>
+<section id="slide-6-wonderful-berkeley-weather" class="level2">
+<h2 class="anchored" data-anchor-id="slide-6-wonderful-berkeley-weather">Slide 6: Wonderful Berkeley Weather</h2>
+<ul>
+<li>We have Berkeley high temperatures for the past two weeks (7/7-7/20) in the berk_temps array. In Berkeley, it is considered ‘hot’ if the temperature is &gt;= 70 degrees, ‘cold’ if the temperature is &lt;= 65 degrees, and ‘just right’ otherwise.</li>
+<li>How can we check the temperature for all 14 days?</li>
+</ul>
+</section>
+<section id="slide-7-wonderful-berkeley-weather" class="level2">
+<h2 class="anchored" data-anchor-id="slide-7-wonderful-berkeley-weather">Slide 7: Wonderful Berkeley Weather</h2>
+<ul>
+<li>We have Berkeley high temperatures for the past two weeks (7/7-7/20) in the berk_temps array. In Berkeley, it is considered ‘hot’ if the temperature is &gt;= 70 degrees, ‘cold’ if the temperature is &lt;= 65 degrees, and ‘just right’ otherwise.</li>
+<li>How can we check the temperature for all 14 days?</li>
+</ul>
+</section>
+<section id="slide-8-for-loops" class="level2">
+<h2 class="anchored" data-anchor-id="slide-8-for-loops">Slide 8: For Loops</h2>
+<ul>
+<li><ol type="1">
+<li>Motivation</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>For Loops</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li>Ranges</li>
+</ol></li>
+<li>➤</li>
+</ul>
+</section>
+<section id="slide-9-berkeley-temperatures" class="level2">
+<h2 class="anchored" data-anchor-id="slide-9-berkeley-temperatures">Slide 9: Berkeley Temperatures</h2>
+<ul>
+<li>To “iterate” over a sequence of values means to do something with each value, one at a time.</li>
+<li>Iteration</li>
+<li>[ 72,</li>
+<li>72,</li>
+<li>70,</li>
+<li>70,</li>
+<li>66,</li>
+<li>73,</li>
+<li>70,</li>
+<li>72,</li>
+<li>66,</li>
+<li>68,</li>
+<li>66,</li>
+<li>70,</li>
+<li>66,</li>
+<li>70 ]</li>
+<li>https://tinyurl.com/data6-iteration</li>
+</ul>
+</section>
+<section id="slide-10-iteration-vs.-loops" class="level2">
+<h2 class="anchored" data-anchor-id="slide-10-iteration-vs.-loops">Slide 10: Iteration vs.&nbsp;Loops</h2>
+</section>
+<section id="slide-11-two-types-of-loops" class="level2">
+<h2 class="anchored" data-anchor-id="slide-11-two-types-of-loops">Slide 11: Two Types of Loops</h2>
+<ul>
+<li>Loops allow us to repeat the execution of code.</li>
+<li>There are two types of loops in Python: the while loop and the for loop.</li>
+<li>while <boolean expression="">:</boolean></li>
+<li><while body=""></while></li>
+<li>“While this condition is true, repeat this code.”</li>
+<li>for <elem> in <sequence>:</sequence></elem></li>
+<li><for body=""></for></li>
+<li>“For each element of this sequence, repeat this code.”</li>
+<li>Sequences include arrays, lists, strings and more.</li>
+</ul>
+</section>
+<section id="slide-12-for-loops" class="level2">
+<h2 class="anchored" data-anchor-id="slide-12-for-loops">Slide 12: For Loops</h2>
+<ul>
+<li>The simplest version of a for loop is also referred to as a “for each” loop.</li>
+<li>The name after “for” (in this case n) is assigned to each value in the sequence, one at a time.</li>
+<li>In the first iteration, n is 2.</li>
+<li>In the second iteration, n is 4.</li>
+<li>In the third iteration, n is 6.</li>
+<li>In the fourth iteration, n is 8.</li>
+</ul>
+</section>
+<section id="slide-13-more-for-loops" class="level2">
+<h2 class="anchored" data-anchor-id="slide-13-more-for-loops">Slide 13: More For Loops</h2>
+</section>
+<section id="slide-14-example-fares" class="level2">
+<h2 class="anchored" data-anchor-id="slide-14-example-fares">Slide 14: Example: Fares</h2>
+<ul>
+<li>Suppose we have a data set of Titanic survivors, with information about the fare (ticket price) they paid.</li>
+<li>Write a function that, given a list of fares and a threshold, returns the number of fares that are above the threshold.</li>
+<li># Evaluates to 4, since 4 nums are &gt;3</li>
+<li>count_above([1, 2, 5, 8, 7, 9], 3)</li>
+<li># Evaluates to 0, since 0 nums are &gt;10</li>
+<li>count_above([4, 8, 2, 1], 10)</li>
+</ul>
+</section>
+<section id="slide-15-solution" class="level2">
+<h2 class="anchored" data-anchor-id="slide-15-solution">Slide 15: Solution</h2>
+</section>
+<section id="slide-16-questions" class="level2">
+<h2 class="anchored" data-anchor-id="slide-16-questions">Slide 16: Questions?</h2>
+</section>
+<section id="slide-17-quick-check-1" class="level2">
+<h2 class="anchored" data-anchor-id="slide-17-quick-check-1">Slide 17: Quick Check 1</h2>
+<ul>
+<li>Describe, in one sentence, what the function not_sure does.</li>
+<li>def not_sure(word):</li>
+<li>output = ’’</li>
+<li>for letter in word:</li>
+<li>if letter in ‘aeiou’:</li>
+<li>output += letter</li>
+<li>return output</li>
+</ul>
+</section>
+<section id="slide-18-for-loops-with-strings" class="level2">
+<h2 class="anchored" data-anchor-id="slide-18-for-loops-with-strings">Slide 18: For Loops with Strings</h2>
+</section>
+<section id="slide-19-ranges-and-for-loops" class="level2">
+<h2 class="anchored" data-anchor-id="slide-19-ranges-and-for-loops">Slide 19: Ranges and For Loops</h2>
+<ul>
+<li><ol type="1">
+<li>Motivation</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>For Loops</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li>Ranges</li>
+</ol></li>
+<li>➤</li>
+</ul>
+</section>
+<section id="slide-20-recall-np.arange" class="level2">
+<h2 class="anchored" data-anchor-id="slide-20-recall-np.arange">Slide 20: Recall: np.arange()</h2>
+<ul>
+<li>Array ranges work like indexing:inclusive of the starting position, and exclusive of the ending position.</li>
+<li>The NumPy function np.arange() creates a sequence of numbers.</li>
+</ul>
+</section>
+<section id="slide-21-ranges-and-for-loops" class="level2">
+<h2 class="anchored" data-anchor-id="slide-21-ranges-and-for-loops">Slide 21: Ranges and For Loops</h2>
+<ul>
+<li>If don’t have an array we’re working with but still want to repeat code a certain number of times, what can we do?</li>
+</ul>
+</section>
+<section id="slide-22-more-array-range-examples" class="level2">
+<h2 class="anchored" data-anchor-id="slide-22-more-array-range-examples">Slide 22: More Array Range Examples</h2>
+</section>
+<section id="slide-23-another-useful-tool-np.append" class="level2">
+<h2 class="anchored" data-anchor-id="slide-23-another-useful-tool-np.append">Slide 23: Another Useful Tool: np.append()</h2>
+<ul>
+<li>Printing from for loops is cool, but the real power is when we use for loops to change or add values in arrays.</li>
+<li>We can use np.append(arr, value) to add value onto the end of the array arr.</li>
+</ul>
+</section>
+<section id="slide-24-in-conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="slide-24-in-conclusion">Slide 24: In Conclusion…</h2>
+</section>
+<section id="slide-25-summary" class="level2">
+<h2 class="anchored" data-anchor-id="slide-25-summary">Slide 25: Summary</h2>
+<ul>
+<li>For loops perform one iteration for each element of a sequence.</li>
+<li>This is very useful when working with arrays</li>
+<li>If we don’t have an array we’re working with, we can use np.arange() to make a range to iterate over</li>
+<li>We can use np.append() to add onto the end of an array</li>
+<li>while <boolean expression="">:</boolean></li>
+<li><while body=""></while></li>
+<li>“While this condition is true, repeat this code.”</li>
+<li>for <elem> in <sequence>:</sequence></elem></li>
+<li><for body=""></for></li>
+<li>“For each element of this sequence, repeat this code.”</li>
+</ul>
+</section>
+<section id="slide-26-recap" class="level2">
+<h2 class="anchored" data-anchor-id="slide-26-recap">Slide 26: Recap</h2>
+<ul>
+<li>Next Time</li>
+<li>Iteration
+<ul>
+<li>For Loops</li>
+</ul></li>
+<li>https://forms.gle/YrRPZdoSFgx3dfRJ8</li>
+<li>Quick Check</li>
+<li>Iteration
+<ul>
+<li>While Loops</li>
+<li>Dealing with Missing Values</li>
+</ul></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/data-6-berkeley\.github\.io\/notes\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../../index.html">
+<p>Home / About / License</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://github.com/data-6-berkeley">
+<p>GitHub</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://dap.berkeley.edu/get-help/report-web-accessibility-issue">
+<p>Accessibility</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://ophd.berkeley.edu/policies-and-procedures/nondiscrimination-policy-statement">
+<p>Nondiscrimination</p>
+</a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

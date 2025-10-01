@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>[Lec 01] Data 6 Fall 2024 - Introduction</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-753e6901f2c274e22bcfe03890f74e5f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-CES9J82GLL"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
+</script>
+<!--<script async src=”https://siteimproveanalytics.com/js/siteanalyze_6294756.js”></script>-->
+
+
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#slide-1-introduction" id="toc-slide-1-introduction" class="nav-link active" data-scroll-target="#slide-1-introduction">Slide 1: Introduction</a></li>
+  <li><a href="#slide-2-jedi-tsang" id="toc-slide-2-jedi-tsang" class="nav-link" data-scroll-target="#slide-2-jedi-tsang">Slide 2: Jedi Tsang</a></li>
+  <li><a href="#slide-3-data-6-course-staff" id="toc-slide-3-data-6-course-staff" class="nav-link" data-scroll-target="#slide-3-data-6-course-staff">Slide 3: Data 6 Course Staff</a></li>
+  <li><a href="#slide-4-getting-to-know-you" id="toc-slide-4-getting-to-know-you" class="nav-link" data-scroll-target="#slide-4-getting-to-know-you">Slide 4: Getting to Know You</a></li>
+  <li><a href="#slide-5-some-questions-we-can-ask" id="toc-slide-5-some-questions-we-can-ask" class="nav-link" data-scroll-target="#slide-5-some-questions-we-can-ask">Slide 5: Some questions we can ask:</a></li>
+  <li><a href="#slide-6-sowe-just-created-some-data" id="toc-slide-6-sowe-just-created-some-data" class="nav-link" data-scroll-target="#slide-6-sowe-just-created-some-data">Slide 6: So…we just created some data!</a></li>
+  <li><a href="#slide-7-todays-roadmap" id="toc-slide-7-todays-roadmap" class="nav-link" data-scroll-target="#slide-7-todays-roadmap">Slide 7: Today’s Roadmap</a></li>
+  <li><a href="#slide-8-what-is-data-science" id="toc-slide-8-what-is-data-science" class="nav-link" data-scroll-target="#slide-8-what-is-data-science">Slide 8: What is Data Science?</a></li>
+  <li><a href="#slide-9-what-is-data-science" id="toc-slide-9-what-is-data-science" class="nav-link" data-scroll-target="#slide-9-what-is-data-science">Slide 9: What is data science?</a></li>
+  <li><a href="#slide-10-creator-of-data-100" id="toc-slide-10-creator-of-data-100" class="nav-link" data-scroll-target="#slide-10-creator-of-data-100">Slide 10: Creator of Data 100</a></li>
+  <li><a href="#slide-11-data-science-is-a-fundamentally-interdisciplinary-field" id="toc-slide-11-data-science-is-a-fundamentally-interdisciplinary-field" class="nav-link" data-scroll-target="#slide-11-data-science-is-a-fundamentally-interdisciplinary-field">Slide 11: Data science is a fundamentally interdisciplinary field</a></li>
+  <li><a href="#slide-12-data-6-version" id="toc-slide-12-data-6-version" class="nav-link" data-scroll-target="#slide-12-data-6-version">Slide 12: Data 6 Version</a></li>
+  <li><a href="#slide-13-example-questions-in-data-science" id="toc-slide-13-example-questions-in-data-science" class="nav-link" data-scroll-target="#slide-13-example-questions-in-data-science">Slide 13: Example Questions in Data Science</a></li>
+  <li><a href="#slide-14-computational-thinking" id="toc-slide-14-computational-thinking" class="nav-link" data-scroll-target="#slide-14-computational-thinking">Slide 14: Computational Thinking</a></li>
+  <li><a href="#slide-15-in-other-words" id="toc-slide-15-in-other-words" class="nav-link" data-scroll-target="#slide-15-in-other-words">Slide 15: In Other Words:</a></li>
+  <li><a href="#slide-16-social-implications" id="toc-slide-16-social-implications" class="nav-link" data-scroll-target="#slide-16-social-implications">Slide 16: Social Implications:</a></li>
+  <li><a href="#slide-17-social-implications" id="toc-slide-17-social-implications" class="nav-link" data-scroll-target="#slide-17-social-implications">Slide 17: Social Implications:</a></li>
+  <li><a href="#slide-18-content-and-learning-objectives" id="toc-slide-18-content-and-learning-objectives" class="nav-link" data-scroll-target="#slide-18-content-and-learning-objectives">Slide 18: Content and Learning Objectives</a></li>
+  <li><a href="#slide-19-introduction-to-computational-thinking-with-data" id="toc-slide-19-introduction-to-computational-thinking-with-data" class="nav-link" data-scroll-target="#slide-19-introduction-to-computational-thinking-with-data">Slide 19: Introduction to Computational Thinking with Data</a></li>
+  <li><a href="#slide-20-data-6-content" id="toc-slide-20-data-6-content" class="nav-link" data-scroll-target="#slide-20-data-6-content">Slide 20: Data 6 Content</a></li>
+  <li><a href="#slide-21-where-does-this-course-fit" id="toc-slide-21-where-does-this-course-fit" class="nav-link" data-scroll-target="#slide-21-where-does-this-course-fit">Slide 21: Where does this course fit?</a></li>
+  <li><a href="#slide-22-course-logistics" id="toc-slide-22-course-logistics" class="nav-link" data-scroll-target="#slide-22-course-logistics">Slide 22: Course Logistics</a></li>
+  <li><a href="#slide-23-technology" id="toc-slide-23-technology" class="nav-link" data-scroll-target="#slide-23-technology">Slide 23: Technology</a></li>
+  <li><a href="#slide-24-course-components" id="toc-slide-24-course-components" class="nav-link" data-scroll-target="#slide-24-course-components">Slide 24: Course components</a></li>
+  <li><a href="#slide-25-participation" id="toc-slide-25-participation" class="nav-link" data-scroll-target="#slide-25-participation">Slide 25: Participation</a></li>
+  <li><a href="#slide-26-quick-checks" id="toc-slide-26-quick-checks" class="nav-link" data-scroll-target="#slide-26-quick-checks">Slide 26: Quick Checks</a></li>
+  <li><a href="#slide-27-labs" id="toc-slide-27-labs" class="nav-link" data-scroll-target="#slide-27-labs">Slide 27: Labs</a></li>
+  <li><a href="#slide-28-homeworks" id="toc-slide-28-homeworks" class="nav-link" data-scroll-target="#slide-28-homeworks">Slide 28: Homeworks</a></li>
+  <li><a href="#slide-29-final-project" id="toc-slide-29-final-project" class="nav-link" data-scroll-target="#slide-29-final-project">Slide 29: Final Project</a></li>
+  <li><a href="#slide-30-readings" id="toc-slide-30-readings" class="nav-link" data-scroll-target="#slide-30-readings">Slide 30: Readings</a></li>
+  <li><a href="#slide-31-quizzes-and-exams" id="toc-slide-31-quizzes-and-exams" class="nav-link" data-scroll-target="#slide-31-quizzes-and-exams">Slide 31: Quizzes and Exams</a></li>
+  <li><a href="#slide-32-grading" id="toc-slide-32-grading" class="nav-link" data-scroll-target="#slide-32-grading">Slide 32: Grading</a></li>
+  <li><a href="#slide-33-campus-resources" id="toc-slide-33-campus-resources" class="nav-link" data-scroll-target="#slide-33-campus-resources">Slide 33: Campus Resources</a></li>
+  <li><a href="#slide-34-advice-for-data-6" id="toc-slide-34-advice-for-data-6" class="nav-link" data-scroll-target="#slide-34-advice-for-data-6">Slide 34: Advice for Data 6</a></li>
+  <li><a href="#slide-35-pace" id="toc-slide-35-pace" class="nav-link" data-scroll-target="#slide-35-pace">Slide 35: Pace</a></li>
+  <li><a href="#slide-36-advice-from-course-staff" id="toc-slide-36-advice-from-course-staff" class="nav-link" data-scroll-target="#slide-36-advice-from-course-staff">Slide 36: Advice from Course Staff</a></li>
+  <li><a href="#slide-37-you-can-do-this-period." id="toc-slide-37-you-can-do-this-period." class="nav-link" data-scroll-target="#slide-37-you-can-do-this-period.">Slide 37: You can do this — period.</a></li>
+  <li><a href="#slide-38-in-conclusion" id="toc-slide-38-in-conclusion" class="nav-link" data-scroll-target="#slide-38-in-conclusion">Slide 38: In Conclusion…</a></li>
+  <li><a href="#slide-39-recap" id="toc-slide-39-recap" class="nav-link" data-scroll-target="#slide-39-recap">Slide 39: Recap</a></li>
+  <li><a href="#slide-40-week-1" id="toc-slide-40-week-1" class="nav-link" data-scroll-target="#slide-40-week-1">Slide 40: Week 1</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">[Lec 01] Data 6 Fall 2024 - Introduction</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="slide-1-introduction" class="level2">
+<h2 class="anchored" data-anchor-id="slide-1-introduction">Slide 1: Introduction</h2>
+<ul>
+<li>Data 6 Fall 2024</li>
+<li>LECTURE 01</li>
+<li>Defining data science and computational thinking, and discussing course learning objectives and logistics.</li>
+<li>Developed by students and faculty at UC Berkeley and Tuskegee University</li>
+<li>data6.org/fa24/syllabus/#acknowledgements-</li>
+</ul>
+</section>
+<section id="slide-2-jedi-tsang" class="level2">
+<h2 class="anchored" data-anchor-id="slide-2-jedi-tsang">Slide 2: Jedi Tsang</h2>
+<ul>
+<li>Instructor | jedidiahtsang@berkeley.edu</li>
+<li>Poli Sci + Computer Science ’23</li>
+<li>Recently graduated M.S. in EECS</li>
+<li>Going down the teaching track!</li>
+<li>Research: how we teach computing ethics (CS195)</li>
+<li>11th semester (!!) teaching at Cal, although the first few years of undergrad was very different from the last few years.</li>
+<li>Interests: Volleyball, Teamfight Tactics, Public Policy (particularly California campaign finance), and of course, computing education :)</li>
+<li>data6.org/fa24/staff</li>
+</ul>
+</section>
+<section id="slide-3-data-6-course-staff" class="level2">
+<h2 class="anchored" data-anchor-id="slide-3-data-6-course-staff">Slide 3: Data 6 Course Staff</h2>
+<ul>
+<li>Su Min Park</li>
+<li>uGSI | m.suminpark@berkeley.edu</li>
+<li>hello hello:) I am a super senior from Seoul, South Korea studying Data Science and Sociology.</li>
+<li>Elizabeth Feng</li>
+<li>Tutor | elizabeth.feng@berkeley.edu</li>
+<li>Hi everyone! I’m a sophomore majoring in Data Science from Oakland, CA.</li>
+<li>Kenneth Llontop</li>
+<li>Tutor | kennethllontop@berkeley.edu</li>
+<li>Hey! I’m Kenneth, and I am a sophomore from LA studying EECS.</li>
+<li>data6.org/fa24/staff</li>
+<li>Isabella Duong</li>
+<li>uGSI | isabella.duong@berkeley.edu</li>
+<li>hiii! im a junior studying Computer Science!</li>
+</ul>
+<details>
+<summary>
+Speaker notes
+</summary>
+<p>10:20</p>
+</details>
+</section>
+<section id="slide-4-getting-to-know-you" class="level2">
+<h2 class="anchored" data-anchor-id="slide-4-getting-to-know-you">Slide 4: Getting to Know You</h2>
+<details>
+<summary>
+Speaker notes
+</summary>
+<p>10:15</p>
+</details>
+</section>
+<section id="slide-5-some-questions-we-can-ask" class="level2">
+<h2 class="anchored" data-anchor-id="slide-5-some-questions-we-can-ask">Slide 5: Some questions we can ask:</h2>
+<ul>
+<li>What class year are you?
+<ul>
+<li>1st years: 20</li>
+<li>2nd years: 6</li>
+<li>3rd year/1st year transfers: 6</li>
+<li>4th year/2nd year transfer: 5</li>
+<li>Extension students: 10</li>
+</ul></li>
+<li>What major are you?
+<ul>
+<li>Data Science - 3</li>
+<li>CS/EECS - 10</li>
+<li>Cog Sci - 1</li>
+<li>Math - 6</li>
+<li>Stats - 3</li>
+</ul></li>
+<li>Do you prefer cats, dogs, neither, or both?
+<ul>
+<li>Cats: 10</li>
+<li>Dogs: 20</li>
+<li>Neither: 1</li>
+<li>Both: 10</li>
+</ul></li>
+</ul>
+</section>
+<section id="slide-6-sowe-just-created-some-data" class="level2">
+<h2 class="anchored" data-anchor-id="slide-6-sowe-just-created-some-data">Slide 6: So…we just created some data!</h2>
+<ul>
+<li>Using this information, what sort of questions might we ask about the data?</li>
+<li>…and how the heck do we find the answers to these questions?</li>
+</ul>
+</section>
+<section id="slide-7-todays-roadmap" class="level2">
+<h2 class="anchored" data-anchor-id="slide-7-todays-roadmap">Slide 7: Today’s Roadmap</h2>
+<ul>
+<li>What is data science? What is computational thinking?</li>
+<li>What will you learn in this class?</li>
+<li>How will this class be run?</li>
+<li>Lecture 01, Data 6 Fall 2024</li>
+</ul>
+</section>
+<section id="slide-8-what-is-data-science" class="level2">
+<h2 class="anchored" data-anchor-id="slide-8-what-is-data-science">Slide 8: What is Data Science?</h2>
+<ul>
+<li><ol type="1">
+<li>What is data science?</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>What will you learn in this class?</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li>How will this class be run?</li>
+</ol></li>
+<li><ol start="4" type="1">
+<li>Fun demo</li>
+</ol></li>
+<li>➤</li>
+</ul>
+</section>
+<section id="slide-9-what-is-data-science" class="level2">
+<h2 class="anchored" data-anchor-id="slide-9-what-is-data-science">Slide 9: What is data science?</h2>
+<ul>
+<li>Learning about the world from data using computation</li>
+<li>Learning how to ask the “right” questions
+<ul>
+<li>When we group data and analyze it, we bring a set of assumptions</li>
+<li>When we asked what our “major” is, made an assumption that people have a major</li>
+</ul></li>
+<li>Using data to predict future outcomes</li>
+</ul>
+</section>
+<section id="slide-10-creator-of-data-100" class="level2">
+<h2 class="anchored" data-anchor-id="slide-10-creator-of-data-100">Slide 10: Creator of Data 100</h2>
+<ul>
+<li>Creator of Data 100</li>
+<li>Joey Gonzalez</li>
+<li>“Data Science is the application of data centric, computational, and inferential thinking to:</li>
+<li>Understand the world</li>
+<li>Solve problems”</li>
+</ul>
+</section>
+<section id="slide-11-data-science-is-a-fundamentally-interdisciplinary-field" class="level2">
+<h2 class="anchored" data-anchor-id="slide-11-data-science-is-a-fundamentally-interdisciplinary-field">Slide 11: Data science is a fundamentally interdisciplinary field</h2>
+<ul>
+<li>by Drew Conway in 2010 (link)</li>
+</ul>
+</section>
+<section id="slide-12-data-6-version" class="level2">
+<h2 class="anchored" data-anchor-id="slide-12-data-6-version">Slide 12: Data 6 Version</h2>
+<ul>
+<li>Statistics and inference</li>
+<li>Domain knowledge and social contexts</li>
+<li>Computational Thinking</li>
+<li>DS</li>
+<li>Machine Learning</li>
+<li>Engineering</li>
+<li>Research</li>
+</ul>
+</section>
+<section id="slide-13-example-questions-in-data-science" class="level2">
+<h2 class="anchored" data-anchor-id="slide-13-example-questions-in-data-science">Slide 13: Example Questions in Data Science</h2>
+<ul>
+<li>Data science is all about asking questions and answering them with data.</li>
+<li>Is the world getting better or worse?</li>
+<li>Is the use of the COMPAS algorithm for prison sentencing fair?</li>
+<li>Where should we put docking ports for our bikes?</li>
+<li>What should we eat to avoid dying early of heart disease?</li>
+<li>Do immigrants from poor countries have a positive or negative impact on the economy?</li>
+<li>Will there be a third? fourth? wave of COVID-19?</li>
+</ul>
+</section>
+<section id="slide-14-computational-thinking" class="level2">
+<h2 class="anchored" data-anchor-id="slide-14-computational-thinking">Slide 14: Computational Thinking</h2>
+<ul>
+<li>Creator of WolframAlpha</li>
+<li>Stephen Wolfram</li>
+<li>“Computational thinking is about formulating things with enough clarity, and in a systematic enough way, that one can tell a computer how to do them.”</li>
+</ul>
+</section>
+<section id="slide-15-in-other-words" class="level2">
+<h2 class="anchored" data-anchor-id="slide-15-in-other-words">Slide 15: In Other Words:</h2>
+<ul>
+<li>Computer science and computational thinking aren’t inherently about computers! They’re just tools.</li>
+<li>Computational thinking involves an element of creativity, as there are often many ways to solve a given problem.</li>
+</ul>
+<details>
+<summary>
+Speaker notes
+</summary>
+<p>10:20</p>
+</details>
+</section>
+<section id="slide-16-social-implications" class="level2">
+<h2 class="anchored" data-anchor-id="slide-16-social-implications">Slide 16: Social Implications:</h2>
+<p>Data science drives policy and public understanding</p>
+</section>
+<section id="slide-17-social-implications" class="level2">
+<h2 class="anchored" data-anchor-id="slide-17-social-implications">Slide 17: Social Implications:</h2>
+<p>Unconscious and implicit bias</p>
+<ul>
+<li>What do you notice? Why might this be happening?</li>
+<li>A “depixelizer” (link) was built that takes pixelated images and generates images that are perceptually realistic and downscale correctly.</li>
+</ul>
+</section>
+<section id="slide-18-content-and-learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="slide-18-content-and-learning-objectives">Slide 18: Content and Learning Objectives</h2>
+<ul>
+<li><ol type="1">
+<li>What is data science?</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>What will you learn in this class?</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li>How will this class be run?</li>
+</ol></li>
+<li><ol start="4" type="1">
+<li>Fun demo</li>
+</ol></li>
+<li>➤</li>
+</ul>
+</section>
+<section id="slide-19-introduction-to-computational-thinking-with-data" class="level2">
+<h2 class="anchored" data-anchor-id="slide-19-introduction-to-computational-thinking-with-data">Slide 19: Introduction to Computational Thinking with Data</h2>
+<ul>
+<li>As the title suggests, this class will teach you how to make computers to do interesting things involving data.</li>
+<li>In order to tell our computers what to do, we will use the Python programming language.</li>
+<li>While at points it may feel like this is a class about Python, this class is really about teaching you how to solve problems, particularly those involving real-world data.</li>
+<li>At the end of the semester, you will be strong computational thinkers, and will be able to apply the skills you’ve learned to projects of your own.</li>
+</ul>
+</section>
+<section id="slide-20-data-6-content" class="level2">
+<h2 class="anchored" data-anchor-id="slide-20-data-6-content">Slide 20: Data 6 Content</h2>
+</section>
+<section id="slide-21-where-does-this-course-fit" class="level2">
+<h2 class="anchored" data-anchor-id="slide-21-where-does-this-course-fit">Slide 21: Where does this course fit?</h2>
+<ul>
+<li>There are many different ways to get started with data science and computer science, and each of them has their own purpose and benefits.</li>
+<li>Data 6</li>
+<li>Data 8</li>
+<li>CS 10</li>
+<li>CS 61A</li>
+<li>You will leave this course with applicable skills that you can use even if you don’t take any future CS/DS courses.</li>
+</ul>
+</section>
+<section id="slide-22-course-logistics" class="level2">
+<h2 class="anchored" data-anchor-id="slide-22-course-logistics">Slide 22: Course Logistics</h2>
+<ul>
+<li><ol type="1">
+<li>What is data science?</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>What will you learn in this class?</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li>How will this class be run?</li>
+</ol></li>
+<li><ol start="4" type="1">
+<li>Fun demo</li>
+</ol></li>
+<li>➤</li>
+</ul>
+<details>
+<summary>
+Speaker notes
+</summary>
+<p>10:25</p>
+</details>
+</section>
+<section id="slide-23-technology" class="level2">
+<h2 class="anchored" data-anchor-id="slide-23-technology">Slide 23: Technology</h2>
+<ul>
+<li>We will not be using bCourses at all (besides reading files)!</li>
+<li>Course website (data6.org/fa24): where all content is posted.
+<ul>
+<li>No textbook! (all materials available online)</li>
+</ul></li>
+<li>Ed (edstem.org): discussion forum where all announcements will be sent and where you will get help on assignments.
+<ul>
+<li>Questions about course material? Post here!</li>
+</ul></li>
+<li>DataHub (datahub.berkeley.edu): where you access all code. More on this soon!</li>
+<li>Gradescope (gradescope.com): where you submit assignments and look at your grades. More next week!</li>
+</ul>
+</section>
+<section id="slide-24-course-components" class="level2">
+<h2 class="anchored" data-anchor-id="slide-24-course-components">Slide 24: Course components</h2>
+</section>
+<section id="slide-25-participation" class="level2">
+<h2 class="anchored" data-anchor-id="slide-25-participation">Slide 25: Participation</h2>
+<ul>
+<li>Weekly Surveys (2.5% of your overall grade)</li>
+<li>Quick Checks (2.5% of your overall grade)</li>
+<li>Participation is worth 5% of your final grade. The Participation category consists of:</li>
+</ul>
+</section>
+<section id="slide-26-quick-checks" class="level2">
+<h2 class="anchored" data-anchor-id="slide-26-quick-checks">Slide 26: Quick Checks</h2>
+<ul>
+<li>During each lecture, there will be a few points at which we stop and ask you to answer a short question. We call these questions Quick Checks. They serve two purposes:</li>
+<li>For us to gauge how well the class understands the material we’re currently covering</li>
+<li>For you to gauge how well you understand the material we’re currently covering</li>
+<li>Quick Checks are graded on completion, not correctness! All you need to do is submit the QC for each lecture and you get credit. No drops and each quick check will be at some point in lecture.</li>
+</ul>
+</section>
+<section id="slide-27-labs" class="level2">
+<h2 class="anchored" data-anchor-id="slide-27-labs">Slide 27: Labs</h2>
+<ul>
+<li>You learn data science by doing, not just by reading or listening. As such, a large component of your grade is labs!</li>
+<li>Labs will involve a mix of programming problems (graded by the computer) and written problems (for your edification).</li>
+<li>There will be 13 labs (no lab on week 1 and 14)</li>
+<li>Labs will be released on Wednesday morning and will be due the same night.
+<ul>
+<li>We anticipate getting through most (if not all) of the lab during lecture</li>
+<li>24 hour grace period</li>
+<li>If you need an extension email data6@berkeley.edu before the deadline</li>
+</ul></li>
+<li>We will go over how to access and submit labs next Wednesday</li>
+</ul>
+</section>
+<section id="slide-28-homeworks" class="level2">
+<h2 class="anchored" data-anchor-id="slide-28-homeworks">Slide 28: Homeworks</h2>
+<ul>
+<li>You learn data science by doing, not just by reading or listening. As such, the biggest component of your grade is homeworks!</li>
+<li>Homeworks will involve a mix of programming problems (graded by the computer) and written problems (graded by course staff).</li>
+<li>There will be four homeworks</li>
+<li>Homeworks will be released on Mondays and will be due the following Thursday at 11:00 PM.
+<ul>
+<li>Late submissions: 30% off per day, max 2 days late.</li>
+<li>If you need an extension email data6@berkeley.edu before the deadline</li>
+</ul></li>
+<li>We will go over how to access and submit homeworks on Friday</li>
+</ul>
+</section>
+<section id="slide-29-final-project" class="level2">
+<h2 class="anchored" data-anchor-id="slide-29-final-project">Slide 29: Final Project</h2>
+<ul>
+<li>You learn data science by doing, not just by reading or listening. As such, a final project gives you a chance to showcase what you have learned.</li>
+<li>The final project will involve a mix of programming problems (computer graded), short written problems (graded by course staff), and a write-up (graded by course staff).</li>
+<li>We will go over more details as well as how to access and submit the final project when it’s released.</li>
+</ul>
+</section>
+<section id="slide-30-readings" class="level2">
+<h2 class="anchored" data-anchor-id="slide-30-readings">Slide 30: Readings</h2>
+<ul>
+<li>You learn data science by doing, not just by reading or listening. However, readings are important to expose you to a variety of viewpoints.</li>
+<li>Reading assignments are meant to be reflective in nature and designed to complement the content covered each week in lecture with a focus on ethical and social issues.</li>
+<li>Readings will be released on Mondays and will be due the following Thursday at 11:00 PM.
+<ul>
+<li>Readings should be completed in advance of discussion, so come prepared</li>
+</ul></li>
+</ul>
+</section>
+<section id="slide-31-quizzes-and-exams" class="level2">
+<h2 class="anchored" data-anchor-id="slide-31-quizzes-and-exams">Slide 31: Quizzes and Exams</h2>
+<ul>
+<li>We will have two quizzes that will take place during lecture time. Each quiz is worth 10% of your overall grade. Quizzes are intended to test your understanding of key concepts, but are not intended to ‘trick’ you.</li>
+<li>Quiz 1: Monday, 10/7</li>
+<li>Quiz 2: Friday, 11/15</li>
+<li>We will also have a final exam, worth 20% of your overall grade. The final exam will take place on Friday, December 20th from 3-6 PM.</li>
+<li>We’ll try to write a 90 minute exam instead of taking up the full 3 hours.</li>
+</ul>
+</section>
+<section id="slide-32-grading" class="level2">
+<h2 class="anchored" data-anchor-id="slide-32-grading">Slide 32: Grading</h2>
+<ul>
+<li>We want you to focus on learning key data science concepts and enjoying the class (and your summer)! We don’t want you to have to stress about grades, so we’ve tried to structure assignments in a low-stakes way.</li>
+<li>If you complete the assignments, participate in class, and keep up with the content, you’ll do fine. (We promise)</li>
+<li>You can read more about our grading policy on the syllabus</li>
+</ul>
+</section>
+<section id="slide-33-campus-resources" class="level2">
+<h2 class="anchored" data-anchor-id="slide-33-campus-resources">Slide 33: Campus Resources</h2>
+<ul>
+<li>Accommodations</li>
+<li>Everyone learns differently, and supporting each student individually is part of our job as instructors. We will make every effort to accommodate students to ensure that you can learn safely and comfortably. To learn more about how to register with the campus Disabled Students Program (DSP), visit dsp.berkeley.edu</li>
+<li>Wellness</li>
+<li>Your health and wellbeing is more important than anything, especially this course. We don’t want Data 6 to be a source of stress or anxiety, so please reach out to us if you are feeling overwhelmed by anything in the class.</li>
+<li>If you or anyone you know is ever in need of mental health care, you should contact UHS Counseling and Psychological Services (CAPS).</li>
+<li>uhs.berkeley.edu/caps</li>
+<li>uhs.berkeley.edu/counseling/urgent</li>
+</ul>
+</section>
+<section id="slide-34-advice-for-data-6" class="level2">
+<h2 class="anchored" data-anchor-id="slide-34-advice-for-data-6">Slide 34: Advice for Data 6</h2>
+<details>
+<summary>
+Speaker notes
+</summary>
+<p>10:35</p>
+</details>
+</section>
+<section id="slide-35-pace" class="level2">
+<h2 class="anchored" data-anchor-id="slide-35-pace">Slide 35: Pace</h2>
+<ul>
+<li>Each lecture, we will introduce one new “tool” into your programming toolkit. Especially at the start, this will be challenging.</li>
+<li>We will try and take things slow – we know that this is your first time programming.</li>
+<li>There’s no rush – if you need us to slow down, please tell us! We want to make sure you really get it.</li>
+<li>But also don’t worry if you don’t understand something on the ‘first try’. You will get a lot of practice through labs and homeworks as well.</li>
+</ul>
+</section>
+<section id="slide-36-advice-from-course-staff" class="level2">
+<h2 class="anchored" data-anchor-id="slide-36-advice-from-course-staff">Slide 36: Advice from Course Staff</h2>
+<ul>
+<li>Don’t be afraid to ask questions!</li>
+<li>Come to office hours!</li>
+<li>Start a study or homework group</li>
+<li>Keep up with the lectures</li>
+<li>Take breaks!</li>
+<li>Use the Python Reference</li>
+</ul>
+</section>
+<section id="slide-37-you-can-do-this-period." class="level2">
+<h2 class="anchored" data-anchor-id="slide-37-you-can-do-this-period.">Slide 37: You can do this — period.</h2>
+<ul>
+<li>We are here to support you! data6.org/fa24/staff</li>
+</ul>
+</section>
+<section id="slide-38-in-conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="slide-38-in-conclusion">Slide 38: In Conclusion…</h2>
+<details>
+<summary>
+Speaker notes
+</summary>
+<p>10:50-10:55</p>
+</details>
+</section>
+<section id="slide-39-recap" class="level2">
+<h2 class="anchored" data-anchor-id="slide-39-recap">Slide 39: Recap</h2>
+<ul>
+<li>What is data science? What is computational thinking?</li>
+<li>What will you learn in this class?</li>
+<li>How will this class be run?</li>
+<li>What is code?</li>
+<li>How do we run code?</li>
+<li>Arithmetic.</li>
+<li>Running our first programs.</li>
+<li>Comments, number types, and errors.</li>
+<li>Next Time</li>
+</ul>
+</section>
+<section id="slide-40-week-1" class="level2">
+<h2 class="anchored" data-anchor-id="slide-40-week-1">Slide 40: Week 1</h2>
+<ul>
+<li>Make sure to fill out the welcome survey, posted on Ed tonight! Due by Tuesday, September 2nd at 11 PM</li>
+<li>Make an introductory post! Due by Tuesday, September 2nd at 11 PM</li>
+<li>Quick Checks start on Friday</li>
+<li>(Optional) Add songs to the collaborative playlist for pre-lecture vibes
+<ul>
+<li>https://open.spotify.com/playlist/134DozgaTBxHXXta3fvydW?si=ad9e10b2e86d48d2&amp;pt=fc545d61d6ebd5e6ce36910eabdc475a</li>
+</ul></li>
+<li>Announcements!</li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/data-6-berkeley\.github\.io\/notes\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../../index.html">
+<p>Home / About / License</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://github.com/data-6-berkeley">
+<p>GitHub</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://dap.berkeley.edu/get-help/report-web-accessibility-issue">
+<p>Accessibility</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://ophd.berkeley.edu/policies-and-procedures/nondiscrimination-policy-statement">
+<p>Nondiscrimination</p>
+</a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

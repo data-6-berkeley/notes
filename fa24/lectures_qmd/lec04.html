@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>[Lec 04] Data 6 Fall 2024 - Arrays and Variables</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-753e6901f2c274e22bcfe03890f74e5f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-CES9J82GLL"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
+</script>
+<!--<script async src=”https://siteimproveanalytics.com/js/siteanalyze_6294756.js”></script>-->
+
+
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#slide-1-arrays-and-variables" id="toc-slide-1-arrays-and-variables" class="nav-link active" data-scroll-target="#slide-1-arrays-and-variables">Slide 1: Arrays and Variables</a></li>
+  <li><a href="#slide-2-week-2" id="toc-slide-2-week-2" class="nav-link" data-scroll-target="#slide-2-week-2">Slide 2: Week 2</a></li>
+  <li><a href="#slide-3-todays-roadmap" id="toc-slide-3-todays-roadmap" class="nav-link" data-scroll-target="#slide-3-todays-roadmap">Slide 3: Today’s Roadmap</a></li>
+  <li><a href="#slide-4-strings" id="toc-slide-4-strings" class="nav-link" data-scroll-target="#slide-4-strings">Slide 4: Strings</a></li>
+  <li><a href="#slide-5-strings" id="toc-slide-5-strings" class="nav-link" data-scroll-target="#slide-5-strings">Slide 5: Strings</a></li>
+  <li><a href="#slide-6-strings" id="toc-slide-6-strings" class="nav-link" data-scroll-target="#slide-6-strings">Slide 6: Strings</a></li>
+  <li><a href="#slide-7-casting-with-strings" id="toc-slide-7-casting-with-strings" class="nav-link" data-scroll-target="#slide-7-casting-with-strings">Slide 7: Casting with Strings</a></li>
+  <li><a href="#slide-8-print" id="toc-slide-8-print" class="nav-link" data-scroll-target="#slide-8-print">Slide 8: print()</a></li>
+  <li><a href="#slide-9-a-very-useful-function-for-human-display-print" id="toc-slide-9-a-very-useful-function-for-human-display-print" class="nav-link" data-scroll-target="#slide-9-a-very-useful-function-for-human-display-print">Slide 9: A very useful function for human display: print()</a></li>
+  <li><a href="#slide-10-a-very-useful-function-for-human-display-print" id="toc-slide-10-a-very-useful-function-for-human-display-print" class="nav-link" data-scroll-target="#slide-10-a-very-useful-function-for-human-display-print">Slide 10: A very useful function for human display: print()</a></li>
+  <li><a href="#slide-11-hello-world" id="toc-slide-11-hello-world" class="nav-link" data-scroll-target="#slide-11-hello-world">Slide 11: “Hello, World!”</a></li>
+  <li><a href="#slide-12-review-of-print-and-typecasting" id="toc-slide-12-review-of-print-and-typecasting" class="nav-link" data-scroll-target="#slide-12-review-of-print-and-typecasting">Slide 12: Review of print() and Typecasting</a></li>
+  <li><a href="#slide-13-nonetype" id="toc-slide-13-nonetype" class="nav-link" data-scroll-target="#slide-13-nonetype">Slide 13: NoneType</a></li>
+  <li><a href="#slide-14-nonetype" id="toc-slide-14-nonetype" class="nav-link" data-scroll-target="#slide-14-nonetype">Slide 14: NoneType</a></li>
+  <li><a href="#slide-15-nonetype" id="toc-slide-15-nonetype" class="nav-link" data-scroll-target="#slide-15-nonetype">Slide 15: NoneType</a></li>
+  <li><a href="#slide-16-python-data-types-summary" id="toc-slide-16-python-data-types-summary" class="nav-link" data-scroll-target="#slide-16-python-data-types-summary">Slide 16: Python Data Types: Summary</a></li>
+  <li><a href="#slide-17-arrays" id="toc-slide-17-arrays" class="nav-link" data-scroll-target="#slide-17-arrays">Slide 17: Arrays</a></li>
+  <li><a href="#slide-18-arrays-more-values" id="toc-slide-18-arrays-more-values" class="nav-link" data-scroll-target="#slide-18-arrays-more-values">Slide 18: Arrays = More Values!</a></li>
+  <li><a href="#slide-19-an-array-is-a-sequential-collection-of-values" id="toc-slide-19-an-array-is-a-sequential-collection-of-values" class="nav-link" data-scroll-target="#slide-19-an-array-is-a-sequential-collection-of-values">Slide 19: An Array Is a Sequential Collection of Values</a></li>
+  <li><a href="#slide-20-an-array-is-a-sequential-collection-of-values" id="toc-slide-20-an-array-is-a-sequential-collection-of-values" class="nav-link" data-scroll-target="#slide-20-an-array-is-a-sequential-collection-of-values">Slide 20: An Array Is a Sequential Collection of Values</a></li>
+  <li><a href="#slide-21-side-note-datascience-package" id="toc-slide-21-side-note-datascience-package" class="nav-link" data-scroll-target="#slide-21-side-note-datascience-package">Slide 21: Side Note: datascience Package</a></li>
+  <li><a href="#slide-22-array-operations" id="toc-slide-22-array-operations" class="nav-link" data-scroll-target="#slide-22-array-operations">Slide 22: Array Operations</a></li>
+  <li><a href="#slide-23-american-community-survey-acs-2020" id="toc-slide-23-american-community-survey-acs-2020" class="nav-link" data-scroll-target="#slide-23-american-community-survey-acs-2020">Slide 23: American Community Survey (ACS) 2020</a></li>
+  <li><a href="#slide-24-compute-of-non-hs-graduates-by-state" id="toc-slide-24-compute-of-non-hs-graduates-by-state" class="nav-link" data-scroll-target="#slide-24-compute-of-non-hs-graduates-by-state">Slide 24: Compute % of Non-HS Graduates by State</a></li>
+  <li><a href="#slide-25-arithmetic-on-arrays" id="toc-slide-25-arithmetic-on-arrays" class="nav-link" data-scroll-target="#slide-25-arithmetic-on-arrays">Slide 25: Arithmetic on Arrays:</a></li>
+  <li><a href="#slide-26-arithmetic-on-arrays" id="toc-slide-26-arithmetic-on-arrays" class="nav-link" data-scroll-target="#slide-26-arithmetic-on-arrays">Slide 26: Arithmetic on Arrays:</a></li>
+  <li><a href="#slide-27-element-wise-arithmetic" id="toc-slide-27-element-wise-arithmetic" class="nav-link" data-scroll-target="#slide-27-element-wise-arithmetic">Slide 27: Element-Wise Arithmetic</a></li>
+  <li><a href="#slide-28-estimate-bachelor-degrees-by-state" id="toc-slide-28-estimate-bachelor-degrees-by-state" class="nav-link" data-scroll-target="#slide-28-estimate-bachelor-degrees-by-state">Slide 28: Estimate # Bachelor Degrees by State</a></li>
+  <li><a href="#slide-29-arithmetic-on-arrays" id="toc-slide-29-arithmetic-on-arrays" class="nav-link" data-scroll-target="#slide-29-arithmetic-on-arrays">Slide 29: Arithmetic on Arrays:</a></li>
+  <li><a href="#slide-30-variables-in-data-science" id="toc-slide-30-variables-in-data-science" class="nav-link" data-scroll-target="#slide-30-variables-in-data-science">Slide 30: Variables in Data Science</a></li>
+  <li><a href="#slide-31-terminology-data-tabular-data-and-records" id="toc-slide-31-terminology-data-tabular-data-and-records" class="nav-link" data-scroll-target="#slide-31-terminology-data-tabular-data-and-records">Slide 31: Terminology: Data, Tabular Data, and Records</a></li>
+  <li><a href="#slide-32-terminology-variables" id="toc-slide-32-terminology-variables" class="nav-link" data-scroll-target="#slide-32-terminology-variables">Slide 32: Terminology: Variables</a></li>
+  <li><a href="#slide-33-terminology-variables" id="toc-slide-33-terminology-variables" class="nav-link" data-scroll-target="#slide-33-terminology-variables">Slide 33: Terminology: Variables</a></li>
+  <li><a href="#slide-34-terminology-variables" id="toc-slide-34-terminology-variables" class="nav-link" data-scroll-target="#slide-34-terminology-variables">Slide 34: Terminology: Variables</a></li>
+  <li><a href="#slide-35-terminology-variables" id="toc-slide-35-terminology-variables" class="nav-link" data-scroll-target="#slide-35-terminology-variables">Slide 35: Terminology: Variables</a></li>
+  <li><a href="#slide-36-case-study-american-community-survey-2020" id="toc-slide-36-case-study-american-community-survey-2020" class="nav-link" data-scroll-target="#slide-36-case-study-american-community-survey-2020">Slide 36: Case Study: American Community Survey (2020)</a></li>
+  <li><a href="#slide-37-research-question-and-data-collection" id="toc-slide-37-research-question-and-data-collection" class="nav-link" data-scroll-target="#slide-37-research-question-and-data-collection">Slide 37: Research Question and Data Collection</a></li>
+  <li><a href="#slide-38-defining-concepts-in-the-research-question" id="toc-slide-38-defining-concepts-in-the-research-question" class="nav-link" data-scroll-target="#slide-38-defining-concepts-in-the-research-question">Slide 38: Defining Concepts in the Research Question</a></li>
+  <li><a href="#slide-39-defining-concepts-in-the-research-question" id="toc-slide-39-defining-concepts-in-the-research-question" class="nav-link" data-scroll-target="#slide-39-defining-concepts-in-the-research-question">Slide 39: Defining Concepts in the Research Question</a></li>
+  <li><a href="#slide-40-identifying-confounding-variables" id="toc-slide-40-identifying-confounding-variables" class="nav-link" data-scroll-target="#slide-40-identifying-confounding-variables">Slide 40: Identifying Confounding Variables</a></li>
+  <li><a href="#slide-41-identifying-confounding-variables" id="toc-slide-41-identifying-confounding-variables" class="nav-link" data-scroll-target="#slide-41-identifying-confounding-variables">Slide 41: Identifying Confounding Variables</a></li>
+  <li><a href="#slide-42-in-conclusion" id="toc-slide-42-in-conclusion" class="nav-link" data-scroll-target="#slide-42-in-conclusion">Slide 42: In Conclusion…</a></li>
+  <li><a href="#slide-43-summary" id="toc-slide-43-summary" class="nav-link" data-scroll-target="#slide-43-summary">Slide 43: Summary</a></li>
+  <li><a href="#slide-44-recap" id="toc-slide-44-recap" class="nav-link" data-scroll-target="#slide-44-recap">Slide 44: Recap</a></li>
+  <li><a href="#slide-45-quick-check" id="toc-slide-45-quick-check" class="nav-link" data-scroll-target="#slide-45-quick-check">Slide 45: Quick Check</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">[Lec 04] Data 6 Fall 2024 - Arrays and Variables</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="slide-1-arrays-and-variables" class="level2">
+<h2 class="anchored" data-anchor-id="slide-1-arrays-and-variables">Slide 1: Arrays and Variables</h2>
+<ul>
+<li>Data 6 Fall 2024</li>
+<li>LECTURE 04</li>
+<li>Storing many values in a single name.</li>
+<li>Developed by students and faculty at UC Berkeley and Tuskegee University</li>
+</ul>
+</section>
+<section id="slide-2-week-2" class="level2">
+<h2 class="anchored" data-anchor-id="slide-2-week-2">Slide 2: Week 2</h2>
+<ul>
+<li>Weekly survey released :O
+<ul>
+<li>Due next Monday night!</li>
+</ul></li>
+<li>Accessing readings</li>
+<li>Announcements!</li>
+</ul>
+</section>
+<section id="slide-3-todays-roadmap" class="level2">
+<h2 class="anchored" data-anchor-id="slide-3-todays-roadmap">Slide 3: Today’s Roadmap</h2>
+<ul>
+<li>Strings</li>
+<li>NoneType
+<ul>
+<li>print()</li>
+<li>Display vs.&nbsp;Output</li>
+</ul></li>
+<li>Arrays
+<ul>
+<li>Array Operations</li>
+</ul></li>
+<li>Variables in Data Science</li>
+<li>Lecture 04, Data 6 Fall 2024</li>
+</ul>
+</section>
+<section id="slide-4-strings" class="level2">
+<h2 class="anchored" data-anchor-id="slide-4-strings">Slide 4: Strings</h2>
+</section>
+<section id="slide-5-strings" class="level2">
+<h2 class="anchored" data-anchor-id="slide-5-strings">Slide 5: Strings</h2>
+<ul>
+<li>The third key data type in Python is string. Strings are used to store text.</li>
+<li>A string is a sequence of characters with single quotes ’’ or double quotes ““.</li>
+<li>“go bears!!”</li>
+<li>‘154’</li>
+<li>‘i am 21 years old’</li>
+<li>“”</li>
+<li>’’</li>
+<li>Python strings</li>
+<li>Since strings are values, they can also be used in assignment statements.</li>
+<li>state = “California”</li>
+</ul>
+</section>
+<section id="slide-6-strings" class="level2">
+<h2 class="anchored" data-anchor-id="slide-6-strings">Slide 6: Strings</h2>
+<ul>
+<li>The third key data type in Python is string. Strings are used to store text.</li>
+<li>A string is a sequence of characters with single quotes ’’ or double quotes ““.</li>
+<li>“go bears!!”</li>
+<li>‘154’</li>
+<li>‘i am 21 years old’</li>
+<li>“”</li>
+<li>’’</li>
+<li>Python strings</li>
+<li>Since strings are values, they can also be used in assignment statements.</li>
+<li>state = “California”</li>
+<li>A few string operations:</li>
+<li>len(): string length, i.e., the number of characters in a string</li>
+<li>+: string concatenation</li>
+</ul>
+</section>
+<section id="slide-7-casting-with-strings" class="level2">
+<h2 class="anchored" data-anchor-id="slide-7-casting-with-strings">Slide 7: Casting with Strings</h2>
+<ul>
+<li>We can also typecast, or convert values between data types. Note that data type conversion is only valid “when it makes sense.”</li>
+<li>str(x) # Returns x as a string</li>
+</ul>
+</section>
+<section id="slide-8-print" class="level2">
+<h2 class="anchored" data-anchor-id="slide-8-print">Slide 8: print()</h2>
+<ul>
+<li><ol type="1">
+<li>NoneType</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>Arrays</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li>Variables in Data Science</li>
+</ol></li>
+<li>➤</li>
+</ul>
+</section>
+<section id="slide-9-a-very-useful-function-for-human-display-print" class="level2">
+<h2 class="anchored" data-anchor-id="slide-9-a-very-useful-function-for-human-display-print">Slide 9: A very useful function for human display: print()</h2>
+<ul>
+<li>The print() function displays values.</li>
+<li>Works even if it’s not thelast line of a cell!</li>
+<li>Strings are displayed without quotes</li>
+</ul>
+</section>
+<section id="slide-10-a-very-useful-function-for-human-display-print" class="level2">
+<h2 class="anchored" data-anchor-id="slide-10-a-very-useful-function-for-human-display-print">Slide 10: A very useful function for human display: print()</h2>
+<ul>
+<li>Terminology going forward:</li>
+<li>Print means display</li>
+<li>Output means cell output</li>
+<li>The print() function displays values.</li>
+<li>Works even if it’s not thelast line of a cell!</li>
+<li>Strings are displayed without quotes</li>
+<li>⚠️ Note ⚠️</li>
+<li>Print displays values.It does not produce cell output!</li>
+</ul>
+</section>
+<section id="slide-11-hello-world" class="level2">
+<h2 class="anchored" data-anchor-id="slide-11-hello-world">Slide 11: “Hello, World!”</h2>
+<ul>
+<li>This is a common “first” program to test that a programming language works as expected.</li>
+<li>Now you understand it!!!</li>
+<li>https://en.wikipedia.org/wiki/%22Hello,_World!%22_program#Python</li>
+<li>print(“Hello, World!”)</li>
+</ul>
+</section>
+<section id="slide-12-review-of-print-and-typecasting" class="level2">
+<h2 class="anchored" data-anchor-id="slide-12-review-of-print-and-typecasting">Slide 12: Review of print() and Typecasting</h2>
+<ul>
+<li>If your lines of code are too long, use the&nbsp;character to break code into multiple lines.</li>
+<li>There are two common ways to print strings:</li>
+<li>Multiple arguments</li>
+<li>Python inserts a space character for display</li>
+<li>Arguments can be different data types</li>
+<li>String concatenation</li>
+<li>Programmer must insert space character for display</li>
+<li>One string argument, so all values must be cast to string</li>
+</ul>
+</section>
+<section id="slide-13-nonetype" class="level2">
+<h2 class="anchored" data-anchor-id="slide-13-nonetype">Slide 13: NoneType</h2>
+<ul>
+<li><ol type="1">
+<li>NoneType</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>Arrays</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li>Variables in Data Science</li>
+</ol></li>
+<li>➤</li>
+</ul>
+</section>
+<section id="slide-14-nonetype" class="level2">
+<h2 class="anchored" data-anchor-id="slide-14-nonetype">Slide 14: NoneType</h2>
+<ul>
+<li>There are infinitely* many integers, floating point numbers, and strings.</li>
+<li>However, for the NoneType data type, there is only one value: None.</li>
+<li>*Actually a finite number because of how computers store information; take CS61C to learn more!</li>
+<li>None is strange:</li>
+<li>Cells will not output expressions thatevaluate to None.</li>
+<li>None can be displayed (i.e., printed).</li>
+<li>None is also referred to as the “null value.”</li>
+</ul>
+</section>
+<section id="slide-15-nonetype" class="level2">
+<h2 class="anchored" data-anchor-id="slide-15-nonetype">Slide 15: NoneType</h2>
+<ul>
+<li>There are infinitely* many integers, floating point numbers, and strings.</li>
+<li>However, for the NoneType data type, there is only one value: None.</li>
+<li>*Actually a finite number because of how computers store information; take CS61C to learn more!</li>
+<li>print() returns None, therefore when evaluated as the last line in a cell:</li>
+<li>Print displays the value of the evaluated argument</li>
+<li>But the cell does not output anything!</li>
+<li>display</li>
+<li>output</li>
+<li>None is strange:</li>
+<li>Cells will not output expressions thatevaluate to None.</li>
+<li>None can be displayed (i.e., printed).</li>
+<li>None is also referred to as the “null value.”</li>
+</ul>
+</section>
+<section id="slide-16-python-data-types-summary" class="level2">
+<h2 class="anchored" data-anchor-id="slide-16-python-data-types-summary">Slide 16: Python Data Types: Summary</h2>
+<ul>
+<li>coming up</li>
+<li>our next topics</li>
+<li>so far</li>
+</ul>
+</section>
+<section id="slide-17-arrays" class="level2">
+<h2 class="anchored" data-anchor-id="slide-17-arrays">Slide 17: Arrays</h2>
+<ul>
+<li><ol type="1">
+<li>NoneType</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>Arrays</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li>Variables in Data Science</li>
+</ol></li>
+<li>➤</li>
+</ul>
+</section>
+<section id="slide-18-arrays-more-values" class="level2">
+<h2 class="anchored" data-anchor-id="slide-18-arrays-more-values">Slide 18: Arrays = More Values!</h2>
+</section>
+<section id="slide-19-an-array-is-a-sequential-collection-of-values" class="level2">
+<h2 class="anchored" data-anchor-id="slide-19-an-array-is-a-sequential-collection-of-values">Slide 19: An Array Is a Sequential Collection of Values</h2>
+<ul>
+<li>multiple values organized together</li>
+<li>arranged like a line/queue</li>
+<li>Use make_array() to create arrays.</li>
+<li>Values in an array must all be of the same data type, and Python will cast appropriately.</li>
+<li>Array with 4 ints</li>
+<li>Array with 4 floats</li>
+<li>Array with 3 strs</li>
+</ul>
+</section>
+<section id="slide-20-an-array-is-a-sequential-collection-of-values" class="level2">
+<h2 class="anchored" data-anchor-id="slide-20-an-array-is-a-sequential-collection-of-values">Slide 20: An Array Is a Sequential Collection of Values</h2>
+<ul>
+<li>Arrays allow us to write code that performs computation on many pieces of data at once.</li>
+<li>Python can assign an entire arrayof values to a single name.</li>
+<li>The order of a array is fixed (i.e., they will be arranged in the order specified when building the array), and values can be repeated.</li>
+<li>multiple values organized together</li>
+<li>arranged like a line/queue</li>
+<li>Use make_array() to create arrays.</li>
+<li>Values in an array must all be of the same data type, and Python will cast appropriately.</li>
+<li>Array with 4 ints</li>
+<li>Array with 4 floats</li>
+<li>Array with 3 strs</li>
+</ul>
+</section>
+<section id="slide-21-side-note-datascience-package" class="level2">
+<h2 class="anchored" data-anchor-id="slide-21-side-note-datascience-package">Slide 21: Side Note: datascience Package</h2>
+<ul>
+<li>from datascience import *</li>
+<li>The datascience Python package was written by UC Berkeley specifically for data science education.</li>
+<li>We generally put the import statement in a cell at the top of our notebook.</li>
+<li>After running the import statement, we can then call package functions without prepending datascience.</li>
+<li>The make_array() functionis from this package!</li>
+<li>“Import everything from the data science package”</li>
+</ul>
+</section>
+<section id="slide-22-array-operations" class="level2">
+<h2 class="anchored" data-anchor-id="slide-22-array-operations">Slide 22: Array Operations</h2>
+<ul>
+<li><ol type="1">
+<li>NoneType</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>Arrays</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li>Variables in Data Science</li>
+</ol></li>
+<li>➤</li>
+</ul>
+</section>
+<section id="slide-23-american-community-survey-acs-2020" class="level2">
+<h2 class="anchored" data-anchor-id="slide-23-american-community-survey-acs-2020">Slide 23: American Community Survey (ACS) 2020</h2>
+<ul>
+<li>(Later) How is this data presented, and in what societal context was it analyzed?</li>
+<li>(Now) How can we use arrays to analyze this data?</li>
+<li>The following table is drawn from the American Community Survey (ACS) of 2020. It shows education levels of adults 25 years or higher by state.</li>
+<li>We show AL, CA, FL, NY, TX.</li>
+</ul>
+<details>
+<summary>
+Speaker notes
+</summary>
+<p>https://data.census.gov/cedsci/table?q=2020%20education&amp;t=Age%20and%20Sex%3AEducational%20Attainment&amp;g=0100000US%240400000</p>
+</details>
+</section>
+<section id="slide-24-compute-of-non-hs-graduates-by-state" class="level2">
+<h2 class="anchored" data-anchor-id="slide-24-compute-of-non-hs-graduates-by-state">Slide 24: Compute % of Non-HS Graduates by State</h2>
+<ul>
+<li>hs_or_higher = make_array(86.9, 83.9, 88.5, 87.2, 84.4)</li>
+<li>below_hs = 100 - hs_or_higher</li>
+<li>below_hs</li>
+</ul>
+</section>
+<section id="slide-25-arithmetic-on-arrays" class="level2">
+<h2 class="anchored" data-anchor-id="slide-25-arithmetic-on-arrays">Slide 25: Arithmetic on Arrays:</h2>
+<p>Evaluation Returns a New Array</p>
+<ul>
+<li>⚠️ Evaluating array expressions returns a new array; it does not change the original array.</li>
+</ul>
+</section>
+<section id="slide-26-arithmetic-on-arrays" class="level2">
+<h2 class="anchored" data-anchor-id="slide-26-arithmetic-on-arrays">Slide 26: Arithmetic on Arrays:</h2>
+<p>Evaluation Returns a New Array</p>
+<ul>
+<li>⚠️ Evaluating array expressions returns a new array; it does not change the original array.</li>
+<li>Array Arithmetic is Element-Wise</li>
+<li><ol type="1">
+<li>Arithmetic with an array and a numeric value</li>
+</ol></li>
+</ul>
+</section>
+<section id="slide-27-element-wise-arithmetic" class="level2">
+<h2 class="anchored" data-anchor-id="slide-27-element-wise-arithmetic">Slide 27: Element-Wise Arithmetic</h2>
+<ul>
+<li>This element-wise behavior works with all of the arithmetic operations you expect!</li>
+</ul>
+</section>
+<section id="slide-28-estimate-bachelor-degrees-by-state" class="level2">
+<h2 class="anchored" data-anchor-id="slide-28-estimate-bachelor-degrees-by-state">Slide 28: Estimate # Bachelor Degrees by State</h2>
+<ul>
+<li>bs_or_higher = make_array(26.2, 34.7, 30.5, 37.5, 30.7)</li>
+<li>state_pop = make_array(…) # see demo</li>
+<li>bs_or_higher / 100 * state_pop</li>
+</ul>
+</section>
+<section id="slide-29-arithmetic-on-arrays" class="level2">
+<h2 class="anchored" data-anchor-id="slide-29-arithmetic-on-arrays">Slide 29: Arithmetic on Arrays:</h2>
+<p>Evaluation Returns a New Array</p>
+<ul>
+<li>⚠️ Evaluating array expressions returns a new array; it does not change the original array.</li>
+<li>Array Arithmetic is Element-Wise</li>
+<li><ol type="1">
+<li>Arithmetic with an array and a numeric value</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>Arithmetic with two arrays of equal length (same number of values).</li>
+</ol></li>
+</ul>
+</section>
+<section id="slide-30-variables-in-data-science" class="level2">
+<h2 class="anchored" data-anchor-id="slide-30-variables-in-data-science">Slide 30: Variables in Data Science</h2>
+<ul>
+<li><ol type="1">
+<li>NoneType</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>Arrays</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li>Variables in Data Science</li>
+</ol></li>
+<li>➤</li>
+</ul>
+</section>
+<section id="slide-31-terminology-data-tabular-data-and-records" class="level2">
+<h2 class="anchored" data-anchor-id="slide-31-terminology-data-tabular-data-and-records">Slide 31: Terminology: Data, Tabular Data, and Records</h2>
+<ul>
+<li>A dataset is a collection of data.</li>
+<li>“[Data] are systematically collected elements of information about the world.”</li>
+<li>– King, Keohane, and Verba. Designing Social Inquiry (1994).</li>
+<li>In this course we will often use tabular data:</li>
+<li>Columns</li>
+<li>Rows (also known as records).</li>
+<li>row</li>
+<li>column</li>
+</ul>
+<details>
+<summary>
+Speaker notes
+</summary>
+<p>“Data” are systematically collected elements of information about the world. They can be qualitative or quantitative in style. Sometimes data are collected to evaluate a very specific theory, but not so infrequently, scholars collect data before knowing precisely what they are interested in finding out. Moreover, even if data are collected to evaluate a specific hypothesis, researchers may ultimately be interested in questions that had not occurred to them previously.</p>
+</details>
+</section>
+<section id="slide-32-terminology-variables" class="level2">
+<h2 class="anchored" data-anchor-id="slide-32-terminology-variables">Slide 32: Terminology: Variables</h2>
+<ul>
+<li>In data science, a variable is a measurable feature, attribute, and/or representation of a concept. It can have different values for different individuals.</li>
+<li>variable</li>
+</ul>
+<details>
+<summary>
+Speaker notes
+</summary>
+<p>“Data” are systematically collected elements of information about the world. They can be qualitative or quantitative in style. Sometimes data are collected to evaluate a very specific theory, but not so infrequently, scholars collect data before knowing precisely what they are interested in finding out. Moreover, even if data are collected to evaluate a specific hypothesis, researchers may ultimately be interested in questions that had not occurred to them previously.</p>
+</details>
+</section>
+<section id="slide-33-terminology-variables" class="level2">
+<h2 class="anchored" data-anchor-id="slide-33-terminology-variables">Slide 33: Terminology: Variables</h2>
+<ul>
+<li>In data science, a variable is a measurable feature, attribute, and/or representation of a concept. It can have different values for different individuals.</li>
+<li>A column contains/captures all measurements for a particular variable from our dataset.</li>
+<li>Example 1: This column represents the estimated number of people 25 years or older in each state. Values are positive integers.</li>
+<li>variable</li>
+</ul>
+<details>
+<summary>
+Speaker notes
+</summary>
+<p>“Data” are systematically collected elements of information about the world. They can be qualitative or quantitative in style. Sometimes data are collected to evaluate a very specific theory, but not so infrequently, scholars collect data before knowing precisely what they are interested in finding out. Moreover, even if data are collected to evaluate a specific hypothesis, researchers may ultimately be interested in questions that had not occurred to them previously.</p>
+</details>
+</section>
+<section id="slide-34-terminology-variables" class="level2">
+<h2 class="anchored" data-anchor-id="slide-34-terminology-variables">Slide 34: Terminology: Variables</h2>
+<ul>
+<li>In data science, a variable is a measurable feature, attribute, and/or representation of a concept. It can have different values for different individuals.</li>
+<li>A column contains/captures all measurements for a particular variable from our dataset.</li>
+<li>Example 2: This column represents the recorded sex of each respondent. Values are binary categories.</li>
+<li>variable</li>
+</ul>
+<details>
+<summary>
+Speaker notes
+</summary>
+<p>“Data” are systematically collected elements of information about the world. They can be qualitative or quantitative in style. Sometimes data are collected to evaluate a very specific theory, but not so infrequently, scholars collect data before knowing precisely what they are interested in finding out. Moreover, even if data are collected to evaluate a specific hypothesis, researchers may ultimately be interested in questions that had not occurred to them previously.</p>
+</details>
+</section>
+<section id="slide-35-terminology-variables" class="level2">
+<h2 class="anchored" data-anchor-id="slide-35-terminology-variables">Slide 35: Terminology: Variables</h2>
+<ul>
+<li>In data science, a variable is a measurable feature, attribute, and/or representation of a concept. It can have different values for different individuals.</li>
+<li>variable</li>
+<li>Variables are empirical measurements; they are often metrics that researchers create to approximate the specific dimensions of an abstract concept of a research question.</li>
+<li>Side note: In computer science, Python names are also called variables. However, in this class we’ll always try to refer to Python names as names to avoid confusing it with the data science definition of a variable.</li>
+</ul>
+<details>
+<summary>
+Speaker notes
+</summary>
+<p>“Data” are systematically collected elements of information about the world. They can be qualitative or quantitative in style. Sometimes data are collected to evaluate a very specific theory, but not so infrequently, scholars collect data before knowing precisely what they are interested in finding out. Moreover, even if data are collected to evaluate a specific hypothesis, researchers may ultimately be interested in questions that had not occurred to them previously.</p>
+</details>
+</section>
+<section id="slide-36-case-study-american-community-survey-2020" class="level2">
+<h2 class="anchored" data-anchor-id="slide-36-case-study-american-community-survey-2020">Slide 36: Case Study: American Community Survey (2020)</h2>
+<ul>
+<li>Important uses at local and national level:</li>
+<li>Distribution of federal/state funds</li>
+<li>Economic development (infrastructure, hospitals, schools, bridges, etc.)</li>
+<li>Emergency management</li>
+<li>Variables are empirical measurements; they are often metrics that researchers create to approximate the specific dimensions of an abstract concept of a research question.</li>
+<li>Conducted annually by the US Census Bureau.</li>
+<li>Mailed to a sample of ~3.5 million household addressesin 50 states + DC + Puerto Rico.</li>
+<li>ACS builds on Census questions and also asks questions on education, employment,internet access, and transportation.</li>
+<li>About the ACS</li>
+</ul>
+</section>
+<section id="slide-37-research-question-and-data-collection" class="level2">
+<h2 class="anchored" data-anchor-id="slide-37-research-question-and-data-collection">Slide 37: Research Question and Data Collection</h2>
+<ul>
+<li>The definition of variables is impacted not only by researchers’ interests, but also the process and limitations of data collection.</li>
+<li>What is the level of educational attainment in 2020 among US resident adults?</li>
+<li>Pose the Research Question</li>
+<li>Household survey</li>
+<li>Private dataset by household</li>
+<li>Public dataset by geographic region</li>
+<li>aggregation</li>
+<li>Table 1</li>
+<li>Table 2</li>
+<li>(this lecture)</li>
+</ul>
+</section>
+<section id="slide-38-defining-concepts-in-the-research-question" class="level2">
+<h2 class="anchored" data-anchor-id="slide-38-defining-concepts-in-the-research-question">Slide 38: Defining Concepts in the Research Question</h2>
+<ul>
+<li>Translate a concept into a variable</li>
+<li>Define the variable domain (i.e., all possible values)</li>
+<li>Consider other factors that may influence the outcomes of the study, and repeat</li>
+<li>What is the level of educational attainment in 2020 among US resident adults?</li>
+<li>Pose the Research Question</li>
+<li>Concept: Education</li>
+<li>Variable: Highest degree received by academic institution</li>
+<li>Less than high school graduate</li>
+<li>High school graduate (includes equivalency)</li>
+<li>Some college or associate’s degree</li>
+<li>Bachelor’s degree</li>
+<li>Graduate or professional degree</li>
+<li>Variable domains can be categorical, numeric, or qualitative! In this course we focus on the first two.</li>
+</ul>
+</section>
+<section id="slide-39-defining-concepts-in-the-research-question" class="level2">
+<h2 class="anchored" data-anchor-id="slide-39-defining-concepts-in-the-research-question">Slide 39: Defining Concepts in the Research Question</h2>
+<ul>
+<li>Translate a concept into a variable</li>
+<li>Define the variable domain (i.e., all possible values)</li>
+<li>Consider other factors that may influence the outcomes of the study, and repeat</li>
+<li>What is the level of educational attainment in 2020 among US resident adults?</li>
+<li>Pose the Research Question</li>
+<li>Concept: US resident</li>
+<li>Variable: Address</li>
+<li>US Postal address of a residence [where the survey is mailed]</li>
+<li>Concept: Adult</li>
+<li>Variable: Age bracket</li>
+<li>Below 18</li>
+<li>18 to 25 (“young adult”)</li>
+<li>25 and up</li>
+<li>[recorded from age]</li>
+</ul>
+</section>
+<section id="slide-40-identifying-confounding-variables" class="level2">
+<h2 class="anchored" data-anchor-id="slide-40-identifying-confounding-variables">Slide 40: Identifying Confounding Variables</h2>
+<ul>
+<li>Confounding variables can be linked to other concepts in a way that makes two concepts appear related (even when they are not).</li>
+<li>Translate a concept into a variable</li>
+<li>Define the variable domain (i.e., all possible values)</li>
+<li>Consider other factors that may influence the outcomes of the study, and repeat</li>
+<li>What is the level of educational attainment in 2020 among US resident adults?</li>
+<li>Pose the Research Question</li>
+<li>US geographic region</li>
+<li>Educational attainment level</li>
+<li>?</li>
+<li>Other social systems?</li>
+</ul>
+</section>
+<section id="slide-41-identifying-confounding-variables" class="level2">
+<h2 class="anchored" data-anchor-id="slide-41-identifying-confounding-variables">Slide 41: Identifying Confounding Variables</h2>
+<ul>
+<li>These are just a few confounding variables measured in the ACS. What kinds of confounding variables would likely not be measured in a government study?</li>
+<li>What is the level of educational attainment in 2020 among US resident adults?</li>
+<li>Pose the Research Question</li>
+<li>Race/Ethnicity</li>
+<li>White alone</li>
+<li>White alone, not Hispanic or Latino</li>
+<li>Black alone</li>
+<li>American Indian or Alaska Native alone</li>
+<li>Asian alone</li>
+<li>Native Hawaiian and Other Pacific Islander Alone</li>
+<li>Some other race alone</li>
+<li>Two or more races</li>
+<li>Hispanic or Latino Origin</li>
+<li>Sex</li>
+<li>Male</li>
+<li>Female</li>
+<li>Income/Earnings</li>
+<li>(numeric amount)</li>
+<li>US geographic region</li>
+<li>Educational attainment level</li>
+<li>?</li>
+</ul>
+<details>
+<summary>
+Speaker notes
+</summary>
+<p>https://www.nationalgeographic.com/culture/article/race-ethnicity “Race” is usually associated with biology and linked with physical characteristics such as skin color or hair texture. “Ethnicity” is linked with cultural expression and identification. However, both are social constructs used to categorize and characterize seemingly distinct populations.</p>
+</details>
+</section>
+<section id="slide-42-in-conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="slide-42-in-conclusion">Slide 42: In Conclusion…</h2>
+</section>
+<section id="slide-43-summary" class="level2">
+<h2 class="anchored" data-anchor-id="slide-43-summary">Slide 43: Summary</h2>
+<ul>
+<li>The print() function is used to display things. It always returns None</li>
+<li>The Python None represents the absence of a value.
+<ul>
+<li>None can be printed, but is not outputted</li>
+</ul></li>
+<li>We use arrays to store and work with multiple values at once
+<ul>
+<li>We can perform (element-wise) arithmetic operations and other functions on arrays</li>
+</ul></li>
+<li>In data science, a variable is a measurable feature, attribute, and/or representation of a concept
+<ul>
+<li>We will use “name” to refer to Python names and “variable” to refer to data science variables</li>
+</ul></li>
+</ul>
+</section>
+<section id="slide-44-recap" class="level2">
+<h2 class="anchored" data-anchor-id="slide-44-recap">Slide 44: Recap</h2>
+<ul>
+<li>Strings</li>
+<li>NoneType</li>
+<li>Arrays</li>
+<li>Variables in Data Science</li>
+<li>NumPy</li>
+<li>Array Indexing</li>
+<li>Working with Data</li>
+<li>Next Time</li>
+</ul>
+</section>
+<section id="slide-45-quick-check" class="level2">
+<h2 class="anchored" data-anchor-id="slide-45-quick-check">Slide 45: Quick Check</h2>
+<ul>
+<li>https://docs.google.com/forms/d/e/1FAIpQLScYs6zjwSLq_f2PWgQIotZ6MwTdfVp1pgHifXvLxGGWO46hbg/viewform?usp=sf_link</li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/data-6-berkeley\.github\.io\/notes\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../../index.html">
+<p>Home / About / License</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://github.com/data-6-berkeley">
+<p>GitHub</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://dap.berkeley.edu/get-help/report-web-accessibility-issue">
+<p>Accessibility</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://ophd.berkeley.edu/policies-and-procedures/nondiscrimination-policy-statement">
+<p>Nondiscrimination</p>
+</a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
