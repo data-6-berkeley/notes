@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Histograms and Ranges</title>
+<title>Center and Spread</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../08-histograms/exercises.html" rel="next">
-<link href="../07-visualizations/charts.html" rel="prev">
+<link href="../five-things.html" rel="next">
+<link href="../09-summary-statistics/index.html" rel="prev">
 <link href="../assets/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -94,7 +94,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../08-histograms/index.html">L08: Histograms</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../09-summary-statistics/index.html">L09: Summary Statistics</a></li><li class="breadcrumb-item"><a href="../09-summary-statistics/center-spread.html">Center and Spread</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -312,16 +312,16 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../08-histograms/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../08-histograms/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">L08: Histograms</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../08-histograms/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../08-histograms/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Histograms and Ranges</span></a>
   </div>
 </li>
@@ -337,11 +337,11 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <div class="sidebar-item-container"> 
             <a href="../09-summary-statistics/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">L09: Summary Statistics</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../09-summary-statistics/index.html" class="sidebar-item-text sidebar-link">
@@ -350,7 +350,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../09-summary-statistics/center-spread.html" class="sidebar-item-text sidebar-link">
+  <a href="../09-summary-statistics/center-spread.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Center and Spread</span></a>
   </div>
 </li>
@@ -378,9 +378,17 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#ranges" id="toc-ranges" class="nav-link active" data-scroll-target="#ranges">Ranges</a></li>
-  <li><a href="#histograms" id="toc-histograms" class="nav-link" data-scroll-target="#histograms">Histograms</a></li>
-  <li><a href="#lecture-notebook" id="toc-lecture-notebook" class="nav-link" data-scroll-target="#lecture-notebook">Lecture Notebook</a></li>
+  <li><a href="#summary-statistics-continued" id="toc-summary-statistics-continued" class="nav-link active" data-scroll-target="#summary-statistics-continued">Summary Statistics, continued</a></li>
+  <li><a href="#center" id="toc-center" class="nav-link" data-scroll-target="#center">Center</a>
+  <ul class="collapse">
+  <li><a href="#median" id="toc-median" class="nav-link" data-scroll-target="#median">Median</a></li>
+  <li><a href="#mean" id="toc-mean" class="nav-link" data-scroll-target="#mean">Mean</a></li>
+  </ul></li>
+  <li><a href="#spread" id="toc-spread" class="nav-link" data-scroll-target="#spread">Spread</a>
+  <ul class="collapse">
+  <li><a href="#ranges" id="toc-ranges" class="nav-link" data-scroll-target="#ranges">Ranges</a></li>
+  </ul></li>
+  <li><a href="#standard-deviation" id="toc-standard-deviation" class="nav-link" data-scroll-target="#standard-deviation">Standard Deviation</a></li>
   <li><a href="#external-reading" id="toc-external-reading" class="nav-link" data-scroll-target="#external-reading">External Reading</a></li>
   </ul>
 </nav>
@@ -388,10 +396,10 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../09-summary-statistics/index.html">L09: Summary Statistics</a></li><li class="breadcrumb-item"><a href="../09-summary-statistics/center-spread.html">Center and Spread</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Histograms and Ranges</h1>
-<p class="subtitle lead">Distributions and the area principle</p>
+<h1 class="title">Center and Spread</h1>
+<p class="subtitle lead">Mean, Median, Standard Deviation, Range, …</p>
 </div>
 
 
@@ -408,10 +416,29 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </header>
 
 
-<p>There is an existing chapter that fully describes histograms. We highly recommend you read the textbook, then review the Data 6 lecture notebook.</p>
-<section id="ranges" class="level2">
-<h2 class="anchored" data-anchor-id="ranges">Ranges</h2>
-<p><code>np.arange</code> is a NumPy function useful for producing sequences of equally spaced numbers. Read the chapter for more details.</p>
+<section id="summary-statistics-continued" class="level2">
+<h2 class="anchored" data-anchor-id="summary-statistics-continued">Summary Statistics, continued</h2>
+<p>Beyond visualization, what are ways to summarize and interpret distributions? One we have seen thus far is a five-number summary. but how can we quantify natural concepts like “center” and “spread”?</p>
+<p>One view:</p>
+<ul>
+<li>“center”: the median</li>
+<li>“spread”: the interquartile range</li>
+</ul>
+<p>Another view:</p>
+<ul>
+<li>“center”: the mean/average</li>
+<li>“spread”: the standard deviation</li>
+</ul>
+<p>We will focus more on the former view in this course, though you will certainly encounter the latter view in the wild and in future courses like Data 8.</p>
+</section>
+<section id="center" class="level2">
+<h2 class="anchored" data-anchor-id="center">Center</h2>
+<section id="median" class="level3">
+<h3 class="anchored" data-anchor-id="median">Median</h3>
+<p>The median of a given array of data is its 50th percentile. See the previous note for more details.</p>
+</section>
+<section id="mean" class="level3">
+<h3 class="anchored" data-anchor-id="mean">Mean</h3>
 <div class="callout callout-style-default callout-note callout-titled" title="Read _Inferential Thinking_">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -422,18 +449,53 @@ Read <em>Inferential Thinking</em>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Read <a href="https://inferentialthinking.com/chapters/05/2/Ranges.html">Ch 5.2</a>, which describes the <code>np.arange</code> function.</p>
+<p>Read <a href="https://inferentialthinking.com/chapters/14/1/Properties_of_the_Mean.html">Ch 14.1</a>, which discusses means in detail.</p>
 </div>
 </div>
 <p>Before continuing, make sure that you:</p>
 <ul>
-<li>Know that the full function signature of <code>np.arange(start, end, step)</code>.</li>
-<li>Know what the default arguments for <code>start</code> and/or <code>step</code> are when you pass in one or two arguments.</li>
-<li>Remember that a range always includes its <code>start</code> value, but does not include its <code>end</code> value. It counts up by <code>step</code>, and it stops before it gets to the <code>end</code>.</li>
+<li>Understand the definition of <strong>mean</strong> and <strong>skew</strong></li>
+<li>Can compute the mean of small arrays, e.g., <code>make_array(1, 1, 1, 0)</code></li>
+<li>Can interpret distribution skew based on means and medians</li>
 </ul>
+<p>To summarize skew:</p>
+<blockquote class="blockquote">
+<p>if the histogram has a tail on one side (the formal term is “skewed”), then the mean is pulled away from the median in the direction of the tail.</p>
+</blockquote>
+<p>As an additional detail (which we will not expect you to remember): * If the histogram has a one-sided tail on the left, we say the distribution exhibits left skew. * If the histogram has a one-sided tail on the right, we say the distribution exhibits right skew. * If the histogram looks mostly balanced, we say the distribution is symmetric.</p>
 </section>
-<section id="histograms" class="level2">
-<h2 class="anchored" data-anchor-id="histograms">Histograms</h2>
+</section>
+<section id="spread" class="level2">
+<h2 class="anchored" data-anchor-id="spread">Spread</h2>
+<p><strong>Spread</strong>, or <strong>variability</strong>, means how values in a distribution vary with respect to each other.</p>
+<section id="ranges" class="level3">
+<h3 class="anchored" data-anchor-id="ranges">Ranges</h3>
+<p>Ranges are one way to quantify spread.</p>
+<p><strong>Range</strong> is the difference between the maximum and minimum data entries in the set.</p>
+<blockquote class="blockquote">
+<p>Range = (Max. data entry) – (Min. data entry)</p>
+</blockquote>
+<p><strong>Interquartile range</strong> (IQR) is the difference between the third and first quartiles in the set.</p>
+<blockquote class="blockquote">
+<p>IQR = (Third quartile) – (First quartile)</p>
+</blockquote>
+</section>
+</section>
+<section id="standard-deviation" class="level2">
+<h2 class="anchored" data-anchor-id="standard-deviation">Standard Deviation</h2>
+<div class="callout callout-style-default callout-important callout-titled" title="In this course">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+In this course
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We cover standard deviations in this course only for completeness. However, because this course does not discuss in detail notions of estimation, standard error, law of large numbers, etc., we will not particularly assess your knowledge of standard deviations—beyond you knowing that it is a measure of spread.</p>
+</div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled" title="Read _Inferential Thinking_">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -444,49 +506,16 @@ Read <em>Inferential Thinking</em>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Read <a href="https://inferentialthinking.com/chapters/07/2/Visualizing_Numerical_Distributions.html">Ch 7.2</a>, which describes histograms in detail.</p>
+<p>Read <a href="https://inferentialthiCannking.com/chapters/14/2/Variability.html">Ch 14.2</a>, which discusses the standard deviation.</p>
 </div>
 </div>
-<p>Before continuing, make sure that you:</p>
-<ul>
-<li>Understand terminology related to histograms:
-<ul>
-<li>Bins (lower bound, upper bound)</li>
-<li>Density, area, proportion.</li>
-</ul></li>
-<li>Can use the area principle to explain histogram shape and bar density, area, and dimensions.</li>
-<li>Can compute area and proportion from bar dimensions.</li>
-<li>Can determine use cases for using bar charts over histograms, and vice versa.</li>
-<li>Can use the <code>hist</code> method and specify the optional parameter <code>density</code> as <code>True</code> or <code>False</code></li>
-</ul>
-</section>
-<section id="lecture-notebook" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-notebook">Lecture Notebook</h2>
-<p>This notebook mostly covers the <code>hist</code> Table method in the <code>datascience</code> package. See the <a href="../reference.html">Data 6 Python Reference</a> for full information.</p>
-<p><code>tbl.hist(column)</code>: This table method has many optional arguments, but we highlight the most important ones here:</p>
-<ul>
-<li><code>bins</code>: Specify bounds of bins, as an array. All but the last element of the array specifies bin lower bounds; the last element specifies the upper bound of the rightmost bin. If not specified, the default produces 10 equally spaced bins.</li>
-<li><code>density</code>: <strong>Boolean</strong> value (<code>True</code> or <code>False</code>). <code>True</code> by default calculates height as percent per unit. If <code>False</code>, calculates height as count in bin.</li>
-</ul>
-<!-- ## `hist` Table method reference
-
-We will not test the details of this method other than what is on the [Data 6 Python Reference](../reference.html), but we are sharing the full description here.
-
-
-::: {#b323a8e6 .cell execution_count=2}
-``` {.python .cell-code}
-Table.hist?
-```
-:::
-
-
--->
+<p>Before continuing, make sure that you: * Understand the definition of <strong>standard deviation.</strong> * Can compute the standard deviation of small arrays, e.g., <code>make_array(1, 2, 2, 10)</code> * Can use <code>np.std</code> to compute the standard deviation of a general array.</p>
 </section>
 <section id="external-reading" class="level2">
 <h2 class="anchored" data-anchor-id="external-reading">External Reading</h2>
 <ul>
-<li>(mentioned in notes) <em>Computational and Inferential Thinking</em>, <a href="https://inferentialthinking.com/chapters/05/2/Ranges.html">Ch 5.2</a></li>
-<li>(mentioned in notes) <em>Computational and Inferential Thinking</em>, <a href="https://inferentialthinking.com/chapters/02/1/observation-and-visualization-john-snow-and-the-broad-street-pump.html">Ch 2.1</a></li>
+<li>(mentioned in notes) <em>Computational and Inferential Thinking</em>, <a href="https://inferentialthinking.com/chapters/14/1/Properties_of_the_Mean.html">Ch 14.1</a></li>
+<li>(mentioned in notes) <em>Computational and Inferential Thinking</em>, <a href="https://inferentialthiCannking.com/chapters/14/2/Variability.html">Ch 14.2</a></li>
 </ul>
 
 
@@ -894,13 +923,13 @@ Table.hist?
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../07-visualizations/charts.html" class="pagination-link" aria-label="Bar Charts, Scatter Plots, Line Graphs">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Bar Charts, Scatter Plots, Line Graphs</span>
+      <a href="../09-summary-statistics/index.html" class="pagination-link" aria-label="L09: Summary Statistics">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">L09: Summary Statistics</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../08-histograms/exercises.html" class="pagination-link" aria-label="Exercises">
-        <span class="nav-page-text">Exercises</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../five-things.html" class="pagination-link" aria-label="5 Things to Know">
+        <span class="nav-page-text">5 Things to Know</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

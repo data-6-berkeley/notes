@@ -566,6 +566,56 @@
     ]
   },
   {
+    "objectID": "09-summary-statistics/index.html",
+    "href": "09-summary-statistics/index.html",
+    "title": "Percentiles and Box Plots",
+    "section": "",
+    "text": "Summary statistics are used to summarize a set of observations. These numbers often describe data distributions, though they are certainly not replacements for visualizations, which can describe the entire distribution in more interpretable detail.\nFor categorical variables, one summary statistic is the most common value that appears in the dataset.\nFor numerical variables, there are many more summary statistics that collectively describe center and spread. We’ll discuss these in much more detail soon, but first we must introduce a statistical concept called percentiles.",
+    "crumbs": [
+      "L09: Summary Statistics"
+    ]
+  },
+  {
+    "objectID": "09-summary-statistics/index.html#summary-statistics",
+    "href": "09-summary-statistics/index.html#summary-statistics",
+    "title": "Percentiles and Box Plots",
+    "section": "",
+    "text": "Summary statistics are used to summarize a set of observations. These numbers often describe data distributions, though they are certainly not replacements for visualizations, which can describe the entire distribution in more interpretable detail.\nFor categorical variables, one summary statistic is the most common value that appears in the dataset.\nFor numerical variables, there are many more summary statistics that collectively describe center and spread. We’ll discuss these in much more detail soon, but first we must introduce a statistical concept called percentiles.",
+    "crumbs": [
+      "L09: Summary Statistics"
+    ]
+  },
+  {
+    "objectID": "09-summary-statistics/index.html#percentiles",
+    "href": "09-summary-statistics/index.html#percentiles",
+    "title": "Percentiles and Box Plots",
+    "section": "Percentiles",
+    "text": "Percentiles\n\n\n\n\n\n\nRead Inferential Thinking\n\n\n\nRead Ch 13.1, which defines percentiles.\n\n\nBefore continuing, make sure that you:\n\nUnderstand the definition of percentile:\n\nThe \\(p\\)-th percentile of a collection is the smallest value in the collection that is at least as large as \\(p\\)% of all the values.\n\nCan compute a given percentile from a small array, e.g., array([ 6,  7,  9, 12, 17])\n\n\nFive-number summary\nAs described in the chapter above, percentiles describe quartiles:\n\nFirst quartile (“Q1”): 25th percentile\nMedian: 50th percentile\nThird quartile (“Q2”): 75th percentile\n\nThe five-number summary is defined as: * Minimum * First quartile * Median * Third quartile * Maximum\nChallenge: What pecentiles are the minimum and maximum, respectively? Use the definition of percentile in the textbook.",
+    "crumbs": [
+      "L09: Summary Statistics"
+    ]
+  },
+  {
+    "objectID": "09-summary-statistics/index.html#box-plots",
+    "href": "09-summary-statistics/index.html#box-plots",
+    "title": "Percentiles and Box Plots",
+    "section": "Box Plots",
+    "text": "Box Plots\nA box plot—also known as a box-and-whisker plot— is a visual representation of the five-number summary.\nRefer to the Fall 2025 lecture slides for a description of box plots. The accompanying lecture notebook has an activity to aid you in interpreting box plots.\n\n\n\n\n\n\nIn this course\n\n\n\nYou will not need to write code to plot box plots, but you should be able to draw them by hand given a five-number summary. You should also be able to interpret and compare sets of box plots.\n\n\n\nWhen to use box plots?\nBox plots are somewhat between a histogram and summary statistics in terms of interpretability. By ordering and visualizing the five-number summary, box plots help data scientsts understand where data are concentrated (e.g., in the interquartile range), and whether the data exhibits some skew (e.g., in the whiskers).\nBox plots are an abstraction of the histogram—effectively, it plots four equally-sized bins of data on one-dimension. Box plots are therefore often used to compare different subsets of distributions to one another. But to understand more about any given distribution, plot a histogram, or look at individual records.",
+    "crumbs": [
+      "L09: Summary Statistics"
+    ]
+  },
+  {
+    "objectID": "09-summary-statistics/index.html#external-reading",
+    "href": "09-summary-statistics/index.html#external-reading",
+    "title": "Percentiles and Box Plots",
+    "section": "External Reading",
+    "text": "External Reading\n\n(mentioned in notes) Computational and Inferential Thinking, Ch 13.1",
+    "crumbs": [
+      "L09: Summary Statistics"
+    ]
+  },
+  {
     "objectID": "05-variables/index.html",
     "href": "05-variables/index.html",
     "title": "Variables and Variable Types",
@@ -10362,6 +10412,72 @@
     ]
   },
   {
+    "objectID": "09-summary-statistics/center-spread.html",
+    "href": "09-summary-statistics/center-spread.html",
+    "title": "Center and Spread",
+    "section": "",
+    "text": "Beyond visualization, what are ways to summarize and interpret distributions? One we have seen thus far is a five-number summary. but how can we quantify natural concepts like “center” and “spread”?\nOne view:\n\n“center”: the median\n“spread”: the interquartile range\n\nAnother view:\n\n“center”: the mean/average\n“spread”: the standard deviation\n\nWe will focus more on the former view in this course, though you will certainly encounter the latter view in the wild and in future courses like Data 8.",
+    "crumbs": [
+      "L09: Summary Statistics",
+      "Center and Spread"
+    ]
+  },
+  {
+    "objectID": "09-summary-statistics/center-spread.html#summary-statistics-continued",
+    "href": "09-summary-statistics/center-spread.html#summary-statistics-continued",
+    "title": "Center and Spread",
+    "section": "",
+    "text": "Beyond visualization, what are ways to summarize and interpret distributions? One we have seen thus far is a five-number summary. but how can we quantify natural concepts like “center” and “spread”?\nOne view:\n\n“center”: the median\n“spread”: the interquartile range\n\nAnother view:\n\n“center”: the mean/average\n“spread”: the standard deviation\n\nWe will focus more on the former view in this course, though you will certainly encounter the latter view in the wild and in future courses like Data 8.",
+    "crumbs": [
+      "L09: Summary Statistics",
+      "Center and Spread"
+    ]
+  },
+  {
+    "objectID": "09-summary-statistics/center-spread.html#center",
+    "href": "09-summary-statistics/center-spread.html#center",
+    "title": "Center and Spread",
+    "section": "Center",
+    "text": "Center\n\nMedian\nThe median of a given array of data is its 50th percentile. See the previous note for more details.\n\n\nMean\n\n\n\n\n\n\nRead Inferential Thinking\n\n\n\nRead Ch 14.1, which discusses means in detail.\n\n\nBefore continuing, make sure that you:\n\nUnderstand the definition of mean and skew\nCan compute the mean of small arrays, e.g., make_array(1, 1, 1, 0)\nCan interpret distribution skew based on means and medians\n\nTo summarize skew:\n\nif the histogram has a tail on one side (the formal term is “skewed”), then the mean is pulled away from the median in the direction of the tail.\n\nAs an additional detail (which we will not expect you to remember): * If the histogram has a one-sided tail on the left, we say the distribution exhibits left skew. * If the histogram has a one-sided tail on the right, we say the distribution exhibits right skew. * If the histogram looks mostly balanced, we say the distribution is symmetric.",
+    "crumbs": [
+      "L09: Summary Statistics",
+      "Center and Spread"
+    ]
+  },
+  {
+    "objectID": "09-summary-statistics/center-spread.html#spread",
+    "href": "09-summary-statistics/center-spread.html#spread",
+    "title": "Center and Spread",
+    "section": "Spread",
+    "text": "Spread\nSpread, or variability, means how values in a distribution vary with respect to each other.\n\nRanges\nRanges are one way to quantify spread.\nRange is the difference between the maximum and minimum data entries in the set.\n\nRange = (Max. data entry) – (Min. data entry)\n\nInterquartile range (IQR) is the difference between the third and first quartiles in the set.\n\nIQR = (Third quartile) – (First quartile)",
+    "crumbs": [
+      "L09: Summary Statistics",
+      "Center and Spread"
+    ]
+  },
+  {
+    "objectID": "09-summary-statistics/center-spread.html#standard-deviation",
+    "href": "09-summary-statistics/center-spread.html#standard-deviation",
+    "title": "Center and Spread",
+    "section": "Standard Deviation",
+    "text": "Standard Deviation\n\n\n\n\n\n\nIn this course\n\n\n\nWe cover standard deviations in this course only for completeness. However, because this course does not discuss in detail notions of estimation, standard error, law of large numbers, etc., we will not particularly assess your knowledge of standard deviations—beyond you knowing that it is a measure of spread.\n\n\n\n\n\n\n\n\nRead Inferential Thinking\n\n\n\nRead Ch 14.2, which discusses the standard deviation.\n\n\nBefore continuing, make sure that you: * Understand the definition of standard deviation. * Can compute the standard deviation of small arrays, e.g., make_array(1, 2, 2, 10) * Can use np.std to compute the standard deviation of a general array.",
+    "crumbs": [
+      "L09: Summary Statistics",
+      "Center and Spread"
+    ]
+  },
+  {
+    "objectID": "09-summary-statistics/center-spread.html#external-reading",
+    "href": "09-summary-statistics/center-spread.html#external-reading",
+    "title": "Center and Spread",
+    "section": "External Reading",
+    "text": "External Reading\n\n(mentioned in notes) Computational and Inferential Thinking, Ch 14.1\n(mentioned in notes) Computational and Inferential Thinking, Ch 14.2",
+    "crumbs": [
+      "L09: Summary Statistics",
+      "Center and Spread"
+    ]
+  },
+  {
     "objectID": "07-visualizations/charts.html",
     "href": "07-visualizations/charts.html",
     "title": "Bar Charts, Scatter Plots, Line Graphs",
@@ -10789,7 +10905,7 @@
   {
     "objectID": "08-histograms/exercises.html",
     "href": "08-histograms/exercises.html",
-    "title": "Histogram Exercises",
+    "title": "Exercises",
     "section": "",
     "text": "This is an export of the lecture notebook for today. Pay special attention to the Histogram section, where we demo the optional density argument to the hist Table method.",
     "crumbs": [
@@ -10800,7 +10916,7 @@
   {
     "objectID": "08-histograms/exercises.html#ranges-are-sequences-of-consecutive-numbers",
     "href": "08-histograms/exercises.html#ranges-are-sequences-of-consecutive-numbers",
-    "title": "Histogram Exercises",
+    "title": "Exercises",
     "section": "Ranges are sequences of consecutive numbers",
     "text": "Ranges are sequences of consecutive numbers\nEquivalent:\n\nmake_array(0,1,2,3,4,5,6)\n\narray([0, 1, 2, 3, 4, 5, 6])\n\n\n\nnp.arange(7)\n\narray([0, 1, 2, 3, 4, 5, 6])\n\n\nnp.arange can take one, two, or three arguments. From the docstring, with some light editing:\n    arange([start,] stop[, step,])\n    \n    Return evenly spaced values within a given interval.\n    \n    ``arange`` can be called with a varying number of positional arguments:\n    \n    * ``arange(stop)``: Values are generated within the half-open interval\n      ``[0, stop)`` (in other words, the interval including `start` but\n      excluding `stop`).\n    * ``arange(start, stop)``: Values are generated within the half-open\n      interval ``[start, stop)``.\n    * ``arange(start, stop, step)`` Values are generated within the half-open\n      interval ``[start, stop)``, with spacing between values given by\n      ``step``.\n    \n    Parameters\n    ----------\n    start : integer or real, optional\n        Start of interval.  The interval includes this value.  The default \n        start value is 0.\n    stop : integer or real\n        End of interval.  The interval does not include this value, except \n        in some cases where `step` is not an integer and floating point\n        round-off affects the length of `out`.\n    step : integer or real, optional\n        Spacing between values.  For any output `out`, this is the distance \n        between two adjacent values, ``out[i+1] - out[i]``.  The default \n        step size is 1.  If `step` is specified as a position argument, \n        `start` must also be given.\n    \n    Returns\n    -------\n    arange : ndarray\n        Array of evenly spaced values.\n    \n        For floating point arguments, the length of the result is \n        ``ceil((stop - start)/step)``.  Because of floating point overflow,\n        this rule may result in the last element of `out` being greater \n        than `stop`.\nTo read the above documentation in a Jupyter Notebook, run np.arange? in a code cell.\n\nWhat Will Python Do? (WWPD) - 5 minutes\n\nnp.arange(9)\n\narray([0, 1, 2, 3, 4, 5, 6, 7, 8])\n\n\n\nnp.arange(0, 9, 3)\n\narray([0, 3, 6])\n\n\n\nnp.arange(5, 11)\n\narray([ 5,  6,  7,  8,  9, 10])\n\n\n\nnp.arange(0, 1, 0.1)\n\narray([ 0. ,  0.1,  0.2,  0.3,  0.4,  0.5,  0.6,  0.7,  0.8,  0.9])\n\n\n\nnp.arange(20, 0, -2)\n\narray([20, 18, 16, 14, 12, 10,  8,  6,  4,  2])",
     "crumbs": [
@@ -10811,7 +10927,7 @@
   {
     "objectID": "08-histograms/exercises.html#distributions",
     "href": "08-histograms/exercises.html#distributions",
-    "title": "Histogram Exercises",
+    "title": "Exercises",
     "section": "Distributions",
     "text": "Distributions\n\nEvery variable has a distribution\n\nTitle: title of the movie\nStudio: name of the studio that produced the movie\nGross: domestic box office gross in dollars\nGross (Adjusted): the gross amount that would have been earned from ticket sales at 2016 prices\nYear: release year of the movie.\n\n\ntop_movies = Table.read_table('data/top_movies_2017.csv')\ntop_movies.show(6)\n\n\n\n\nTitle\nStudio\nGross\nGross (Adjusted)\nYear\n\n\n\n\nGone with the Wind\nMGM\n198676459\n1796176700\n1939\n\n\nStar Wars\nFox\n460998007\n1583483200\n1977\n\n\nThe Sound of Music\nFox\n158671368\n1266072700\n1965\n\n\nE.T.: The Extra-Terrestrial\nUniversal\n435110554\n1261085000\n1982\n\n\nTitanic\nParamount\n658672302\n1204368000\n1997\n\n\nThe Ten Commandments\nParamount\n65500000\n1164590000\n1956\n\n\n\n\n... (194 rows omitted)\n\n\nVisualize the distribution of studios responsible for the highest grossing movies as of 2017.\n\nstudio_distribution = top_movies.group('Studio')\nstudio_distribution.show(6)\n\n\n\n\nStudio\ncount\n\n\n\n\nAVCO\n1\n\n\nBuena Vista\n35\n\n\nColumbia\n9\n\n\nDisney\n11\n\n\nDreamworks\n3\n\n\nFox\n24\n\n\n\n\n... (17 rows omitted)\n\n\n\nstudio_distribution.barh('Studio')\n\n\n\n\n\n\n\n\nLet’s revisualize this barchart to display just the top five studios. In the below code, note how .take is used with np.arange:\n\nstudio_distribution.sort('count', descending=True).take(np.arange(5)).barh('Studio')\nprint(\"Five studios are largely responsible for the highest grossing movies\")\n\nFive studios are largely responsible for the highest grossing movies\n\n\n\n\n\n\n\n\n\nNote that the above bar chart does not display the entire distribution of movies and studios—just the top five.",
     "crumbs": [
@@ -10822,7 +10938,7 @@
   {
     "objectID": "08-histograms/exercises.html#histograms-the-area-principle",
     "href": "08-histograms/exercises.html#histograms-the-area-principle",
-    "title": "Histogram Exercises",
+    "title": "Exercises",
     "section": "Histograms: The Area Principle",
     "text": "Histograms: The Area Principle\nVisualize the distribution of how long the highest grossing movies as of 2017 have been out (in years).\n\nages = 2025 - top_movies.column('Year')\ntop_movies = top_movies.with_column('Age', ages)\ntop_movies\n\n\n\n\nTitle\nStudio\nGross\nGross (Adjusted)\nYear\nAge\n\n\n\n\nGone with the Wind\nMGM\n198676459\n1796176700\n1939\n86\n\n\nStar Wars\nFox\n460998007\n1583483200\n1977\n48\n\n\nThe Sound of Music\nFox\n158671368\n1266072700\n1965\n60\n\n\nE.T.: The Extra-Terrestrial\nUniversal\n435110554\n1261085000\n1982\n43\n\n\nTitanic\nParamount\n658672302\n1204368000\n1997\n28\n\n\nThe Ten Commandments\nParamount\n65500000\n1164590000\n1956\n69\n\n\nJaws\nUniversal\n260000000\n1138620700\n1975\n50\n\n\nDoctor Zhivago\nMGM\n111721910\n1103564200\n1965\n60\n\n\nThe Exorcist\nWarner Brothers\n232906145\n983226600\n1973\n52\n\n\nSnow White and the Seven Dwarves\nDisney\n184925486\n969010000\n1937\n88\n\n\n\n\n... (190 rows omitted)\n\n\nBefore visualizing anything, let’s look at the table itself.\n\ntop_movies.select('Title', 'Age').show(6)\n\n\n\n\nTitle\nAge\n\n\n\n\nGone with the Wind\n86\n\n\nStar Wars\n48\n\n\nThe Sound of Music\n60\n\n\nE.T.: The Extra-Terrestrial\n43\n\n\nTitanic\n28\n\n\nThe Ten Commandments\n69\n\n\n\n\n... (194 rows omitted)\n\n\n\nmin(ages), max(ages)\n\n(8, 104)",
     "crumbs": [
@@ -10833,7 +10949,7 @@
   {
     "objectID": "08-histograms/exercises.html#histogram-counts",
     "href": "08-histograms/exercises.html#histogram-counts",
-    "title": "Histogram Exercises",
+    "title": "Exercises",
     "section": "Histogram: Counts",
     "text": "Histogram: Counts\nIf you want to make equally sized bins, np.arange() is a great tool to help you.\n\ntop_movies.hist('Age', bins = np.arange(0, 110, 10), unit = 'Year', density=False)",
     "crumbs": [
@@ -10844,7 +10960,7 @@
   {
     "objectID": "08-histograms/exercises.html#histograms-density",
     "href": "08-histograms/exercises.html#histograms-density",
-    "title": "Histogram Exercises",
+    "title": "Exercises",
     "section": "Histograms: Density",
     "text": "Histograms: Density\n\n# default is density=True\ntop_movies.hist('Age', bins = np.arange(0, 110, 10), unit = 'Year')\n\n\n\n\n\n\n\n\nHm…what is this density parameter? This is our first instance of a Boolean data type, which takes on the values of True or False.\nVerify that the bar areas are proportional to the counts in each bin:\n\ntop_movies_binned = top_movies.bin('Age', bins=np.arange(0, 110, 10))\ntop_movies_binned.show()\n\n\n\n\nbin\nAge count\n\n\n\n\n0\n12\n\n\n10\n35\n\n\n20\n41\n\n\n30\n28\n\n\n40\n25\n\n\n50\n23\n\n\n60\n18\n\n\n70\n10\n\n\n80\n7\n\n\n90\n0\n\n\n100\n0\n\n\n\n\n\n\nCustom bins\nYou can also pick your own bins. These are just bins that we picked out:\n\nmy_bins = make_array(0, 5, 10, 15, 25, 40, 65, 101)\n\nYou may then use the bin table method to make a table having your bins, along with the number of observations within each.\n\nbinned_data = top_movies.bin('Age', bins = my_bins)\nbinned_data\n\n\n\n\nbin\nAge count\n\n\n\n\n0\n0\n\n\n5\n12\n\n\n10\n18\n\n\n15\n42\n\n\n25\n44\n\n\n40\n59\n\n\n65\n24\n\n\n101\n0\n\n\n\n\n\nNote: The last “bin” does not include any observations!!\n\n\nNow, plot the histogram!\n\ntop_movies.hist('Age', bins = my_bins, unit = 'Year')\n\n\n\n\n\n\n\n\n\nDiscussion Question (1 min): Compare the bins \\([25, 40)\\) and \\([40, 65)\\).\n\nWhich one has more movies?\nWhich one is more crowded?",
     "crumbs": [
@@ -10855,7 +10971,7 @@
   {
     "objectID": "08-histograms/exercises.html#practice-histogram-challenge-tasks",
     "href": "08-histograms/exercises.html#practice-histogram-challenge-tasks",
-    "title": "Histogram Exercises",
+    "title": "Exercises",
     "section": "[Practice] Histogram Challenge Tasks",
     "text": "[Practice] Histogram Challenge Tasks\nI would not worry about the technical details of the code until next week! Right now, I just want you to see the different styles of bar chart that we might use.\n\nTask: Find the height of the \\([40,65)\\) bin in the histogram above.\n\\[\\text{height} = \\frac{\\text{percent}}{\\text{width}}\\]\nAdd a column containing what percent of movies are in each bin (the area of each bin)\n\nnum_rows = top_movies.num_rows\nbinned_data = binned_data.with_column(\n                'Percent',\n                100*binned_data.column('Age count')/num_rows)\nbinned_data.show()\n\n\n\n\nbin\nAge count\nPercent\n\n\n\n\n0\n0\n0\n\n\n5\n12\n6\n\n\n10\n18\n9\n\n\n15\n42\n21\n\n\n25\n44\n22\n\n\n40\n59\n29.5\n\n\n65\n24\n12\n\n\n101\n0\n0\n\n\n\n\n\n\npercent = binned_data.where('bin', 40).column('Percent').item(0)\n\n\nwidth = 65 - 40\nheight = percent / width\nheight\n\n1.18\n\n\n\n\nTask: Find the heights of the (rest of the) bins.\n\\[\\text{height} = \\frac{\\text{percent}}{\\text{width}}\\]\nRemember that the last row in the table does not represent a bin!\n\nheight_table = binned_data.take(np.arange(binned_data.num_rows - 1))\nheight_table \n\n\n\n\nbin\nAge count\nPercent\n\n\n\n\n0\n0\n0\n\n\n5\n12\n6\n\n\n10\n18\n9\n\n\n15\n42\n21\n\n\n25\n44\n22\n\n\n40\n59\n29.5\n\n\n65\n24\n12\n\n\n\n\n\nRemember np.diff?\n\nbin_widths = np.diff(binned_data.column('bin'))\n\n\nbin_widths\n\narray([ 5,  5,  5, 10, 15, 25, 36])\n\n\n\nheight_table = height_table.with_column('Width', bin_widths)\nheight_table\n\n\n\n\nbin\nAge count\nPercent\nWidth\n\n\n\n\n0\n0\n0\n5\n\n\n5\n12\n6\n5\n\n\n10\n18\n9\n5\n\n\n15\n42\n21\n10\n\n\n25\n44\n22\n15\n\n\n40\n59\n29.5\n25\n\n\n65\n24\n12\n36\n\n\n\n\n\n\nheight_table = height_table.with_column('Height',\n                                        height_table.column('Percent')/height_table.column('Width'))\nheight_table\n\n\n\n\nbin\nAge count\nPercent\nWidth\nHeight\n\n\n\n\n0\n0\n0\n5\n0\n\n\n5\n12\n6\n5\n1.2\n\n\n10\n18\n9\n5\n1.8\n\n\n15\n42\n21\n10\n2.1\n\n\n25\n44\n22\n15\n1.46667\n\n\n40\n59\n29.5\n25\n1.18\n\n\n65\n24\n12\n36\n0.333333\n\n\n\n\n\nTo check our work one last time, let’s see if the numbers in the last column match the heights of the histogram:\n\ntop_movies.hist('Age', bins = my_bins, unit = 'Year')",
     "crumbs": [
@@ -10866,7 +10982,7 @@
   {
     "objectID": "08-histograms/exercises.html#practice-bar-chart-variants",
     "href": "08-histograms/exercises.html#practice-bar-chart-variants",
-    "title": "Histogram Exercises",
+    "title": "Exercises",
     "section": "[Practice] Bar chart variants",
     "text": "[Practice] Bar chart variants\n\nOne categorical attribute\n\ncones = Table.read_table('data/cones.csv')\ncones\n\n\n\n\nFlavor\nColor\nPrice\n\n\n\n\nstrawberry\npink\n3.55\n\n\nchocolate\nlight brown\n4.75\n\n\nchocolate\ndark brown\n5.25\n\n\nstrawberry\npink\n5.25\n\n\nchocolate\ndark brown\n5.25\n\n\nbubblegum\npink\n4.75\n\n\n\n\n\n\nflavor_table = cones.group('Flavor')\nflavor_table\n\n\n\n\nFlavor\ncount\n\n\n\n\nbubblegum\n1\n\n\nchocolate\n3\n\n\nstrawberry\n2\n\n\n\n\n\n\nflavor_table.barh('Flavor')\n\n\n\n\n\n\n\n\n\n\nOne categorical attribute, one numerical attribute\n\ncone_average_price_table = cones.drop('Color').group('Flavor', np.average)\ncone_average_price_table\n\n\n\n\nFlavor\nPrice average\n\n\n\n\nbubblegum\n4.75\n\n\nchocolate\n5.08333\n\n\nstrawberry\n4.4\n\n\n\n\n\n\ncone_average_price_table.barh('Flavor')\n\n\n\n\n\n\n\n\n\n\nTwo categorical attributes\n(We will cover pivot in more detail next week)\n\ncones_pivot_table = cones.pivot('Flavor','Color')\ncones_pivot_table\n\n\n\n\nColor\nbubblegum\nchocolate\nstrawberry\n\n\n\n\ndark brown\n0\n2\n0\n\n\nlight brown\n0\n1\n0\n\n\npink\n1\n0\n2\n\n\n\n\n\n\ncones_pivot_table.barh('Color')",
     "crumbs": [

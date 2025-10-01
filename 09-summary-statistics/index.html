@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Histograms and Ranges</title>
+<title>Percentiles and Box Plots</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../08-histograms/exercises.html" rel="next">
-<link href="../07-visualizations/charts.html" rel="prev">
+<link href="../09-summary-statistics/center-spread.html" rel="next">
+<link href="../08-histograms/exercises.html" rel="prev">
 <link href="../assets/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -81,6 +81,35 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </script>
 <!--<script async src=”https://siteimproveanalytics.com/js/siteanalyze_6294756.js”></script>-->
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
@@ -94,7 +123,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../08-histograms/index.html">L08: Histograms</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../09-summary-statistics/index.html">L09: Summary Statistics</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -312,16 +341,16 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../08-histograms/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../08-histograms/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">L08: Histograms</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../08-histograms/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../08-histograms/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Histograms and Ranges</span></a>
   </div>
 </li>
@@ -335,16 +364,16 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../09-summary-statistics/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../09-summary-statistics/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">L09: Summary Statistics</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../09-summary-statistics/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../09-summary-statistics/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Percentiles and Box Plots</span></a>
   </div>
 </li>
@@ -378,9 +407,15 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#ranges" id="toc-ranges" class="nav-link active" data-scroll-target="#ranges">Ranges</a></li>
-  <li><a href="#histograms" id="toc-histograms" class="nav-link" data-scroll-target="#histograms">Histograms</a></li>
-  <li><a href="#lecture-notebook" id="toc-lecture-notebook" class="nav-link" data-scroll-target="#lecture-notebook">Lecture Notebook</a></li>
+  <li><a href="#summary-statistics" id="toc-summary-statistics" class="nav-link active" data-scroll-target="#summary-statistics">Summary Statistics</a></li>
+  <li><a href="#percentiles" id="toc-percentiles" class="nav-link" data-scroll-target="#percentiles">Percentiles</a>
+  <ul class="collapse">
+  <li><a href="#five-number-summary" id="toc-five-number-summary" class="nav-link" data-scroll-target="#five-number-summary">Five-number summary</a></li>
+  </ul></li>
+  <li><a href="#box-plots" id="toc-box-plots" class="nav-link" data-scroll-target="#box-plots">Box Plots</a>
+  <ul class="collapse">
+  <li><a href="#when-to-use-box-plots" id="toc-when-to-use-box-plots" class="nav-link" data-scroll-target="#when-to-use-box-plots">When to use box plots?</a></li>
+  </ul></li>
   <li><a href="#external-reading" id="toc-external-reading" class="nav-link" data-scroll-target="#external-reading">External Reading</a></li>
   </ul>
 </nav>
@@ -390,8 +425,8 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Histograms and Ranges</h1>
-<p class="subtitle lead">Distributions and the area principle</p>
+<h1 class="title">Percentiles and Box Plots</h1>
+<p class="subtitle lead">Order statistics</p>
 </div>
 
 
@@ -408,10 +443,14 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </header>
 
 
-<p>There is an existing chapter that fully describes histograms. We highly recommend you read the textbook, then review the Data 6 lecture notebook.</p>
-<section id="ranges" class="level2">
-<h2 class="anchored" data-anchor-id="ranges">Ranges</h2>
-<p><code>np.arange</code> is a NumPy function useful for producing sequences of equally spaced numbers. Read the chapter for more details.</p>
+<section id="summary-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="summary-statistics">Summary Statistics</h2>
+<p><strong>Summary statistics</strong> are used to summarize a set of observations. These numbers often describe data distributions, though they are certainly not replacements for visualizations, which can describe the entire distribution in more interpretable detail.</p>
+<p>For categorical variables, one summary statistic is the most common value that appears in the dataset.</p>
+<p>For numerical variables, there are many more summary statistics that collectively describe <strong>center</strong> and <strong>spread</strong>. We’ll discuss these in much more detail soon, but first we must introduce a statistical concept called <strong>percentiles</strong>.</p>
+</section>
+<section id="percentiles" class="level2">
+<h2 class="anchored" data-anchor-id="percentiles">Percentiles</h2>
 <div class="callout callout-style-default callout-note callout-titled" title="Read _Inferential Thinking_">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -422,71 +461,56 @@ Read <em>Inferential Thinking</em>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Read <a href="https://inferentialthinking.com/chapters/05/2/Ranges.html">Ch 5.2</a>, which describes the <code>np.arange</code> function.</p>
+<p>Read <a href="https://inferentialthinking.com/chapters/13/1/Percentiles.html">Ch 13.1</a>, which defines percentiles.</p>
 </div>
 </div>
 <p>Before continuing, make sure that you:</p>
 <ul>
-<li>Know that the full function signature of <code>np.arange(start, end, step)</code>.</li>
-<li>Know what the default arguments for <code>start</code> and/or <code>step</code> are when you pass in one or two arguments.</li>
-<li>Remember that a range always includes its <code>start</code> value, but does not include its <code>end</code> value. It counts up by <code>step</code>, and it stops before it gets to the <code>end</code>.</li>
+<li><p>Understand the definition of percentile:</p>
+<blockquote class="blockquote">
+<p>The <span class="math inline">\(p\)</span>-th percentile of a collection is the smallest value in the collection that is at least as large as <span class="math inline">\(p\)</span>% of all the values.</p>
+</blockquote></li>
+<li><p>Can compute a given percentile from a small array, e.g., <code>array([ 6,  7,  9, 12, 17])</code></p></li>
 </ul>
+<section id="five-number-summary" class="level3">
+<h3 class="anchored" data-anchor-id="five-number-summary">Five-number summary</h3>
+<p>As described in the chapter above, percentiles describe quartiles:</p>
+<ul>
+<li>First quartile (“Q1”): 25th percentile</li>
+<li>Median: 50th percentile</li>
+<li>Third quartile (“Q2”): 75th percentile</li>
+</ul>
+<p>The <strong>five-number summary</strong> is defined as: * Minimum * First quartile * Median * Third quartile * Maximum</p>
+<p><strong>Challenge</strong>: What pecentiles are the minimum and maximum, respectively? Use the definition of percentile in the textbook.</p>
 </section>
-<section id="histograms" class="level2">
-<h2 class="anchored" data-anchor-id="histograms">Histograms</h2>
-<div class="callout callout-style-default callout-note callout-titled" title="Read _Inferential Thinking_">
+</section>
+<section id="box-plots" class="level2">
+<h2 class="anchored" data-anchor-id="box-plots">Box Plots</h2>
+<p>A <strong>box plot</strong>—also known as a box-and-whisker plot— is a visual representation of the five-number summary.</p>
+<p>Refer to the <a href="https://docs.google.com/presentation/d/19heoEFT4o65jGiWT0kUhDIZQke_xOw7h1uK0PrnVkc4/edit?slide=id.g387c21d64ba_0_947#slide=id.g387c21d64ba_0_947">Fall 2025 lecture slides</a> for a description of box plots. The accompanying lecture notebook has an activity to aid you in interpreting box plots.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="In this course">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Read <em>Inferential Thinking</em>
+In this course
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Read <a href="https://inferentialthinking.com/chapters/07/2/Visualizing_Numerical_Distributions.html">Ch 7.2</a>, which describes histograms in detail.</p>
+<p>You will not need to write code to plot box plots, but you should be able to draw them by hand given a five-number summary. You should also be able to interpret and compare sets of box plots.</p>
 </div>
 </div>
-<p>Before continuing, make sure that you:</p>
-<ul>
-<li>Understand terminology related to histograms:
-<ul>
-<li>Bins (lower bound, upper bound)</li>
-<li>Density, area, proportion.</li>
-</ul></li>
-<li>Can use the area principle to explain histogram shape and bar density, area, and dimensions.</li>
-<li>Can compute area and proportion from bar dimensions.</li>
-<li>Can determine use cases for using bar charts over histograms, and vice versa.</li>
-<li>Can use the <code>hist</code> method and specify the optional parameter <code>density</code> as <code>True</code> or <code>False</code></li>
-</ul>
+<section id="when-to-use-box-plots" class="level3">
+<h3 class="anchored" data-anchor-id="when-to-use-box-plots">When to use box plots?</h3>
+<p>Box plots are somewhat between a histogram and summary statistics in terms of interpretability. By ordering and visualizing the five-number summary, box plots help data scientsts understand where data are concentrated (e.g., in the interquartile range), and whether the data exhibits some skew (e.g., in the whiskers).</p>
+<p>Box plots are an abstraction of the histogram—effectively, it plots four equally-sized bins of data on one-dimension. Box plots are therefore often used to compare different subsets of distributions to one another. But to understand more about any given distribution, plot a histogram, or look at individual records.</p>
 </section>
-<section id="lecture-notebook" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-notebook">Lecture Notebook</h2>
-<p>This notebook mostly covers the <code>hist</code> Table method in the <code>datascience</code> package. See the <a href="../reference.html">Data 6 Python Reference</a> for full information.</p>
-<p><code>tbl.hist(column)</code>: This table method has many optional arguments, but we highlight the most important ones here:</p>
-<ul>
-<li><code>bins</code>: Specify bounds of bins, as an array. All but the last element of the array specifies bin lower bounds; the last element specifies the upper bound of the rightmost bin. If not specified, the default produces 10 equally spaced bins.</li>
-<li><code>density</code>: <strong>Boolean</strong> value (<code>True</code> or <code>False</code>). <code>True</code> by default calculates height as percent per unit. If <code>False</code>, calculates height as count in bin.</li>
-</ul>
-<!-- ## `hist` Table method reference
-
-We will not test the details of this method other than what is on the [Data 6 Python Reference](../reference.html), but we are sharing the full description here.
-
-
-::: {#b323a8e6 .cell execution_count=2}
-``` {.python .cell-code}
-Table.hist?
-```
-:::
-
-
--->
 </section>
 <section id="external-reading" class="level2">
 <h2 class="anchored" data-anchor-id="external-reading">External Reading</h2>
 <ul>
-<li>(mentioned in notes) <em>Computational and Inferential Thinking</em>, <a href="https://inferentialthinking.com/chapters/05/2/Ranges.html">Ch 5.2</a></li>
-<li>(mentioned in notes) <em>Computational and Inferential Thinking</em>, <a href="https://inferentialthinking.com/chapters/02/1/observation-and-visualization-john-snow-and-the-broad-street-pump.html">Ch 2.1</a></li>
+<li>(mentioned in notes) <em>Computational and Inferential Thinking</em>, <a href="https://inferentialthinking.com/chapters/13/1/Percentiles.html">Ch 13.1</a></li>
 </ul>
 
 
@@ -894,13 +918,13 @@ Table.hist?
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../07-visualizations/charts.html" class="pagination-link" aria-label="Bar Charts, Scatter Plots, Line Graphs">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Bar Charts, Scatter Plots, Line Graphs</span>
+      <a href="../08-histograms/exercises.html" class="pagination-link" aria-label="Exercises">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Exercises</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../08-histograms/exercises.html" class="pagination-link" aria-label="Exercises">
-        <span class="nav-page-text">Exercises</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../09-summary-statistics/center-spread.html" class="pagination-link" aria-label="Center and Spread">
+        <span class="nav-page-text">Center and Spread</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

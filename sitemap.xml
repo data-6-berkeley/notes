@@ -42,7 +42,11 @@
   </url>
   <url>
     <loc>https://data-6-berkeley.github.io/notes/07-visualizations/encoding.html</loc>
-    <lastmod>2025-09-29T16:58:08.906Z</lastmod>
+    <lastmod>2025-10-01T20:42:54.128Z</lastmod>
+  </url>
+  <url>
+    <loc>https://data-6-berkeley.github.io/notes/09-summary-statistics/index.html</loc>
+    <lastmod>2025-10-01T20:56:45.029Z</lastmod>
   </url>
   <url>
     <loc>https://data-6-berkeley.github.io/notes/05-variables/index.html</loc>
@@ -649,6 +653,10 @@
     <lastmod>2025-09-15T15:51:03.701Z</lastmod>
   </url>
   <url>
+    <loc>https://data-6-berkeley.github.io/notes/09-summary-statistics/center-spread.html</loc>
+    <lastmod>2025-10-01T20:57:54.241Z</lastmod>
+  </url>
+  <url>
     <loc>https://data-6-berkeley.github.io/notes/07-visualizations/charts.html</loc>
     <lastmod>2025-09-24T01:22:57.927Z</lastmod>
   </url>
@@ -682,7 +690,7 @@
   </url>
   <url>
     <loc>https://data-6-berkeley.github.io/notes/08-histograms/exercises.html</loc>
-    <lastmod>2025-09-30T16:31:39.502Z</lastmod>
+    <lastmod>2025-10-01T20:36:28.782Z</lastmod>
   </url>
   <url>
     <loc>https://data-6-berkeley.github.io/notes/02-datatypes/index.html</loc>
