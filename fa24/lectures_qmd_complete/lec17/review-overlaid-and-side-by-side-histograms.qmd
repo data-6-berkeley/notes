@@ -1,0 +1,44 @@
+---
+title: "Review: Overlaid and Side-by-Side Histograms"
+subtitle: "From Lecture 17"
+---
+
+## Review: Histograms
+
+- 1. Review: Histograms
+- 2. Overlaid and Side-by-Side Histograms
+- 3. Grouped Bar Charts
+- 4. Scatter Plots
+- 5. Customizing Scatter Plots
+- 6. Line Plots
+- 7. Multiple Line Plots
+- ➤
+
+## Overlaid and Side-by-Side Histograms
+
+- 1. Review: Histograms
+- 2. Overlaid and Side-by-Side Histograms
+- 3. Grouped Bar Charts
+- 4. Scatter Plots
+- 5. Customizing Scatter Plots
+- 6. Line Plots
+- 7. Multiple Line Plots
+- ➤
+
+## Histograms
+
+- A histogram visualizes the distribution of a numerical variable by binning. The method
+- t.hist(column, density = False)
+- creates a histogram of the column column of t. This column must contain numerical values.
+- It automatically chooses bins for us. We can change them.
+- We will always set  density = False.
+
+## Overlaid Bar Charts vs. Overlaid Histograms
+
+- Overlaid Histograms visualize the relationship between one continuous numerical variable and one categorical variable
+- There should only be one y value for every x value.
+- Useful for comparing numerical distributions
+- Overlaid Bar Charts visualize the relationship of two or more categorical variables (normally same categories).
+- Useful for comparing categorical distributions
+
+

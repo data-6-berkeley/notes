@@ -1,0 +1,18 @@
+---
+title: "Jupyter Notebooks, Arithmetic"
+subtitle: "Lecture 02"
+---
+
+This chapter covers the key concepts from Lecture 02.
+
+## Topics Covered
+
+* [Programming in Python](programming-in-python.qmd)
+* [What Is Python Code?](what-is-python-code.qmd)
+* [Where Do We Write Code?](where-do-we-write-code.qmd)
+* [Arithmetic](arithmetic.qmd)
+* [Expressions and Operators](expressions-and-operators.qmd)
+* [Example: Incidence](example-incidence.qmd)
+* [Jupyter Shortcuts](jupyter-shortcuts.qmd)
+* [Comments, Data Types, and Errors](comments-data-types-and-errors.qmd)
+

@@ -1,0 +1,22 @@
+---
+title: "1973 UC Berkeley Graduate Admissions"
+subtitle: "From Lecture 16"
+---
+
+## 1973 UC Berkeley Graduate Admissions
+
+- 1973 UC Berkeley Graduate Admissions
+- Simpson’s Paradox
+- ➤
+
+## UC Berkeley, Fall 1973
+
+- UC Berkeley graduate admissions data from the Fall of 1973.
+- Admissions data disaggregated by the six largest departments, labeled A through F.
+- Freedman, Pisani, and Purves. “Sex Bias in Graduate Admissions.” Statistics (1978) Chapter 2.  pp. 17-20.
+- Bickel, Hammel, and O’Connell. “Sex Bias in Graduate Admissions:” Data from Berkeley“ Science vol. 187 (1975) pp. 398-404.
+- Wikipedia [link]
+- Greater percentage of successful applicantsthan the other listed gender
+- Greater number of applicants than the other listed gender
+
+

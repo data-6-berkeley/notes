@@ -1,0 +1,140 @@
+---
+title: "Units of Analysis"
+subtitle: "From Lecture 06"
+---
+
+## Units of Analysis
+
+- ➤
+- Units of Analysis
+- Social Science Research
+- Materials-Based Research
+- Aggregation and Disaggregation
+
+## Units of Analysis
+
+- The types of entities we are analyzing:
+- Individuals
+- Groups (families, classes, gangs, ...)
+- Localities (cities, counties, countries, …)
+- Organizations, industries, political units, social artifacts, etc.
+
+<details><summary>Speaker notes</summary>
+
+SOC5 Lecture 2
+
+</details>
+
+## Units of Analysis
+
+- The types of entities we are analyzing:
+- Individuals
+- Groups (families, classes, gangs, ...)
+- Localities (cities, counties, countries, …)
+- Organizations, industries, political units, social artifacts, etc.
+- Income
+- individualincomehousehold incomeaverage income
+- Race/Ethnicity
+- \# People
+- individualrace/ethnicity–population demographics
+- –\# memberspopulation size
+- Unit of analysis is directly linked to the concept of “variables”.Variables describe the unit of analysis.
+
+<details><summary>Speaker notes</summary>
+
+SOC5 Lecture 2
+
+</details>
+
+## Matching: What is the unit of analysis?
+
+- Are schools in poorer neighborhoods more prone to violence than schools in richer neighborhoods?
+- Are women more likely than men to be religious?
+- Do records that win Grammy awards sell more than otherwise-similar records that do not win Grammy awards?
+- Are married couples richer than non-married cohabiting couples?
+- Individuals
+- Couples
+- Married couples
+- Non-married couples
+- Families
+- Gender groups
+- Neighborhoods
+- Schools
+- Records
+- Grammy awards
+- Religions
+- Something else
+- From SOC 5: Evaluation of Evidence
+
+<details><summary>Speaker notes</summary>
+
+Schools
+Gender groups
+Records
+Couples
+
+</details>
+
+## Gathering Data for Research and Analysis
+
+- Conduct surveys, experiments, interviews, ethnography,measurements…
+- Data
+- Conceptualize variables
+- Pose research question and theory
+- +
+- +
+- All data are created/generated from human input:
+- Definition of variables
+- Research design and measurement
+- However, the researcher and data scientist are often not the same person.Data scientists therefore need to consider the context of how researchers generated data from existing materials.
+
+<details><summary>Speaker notes</summary>
+
+SOC 5 textbook p. 29
+
+Surveys: Participants answer a series of questions
+Experiments: trying an intervention, measuring outcomes, etc.
+Interviews: researchers actively talk to participants, generally messier data than surveys
+Ethnography: participant observation (passive)
+
+</details>
+
+## Gathering Data for Research and Analysis
+
+- A researcher considers both validity and generalizability throughout the data gathering process.
+- Conduct surveys, experiments, interviews, ethnography,measurements…
+- Data
+- Conceptualize variables
+- Pose research question and theory
+- +
+- +
+- Validity A quality of a measure concerning how accurate it is.
+- Internal Validity: How accurately are we measuring the defined concepts?
+- External Validity:
+  - How representative is the group being studied?
+  - How “real” is this study?
+- Generalizability The extent to which results or conclusions based on one population can be applied to others.
+
+<details><summary>Speaker notes</summary>
+
+SOC 5 textbook p. 29
+
+Surveys: Participants answer a series of questions
+Experiments: trying an intervention, measuring outcomes, etc.
+Interviews: researchers actively talk to participants, generally messier data than surveys
+Ethnography: participant observation (passive)
+
+</details>
+
+## Translating between Units of Analysis
+
+- Aggregation - “Roll up” a variable measured on a fine-grained unit of analysis (e.g., individuals) into a variable on a coarser-grained unit of analysis (e.g., groups)
+- Income of many individuals in geographic regions → average income by region
+- Usually done through counting or averaging
+- Disaggregation - “Drill down” a variable measured on a coarser-grained unit of analysis (e.g., region) into a variable on a coarser-grained unit of analysis (e.g., groups within that region)
+- Generally performed to identify confounding (or mediating) variables to disentangle the impact of certain variables
+- Average income by geographic region → average income by race/ethnicity by region
+- How to do this?
+- Without fine-grained data, it is impossible to go from a high-level, aggregated view of data down to a lower-level, disaggregated view!
+
+

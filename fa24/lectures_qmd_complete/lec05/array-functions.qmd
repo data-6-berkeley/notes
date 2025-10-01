@@ -1,0 +1,67 @@
+---
+title: "Array Functions"
+subtitle: "From Lecture 05"
+---
+
+## Array Functions
+
+- 1. Array Functions
+- 2. NumPy
+- 3. Indexing
+- ➤
+
+## Standard Functions
+
+- While the function names are identical to what we saw for int/float/strs, the call expressions evaluate differently with our new array data type.
+
+## Element-wise NumPy Functions
+
+- NumPy functions
+- Many of these functions work on both arrays and individual numbers.
+- We’ll point you to NumPy functions as they come up; you don’t need to memorize them. The course website has a list of some of them.
+- N-length array
+- N-length array
+
+## Common NumPy Functions
+
+- NumPy functions
+- N-length array
+- N-length array
+
+## Even More Functions
+
+- NumPy functions
+- N-length array
+- N-length array
+
+## Questions About Functions?
+
+- Data 6 Python Reference™
+
+## Array Methods
+
+- Methods are functions that we call with “dot” syntax. There are several array methods that make it easy to calculate values of interest.
+- Terminology note: Method calls are where the function operates directly on the array arr.
+- In these examples, method calls are equivalent to the NumPy package functions.
+- The most common array method is item(), which is used for array indexing.
+
+## An Element’s Index Is Its Position in an Array
+
+- When people stand in a line, each person has a position.
+- Similarly, each element (i.e., value) of an array has a position – called its index.
+- Person 1
+- Person 7
+- Python, like most programming languages, is 0-indexed. This means that in an array, the first element has index 0, not 1.
+- Index 0
+- Index 6
+- Indices
+- 0   1   2   3   4
+- For a length-5 array:
+
+## Array Indexing
+
+- We can access an element in an array by using its index and the item() method:
+- arr.item(index)
+- Though int\_arr has 5 elements, the largest valid index is 4.
+
+

@@ -1,0 +1,15 @@
+---
+title: "Create new tables"
+subtitle: "From Lecture 07"
+---
+
+## Create new tables
+
+- ➤
+- 1. Table Attributes and Methods
+- 2. select, drop, and add columns
+- 3. Create new tables
+- 4. More Table Methods and Documentation
+- 5. Demo: WNBA Data
+
+

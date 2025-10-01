@@ -1,0 +1,67 @@
+---
+title: "Pivot Tables with .pivot"
+subtitle: "From Lecture 13"
+---
+
+## Grouping, Pivoting
+
+- Data 6 Fall 2024
+- LECTURE 12
+- Extracting and aggregating information from tables.
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+
+## Grouping with .group
+
+- 1. Grouping with .group
+- 2. Grouping by Multiple Columns
+- 3. Pivot Tables with .pivot
+- ➤
+
+## Aggregating with .group()
+
+- The term “group” in data science is most commonly associated with data aggregation and disaggregation.
+- Aggregation: A process in which information is gathered and expressed in collective or summary form.
+- Useful for getting information about groups based on variables (age, profession, income) while simultaneously preserving confidentiality of individuals
+- Disaggregation (aka disentanglement): A process of taking aggregated data and breaking it down into smaller information units.
+- Useful to highlight outcomes that pertain to individual subsets of results/outcomes (e.g., gender, location, socio-cultural/ethnic background, age groups, etc.) to expose hidden trends
+- Source
+
+<details><summary>Speaker notes</summary>
+
+https://www.nccih.ca/docs/context/FS-ImportanceDisaggregatedData-EN.pdf
+
+</details>
+
+## Pivot Tables
+
+- 1. Grouping with .group
+- 2. Grouping by Multiple Columns
+- 3. Pivot Tables with .pivot
+- ➤
+
+## cars.pivot('Cylinders', 'Brand')
+
+- cars.pivot('Cylinders', 'Brand')
+- cars
+
+## .pivot()
+
+- The method t.pivot(columns, rows) is an alternative to grouping by exactly two columns.
+- First argument: the column from t you want to make up the columns of the output.
+  - Each unique value in the column columns will get its own column.
+- Second argument: the column from t you want to make up the rows of the output.
+  - Each unique value in the column rows will get its own row.
+
+## .pivot()
+
+- Like with group, the default with pivot is to count the number of occurrences of a particular combination. But we can provide two optional arguments:
+- t.pivot(columns, rows, values, collect)
+- This creates a new table where
+- The columns are specified by columns.
+- The rows are specified by rows.
+- The entries are specified by values, combined using the function collect.
+- For example:
+- t.pivot('Cylinders', 'Brand', 'MPG', np.mean)
+- describes the average MPG for every combination of Brand and Cylinders.
+
+

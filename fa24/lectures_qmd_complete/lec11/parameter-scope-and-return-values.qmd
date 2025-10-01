@@ -1,0 +1,58 @@
+---
+title: "Parameter Scope and Return Values"
+subtitle: "From Lecture 11"
+---
+
+## Functions and Parameters
+
+- 1. Functions and Parameters
+- 2. Parameter Scope and Return Values
+- 3. String Methods
+- 4. Demo
+- ➤
+
+## Parameters
+
+- Parameters are the names that a function requires as an input, that are defined in its “signature”.
+- Parameters are placeholders for the values that will be passed into the function when it is called.
+- \# This function has one parameter, x.
+- \# When we call the function, the value we pass in
+- \# as an argument will replace x in the computation.
+- def triple(x):
+- return x\*3
+
+## Parameter Scope and Return Values
+
+- 1. Functions and Parameters
+- 2. Parameter Scope and Return Values
+- 3. String Methods
+- 4. Demo
+- ➤
+
+## Scope
+
+- The names you choose for a function’s parameters are only known to that function (known as “local scope”). The rest of your notebook is unaffected by parameter names.
+
+## Scope
+
+- Similarly, you can choose parameter names that also exist as names outside of your function.
+- We do this sometimes, but it can get confusing.
+
+## Scope
+
+- You can also use names that don’t overlap with parameter names within your function.
+- In such cases, the function looks “outside” of its definition to the rest of your notebook to see if it can find that name anywhere.
+
+## Aside: “Out of Scope”
+
+- In Data 6 (and other CS/DS classes), when we say a concept is “out of scope”, this is where it comes from.
+
+## Return Values
+
+- Functions are not required to “return” anything. If a function doesn’t explicitly return anything, it will return None (like print).
+
+## Return Statements
+
+- Once we reach a return keyword, our function is done running. Nothing after it is run.
+
+

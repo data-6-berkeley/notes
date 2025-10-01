@@ -1,0 +1,17 @@
+---
+title: "LLMs"
+subtitle: "Lecture 24"
+---
+
+This chapter covers the key concepts from Lecture 24.
+
+## Topics Covered
+
+* [LLMs](llms.qmd)
+* [Local LLMs Demo](local-llms-demo.qmd)
+* [Training Data](training-data.qmd)
+* [AI Chatbot Demo](ai-chatbot-demo.qmd)
+* [Risks](risks.qmd)
+* [Improvements](improvements.qmd)
+* [API Calls](api-calls.qmd)
+

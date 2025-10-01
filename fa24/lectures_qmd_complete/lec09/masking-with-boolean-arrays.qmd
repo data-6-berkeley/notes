@@ -1,0 +1,33 @@
+---
+title: "Masking with Boolean Arrays"
+subtitle: "From Lecture 09"
+---
+
+## Applying with .apply
+
+- 1. Motivation
+- 2. Applying with .apply
+- 3. Masking with Boolean Arrays
+- ➤
+
+## Masking with 
+
+Boolean Arrays
+
+- 1. Motivation
+- 2. Applying with .apply
+- 3. Masking with Boolean Arrays
+- ➤
+
+## Masks and Arrays
+
+- Masking – also known as boolean indexing – is the process of indexing into an array or table with a array of booleans.
+- Only the elements at indexes 0 and 3.
+
+## Masks with Tables
+
+- We can achieve the same behavior with tables – by using where with just a single argument.
+- Previously, where required two arguments.
+- Just one argument: a list of booleans.
+
+

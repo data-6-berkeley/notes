@@ -1,0 +1,13 @@
+---
+title: "Bickel Case Study"
+subtitle: "Lecture 16"
+---
+
+This chapter covers the key concepts from Lecture 16.
+
+## Topics Covered
+
+* [Wrap up numerical variables & multiple variables](wrap-up-numerical-variables-multiple-variables.qmd)
+* [1973 UC Berkeley Graduate Admissions](1973-uc-berkeley-graduate-admissions.qmd)
+* [Simpson’s Paradox](simpsons-paradox.qmd)
+

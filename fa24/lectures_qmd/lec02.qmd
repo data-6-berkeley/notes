@@ -1,0 +1,326 @@
+---
+title: "[Lec 02] Data 6 Fall 2024 - Jupyter Notebooks, Arithmetic"
+---
+
+## Slide 1: Jupyter Notebooks, Arithmetic
+
+- Data 6 Fall 2024
+- LECTURE 02
+- Getting familiar with our computing environment, and
+- writing our first Python programs.
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+- data6.org/fa24/syllabus/\#acknowledgements-
+
+## Slide 2: Lecture 2
+
+- Make sure to fill out the welcome survey, posted on website!
+- Introduction post (also due next Tuesday)
+- Update - three quick check drops
+- Lecture recordings by request
+- Have a good long weekend!
+- (Optional) Add songs to the collaborative playlist for pre-lecture vibes
+  - https://open.spotify.com/playlist/134DozgaTBxHXXta3fvydW?si=ad9e10b2e86d48d2&pt=fc545d61d6ebd5e6ce36910eabdc475a
+- Announcements!
+
+## Slide 3: Today’s Roadmap
+
+- Programming in Python
+  - What Is Python Code?
+  - Where Do We Write Code?
+- Arithmetic
+  - Expressions and Operators
+  - Example: Incidence
+- Jupyter Shortcuts
+- Comments, Data Types, and Errors
+- Lecture 02, Data 6 Fall 2024
+
+## Slide 4: Experiences with Coding
+
+## Slide 5: What is Python Code?
+
+- 1. Programming in Python
+- 2. Arithmetic
+- 3. Jupyter Shortcuts
+- 4. Comments, Data Types, and Errors
+- ➤
+
+## Slide 6: What is a computer program? What is code?
+
+- Code refers to a computer program writtenin a particular programming language.
+- In this class, we use the Python language to write Python code.
+- A computer program is a [set or sequence] of instructions in a programming language.				[Wikipedia]
+- Computer programs are nothing more than recipes: we write programs that tell the computer exactly what to do, and it does exactly that – nothing more, and nothing less.
+- Common (cold) take: computers are dumb.
+
+## Slide 7: Why Python?
+
+- Popular.
+- Variety of uses.
+  - Web development.
+  - Scientific computing.
+  - Data science and machine learning.
+  - Not really used for developing applications.
+- Data 8, CS61A, and more!
+- Easy to dive right in!
+
+## Slide 8: Where Do We Write Code?
+
+- 1. Programming in Python
+- 2. Arithmetic
+- 3. Jupyter Shortcuts
+- 4. Comments, Data Types, and Errors
+- ➤
+
+## Slide 9: Where do we write code?
+
+- Traditionally, code is written in a text editor or IDE, and then run in a command-line interface.
+- VS Code, a popular text editor.
+- Command Line Interface
+- While we could do everything in command-line interfaces, they aren’t the best suited for data science work, which often requires visualizations and written reports.
+
+## Slide 10: Where do we write code?
+
+- Jupyter Notebooks allow us to write and run code within a single document. They also allow us to embedded text and code. We will use these exclusively!
+- You will learn about more coding tools if you take more CS/DS classes.
+
+## Slide 11: A Brief History of Jupyter
+
+- Fernando Pérez’s Faculty Page
+
+## Slide 12: DataHub
+
+- We access all code in this class by going to
+- datahub.berkeley.edu
+- DataHub is a Berkeley-hosted server that runs Jupyter notebooks. All students have their own DataHub “container”; think of this as your own virtual computer.
+- This is where you will work on all assignments.
+- You will not need to install anything locally (meaning that you could theoretically do all assignments for this class on your phone). All you need is a web browser.
+- Course staff can access everything in your DataHub to help debug your code.
+- Works like magic! Let’s go there now.
+
+## Slide 13: Two ways to access Jupyter Notebooks
+
+- Accessing Jupyter Notebook
+- Go to datahub.berkeley.edu (if you want to make your own notebook)
+- From our course website: data6.org/fa24/
+
+## Slide 14: Why write code as a data scientist?
+
+- Compute
+- Visualize
+- Share
+
+## Slide 15: Expressions and Operators
+
+- 1. Programming in Python
+- 2. Arithmetic
+- 3. Jupyter Shortcuts
+- 4. Comments, Data Types, and Errors
+- ➤
+
+## Slide 16: Python as a calculator
+
+- For now, think of Python as a calculator:
+- Calculators take expressions and compute values.
+- 17
+- -1 + 3.14
+- 2 \*\* 3
+- (17 - 14) / 2
+- 15 % 2
+- The following are all expressions.
+- Notes:
+- Expressions consist of values (like 2) and operators (like + and \*\*).
+- Expressions evaluate to values.
+- expression
+
+## Slide 17: Order of Operations
+
+- Python expressions use the same order of operations that you learned in earlier math classes (PEMDAS).
+- But sometimes, it’s not clear which operator is evaluated first. When you’re not sure, or you want to fix a certain order, use parentheses.
+
+## Slide 18: Common Python Operators
+
+## Slide 19: Example: Incidence
+
+- 1. Programming in Python
+- 2. Arithmetic
+- 3. Jupyter Shortcuts
+- 4. Comments, Data Types, and Errors
+- ➤
+
+## Slide 20: Tuberculosis – United States, 2021
+
+- What is incidence?
+- Why use it here?
+- CDC Morbidity and Mortality Weekly Report (MMWR) 03/25/2022.
+- Check out the source for data!
+
+## Slide 21: Incidence Rate
+
+- Use Python to validate these values:
+- 2020 incidence
+- 2021 incidence
+- †TB incidence is computed as “Cases per 100,000 persons using mid-year population estimates from the U.S. Census Bureau.”
+- CDC MMWR source
+- U.S. Census population estimates source (2019), source (2020-2021)
+
+## Slide 22: Congratulations!
+
+- Incidence is useful when comparing case rates across differently sized populations.
+- You just wrote your first program.
+- 🎉
+
+## Slide 23: Tuberculosis – United States, 2021
+
+- What is incidence?
+- Why use it here?
+- CDC Morbidity and Mortality Weekly Report (MMWR) 03/25/2022.
+- Check out the source for data!
+- ✅
+- To explore in lab!
+
+## Slide 24: Jupyter Shortcuts
+
+- 1. Programming in Python
+- 2. Arithmetic
+- 3. Jupyter Shortcuts
+- 4. Comments, Data Types, and Errors
+- ➤
+
+## Slide 25: Summary So Far
+
+- When you run a code cell, it runs all of the expressions you’ve written in that cell and outputs only the value of the last evaluated expression.
+- You just wrote your first program.
+- (we will discuss workarounds next time)
+- Shift + Enter
+
+## Slide 26: Cells
+
+- Code cells. This is where you write and execute code.
+- When run, code cells output the value of the last evaluated expression.
+- Jupyter Notebooks are made up of cells. There are two main types of cells:
+- Markdown cells. This is where you write text and images that aren’t Python code.
+- You’ll explore Markdown in lab (documentation).
+- Markdown cells are always “run”, except when you’re editing them.
+- In this dropdown menu, you can view and change the type of cell you are currently editing.
+
+## Slide 27: Markdown Cells
+
+## Slide 28: Edit mode vs. command mode
+
+- Edit mode: when you’re actively typing in the cell.
+- Command mode: when you’re not actively typing in the cell.
+- Keyboard shortcuts are specific to the mode you’re using.
+- Hit the ESCAPE key on your keyboard to switch from edit mode to command mode.
+
+## Slide 29: Reference for Keyboard Shortcuts
+
+- Use this as a reference, don’t try to memorize these right now. Also, you can always use the toolbar!! You don’t have to use the keyboard shortcut.
+
+## Slide 30: Comments, Data Types, and Errors
+
+- 1. Programming in Python
+- 2. Arithmetic
+- 3. Jupyter Shortcuts
+- 4. Comments, Data Types, and Errors
+- ➤
+
+## Slide 31: Comments
+
+- Which version do you prefer?
+- Comments are used to explain what code does. Good programmers write code that is self-evident and use comments only where necessary. In assignments, we’ll also use comments to provide you with instructions.
+
+## Slide 32: Comments
+
+- Which version do you prefer?
+- Comments are used to explain what code does. Good programmers write code that is self-evident and use comments only where necessary. In assignments, we’ll also use comments to provide you with instructions.
+- You can have both code and comments on the same line.
+- Anything on a line after \# is a comment and is not evaluated.
+
+## Slide 33: Common Python Operators
+
+- ✅
+
+## Slide 34: Common Python Operators
+
+- Wait, why are there two division operators?
+
+## Slide 35: Data Types
+
+- We glossed over something earlier:
+- There are two different number data types to represent numbers in Python:
+- The data type of a value determines how Python evaluates expressions involving that value
+
+## Slide 36: Arithmetic operators with ints and floats
+
+- When you add, subtract, and multiply int’s, the result will always be an int.
+- Anytime you use a float in a calculation, the result is a float.
+
+## Slide 37: Two Different Division Operators + Modulo
+
+- When you add, subtract, and multiply int’s, the result will always be an int.
+- Anytime you use a float in a calculation, the result is a float.
+- Python has several division-related operators:
+- “Regular” division /
+- Integer division, //
+- Modulo operator, %
+- What is the modulo operator?
+
+## Slide 38: The Pitfalls of Floating Point
+
+- Sometimes when performing calculations with floating point numbers, you will see a small amount of random error added or subtracted to your result.
+- This is a consequence of how numbers are stored in computers. There’s nothing we can really do about it, but you should be aware of it!
+
+## Slide 39: Errors…
+
+## Slide 40: … everyone gets them
+
+## Slide 41: Errors
+
+- This will happen a lot: a central goal in this class is to learn how to interpret and address error messages.
+- …we get an error message.
+- If we try dividing by 0…
+
+## Slide 42: Syntax errors
+
+- Syntax errors create nonsensical Python code. These errors will soon become your close friends.
+- Notice that the error message tells you where in your code the error occurred (with a line number and an arrow). Use that!
+- Explore the code! Experimentation is encouraged. Hypothesize, edit/run code, and observe results
+
+## Slide 43: In Conclusion…
+
+## Slide 44: Summary
+
+- We write code to tell our computer what to do. In this class, and in many other settings, we use the Python programming language.
+- We write all of our code in Jupyter Notebooks, which allow us to see the output of our code in the same document in which we wrote our code. They’re commonly used in data science.
+- Python can be thought of as a calculator, that takes expressions and computes their values.
+- We learned several different arithmetic operators, each of which can be used in an expression.
+- Python stores integers and decimals in different ways.
+- Comments help make our code more readable and sustainable.
+- When our code has an error, the error message can help us fix it.
+
+## Slide 45: We covered a lot today. 
+Don’t try and memorize it all! 
+You will become more familiar with these commands as you work through labs and homework assignments.
+
+- We covered a lot today.
+- Don’t try and memorize it all!
+- You will become more familiar with these commands as you work through labs and homework assignments.
+- Don’t be discouraged!
+
+## Slide 46: Recap
+
+- What is code?
+- How do we run code?
+- Arithmetic.
+- Running our first programs.
+- Comments, number types, and errors.
+- Call Expressions
+- Names and Assignment Statements
+- Memory
+- Data Types
+- Next Time
+
+## Slide 47: Quick Check
+
+- https://docs.google.com/forms/d/e/1FAIpQLSd\_-F\_f1QIX0lbbFxav7l1ZuxAcS20PjYDk9-HBhLi\_BvWj4w/viewform?usp=sf\_link
+

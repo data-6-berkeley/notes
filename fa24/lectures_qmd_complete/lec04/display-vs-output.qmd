@@ -1,0 +1,23 @@
+---
+title: "Display vs. Output"
+subtitle: "From Lecture 04"
+---
+
+## A very useful function for human display: print()
+
+- The print() function displays values.
+- Works even if it’s not thelast line of a cell!
+- Strings are displayed without quotes
+
+## A very useful function for human display: print()
+
+- Terminology going forward:
+- Print means display
+- Output means cell output
+- The print() function displays values.
+- Works even if it’s not thelast line of a cell!
+- Strings are displayed without quotes
+- ⚠️ Note ⚠️
+- Print displays values.It does not produce cell output!
+
+

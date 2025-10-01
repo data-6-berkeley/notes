@@ -1,0 +1,7 @@
+---
+title: "[DATA 6] Quiz 1 Review"
+subtitle: "Lecture 12"
+---
+
+This chapter covers the key concepts from Lecture 12.
+

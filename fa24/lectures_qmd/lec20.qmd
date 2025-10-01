@@ -1,0 +1,142 @@
+---
+title: "Lecture 20 Data 6 Fall 2024 - More Iteration"
+---
+
+## Slide 1: More Iteration
+
+- Data 6 Fall 2024
+- LECTURE 20
+- Doing things over and over and over again (again).
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+
+## Slide 2: Week 11
+
+- Homework 4, Reading 5 released TONIGHT!!
+- Homework 4 due next Thursday
+- Reading 5 due next next Thursday
+- Quiz 2 next Friday
+  - Scope: group/pivot, visualizations, control, iteration
+- Survey due tonight!
+- Announcements!
+
+## Slide 3: Today’s Roadmap
+
+- Review: For Loops
+- While Loops
+- Examples
+- Demo: Sorting an Array
+- Lecture 20, Data 6 Fall 2024
+
+## Slide 4: Review: For Loops
+
+- 1. Review: For Loops
+- 2. While Loops
+- 3. Examples
+- 4. Demo: Sorting an Array
+- ➤
+
+## Slide 5: What would be the output of the following code?
+
+<details><summary>Speaker notes</summary>
+
+https://pythontutor.com/cp/composingprograms.html\#code=%0A%0Acounter%20%3D%200%0Alst%20%3D%20%5B1,%202,%203,%204%5D%0Afor%20i%20in%20range%28len%28lst%29%29%3A%20%23Range%20is%20a%20built-in%20version%20of%20np.arange%0A%20%20%20%20counter%20%2B%3D%20lst%5Bi%5D%0Aprint%28counter%29&cumulative=true&mode=edit&origin=composingprograms.js&py=3&rawInputLstJSON=%5B%5D
+
+</details>
+
+## Slide 6: What about this?
+
+## Slide 7: What about this?
+
+## Slide 8: Create a new array such that each element has it’s square added after it.
+
+## Slide 9: Copy Paste this Code into a Jupyter Notebook
+
+- from datascience import \*
+- import numpy as np
+- data = make\_array(1, 2, 3)
+- def square(i):
+- return i \* i
+- resulting\_array = ...
+- for ...:
+- resulting\_array = ...
+- resulting\_array = ...
+- resulting\_array
+
+## Slide 10: Skeleton Code
+
+## Slide 11: While Loops
+
+- 1. Review: For Loops
+- 2. While Loops
+- 3. Examples
+- 4. Demo: Sorting an Array
+- ➤
+
+## Slide 12: Two Types of Loops
+
+- Loops allow us to repeat the execution of code.
+- There are two types of loops in Python: the while loop and the for loop.
+- while <boolean expression>:
+- <while body>
+- “While this condition is true, repeat this code.”
+- for <elem> in <sequence>:
+- <for body>
+- “For each element of this sequence, repeat this code.”
+- Sequences include arrays, lists, strings and more.
+
+## Slide 13: While Loops
+
+- While loops repeat the code in their body while a certain boolean expression is True.
+- While loops are often used when we don’t know how many times we need our loop to repeat
+- We often keep track of some sort of counter and check it is above, below, or equal to a certain value.
+
+## Slide 14: Which Loop Should I Use? 🤔
+
+- For Loop: when you know how many iterations will be run in advance. This will usually be the case moving forward.
+- While Loop: when you don’t know how many iterations will be run in advance.
+
+## Slide 15: Which Loop Should I Use? 🤔
+
+- Both sum\_squares\_for and sum\_squares\_while have the same functionality. But we prefer the for loop implementation as it is more concise.
+- Do This!
+- Don’t Do This!
+
+## Slide 16: Examples
+
+- 1. Review: For Loops
+- 2. While Loops
+- 3. Examples
+- 4. Demo: Sorting an Array
+- ➤
+
+## Slide 17: Example: Fibonacci Sequence
+
+- 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, …
+
+## Slide 18: Example: Prime Factorization
+
+## Slide 19: In Conclusion…
+
+## Slide 20: Summary
+
+- For loops perform one iteration for each element of a sequence.
+- This is very useful when working with arrays
+- If we don’t have an array we’re working with, we can use np.arange() to make a range to iterate over
+- While loops repeat code as long as a boolean expression is True.
+- while <boolean expression>:
+- <while body>
+- “While this condition is true, repeat this code.”
+- for <elem> in <sequence>:
+- <for body>
+- “For each element of this sequence, repeat this code.”
+
+## Slide 21: Recap
+
+- Next Time
+- Iteration
+  - While Loops
+  - Sorting!
+- Quick Check:
+- https://docs.google.com/forms/d/e/1FAIpQLScOUAcRdVpYL0fB0b\_HUuOz10vu0VzcOTnRFMFBYpGzwQZvmA/viewform?usp=sf\_link
+- Dictionaries, File Formats
+

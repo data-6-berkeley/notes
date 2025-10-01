@@ -1,0 +1,12 @@
+---
+title: "Sampling and Randomness"
+subtitle: "Lecture 25"
+---
+
+This chapter covers the key concepts from Lecture 25.
+
+## Topics Covered
+
+* [Sampling](sampling.qmd)
+* [Randomness](randomness.qmd)
+

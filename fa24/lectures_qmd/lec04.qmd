@@ -1,0 +1,469 @@
+---
+title: "[Lec 04] Data 6 Fall 2024 - Arrays and Variables"
+---
+
+## Slide 1: Arrays and Variables
+
+- Data 6 Fall 2024
+- LECTURE 04
+- Storing many values in a single name.
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+
+## Slide 2: Week 2
+
+- Weekly survey released :O
+  - Due next Monday night!
+- Accessing readings
+- Announcements!
+
+## Slide 3: Today’s Roadmap
+
+- Strings
+- NoneType
+  - print()
+  - Display vs. Output
+- Arrays
+  - Array Operations
+- Variables in Data Science
+- Lecture 04, Data 6 Fall 2024
+
+## Slide 4: Strings
+
+## Slide 5: Strings
+
+- The third key data type in Python is string. Strings are used to store text.
+- A string is a sequence of characters with single quotes '' or double quotes "".
+- "go bears!!"
+- '154'
+- 'i am 21 years old'
+- ""
+- ''
+- Python strings
+- Since strings are values, they can also be used in assignment statements.
+- state = "California"
+
+## Slide 6: Strings
+
+- The third key data type in Python is string. Strings are used to store text.
+- A string is a sequence of characters with single quotes '' or double quotes "".
+- "go bears!!"
+- '154'
+- 'i am 21 years old'
+- ""
+- ''
+- Python strings
+- Since strings are values, they can also be used in assignment statements.
+- state = "California"
+- A few string operations:
+- len(): string length, i.e., the number of characters in a string
+- +: string concatenation
+
+## Slide 7: Casting with Strings
+
+- We can also typecast, or convert values between data types. Note that data type conversion is only valid “when it makes sense.”
+- str(x)      \# Returns x as a string
+
+## Slide 8: print()
+
+- 1. NoneType
+- 2. Arrays
+- 3. Variables in Data Science
+- ➤
+
+## Slide 9: A very useful function for human display: print()
+
+- The print() function displays values.
+- Works even if it’s not thelast line of a cell!
+- Strings are displayed without quotes
+
+## Slide 10: A very useful function for human display: print()
+
+- Terminology going forward:
+- Print means display
+- Output means cell output
+- The print() function displays values.
+- Works even if it’s not thelast line of a cell!
+- Strings are displayed without quotes
+- ⚠️ Note ⚠️
+- Print displays values.It does not produce cell output!
+
+## Slide 11: “Hello, World!”
+
+- This is a common “first” program to test that a programming language works as expected.
+- Now you understand it!!!
+- https://en.wikipedia.org/wiki/%22Hello,\_World!%22\_program\#Python
+- print("Hello, World!")
+
+## Slide 12: Review of print() and Typecasting
+
+- If your lines of code are too long, use the\ character to break code into multiple lines.
+- There are two common ways to print strings:
+- Multiple arguments
+- Python inserts a space character for display
+- Arguments can be different data types
+- String concatenation
+- Programmer must insert space character for display
+- One string argument, so all values must be cast to string
+
+## Slide 13: NoneType
+
+- 1. NoneType
+- 2. Arrays
+- 3. Variables in Data Science
+- ➤
+
+## Slide 14: NoneType
+
+- There are infinitely\* many integers, floating point numbers, and strings.
+- However, for the NoneType data type, there is only one value: None.
+- \*Actually a finite number because of how computers store information; take CS61C to learn more!
+- None is strange:
+- Cells will not output expressions thatevaluate to None.
+- None can be displayed (i.e., printed).
+- None is also referred to as the “null value.”
+
+## Slide 15: NoneType
+
+- There are infinitely\* many integers, floating point numbers, and strings.
+- However, for the NoneType data type, there is only one value: None.
+- \*Actually a finite number because of how computers store information; take CS61C to learn more!
+- print() returns None, therefore when evaluated as the last line in a cell:
+- Print displays the value of the evaluated argument
+- But the cell does not output anything!
+- display
+- output
+- None is strange:
+- Cells will not output expressions thatevaluate to None.
+- None can be displayed (i.e., printed).
+- None is also referred to as the “null value.”
+
+## Slide 16: Python Data Types: Summary
+
+- coming up
+- our next topics
+- so far
+
+## Slide 17: Arrays
+
+- 1. NoneType
+- 2. Arrays
+- 3. Variables in Data Science
+- ➤
+
+## Slide 18: Arrays = More Values!
+
+## Slide 19: An Array Is a Sequential Collection of Values
+
+- multiple values organized together
+- arranged like a line/queue
+- Use make\_array() to create arrays.
+- Values in an array must all be of the same data type, and Python will cast appropriately.
+- Array with 4 ints
+- Array with 4 floats
+- Array with 3 strs
+
+## Slide 20: An Array Is a Sequential Collection of Values
+
+- Arrays allow us to write code that performs computation on many pieces of data at once.
+- Python can assign an entire arrayof values to a single name.
+- The order of a array is fixed (i.e., they will be arranged in the order specified when building the array), and values can be repeated.
+- multiple values organized together
+- arranged like a line/queue
+- Use make\_array() to create arrays.
+- Values in an array must all be of the same data type, and Python will cast appropriately.
+- Array with 4 ints
+- Array with 4 floats
+- Array with 3 strs
+
+## Slide 21: Side Note: datascience Package
+
+- from datascience import \*
+- The datascience Python package was written by UC Berkeley specifically for data science education.
+- We generally put the import statement in a cell at the top of our notebook.
+- After running the import statement, we can then call package functions without prepending datascience.
+- The make\_array() functionis from this package!
+- “Import everything from the data science package”
+
+## Slide 22: Array Operations
+
+- 1. NoneType
+- 2. Arrays
+- 3. Variables in Data Science
+- ➤
+
+## Slide 23: American Community Survey (ACS) 2020
+
+- (Later) How is this data presented, and in what societal context was it analyzed?
+- (Now) How can we use arrays to analyze this data?
+- The following table is drawn from the American Community Survey (ACS) of 2020. It shows education levels of adults 25 years or higher by state.
+- We show AL, CA, FL, NY, TX.
+
+<details><summary>Speaker notes</summary>
+
+https://data.census.gov/cedsci/table?q=2020%20education&t=Age%20and%20Sex%3AEducational%20Attainment&g=0100000US%240400000
+
+</details>
+
+## Slide 24: Compute % of Non-HS Graduates by State
+
+- hs\_or\_higher = make\_array(86.9, 83.9, 88.5, 87.2, 84.4)
+- below\_hs = 100 - hs\_or\_higher
+- below\_hs
+
+## Slide 25: Arithmetic on Arrays: 
+Evaluation Returns a New Array
+
+- ⚠️ Evaluating array expressions returns a new array; it does not change the original array.
+
+## Slide 26: Arithmetic on Arrays: 
+Evaluation Returns a New Array
+
+- ⚠️ Evaluating array expressions returns a new array; it does not change the original array.
+- Array Arithmetic is Element-Wise
+- 1) Arithmetic with an array and a numeric value
+
+## Slide 27: Element-Wise Arithmetic
+
+- This element-wise behavior works with all of the arithmetic operations you expect!
+
+## Slide 28: Estimate \# Bachelor Degrees by State
+
+- bs\_or\_higher = make\_array(26.2, 34.7, 30.5, 37.5, 30.7)
+- state\_pop = make\_array(...) \# see demo
+- bs\_or\_higher / 100 \* state\_pop
+
+## Slide 29: Arithmetic on Arrays: 
+Evaluation Returns a New Array
+
+- ⚠️ Evaluating array expressions returns a new array; it does not change the original array.
+- Array Arithmetic is Element-Wise
+- 1) Arithmetic with an array and a numeric value
+- 2) Arithmetic with two arrays of equal length (same number of values).
+
+## Slide 30: Variables in Data Science
+
+- 1. NoneType
+- 2. Arrays
+- 3. Variables in Data Science
+- ➤
+
+## Slide 31: Terminology: Data, Tabular Data, and Records
+
+- A dataset is a collection of data.
+- “[Data] are systematically collected elements of information about the world.”
+- – King, Keohane, and Verba. Designing Social Inquiry (1994).
+- In this course we will often use tabular data:
+- Columns
+- Rows (also known as records).
+- row
+- column
+
+<details><summary>Speaker notes</summary>
+
+“Data” are systematically collected elements of information about the
+world. They can be qualitative or quantitative in style. Sometimes data
+are collected to evaluate a very specific theory, but not so infrequently,
+scholars collect data before knowing precisely what they are interested
+in finding out. Moreover, even if data are collected to evaluate a specific hypothesis, researchers may ultimately be interested in questions
+that had not occurred to them previously.
+
+</details>
+
+## Slide 32: Terminology: Variables
+
+- In data science, a variable is a measurable feature, attribute, and/or representation of a concept. It can have different values for different individuals.
+- variable
+
+<details><summary>Speaker notes</summary>
+
+“Data” are systematically collected elements of information about the
+world. They can be qualitative or quantitative in style. Sometimes data
+are collected to evaluate a very specific theory, but not so infrequently,
+scholars collect data before knowing precisely what they are interested
+in finding out. Moreover, even if data are collected to evaluate a specific hypothesis, researchers may ultimately be interested in questions
+that had not occurred to them previously.
+
+</details>
+
+## Slide 33: Terminology: Variables
+
+- In data science, a variable is a measurable feature, attribute, and/or representation of a concept. It can have different values for different individuals.
+- A column contains/captures all measurements for a particular variable from our dataset.
+- Example 1: This column represents the estimated number of people 25 years or older in each state. Values are positive integers.
+- variable
+
+<details><summary>Speaker notes</summary>
+
+“Data” are systematically collected elements of information about the
+world. They can be qualitative or quantitative in style. Sometimes data
+are collected to evaluate a very specific theory, but not so infrequently,
+scholars collect data before knowing precisely what they are interested
+in finding out. Moreover, even if data are collected to evaluate a specific hypothesis, researchers may ultimately be interested in questions
+that had not occurred to them previously.
+
+</details>
+
+## Slide 34: Terminology: Variables
+
+- In data science, a variable is a measurable feature, attribute, and/or representation of a concept. It can have different values for different individuals.
+- A column contains/captures all measurements for a particular variable from our dataset.
+- Example 2: This column represents the recorded sex of each respondent.           Values are binary categories.
+- variable
+
+<details><summary>Speaker notes</summary>
+
+“Data” are systematically collected elements of information about the
+world. They can be qualitative or quantitative in style. Sometimes data
+are collected to evaluate a very specific theory, but not so infrequently,
+scholars collect data before knowing precisely what they are interested
+in finding out. Moreover, even if data are collected to evaluate a specific hypothesis, researchers may ultimately be interested in questions
+that had not occurred to them previously.
+
+</details>
+
+## Slide 35: Terminology: Variables
+
+- In data science, a variable is a measurable feature, attribute, and/or representation of a concept. It can have different values for different individuals.
+- variable
+- Variables are empirical measurements; they are often metrics that researchers create to approximate the specific dimensions of an abstract concept of a research question.
+- Side note: In computer science, Python names are also called variables. However, in this class we’ll always try to refer to Python names as names to avoid confusing it with the data science definition of a variable.
+
+<details><summary>Speaker notes</summary>
+
+“Data” are systematically collected elements of information about the
+world. They can be qualitative or quantitative in style. Sometimes data
+are collected to evaluate a very specific theory, but not so infrequently,
+scholars collect data before knowing precisely what they are interested
+in finding out. Moreover, even if data are collected to evaluate a specific hypothesis, researchers may ultimately be interested in questions
+that had not occurred to them previously.
+
+</details>
+
+## Slide 36: Case Study: American Community Survey (2020)
+
+- Important uses at local and national level:
+- Distribution of federal/state funds
+- Economic development (infrastructure, hospitals, schools, bridges, etc.)
+- Emergency management
+- Variables are empirical measurements; they are often metrics that researchers create to approximate the specific dimensions of an abstract concept of a research question.
+- Conducted annually by the US Census Bureau.
+- Mailed to a sample of ~3.5 million household addressesin 50 states + DC + Puerto Rico.
+- ACS builds on Census questions and also asks questions on education, employment,internet access, and transportation.
+- About the ACS
+
+## Slide 37: Research Question and Data Collection
+
+- The definition of variables is impacted not only by researchers’ interests, but also the process and limitations of data collection.
+- What is the level of educational attainment in 2020 among US resident adults?
+- Pose the Research Question
+- Household survey
+- Private dataset by household
+- Public dataset by geographic region
+- aggregation
+- Table 1
+- Table 2
+- (this lecture)
+
+## Slide 38: Defining Concepts in the Research Question
+
+- Translate a concept into a variable
+- Define the variable domain (i.e., all possible values)
+- Consider other factors that may influence the outcomes of the study, and repeat
+- What is the level of educational attainment in 2020 among US resident adults?
+- Pose the Research Question
+- Concept: 	Education
+- Variable: 	Highest degree received by academic institution
+- Less than high school graduate
+- High school graduate (includes equivalency)
+- Some college or associate’s degree
+- Bachelor’s degree
+- Graduate or professional degree
+- Variable domains can be categorical, numeric, or qualitative! In this course we focus on the first two.
+
+## Slide 39: Defining Concepts in the Research Question
+
+- Translate a concept into a variable
+- Define the variable domain (i.e., all possible values)
+- Consider other factors that may influence the outcomes of the study, and repeat
+- What is the level of educational attainment in 2020 among US resident adults?
+- Pose the Research Question
+- Concept: 	US resident
+- Variable: 	Address
+- US Postal address of a residence [where the survey is mailed]
+- Concept: 	Adult
+- Variable: 	Age bracket
+- Below 18
+- 18 to 25 (“young adult”)
+- 25 and up
+- [recorded from age]
+
+## Slide 40: Identifying Confounding Variables
+
+- Confounding variables can be linked to other concepts in a way that makes two concepts appear related (even when they are not).
+- Translate a concept into a variable
+- Define the variable domain (i.e., all possible values)
+- Consider other factors that may influence the outcomes of the study, and repeat
+- What is the level of educational attainment in 2020 among US resident adults?
+- Pose the Research Question
+- US geographic region
+- Educational attainment level
+- ?
+- Other social systems?
+
+## Slide 41: Identifying Confounding Variables
+
+- These are just a few confounding variables measured in the ACS. What kinds of confounding variables would likely not be measured in a government study?
+- What is the level of educational attainment in 2020 among US resident adults?
+- Pose the Research Question
+- Race/Ethnicity
+- White alone
+- White alone, not Hispanic or Latino
+- Black alone
+- American Indian or Alaska Native alone
+- Asian alone
+- Native Hawaiian and Other Pacific Islander Alone
+- Some other race alone
+- Two or more races
+- Hispanic or Latino Origin
+- Sex
+- Male
+- Female
+- Income/Earnings
+- (numeric amount)
+- US geographic region
+- Educational attainment level
+- ?
+
+<details><summary>Speaker notes</summary>
+
+https://www.nationalgeographic.com/culture/article/race-ethnicity “Race” is usually associated with biology and linked with physical characteristics such as skin color or hair texture. “Ethnicity” is linked with cultural expression and identification. However, both are social constructs used to categorize and characterize seemingly distinct populations.
+
+</details>
+
+## Slide 42: In Conclusion…
+
+## Slide 43: Summary
+
+- The print() function is used to display things. It always returns None
+- The Python None represents the absence of a value.
+  - None can be printed, but is not outputted
+- We use arrays to store and work with multiple values at once
+  - We can perform (element-wise) arithmetic operations and other functions on arrays
+- In data science, a variable is a measurable feature, attribute, and/or representation of a concept
+  - We will use “name” to refer to Python names and “variable” to refer to data science variables
+
+## Slide 44: Recap
+
+- Strings
+- NoneType
+- Arrays
+- Variables in Data Science
+- NumPy
+- Array Indexing
+- Working with Data
+- Next Time
+
+## Slide 45: Quick Check
+
+- https://docs.google.com/forms/d/e/1FAIpQLScYs6zjwSLq\_f2PWgQIotZ6MwTdfVp1pgHifXvLxGGWO46hbg/viewform?usp=sf\_link
+

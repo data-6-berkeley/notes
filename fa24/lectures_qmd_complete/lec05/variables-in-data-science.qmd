@@ -1,0 +1,173 @@
+---
+title: "Variables in Data Science"
+subtitle: "From Lecture 05"
+---
+
+## NumPy, Indexing, Variables in Data Science
+
+- Data 6 Fall 2024
+- LECTURE 05
+- What it means to work with data.
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+
+## Side Note: The datascience Package
+
+- datascience package import statement:
+- The slightly different syntax allows us to call package functions without prepending datascience.
+- The make\_array() functionis from this package!
+- Fun fact: The datascience package was written by UC Berkeley specifically for data science education. It’s designed to support many Python packages like NumPy.
+- “Import everything”
+
+## Variables in Data Science
+
+- ➤
+
+## Terminology: Data, Tabular Data, and Records
+
+- A dataset is a collection of data.
+- “[Data] are systematically collected elements of information about the world.”
+- – King, Keohane, and Verba. Designing Social Inquiry (1994).
+- In this course we will often use tabular data:
+- Columns
+- Rows (also known as records).
+- row
+- column
+
+<details><summary>Speaker notes</summary>
+
+“Data” are systematically collected elements of information about the
+world. They can be qualitative or quantitative in style. Sometimes data
+are collected to evaluate a very specific theory, but not so infrequently,
+scholars collect data before knowing precisely what they are interested
+in finding out. Moreover, even if data are collected to evaluate a specific hypothesis, researchers may ultimately be interested in questions
+that had not occurred to them previously.
+
+</details>
+
+## Terminology: Variables
+
+- In data science, a variable is a measurable feature, attribute, and/or representation of a concept. It can have different values for different individuals.
+- variable
+
+<details><summary>Speaker notes</summary>
+
+“Data” are systematically collected elements of information about the
+world. They can be qualitative or quantitative in style. Sometimes data
+are collected to evaluate a very specific theory, but not so infrequently,
+scholars collect data before knowing precisely what they are interested
+in finding out. Moreover, even if data are collected to evaluate a specific hypothesis, researchers may ultimately be interested in questions
+that had not occurred to them previously.
+
+</details>
+
+## Terminology: Variables
+
+- In data science, a variable is a measurable feature, attribute, and/or representation of a concept. It can have different values for different individuals.
+- A column contains/captures all measurements for a particular variable from our dataset.
+- Example 1: This column represents the estimated number of people 25 years or older in each state. Values are positive integers.
+- variable
+
+<details><summary>Speaker notes</summary>
+
+“Data” are systematically collected elements of information about the
+world. They can be qualitative or quantitative in style. Sometimes data
+are collected to evaluate a very specific theory, but not so infrequently,
+scholars collect data before knowing precisely what they are interested
+in finding out. Moreover, even if data are collected to evaluate a specific hypothesis, researchers may ultimately be interested in questions
+that had not occurred to them previously.
+
+</details>
+
+## Terminology: Variables
+
+- In data science, a variable is a measurable feature, attribute, and/or representation of a concept. It can have different values for different individuals.
+- A column contains/captures all measurements for a particular variable from our dataset.
+- Example 2: This column represents the recorded sex of each respondent.           Values are binary categories.
+- variable
+
+<details><summary>Speaker notes</summary>
+
+“Data” are systematically collected elements of information about the
+world. They can be qualitative or quantitative in style. Sometimes data
+are collected to evaluate a very specific theory, but not so infrequently,
+scholars collect data before knowing precisely what they are interested
+in finding out. Moreover, even if data are collected to evaluate a specific hypothesis, researchers may ultimately be interested in questions
+that had not occurred to them previously.
+
+</details>
+
+## Terminology: Variables
+
+- In data science, a variable is a measurable feature, attribute, and/or representation of a concept. It can have different values for different individuals.
+- variable
+- Variables are empirical measurements; they are often metrics that researchers create to approximate the specific dimensions of an abstract concept of a research question.
+- Side note: In computer science, Python names are also called variables. However, in this class we’ll always try to refer to Python names as names to avoid confusing it with the data science definition of a variable.
+
+<details><summary>Speaker notes</summary>
+
+“Data” are systematically collected elements of information about the
+world. They can be qualitative or quantitative in style. Sometimes data
+are collected to evaluate a very specific theory, but not so infrequently,
+scholars collect data before knowing precisely what they are interested
+in finding out. Moreover, even if data are collected to evaluate a specific hypothesis, researchers may ultimately be interested in questions
+that had not occurred to them previously.
+
+</details>
+
+## Research Question and Data Collection
+
+- The definition of variables is impacted not only by researchers’ interests, but also the process and limitations of data collection.
+- What is the level of educational attainment in 2020 among US resident adults?
+- Pose the Research Question
+- Household survey
+- Private dataset by household
+- Public dataset by geographic region
+- aggregation
+- Table 1
+- Table 2
+- (this lecture)
+
+## Identifying Confounding Variables
+
+- Confounding variables can be linked to other concepts in a way that makes two concepts appear related (even when they are not).
+- Translate a concept into a variable
+- Define the variable domain (i.e., all possible values)
+- Consider other factors that may influence the outcomes of the study, and repeat
+- What is the level of educational attainment in 2020 among US resident adults?
+- Pose the Research Question
+- US geographic region
+- Educational attainment level
+- ?
+- Other social systems?
+
+## Identifying Confounding Variables
+
+- These are just a few confounding variables measured in the ACS. What kinds of confounding variables would likely not be measured in a government study?
+- What is the level of educational attainment in 2020 among US resident adults?
+- Pose the Research Question
+- Race/Ethnicity
+- White alone
+- White alone, not Hispanic or Latino
+- Black alone
+- American Indian or Alaska Native alone
+- Asian alone
+- Native Hawaiian and Other Pacific Islander Alone
+- Some other race alone
+- Two or more races
+- Hispanic or Latino Origin
+- Sex
+- Male
+- Female
+- Income/Earnings
+- (numeric amount)
+- US geographic region
+- Educational attainment level
+- ?
+
+<details><summary>Speaker notes</summary>
+
+https://www.nationalgeographic.com/culture/article/race-ethnicity “Race” is usually associated with biology and linked with physical characteristics such as skin color or hair texture. “Ethnicity” is linked with cultural expression and identification. However, both are social constructs used to categorize and characterize seemingly distinct populations.
+
+</details>
+
+

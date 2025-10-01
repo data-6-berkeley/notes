@@ -1,0 +1,119 @@
+---
+title: "[Lec 9] Data 6 Fall 2024 - Applying"
+---
+
+## Slide 1: Applying
+
+- Data 6 Fall 2024
+- LECTURE 9
+- Writing functions to augment our tables.
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+
+## Slide 2: Week 5
+
+- Homework 2 released tonight, due next Friday
+  - Sorry for the delay. It’ll be shorter than Homework 1 and will have no hidden tests. Turns out, autograders take time to write…
+- Announcements!
+
+## Slide 3: Today’s Roadmap
+
+- Motivation
+- Applying with .apply
+- Masking with Boolean Arrays
+- Lecture 16, Data 6 Fall 2024
+
+## Slide 4: (untitled)
+
+- Review:
+- First python tutor
+- Second question!
+
+## Slide 5: Motivation
+
+- 1. Motivation
+- 2. Applying with .apply
+- 3. Masking with Boolean Arrays
+- ➤
+
+## Slide 6: Array Operations
+
+- It’s easy to apply mathematical operations to every element of an array. Remember, columns are arrays.
+
+## Slide 7: Other Functions
+
+- However, not all operations work nicely with arrays. For example, we may want to:
+- Take a dog’s first and last name and generate its email, first.last@dogschool.edu.
+- Factor in a dog’s size when computing its human age (larger dogs age faster).
+- We can write functions to do each of these things for one dog, but what about for all dogs?
+
+## Slide 8: Applying with .apply
+
+- 1. Motivation
+- 2. Applying with .apply
+- 3. Masking with Boolean Arrays
+- ➤
+
+## Slide 9: .apply()
+
+- The method
+- t.apply(function, column\_or\_columns)
+- applies function to every element in column\_or\_columns, and returns an array with the results.
+- If you only supply one column name, function should only take one argument.
+- If you supply X column names, function should take X arguments.
+
+## Slide 10: ‹\#›
+
+## Slide 11: ‹\#›
+
+## Slide 12: Quick Check 1
+
+- Suppose profs is the table shown below. The elements in the 'gross' column right now are strings. Fill in the blanks to replace the elements in the 'gross' column with integers. (Hint: use the fix\_income function)
+- def fix\_income(income):
+- return income.replace(',', '')
+- fixed\_income = profs.apply(\_\_\_\_\_, \_\_\_\_\_)
+- profs = profs.with\_columns('gross', \_\_\_\_\_)
+
+## Slide 13: Data Cleaning
+
+- Data cleaning is the process of looking through data to fix inconsistencies. One such inconsistency is when the information in a column is stored as one type, but really should be stored as another – like in the Quick Check you just answered.
+- The real largest income is over 2.3 million, but the “dirty” version of the data doesn’t reflect that.
+
+## Slide 14: Masking with 
+Boolean Arrays
+
+- 1. Motivation
+- 2. Applying with .apply
+- 3. Masking with Boolean Arrays
+- ➤
+
+## Slide 15: Masks and Arrays
+
+- Masking – also known as boolean indexing – is the process of indexing into an array or table with a array of booleans.
+- Only the elements at indexes 0 and 3.
+
+## Slide 16: Masks with Tables
+
+- We can achieve the same behavior with tables – by using where with just a single argument.
+- Previously, where required two arguments.
+- Just one argument: a list of booleans.
+
+## Slide 17: .where()
+
+- where behaves slightly differently depending on if you give it one argument or two, but under the hood it is doing the same thing – returning a table with only the rows where some boolean condition is True.
+- t.where(column, pred) returns a new table with only the rows from t  where column satisfies the predicate pred.
+- t.where(boolean\_arr) returns a new table with only the rows from t  where the corresponding value in boolean\_arr is True.
+- Question: Why would we ever need the single-argument version of where? Isn’t it worse?
+
+## Slide 18: In Conclusion…
+
+## Slide 19: Summary
+
+## Slide 20: Recap
+
+- Next Time
+- Applying Functions to Columns
+- Masking with Boolean Arrays
+- https://forms.gle/tcMM8Zp3C52FvLEK7
+- Comparisons
+- Boolean Operators
+

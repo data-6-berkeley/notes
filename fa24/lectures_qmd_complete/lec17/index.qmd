@@ -1,0 +1,17 @@
+---
+title: "Visualizing Two Numerical Variables"
+subtitle: "Lecture 17"
+---
+
+This chapter covers the key concepts from Lecture 17.
+
+## Topics Covered
+
+* [Review: Histograms](review-histograms.qmd)
+* [Review: Overlaid and Side-by-Side Histograms](review-overlaid-and-side-by-side-histograms.qmd)
+* [Review: Grouped Bar Charts](review-grouped-bar-charts.qmd)
+* [Scatter Plots](scatter-plots.qmd)
+* [Customizing Scatter Plots](customizing-scatter-plots.qmd)
+* [Line Plots](line-plots.qmd)
+* [Multiple Line Plots](multiple-line-plots.qmd)
+

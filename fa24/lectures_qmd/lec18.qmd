@@ -1,0 +1,357 @@
+---
+title: "[Lec 18] Data 6 Fall 2024 - Comparisons and Control"
+---
+
+## Slide 1: Comparisons and Control
+
+- Data 6 Fall 2024
+- LECTURE 18
+- Expanding our programming toolkit.
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+
+## Slide 2: Week 10
+
+- Reading 5 and Homework 4 will be released next Monday
+  - You’ll get 2.5 weeks for reading 5, and 1.5 weeks for homework 4
+  - Homework 4 content is in scope for quiz 2 (which is in 2 weeks)
+- Reading 4 and Homework 3 are due this Thursday!
+- Discussion this week is mandatory; attendance will be taken
+- Announcements!
+
+## Slide 3: Today’s Roadmap
+
+- Comparisons
+- Boolean Operators
+- Truth Tables
+- If and If-Else Statements
+- Elif
+- Truthy Values
+- Lecture 18, Data 6 Fall 2024
+
+## Slide 4: Program Control Flow
+
+- So far, we have written code where we execute every line in sequence:
+- A critical piece of programming is control flow: syntax structures that selectively choose to run (or not to run) lines of code.
+- Over the next lecture, we will see howboolean expressions play a key role in program control flow!
+
+## Slide 5: George Boole (1815-1864)
+
+## Slide 6: Comparisons
+
+- 1. Comparisons
+- 2. Boolean Operators
+- 3. Truth Tables
+- ➤
+
+## Slide 7: Comparisons
+
+- Naturally, we will want to compare values in our code.
+- \# is age at least age\_limit?
+- age\_limit = 21
+- age = 17
+- \# is password\_guess equal to true\_password?
+- true\_password = 'qwerty1093x!'
+- password\_guess = 'QWERTY1093x!'
+
+## Slide 8: Comparison Operators
+
+- Each of these comparisons evaluate to True if the statement holds, and False if it doesn’t.
+
+## Slide 9: Examples
+
+- 3 == 3                  \# True
+- 'hello' != 'howdy'      \# True
+- -3 > -2                 \# False
+- -3 < -2                 \# True
+- 'alpha' >= 'beta'       \# False
+
+## Slide 10: Equality
+
+- = and == have very different meanings in Python. This is unlike algebra, where we use the same equals sign for different purposes.
+- x = 5           \# set x equal to 5
+- x == 5          \# is x equal to 5?
+- y = x == 5      \# valid, common code!
+
+## Slide 11: Comparing Different Types
+
+- You can check for equality (== and !=) with values of any type.
+- 17 == '17'              \# False
+- 'zebra' != True         \# True
+- True == 1.0             \# True
+- But you can only check for inequality between values of the same “category”:
+- 5 > True                \# True
+- 'alpha' >= 'beta'       \# False
+- 'alpha' >= 5            \# TypeError!
+
+## Slide 12: Be Careful...
+
+- Remember floating point issues from a three weeks ago?
+- 0.1 \* 2 == 0.2      \# True
+- 0.1 \* 6 == 0.6      \# False, because 0.1 \* 6 = 0.60000000001
+- Using == to see if two floats are equal is generally not reliable. Instead, check if the difference is negligible using abs:
+- abs(0.1 \* 6 - 0.6) < 0.0001 		\# True
+
+## Slide 13: String Containment
+
+- The in keyword allows us to check if one string is a substring of another, or if an element is present in our array/list.
+- 'berkeley' in 'uc berkeley'      \# True
+- 'stanford' in 'uc berkeley'      \# False
+- 'berkeley' in 'UC BERKELEY'      \# False
+- 1 in [1, 2, 3]					   \# True
+
+## Slide 14: Questions?
+
+## Slide 15: Quick Check 1
+
+- What is the value of not\_passed after running these two lines?
+- passed = 0.5 \* 30 + 0.5 \* 100 >= 65
+- not\_passed = passed == False
+
+## Slide 16: Boolean Operators
+
+- 1. Comparisons
+- 2. Boolean Operators
+- 3. Truth Tables
+- ➤
+
+## Slide 17: Motivation
+
+- Sometimes, we’ll need to check multiple conditions at once.
+- year = 'junior'
+- units = 125
+- \# are both conditions true? is at least one true?
+- year\_check = year == 'senior'
+- units\_check = units >= 120
+
+## Slide 18: Boolean operators
+
+- Boolean operators allow us to combine the result of multiple booleans.
+- and and or operate on two (or more) operands; not operates on just one.
+
+## Slide 19: Examples
+
+- year = 'junior'
+- units = 125
+- year\_check = year == 'senior'						 \# False
+- units\_check = units >= 120							 \# True
+- ready\_to\_grad = year\_check and units\_check      \# False
+- almost\_ready = year\_check or units\_check        \# True
+
+## Slide 20: Examples
+
+- It’s best practice to use parentheses when expressions become complex, to avoid any ambiguity.
+- n = 12
+- (n % 2 == 0) and (n % 4 == 0)           \# True
+- (n % 2 == 0) and not (n % 5 == 0)       \# True
+- (n % 3 != 0) and (n % 4 != 0)           \# False
+- Also note that not x == c and x != c are equivalent expressions.
+
+## Slide 21: More Than Two Operands
+
+- We defined and and or in terms of two operands, but they work with any number of operands:
+- True and False and True and True      \# False
+- True or False or True or True         \# True
+- and: True only if all operands are True.
+- or: True if at least one operand is True.
+
+## Slide 22: Compound boolean expressions
+
+- Things can get pretty wacky!
+- 3 < 4 <= 5                  \# True
+- 3 < 4 > 2 < 11 > -1         \# True
+- 3 < 4 < 2 > 11 > -1         \# False
+- But again, just because you can do something doesn’t mean you should.
+- The first line is fine, but don’t use the latter two.
+
+## Slide 23: Questions?
+
+## Slide 24: Quick Check 2
+
+- What are the values of wear\_socks and wear\_jacket after running the following lines of code?
+- temp = 67
+- raining = bool(0)
+- wear\_socks = (not not raining) and (temp < 60)
+- wear\_jacket = (not wear\_socks) or (temp > 65)
+- wear\_jacket = wear\_jacket and wear\_socks
+
+## Slide 25: Motivation
+
+- Given a boolean expression, it would be nice if we could do something based on whether or not the expression is True.
+- def ready\_to\_graduate(year, units):
+- return (year == 'senior') and (units >= 120)
+- \# if student is ready to graduate: email them 'ready to graduate!'
+- \# if not: email them 'not ready to graduate yet!'
+
+## Slide 26: If Statements: An Example
+
+- If statements allow our code to make decisions.
+
+## Slide 27: If and If-Else
+
+- 1. Motivation
+- 2. If and If-Else Statements
+- 3. Elif
+- 4. Truthy Values
+- 5. Demo
+- ➤
+
+## Slide 28: If Statements
+
+- If statements are used to control which lines of code are run, according to some boolean expression(s).
+- The most basic if-statement includes just one header: if.
+- if <boolean expression>:
+- <if body>
+- If <boolean expression> is True, <if body> is run. Otherwise, it is not run
+
+## Slide 29: Example
+
+## Slide 30: If-Else
+
+- Optionally, you can also use the else header. Use else if you want your code to do something in the event that <boolean expression> is False.
+- if <boolean expression>:
+- <if body>
+- else:
+- <else body>
+- If <boolean expression> is True, <if body> is run.
+- If <boolean expression> is False, <else body> is run.
+
+## Slide 31: Example
+
+## Slide 32: Example
+
+- Since functions “exit” when they see the return keyword, you can sometimes achieve the effect of using else without explicitly writing else.
+- Equivalent!
+
+## Slide 33: Questions?
+
+## Slide 34: ‹\#›
+
+- Complete the implementation of the function a\_max, which returns 1 if a is both:
+- Positive
+- Strictly larger than b and c
+- And -1 otherwise.
+- def a\_max(a, b, c):
+- ...
+
+## Slide 35: Be Concise!
+
+- \# Not ideal
+- def is\_23(n):
+- if n == 23:
+- return True
+- else:
+- return False
+- \# Better
+- def is\_23(n):
+- return n == 23
+
+## Slide 36: Elif
+
+- 1. Motivation
+- 2. If and If-Else Statements
+- 3. Elif
+- 4. Truthy Values
+- 5. Demo
+- ➤
+
+## Slide 37: Motivation
+
+- def sign(x):
+- if x > 0:
+- return 'Positive'
+- elif x == 0:
+- return 'Neither'
+- else:
+- return 'Negative'
+- Instead of having just 2 branches, what if we wanted multiple?
+- There’s a third header we should be aware of: elif (stands for “else if”).
+
+## Slide 38: General Structure of a Conditional Statement
+
+- Must start with an if.
+- Zero or more elif in the middle.
+- Zero or one else, at the end only.
+- if <boolean expression 1>:
+- <if body>
+- elif <boolean expression 2>:
+- <elif body 1>
+- elif <boolean expression 3>:
+- <elif body 2>
+- ...
+- else:
+- <else body>
+- The body of the first True expression is run, and everything else is skipped.
+- If none of the expressions are True, the <else body> is run (if it’s there)
+
+## Slide 39: Quick Check
+
+- Complete the implementation of the function num\_pos, which prints (but does not return) the number of positive arguments it is passed in (0, 1, or 2).
+- def num\_pos(a, b):
+- ...
+
+## Slide 40: Be Careful with Indentation!
+
+- Indentation makes a big difference.
+- if x > 5:
+- print('somewhat big!')
+- if x % 2 == 0:
+- print('and even too!')
+- else:
+- print('tiny.')
+
+## Slide 41: Truthy Values
+
+- 1. Motivation
+- 2. If and If-Else Statements
+- 3. Elif
+- 4. Truthy Values
+- 5. Demo
+- ➤
+
+## Slide 42: Casting to bool
+
+- We didn’t discuss this in depth earlier, but we can cast any value in Python to bool.
+- This is unlike int (for example) where the input to the int() function had to look like an integer.
+- bool(15)        \# True
+- bool('')        \# False
+- bool('bool')    \# True
+- bool(-1e15)     \# True
+- bool(None)      \# False
+
+## Slide 43: Truthy Values
+
+- It turns out that almost everything evaluates to True when converted to bool.
+- These are pretty much the only exceptions (these all evaluate to False):
+- False
+- ''(the empty string)
+- 0 (and hence 0.0)
+- None
+- Generally things that are empty (empty lists, sets, dictionaries, etc)
+- If something evaluates to True when converted to bool, we call it a truthy value. Otherwise, we call it a falsy value.
+
+## Slide 44: Truthy Values in Practice
+
+- Conditional statements use the truthiness of an expression.
+
+## Slide 45: Questions?
+
+## Slide 46: Summary
+
+- Conditional statements are used to control which blocks of code are run.
+- All conditional statements begin with the if keyword.
+- Optionally, we can use the elif and else keywords.
+- Reminder: indentation matters!
+- All values in Python have a “truthy value”, which are used implicitly in conditional statements.
+
+## Slide 47: Recap
+
+- Next Time
+- Control
+  - If-Else Statements
+  - Elif
+- Truthy Values
+- https://forms.gle/fvUoxjuD2EPLCeL59
+- Quick Check
+- Iteration
+  - For Loops
+

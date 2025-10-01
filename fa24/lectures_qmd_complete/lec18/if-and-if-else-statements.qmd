@@ -1,0 +1,37 @@
+---
+title: "If and If-Else Statements"
+subtitle: "From Lecture 18"
+---
+
+## If Statements: An Example
+
+- If statements allow our code to make decisions.
+
+## If and If-Else
+
+- 1. Motivation
+- 2. If and If-Else Statements
+- 3. Elif
+- 4. Truthy Values
+- 5. Demo
+- ➤
+
+## If Statements
+
+- If statements are used to control which lines of code are run, according to some boolean expression(s).
+- The most basic if-statement includes just one header: if.
+- if <boolean expression>:
+- <if body>
+- If <boolean expression> is True, <if body> is run. Otherwise, it is not run
+
+## If-Else
+
+- Optionally, you can also use the else header. Use else if you want your code to do something in the event that <boolean expression> is False.
+- if <boolean expression>:
+- <if body>
+- else:
+- <else body>
+- If <boolean expression> is True, <if body> is run.
+- If <boolean expression> is False, <else body> is run.
+
+

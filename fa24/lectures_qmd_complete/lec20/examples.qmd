@@ -1,0 +1,14 @@
+---
+title: "Examples"
+subtitle: "From Lecture 20"
+---
+
+## Examples
+
+- 1. Review: For Loops
+- 2. While Loops
+- 3. Examples
+- 4. Demo: Sorting an Array
+- ➤
+
+

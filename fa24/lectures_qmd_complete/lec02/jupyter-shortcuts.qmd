@@ -1,0 +1,37 @@
+---
+title: "Jupyter Shortcuts"
+subtitle: "From Lecture 02"
+---
+
+## Jupyter Notebooks, Arithmetic
+
+- Data 6 Fall 2024
+- LECTURE 02
+- Getting familiar with our computing environment, and
+- writing our first Python programs.
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+- data6.org/fa24/syllabus/\#acknowledgements-
+
+## A Brief History of Jupyter
+
+- Fernando Pérez’s Faculty Page
+
+## Two ways to access Jupyter Notebooks
+
+- Accessing Jupyter Notebook
+- Go to datahub.berkeley.edu (if you want to make your own notebook)
+- From our course website: data6.org/fa24/
+
+## Jupyter Shortcuts
+
+- 1. Programming in Python
+- 2. Arithmetic
+- 3. Jupyter Shortcuts
+- 4. Comments, Data Types, and Errors
+- ➤
+
+## Reference for Keyboard Shortcuts
+
+- Use this as a reference, don’t try to memorize these right now. Also, you can always use the toolbar!! You don’t have to use the keyboard shortcut.
+
+

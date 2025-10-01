@@ -1,0 +1,102 @@
+---
+title: "What is data science? What is computational thinking?"
+subtitle: "From Lecture 01"
+---
+
+## Data 6 Course Staff
+
+- Su Min Park
+- uGSI | m.suminpark@berkeley.edu
+- hello hello:) I am a super senior from Seoul, South Korea studying Data Science and Sociology.
+- Elizabeth Feng
+- Tutor | elizabeth.feng@berkeley.edu
+- Hi everyone! I’m a sophomore majoring in Data Science from Oakland, CA.
+- Kenneth Llontop
+- Tutor | kennethllontop@berkeley.edu
+- Hey! I’m Kenneth, and I am a sophomore from LA studying EECS.
+- data6.org/fa24/staff
+- Isabella Duong
+- uGSI | isabella.duong@berkeley.edu
+- hiii! im a junior studying Computer Science!
+
+<details><summary>Speaker notes</summary>
+
+10:20
+
+</details>
+
+## So…we just created some data!
+
+- Using this information, what sort of questions might we ask about the data?
+- …and how the heck do we find the answers to these questions?
+
+## What is Data Science?
+
+- 1. What is data science?
+- 2. What will you learn in this class?
+- 3. How will this class be run?
+- 4. Fun demo
+- ➤
+
+## What is data science?
+
+- Learning about the world from data using computation
+- Learning how to ask the “right” questions
+  - When we group data and analyze it, we bring a set of assumptions
+  - When we asked what our “major” is, made an assumption that people have a major
+- Using data to predict future outcomes
+
+## Creator of Data 100
+
+- Creator of Data 100
+- Joey Gonzalez
+- “Data Science is the application of data centric, computational, and inferential thinking to:
+- Understand the world
+- Solve problems”
+
+## Data science is a fundamentally interdisciplinary field
+
+- by Drew Conway in 2010 (link)
+
+## Data 6 Version
+
+- Statistics and inference
+- Domain knowledge and social contexts
+- Computational Thinking
+- DS
+- Machine Learning
+- Engineering
+- Research
+
+## Example Questions in Data Science
+
+- Data science is all about asking questions and answering them with data.
+- Is the world getting better or worse?
+- Is the use of the COMPAS algorithm for prison sentencing fair?
+- Where should we put docking ports for our bikes?
+- What should we eat to avoid dying early of heart disease?
+- Do immigrants from poor countries have a positive or negative impact on the economy?
+- Will there be a third? fourth? wave of COVID-19?
+
+## Computational Thinking
+
+- Creator of WolframAlpha
+- Stephen Wolfram
+- “Computational thinking is about formulating things with enough clarity, and in a systematic enough way, that one can tell a computer how to do them.”
+
+## Introduction to Computational Thinking with Data
+
+- As the title suggests, this class will teach you how to make computers to do interesting things involving data.
+- In order to tell our computers what to do, we will use the Python programming language.
+- While at points it may feel like this is a class about Python, this class is really about teaching you how to solve problems, particularly those involving real-world data.
+- At the end of the semester, you will be strong computational thinkers, and will be able to apply the skills you’ve learned to projects of your own.
+
+## Advice for Data 6
+
+<details><summary>Speaker notes</summary>
+
+10:35
+
+</details>
+
+

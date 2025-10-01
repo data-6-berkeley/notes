@@ -1,0 +1,57 @@
+---
+title: "Grouping by Multiple Columns"
+subtitle: "From Lecture 13"
+---
+
+## Grouping, Pivoting
+
+- Data 6 Fall 2024
+- LECTURE 12
+- Extracting and aggregating information from tables.
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+
+## Grouping with .group
+
+- 1. Grouping with .group
+- 2. Grouping by Multiple Columns
+- 3. Pivot Tables with .pivot
+- ➤
+
+## Advanced Grouping
+
+- 1. Grouping with .group
+- 2. Grouping by Multiple Columns
+- 3. Pivot Tables with .pivot
+- ➤
+
+## Which Columns Should We Group By?
+
+- It usually only makes sense to group by columns that store categorical information that is shared across multiple rows.
+- If you had a bunch of dogs, you could group by
+- Breed.
+- Size (small, medium, large).
+- Sex.
+- Color.
+- It wouldn’t make sense to group by weight in pounds, since every dog will have a slightly different weight and two dogs having the exact same weight doesn’t tell you much.
+
+## Grouping by Multiple Columns
+
+- 1. Grouping with .group
+- 2. Grouping by Multiple Columns
+- 3. Pivot Tables with .pivot
+- ➤
+
+## Grouping by Multiple Columns
+
+- If we pass a list of column names as the first argument to group:
+- t.group(column\_or\_columns, collect)
+- the resulting table has one row for every unique combination of values in the specified columns.
+- Just as before, if we call group with a single argument (a list or array), we get back counts. We can specify a collect function if we want to.
+- One row for every combination of Manufacturer and Brand.
+
+## Grouping by More Than Two Columns
+
+- You can group by any number of columns, but we rarely group by more than two columns as the results tend to be less meaningful.
+- Here, Manufacturer doesn’t tell us much.
+
+

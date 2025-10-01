@@ -1,0 +1,13 @@
+---
+title: "Applying"
+subtitle: "Lecture 09"
+---
+
+This chapter covers the key concepts from Lecture 09.
+
+## Topics Covered
+
+* [Motivation](motivation.qmd)
+* [Applying with .apply](applying-with-apply.qmd)
+* [Masking with Boolean Arrays](masking-with-boolean-arrays.qmd)
+

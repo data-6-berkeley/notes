@@ -1,0 +1,78 @@
+---
+title: "Table Attributes and Methods"
+subtitle: "From Lecture 07"
+---
+
+## Table Fundamentals
+
+- Data 6 Fall 2024
+- LECTURE 07
+- Learning how to work with tables in Python.
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+
+## Review: Table
+
+- Review: In this course, we often start with tabular data and perform EDA:
+- Columns
+- Rows (also known as records).
+- row
+- column
+
+<details><summary>Speaker notes</summary>
+
+“Data” are systematically collected elements of information about the
+world. They can be qualitative or quantitative in style. Sometimes data
+are collected to evaluate a very specific theory, but not so infrequently,
+scholars collect data before knowing precisely what they are interested
+in finding out. Moreover, even if data are collected to evaluate a specific hypothesis, researchers may ultimately be interested in questions
+that had not occurred to them previously.
+
+</details>
+
+## Table Attributes and Methods
+
+- 1. Table Attributes and Methods
+- 2. select, drop, and add columns
+- 3. Create new tables
+- 5. More Table Methods and Documentation
+- 6. Demo: WNBA Data
+- ➤
+
+## First, assign a Table to a name
+
+- To work with this table, we first load it in from a file called data/cal\_unis.csv:
+- schools = Table.read\_table('data/cal\_unis.csv')
+- This lecture we will return to the dataset of public four-year colleges and universities in California (source):
+- assigns RHS value to schools name
+- returns a datascience Table from the given data file
+- Then we use schools to call Table methods and attributes.
+- Always assign your table to a name!
+
+## Attributes vs. Methods
+
+- Table attributes
+- Properties/ characteristics of the given data type (in this case, datascience.Table)
+- Table methods
+- Functions that are called on a given data science table (in this case, schools)
+- All table methods return copies of information from the original table!
+- Very important Python  datascience library paradigm
+
+## Create new tables
+
+- ➤
+- 1. Table Attributes and Methods
+- 2. select, drop, and add columns
+- 3. Create new tables
+- 4. More Table Methods and Documentation
+- 5. Demo: WNBA Data
+
+## More Table Methods and Documentation
+
+- ➤
+- 1. Table Attributes and Methods
+- 2. select, drop, and add columns
+- 3. Create new tables
+- 4. More Table Methods and Documentation
+- 5. Demo: WNBA Data
+
+

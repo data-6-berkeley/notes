@@ -1,0 +1,52 @@
+---
+title: "Review: Grouped Bar Charts"
+subtitle: "From Lecture 17"
+---
+
+## Review: Histograms
+
+- 1. Review: Histograms
+- 2. Overlaid and Side-by-Side Histograms
+- 3. Grouped Bar Charts
+- 4. Scatter Plots
+- 5. Customizing Scatter Plots
+- 6. Line Plots
+- 7. Multiple Line Plots
+- ➤
+
+## Grouped Bar Charts
+
+- 1. Review: Histograms
+- 2. Overlaid and Side-by-Side Histograms
+- 3. Grouped Bar Charts
+- 4. Scatter Plots
+- 5. Customizing Scatter Plots
+- 6. Line Plots
+- 7. Multiple Line Plots
+- ➤
+
+## Separate Bar Charts
+
+- top\_10.barh('track\_name', 'rank')
+- top\_10.barh('track\_name', 'peak\_rank')
+- Spotify keeps track of each song’s “peak rank”, which is a song’s lowest rank since its release on the platform.
+- With our current tools, we’d likely make two different plots, which are difficult to compare:
+
+## Grouped Bar Charts
+
+- top\_10.select('rank',
+- 'track\_name',
+- 'peak\_rank') \
+- .barh('track\_name')
+- We can use t.select() to build a “narrower” table with one categorical variable + several variables.
+- If the table we call barh on has multiple numerical columns, it will draw bars for each of them, and each column will get its own color!
+
+## Overlaid Bar Charts vs. Overlaid Histograms
+
+- Overlaid Histograms visualize the relationship between one continuous numerical variable and one categorical variable
+- There should only be one y value for every x value.
+- Useful for comparing numerical distributions
+- Overlaid Bar Charts visualize the relationship of two or more categorical variables (normally same categories).
+- Useful for comparing categorical distributions
+
+

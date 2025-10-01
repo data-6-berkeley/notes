@@ -1,0 +1,24 @@
+---
+title: "Variable Types"
+subtitle: "From Lecture 14"
+---
+
+## Variable Types
+
+- 1. Examples of Visualization
+- 2. What is Visualization?
+- 3. Variable Types
+- 4. Encoding
+- ➤
+
+## Variable Types
+
+- Suppose we have some data and want to create a visualization.
+- Question: How do we know what kind of visualization to create? 🤔
+- Answer: It depends on the type(s) of information we want to visualize.
+  - Bar charts work sometimes. But not all the time!
+- Where we are visualizing different variables (features) of a dataset, a lot depends on the type(s) of variables we’re working with:
+- Variable types are different from data types like string, int, Table, etc.
+- In the next few slides we’ll study the different variable feature types, in order to make more informed decisions when creating visualizations.
+
+

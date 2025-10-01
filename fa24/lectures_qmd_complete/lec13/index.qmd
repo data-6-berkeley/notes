@@ -1,0 +1,14 @@
+---
+title: "[Lec 12 and 13] Grouping and Pivoting"
+subtitle: "Lecture 13"
+---
+
+This chapter covers the key concepts from Lecture 13.
+
+## Topics Covered
+
+* [Higher order functions](higher-order-functions.qmd)
+* [Grouping with .group](grouping-with-group.qmd)
+* [Grouping by Multiple Columns](grouping-by-multiple-columns.qmd)
+* [Pivot Tables with .pivot](pivot-tables-with-pivot.qmd)
+

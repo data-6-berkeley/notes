@@ -1,0 +1,31 @@
+---
+title: "Overlaid and Side-by-Side Histograms"
+subtitle: "From Lecture 15"
+---
+
+## Numerical Distributions, Histograms
+
+- 1. Review: Bar Charts
+- 2. Numerical Distributions, Histograms
+- 3. Choosing Bins
+- 4. Overlaid and Side-by-Side Histograms
+- ➤
+
+## Histograms
+
+- A histogram visualizes the distribution of a numerical variable by binning. The method
+- t.hist(column, density = False)
+- creates a histogram of the column column of t. This column must contain numerical values.
+- It automatically chooses bins for us. We can change them.
+
+## Bar Charts vs. Histograms
+
+- Bar charts visualize the distribution of a categorical variable, or the relationship between a categorical variable and a numerical variable.
+- Length of bar corresponds to value.
+- Width of bar means nothing.
+- Histograms visualize the distribution of a numerical variable.
+- Length of bar corresponds to number of values within bin.
+- Width of bar corresponds to the width of the bin.
+  - Wider bin → more values within bin → smoother histogram.
+
+

@@ -1,0 +1,40 @@
+---
+title: "Strings"
+subtitle: "From Lecture 04"
+---
+
+## Strings
+
+- The third key data type in Python is string. Strings are used to store text.
+- A string is a sequence of characters with single quotes '' or double quotes "".
+- "go bears!!"
+- '154'
+- 'i am 21 years old'
+- ""
+- ''
+- Python strings
+- Since strings are values, they can also be used in assignment statements.
+- state = "California"
+
+## Strings
+
+- The third key data type in Python is string. Strings are used to store text.
+- A string is a sequence of characters with single quotes '' or double quotes "".
+- "go bears!!"
+- '154'
+- 'i am 21 years old'
+- ""
+- ''
+- Python strings
+- Since strings are values, they can also be used in assignment statements.
+- state = "California"
+- A few string operations:
+- len(): string length, i.e., the number of characters in a string
+- +: string concatenation
+
+## Casting with Strings
+
+- We can also typecast, or convert values between data types. Note that data type conversion is only valid “when it makes sense.”
+- str(x)      \# Returns x as a string
+
+

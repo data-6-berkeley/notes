@@ -1,0 +1,20 @@
+---
+title: "Encoding"
+subtitle: "From Lecture 14"
+---
+
+## Encoding
+
+- 1. Examples of Visualization
+- 2. What is Visualization?
+- 3. Variable Types
+- 4. Encoding
+- ➤
+
+## Encoding
+
+- An encoding is a mapping from a variable to a visual element.
+- For instance, in bar charts, length can visually encode a numerical variable (here, the average age).
+- Longer bar = higher average age.
+
+

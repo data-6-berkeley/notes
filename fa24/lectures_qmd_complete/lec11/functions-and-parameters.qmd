@@ -1,0 +1,55 @@
+---
+title: "Functions and Parameters"
+subtitle: "From Lecture 11"
+---
+
+## Functions
+
+- Data 6 Fall 2024
+- LECTURE 11
+- Breaking programs into smaller pieces.
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+
+## Functions and Parameters
+
+- 1. Functions and Parameters
+- 2. Parameter Scope and Return Values
+- 3. String Methods
+- 4. Demo
+- ➤
+
+## Functions
+
+- A key facet of Python and many other programming languages is the concept of a function.
+- Functions are a way to divide our code into small subparts to prevent us from writing repetitive code. They abstract away the complexity of operations, kind of like a toaster:
+
+## Functions
+
+- Functions are a way to divide our code into small subparts to prevent us from writing repetitive code.
+- def calc\_grade(bins, scores):
+- return sum(bins \* scores/100)
+- calc\_grade(data6\_bins, data6\_scores) \# Evaluates to 100
+- calc\_grade(data8\_bins, data8\_scores) \# Evaluates to 91.75
+
+## Defining New Functions
+
+- All function definitions use the same syntax structure.
+- def calc\_grade(bins, scores):
+- return sum(bins \* scores/100)
+- def is a keyword in Python. It means “define”.
+- calc\_grade is the name of our new function.
+- Our function has two parameters: bins and scores.
+- After the first line, we must indent using 4 spaces or one tab.
+- The return keyword determines what our function outputs.
+
+## Parameters
+
+- Parameters are the names that a function requires as an input, that are defined in its “signature”.
+- Parameters are placeholders for the values that will be passed into the function when it is called.
+- \# This function has one parameter, x.
+- \# When we call the function, the value we pass in
+- \# as an argument will replace x in the computation.
+- def triple(x):
+- return x\*3
+
+

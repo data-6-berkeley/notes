@@ -1,0 +1,27 @@
+---
+title: "Aggregation and Disaggregation"
+subtitle: "From Lecture 06"
+---
+
+## Aggregation and Disaggregation
+
+- ➤
+- Units of Analysis
+- Social Science Research
+- Materials-Based Research
+- Aggregation and Disaggregation
+
+## Disaggregation and Privacy
+
+- Public dataset by geographic region
+- The ACS main webpage [link] provides an aggregated view of data by region and specific disaggregations by income and sex.
+- By doing so, researchers can find it difficult (if not impossible) to disentangle the impact of certain variables, e.g., by race/ethnicity.
+- ACS has therefore also released ACS Public Use Microdata Sample (PUMS) [link] which releases a smaller sample of records from individual people and/or housing units.
+- Why the distinction?
+- Releasing fine-grained data about individuals is a privacy issue.
+  - It puts individuals in that dataset at risk of being identified beyond the research.
+  - In particular, small, already vulnerable populations are often more easily identified.
+- PUMS therefore uses a combination of privacy-preserving techniques such as differential privacy and synthetic data [source1, source2]
+- Table 2
+
+

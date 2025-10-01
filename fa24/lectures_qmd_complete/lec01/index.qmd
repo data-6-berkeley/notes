@@ -1,0 +1,13 @@
+---
+title: "Introduction"
+subtitle: "Lecture 01"
+---
+
+This chapter covers the key concepts from Lecture 01.
+
+## Topics Covered
+
+* [What is data science? What is computational thinking?](what-is-data-science-what-is-computational-thinking.qmd)
+* [What will you learn in this class?](what-will-you-learn-in-this-class.qmd)
+* [How will this class be run?](how-will-this-class-be-run.qmd)
+

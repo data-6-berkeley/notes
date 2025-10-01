@@ -1,0 +1,22 @@
+---
+title: "Joining"
+subtitle: "From Lecture 10"
+---
+
+## Joining and 
+
+Row Methods
+
+- Data 6 Fall 2024
+- LECTURE 10
+- Combining multiple sources of data.
+- Developed by students and faculty at UC Berkeley and Tuskegee University
+
+## Joining Tables
+
+- 1. Joining
+- 2. Demo
+- 3. The Row Data Type
+- ➤
+
+
