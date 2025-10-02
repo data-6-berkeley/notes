@@ -97,6 +97,17 @@ website:
             text: "Percentiles and Box Plots"
           - href: 09-summary-statistics/center-spread.qmd
             text: "Center and Spread"
+      - section: "L10: Taking and Filtering Rows"
+        href: 10-filtering/index.qmd
+        contents:
+          - href: 10-filtering/index.qmd
+            text: "Taking and Filtering Rows"
+          - href: 10-filtering/take.qmd
+            text: "Taking Subsets of Tables"
+          - href: 10-filtering/filtering.qmd
+            text: "Filtering with .where()"
+          - href: 10-filtering/booleans.qmd
+            text: "Booleans"
       - href: five-things.qmd
         text: "5 Things to Know"
       - href: reference.qmd

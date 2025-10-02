@@ -1,0 +1,23 @@
+---
+title: "Taking and Filtering Rows"
+subtitle: "Getting subsets of table rows to answer questions"
+---
+
+## What is Filtering?
+
+Filtering is the process of selecting specific rows from a table based on certain conditions. This is one of the most fundamental operations in data analysis. We often want to focus on particular subsets of our data to answer specific questions.
+
+## Our Dataset
+
+We'll be working with SAT data from 2014, showing average scores by state. This data uses the old 2400-point scale (800 points each for Critical Reading, Math, and Writing).
+
+```{python}
+from datascience import *
+import numpy as np
+sat = Table.read_table('data/sat2014-lecture.csv')
+sat
+```
+
+::: {.callout-note title="Historical Context"}
+The SAT was redesigned in 2016, changing from a 2400-point scale to a 1600-point scale. This dataset reflects the older format, which is why you'll see higher total scores than you might expect.
+:::

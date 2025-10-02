@@ -1,0 +1,226 @@
+---
+title: "Selecting Rows with .take()"
+subtitle: "Getting specific rows by position"
+---
+
+## Introduction to .take()
+
+The `.take()` method allows you to select specific rows from a table based on their position (index). This is useful when you want to look at particular rows, such as the first few rows, the last few rows, or rows at specific positions.
+
+## Basic .take() Syntax
+
+```{python}
+#| include: false
+from datascience import *
+import numpy as np
+```
+
+```{python}
+# Load our data
+sat = Table.read_table('data/sat2014-lecture.csv')
+sat = sat.with_columns(
+    'Combined', sat.column('Critical Reading') + sat.column('Math') + sat.column('Writing')
+)
+```
+
+```{python}
+# Basic syntax: table.take(row_indices)
+# Take a single row (remember: 0-indexed!)
+sat.take(0)  # First row
+```
+
+```{python}
+sat.take(2)  # Third row
+```
+
+## Taking Multiple Rows
+
+You can take multiple rows by passing an array of indices:
+
+```{python}
+# Take specific rows by passing an array
+sat.take(make_array(0, 2, 4))  # First, third, and fifth rows
+```
+
+```{python}
+# Take the first 5 rows
+sat.take(np.arange(5))
+```
+
+::: {.callout-note title="np.arange() is Your Friend"}
+`np.arange(5)` creates an array `[0, 1, 2, 3, 4]`, which is perfect for taking the first 5 rows. This is much easier than typing out `make_array(0, 1, 2, 3, 4)`!
+:::
+
+## Common .take() Patterns
+
+### Looking at the Top of the Table
+
+```{python}
+# First 3 rows
+sat.take(np.arange(3))
+```
+
+```{python}
+# First 10 rows
+sat.take(np.arange(10))
+```
+
+### Looking at Specific Rows
+
+```{python}
+# Rows 5, 10, and 15
+sat.take(make_array(5, 10, 15))
+```
+
+```{python}
+# Every 5th row starting from 0
+sat.take(np.arange(0, sat.num_rows, 5))
+```
+
+## Combining .take() with .sort()
+
+One of the most powerful patterns is combining `.sort()` with `.take()` to get the "top" or "bottom" rows based on some criteria:
+
+```{python}
+# States with highest math scores
+sat.sort("Math", descending=True).take(np.arange(5))
+```
+
+```{python}
+# States with lowest participation rates
+sat.sort("Participation Rate", descending=False).take(np.arange(5))
+```
+
+```{python}
+# States with highest combined scores
+sat.sort("Combined", descending=True).take(np.arange(3))
+```
+
+::: {.callout-tip title="Sort Then Take"}
+The pattern `table.sort(column, descending=True).take(np.arange(n))` is extremely common for finding the "top N" items in your data.
+:::
+
+## .take() Works on Arrays Too!
+
+Interestingly, `.take()` works on arrays as well as tables:
+
+```{python}
+# Take elements from an array
+states = sat.column('State')
+states.take(np.arange(5))
+```
+
+```{python}
+# This is equivalent to:
+sat.take(np.arange(5)).column('State')
+```
+
+::: {.callout-warning title="Order Matters"}
+While `array.take(indices)` and `table.take(indices).column(name)` often give the same result, this interchangeability doesn't hold for all methods. Be careful when assuming methods work the same way on arrays and tables!
+:::
+
+## Practical Examples
+
+### Finding Top Performers
+
+```{python}
+# Top 5 states by math score
+top_math = sat.sort("Math", descending=True).take(np.arange(5))
+top_math
+```
+
+```{python}
+# Top 3 states by participation rate
+top_participation = sat.sort("Participation Rate", descending=True).take(np.arange(3))
+top_participation
+```
+
+### Finding Bottom Performers
+
+```{python}
+# Bottom 5 states by combined score
+bottom_scores = sat.sort("Combined", descending=False).take(np.arange(5))
+bottom_scores
+```
+
+### Sampling Data
+
+```{python}
+# Take every 3rd row (a simple sample)
+sample = sat.take(np.arange(0, sat.num_rows, 3))
+sample
+```
+
+```{python}
+# Take a random sample of 10 rows
+import random
+random.seed(42)  # For reproducible results
+random_indices = random.sample(range(sat.num_rows), 10)
+sat.take(random_indices)
+```
+
+## The Limitation of .take()
+
+While `.take()` is useful for exploring specific rows, it has a major limitation: **it only works with positions, not conditions**.
+
+### What if You Want All High-Scoring States?
+
+Suppose you want to find all states with SAT scores above 1600. You could use `.take()` to look at a few rows:
+
+```{python}
+# Look at a few rows to see some scores
+from datascience import *
+import numpy as np
+sat = Table.read_table('data/sat2014-lecture.csv')
+sat = sat.with_columns(
+    'Combined', sat.column('Critical Reading') + sat.column('Math') + sat.column('Writing')
+)
+sat.take(np.arange(5))
+```
+
+But what if there are hundreds or thousands of states? You'd have to:
+- Manually scroll through the data
+- Look at each row individually  
+- Remember which rows had high scores
+- This is time-consuming and error-prone!
+
+### The Need for Something Better
+
+What we really need is a way to **automatically select rows based on whether they meet a condition**. Instead of saying "give me rows 0, 5, and 12", we want to say "give me all rows where the SAT score is above 1600".
+
+This is where **booleans** and **`.where()`** come in!
+
+## When to Use .take()
+
+Use `.take()` when you want to:
+
+- **Look at specific rows** by their position
+- **Get the first/last few rows** of a table
+- **Sample data** for exploration
+- **Get top/bottom performers** after sorting
+- **Work with a subset** for faster computation
+
+## When NOT to Use .take()
+
+Don't use `.take()` when you want to:
+
+- **Filter by values** (use `.where()` instead)
+- **Select rows based on conditions** (use `.where()` instead)
+- **Get rows that meet criteria** (use `.where()` instead)
+
+::: {.callout-important title="Moving Beyond .take()"}
+- **`.take()`** selects rows by **position** (index) - great for exploration
+- **We need something that selects rows by **condition** (value) - for filtering
+
+Next, we'll learn about **booleans** (True/False values) that will help us define these conditions!
+:::
+
+## Summary
+
+- **`.take()`** selects specific rows by their position in the table
+- **Single index**: `table.take(5)` gets the 6th row
+- **Multiple indices**: `table.take([0, 2, 4])` gets rows 1, 3, and 5
+- **`np.arange(n)`** is perfect for taking the first n rows
+- **Combine with `.sort()`** to get top/bottom performers
+- **Works on arrays too**, but be careful about assumptions
+- **Use for position-based selection**, not value-based filtering

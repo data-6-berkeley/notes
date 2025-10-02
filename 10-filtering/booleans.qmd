@@ -1,0 +1,197 @@
+---
+title: "Booleans"
+subtitle: "Understanding True/False values"
+---
+
+## What are Booleans?
+
+The `bool` (Boolean) data type has only two possible values: `True` and `False`. These are Python keywords with special meanings - they represent the fundamental concept of truth in programming.
+
+```{python}
+#| include: false
+from datascience import *
+import numpy as np
+```
+
+```{python}
+True
+```
+
+```{python}
+False
+```
+
+```{python}
+type(True)
+```
+
+```{python}
+type(False)
+```
+
+## Boolean Values in Data Science
+
+In data analysis, boolean values are incredibly useful for representing binary variables:
+
+- **Yes/No questions**: "Did the student pass the exam?"
+- **On/Off states**: "Is the feature enabled?"
+- **High/Low categories**: "Is the score above average?"
+- **Presence/Absence**: "Does the text contain this word?"
+
+## Working with Booleans
+
+### Boolean Arithmetic
+
+Interestingly, `True` and `False` can be treated as numbers in Python:
+
+```{python}
+True + True
+```
+
+```{python}
+False + True
+```
+
+```{python}
+True * 5
+```
+
+```{python}
+False * 10
+```
+
+::: {.callout-note title="Boolean Values as Numbers"}
+- `True` is equivalent to `1`
+- `False` is equivalent to `0`
+
+This property is useful for counting and calculations, but be careful not to rely on it too heavily - it's better to be explicit about what you're doing.
+:::
+
+### Storing Booleans in Arrays
+
+Like other data types, booleans can be stored in arrays:
+
+```{python}
+np.array([True, False, True, False])
+```
+
+```{python}
+# Boolean arrays are useful for filtering
+scores = np.array([85, 92, 78, 96, 88])
+high_scores = scores > 90
+high_scores
+```
+
+```{python}
+# Use boolean arrays to select values
+scores[high_scores]
+```
+
+## Important Rules
+
+::: {.callout-warning title="Boolean Keywords are Reserved"}
+`True` and `False` are Python keywords and **cannot be used as variable names**. This is similar to how you can't use numbers like `3` or strings like `"hello"` as variable names.
+:::
+
+```{python}
+#| error: true
+# This will cause an error - True cannot be used as a variable name
+True = 5
+```
+
+```{python}
+#| error: true
+# This will also cause an error
+3 = 4
+```
+
+## Boolean Operations
+
+Python provides several ways to work with boolean values:
+
+### Comparison Operators
+
+```{python}
+5 > 3
+```
+
+```{python}
+10 == 10
+```
+
+```{python}
+7 != 8
+```
+
+```{python}
+# These work with arrays too
+scores = np.array([85, 92, 78, 96, 88])
+scores > 90
+```
+
+### Logical Operators
+
+```{python}
+# AND: both conditions must be True
+(5 > 3) and (10 > 7)
+```
+
+```{python}
+# OR: at least one condition must be True
+(5 > 10) or (10 > 7)
+```
+
+```{python}
+# NOT: reverses the boolean value
+not (5 > 10)
+```
+
+## Booleans: The Key to Automatic Selection
+
+Remember our problem from the last section? We wanted to find all states with SAT scores above 1600, but `.take()` only lets us select specific rows by position.
+
+**Boolean values solve this problem!** They let us create **conditions** that can be automatically evaluated for every row.
+
+### The Boolean Solution
+
+Instead of manually selecting rows, we can create a boolean condition:
+
+```{python}
+# Create a boolean array that's True for high-scoring states
+from datascience import *
+import numpy as np
+sat = Table.read_table('data/sat2014-lecture.csv')
+sat = sat.with_columns(
+    'Combined', sat.column('Critical Reading') + sat.column('Math') + sat.column('Writing')
+)
+sat.show(3)  # First, let's see the data structure
+```
+
+```{python}
+# This would create True/False for each row based on our condition:
+# True if SAT score > 1600, False otherwise
+combined_scores = sat.column('Combined')
+above_1600 = combined_scores > 1600
+above_1600
+```
+
+```{python}
+# This boolean array tells us which states have scores above 1600
+# We can use it to filter the data automatically!
+```
+
+But how do we actually use these True/False values to select rows? That's where **`.where()`** comes in!
+
+## Why Booleans Matter for Filtering
+
+Boolean values are the foundation of filtering operations. When we filter data, we're essentially asking "Is this condition True or False for each row?" The rows where the condition is `True` are kept, and the rows where it's `False` are removed.
+
+**In the next section**, we'll learn about `.where()` - the method that automatically picks out all the rows where our boolean conditions are `True`!
+
+## Summary
+
+- **Booleans** have only two values: `True` and `False`
+- They can be used in arithmetic (True = 1, False = 0)
+- They can be stored in arrays and used for selection
+- They're essential for filtering operations
+- `True` and `False` are reserved keywords and cannot be used as variable names
