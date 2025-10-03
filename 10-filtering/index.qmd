@@ -1,5 +1,5 @@
 ---
-title: "Taking and Filtering Rows"
+title: "Filtering and Boolean"
 subtitle: "Getting subsets of table rows to answer questions"
 ---
 

@@ -108,6 +108,15 @@ website:
             text: "Booleans"
           - href: 10-filtering/filtering.qmd
             text: "Filtering with .where()"
+      - section: "L11: Grouping, Pivoting, and Disaggregating"
+        href: 11-grouping/index.qmd
+        contents:
+          - href: 11-grouping/index.qmd
+            text: "Grouping, Pivoting, and Disaggregating"
+          - href: 11-grouping/group.qmd
+            text: "Grouping"
+          - href: 11-grouping/pivot.qmd
+            text: "Pivoting"
       - href: five-things.qmd
         text: "5 Things to Know"
       - href: reference.qmd
