@@ -12,9 +12,13 @@ Filtering is the process of selecting specific rows from a table based on certai
 We'll be working with SAT data from 2014, showing average scores by state. This data uses the old 2400-point scale (800 points each for Critical Reading, Math, and Writing).
 
 ```{python}
+#| include: false
 from datascience import *
 import numpy as np
-sat = Table.read_table('data/sat2014-lecture.csv')
+```
+
+```{python}
+sat = Table.read_table('data/sat2014.csv')
 sat
 ```
 

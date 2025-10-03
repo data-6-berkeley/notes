@@ -104,10 +104,10 @@ website:
             text: "Taking and Filtering Rows"
           - href: 10-filtering/take.qmd
             text: "Taking Subsets of Tables"
-          - href: 10-filtering/filtering.qmd
-            text: "Filtering with .where()"
           - href: 10-filtering/booleans.qmd
             text: "Booleans"
+          - href: 10-filtering/filtering.qmd
+            text: "Filtering with .where()"
       - href: five-things.qmd
         text: "5 Things to Know"
       - href: reference.qmd

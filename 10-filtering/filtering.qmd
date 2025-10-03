@@ -5,30 +5,13 @@ subtitle: "Selecting rows based on conditions"
 
 ## Finally: Automatic Selection with .where()
 
-We've seen how `.take()` lets us select specific rows by position, and we've learned about booleans (True/False values). Now we can combine these concepts to automatically select rows based on **conditions** rather than positions!
-
-This is filtering - one of the most important operations in data analysis.
-
-## Loading Our Data
-
-Let's start by loading the SAT data we'll use throughout this chapter:
+We've seen how `.take()` lets us select specific rows by position, and we've learned about booleans (True/False values). Now we can combine these concepts to automatically select rows based on **conditions** rather than positions! This is filtering, one of the most important operations in data analysis.
 
 ```{python}
+#| include: false
 from datascience import *
 import numpy as np
-```
-
-```{python}
-sat = Table.read_table('data/sat2014-lecture.csv')
-sat
-```
-
-```{python}
-# Add a combined score column
-sat = sat.with_columns(
-    'Combined', sat.column('Critical Reading') + sat.column('Math') + sat.column('Writing')
-)
-sat
+sat = Table.read_table('data/sat2014.csv')
 ```
 
 ## The .where() Method
@@ -38,7 +21,12 @@ The `.where()` method is the most powerful tool for filtering tables. It creates
 ### Basic Syntax
 
 ```{python}
-# Basic syntax: table.where(column_name, condition)
+# Basic syntax: table.where(column_name, predicate)
+sat.where('State', are.equal_to('California'))
+```
+
+```{python}
+# Equivalent to the above
 sat.where('State', 'California')
 ```
 
@@ -48,22 +36,27 @@ When you pass a single value as the second argument to `.where()`, it looks for 
 
 ## Predicates: The Power of .where()
 
-The real power of `.where()` comes from using **predicates** - functions that specify what condition to check. Here are the most important ones:
+The real power of `.where()` comes from using **predicates**. These are functions that specify what condition to check. Here are the most commonly used ones:
 
 | Predicate | Description | Example |
 |-----------|-------------|---------|
 | `are.equal_to(z)` | Is the value equal to `z`? | `are.equal_to('California')` |
-| `are.above(x)` | Is the value above `x`? | `are.above(1800)` |
+| `are.above(x)` | Is the value above `x`? | `are.above(1600)` |
 | `are.below(x)` | Is the value below `x`? | `are.below(10)` |
 | `are.between(x, y)` | Is the value between `x` and `y`? | `are.between(580, 600)` |
 | `are.containing(s)` | Does the value contain string `s`? | `are.containing('Dakota')` |
 | `are.contained_in(array)` | Is the value in the array? | `are.contained_in(['CA', 'NY', 'TX'])` |
 
+::: {.callout-note
+title="Predicates"}
+You can find a full list of predicates in the [Data 6 Python Reference](https://data6.org/notes/reference.html#table.where-predicates).
+:::
 ### Examples with SAT Data
 
+We previously couldn't easily find states with combined SAT scores above 1600. Now we can:
 ```{python}
-# Find states with combined SAT scores above 1800
-sat.where("Combined", are.above(1800))
+# Find states with combined SAT scores above 1600
+sat.where("Combined", are.above(1600))
 ```
 
 ```{python}
@@ -91,8 +84,8 @@ sat.where("State", are.not_equal_to("California"))
 ```
 
 ```{python}
-# Find states with scores NOT above 1800
-sat.where("Combined", are.not_above(1800))
+# Find states with scores NOT above 1600
+sat.where("Combined", are.not_above(1600))
 ```
 
 ## Multiple Conditions
@@ -132,79 +125,3 @@ sat.where("State", are.contained_in(deep_south))
 # Find deep south states with low participation and high scores
 sat.where("State", are.contained_in(deep_south)).where("Participation Rate", are.below(10)).where("Combined", are.above(1600))
 ```
-
-## Common Filtering Patterns
-
-### Finding Top Performers
-
-```{python}
-# States with highest math scores
-sat.sort("Math", descending=True).take(np.arange(5))
-```
-
-```{python}
-# States with highest participation rates
-sat.sort("Participation Rate", descending=True).take(np.arange(5))
-```
-
-### Finding Outliers
-
-```{python}
-# States with unusually high or low participation
-sat.where("Participation Rate", are.below(5))
-```
-
-```{python}
-sat.where("Participation Rate", are.above(90))
-```
-
-### Regional Analysis
-
-```{python}
-# States with "New" in their name
-sat.where("State", are.containing("New"))
-```
-
-```{python}
-# States with "North" or "South" in their name
-north_south = sat.where("State", are.containing("North")).append(sat.where("State", are.containing("South")))
-north_south
-```
-
-## Visualizing Filtered Data
-
-Filtering becomes even more powerful when combined with visualization:
-
-```{python}
-# Create a scatter plot of participation vs combined scores
-import plotly.express as px
-
-px.scatter(data_frame=sat.to_df(), 
-           x='Combined', 
-           y='Participation Rate', 
-           hover_data={'State': True},
-           title='Participation Rate vs. Combined SAT Score for States in 2014')
-```
-
-::: {.callout-important title="Correlation vs. Causation"}
-Looking at this scatter plot, you might notice that states with lower participation rates tend to have higher SAT scores. Does this mean that lower participation *causes* higher scores? Not necessarily! This could be due to selection bias - states with lower participation might only have their highest-performing students taking the SAT.
-:::
-
-## Summary
-
-🎉 **Congratulations!** You now know how to automatically select rows based on conditions:
-
-- **`.where()`** is the most important table method for filtering
-- **Predicates** like `are.above()`, `are.between()`, etc. specify conditions
-- **Method chaining** allows you to apply multiple filters
-- **`are.contained_in()`** lets you filter for multiple specific values
-- **Negation** with `not_` finds rows that don't meet conditions
-- **No more manual row selection!** You can now filter thousands of rows with a single command
-
-### How We Got Here
-
-1. **Started with `.take()`** - selecting rows by position (manual, limited)
-2. **Introduced booleans** - True/False values that represent conditions
-3. **Combined them with `.where()`** - automatic selection based on conditions
-
-This progression from manual selection to automatic filtering is a fundamental pattern in data analysis!
