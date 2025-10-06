@@ -61,16 +61,18 @@ In the function above, `my_function` is the name of the function, which takes on
 | `np.cumsum(arr)` | Returns the cumulative sum of the elements in `arr`, where each element is the sum of all preceding elements including itself | **array** | **array**: the cumulative sum of the values in the array |
 | `np.diff(arr)` | Computes the difference between consecutive elements in `arr`. | **array** | **array**: the differences between consecutive elements in the array containing `len(arr) - 1` elements |
 | `np.sort(arr)` | Sorts an array in ascending order. | **array** | `None` (`arr` is sorted; no copy is made) |
+| `arr.take(indices)` | Creates an array with only the elements of `arr` at the given indices. `indices` is either an array of indices or an integer corresponding to one index. (array method) | **array**: indices of elements | **array**: a copy of the original array with only the elements at the given indices |
 | `percentile(p, arr)` | Returns the corresponding percentile `p` of an array `arr`. | 1. value between 0 and 100 <br/> 2. **array** of **int**s or **float**s | **int** or **float** 
 
 ## String Methods
 
 | **Function** | **Description** | **Input** | **Output** |
 |--|------|----|----|
+| `str.upper()` | Returns a copy of `str` where all letters are uppercase. | | **string** |
+| `str.lower()` | Returns a copy of `str` where all letters are lowercase. | | **string** |
+| `str.replace(old, new)` | Returns a copy of `str` with all occurrences of the substring `old` replaced by `new`.| `old`: the substring to be replaced. <br> `new`: the substring to replace `old` with. | **string** |
 | `str.split(separator, maxsplit)` | Splits `str` into a list of substrings using the specified `separator`. If `separator` is not provided, splits at any whitespace. You can also use the optional argument `maxsplit` to limit the number of splits. | 1. (Optional) **separator**: the delimiter used to split `str` <br> 2. (Optional) **maxsplit**: maximum number of splits | **list** of substrings |
 | `str.join(iterable)` | Concatenates the elements in `iterable` (usually a list or array) into a single string, with each element separated by `str`. | **iterable**: an iterable of strings to join (can be an array or list of strings) | **string**: a single string formed by joining the elements of `iterable` with the separator `str` |
-| `str.replace(old, new)` | Returns a copy of the string with all occurrences of the substring `old` replaced by `new`.| `old`: the substring to be replaced. <br> `new`: the substring to replace `old` with. | string: a new string where occurrences of `old` have been replaced by `new`.|
-
 
 
 ## Tables and Table Methods
