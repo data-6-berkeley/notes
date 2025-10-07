@@ -1,0 +1,168 @@
+---
+title: "Filtering and Boolean Predicates"
+subtitle: "Selecting rows based on a condition"
+---
+
+```{python}
+#| include: false
+from datascience import *
+import numpy as np
+import warnings
+warnings.filterwarnings("ignore")
+
+%matplotlib inline
+import matplotlib.pyplot as plots
+plots.style.use('fivethirtyeight')
+plots.rcParams["patch.force_edgecolor"] = True
+```
+
+## The `where` Table Method
+
+The `where` Table method filters rows based on the values of a column matching a specific condition. Up until now, we've considered only exact-match cases:
+
+```
+tbl.where("Column Name", some_value)
+```
+
+However, more often we will need to have more flexible filters, such as matching on a _range_ of values. We can do so via **Boolean predicates**. Boolean predicates are a means of specifying conditions that must be True or False. In this class, we will use Boolean predicates with respect to the second `predicate` argument of the `where` Table method; you will therefore see such predicates referred to as `Table.where` predicates in the Python Reference.
+
+The word "Boolean" stems from the **boolean data type**, which we will see soon to be a data type that has exactly two values: `True` and `False`. We will revisit this data type soon.
+
+::: {.callout-note title="Read _Inferential Thinking_"}
+ Read [Ch 6.2.1 - 6.2.4](https://inferentialthinking.com/chapters/06/2/Selecting_Rows), which gives examples of Boolean predicates.
+
+ [Ch 6.2.3](https://inferentialthinking.com/chapters/06/2/Selecting_Rows.html#multiple-features) invokes **method chaining**, where the Table returned from one `where` call is used for the second `where` call. We discuss this a bit mroe below.
+:::
+
+## SAT Scores by State
+
+Here are some other examples, as seen in lecture. Today we will be studying exam scores on a standardized high school exam, the SAT. We will be working with a dataset showing aggregated (average) SAT exam scores by state ([source 1](https://commonwealthfoundation.org/2014/12/22/sat-scores-by-state-2014/), [source 2](https://reports.collegeboard.org/sat-suite-program-results/data-archive)). It also shows the state's participation rate, defined as the percentage of high school graduates who took the SAT exam.
+
+**Note**: This data is from 2014, so the total combined score is out of 2400 (over three sections each out of 800) instead of 1600. We will add this column to our table before continuing.
+
+```{python}
+sat = Table.read_table('data/sat2014-lecture.csv')
+sat = sat.with_columns(
+    'Combined',
+    sat.column('Critical Reading') + \
+        sat.column('Math') + \
+        sat.column('Writing')
+)
+sat
+```
+
+### A cursory observation
+
+Let's take a look at the states with the highest average combined score:
+
+```{python}
+sat.sort("Combined", descending=True).take(np.arange(5))
+```
+
+...and let's look at the states with the highest participation rate:
+
+```{python}
+sat.sort("Participation Rate", descending=True).take(np.arange(5))
+```
+
+What's going on? Let's dive in.
+
+### Defining conditions for the `where` method
+
+We've already seen how we can use `tbl.where()` to find rows that _exactly_ match what we're looking for. For example:
+
+```python
+sat.where('State', 'California')
+```
+
+But `tbl.where` is also capable of so much more! The second argument in `.where` can accept a **predicate**, which tells Python what condition to match rows on. See the [Data 6 Python Reference](https://data6.org/notes/reference).
+
+
+```{python}
+sat.where("Combined", are.above(1800))
+```
+
+Note that `are.equal_to(z)` is the same as just passing in `z` itself as the second argument.
+
+
+```{python}
+sat.where("State", are.containing("Dakota"))
+```
+
+
+```{python}
+sat.where("Math", are.between(580, 600))
+```
+
+### Method Chaining: Multiple Conditions
+
+We can match rows to multiple conditions/predicates by chaining `where` method calls together. For example, we can look for states where the participation rate is above 20% and the average combined SAT score is above 1500.
+
+
+```{python}
+sat.where("Participation Rate", are.above(20)).where("Combined", are.above(1500)) # Filter the `sat` table to find states where participation is above 20% and combined score is above 1500
+```
+
+Equivalently:
+
+```{python}
+# better formatting (note parentheses)
+(
+    sat.where("Participation Rate", are.above(20))
+        .where("Combined", are.above(1500))
+) # both of these have to be true!
+```
+
+Another way to think about method chaining is to explicitly assign each subexpression that evaluates to a table:
+
+```{python}
+sat1 = sat
+sat2 = sat1.where("Participation Rate", are.above(20))
+sat3 = sat2.where("Combined", are.above(1500))
+```
+
+
+### Exploring our observation further
+
+Let's return to the curious observation we started with. These are tasks that we'll let you explore in a notebook.
+
+**Task 1** Filter the `sat` table to find states where participation is below 10% and combined score is between 1200 and 1400.
+```python
+... # your code here
+```
+
+**Task 2**: Filter the `sat` table to include only the states listed in the `deep_south` array.
+
+```python
+deep_south = np.array(['Alabama', 'Georgia',
+                       'Louisiana', 'Mississippi',
+                       'South Carolina'])
+... # your code here
+```
+
+**Task 3: ** Find the states in the deep south with participation lower than 10% and combined score greater than or equal to 1600.
+
+```python
+... # your code here
+```
+
+Finally, consider the scatter plot of all states' participation rates and combined SAT scores.
+
+```{python}
+import plotly.express as px
+
+px.scatter(data_frame = sat.to_df(), 
+           x = 'Combined', 
+           y = 'Participation Rate', 
+           hover_data = {'State': True},
+           title = 'SAT (2014) Participation Rate by state')
+```
+
+**Lower participation rate** seems to be associated with **higher SAT scores**. But as we have seen several times in this course, **correlation does not imply causation**. Instead, consider that not everyone takes the SAT; participation rate for this exam varies by state and geographic location. The SAT is scheduled on a non-school day, usually a weekend, and students have to pay extra to take the exam.
+
+If such an exam is effectively optional, then students that actually take the SAT are likely the ones more ready and able to perform well on such an exam---the top students. In other words, states with lower participation rates will exhibit a biased population of students who actually take the exam. You can read more in this [blog post on ACT / SAT scores](https://blog.prepscholar.com/average-sat-and-act-scores-by-stated-adjusted-for-participation-rate).
+
+## External Reading
+
+* (mentioned in notes) _Computational and Inferential Thinking_, [Ch 6.2](https://inferentialthinking.com/chapters/06/2/Selecting_Rows.html)
+* (mentioned in notes) 2016. "Average SAT & ACT Scores by State (Participation Adjusted)." Prep Scholar. [link](https://blog.prepscholar.com/average-sat-and-act-scores-by-stated-adjusted-for-participation-rate)

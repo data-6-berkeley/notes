@@ -1,0 +1,42 @@
+---
+title: "Group and Pivot"
+subtitle: "Selecting rows based on a condition"
+---
+
+## Grouping
+
+::: {.callout-note title="Read _Inferential Thinking_"}
+ Read [Ch 8.2](https://inferentialthinking.com/chapters/08/2/Classifying_by_One_Variable.html), which describes grouping in detail.
+ 
+ Before continuing, make sure that:
+
+ * You know that `group` with one argument produces counts per unique value in the grouped column.
+ * You know that `group` with two arguments produces an **aggregated value** per unique value in the grouped column, and can potentially produce multiple columns based on which column value can be aggregated with the provided **aggregator** function.
+:::
+
+You can also group data on multiple columns. We discuss this and a different table transformation, pivoting, below.
+
+## Pivoting
+
+::: {.callout-note title="Read _Inferential Thinking_"}
+ Read [Ch 8.3](https://inferentialthinking.com/chapters/08/3/Cross-Classifying_by_More_than_One_Variable.html), which describes grouping by multiple columns and a cross-tabulation concept called **pivoting**.
+ 
+ Before continuing, make sure that:
+ 
+ * You can compare and contrast how `group` and `pivot` aggregate data.
+ * You understand the optional arguments to the `pivot` method: `values` and `collect`.
+:::
+
+## Aggregating and Disaggregating
+
+Grouping and pivoting are table operations most useful in translating between units of analysis. In particular, it lets us **disaggregate** data. Instead of just reporting an average across all datapoints, we can report averages as broken down by different subgroups.
+
+### Case Study: 1973 UC Berkeley Graduate Admissions
+
+The Fall 1973 admitted graduate student population had a peculiar characteristic: Overall, women were admitted at **lower rates** than men to graduate school, seeming to suggest that the admission rates was biased. However, when the admission rates _by department_ (e.g., by field of study) were studied, women were often admitted at **higher rates** than men. How is this possible?
+
+This is a peculiar case study around Simpson's Paradox: when the trends of subgroups are **reversed** or **not seen** as compared to the trends of the overall dataset. We will explore this in detail in the reading, in section, and in the project. Stay tuned!
+
+## External Reading
+
+* (mentioned in notes) _Computational and Inferential Thinking_, [Ch 8.3](https://inferentialthinking.com/chapters/08/3/Cross-Classifying_by_More_than_One_Variable.html)

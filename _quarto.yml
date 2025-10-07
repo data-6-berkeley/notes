@@ -90,13 +90,22 @@ website:
             text: "Histograms and Ranges"
           - href: 08-histograms/exercises.qmd
             text: "Exercises"
-      - section: "L09: Summary Statistics"
+      - section: "L09: Summary Statistics and Box Plots"
         href: 09-summary-statistics/index.qmd
         contents:
           - href: 09-summary-statistics/index.qmd
             text: "Percentiles and Box Plots"
           - href: 09-summary-statistics/center-spread.qmd
             text: "Center and Spread"
+      - section: "L10: Filtering and Boolean Predicates"
+        href: 10-boolean-predicates/index.qmd
+        contents:
+          - href: 10-boolean-predicates/index.qmd
+            text: "Filtering and Boolean Predicates"
+          - href: 10-boolean-predicates/boolean.qmd
+            text: "Booleans"
+      - section: "L11: Grouping and Pivoting"
+        href: 11-group-pivot/index.qmd
       - href: five-things.qmd
         text: "5 Things to Know"
       - href: reference.qmd
