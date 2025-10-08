@@ -1,9 +1,7 @@
 ---
-title: "Group and Pivot"
-subtitle: "Selecting rows based on a condition"
+title: "Grouping"
+subtitle: "Aggregating values across rows."
 ---
-
-## Grouping
 
 ::: {.callout-note title="Read _Inferential Thinking_"}
  Read [Ch 8.2](https://inferentialthinking.com/chapters/08/2/Classifying_by_One_Variable.html), which describes grouping in detail.
@@ -14,22 +12,15 @@ subtitle: "Selecting rows based on a condition"
  * You know that `group` with two arguments produces an **aggregated value** per unique value in the grouped column, and can potentially produce multiple columns based on which column value can be aggregated with the provided **aggregator** function.
 :::
 
-You can also group data on multiple columns. We discuss this and a different table transformation, pivoting, below.
-
-## Pivoting
+You can also group data on multiple columns. 
 
 ::: {.callout-note title="Read _Inferential Thinking_"}
- Read [Ch 8.3](https://inferentialthinking.com/chapters/08/3/Cross-Classifying_by_More_than_One_Variable.html), which describes grouping by multiple columns and a cross-tabulation concept called **pivoting**.
- 
- Before continuing, make sure that:
- 
- * You can compare and contrast how `group` and `pivot` aggregate data.
- * You understand the optional arguments to the `pivot` method: `values` and `collect`.
+ Read [Ch 8.3.1-8.3.2](https://inferentialthinking.com/chapters/08/3/Cross-Classifying_by_More_than_One_Variable.html), which describes grouping by multiple columns.
 :::
 
 ## Aggregating and Disaggregating
 
-Grouping and pivoting are table operations most useful in translating between units of analysis. In particular, it lets us **disaggregate** data. Instead of just reporting an average across all datapoints, we can report averages as broken down by different subgroups.
+Grouping is a table operation most useful in translating between units of analysis. In particular, it lets us **disaggregate** data. Instead of just reporting an average across all datapoints, we can report averages as broken down by different subgroups.
 
 ### Case Study: 1973 UC Berkeley Graduate Admissions
 
@@ -40,3 +31,4 @@ This is a peculiar case study around Simpson's Paradox: when the trends of subgr
 ## External Reading
 
 * (mentioned in notes) _Computational and Inferential Thinking_, [Ch 8.3](https://inferentialthinking.com/chapters/08/3/Cross-Classifying_by_More_than_One_Variable.html)
+* P. J. Bickel et al. ,Sex Bias in Graduate Admissions: Data from Berkeley. Science 187, 398-404(1975). [DOI:10.1126/science.187.4175.398](https://www.science.org/doi/10.1126/science.187.4175.398)

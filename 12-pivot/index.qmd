@@ -1,0 +1,15 @@
+---
+title: "Pivot and Join"
+subtitle: "Selecting rows based on a condition"
+---
+
+## Pivoting and Join
+
+::: {.callout-note title="Read _Inferential Thinking_"}
+ Read [Ch 8.3](https://inferentialthinking.com/chapters/08/3/Cross-Classifying_by_More_than_One_Variable.html), which describes grouping by multiple columns and a cross-tabulation concept called **pivoting**.
+ 
+ Before continuing, make sure that:
+
+ * You can compare and contrast how `group` and `pivot` aggregate data.
+ * You understand the optional arguments to the `pivot` method: `values` and `collect`.
+:::

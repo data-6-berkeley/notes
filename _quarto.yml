@@ -105,7 +105,7 @@ website:
           - href: 10-boolean-predicates/boolean.qmd
             text: "Booleans"
       - section: "L11: Grouping and Pivoting"
-        href: 11-group-pivot/index.qmd
+        href: 11-group/index.qmd
       - href: five-things.qmd
         text: "5 Things to Know"
       - href: reference.qmd
