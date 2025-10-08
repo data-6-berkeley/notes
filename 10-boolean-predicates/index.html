@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Table Exercises</title>
+<title>Filtering and Boolean Predicates</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../04-tables/none-print.html" rel="next">
-<link href="../04-tables/index.html" rel="prev">
+<link href="../10-boolean-predicates/boolean.html" rel="next">
+<link href="../09-summary-statistics/center-spread.html" rel="prev">
 <link href="../assets/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -132,7 +132,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../04-tables/index.html">L04: Table Fundamentals</a></li><li class="breadcrumb-item"><a href="../04-tables/exercises.html">Table Exercises</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../10-boolean-predicates/index.html">L10: Filtering and Boolean Predicates</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -248,11 +248,11 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <div class="sidebar-item-container"> 
             <a href="../04-tables/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">L04: Table Fundamentals</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../04-tables/index.html" class="sidebar-item-text sidebar-link">
@@ -261,7 +261,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../04-tables/exercises.html" class="sidebar-item-text sidebar-link active">
+  <a href="../04-tables/exercises.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Table Exercises</span></a>
   </div>
 </li>
@@ -396,16 +396,16 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../10-boolean-predicates/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../10-boolean-predicates/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">L10: Filtering and Boolean Predicates</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../10-boolean-predicates/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../10-boolean-predicates/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Filtering and Boolean Predicates</span></a>
   </div>
 </li>
@@ -443,20 +443,25 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#exercise-1-variable-names" id="toc-exercise-1-variable-names" class="nav-link active" data-scroll-target="#exercise-1-variable-names">Exercise 1: Variable names</a></li>
-  <li><a href="#exercise-2-reorder-columns" id="toc-exercise-2-reorder-columns" class="nav-link" data-scroll-target="#exercise-2-reorder-columns">Exercise 2: Reorder columns</a></li>
-  <li><a href="#exercise-3-filtering" id="toc-exercise-3-filtering" class="nav-link" data-scroll-target="#exercise-3-filtering">Exercise 3: Filtering</a></li>
-  <li><a href="#exercise-4-rename-columns" id="toc-exercise-4-rename-columns" class="nav-link" data-scroll-target="#exercise-4-rename-columns">Exercise 4: Rename Columns</a></li>
-  <li><a href="#exercise-5-debugging-show" id="toc-exercise-5-debugging-show" class="nav-link" data-scroll-target="#exercise-5-debugging-show">Exercise 5: Debugging <code>show</code></a></li>
+  <li><a href="#the-where-table-method" id="toc-the-where-table-method" class="nav-link active" data-scroll-target="#the-where-table-method">The <code>where</code> Table Method</a></li>
+  <li><a href="#sat-scores-by-state" id="toc-sat-scores-by-state" class="nav-link" data-scroll-target="#sat-scores-by-state">SAT Scores by State</a>
+  <ul class="collapse">
+  <li><a href="#a-cursory-observation" id="toc-a-cursory-observation" class="nav-link" data-scroll-target="#a-cursory-observation">A cursory observation</a></li>
+  <li><a href="#defining-conditions-for-the-where-method" id="toc-defining-conditions-for-the-where-method" class="nav-link" data-scroll-target="#defining-conditions-for-the-where-method">Defining conditions for the <code>where</code> method</a></li>
+  <li><a href="#method-chaining-multiple-conditions" id="toc-method-chaining-multiple-conditions" class="nav-link" data-scroll-target="#method-chaining-multiple-conditions">Method Chaining: Multiple Conditions</a></li>
+  <li><a href="#exploring-our-observation-further" id="toc-exploring-our-observation-further" class="nav-link" data-scroll-target="#exploring-our-observation-further">Exploring our observation further</a></li>
+  </ul></li>
+  <li><a href="#external-reading" id="toc-external-reading" class="nav-link" data-scroll-target="#external-reading">External Reading</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../04-tables/index.html">L04: Table Fundamentals</a></li><li class="breadcrumb-item"><a href="../04-tables/exercises.html">Table Exercises</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Table Exercises</h1>
+<h1 class="title">Filtering and Boolean Predicates</h1>
+<p class="subtitle lead">Selecting rows based on a condition</p>
 </div>
 
 
@@ -473,864 +478,688 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </header>
 
 
-<p>We work with the <code>schools</code> table from before.</p>
-<div id="ba858a71" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datascience <span class="im">import</span> <span class="op">*</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> Table.read_table(<span class="st">'data/cal_unis.csv'</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>schools.show(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<section id="the-where-table-method" class="level2">
+<h2 class="anchored" data-anchor-id="the-where-table-method">The <code>where</code> Table Method</h2>
+<p>The <code>where</code> Table method filters rows based on the values of a column matching a specific condition. Up until now, we’ve considered only exact-match cases:</p>
+<pre><code>tbl.where("Column Name", some_value)</code></pre>
+<p>However, more often we will need to have more flexible filters, such as matching on a <em>range</em> of values. We can do so via <strong>Boolean predicates</strong>. Boolean predicates are a means of specifying conditions that must be True or False. In this class, we will use Boolean predicates with respect to the second <code>predicate</code> argument of the <code>where</code> Table method; you will therefore see such predicates referred to as <code>Table.where</code> predicates in the Python Reference.</p>
+<p>The word “Boolean” stems from the <strong>boolean data type</strong>, which we will see soon to be a data type that has exactly two values: <code>True</code> and <code>False</code>. We will revisit this data type soon.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Read _Inferential Thinking_">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Read <em>Inferential Thinking</em>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Read <a href="https://inferentialthinking.com/chapters/06/2/Selecting_Rows">Ch 6.2.1 - 6.2.4</a>, which gives examples of Boolean predicates.</p>
+<p><a href="https://inferentialthinking.com/chapters/06/2/Selecting_Rows.html#multiple-features">Ch 6.2.3</a> invokes <strong>method chaining</strong>, where the Table returned from one <code>where</code> call is used for the second <code>where</code> call. We discuss this a bit mroe below.</p>
+</div>
+</div>
+</section>
+<section id="sat-scores-by-state" class="level2">
+<h2 class="anchored" data-anchor-id="sat-scores-by-state">SAT Scores by State</h2>
+<p>Here are some other examples, as seen in lecture. Today we will be studying exam scores on a standardized high school exam, the SAT. We will be working with a dataset showing aggregated (average) SAT exam scores by state (<a href="https://commonwealthfoundation.org/2014/12/22/sat-scores-by-state-2014/">source 1</a>, <a href="https://reports.collegeboard.org/sat-suite-program-results/data-archive">source 2</a>). It also shows the state’s participation rate, defined as the percentage of high school graduates who took the SAT exam.</p>
+<p><strong>Note</strong>: This data is from 2014, so the total combined score is out of 2400 (over three sections each out of 800) instead of 1600. We will add this column to our table before continuing.</p>
+<div id="f3feb9f3" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>sat <span class="op">=</span> Table.read_table(<span class="st">'data/sat2014-lecture.csv'</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>sat <span class="op">=</span> sat.with_columns(</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Combined'</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    sat.column(<span class="st">'Critical Reading'</span>) <span class="op">+</span> <span class="op">\</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        sat.column(<span class="st">'Math'</span>) <span class="op">+</span> <span class="op">\</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        sat.column(<span class="st">'Writing'</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>sat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th">Name</th>
-<th data-quarto-table-cell-role="th">Institution</th>
-<th data-quarto-table-cell-role="th">City</th>
-<th data-quarto-table-cell-role="th">County</th>
-<th data-quarto-table-cell-role="th">Enrollment</th>
-<th data-quarto-table-cell-role="th">Founded</th>
+<th data-quarto-table-cell-role="th">State</th>
+<th data-quarto-table-cell-role="th">Participation Rate</th>
+<th data-quarto-table-cell-role="th">Critical Reading</th>
+<th data-quarto-table-cell-role="th">Math</th>
+<th data-quarto-table-cell-role="th">Writing</th>
+<th data-quarto-table-cell-role="th">Combined</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>California State Polytechnic University, Humboldt</td>
-<td>CSU</td>
-<td>Arcata</td>
-<td>Humboldt</td>
-<td>6025</td>
-<td>1913</td>
+<td>Alabama</td>
+<td>6.7</td>
+<td>547</td>
+<td>538</td>
+<td>532</td>
+<td>1617</td>
 </tr>
 <tr class="even">
-<td>California State University, Bakersfield</td>
-<td>CSU</td>
-<td>Bakersfield</td>
-<td>Kern</td>
-<td>9613</td>
-<td>1965</td>
+<td>Alaska</td>
+<td>54.2</td>
+<td>507</td>
+<td>503</td>
+<td>475</td>
+<td>1485</td>
 </tr>
 <tr class="odd">
-<td>University of California, Berkeley</td>
-<td>UC</td>
-<td>Berkeley</td>
-<td>Alameda</td>
-<td>45307</td>
-<td>1869</td>
+<td>Arizona</td>
+<td>36.4</td>
+<td>522</td>
+<td>525</td>
+<td>500</td>
+<td>1547</td>
+</tr>
+<tr class="even">
+<td>Arkansas</td>
+<td>4.2</td>
+<td>573</td>
+<td>571</td>
+<td>554</td>
+<td>1698</td>
+</tr>
+<tr class="odd">
+<td>California</td>
+<td>60.3</td>
+<td>498</td>
+<td>510</td>
+<td>496</td>
+<td>1504</td>
+</tr>
+<tr class="even">
+<td>Colorado</td>
+<td>14.3</td>
+<td>582</td>
+<td>586</td>
+<td>567</td>
+<td>1735</td>
+</tr>
+<tr class="odd">
+<td>Connecticut</td>
+<td>88.4</td>
+<td>507</td>
+<td>510</td>
+<td>508</td>
+<td>1525</td>
+</tr>
+<tr class="even">
+<td>Delaware</td>
+<td>100</td>
+<td>456</td>
+<td>459</td>
+<td>444</td>
+<td>1359</td>
+</tr>
+<tr class="odd">
+<td>District of Columbia</td>
+<td>100</td>
+<td>440</td>
+<td>438</td>
+<td>431</td>
+<td>1309</td>
+</tr>
+<tr class="even">
+<td>Florida</td>
+<td>72.2</td>
+<td>491</td>
+<td>485</td>
+<td>472</td>
+<td>1448</td>
 </tr>
 </tbody>
 </table>
 
-<p>... (29 rows omitted)</p>
+<p>... (41 rows omitted)</p>
 </div>
 </div>
-<p>Pull up the Python Reference and try these exercises yourself! They are roughly in order of increasing difficulty.</p>
-<section id="exercise-1-variable-names" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-1-variable-names">Exercise 1: Variable names</h2>
-<p>How do we get all the column labels of <code>schools</code>?</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Show Answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Show Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="cd2f0244" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>schools.labels</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>('Name', 'Institution', 'City', 'County', 'Enrollment', 'Founded')</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercise-2-reorder-columns" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-2-reorder-columns">Exercise 2: Reorder columns</h2>
-<p>How do we reorder the columns, as below?</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Name</strong></th>
-<th><strong>Founded</strong></th>
-<th><strong>Institution</strong></th>
-<th><strong>City</strong></th>
-<th><strong>County</strong></th>
-<th><strong>Enrollment</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>…</td>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-</tr>
-</tbody>
-</table>
-<p>Hint: use one of <code>select</code>, <code>drop</code>, or <code>with_columns</code>.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Show Answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Show Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="d708f35c" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>schools.select(</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Name"</span>, <span class="st">"Founded"</span>,</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Institution"</span>, <span class="st">"City"</span>,</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"County"</span>, <span class="st">"Enrollment"</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="a-cursory-observation" class="level3">
+<h3 class="anchored" data-anchor-id="a-cursory-observation">A cursory observation</h3>
+<p>Let’s take a look at the states with the highest average combined score:</p>
+<div id="42eda62d" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sat.sort(<span class="st">"Combined"</span>, descending<span class="op">=</span><span class="va">True</span>).take(np.arange(<span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th">Name</th>
-<th data-quarto-table-cell-role="th">Founded</th>
-<th data-quarto-table-cell-role="th">Institution</th>
-<th data-quarto-table-cell-role="th">City</th>
-<th data-quarto-table-cell-role="th">County</th>
-<th data-quarto-table-cell-role="th">Enrollment</th>
+<th data-quarto-table-cell-role="th">State</th>
+<th data-quarto-table-cell-role="th">Participation Rate</th>
+<th data-quarto-table-cell-role="th">Critical Reading</th>
+<th data-quarto-table-cell-role="th">Math</th>
+<th data-quarto-table-cell-role="th">Writing</th>
+<th data-quarto-table-cell-role="th">Combined</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>California State Polytechnic University, Humboldt</td>
-<td>1913</td>
-<td>CSU</td>
-<td>Arcata</td>
-<td>Humboldt</td>
-<td>6025</td>
+<td>North Dakota</td>
+<td>2.3</td>
+<td>612</td>
+<td>620</td>
+<td>584</td>
+<td>1816</td>
 </tr>
 <tr class="even">
-<td>California State University, Bakersfield</td>
-<td>1965</td>
-<td>CSU</td>
-<td>Bakersfield</td>
-<td>Kern</td>
-<td>9613</td>
+<td>Illinois</td>
+<td>4.6</td>
+<td>599</td>
+<td>616</td>
+<td>587</td>
+<td>1802</td>
 </tr>
 <tr class="odd">
-<td>University of California, Berkeley</td>
-<td>1869</td>
-<td>UC</td>
-<td>Berkeley</td>
-<td>Alameda</td>
-<td>45307</td>
+<td>Iowa</td>
+<td>3.1</td>
+<td>605</td>
+<td>611</td>
+<td>578</td>
+<td>1794</td>
 </tr>
 <tr class="even">
-<td>California State University Channel Islands</td>
-<td>2002</td>
-<td>CSU</td>
-<td>Camarillo</td>
-<td>Ventura</td>
-<td>6128</td>
+<td>South Dakota</td>
+<td>2.9</td>
+<td>604</td>
+<td>609</td>
+<td>579</td>
+<td>1792</td>
 </tr>
 <tr class="odd">
-<td>California State University, Dominguez Hills</td>
-<td>1960</td>
-<td>CSU</td>
-<td>Carson</td>
-<td>Los Angeles</td>
-<td>16426</td>
-</tr>
-<tr class="even">
-<td>California State University, Chico</td>
-<td>1887</td>
-<td>CSU</td>
-<td>Chico</td>
-<td>Butte</td>
-<td>14183</td>
-</tr>
-<tr class="odd">
-<td>University of California, Davis</td>
-<td>1905</td>
-<td>UC</td>
-<td>Davis</td>
-<td>Yolo</td>
-<td>39679</td>
-</tr>
-<tr class="even">
-<td>California State University, Fresno</td>
-<td>1911</td>
-<td>CSU</td>
-<td>Fresno</td>
-<td>Fresno</td>
-<td>23999</td>
-</tr>
-<tr class="odd">
-<td>California State University, Fullerton</td>
-<td>1957</td>
-<td>CSU</td>
-<td>Fullerton</td>
-<td>Orange</td>
-<td>40386</td>
-</tr>
-<tr class="even">
-<td>California State University, East Bay</td>
-<td>1957</td>
-<td>CSU</td>
-<td>Hayward</td>
-<td>Alameda</td>
-<td>13673</td>
+<td>Minnesota</td>
+<td>5.9</td>
+<td>598</td>
+<td>610</td>
+<td>578</td>
+<td>1786</td>
 </tr>
 </tbody>
 </table>
-
-<p>... (22 rows omitted)</p>
 </div>
 </div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercise-3-filtering" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-3-filtering">Exercise 3: Filtering</h2>
-<div class="callout callout-style-default callout-note callout-titled" title="The schools table for reference, if you need it">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-The schools table for reference, if you need it
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="fad31b13" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>schools.show(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<p>…and let’s look at the states with the highest participation rate:</p>
+<div id="eba490ec" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>sat.sort(<span class="st">"Participation Rate"</span>, descending<span class="op">=</span><span class="va">True</span>).take(np.arange(<span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th">Name</th>
-<th data-quarto-table-cell-role="th">Institution</th>
-<th data-quarto-table-cell-role="th">City</th>
-<th data-quarto-table-cell-role="th">County</th>
-<th data-quarto-table-cell-role="th">Enrollment</th>
-<th data-quarto-table-cell-role="th">Founded</th>
+<th data-quarto-table-cell-role="th">State</th>
+<th data-quarto-table-cell-role="th">Participation Rate</th>
+<th data-quarto-table-cell-role="th">Critical Reading</th>
+<th data-quarto-table-cell-role="th">Math</th>
+<th data-quarto-table-cell-role="th">Writing</th>
+<th data-quarto-table-cell-role="th">Combined</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>California State Polytechnic University, Humboldt</td>
-<td>CSU</td>
-<td>Arcata</td>
-<td>Humboldt</td>
-<td>6025</td>
-<td>1913</td>
+<td>Delaware</td>
+<td>100</td>
+<td>456</td>
+<td>459</td>
+<td>444</td>
+<td>1359</td>
 </tr>
 <tr class="even">
-<td>California State University, Bakersfield</td>
-<td>CSU</td>
-<td>Bakersfield</td>
-<td>Kern</td>
-<td>9613</td>
-<td>1965</td>
+<td>District of Columbia</td>
+<td>100</td>
+<td>440</td>
+<td>438</td>
+<td>431</td>
+<td>1309</td>
 </tr>
 <tr class="odd">
-<td>University of California, Berkeley</td>
-<td>UC</td>
-<td>Berkeley</td>
-<td>Alameda</td>
-<td>45307</td>
-<td>1869</td>
+<td>Idaho</td>
+<td>100</td>
+<td>458</td>
+<td>456</td>
+<td>450</td>
+<td>1364</td>
+</tr>
+<tr class="even">
+<td>Maine</td>
+<td>95.6</td>
+<td>467</td>
+<td>471</td>
+<td>449</td>
+<td>1387</td>
+</tr>
+<tr class="odd">
+<td>Connecticut</td>
+<td>88.4</td>
+<td>507</td>
+<td>510</td>
+<td>508</td>
+<td>1525</td>
 </tr>
 </tbody>
 </table>
-
-<p>... (29 rows omitted)</p>
 </div>
 </div>
-</div>
-</div>
-</div>
-<ol type="1">
-<li>How do we get a table with only <strong>UC</strong> schools?</li>
-</ol>
-<div class="callout callout-style-default callout-note callout-titled" title="Show Answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Show Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="016eef79" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>schools.where(<span class="st">"Institution"</span>, <span class="st">"UC"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>What’s going on? Let’s dive in.</p>
+</section>
+<section id="defining-conditions-for-the-where-method" class="level3">
+<h3 class="anchored" data-anchor-id="defining-conditions-for-the-where-method">Defining conditions for the <code>where</code> method</h3>
+<p>We’ve already seen how we can use <code>tbl.where()</code> to find rows that <em>exactly</em> match what we’re looking for. For example:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>sat.where(<span class="st">'State'</span>, <span class="st">'California'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>But <code>tbl.where</code> is also capable of so much more! The second argument in <code>.where</code> can accept a <strong>predicate</strong>, which tells Python what condition to match rows on. See the <a href="https://data6.org/notes/reference">Data 6 Python Reference</a>.</p>
+<div id="14d6993f" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>sat.where(<span class="st">"Combined"</span>, are.above(<span class="dv">1800</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th">Name</th>
-<th data-quarto-table-cell-role="th">Institution</th>
-<th data-quarto-table-cell-role="th">City</th>
-<th data-quarto-table-cell-role="th">County</th>
-<th data-quarto-table-cell-role="th">Enrollment</th>
-<th data-quarto-table-cell-role="th">Founded</th>
+<th data-quarto-table-cell-role="th">State</th>
+<th data-quarto-table-cell-role="th">Participation Rate</th>
+<th data-quarto-table-cell-role="th">Critical Reading</th>
+<th data-quarto-table-cell-role="th">Math</th>
+<th data-quarto-table-cell-role="th">Writing</th>
+<th data-quarto-table-cell-role="th">Combined</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>University of California, Berkeley</td>
-<td>UC</td>
-<td>Berkeley</td>
-<td>Alameda</td>
-<td>45307</td>
-<td>1869</td>
+<td>Illinois</td>
+<td>4.6</td>
+<td>599</td>
+<td>616</td>
+<td>587</td>
+<td>1802</td>
 </tr>
 <tr class="even">
-<td>University of California, Davis</td>
-<td>UC</td>
-<td>Davis</td>
-<td>Yolo</td>
-<td>39679</td>
-<td>1905</td>
-</tr>
-<tr class="odd">
-<td>University of California, Irvine</td>
-<td>UC</td>
-<td>Irvine</td>
-<td>Orange</td>
-<td>35937</td>
-<td>1965</td>
-</tr>
-<tr class="even">
-<td>University of California, Los Angeles</td>
-<td>UC</td>
-<td>Los Angeles</td>
-<td>Los Angeles</td>
-<td>46430</td>
-<td>1882</td>
-</tr>
-<tr class="odd">
-<td>University of California, Merced</td>
-<td>UC</td>
-<td>Merced</td>
-<td>Merced</td>
-<td>9110</td>
-<td>2005</td>
-</tr>
-<tr class="even">
-<td>University of California, Riverside</td>
-<td>UC</td>
-<td>Riverside</td>
-<td>Riverside</td>
-<td>26809</td>
-<td>1954</td>
-</tr>
-<tr class="odd">
-<td>University of California, San Diego</td>
-<td>UC</td>
-<td>San Diego</td>
-<td>San Diego</td>
-<td>42006</td>
-<td>1960</td>
-</tr>
-<tr class="even">
-<td>University of California, Santa Barbara</td>
-<td>UC</td>
-<td>Santa Barbara</td>
-<td>Santa Barbara</td>
-<td>26420</td>
-<td>1891</td>
-</tr>
-<tr class="odd">
-<td>University of California, Santa Cruz</td>
-<td>UC</td>
-<td>Santa Cruz</td>
-<td>Santa Cruz</td>
-<td>19478</td>
-<td>1965</td>
+<td>North Dakota</td>
+<td>2.3</td>
+<td>612</td>
+<td>620</td>
+<td>584</td>
+<td>1816</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-</div>
-</div>
-</div>
-<ol start="2" type="1">
-<li>How do we get a table with all the schools in <strong>Los Angeles</strong>?</li>
-</ol>
-<div class="callout callout-style-default callout-note callout-titled" title="Show Answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Show Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="051cef1b" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>schools.where(<span class="st">"City"</span>, <span class="st">"Los Angeles"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note that <code>are.equal_to(z)</code> is the same as just passing in <code>z</code> itself as the second argument.</p>
+<div id="563c5fa0" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>sat.where(<span class="st">"State"</span>, are.containing(<span class="st">"Dakota"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th">Name</th>
-<th data-quarto-table-cell-role="th">Institution</th>
-<th data-quarto-table-cell-role="th">City</th>
-<th data-quarto-table-cell-role="th">County</th>
-<th data-quarto-table-cell-role="th">Enrollment</th>
-<th data-quarto-table-cell-role="th">Founded</th>
+<th data-quarto-table-cell-role="th">State</th>
+<th data-quarto-table-cell-role="th">Participation Rate</th>
+<th data-quarto-table-cell-role="th">Critical Reading</th>
+<th data-quarto-table-cell-role="th">Math</th>
+<th data-quarto-table-cell-role="th">Writing</th>
+<th data-quarto-table-cell-role="th">Combined</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>University of California, Los Angeles</td>
-<td>UC</td>
-<td>Los Angeles</td>
-<td>Los Angeles</td>
-<td>46430</td>
-<td>1882</td>
+<td>North Dakota</td>
+<td>2.3</td>
+<td>612</td>
+<td>620</td>
+<td>584</td>
+<td>1816</td>
 </tr>
 <tr class="even">
-<td>California State University, Los Angeles</td>
-<td>CSU</td>
-<td>Los Angeles</td>
-<td>Los Angeles</td>
-<td>26460</td>
-<td>1947</td>
+<td>South Dakota</td>
+<td>2.9</td>
+<td>604</td>
+<td>609</td>
+<td>579</td>
+<td>1792</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-</div>
+<div id="735ad78e" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>sat.where(<span class="st">"Math"</span>, are.between(<span class="dv">580</span>, <span class="dv">600</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">State</th>
+<th data-quarto-table-cell-role="th">Participation Rate</th>
+<th data-quarto-table-cell-role="th">Critical Reading</th>
+<th data-quarto-table-cell-role="th">Math</th>
+<th data-quarto-table-cell-role="th">Writing</th>
+<th data-quarto-table-cell-role="th">Combined</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Colorado</td>
+<td>14.3</td>
+<td>582</td>
+<td>586</td>
+<td>567</td>
+<td>1735</td>
+</tr>
+<tr class="even">
+<td>Kansas</td>
+<td>5.3</td>
+<td>591</td>
+<td>596</td>
+<td>566</td>
+<td>1753</td>
+</tr>
+<tr class="odd">
+<td>Kentucky</td>
+<td>4.6</td>
+<td>589</td>
+<td>585</td>
+<td>572</td>
+<td>1746</td>
+</tr>
+<tr class="even">
+<td>Missouri</td>
+<td>4.2</td>
+<td>595</td>
+<td>597</td>
+<td>579</td>
+<td>1771</td>
+</tr>
+<tr class="odd">
+<td>Nebraska</td>
+<td>3.7</td>
+<td>589</td>
+<td>587</td>
+<td>569</td>
+<td>1745</td>
+</tr>
+<tr class="even">
+<td>Wyoming</td>
+<td>3.3</td>
+<td>590</td>
+<td>599</td>
+<td>573</td>
+<td>1762</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </section>
-<section id="exercise-4-rename-columns" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-4-rename-columns">Exercise 4: Rename Columns</h2>
-<p>How do we <strong>update</strong> <code>schools</code> such that the column Name is renamed University? <em>Hint</em>: Check out the method <code>relabeled</code>.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Show Answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Show Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="43ae5b27" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> schools.relabeled(<span class="st">"Name"</span>, <span class="st">"University"</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>schools.show(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<section id="method-chaining-multiple-conditions" class="level3">
+<h3 class="anchored" data-anchor-id="method-chaining-multiple-conditions">Method Chaining: Multiple Conditions</h3>
+<p>We can match rows to multiple conditions/predicates by chaining <code>where</code> method calls together. For example, we can look for states where the participation rate is above 20% and the average combined SAT score is above 1500.</p>
+<div id="03074695" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sat.where(<span class="st">"Participation Rate"</span>, are.above(<span class="dv">20</span>)).where(<span class="st">"Combined"</span>, are.above(<span class="dv">1500</span>)) <span class="co"># Filter the `sat` table to find states where participation is above 20% and combined score is above 1500</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th">University</th>
-<th data-quarto-table-cell-role="th">Institution</th>
-<th data-quarto-table-cell-role="th">City</th>
-<th data-quarto-table-cell-role="th">County</th>
-<th data-quarto-table-cell-role="th">Enrollment</th>
-<th data-quarto-table-cell-role="th">Founded</th>
+<th data-quarto-table-cell-role="th">State</th>
+<th data-quarto-table-cell-role="th">Participation Rate</th>
+<th data-quarto-table-cell-role="th">Critical Reading</th>
+<th data-quarto-table-cell-role="th">Math</th>
+<th data-quarto-table-cell-role="th">Writing</th>
+<th data-quarto-table-cell-role="th">Combined</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>California State Polytechnic University, Humboldt</td>
-<td>CSU</td>
-<td>Arcata</td>
-<td>Humboldt</td>
-<td>6025</td>
-<td>1913</td>
+<td>Arizona</td>
+<td>36.4</td>
+<td>522</td>
+<td>525</td>
+<td>500</td>
+<td>1547</td>
 </tr>
 <tr class="even">
-<td>California State University, Bakersfield</td>
-<td>CSU</td>
-<td>Bakersfield</td>
-<td>Kern</td>
-<td>9613</td>
-<td>1965</td>
+<td>California</td>
+<td>60.3</td>
+<td>498</td>
+<td>510</td>
+<td>496</td>
+<td>1504</td>
 </tr>
 <tr class="odd">
-<td>University of California, Berkeley</td>
-<td>UC</td>
-<td>Berkeley</td>
-<td>Alameda</td>
-<td>45307</td>
-<td>1869</td>
+<td>Connecticut</td>
+<td>88.4</td>
+<td>507</td>
+<td>510</td>
+<td>508</td>
+<td>1525</td>
+</tr>
+<tr class="even">
+<td>Massachusetts</td>
+<td>84.1</td>
+<td>516</td>
+<td>531</td>
+<td>509</td>
+<td>1556</td>
+</tr>
+<tr class="odd">
+<td>New Hampshire</td>
+<td>70.3</td>
+<td>524</td>
+<td>530</td>
+<td>512</td>
+<td>1566</td>
+</tr>
+<tr class="even">
+<td>New Jersey</td>
+<td>79.3</td>
+<td>501</td>
+<td>523</td>
+<td>502</td>
+<td>1526</td>
+</tr>
+<tr class="odd">
+<td>Oregon</td>
+<td>47.9</td>
+<td>523</td>
+<td>522</td>
+<td>499</td>
+<td>1544</td>
+</tr>
+<tr class="even">
+<td>Vermont</td>
+<td>63.1</td>
+<td>522</td>
+<td>525</td>
+<td>507</td>
+<td>1554</td>
+</tr>
+<tr class="odd">
+<td>Virginia</td>
+<td>73.1</td>
+<td>518</td>
+<td>515</td>
+<td>497</td>
+<td>1530</td>
+</tr>
+<tr class="even">
+<td>Washington</td>
+<td>63.1</td>
+<td>510</td>
+<td>518</td>
+<td>491</td>
+<td>1519</td>
 </tr>
 </tbody>
 </table>
-
-<p>... (29 rows omitted)</p>
 </div>
 </div>
-</div>
-</div>
-</div>
-<p>There are many ways to approach a problem. Suppose you didn’t know the method <code>relabeled</code> existed:</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Alternate Answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Alternate Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="e91f61ef" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> schools.with_column(<span class="st">"University"</span>, schools.column(<span class="st">"Name"</span>)).drop(<span class="st">"Name"</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>schools.show(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<p>Equivalently:</p>
+<div id="1794d562" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># better formatting (note parentheses)</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>(</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    sat.where(<span class="st">"Participation Rate"</span>, are.above(<span class="dv">20</span>))</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>        .where(<span class="st">"Combined"</span>, are.above(<span class="dv">1500</span>))</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>) <span class="co"># both of these have to be true!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th">Institution</th>
-<th data-quarto-table-cell-role="th">City</th>
-<th data-quarto-table-cell-role="th">County</th>
-<th data-quarto-table-cell-role="th">Enrollment</th>
-<th data-quarto-table-cell-role="th">Founded</th>
-<th data-quarto-table-cell-role="th">University</th>
+<th data-quarto-table-cell-role="th">State</th>
+<th data-quarto-table-cell-role="th">Participation Rate</th>
+<th data-quarto-table-cell-role="th">Critical Reading</th>
+<th data-quarto-table-cell-role="th">Math</th>
+<th data-quarto-table-cell-role="th">Writing</th>
+<th data-quarto-table-cell-role="th">Combined</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>CSU</td>
-<td>Arcata</td>
-<td>Humboldt</td>
-<td>6025</td>
-<td>1913</td>
-<td>California State Polytechnic University, Humboldt</td>
+<td>Arizona</td>
+<td>36.4</td>
+<td>522</td>
+<td>525</td>
+<td>500</td>
+<td>1547</td>
 </tr>
 <tr class="even">
-<td>CSU</td>
-<td>Bakersfield</td>
-<td>Kern</td>
-<td>9613</td>
-<td>1965</td>
-<td>California State University, Bakersfield</td>
+<td>California</td>
+<td>60.3</td>
+<td>498</td>
+<td>510</td>
+<td>496</td>
+<td>1504</td>
 </tr>
 <tr class="odd">
-<td>UC</td>
-<td>Berkeley</td>
-<td>Alameda</td>
-<td>45307</td>
-<td>1869</td>
-<td>University of California, Berkeley</td>
+<td>Connecticut</td>
+<td>88.4</td>
+<td>507</td>
+<td>510</td>
+<td>508</td>
+<td>1525</td>
+</tr>
+<tr class="even">
+<td>Massachusetts</td>
+<td>84.1</td>
+<td>516</td>
+<td>531</td>
+<td>509</td>
+<td>1556</td>
+</tr>
+<tr class="odd">
+<td>New Hampshire</td>
+<td>70.3</td>
+<td>524</td>
+<td>530</td>
+<td>512</td>
+<td>1566</td>
+</tr>
+<tr class="even">
+<td>New Jersey</td>
+<td>79.3</td>
+<td>501</td>
+<td>523</td>
+<td>502</td>
+<td>1526</td>
+</tr>
+<tr class="odd">
+<td>Oregon</td>
+<td>47.9</td>
+<td>523</td>
+<td>522</td>
+<td>499</td>
+<td>1544</td>
+</tr>
+<tr class="even">
+<td>Vermont</td>
+<td>63.1</td>
+<td>522</td>
+<td>525</td>
+<td>507</td>
+<td>1554</td>
+</tr>
+<tr class="odd">
+<td>Virginia</td>
+<td>73.1</td>
+<td>518</td>
+<td>515</td>
+<td>497</td>
+<td>1530</td>
+</tr>
+<tr class="even">
+<td>Washington</td>
+<td>63.1</td>
+<td>510</td>
+<td>518</td>
+<td>491</td>
+<td>1519</td>
 </tr>
 </tbody>
 </table>
-
-<p>... (29 rows omitted)</p>
 </div>
 </div>
-<p>Questions for you as you read the above code:</p>
-<ol type="1">
-<li>What methods are being chained together here? Which is executed first, <code>with_column</code> or <code>drop</code>?</li>
-<li>When is the <code>column</code> method being called?</li>
-<li>What would happen if you switched the two methods? (try it out)</li>
-<li>Why is University now the last column?</li>
-</ol>
-</div>
-</div>
+<p>Another way to think about method chaining is to explicitly assign each subexpression that evaluates to a table:</p>
+<div id="b00ca8b7" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>sat1 <span class="op">=</span> sat</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>sat2 <span class="op">=</span> sat1.where(<span class="st">"Participation Rate"</span>, are.above(<span class="dv">20</span>))</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>sat3 <span class="op">=</span> sat2.where(<span class="st">"Combined"</span>, are.above(<span class="dv">1500</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="exercise-5-debugging-show" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-5-debugging-show">Exercise 5: Debugging <code>show</code></h2>
-<p>The following cells exhibit a tricky, but potentially common bug. First, check out the Python Reference to understand what <code>show</code> does.</p>
-<div id="9d4d5491" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> Table.read_table(<span class="st">'data/cal_unis.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="094a93f9" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> schools.show(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="exploring-our-observation-further" class="level3">
+<h3 class="anchored" data-anchor-id="exploring-our-observation-further">Exploring our observation further</h3>
+<p>Let’s return to the curious observation we started with. These are tasks that we’ll let you explore in a notebook.</p>
+<p><strong>Task 1</strong> Filter the <code>sat</code> table to find states where participation is below 10% and combined score is between 1200 and 1400.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>... <span class="co"># your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Task 2</strong>: Filter the <code>sat</code> table to include only the states listed in the <code>deep_south</code> array.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>deep_south <span class="op">=</span> np.array([<span class="st">'Alabama'</span>, <span class="st">'Georgia'</span>,</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>                       <span class="st">'Louisiana'</span>, <span class="st">'Mississippi'</span>,</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>                       <span class="st">'South Carolina'</span>])</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>... <span class="co"># your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Task 3: </strong> Find the states in the deep south with participation lower than 10% and combined score greater than or equal to 1600.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>... <span class="co"># your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Finally, consider the scatter plot of all states’ participation rates and combined SAT scores.</p>
+<div id="cec1362a" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>px.scatter(data_frame <span class="op">=</span> sat.to_df(), </span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>           x <span class="op">=</span> <span class="st">'Combined'</span>, </span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>           y <span class="op">=</span> <span class="st">'Participation Rate'</span>, </span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>           hover_data <span class="op">=</span> {<span class="st">'State'</span>: <span class="va">True</span>},</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>           title <span class="op">=</span> <span class="st">'SAT (2014) Participation Rate by state'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">Name</th>
-<th data-quarto-table-cell-role="th">Institution</th>
-<th data-quarto-table-cell-role="th">City</th>
-<th data-quarto-table-cell-role="th">County</th>
-<th data-quarto-table-cell-role="th">Enrollment</th>
-<th data-quarto-table-cell-role="th">Founded</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>California State Polytechnic University, Humboldt</td>
-<td>CSU</td>
-<td>Arcata</td>
-<td>Humboldt</td>
-<td>6025</td>
-<td>1913</td>
-</tr>
-<tr class="even">
-<td>California State University, Bakersfield</td>
-<td>CSU</td>
-<td>Bakersfield</td>
-<td>Kern</td>
-<td>9613</td>
-<td>1965</td>
-</tr>
-<tr class="odd">
-<td>University of California, Berkeley</td>
-<td>UC</td>
-<td>Berkeley</td>
-<td>Alameda</td>
-<td>45307</td>
-<td>1869</td>
-</tr>
-</tbody>
-</table>
-
-<p>... (29 rows omitted)</p>
-</div>
-</div>
-<div id="28cfb0b0" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> schools.show(<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[12]</span><span class="ansi-green-fg">, line 1</span>
-<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">1</span> schools = <span class="ansi-yellow-bg">schools</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">show</span>(<span class="ansi-green-fg">4</span>)
-
-<span class="ansi-red-fg">AttributeError</span>: 'NoneType' object has no attribute 'show'</pre>
-</div>
-</div>
-</div>
-<p>Like <code>print</code>, show is for display purposes. It does not return anything—i.e., it returns None. The second cell above therefore assigns schools to None!</p>
-<p>Despite this, <code>show</code>—just like <code>print</code>—is useful when you want to display intermediate output for debugging purposes.</p>
-<div id="94b11917" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> Table.read_table(<span class="st">'data/cal_unis.csv'</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>schools.show(<span class="dv">3</span>) <span class="co"># just the first three rows</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> schools.relabeled(<span class="st">"Name"</span>, <span class="st">"University"</span>)</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>schools.show(<span class="dv">3</span>) <span class="co"># and again</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> schools.with_columns(<span class="st">"Name"</span>, <span class="st">"City"</span>)</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>schools         <span class="co"># the last evaluated value in a cell</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>                <span class="co"># is displayed by default</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">Name</th>
-<th data-quarto-table-cell-role="th">Institution</th>
-<th data-quarto-table-cell-role="th">City</th>
-<th data-quarto-table-cell-role="th">County</th>
-<th data-quarto-table-cell-role="th">Enrollment</th>
-<th data-quarto-table-cell-role="th">Founded</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>California State Polytechnic University, Humboldt</td>
-<td>CSU</td>
-<td>Arcata</td>
-<td>Humboldt</td>
-<td>6025</td>
-<td>1913</td>
-</tr>
-<tr class="even">
-<td>California State University, Bakersfield</td>
-<td>CSU</td>
-<td>Bakersfield</td>
-<td>Kern</td>
-<td>9613</td>
-<td>1965</td>
-</tr>
-<tr class="odd">
-<td>University of California, Berkeley</td>
-<td>UC</td>
-<td>Berkeley</td>
-<td>Alameda</td>
-<td>45307</td>
-<td>1869</td>
-</tr>
-</tbody>
-</table>
-
-<p>... (29 rows omitted)</p>
+        <script type="text/javascript">
+        window.PlotlyConfig = {MathJaxConfig: 'local'};
+        if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+        </script>
+        <script type="module">import "https://cdn.plot.ly/plotly-3.1.0.min"</script>
+        
 </div>
 <div class="cell-output cell-output-display">
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">University</th>
-<th data-quarto-table-cell-role="th">Institution</th>
-<th data-quarto-table-cell-role="th">City</th>
-<th data-quarto-table-cell-role="th">County</th>
-<th data-quarto-table-cell-role="th">Enrollment</th>
-<th data-quarto-table-cell-role="th">Founded</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>California State Polytechnic University, Humboldt</td>
-<td>CSU</td>
-<td>Arcata</td>
-<td>Humboldt</td>
-<td>6025</td>
-<td>1913</td>
-</tr>
-<tr class="even">
-<td>California State University, Bakersfield</td>
-<td>CSU</td>
-<td>Bakersfield</td>
-<td>Kern</td>
-<td>9613</td>
-<td>1965</td>
-</tr>
-<tr class="odd">
-<td>University of California, Berkeley</td>
-<td>UC</td>
-<td>Berkeley</td>
-<td>Alameda</td>
-<td>45307</td>
-<td>1869</td>
-</tr>
-</tbody>
-</table>
+<div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.1.0.min.js" integrity="sha256-Ei4740bWZhaUTQuD6q9yQlgVCMPBz6CZWhevDYPv93A=" crossorigin="anonymous"></script>                <div id="15de1462-469a-4009-b220-f5a43683a434" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("15de1462-469a-4009-b220-f5a43683a434")) {                    Plotly.newPlot(                        "15de1462-469a-4009-b220-f5a43683a434",                        [{"customdata":[["Alabama"],["Alaska"],["Arizona"],["Arkansas"],["California"],["Colorado"],["Connecticut"],["Delaware"],["District of Columbia"],["Florida"],["Georgia"],["Hawaii"],["Idaho"],["Illinois"],["Indiana"],["Iowa"],["Kansas"],["Kentucky"],["Louisiana"],["Maine"],["Maryland"],["Massachusetts"],["Michigan"],["Minnesota"],["Mississippi"],["Missouri"],["Montana"],["Nebraska"],["Nevada"],["New Hampshire"],["New Jersey"],["New Mexico"],["New York"],["North Carolina"],["North Dakota"],["Ohio"],["Oklahoma"],["Oregon"],["Pennsylvania"],["Rhode Island"],["South Carolina"],["South Dakota"],["Tennessee"],["Texas"],["Utah"],["Vermont"],["Virginia"],["Washington"],["West Virginia"],["Wisconsin"],["Wyoming"]],"hovertemplate":"Combined=%{x}\u003cbr\u003eParticipation Rate=%{y}\u003cbr\u003eState=%{customdata[0]}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"","marker":{"color":"#636efa","symbol":"circle"},"mode":"markers","name":"","orientation":"v","showlegend":false,"x":{"dtype":"i2","bdata":"UQbNBQsGogbgBccG9QVPBR0FqAWlBbQFVAUKB8IFAgfZBtIGgwZrBbwFFAb4BvoGsgbrBmUG0QayBR4G9gVRBrwFywUYB3QGoQYIBskFyAWjBQAHsgaYBZoGEgb6Be8F8gX2BuIG"},"xaxis":"x","y":{"dtype":"f8","bdata":"zczMzMzMGkCamZmZmRlLQDMzMzMzM0JAzczMzMzMEEBmZmZmZiZOQJqZmZmZmSxAmpmZmZkZVkAAAAAAAABZQAAAAAAAAFlAzczMzMwMUkDNzMzMzExTQM3MzMzMTE9AAAAAAAAAWUBmZmZmZmYSQAAAAAAAoFFAzczMzMzMCEAzMzMzMzMVQGZmZmZmZhJAZmZmZmZmEkBmZmZmZuZXQAAAAAAAoFNAZmZmZmYGVUBmZmZmZmYOQJqZmZmZmRdAmpmZmZmZCUDNzMzMzMwQQGZmZmZm5jFAmpmZmZmZDUCamZmZmRlLQDMzMzMzk1FAMzMzMzPTU0CamZmZmZkoQDMzMzMzE1NAZmZmZmbmT0BmZmZmZmYCQDMzMzMzMy5AAAAAAAAAEkAzMzMzM\u002fNHQJqZmZmZ2VFAAAAAAABAUkCamZmZmTlQQDMzMzMzMwdAmpmZmZmZH0AAAAAAAABPQM3MzMzMzBRAzczMzMyMT0BmZmZmZkZSQM3MzMzMjE9AmpmZmZmZLUAzMzMzMzMPQGZmZmZmZgpA"},"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Combined"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Participation Rate"}},"legend":{"tracegroupgap":0},"title":{"text":"SAT (2014) Participation Rate by state"}},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('15de1462-469a-4009-b220-f5a43683a434');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
 
-<p>... (29 rows omitted)</p>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="13">
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">University</th>
-<th data-quarto-table-cell-role="th">Institution</th>
-<th data-quarto-table-cell-role="th">City</th>
-<th data-quarto-table-cell-role="th">County</th>
-<th data-quarto-table-cell-role="th">Enrollment</th>
-<th data-quarto-table-cell-role="th">Founded</th>
-<th data-quarto-table-cell-role="th">Name</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>California State Polytechnic University, Humboldt</td>
-<td>CSU</td>
-<td>Arcata</td>
-<td>Humboldt</td>
-<td>6025</td>
-<td>1913</td>
-<td>City</td>
-</tr>
-<tr class="even">
-<td>California State University, Bakersfield</td>
-<td>CSU</td>
-<td>Bakersfield</td>
-<td>Kern</td>
-<td>9613</td>
-<td>1965</td>
-<td>City</td>
-</tr>
-<tr class="odd">
-<td>University of California, Berkeley</td>
-<td>UC</td>
-<td>Berkeley</td>
-<td>Alameda</td>
-<td>45307</td>
-<td>1869</td>
-<td>City</td>
-</tr>
-<tr class="even">
-<td>California State University Channel Islands</td>
-<td>CSU</td>
-<td>Camarillo</td>
-<td>Ventura</td>
-<td>6128</td>
-<td>2002</td>
-<td>City</td>
-</tr>
-<tr class="odd">
-<td>California State University, Dominguez Hills</td>
-<td>CSU</td>
-<td>Carson</td>
-<td>Los Angeles</td>
-<td>16426</td>
-<td>1960</td>
-<td>City</td>
-</tr>
-<tr class="even">
-<td>California State University, Chico</td>
-<td>CSU</td>
-<td>Chico</td>
-<td>Butte</td>
-<td>14183</td>
-<td>1887</td>
-<td>City</td>
-</tr>
-<tr class="odd">
-<td>University of California, Davis</td>
-<td>UC</td>
-<td>Davis</td>
-<td>Yolo</td>
-<td>39679</td>
-<td>1905</td>
-<td>City</td>
-</tr>
-<tr class="even">
-<td>California State University, Fresno</td>
-<td>CSU</td>
-<td>Fresno</td>
-<td>Fresno</td>
-<td>23999</td>
-<td>1911</td>
-<td>City</td>
-</tr>
-<tr class="odd">
-<td>California State University, Fullerton</td>
-<td>CSU</td>
-<td>Fullerton</td>
-<td>Orange</td>
-<td>40386</td>
-<td>1957</td>
-<td>City</td>
-</tr>
-<tr class="even">
-<td>California State University, East Bay</td>
-<td>CSU</td>
-<td>Hayward</td>
-<td>Alameda</td>
-<td>13673</td>
-<td>1957</td>
-<td>City</td>
-</tr>
-</tbody>
-</table>
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
 
-<p>... (22 rows omitted)</p>
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div>
 </div>
 </div>
+<p><strong>Lower participation rate</strong> seems to be associated with <strong>higher SAT scores</strong>. But as we have seen several times in this course, <strong>correlation does not imply causation</strong>. Instead, consider that not everyone takes the SAT; participation rate for this exam varies by state and geographic location. The SAT is scheduled on a non-school day, usually a weekend, and students have to pay extra to take the exam.</p>
+<p>If such an exam is effectively optional, then students that actually take the SAT are likely the ones more ready and able to perform well on such an exam—the top students. In other words, states with lower participation rates will exhibit a biased population of students who actually take the exam. You can read more in this <a href="https://blog.prepscholar.com/average-sat-and-act-scores-by-stated-adjusted-for-participation-rate">blog post on ACT / SAT scores</a>.</p>
+</section>
+</section>
+<section id="external-reading" class="level2">
+<h2 class="anchored" data-anchor-id="external-reading">External Reading</h2>
+<ul>
+<li>(mentioned in notes) <em>Computational and Inferential Thinking</em>, <a href="https://inferentialthinking.com/chapters/06/2/Selecting_Rows.html">Ch 6.2</a></li>
+<li>(mentioned in notes) 2016. “Average SAT &amp; ACT Scores by State (Participation Adjusted).” Prep Scholar. <a href="https://blog.prepscholar.com/average-sat-and-act-scores-by-stated-adjusted-for-participation-rate">link</a></li>
+</ul>
 
 
 </section>
@@ -1737,13 +1566,13 @@ Alternate Answer
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../04-tables/index.html" class="pagination-link" aria-label="L04: Table Fundamentals">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">L04: Table Fundamentals</span>
+      <a href="../09-summary-statistics/center-spread.html" class="pagination-link" aria-label="Center and Spread">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Center and Spread</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../04-tables/none-print.html" class="pagination-link" aria-label="None and Print">
-        <span class="nav-page-text">None and Print</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../10-boolean-predicates/boolean.html" class="pagination-link" aria-label="Booleans">
+        <span class="nav-page-text">Booleans</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

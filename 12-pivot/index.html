@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Histograms and Ranges</title>
+<title>Pivot and Join</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../08-histograms/exercises.html" rel="next">
-<link href="../07-visualizations/charts.html" rel="prev">
 <link href="../assets/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -85,330 +83,19 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 
-<body class="nav-sidebar docked quarto-light">
+<body class="quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../08-histograms/index.html">L08: Histograms</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
-</header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="../index.html" class="sidebar-logo-link">
-      <img src="../assets/data6.png" alt="Data 6 logo" class="sidebar-logo py-0 d-lg-inline d-none">
-      </a>
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">DATA 6 <br><small>Course Notes</small></a> 
-        <div class="sidebar-tools-main">
-    <a href="https://github.com/data-6-berkeley/notes" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
-</div>
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Home / About</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../01-intro/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L01: Introduction</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../01-intro/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Course Introduction</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../01-intro/jupyter-notebook.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Jupyter Notebooks</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../01-intro/programming-basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Programming Basics</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../02-datatypes/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L02: Data Types</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../02-datatypes/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Numeric and String Data Types</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../02-datatypes/rates-incidence.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Application: Rates and Incidence</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../03-arrays/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L03: Arrays</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../03-arrays/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Arrays</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../03-arrays/numpy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">NumPy and Array Functions</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../04-tables/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L04: Table Fundamentals</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../04-tables/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Table Fundamentals</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../04-tables/exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Table Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../04-tables/none-print.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">None and Print</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../05-variables/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L05: Variables in Social Science</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../05-variables/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Variables and Variable Types</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../05-variables/units-of-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Units of Analysis</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../06-variables-ii/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L06: Variables II</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../06-variables-ii/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Causality vs.&nbsp;EDA</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../06-variables-ii/sample-population.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Sample vs.&nbsp;Population</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../07-visualizations/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L07: Visualizations</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../07-visualizations/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Visualizations</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../07-visualizations/encoding.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Encoding</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../07-visualizations/charts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bar Charts, Scatter Plots, Line Graphs</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../08-histograms/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">L08: Histograms</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../08-histograms/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Histograms and Ranges</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../08-histograms/exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exercises</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../09-summary-statistics/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L09: Summary Statistics and Box Plots</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../09-summary-statistics/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Percentiles and Box Plots</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../09-summary-statistics/center-spread.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Center and Spread</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../10-boolean-predicates/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L10: Filtering and Boolean Predicates</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../10-boolean-predicates/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Filtering and Boolean Predicates</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../10-boolean-predicates/boolean.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Booleans</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">L11: Grouping and Pivoting</span></span>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../five-things.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5 Things to Know</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../reference.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data 6 Python Reference</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#ranges" id="toc-ranges" class="nav-link active" data-scroll-target="#ranges">Ranges</a></li>
-  <li><a href="#histograms" id="toc-histograms" class="nav-link" data-scroll-target="#histograms">Histograms</a></li>
-  <li><a href="#lecture-notebook" id="toc-lecture-notebook" class="nav-link" data-scroll-target="#lecture-notebook">Lecture Notebook</a></li>
-  <li><a href="#external-reading" id="toc-external-reading" class="nav-link" data-scroll-target="#external-reading">External Reading</a></li>
+  <li><a href="#pivoting-and-join" id="toc-pivoting-and-join" class="nav-link active" data-scroll-target="#pivoting-and-join">Pivoting and Join</a></li>
   </ul>
 </nav>
     </div>
@@ -417,8 +104,8 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Histograms and Ranges</h1>
-<p class="subtitle lead">Distributions and the area principle</p>
+<h1 class="title">Pivot and Join</h1>
+<p class="subtitle lead">Selecting rows based on a condition</p>
 </div>
 
 
@@ -435,10 +122,8 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </header>
 
 
-<p>There is an existing chapter that fully describes histograms. We highly recommend you read the textbook, then review the Data 6 lecture notebook.</p>
-<section id="ranges" class="level2">
-<h2 class="anchored" data-anchor-id="ranges">Ranges</h2>
-<p><code>np.arange</code> is a NumPy function useful for producing sequences of equally spaced numbers. Read the chapter for more details.</p>
+<section id="pivoting-and-join" class="level2">
+<h2 class="anchored" data-anchor-id="pivoting-and-join">Pivoting and Join</h2>
 <div class="callout callout-style-default callout-note callout-titled" title="Read _Inferential Thinking_">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -449,72 +134,14 @@ Read <em>Inferential Thinking</em>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Read <a href="https://inferentialthinking.com/chapters/05/2/Ranges.html">Ch 5.2</a>, which describes the <code>np.arange</code> function.</p>
-</div>
-</div>
-<p>Before continuing, make sure that you:</p>
+<p>Read <a href="https://inferentialthinking.com/chapters/08/3/Cross-Classifying_by_More_than_One_Variable.html">Ch 8.3</a>, which describes grouping by multiple columns and a cross-tabulation concept called <strong>pivoting</strong>.</p>
+<p>Before continuing, make sure that:</p>
 <ul>
-<li>Know that the full function signature of <code>np.arange(start, end, step)</code>.</li>
-<li>Know what the default arguments for <code>start</code> and/or <code>step</code> are when you pass in one or two arguments.</li>
-<li>Remember that a range always includes its <code>start</code> value, but does not include its <code>end</code> value. It counts up by <code>step</code>, and it stops before it gets to the <code>end</code>.</li>
+<li>You can compare and contrast how <code>group</code> and <code>pivot</code> aggregate data.</li>
+<li>You understand the optional arguments to the <code>pivot</code> method: <code>values</code> and <code>collect</code>.</li>
 </ul>
-</section>
-<section id="histograms" class="level2">
-<h2 class="anchored" data-anchor-id="histograms">Histograms</h2>
-<div class="callout callout-style-default callout-note callout-titled" title="Read _Inferential Thinking_">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Read <em>Inferential Thinking</em>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>Read <a href="https://inferentialthinking.com/chapters/07/2/Visualizing_Numerical_Distributions.html">Ch 7.2</a>, which describes histograms in detail.</p>
-</div>
-</div>
-<p>Before continuing, make sure that you:</p>
-<ul>
-<li>Understand terminology related to histograms:
-<ul>
-<li>Bins (lower bound, upper bound)</li>
-<li>Density, area, proportion.</li>
-</ul></li>
-<li>Can use the area principle to explain histogram shape and bar density, area, and dimensions.</li>
-<li>Can compute area and proportion from bar dimensions.</li>
-<li>Can determine use cases for using bar charts over histograms, and vice versa.</li>
-<li>Can use the <code>hist</code> method and specify the optional parameter <code>density</code> as <code>True</code> or <code>False</code></li>
-</ul>
-</section>
-<section id="lecture-notebook" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-notebook">Lecture Notebook</h2>
-<p>This notebook mostly covers the <code>hist</code> Table method in the <code>datascience</code> package. See the <a href="../reference.html">Data 6 Python Reference</a> for full information.</p>
-<p><code>tbl.hist(column)</code>: This table method has many optional arguments, but we highlight the most important ones here:</p>
-<ul>
-<li><code>bins</code>: Specify bounds of bins, as an array. All but the last element of the array specifies bin lower bounds; the last element specifies the upper bound of the rightmost bin. If not specified, the default produces 10 equally spaced bins.</li>
-<li><code>density</code>: <strong>Boolean</strong> value (<code>True</code> or <code>False</code>). <code>True</code> by default calculates height as percent per unit. If <code>False</code>, calculates height as count in bin.</li>
-</ul>
-<!-- ## `hist` Table method reference
-
-We will not test the details of this method other than what is on the [Data 6 Python Reference](../reference.html), but we are sharing the full description here.
-
-
-::: {#b99f23c0 .cell execution_count=2}
-``` {.python .cell-code}
-Table.hist?
-```
-:::
-
-
--->
-</section>
-<section id="external-reading" class="level2">
-<h2 class="anchored" data-anchor-id="external-reading">External Reading</h2>
-<ul>
-<li>(mentioned in notes) <em>Computational and Inferential Thinking</em>, <a href="https://inferentialthinking.com/chapters/05/2/Ranges.html">Ch 5.2</a></li>
-<li>(mentioned in notes) <em>Computational and Inferential Thinking</em>, <a href="https://inferentialthinking.com/chapters/02/1/observation-and-visualization-john-snow-and-the-broad-street-pump.html">Ch 2.1</a></li>
-</ul>
 
 
 </section>
@@ -919,18 +546,6 @@ Table.hist?
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../07-visualizations/charts.html" class="pagination-link" aria-label="Bar Charts, Scatter Plots, Line Graphs">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Bar Charts, Scatter Plots, Line Graphs</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../08-histograms/exercises.html" class="pagination-link" aria-label="Exercises">
-        <span class="nav-page-text">Exercises</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -940,7 +555,7 @@ Table.hist?
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link active" href="../index.html" aria-current="page">
+    <a class="nav-link" href="../index.html">
 <p>Home / About / License</p>
 </a>
   </li>  

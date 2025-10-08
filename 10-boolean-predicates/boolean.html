@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Histograms and Ranges</title>
+<title>Booleans</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../08-histograms/exercises.html" rel="next">
-<link href="../07-visualizations/charts.html" rel="prev">
+<link href="../11-group/index.html" rel="next">
+<link href="../10-boolean-predicates/index.html" rel="prev">
 <link href="../assets/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -94,7 +129,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../08-histograms/index.html">L08: Histograms</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../10-boolean-predicates/index.html">L10: Filtering and Boolean Predicates</a></li><li class="breadcrumb-item"><a href="../10-boolean-predicates/boolean.html">Booleans</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -312,16 +347,16 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../08-histograms/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../08-histograms/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">L08: Histograms</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../08-histograms/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../08-histograms/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Histograms and Ranges</span></a>
   </div>
 </li>
@@ -360,11 +395,11 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <div class="sidebar-item-container"> 
             <a href="../10-boolean-predicates/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">L10: Filtering and Boolean Predicates</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../10-boolean-predicates/index.html" class="sidebar-item-text sidebar-link">
@@ -373,7 +408,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../10-boolean-predicates/boolean.html" class="sidebar-item-text sidebar-link">
+  <a href="../10-boolean-predicates/boolean.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Booleans</span></a>
   </div>
 </li>
@@ -405,20 +440,20 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#ranges" id="toc-ranges" class="nav-link active" data-scroll-target="#ranges">Ranges</a></li>
-  <li><a href="#histograms" id="toc-histograms" class="nav-link" data-scroll-target="#histograms">Histograms</a></li>
-  <li><a href="#lecture-notebook" id="toc-lecture-notebook" class="nav-link" data-scroll-target="#lecture-notebook">Lecture Notebook</a></li>
-  <li><a href="#external-reading" id="toc-external-reading" class="nav-link" data-scroll-target="#external-reading">External Reading</a></li>
+  <li><a href="#comparison-operators" id="toc-comparison-operators" class="nav-link active" data-scroll-target="#comparison-operators">Comparison Operators</a></li>
+  <li><a href="#truthy-values" id="toc-truthy-values" class="nav-link" data-scroll-target="#truthy-values">Truthy Values</a></li>
+  <li><a href="#booleans-in-data-science" id="toc-booleans-in-data-science" class="nav-link" data-scroll-target="#booleans-in-data-science">Booleans in Data Science</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../10-boolean-predicates/index.html">L10: Filtering and Boolean Predicates</a></li><li class="breadcrumb-item"><a href="../10-boolean-predicates/boolean.html">Booleans</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Histograms and Ranges</h1>
-<p class="subtitle lead">Distributions and the area principle</p>
+<h1 class="title">Booleans</h1>
+<p class="subtitle lead">Built-in Python data type: <code>True</code> and <code>False</code></p>
 </div>
 
 
@@ -435,10 +470,20 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </header>
 
 
-<p>There is an existing chapter that fully describes histograms. We highly recommend you read the textbook, then review the Data 6 lecture notebook.</p>
-<section id="ranges" class="level2">
-<h2 class="anchored" data-anchor-id="ranges">Ranges</h2>
-<p><code>np.arange</code> is a NumPy function useful for producing sequences of equally spaced numbers. Read the chapter for more details.</p>
+<p>We will cover this section in more detail, likely after the quiz. The lecture notebook and outputs are kept here for your reference, but we will cover it later.</p>
+<p>Naturally, we will want to compare values in our code.</p>
+<div id="c9ed336a" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># is age at least age_limit?</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>age_limit <span class="op">=</span> <span class="dv">21</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">17</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="558f9520" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># is password_guess equal to true_password?</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># note: do not do this---weak security!</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>true_password <span class="op">=</span> <span class="st">'qwerty1093x!'</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>password_guess <span class="op">=</span> <span class="st">'QWERTY1093x!'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Enter the Boolean data type, or <code>bool</code>, which only has two values: <code>True</code> and <code>False</code>.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Read _Inferential Thinking_">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -449,72 +494,121 @@ Read <em>Inferential Thinking</em>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Read <a href="https://inferentialthinking.com/chapters/05/2/Ranges.html">Ch 5.2</a>, which describes the <code>np.arange</code> function.</p>
+<p>Read <a href="https://inferentialthinking.com/chapters/04/3/Comparison.html">Ch 4.3</a>, which discusses Boolean values and comparison operators.</p>
 </div>
 </div>
-<p>Before continuing, make sure that you:</p>
-<ul>
-<li>Know that the full function signature of <code>np.arange(start, end, step)</code>.</li>
-<li>Know what the default arguments for <code>start</code> and/or <code>step</code> are when you pass in one or two arguments.</li>
-<li>Remember that a range always includes its <code>start</code> value, but does not include its <code>end</code> value. It counts up by <code>step</code>, and it stops before it gets to the <code>end</code>.</li>
-</ul>
+<section id="comparison-operators" class="level2">
+<h2 class="anchored" data-anchor-id="comparison-operators">Comparison Operators</h2>
+<p>Boolean values most often arise from <strong>comparison operators</strong>.</p>
+<div id="be04df1d" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="op">&gt;</span> <span class="dv">1</span> <span class="op">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>True</code></pre>
+</div>
+</div>
+<div id="bd53e6c2" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="op">&lt;</span> <span class="op">-</span><span class="dv">1</span> <span class="op">*</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>False</code></pre>
+</div>
+</div>
+<div id="913ce074" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="op">&lt;</span> <span class="dv">1</span> <span class="op">+</span> <span class="dv">1</span> <span class="op">&lt;</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>True</code></pre>
+</div>
+</div>
+<div id="acdc11c2" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">"Data "</span> <span class="op">+</span> <span class="st">"6"</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>s <span class="op">==</span> <span class="st">"Data 6"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>True</code></pre>
+</div>
+</div>
+<p>Note in the last example, the <code>=</code> sign is an <strong>assignment operator</strong> whereas the <code>==</code> sign is an comparison operator that checks for <strong>equality</strong>.</p>
+<p>For a full list of comparison operators, see the above <em>Inferential Thinking</em> textbook chapter.</p>
 </section>
-<section id="histograms" class="level2">
-<h2 class="anchored" data-anchor-id="histograms">Histograms</h2>
-<div class="callout callout-style-default callout-note callout-titled" title="Read _Inferential Thinking_">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Read <em>Inferential Thinking</em>
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Read <a href="https://inferentialthinking.com/chapters/07/2/Visualizing_Numerical_Distributions.html">Ch 7.2</a>, which describes histograms in detail.</p>
-</div>
-</div>
-<p>Before continuing, make sure that you:</p>
+<section id="truthy-values" class="level2">
+<h2 class="anchored" data-anchor-id="truthy-values">Truthy Values</h2>
+<p>In Python we can <strong>cast</strong> any value to bool.</p>
+<p><strong>Falsy value</strong>: Values that evaluate to <code>False</code> when converted to <code>bool</code>:</p>
 <ul>
-<li>Understand terminology related to histograms:
-<ul>
-<li>Bins (lower bound, upper bound)</li>
-<li>Density, area, proportion.</li>
-</ul></li>
-<li>Can use the area principle to explain histogram shape and bar density, area, and dimensions.</li>
-<li>Can compute area and proportion from bar dimensions.</li>
-<li>Can determine use cases for using bar charts over histograms, and vice versa.</li>
-<li>Can use the <code>hist</code> method and specify the optional parameter <code>density</code> as <code>True</code> or <code>False</code></li>
+<li><code>False</code></li>
+<li><code>''</code> (the empty string)</li>
+<li><code>0</code></li>
+<li><code>0.0</code></li>
+<li><code>None</code></li>
 </ul>
+<p>Generally things that are empty (empty lists, sets, dictionaries, etc).</p>
+<p><strong>Truthy value</strong>: Everything else. Evaluates to <code>True</code> when converted to <code>bool</code>.</p>
+<p>Think philosophically: if a value is something, then it exists and therefore it is <code>True</code>. If it is nothing, then it is <code>False</code>.</p>
 </section>
-<section id="lecture-notebook" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-notebook">Lecture Notebook</h2>
-<p>This notebook mostly covers the <code>hist</code> Table method in the <code>datascience</code> package. See the <a href="../reference.html">Data 6 Python Reference</a> for full information.</p>
-<p><code>tbl.hist(column)</code>: This table method has many optional arguments, but we highlight the most important ones here:</p>
+<section id="booleans-in-data-science" class="level2">
+<h2 class="anchored" data-anchor-id="booleans-in-data-science">Booleans in Data Science</h2>
+<p>In data science, boolean values can be used represent a binary variable:</p>
 <ul>
-<li><code>bins</code>: Specify bounds of bins, as an array. All but the last element of the array specifies bin lower bounds; the last element specifies the upper bound of the rightmost bin. If not specified, the default produces 10 equally spaced bins.</li>
-<li><code>density</code>: <strong>Boolean</strong> value (<code>True</code> or <code>False</code>). <code>True</code> by default calculates height as percent per unit. If <code>False</code>, calculates height as count in bin.</li>
+<li>yes/no</li>
+<li>on/off</li>
+<li>high/low</li>
+<li>etc.</li>
 </ul>
-<!-- ## `hist` Table method reference
-
-We will not test the details of this method other than what is on the [Data 6 Python Reference](../reference.html), but we are sharing the full description here.
-
-
-::: {#b99f23c0 .cell execution_count=2}
-``` {.python .cell-code}
-Table.hist?
-```
-:::
-
-
--->
+<p>The datascience package automatically casts booleans into integers: * <code>True</code> is equivalent to <code>1</code>. * <code>False</code> is equivalent to <code>0</code>.</p>
 </section>
-<section id="external-reading" class="level2">
-<h2 class="anchored" data-anchor-id="external-reading">External Reading</h2>
-<ul>
-<li>(mentioned in notes) <em>Computational and Inferential Thinking</em>, <a href="https://inferentialthinking.com/chapters/05/2/Ranges.html">Ch 5.2</a></li>
-<li>(mentioned in notes) <em>Computational and Inferential Thinking</em>, <a href="https://inferentialthinking.com/chapters/02/1/observation-and-visualization-john-snow-and-the-broad-street-pump.html">Ch 2.1</a></li>
-</ul>
+<section id="exercises" class="level2">
+<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
+<p>Here are some WWPD (What Would Python Do?) exercises for you to read through and understand. For each value in each expression, think carefully about its data type.</p>
+<div id="7c3f9d69" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="dv">17</span> <span class="op">==</span> <span class="st">'17'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>False</code></pre>
+</div>
+</div>
+<div id="dd116d26" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">'zebra'</span> <span class="op">!=</span> <span class="va">True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>True</code></pre>
+</div>
+</div>
+<div id="46a81469" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="va">True</span> <span class="op">==</span> <span class="fl">1.0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>True</code></pre>
+</div>
+</div>
+<div id="9ad6b49c" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>banana <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co">'apple'</span> <span class="op">&gt;=</span> banana</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[10]</span><span class="ansi-green-fg">, line 2</span>
+<span class="ansi-green-fg">      1</span> banana = <span class="ansi-green-fg">10</span>
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">2</span> <span class="ansi-yellow-fg ansi-yellow-bg">'</span><span class="ansi-yellow-fg ansi-yellow-bg">apple</span><span class="ansi-yellow-fg ansi-yellow-bg">'</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">&gt;</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">banana</span>
+
+<span class="ansi-red-fg">TypeError</span>: '&gt;=' not supported between instances of 'str' and 'int'</pre>
+</div>
+</div>
+</div>
+<div id="a357421e" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">'alpha'</span> <span class="op">&gt;=</span> <span class="dv">5</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[11]</span><span class="ansi-green-fg">, line 1</span>
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">1</span> <span class="ansi-yellow-fg ansi-yellow-bg">'</span><span class="ansi-yellow-fg ansi-yellow-bg">alpha</span><span class="ansi-yellow-fg ansi-yellow-bg">'</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">&gt;</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg"> </span><span class="ansi-green-fg ansi-yellow-bg">5</span> 
+
+<span class="ansi-red-fg">TypeError</span>: '&gt;=' not supported between instances of 'str' and 'int'</pre>
+</div>
+</div>
+</div>
+<div id="6a15bd02" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="op">&gt;</span> <span class="va">True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>True</code></pre>
+</div>
+</div>
 
 
 </section>
@@ -921,13 +1015,13 @@ Table.hist?
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../07-visualizations/charts.html" class="pagination-link" aria-label="Bar Charts, Scatter Plots, Line Graphs">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Bar Charts, Scatter Plots, Line Graphs</span>
+      <a href="../10-boolean-predicates/index.html" class="pagination-link" aria-label="L10: Filtering and Boolean Predicates">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">L10: Filtering and Boolean Predicates</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../08-histograms/exercises.html" class="pagination-link" aria-label="Exercises">
-        <span class="nav-page-text">Exercises</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../11-group/index.html" class="pagination-link" aria-label="L11: Grouping and Pivoting">
+        <span class="nav-page-text">L11: Grouping and Pivoting</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

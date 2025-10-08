@@ -370,7 +370,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./09-summary-statistics/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L09: Summary Statistics</span></a>
+ <span class="menu-text">L09: Summary Statistics and Box Plots</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -389,6 +389,33 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   </div>
 </li>
       </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./10-boolean-predicates/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">L10: Filtering and Boolean Predicates</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-boolean-predicates/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Filtering and Boolean Predicates</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-boolean-predicates/boolean.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Booleans</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">L11: Grouping and Pivoting</span></span>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
@@ -457,7 +484,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <p>Of course, the Python Reference can only provide information about the basics of the functions you’ll use in Data 6. The best knowledge about functions comes from using these functions in code you write in labs or homeworks. If you get stuck when using a certain function, we encourage you to come to office hours or ask a question on Ed.</p>
 <section id="the-anatomy-of-a-function" class="level3">
 <h3 class="anchored" data-anchor-id="the-anatomy-of-a-function">The Anatomy of a Function</h3>
-<div id="fc40b1cf" class="cell" data-execution_count="1">
+<div id="47bd6d70" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> my_function(num):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> num <span class="op">**</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -646,6 +673,12 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <td><code>None</code> (<code>arr</code> is sorted; no copy is made)</td>
 </tr>
 <tr class="even">
+<td><code>arr.take(indices)</code></td>
+<td>Creates an array with only the elements of <code>arr</code> at the given indices. <code>indices</code> is either an array of indices or an integer corresponding to one index. (array method)</td>
+<td><strong>array</strong>: indices of elements</td>
+<td><strong>array</strong>: a copy of the original array with only the elements at the given indices</td>
+</tr>
+<tr class="odd">
 <td><code>percentile(p, arr)</code></td>
 <td>Returns the corresponding percentile <code>p</code> of an array <code>arr</code>.</td>
 <td>1. value between 0 and 100 <br> 2. <strong>array</strong> of <strong>int</strong>s or <strong>float</strong>s</td>
@@ -673,22 +706,34 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </thead>
 <tbody>
 <tr class="odd">
+<td><code>str.upper()</code></td>
+<td>Returns a copy of <code>str</code> where all letters are uppercase.</td>
+<td></td>
+<td><strong>string</strong></td>
+</tr>
+<tr class="even">
+<td><code>str.lower()</code></td>
+<td>Returns a copy of <code>str</code> where all letters are lowercase.</td>
+<td></td>
+<td><strong>string</strong></td>
+</tr>
+<tr class="odd">
+<td><code>str.replace(old, new)</code></td>
+<td>Returns a copy of <code>str</code> with all occurrences of the substring <code>old</code> replaced by <code>new</code>.</td>
+<td><code>old</code>: the substring to be replaced. <br> <code>new</code>: the substring to replace <code>old</code> with.</td>
+<td><strong>string</strong></td>
+</tr>
+<tr class="even">
 <td><code>str.split(separator, maxsplit)</code></td>
 <td>Splits <code>str</code> into a list of substrings using the specified <code>separator</code>. If <code>separator</code> is not provided, splits at any whitespace. You can also use the optional argument <code>maxsplit</code> to limit the number of splits.</td>
 <td>1. (Optional) <strong>separator</strong>: the delimiter used to split <code>str</code> <br> 2. (Optional) <strong>maxsplit</strong>: maximum number of splits</td>
 <td><strong>list</strong> of substrings</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>str.join(iterable)</code></td>
 <td>Concatenates the elements in <code>iterable</code> (usually a list or array) into a single string, with each element separated by <code>str</code>.</td>
 <td><strong>iterable</strong>: an iterable of strings to join (can be an array or list of strings)</td>
 <td><strong>string</strong>: a single string formed by joining the elements of <code>iterable</code> with the separator <code>str</code></td>
-</tr>
-<tr class="odd">
-<td><code>str.replace(old, new)</code></td>
-<td>Returns a copy of the string with all occurrences of the substring <code>old</code> replaced by <code>new</code>.</td>
-<td><code>old</code>: the substring to be replaced. <br> <code>new</code>: the substring to replace <code>old</code> with.</td>
-<td>string: a new string where occurrences of <code>old</code> have been replaced by <code>new</code>.</td>
 </tr>
 </tbody>
 </table>
