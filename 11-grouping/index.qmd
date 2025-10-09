@@ -1,0 +1,29 @@
+---
+title: "Grouping, Pivoting, and Disaggregating"
+subtitle: "Extracting and aggregating information from tables"
+---
+
+## Overview
+
+In data science, we often need to analyze data at different levels of aggregation. Sometimes we want to understand patterns at the individual level, while other times we need to examine trends across groups or categories. This chapter introduces two powerful table methods that allow us to **group** and **pivot** our data to gain insights at higher units of analysis.
+
+**Grouping** allows us to:
+
+- Count occurrences of categorical variables
+- Calculate aggregate statistics (mean, sum, max, etc.) for groups
+- Compare patterns across different categories
+
+**Pivoting** allows us to:
+
+- Create cross-tabulations between two categorical variables
+- Organize data in a matrix format for easier comparison
+- Calculate aggregate statistics for every combination of two variables
+
+::: {.callout-note title="Interactive Visualizer"}
+There is an excellent [table function visualizer](https://www.data8.org/interactive_table_functions/) for both `.group()` and `.pivot()` methods that can help you understand how these operations work. However, be aware that the visualizer has some limitations:
+
+- **For `.group()`**: It fails to sort results by ascending order in the group columns
+- **For `.pivot()`**: It fails to sort the columns/rows in ascending order (excluding the second argument)
+
+Despite these sorting issues, the visualizer is still valuable for understanding the fundamental mechanics of these operations.
+:::

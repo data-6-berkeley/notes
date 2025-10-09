@@ -1,0 +1,127 @@
+---
+title: "Filtering with .where()"
+subtitle: "Selecting rows based on conditions"
+---
+
+## Finally: Automatic Selection with .where()
+
+We've seen how `.take()` lets us select specific rows by position, and we've learned about booleans (True/False values). Now we can combine these concepts to automatically select rows based on **conditions** rather than positions! This is filtering, one of the most important operations in data analysis.
+
+```{python}
+#| include: false
+from datascience import *
+import numpy as np
+sat = Table.read_table('data/sat2014.csv')
+```
+
+## The .where() Method
+
+The `.where()` method is the most powerful tool for filtering tables. It creates a new table containing only the rows that meet a specified condition.
+
+### Basic Syntax
+
+```{python}
+# Basic syntax: table.where(column_name, predicate)
+sat.where('State', are.equal_to('California'))
+```
+
+```{python}
+# Equivalent to the above
+sat.where('State', 'California')
+```
+
+::: {.callout-note title="Exact Match"}
+When you pass a single value as the second argument to `.where()`, it looks for **exact matches**. This is equivalent to using `are.equal_to(value)`.
+:::
+
+## Predicates: The Power of .where()
+
+The real power of `.where()` comes from using **predicates**. These are functions that specify what condition to check. Here are the most commonly used ones:
+
+| Predicate | Description | Example |
+|-----------|-------------|---------|
+| `are.equal_to(z)` | Is the value equal to `z`? | `are.equal_to('California')` |
+| `are.above(x)` | Is the value above `x`? | `are.above(1600)` |
+| `are.below(x)` | Is the value below `x`? | `are.below(10)` |
+| `are.between(x, y)` | Is the value between `x` and `y`? | `are.between(580, 600)` |
+| `are.containing(s)` | Does the value contain string `s`? | `are.containing('Dakota')` |
+| `are.contained_in(array)` | Is the value in the array? | `are.contained_in(['CA', 'NY', 'TX'])` |
+
+::: {.callout-note
+title="Predicates"}
+You can find a full list of predicates in the [Data 6 Python Reference](https://data6.org/notes/reference.html#table.where-predicates).
+:::
+### Examples with SAT Data
+
+We previously couldn't easily find states with combined SAT scores above 1600. Now we can:
+```{python}
+# Find states with combined SAT scores above 1600
+sat.where("Combined", are.above(1600))
+```
+
+```{python}
+# Find states with math scores between 580 and 600
+sat.where("Math", are.between(580, 600))
+```
+
+```{python}
+# Find states containing "Dakota" in their name
+sat.where("State", are.containing("Dakota"))
+```
+
+```{python}
+# Find states with participation rates below 10%
+sat.where("Participation Rate", are.below(10))
+```
+
+## Negating Predicates
+
+You can negate any predicate by adding `not_` to the front:
+
+```{python}
+# Find states that are NOT California
+sat.where("State", are.not_equal_to("California"))
+```
+
+```{python}
+# Find states with scores NOT above 1600
+sat.where("Combined", are.not_above(1600))
+```
+
+## Multiple Conditions
+
+Often, you'll want to filter based on multiple conditions. You can chain multiple `.where()` calls together:
+
+```{python}
+# Find states with participation above 20% AND combined score above 1500
+sat.where("Participation Rate", are.above(20)).where("Combined", are.above(1500))
+```
+
+```{python}
+# Find states with participation below 10% AND combined score above 1600
+sat.where("Participation Rate", are.below(10)).where("Combined", are.above(1600))
+```
+
+::: {.callout-tip title="Method Chaining"}
+When you chain `.where()` calls, each one filters the result of the previous one. Think of it as applying multiple filters in sequence.
+:::
+
+## Working with Arrays
+
+You can filter for multiple specific values using `are.contained_in()`:
+
+```{python}
+# Define an array of states
+deep_south = np.array(['Alabama', 'Georgia', 'Louisiana', 'Mississippi', 'South Carolina'])
+deep_south
+```
+
+```{python}
+# Find only the deep south states
+sat.where("State", are.contained_in(deep_south))
+```
+
+```{python}
+# Find deep south states with low participation and high scores
+sat.where("State", are.contained_in(deep_south)).where("Participation Rate", are.below(10)).where("Combined", are.above(1600))
+```
