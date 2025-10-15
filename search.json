@@ -230,99 +230,127 @@
     ]
   },
   {
-    "objectID": "04-tables/exercises.html",
-    "href": "04-tables/exercises.html",
-    "title": "Table Exercises",
+    "objectID": "04-tables/none-print.html",
+    "href": "04-tables/none-print.html",
+    "title": "None and Print",
     "section": "",
-    "text": "We work with the schools table from before.\nfrom datascience import *\nimport numpy as np\n\nschools = Table.read_table('data/cal_unis.csv')\nschools.show(3)\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\nHumboldt\n6025\n1913\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n\n\n\n\n... (29 rows omitted)\nPull up the Python Reference and try these exercises yourself! They are roughly in order of increasing difficulty.",
+    "text": "We have covered a few data types so far. There are infinitely many integers, floating point numbers, and strings. (Actually finite, because of how computers store information. Take CS61C to learn more.)\nHowever, for the NoneType data type, there is only one value: None.\n\nmy_var = None\ntype(my_var)\n\nNoneType\n\n\nNone is strange: Cells will not output expressions that evaluate to None.\nNone is also referred to as the null value.",
     "crumbs": [
       "L04: Table Fundamentals",
-      "Table Exercises"
+      "None and Print"
     ]
   },
   {
-    "objectID": "04-tables/exercises.html#exercise-1-variable-names",
-    "href": "04-tables/exercises.html#exercise-1-variable-names",
-    "title": "Table Exercises",
-    "section": "Exercise 1: Variable names",
-    "text": "Exercise 1: Variable names\nHow do we get all the column labels of schools?\n\n\n\n\n\n\nShow Answer\n\n\n\n\n\n\nschools.labels\n\n('Name', 'Institution', 'City', 'County', 'Enrollment', 'Founded')",
-    "crumbs": [
-      "L04: Table Fundamentals",
-      "Table Exercises"
-    ]
-  },
-  {
-    "objectID": "04-tables/exercises.html#exercise-2-reorder-columns",
-    "href": "04-tables/exercises.html#exercise-2-reorder-columns",
-    "title": "Table Exercises",
-    "section": "Exercise 2: Reorder columns",
-    "text": "Exercise 2: Reorder columns\nHow do we reorder the columns, as below?\n\n\n\n\n\n\n\n\n\n\n\nName\nFounded\nInstitution\nCity\nCounty\nEnrollment\n\n\n\n\n…\n…\n…\n…\n…\n…\n\n\n\nHint: use one of select, drop, or with_columns.\n\n\n\n\n\n\nShow Answer\n\n\n\n\n\n\nschools.select(\n  \"Name\", \"Founded\",\n  \"Institution\", \"City\",\n  \"County\", \"Enrollment\"\n)\n\n\n\n\nName\nFounded\nInstitution\nCity\nCounty\nEnrollment\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\n1913\nCSU\nArcata\nHumboldt\n6025\n\n\nCalifornia State University, Bakersfield\n1965\nCSU\nBakersfield\nKern\n9613\n\n\nUniversity of California, Berkeley\n1869\nUC\nBerkeley\nAlameda\n45307\n\n\nCalifornia State University Channel Islands\n2002\nCSU\nCamarillo\nVentura\n6128\n\n\nCalifornia State University, Dominguez Hills\n1960\nCSU\nCarson\nLos Angeles\n16426\n\n\nCalifornia State University, Chico\n1887\nCSU\nChico\nButte\n14183\n\n\nUniversity of California, Davis\n1905\nUC\nDavis\nYolo\n39679\n\n\nCalifornia State University, Fresno\n1911\nCSU\nFresno\nFresno\n23999\n\n\nCalifornia State University, Fullerton\n1957\nCSU\nFullerton\nOrange\n40386\n\n\nCalifornia State University, East Bay\n1957\nCSU\nHayward\nAlameda\n13673\n\n\n\n\n... (22 rows omitted)",
-    "crumbs": [
-      "L04: Table Fundamentals",
-      "Table Exercises"
-    ]
-  },
-  {
-    "objectID": "04-tables/exercises.html#exercise-3-filtering",
-    "href": "04-tables/exercises.html#exercise-3-filtering",
-    "title": "Table Exercises",
-    "section": "Exercise 3: Filtering",
-    "text": "Exercise 3: Filtering\n\n\n\n\n\n\nThe schools table for reference, if you need it\n\n\n\n\n\n\nschools.show(3)\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\nHumboldt\n6025\n1913\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n\n\n\n\n... (29 rows omitted)\n\n\n\n\n\n\nHow do we get a table with only UC schools?\n\n\n\n\n\n\n\nShow Answer\n\n\n\n\n\n\nschools.where(\"Institution\", \"UC\")\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\n\n\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n\n\nUniversity of California, Davis\nUC\nDavis\nYolo\n39679\n1905\n\n\nUniversity of California, Irvine\nUC\nIrvine\nOrange\n35937\n1965\n\n\nUniversity of California, Los Angeles\nUC\nLos Angeles\nLos Angeles\n46430\n1882\n\n\nUniversity of California, Merced\nUC\nMerced\nMerced\n9110\n2005\n\n\nUniversity of California, Riverside\nUC\nRiverside\nRiverside\n26809\n1954\n\n\nUniversity of California, San Diego\nUC\nSan Diego\nSan Diego\n42006\n1960\n\n\nUniversity of California, Santa Barbara\nUC\nSanta Barbara\nSanta Barbara\n26420\n1891\n\n\nUniversity of California, Santa Cruz\nUC\nSanta Cruz\nSanta Cruz\n19478\n1965\n\n\n\n\n\n\n\n\n\nHow do we get a table with all the schools in Los Angeles?\n\n\n\n\n\n\n\nShow Answer\n\n\n\n\n\n\nschools.where(\"City\", \"Los Angeles\")\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\n\n\n\n\nUniversity of California, Los Angeles\nUC\nLos Angeles\nLos Angeles\n46430\n1882\n\n\nCalifornia State University, Los Angeles\nCSU\nLos Angeles\nLos Angeles\n26460\n1947",
-    "crumbs": [
-      "L04: Table Fundamentals",
-      "Table Exercises"
-    ]
-  },
-  {
-    "objectID": "04-tables/exercises.html#exercise-4-rename-columns",
-    "href": "04-tables/exercises.html#exercise-4-rename-columns",
-    "title": "Table Exercises",
-    "section": "Exercise 4: Rename Columns",
-    "text": "Exercise 4: Rename Columns\nHow do we update schools such that the column Name is renamed University? Hint: Check out the method relabeled.\n\n\n\n\n\n\nShow Answer\n\n\n\n\n\n\nschools = schools.relabeled(\"Name\", \"University\")\nschools.show(3)\n\n\n\n\nUniversity\nInstitution\nCity\nCounty\nEnrollment\nFounded\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\nHumboldt\n6025\n1913\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n\n\n\n\n... (29 rows omitted)\n\n\n\n\n\nThere are many ways to approach a problem. Suppose you didn’t know the method relabeled existed:\n\n\n\n\n\n\nAlternate Answer\n\n\n\n\n\n\nschools = schools.with_column(\"University\", schools.column(\"Name\")).drop(\"Name\")\nschools.show(3)\n\n\n\n\nInstitution\nCity\nCounty\nEnrollment\nFounded\nUniversity\n\n\n\n\nCSU\nArcata\nHumboldt\n6025\n1913\nCalifornia State Polytechnic University, Humboldt\n\n\nCSU\nBakersfield\nKern\n9613\n1965\nCalifornia State University, Bakersfield\n\n\nUC\nBerkeley\nAlameda\n45307\n1869\nUniversity of California, Berkeley\n\n\n\n\n... (29 rows omitted)\n\n\nQuestions for you as you read the above code:\n\nWhat methods are being chained together here? Which is executed first, with_column or drop?\nWhen is the column method being called?\nWhat would happen if you switched the two methods? (try it out)\nWhy is University now the last column?",
-    "crumbs": [
-      "L04: Table Fundamentals",
-      "Table Exercises"
-    ]
-  },
-  {
-    "objectID": "04-tables/exercises.html#exercise-5-debugging-show",
-    "href": "04-tables/exercises.html#exercise-5-debugging-show",
-    "title": "Table Exercises",
-    "section": "Exercise 5: Debugging show",
-    "text": "Exercise 5: Debugging show\nThe following cells exhibit a tricky, but potentially common bug. First, check out the Python Reference to understand what show does.\n\nschools = Table.read_table('data/cal_unis.csv')\n\n\nschools = schools.show(3)\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\nHumboldt\n6025\n1913\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n\n\n\n\n... (29 rows omitted)\n\n\n\nschools = schools.show(4)\n\n\n---------------------------------------------------------------------------\nAttributeError                            Traceback (most recent call last)\nCell In[12], line 1\n----&gt; 1 schools = schools.show(4)\n\nAttributeError: 'NoneType' object has no attribute 'show'\n\n\n\nLike print, show is for display purposes. It does not return anything—i.e., it returns None. The second cell above therefore assigns schools to None!\nDespite this, show—just like print—is useful when you want to display intermediate output for debugging purposes.\n\nschools = Table.read_table('data/cal_unis.csv')\nschools.show(3) # just the first three rows\nschools = schools.relabeled(\"Name\", \"University\")\nschools.show(3) # and again\nschools = schools.with_columns(\"Name\", \"City\")\nschools         # the last evaluated value in a cell\n                # is displayed by default\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\nHumboldt\n6025\n1913\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n\n\n\n\n... (29 rows omitted)\n\n\n\n\n\nUniversity\nInstitution\nCity\nCounty\nEnrollment\nFounded\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\nHumboldt\n6025\n1913\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n\n\n\n\n... (29 rows omitted)\n\n\n\n\n\nUniversity\nInstitution\nCity\nCounty\nEnrollment\nFounded\nName\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\nHumboldt\n6025\n1913\nCity\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\nCity\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\nCity\n\n\nCalifornia State University Channel Islands\nCSU\nCamarillo\nVentura\n6128\n2002\nCity\n\n\nCalifornia State University, Dominguez Hills\nCSU\nCarson\nLos Angeles\n16426\n1960\nCity\n\n\nCalifornia State University, Chico\nCSU\nChico\nButte\n14183\n1887\nCity\n\n\nUniversity of California, Davis\nUC\nDavis\nYolo\n39679\n1905\nCity\n\n\nCalifornia State University, Fresno\nCSU\nFresno\nFresno\n23999\n1911\nCity\n\n\nCalifornia State University, Fullerton\nCSU\nFullerton\nOrange\n40386\n1957\nCity\n\n\nCalifornia State University, East Bay\nCSU\nHayward\nAlameda\n13673\n1957\nCity\n\n\n\n\n... (22 rows omitted)",
-    "crumbs": [
-      "L04: Table Fundamentals",
-      "Table Exercises"
-    ]
-  },
-  {
-    "objectID": "11-group/index.html",
-    "href": "11-group/index.html",
-    "title": "Grouping",
+    "objectID": "04-tables/none-print.html#none-type",
+    "href": "04-tables/none-print.html#none-type",
+    "title": "None and Print",
     "section": "",
-    "text": "Read Inferential Thinking\n\n\n\nRead Ch 8.2, which describes grouping in detail.\nBefore continuing, make sure that:\n\nYou know that group with one argument produces counts per unique value in the grouped column.\nYou know that group with two arguments produces an aggregated value per unique value in the grouped column, and can potentially produce multiple columns based on which column value can be aggregated with the provided aggregator function.\nYou can also group data on multiple columns.",
+    "text": "We have covered a few data types so far. There are infinitely many integers, floating point numbers, and strings. (Actually finite, because of how computers store information. Take CS61C to learn more.)\nHowever, for the NoneType data type, there is only one value: None.\n\nmy_var = None\ntype(my_var)\n\nNoneType\n\n\nNone is strange: Cells will not output expressions that evaluate to None.\nNone is also referred to as the null value.",
     "crumbs": [
-      "L11: Grouping and Pivoting"
+      "L04: Table Fundamentals",
+      "None and Print"
     ]
   },
   {
-    "objectID": "11-group/index.html#aggregating-and-disaggregating",
-    "href": "11-group/index.html#aggregating-and-disaggregating",
-    "title": "Grouping",
-    "section": "Aggregating and Disaggregating",
-    "text": "Aggregating and Disaggregating\nGrouping is a table operation most useful in translating between units of analysis. In particular, it lets us disaggregate data. Instead of just reporting an average across all datapoints, we can report averages as broken down by different subgroups.\n\nCase Study: 1973 UC Berkeley Graduate Admissions\nThe Fall 1973 admitted graduate student population had a peculiar characteristic: Overall, women were admitted at lower rates than men to graduate school, seeming to suggest that the admission rates was biased. However, when the admission rates by department (e.g., by field of study) were studied, women were often admitted at higher rates than men. How is this possible?\nThis is a peculiar case study around Simpson’s Paradox: when the trends of subgroups are reversed or not seen as compared to the trends of the overall dataset. We will explore this in detail in the reading, in section, and in the project. Stay tuned!",
+    "objectID": "04-tables/none-print.html#the-print-function",
+    "href": "04-tables/none-print.html#the-print-function",
+    "title": "None and Print",
+    "section": "The print function",
+    "text": "The print function\nThe print function displays values to the screen (in this case, our Jupyter notebook). Each call to print displays information on a new line.\n\nprint(2)\nprint(\"Hello, world!\")\n\n2\nHello, world!\n\n\nprint lets us to see information about executed statements that are not just the last line of the cell. Could you see why this would be a useful feature for debugging?\nprint is ultra-convenient because it can take as many arguments as you want.\n\nx = 3\ny = 4\nprint(x, \"+\", y, \"is equal to\", x + y)\n\n3 + 4 is equal to 7\n\n\nTrace through the above program. Do you see how expressions are evaluated before printing?",
     "crumbs": [
-      "L11: Grouping and Pivoting"
+      "L04: Table Fundamentals",
+      "None and Print"
     ]
   },
   {
-    "objectID": "11-group/index.html#external-reading",
-    "href": "11-group/index.html#external-reading",
-    "title": "Grouping",
-    "section": "External Reading",
-    "text": "External Reading\n\n(mentioned in notes) Computational and Inferential Thinking, Ch 8.3\nP. J. Bickel et al. ,Sex Bias in Graduate Admissions: Data from Berkeley. Science 187, 398-404(1975). DOI:10.1126/science.187.4175.398",
+    "objectID": "04-tables/none-print.html#notebooks-cell-output-vs.-print",
+    "href": "04-tables/none-print.html#notebooks-cell-output-vs.-print",
+    "title": "None and Print",
+    "section": "Notebooks: Cell Output vs. print",
+    "text": "Notebooks: Cell Output vs. print\nCell output and print output seem very closely related:\n\nBoth evaluate expressions\nBoth display something in the notebook\n\nHowever, they have subtle differences. We won’t expect you to know all of them. Instead, the purpose of this section is to get you used to tracing programs, where you closely consider Python’s order of execution of each statement, expression, function call, and so on.\nBecause the print output is intended for human view, it displays strings without quotes. Contrast this with the cell output, which includes the quotes.\n\nprint(2)\n\"Hello, world!\"\n\n2\n\n\n'Hello, world!'\n\n\n\nExercise 1\nThis is now super pedantic, but consider the following cells. Can you explain what is happening?\n\nmy_var\n\n\nprint(my_var)\n\nNone\n\n\n\n\n\n\n\n\nExplanation\n\n\n\n\n\nWhen print is evaluated as the last line in a cell, it displays the value of the evaluated argument (here, None). print returns None, so the cell does not additionally output anything,\n\n\n\n\n\nExercise 2\nTry this challenge on for size.\n\nprint(my_var)\nprint(3)\n45\n\nNone\n3\n\n\n45\n\n\n\n\n\n\n\n\nExplanation\n\n\n\n\n\nEach line explained:\n\nEvaluate the first print call expression. This prints the value of my_var to the screen, which evaluates to None. print returns None, but this second None is not output to the sceen because it is not the last line.\nEvaluate the second print call expression. This prints the value of 3 to the screen. print returns None, but this second None is not output to the sceen because it is not the last line.\nEvaluate the third expression, 45; because it is the last line, output to screen.\n\n\n\n\nYou’re thinking like a computer scientist now!",
     "crumbs": [
-      "L11: Grouping and Pivoting"
+      "L04: Table Fundamentals",
+      "None and Print"
+    ]
+  },
+  {
+    "objectID": "04-tables/index.html",
+    "href": "04-tables/index.html",
+    "title": "Table Fundamentals",
+    "section": "",
+    "text": "Read Inferential Thinking\n\n\n\nRead Ch 6 intro, which describes the Table object type from the datascience library.\nThis is a very dense chapter, as it has lots of Python syntax. We will review it in detail. Before moving on, we encourage you to focus on the following questions:\n\nWhat is the syntax of the with_columns method? How does this method make a table?\nWhat are some table methods?\nWhat Python expression gets you the number of rows? a specific column? (bonus) How does the syntax differ between these two cases?\nIf you are new to programming, it is easy to get lost in the syntax of Python! For today, we will therefore focus on a few high-level goals:\nIn other words, you will not be expected to memorize all aspects of Tables (it’s as if we have a theme in this class…)! But you will have natural impulses for understanding and working with tabular data, many of which directly map to specific Table methods and attributes. To write Python code, then, you will need to learn to work with documentation to do this translation, and—when the precise methods don’t exist—construct new algorithms to achieve what you want. The more familiar you are with the documentation—and consequently, what is possible with Tables—the more you can focus on algorithmic thinking.",
+    "crumbs": [
+      "L04: Table Fundamentals"
+    ]
+  },
+  {
+    "objectID": "04-tables/index.html#definitions",
+    "href": "04-tables/index.html#definitions",
+    "title": "Table Fundamentals",
+    "section": "Definitions",
+    "text": "Definitions\nTo begin, recall the terminology we have been using to describe tables so far:\n\nTable: Retangular data structure.\n\nColumns (vertical) correspond to variables (AKA features, or attributes) that measure and operationalize social concepts. We discuss variables and social concepts more in another note.\nRows (horizontal) correspond to records (AKA entries), which are specific values of variables for a given individual, group, etc.—whatever your unit of analysis is.\n\n\nWe work with the datascience package’s Table.\n\nfrom datascience import *\nimport numpy as np",
+    "crumbs": [
+      "L04: Table Fundamentals"
+    ]
+  },
+  {
+    "objectID": "04-tables/index.html#todays-dataset-schools",
+    "href": "04-tables/index.html#todays-dataset-schools",
+    "title": "Table Fundamentals",
+    "section": "Today’s Dataset: Schools",
+    "text": "Today’s Dataset: Schools\nThis lecture we will return to the dataset of public universities in California (Wikipedia).\nTo work with this table, we first load it in from a file called data/cal_unis.csv.\n\nschools = Table.read_table('data/cal_unis.csv')\n\nLet’s break down what we meant by “load it in”: * The right-hand-side of the assignment calls a function that returns a datascience Table object from the provided data file. * The left-hand-side of the assignment assigns this object to the Python name schools. * After this assignment statement, then we can use schools as the particular Table object that has the tabular data we want.\nRunning the below cell evaluates schools and displays that tabular data to us:\n\nschools\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\nHumboldt\n6025\n1913\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n\n\nCalifornia State University Channel Islands\nCSU\nCamarillo\nVentura\n6128\n2002\n\n\nCalifornia State University, Dominguez Hills\nCSU\nCarson\nLos Angeles\n16426\n1960\n\n\nCalifornia State University, Chico\nCSU\nChico\nButte\n14183\n1887\n\n\nUniversity of California, Davis\nUC\nDavis\nYolo\n39679\n1905\n\n\nCalifornia State University, Fresno\nCSU\nFresno\nFresno\n23999\n1911\n\n\nCalifornia State University, Fullerton\nCSU\nFullerton\nOrange\n40386\n1957\n\n\nCalifornia State University, East Bay\nCSU\nHayward\nAlameda\n13673\n1957\n\n\n\n\n... (22 rows omitted)\n\n\nLet’s get to exploring and understanding our tabular data!",
+    "crumbs": [
+      "L04: Table Fundamentals"
+    ]
+  },
+  {
+    "objectID": "04-tables/index.html#find-table-dimensions",
+    "href": "04-tables/index.html#find-table-dimensions",
+    "title": "Table Fundamentals",
+    "section": "Find Table Dimensions",
+    "text": "Find Table Dimensions\nFirst off: How many rows and columns are in our schools table?\n\nprint(schools.num_rows)\nprint(schools.num_columns)\n\n32\n6\n\n\nWhat variables are being recorded?\n\nprint(schools.labels)\n\n('Name', 'Institution', 'City', 'County', 'Enrollment', 'Founded')\n\n\nWe didn’t conjure these expressions out of nowhere. Instead, we:\n\nLooked at the Data 6 Python Reference page\nScrolled down to the “Tables and Table Methods” section\nSkimmed the reference until we found documentation that seemed close to what we want\nTranslated the name tbl into schools.\nTried it out\n\nBonus: You’ll notice the “dot” syntax for accessing these values, also known as table attributes. See the Bonus last section for a more detailed explanation of this programming terminology.",
+    "crumbs": [
+      "L04: Table Fundamentals"
+    ]
+  },
+  {
+    "objectID": "04-tables/index.html#column-first-paradigm",
+    "href": "04-tables/index.html#column-first-paradigm",
+    "title": "Table Fundamentals",
+    "section": "Column-First Paradigm",
+    "text": "Column-First Paradigm\nBecause columns represent variables, we will take a column-first approach to tables.\nTo extract, delete, or make columns from a table named tbl:\n\ntbl.select(...) returns a new table with a subset of columns.\ntbl.drop(...) and returns a new table without a subset of columns\ntbl.with_columns(...) returns a new table with additional new column(s).\n\n\nschools.select('Name', 'Enrollment')\n\n\n\n\nName\nEnrollment\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\n6025\n\n\nCalifornia State University, Bakersfield\n9613\n\n\nUniversity of California, Berkeley\n45307\n\n\nCalifornia State University Channel Islands\n6128\n\n\nCalifornia State University, Dominguez Hills\n16426\n\n\nCalifornia State University, Chico\n14183\n\n\nUniversity of California, Davis\n39679\n\n\nCalifornia State University, Fresno\n23999\n\n\nCalifornia State University, Fullerton\n40386\n\n\nCalifornia State University, East Bay\n13673\n\n\n\n\n... (22 rows omitted)\n\n\n\nschools.drop('Founded', 'County')\n\n\n\n\nName\nInstitution\nCity\nEnrollment\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\n6025\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\n9613\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\n45307\n\n\nCalifornia State University Channel Islands\nCSU\nCamarillo\n6128\n\n\nCalifornia State University, Dominguez Hills\nCSU\nCarson\n16426\n\n\nCalifornia State University, Chico\nCSU\nChico\n14183\n\n\nUniversity of California, Davis\nUC\nDavis\n39679\n\n\nCalifornia State University, Fresno\nCSU\nFresno\n23999\n\n\nCalifornia State University, Fullerton\nCSU\nFullerton\n40386\n\n\nCalifornia State University, East Bay\nCSU\nHayward\n13673\n\n\n\n\n... (22 rows omitted)\n\n\nNote: The above two cells were run in sequence. Each table method returns a new table, so our original table schools is unchanged.\n\nModifying Tables\n\n\n\n\n\n\nTable methods return copies\n\n\n\nAll table methods return copies of information from the original table! This paradigm is quite useful for data analysis. From Inferential Thinking:\n\n[Table methods] create new smaller tables that share the same data. The fact that the original table is preserved is useful! You can generate multiple different tables that only consider certain columns without worrying that one analysis will affect the other.\n\n\n\nIf we would like to modify the original table, then we must re-assign schools to the new return value:\n\nschools = schools.with_columns(\n    \"Years since founding\",\n    2025 - schools.column(\"Founded\")\n)\nschools\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\nYears since founding\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\nHumboldt\n6025\n1913\n112\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\n60\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n156\n\n\nCalifornia State University Channel Islands\nCSU\nCamarillo\nVentura\n6128\n2002\n23\n\n\nCalifornia State University, Dominguez Hills\nCSU\nCarson\nLos Angeles\n16426\n1960\n65\n\n\nCalifornia State University, Chico\nCSU\nChico\nButte\n14183\n1887\n138\n\n\nUniversity of California, Davis\nUC\nDavis\nYolo\n39679\n1905\n120\n\n\nCalifornia State University, Fresno\nCSU\nFresno\nFresno\n23999\n1911\n114\n\n\nCalifornia State University, Fullerton\nCSU\nFullerton\nOrange\n40386\n1957\n68\n\n\nCalifornia State University, East Bay\nCSU\nHayward\nAlameda\n13673\n1957\n68\n\n\n\n\n... (22 rows omitted)",
+    "crumbs": [
+      "L04: Table Fundamentals"
+    ]
+  },
+  {
+    "objectID": "04-tables/index.html#filtering-rows",
+    "href": "04-tables/index.html#filtering-rows",
+    "title": "Table Fundamentals",
+    "section": "Filtering Rows",
+    "text": "Filtering Rows\nOften we would like to perform row filtering, where we only extract row entries that match a specific feature.\nBy exact match: tbl.where(column, value). Create a new table of only the rows where column column matches the value value.\n\nschools.where(\"Institution\", \"UC\")\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\nYears since founding\n\n\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n156\n\n\nUniversity of California, Davis\nUC\nDavis\nYolo\n39679\n1905\n120\n\n\nUniversity of California, Irvine\nUC\nIrvine\nOrange\n35937\n1965\n60\n\n\nUniversity of California, Los Angeles\nUC\nLos Angeles\nLos Angeles\n46430\n1882\n143\n\n\nUniversity of California, Merced\nUC\nMerced\nMerced\n9110\n2005\n20\n\n\nUniversity of California, Riverside\nUC\nRiverside\nRiverside\n26809\n1954\n71\n\n\nUniversity of California, San Diego\nUC\nSan Diego\nSan Diego\n42006\n1960\n65\n\n\nUniversity of California, Santa Barbara\nUC\nSanta Barbara\nSanta Barbara\n26420\n1891\n134\n\n\nUniversity of California, Santa Cruz\nUC\nSanta Cruz\nSanta Cruz\n19478\n1965\n60\n\n\n\n\n\nBy index: tbl.take(row_indices). Create a new table of only the rows with an index specified in row_indices.\n\nschools.take(1, 3, 5)\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\nYears since founding\n\n\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\n60\n\n\nCalifornia State University Channel Islands\nCSU\nCamarillo\nVentura\n6128\n2002\n23\n\n\nCalifornia State University, Chico\nCSU\nChico\nButte\n14183\n1887\n138\n\n\n\n\n\nAre rows zero-indexed or one-indexed? Why?",
+    "crumbs": [
+      "L04: Table Fundamentals"
+    ]
+  },
+  {
+    "objectID": "04-tables/index.html#creating-new-tables",
+    "href": "04-tables/index.html#creating-new-tables",
+    "title": "Table Fundamentals",
+    "section": "Creating New Tables",
+    "text": "Creating New Tables\nSo far we’ve used a table with pre-existing data. We can also make new Tables with a special function: Table().\n\nTable()\n\n\n\n\n\n\n\nCheck it out!!!\n\nstates = Table().with_columns('State', np.array(['California', 'New York', 'Florida', 'Texas', 'Pennsylvania']),'Code', np.array(['CA', 'NY', 'FL', 'TX', 'PA']), 'Population (millions)', np.array([39.3, 19.3, 21.7, 29.3, 12.8]))\nstates\n\n\n\n\nState\nCode\nPopulation (millions)\n\n\n\n\nCalifornia\nCA\n39.3\n\n\nNew York\nNY\n19.3\n\n\nFlorida\nFL\n21.7\n\n\nTexas\nTX\n29.3\n\n\nPennsylvania\nPA\n12.8\n\n\n\n\n\n…unfortunately, due to poor coding style, the above code is quite unreadable. Let’s use whitespace (new lines and indents) to delineate what we are doing:\n\nstates = Table().with_columns(\n  'State', make_array('California', 'New York', 'Florida', 'Texas', 'Pennsylvania'),\n  'Code', make_array('CA', 'NY', 'FL', 'TX', 'PA'),\n  'Population (millions)', make_array(39.3, 19.3, 21.7, 29.3, 12.8)\n)\nstates\n\n\n\n\nState\nCode\nPopulation (millions)\n\n\n\n\nCalifornia\nCA\n39.3\n\n\nNew York\nNY\n19.3\n\n\nFlorida\nFL\n21.7\n\n\nTexas\nTX\n29.3\n\n\nPennsylvania\nPA\n12.8\n\n\n\n\n\n\nMethod Chaining\nMethod chaining in Python is when the object returned from one method becomes the object to use in the next method. In the above case:\n\nCalling the Table returns an empty table.\nThe method with_columns is called on the empty table object, returning a table with the columns State, Code, and Population.\nThis return value is then assigned to states.\n\n\n\n\n\n\n\nWhitespace formatting\n\n\n\nNote the closed parenthesis on the final line. This helps “match” parentheses together.",
+    "crumbs": [
+      "L04: Table Fundamentals"
+    ]
+  },
+  {
+    "objectID": "04-tables/index.html#bonus-methods-vs.-attributes",
+    "href": "04-tables/index.html#bonus-methods-vs.-attributes",
+    "title": "Table Fundamentals",
+    "section": "Bonus: Methods vs. Attributes",
+    "text": "Bonus: Methods vs. Attributes\nReturn to the third focus question from the Inferential Thinking reading.\n\nWhat Python expression gets you the number of rows? a specific column? (bonus) How does the syntax differ between these two cases?\n\nThe textbook wording “overloads” two different Python syntax constructs. From the Python glossary:\n\n\n\n\n\n\nAttribute\n\n\n\nAttribute: A value associated with an object which is usually referenced by name using dotted expressions. For example, if an object o has an attribute a it would be referenced as o.a.\nIn other words, attributes are named values tied to specific objects. To get these values, we must refer to them by their name using “dot” syntax.\n\n\n\nschools.num_rows\n\n32\n\n\n\n\n\n\n\n\nMethod\n\n\n\nMethod A function which is defined inside a class body.\nThe Python glossary definition above is a more opaque definition than we would like. But you can think of the methods we study in this class as functions that take into account the attributes and values of specific objects. In order to call them on a specific operation, we also use “dot” syntax. Because they are functions, we must use call expression syntax with parenthesis, and provide arguments as needed.\n\n\n\nschools.column(\"Enrollment\")\n\narray([ 6025,  9613, 45307,  6128, 16426, 14183, 39679, 23999, 40386,\n       13673, 35937, 38973, 46430, 26460,  9110, 37579, 27503, 26809,\n        6637, 31818, 19803, 42006, 37402, 25282, 35751, 22000, 15109,\n       26420, 19478,  7045, 10154,  1017])\n\n\nWhich to syntax use? To determine which “dot” syntax to use, read the documentation. The entire Table class has been defined for us already, and the designers of the datascience package have predetermined which table features make sense to have as attributes, and which features make sense to return as values from a method call. But as a rule of thumb, if you need to specify any additional detail to get what you want, you will likely need to call a function: use table methods and pass in arguments. See the column method call above.\nAnother key indicator is what happens when you use incorrect syntax:\n\nschools.num_rows()\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[16], line 1\n----&gt; 1 schools.num_rows()\n\nTypeError: 'int' object is not callable\n\n\n\nThe above error message means that Python assumed you wanted to call a function num_rows (specifically, a method of the Table schools); however, when run, num_rows was actually an int data type attribute, and ints are not callable. Similarly, below:\n\nschools.column\n\n&lt;bound method Table.column of Name                                              | Institution | City        | County      | Enrollment | Founded | Years since founding\nCalifornia State Polytechnic University, Humboldt | CSU         | Arcata      | Humboldt    | 6025       | 1913    | 112\nCalifornia State University, Bakersfield          | CSU         | Bakersfield | Kern        | 9613       | 1965    | 60\nUniversity of California, Berkeley                | UC          | Berkeley    | Alameda     | 45307      | 1869    | 156\nCalifornia State University Channel Islands       | CSU         | Camarillo   | Ventura     | 6128       | 2002    | 23\nCalifornia State University, Dominguez Hills      | CSU         | Carson      | Los Angeles | 16426      | 1960    | 65\nCalifornia State University, Chico                | CSU         | Chico       | Butte       | 14183      | 1887    | 138\nUniversity of California, Davis                   | UC          | Davis       | Yolo        | 39679      | 1905    | 120\nCalifornia State University, Fresno               | CSU         | Fresno      | Fresno      | 23999      | 1911    | 114\nCalifornia State University, Fullerton            | CSU         | Fullerton   | Orange      | 40386      | 1957    | 68\nCalifornia State University, East Bay             | CSU         | Hayward     | Alameda     | 13673      | 1957    | 68\n... (22 rows omitted)&gt;\n\n\nThe above statement did not error, but it did not output a column, either. Rather, it output a method of a table, but it didn’t call this method.",
+    "crumbs": [
+      "L04: Table Fundamentals"
     ]
   },
   {
@@ -1335,141 +1363,129 @@
     ]
   },
   {
-    "objectID": "12-pivot/index.html",
-    "href": "12-pivot/index.html",
+    "objectID": "11-group/index.html",
+    "href": "11-group/index.html",
+    "title": "Grouping",
+    "section": "",
+    "text": "Read Inferential Thinking\n\n\n\nRead Ch 8.2, which describes grouping in detail.\nBefore continuing, make sure that:\n\nYou know that group with one argument produces counts per unique value in the grouped column.\nYou know that group with two arguments produces an aggregated value per unique value in the grouped column, and can potentially produce multiple columns based on which column value can be aggregated with the provided aggregator function.\nYou can also group data on multiple columns.",
+    "crumbs": [
+      "L11: Grouping"
+    ]
+  },
+  {
+    "objectID": "11-group/index.html#aggregating-and-disaggregating",
+    "href": "11-group/index.html#aggregating-and-disaggregating",
+    "title": "Grouping",
+    "section": "Aggregating and Disaggregating",
+    "text": "Aggregating and Disaggregating\nGrouping is a table operation most useful in translating between units of analysis. In particular, it lets us disaggregate data. Instead of just reporting an average across all datapoints, we can report averages as broken down by different subgroups.\n\nCase Study: 1973 UC Berkeley Graduate Admissions\nThe Fall 1973 admitted graduate student population had a peculiar characteristic: Overall, women were admitted at lower rates than men to graduate school, seeming to suggest that the admission rates was biased. However, when the admission rates by department (e.g., by field of study) were studied, women were often admitted at higher rates than men. How is this possible?\nThis is a peculiar case study around Simpson’s Paradox: when the trends of subgroups are reversed or not seen as compared to the trends of the overall dataset. We will explore this in detail in the reading, in section, and in the project. Stay tuned!",
+    "crumbs": [
+      "L11: Grouping"
+    ]
+  },
+  {
+    "objectID": "11-group/index.html#external-reading",
+    "href": "11-group/index.html#external-reading",
+    "title": "Grouping",
+    "section": "External Reading",
+    "text": "External Reading\n\n(mentioned in notes) Computational and Inferential Thinking, Ch 8.3\nP. J. Bickel et al. ,Sex Bias in Graduate Admissions: Data from Berkeley. Science 187, 398-404(1975). DOI:10.1126/science.187.4175.398",
+    "crumbs": [
+      "L11: Grouping"
+    ]
+  },
+  {
+    "objectID": "04-tables/exercises.html",
+    "href": "04-tables/exercises.html",
+    "title": "Table Exercises",
+    "section": "",
+    "text": "We work with the schools table from before.\nfrom datascience import *\nimport numpy as np\n\nschools = Table.read_table('data/cal_unis.csv')\nschools.show(3)\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\nHumboldt\n6025\n1913\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n\n\n\n\n... (29 rows omitted)\nPull up the Python Reference and try these exercises yourself! They are roughly in order of increasing difficulty.",
+    "crumbs": [
+      "L04: Table Fundamentals",
+      "Table Exercises"
+    ]
+  },
+  {
+    "objectID": "04-tables/exercises.html#exercise-1-variable-names",
+    "href": "04-tables/exercises.html#exercise-1-variable-names",
+    "title": "Table Exercises",
+    "section": "Exercise 1: Variable names",
+    "text": "Exercise 1: Variable names\nHow do we get all the column labels of schools?\n\n\n\n\n\n\nShow Answer\n\n\n\n\n\n\nschools.labels\n\n('Name', 'Institution', 'City', 'County', 'Enrollment', 'Founded')",
+    "crumbs": [
+      "L04: Table Fundamentals",
+      "Table Exercises"
+    ]
+  },
+  {
+    "objectID": "04-tables/exercises.html#exercise-2-reorder-columns",
+    "href": "04-tables/exercises.html#exercise-2-reorder-columns",
+    "title": "Table Exercises",
+    "section": "Exercise 2: Reorder columns",
+    "text": "Exercise 2: Reorder columns\nHow do we reorder the columns, as below?\n\n\n\n\n\n\n\n\n\n\n\nName\nFounded\nInstitution\nCity\nCounty\nEnrollment\n\n\n\n\n…\n…\n…\n…\n…\n…\n\n\n\nHint: use one of select, drop, or with_columns.\n\n\n\n\n\n\nShow Answer\n\n\n\n\n\n\nschools.select(\n  \"Name\", \"Founded\",\n  \"Institution\", \"City\",\n  \"County\", \"Enrollment\"\n)\n\n\n\n\nName\nFounded\nInstitution\nCity\nCounty\nEnrollment\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\n1913\nCSU\nArcata\nHumboldt\n6025\n\n\nCalifornia State University, Bakersfield\n1965\nCSU\nBakersfield\nKern\n9613\n\n\nUniversity of California, Berkeley\n1869\nUC\nBerkeley\nAlameda\n45307\n\n\nCalifornia State University Channel Islands\n2002\nCSU\nCamarillo\nVentura\n6128\n\n\nCalifornia State University, Dominguez Hills\n1960\nCSU\nCarson\nLos Angeles\n16426\n\n\nCalifornia State University, Chico\n1887\nCSU\nChico\nButte\n14183\n\n\nUniversity of California, Davis\n1905\nUC\nDavis\nYolo\n39679\n\n\nCalifornia State University, Fresno\n1911\nCSU\nFresno\nFresno\n23999\n\n\nCalifornia State University, Fullerton\n1957\nCSU\nFullerton\nOrange\n40386\n\n\nCalifornia State University, East Bay\n1957\nCSU\nHayward\nAlameda\n13673\n\n\n\n\n... (22 rows omitted)",
+    "crumbs": [
+      "L04: Table Fundamentals",
+      "Table Exercises"
+    ]
+  },
+  {
+    "objectID": "04-tables/exercises.html#exercise-3-filtering",
+    "href": "04-tables/exercises.html#exercise-3-filtering",
+    "title": "Table Exercises",
+    "section": "Exercise 3: Filtering",
+    "text": "Exercise 3: Filtering\n\n\n\n\n\n\nThe schools table for reference, if you need it\n\n\n\n\n\n\nschools.show(3)\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\nHumboldt\n6025\n1913\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n\n\n\n\n... (29 rows omitted)\n\n\n\n\n\n\nHow do we get a table with only UC schools?\n\n\n\n\n\n\n\nShow Answer\n\n\n\n\n\n\nschools.where(\"Institution\", \"UC\")\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\n\n\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n\n\nUniversity of California, Davis\nUC\nDavis\nYolo\n39679\n1905\n\n\nUniversity of California, Irvine\nUC\nIrvine\nOrange\n35937\n1965\n\n\nUniversity of California, Los Angeles\nUC\nLos Angeles\nLos Angeles\n46430\n1882\n\n\nUniversity of California, Merced\nUC\nMerced\nMerced\n9110\n2005\n\n\nUniversity of California, Riverside\nUC\nRiverside\nRiverside\n26809\n1954\n\n\nUniversity of California, San Diego\nUC\nSan Diego\nSan Diego\n42006\n1960\n\n\nUniversity of California, Santa Barbara\nUC\nSanta Barbara\nSanta Barbara\n26420\n1891\n\n\nUniversity of California, Santa Cruz\nUC\nSanta Cruz\nSanta Cruz\n19478\n1965\n\n\n\n\n\n\n\n\n\nHow do we get a table with all the schools in Los Angeles?\n\n\n\n\n\n\n\nShow Answer\n\n\n\n\n\n\nschools.where(\"City\", \"Los Angeles\")\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\n\n\n\n\nUniversity of California, Los Angeles\nUC\nLos Angeles\nLos Angeles\n46430\n1882\n\n\nCalifornia State University, Los Angeles\nCSU\nLos Angeles\nLos Angeles\n26460\n1947",
+    "crumbs": [
+      "L04: Table Fundamentals",
+      "Table Exercises"
+    ]
+  },
+  {
+    "objectID": "04-tables/exercises.html#exercise-4-rename-columns",
+    "href": "04-tables/exercises.html#exercise-4-rename-columns",
+    "title": "Table Exercises",
+    "section": "Exercise 4: Rename Columns",
+    "text": "Exercise 4: Rename Columns\nHow do we update schools such that the column Name is renamed University? Hint: Check out the method relabeled.\n\n\n\n\n\n\nShow Answer\n\n\n\n\n\n\nschools = schools.relabeled(\"Name\", \"University\")\nschools.show(3)\n\n\n\n\nUniversity\nInstitution\nCity\nCounty\nEnrollment\nFounded\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\nHumboldt\n6025\n1913\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n\n\n\n\n... (29 rows omitted)\n\n\n\n\n\nThere are many ways to approach a problem. Suppose you didn’t know the method relabeled existed:\n\n\n\n\n\n\nAlternate Answer\n\n\n\n\n\n\nschools = schools.with_column(\"University\", schools.column(\"Name\")).drop(\"Name\")\nschools.show(3)\n\n\n\n\nInstitution\nCity\nCounty\nEnrollment\nFounded\nUniversity\n\n\n\n\nCSU\nArcata\nHumboldt\n6025\n1913\nCalifornia State Polytechnic University, Humboldt\n\n\nCSU\nBakersfield\nKern\n9613\n1965\nCalifornia State University, Bakersfield\n\n\nUC\nBerkeley\nAlameda\n45307\n1869\nUniversity of California, Berkeley\n\n\n\n\n... (29 rows omitted)\n\n\nQuestions for you as you read the above code:\n\nWhat methods are being chained together here? Which is executed first, with_column or drop?\nWhen is the column method being called?\nWhat would happen if you switched the two methods? (try it out)\nWhy is University now the last column?",
+    "crumbs": [
+      "L04: Table Fundamentals",
+      "Table Exercises"
+    ]
+  },
+  {
+    "objectID": "04-tables/exercises.html#exercise-5-debugging-show",
+    "href": "04-tables/exercises.html#exercise-5-debugging-show",
+    "title": "Table Exercises",
+    "section": "Exercise 5: Debugging show",
+    "text": "Exercise 5: Debugging show\nThe following cells exhibit a tricky, but potentially common bug. First, check out the Python Reference to understand what show does.\n\nschools = Table.read_table('data/cal_unis.csv')\n\n\nschools = schools.show(3)\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\nHumboldt\n6025\n1913\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n\n\n\n\n... (29 rows omitted)\n\n\n\nschools = schools.show(4)\n\n\n---------------------------------------------------------------------------\nAttributeError                            Traceback (most recent call last)\nCell In[12], line 1\n----&gt; 1 schools = schools.show(4)\n\nAttributeError: 'NoneType' object has no attribute 'show'\n\n\n\nLike print, show is for display purposes. It does not return anything—i.e., it returns None. The second cell above therefore assigns schools to None!\nDespite this, show—just like print—is useful when you want to display intermediate output for debugging purposes.\n\nschools = Table.read_table('data/cal_unis.csv')\nschools.show(3) # just the first three rows\nschools = schools.relabeled(\"Name\", \"University\")\nschools.show(3) # and again\nschools = schools.with_columns(\"Name\", \"City\")\nschools         # the last evaluated value in a cell\n                # is displayed by default\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\nHumboldt\n6025\n1913\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n\n\n\n\n... (29 rows omitted)\n\n\n\n\n\nUniversity\nInstitution\nCity\nCounty\nEnrollment\nFounded\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\nHumboldt\n6025\n1913\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n\n\n\n\n... (29 rows omitted)\n\n\n\n\n\nUniversity\nInstitution\nCity\nCounty\nEnrollment\nFounded\nName\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\nHumboldt\n6025\n1913\nCity\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\nCity\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\nCity\n\n\nCalifornia State University Channel Islands\nCSU\nCamarillo\nVentura\n6128\n2002\nCity\n\n\nCalifornia State University, Dominguez Hills\nCSU\nCarson\nLos Angeles\n16426\n1960\nCity\n\n\nCalifornia State University, Chico\nCSU\nChico\nButte\n14183\n1887\nCity\n\n\nUniversity of California, Davis\nUC\nDavis\nYolo\n39679\n1905\nCity\n\n\nCalifornia State University, Fresno\nCSU\nFresno\nFresno\n23999\n1911\nCity\n\n\nCalifornia State University, Fullerton\nCSU\nFullerton\nOrange\n40386\n1957\nCity\n\n\nCalifornia State University, East Bay\nCSU\nHayward\nAlameda\n13673\n1957\nCity\n\n\n\n\n... (22 rows omitted)",
+    "crumbs": [
+      "L04: Table Fundamentals",
+      "Table Exercises"
+    ]
+  },
+  {
+    "objectID": "12-pivot-join/index.html",
+    "href": "12-pivot-join/index.html",
     "title": "Pivot and Join",
     "section": "",
-    "text": "Read Inferential Thinking\n\n\n\nRead Ch 8.3, which describes grouping by multiple columns and a cross-tabulation concept called pivoting.\nBefore continuing, make sure that:\n\nYou can compare and contrast how group and pivot aggregate data.\nYou understand the optional arguments to the pivot method: values and collect."
+    "text": "Read Inferential Thinking\n\n\n\nRead Ch 8.3, which describes grouping by multiple columns and a cross-tabulation concept called pivoting.\nBefore continuing, make sure that:\n\nYou can compare and contrast how group and pivot aggregate data.\nYou understand the optional arguments to the pivot method: values and collect.",
+    "crumbs": [
+      "L12: Pivots and Joins"
+    ]
   },
   {
-    "objectID": "12-pivot/index.html#pivoting-and-join",
-    "href": "12-pivot/index.html#pivoting-and-join",
+    "objectID": "12-pivot-join/index.html#pivot",
+    "href": "12-pivot-join/index.html#pivot",
     "title": "Pivot and Join",
     "section": "",
-    "text": "Read Inferential Thinking\n\n\n\nRead Ch 8.3, which describes grouping by multiple columns and a cross-tabulation concept called pivoting.\nBefore continuing, make sure that:\n\nYou can compare and contrast how group and pivot aggregate data.\nYou understand the optional arguments to the pivot method: values and collect."
-  },
-  {
-    "objectID": "04-tables/index.html",
-    "href": "04-tables/index.html",
-    "title": "Table Fundamentals",
-    "section": "",
-    "text": "Read Inferential Thinking\n\n\n\nRead Ch 6 intro, which describes the Table object type from the datascience library.\nThis is a very dense chapter, as it has lots of Python syntax. We will review it in detail. Before moving on, we encourage you to focus on the following questions:\n\nWhat is the syntax of the with_columns method? How does this method make a table?\nWhat are some table methods?\nWhat Python expression gets you the number of rows? a specific column? (bonus) How does the syntax differ between these two cases?\nIf you are new to programming, it is easy to get lost in the syntax of Python! For today, we will therefore focus on a few high-level goals:\nIn other words, you will not be expected to memorize all aspects of Tables (it’s as if we have a theme in this class…)! But you will have natural impulses for understanding and working with tabular data, many of which directly map to specific Table methods and attributes. To write Python code, then, you will need to learn to work with documentation to do this translation, and—when the precise methods don’t exist—construct new algorithms to achieve what you want. The more familiar you are with the documentation—and consequently, what is possible with Tables—the more you can focus on algorithmic thinking.",
+    "text": "Read Inferential Thinking\n\n\n\nRead Ch 8.3, which describes grouping by multiple columns and a cross-tabulation concept called pivoting.\nBefore continuing, make sure that:\n\nYou can compare and contrast how group and pivot aggregate data.\nYou understand the optional arguments to the pivot method: values and collect.",
     "crumbs": [
-      "L04: Table Fundamentals"
+      "L12: Pivots and Joins"
     ]
   },
   {
-    "objectID": "04-tables/index.html#definitions",
-    "href": "04-tables/index.html#definitions",
-    "title": "Table Fundamentals",
-    "section": "Definitions",
-    "text": "Definitions\nTo begin, recall the terminology we have been using to describe tables so far:\n\nTable: Retangular data structure.\n\nColumns (vertical) correspond to variables (AKA features, or attributes) that measure and operationalize social concepts. We discuss variables and social concepts more in another note.\nRows (horizontal) correspond to records (AKA entries), which are specific values of variables for a given individual, group, etc.—whatever your unit of analysis is.\n\n\nWe work with the datascience package’s Table.\n\nfrom datascience import *\nimport numpy as np",
+    "objectID": "12-pivot-join/index.html#join",
+    "href": "12-pivot-join/index.html#join",
+    "title": "Pivot and Join",
+    "section": "Join",
+    "text": "Join\n\n\n\n\n\n\nRead Inferential Thinking\n\n\n\nRead Ch 8.4, which joins tables together.\nBefore continuing, make sure that:\n\nYou understand how joining one table on another augments the information in a table.\nYou can identify the appropriate shared column on which to join two tables.\nYou can compare and contrast the use cases for the different function signatures of the join Table method:\n\ntblA.join(colA, tblB)\ntblA.join(colA, tblB, colB)",
     "crumbs": [
-      "L04: Table Fundamentals"
-    ]
-  },
-  {
-    "objectID": "04-tables/index.html#todays-dataset-schools",
-    "href": "04-tables/index.html#todays-dataset-schools",
-    "title": "Table Fundamentals",
-    "section": "Today’s Dataset: Schools",
-    "text": "Today’s Dataset: Schools\nThis lecture we will return to the dataset of public universities in California (Wikipedia).\nTo work with this table, we first load it in from a file called data/cal_unis.csv.\n\nschools = Table.read_table('data/cal_unis.csv')\n\nLet’s break down what we meant by “load it in”: * The right-hand-side of the assignment calls a function that returns a datascience Table object from the provided data file. * The left-hand-side of the assignment assigns this object to the Python name schools. * After this assignment statement, then we can use schools as the particular Table object that has the tabular data we want.\nRunning the below cell evaluates schools and displays that tabular data to us:\n\nschools\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\nHumboldt\n6025\n1913\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n\n\nCalifornia State University Channel Islands\nCSU\nCamarillo\nVentura\n6128\n2002\n\n\nCalifornia State University, Dominguez Hills\nCSU\nCarson\nLos Angeles\n16426\n1960\n\n\nCalifornia State University, Chico\nCSU\nChico\nButte\n14183\n1887\n\n\nUniversity of California, Davis\nUC\nDavis\nYolo\n39679\n1905\n\n\nCalifornia State University, Fresno\nCSU\nFresno\nFresno\n23999\n1911\n\n\nCalifornia State University, Fullerton\nCSU\nFullerton\nOrange\n40386\n1957\n\n\nCalifornia State University, East Bay\nCSU\nHayward\nAlameda\n13673\n1957\n\n\n\n\n... (22 rows omitted)\n\n\nLet’s get to exploring and understanding our tabular data!",
-    "crumbs": [
-      "L04: Table Fundamentals"
-    ]
-  },
-  {
-    "objectID": "04-tables/index.html#find-table-dimensions",
-    "href": "04-tables/index.html#find-table-dimensions",
-    "title": "Table Fundamentals",
-    "section": "Find Table Dimensions",
-    "text": "Find Table Dimensions\nFirst off: How many rows and columns are in our schools table?\n\nprint(schools.num_rows)\nprint(schools.num_columns)\n\n32\n6\n\n\nWhat variables are being recorded?\n\nprint(schools.labels)\n\n('Name', 'Institution', 'City', 'County', 'Enrollment', 'Founded')\n\n\nWe didn’t conjure these expressions out of nowhere. Instead, we:\n\nLooked at the Data 6 Python Reference page\nScrolled down to the “Tables and Table Methods” section\nSkimmed the reference until we found documentation that seemed close to what we want\nTranslated the name tbl into schools.\nTried it out\n\nBonus: You’ll notice the “dot” syntax for accessing these values, also known as table attributes. See the Bonus last section for a more detailed explanation of this programming terminology.",
-    "crumbs": [
-      "L04: Table Fundamentals"
-    ]
-  },
-  {
-    "objectID": "04-tables/index.html#column-first-paradigm",
-    "href": "04-tables/index.html#column-first-paradigm",
-    "title": "Table Fundamentals",
-    "section": "Column-First Paradigm",
-    "text": "Column-First Paradigm\nBecause columns represent variables, we will take a column-first approach to tables.\nTo extract, delete, or make columns from a table named tbl:\n\ntbl.select(...) returns a new table with a subset of columns.\ntbl.drop(...) and returns a new table without a subset of columns\ntbl.with_columns(...) returns a new table with additional new column(s).\n\n\nschools.select('Name', 'Enrollment')\n\n\n\n\nName\nEnrollment\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\n6025\n\n\nCalifornia State University, Bakersfield\n9613\n\n\nUniversity of California, Berkeley\n45307\n\n\nCalifornia State University Channel Islands\n6128\n\n\nCalifornia State University, Dominguez Hills\n16426\n\n\nCalifornia State University, Chico\n14183\n\n\nUniversity of California, Davis\n39679\n\n\nCalifornia State University, Fresno\n23999\n\n\nCalifornia State University, Fullerton\n40386\n\n\nCalifornia State University, East Bay\n13673\n\n\n\n\n... (22 rows omitted)\n\n\n\nschools.drop('Founded', 'County')\n\n\n\n\nName\nInstitution\nCity\nEnrollment\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\n6025\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\n9613\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\n45307\n\n\nCalifornia State University Channel Islands\nCSU\nCamarillo\n6128\n\n\nCalifornia State University, Dominguez Hills\nCSU\nCarson\n16426\n\n\nCalifornia State University, Chico\nCSU\nChico\n14183\n\n\nUniversity of California, Davis\nUC\nDavis\n39679\n\n\nCalifornia State University, Fresno\nCSU\nFresno\n23999\n\n\nCalifornia State University, Fullerton\nCSU\nFullerton\n40386\n\n\nCalifornia State University, East Bay\nCSU\nHayward\n13673\n\n\n\n\n... (22 rows omitted)\n\n\nNote: The above two cells were run in sequence. Each table method returns a new table, so our original table schools is unchanged.\n\nModifying Tables\n\n\n\n\n\n\nTable methods return copies\n\n\n\nAll table methods return copies of information from the original table! This paradigm is quite useful for data analysis. From Inferential Thinking:\n\n[Table methods] create new smaller tables that share the same data. The fact that the original table is preserved is useful! You can generate multiple different tables that only consider certain columns without worrying that one analysis will affect the other.\n\n\n\nIf we would like to modify the original table, then we must re-assign schools to the new return value:\n\nschools = schools.with_columns(\n    \"Years since founding\",\n    2025 - schools.column(\"Founded\")\n)\nschools\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\nYears since founding\n\n\n\n\nCalifornia State Polytechnic University, Humboldt\nCSU\nArcata\nHumboldt\n6025\n1913\n112\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\n60\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n156\n\n\nCalifornia State University Channel Islands\nCSU\nCamarillo\nVentura\n6128\n2002\n23\n\n\nCalifornia State University, Dominguez Hills\nCSU\nCarson\nLos Angeles\n16426\n1960\n65\n\n\nCalifornia State University, Chico\nCSU\nChico\nButte\n14183\n1887\n138\n\n\nUniversity of California, Davis\nUC\nDavis\nYolo\n39679\n1905\n120\n\n\nCalifornia State University, Fresno\nCSU\nFresno\nFresno\n23999\n1911\n114\n\n\nCalifornia State University, Fullerton\nCSU\nFullerton\nOrange\n40386\n1957\n68\n\n\nCalifornia State University, East Bay\nCSU\nHayward\nAlameda\n13673\n1957\n68\n\n\n\n\n... (22 rows omitted)",
-    "crumbs": [
-      "L04: Table Fundamentals"
-    ]
-  },
-  {
-    "objectID": "04-tables/index.html#filtering-rows",
-    "href": "04-tables/index.html#filtering-rows",
-    "title": "Table Fundamentals",
-    "section": "Filtering Rows",
-    "text": "Filtering Rows\nOften we would like to perform row filtering, where we only extract row entries that match a specific feature.\nBy exact match: tbl.where(column, value). Create a new table of only the rows where column column matches the value value.\n\nschools.where(\"Institution\", \"UC\")\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\nYears since founding\n\n\n\n\nUniversity of California, Berkeley\nUC\nBerkeley\nAlameda\n45307\n1869\n156\n\n\nUniversity of California, Davis\nUC\nDavis\nYolo\n39679\n1905\n120\n\n\nUniversity of California, Irvine\nUC\nIrvine\nOrange\n35937\n1965\n60\n\n\nUniversity of California, Los Angeles\nUC\nLos Angeles\nLos Angeles\n46430\n1882\n143\n\n\nUniversity of California, Merced\nUC\nMerced\nMerced\n9110\n2005\n20\n\n\nUniversity of California, Riverside\nUC\nRiverside\nRiverside\n26809\n1954\n71\n\n\nUniversity of California, San Diego\nUC\nSan Diego\nSan Diego\n42006\n1960\n65\n\n\nUniversity of California, Santa Barbara\nUC\nSanta Barbara\nSanta Barbara\n26420\n1891\n134\n\n\nUniversity of California, Santa Cruz\nUC\nSanta Cruz\nSanta Cruz\n19478\n1965\n60\n\n\n\n\n\nBy index: tbl.take(row_indices). Create a new table of only the rows with an index specified in row_indices.\n\nschools.take(1, 3, 5)\n\n\n\n\nName\nInstitution\nCity\nCounty\nEnrollment\nFounded\nYears since founding\n\n\n\n\nCalifornia State University, Bakersfield\nCSU\nBakersfield\nKern\n9613\n1965\n60\n\n\nCalifornia State University Channel Islands\nCSU\nCamarillo\nVentura\n6128\n2002\n23\n\n\nCalifornia State University, Chico\nCSU\nChico\nButte\n14183\n1887\n138\n\n\n\n\n\nAre rows zero-indexed or one-indexed? Why?",
-    "crumbs": [
-      "L04: Table Fundamentals"
-    ]
-  },
-  {
-    "objectID": "04-tables/index.html#creating-new-tables",
-    "href": "04-tables/index.html#creating-new-tables",
-    "title": "Table Fundamentals",
-    "section": "Creating New Tables",
-    "text": "Creating New Tables\nSo far we’ve used a table with pre-existing data. We can also make new Tables with a special function: Table().\n\nTable()\n\n\n\n\n\n\n\nCheck it out!!!\n\nstates = Table().with_columns('State', np.array(['California', 'New York', 'Florida', 'Texas', 'Pennsylvania']),'Code', np.array(['CA', 'NY', 'FL', 'TX', 'PA']), 'Population (millions)', np.array([39.3, 19.3, 21.7, 29.3, 12.8]))\nstates\n\n\n\n\nState\nCode\nPopulation (millions)\n\n\n\n\nCalifornia\nCA\n39.3\n\n\nNew York\nNY\n19.3\n\n\nFlorida\nFL\n21.7\n\n\nTexas\nTX\n29.3\n\n\nPennsylvania\nPA\n12.8\n\n\n\n\n\n…unfortunately, due to poor coding style, the above code is quite unreadable. Let’s use whitespace (new lines and indents) to delineate what we are doing:\n\nstates = Table().with_columns(\n  'State', make_array('California', 'New York', 'Florida', 'Texas', 'Pennsylvania'),\n  'Code', make_array('CA', 'NY', 'FL', 'TX', 'PA'),\n  'Population (millions)', make_array(39.3, 19.3, 21.7, 29.3, 12.8)\n)\nstates\n\n\n\n\nState\nCode\nPopulation (millions)\n\n\n\n\nCalifornia\nCA\n39.3\n\n\nNew York\nNY\n19.3\n\n\nFlorida\nFL\n21.7\n\n\nTexas\nTX\n29.3\n\n\nPennsylvania\nPA\n12.8\n\n\n\n\n\n\nMethod Chaining\nMethod chaining in Python is when the object returned from one method becomes the object to use in the next method. In the above case:\n\nCalling the Table returns an empty table.\nThe method with_columns is called on the empty table object, returning a table with the columns State, Code, and Population.\nThis return value is then assigned to states.\n\n\n\n\n\n\n\nWhitespace formatting\n\n\n\nNote the closed parenthesis on the final line. This helps “match” parentheses together.",
-    "crumbs": [
-      "L04: Table Fundamentals"
-    ]
-  },
-  {
-    "objectID": "04-tables/index.html#bonus-methods-vs.-attributes",
-    "href": "04-tables/index.html#bonus-methods-vs.-attributes",
-    "title": "Table Fundamentals",
-    "section": "Bonus: Methods vs. Attributes",
-    "text": "Bonus: Methods vs. Attributes\nReturn to the third focus question from the Inferential Thinking reading.\n\nWhat Python expression gets you the number of rows? a specific column? (bonus) How does the syntax differ between these two cases?\n\nThe textbook wording “overloads” two different Python syntax constructs. From the Python glossary:\n\n\n\n\n\n\nAttribute\n\n\n\nAttribute: A value associated with an object which is usually referenced by name using dotted expressions. For example, if an object o has an attribute a it would be referenced as o.a.\nIn other words, attributes are named values tied to specific objects. To get these values, we must refer to them by their name using “dot” syntax.\n\n\n\nschools.num_rows\n\n32\n\n\n\n\n\n\n\n\nMethod\n\n\n\nMethod A function which is defined inside a class body.\nThe Python glossary definition above is a more opaque definition than we would like. But you can think of the methods we study in this class as functions that take into account the attributes and values of specific objects. In order to call them on a specific operation, we also use “dot” syntax. Because they are functions, we must use call expression syntax with parenthesis, and provide arguments as needed.\n\n\n\nschools.column(\"Enrollment\")\n\narray([ 6025,  9613, 45307,  6128, 16426, 14183, 39679, 23999, 40386,\n       13673, 35937, 38973, 46430, 26460,  9110, 37579, 27503, 26809,\n        6637, 31818, 19803, 42006, 37402, 25282, 35751, 22000, 15109,\n       26420, 19478,  7045, 10154,  1017])\n\n\nWhich to syntax use? To determine which “dot” syntax to use, read the documentation. The entire Table class has been defined for us already, and the designers of the datascience package have predetermined which table features make sense to have as attributes, and which features make sense to return as values from a method call. But as a rule of thumb, if you need to specify any additional detail to get what you want, you will likely need to call a function: use table methods and pass in arguments. See the column method call above.\nAnother key indicator is what happens when you use incorrect syntax:\n\nschools.num_rows()\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[16], line 1\n----&gt; 1 schools.num_rows()\n\nTypeError: 'int' object is not callable\n\n\n\nThe above error message means that Python assumed you wanted to call a function num_rows (specifically, a method of the Table schools); however, when run, num_rows was actually an int data type attribute, and ints are not callable. Similarly, below:\n\nschools.column\n\n&lt;bound method Table.column of Name                                              | Institution | City        | County      | Enrollment | Founded | Years since founding\nCalifornia State Polytechnic University, Humboldt | CSU         | Arcata      | Humboldt    | 6025       | 1913    | 112\nCalifornia State University, Bakersfield          | CSU         | Bakersfield | Kern        | 9613       | 1965    | 60\nUniversity of California, Berkeley                | UC          | Berkeley    | Alameda     | 45307      | 1869    | 156\nCalifornia State University Channel Islands       | CSU         | Camarillo   | Ventura     | 6128       | 2002    | 23\nCalifornia State University, Dominguez Hills      | CSU         | Carson      | Los Angeles | 16426      | 1960    | 65\nCalifornia State University, Chico                | CSU         | Chico       | Butte       | 14183      | 1887    | 138\nUniversity of California, Davis                   | UC          | Davis       | Yolo        | 39679      | 1905    | 120\nCalifornia State University, Fresno               | CSU         | Fresno      | Fresno      | 23999      | 1911    | 114\nCalifornia State University, Fullerton            | CSU         | Fullerton   | Orange      | 40386      | 1957    | 68\nCalifornia State University, East Bay             | CSU         | Hayward     | Alameda     | 13673      | 1957    | 68\n... (22 rows omitted)&gt;\n\n\nThe above statement did not error, but it did not output a column, either. Rather, it output a method of a table, but it didn’t call this method.",
-    "crumbs": [
-      "L04: Table Fundamentals"
-    ]
-  },
-  {
-    "objectID": "04-tables/none-print.html",
-    "href": "04-tables/none-print.html",
-    "title": "None and Print",
-    "section": "",
-    "text": "We have covered a few data types so far. There are infinitely many integers, floating point numbers, and strings. (Actually finite, because of how computers store information. Take CS61C to learn more.)\nHowever, for the NoneType data type, there is only one value: None.\n\nmy_var = None\ntype(my_var)\n\nNoneType\n\n\nNone is strange: Cells will not output expressions that evaluate to None.\nNone is also referred to as the null value.",
-    "crumbs": [
-      "L04: Table Fundamentals",
-      "None and Print"
-    ]
-  },
-  {
-    "objectID": "04-tables/none-print.html#none-type",
-    "href": "04-tables/none-print.html#none-type",
-    "title": "None and Print",
-    "section": "",
-    "text": "We have covered a few data types so far. There are infinitely many integers, floating point numbers, and strings. (Actually finite, because of how computers store information. Take CS61C to learn more.)\nHowever, for the NoneType data type, there is only one value: None.\n\nmy_var = None\ntype(my_var)\n\nNoneType\n\n\nNone is strange: Cells will not output expressions that evaluate to None.\nNone is also referred to as the null value.",
-    "crumbs": [
-      "L04: Table Fundamentals",
-      "None and Print"
-    ]
-  },
-  {
-    "objectID": "04-tables/none-print.html#the-print-function",
-    "href": "04-tables/none-print.html#the-print-function",
-    "title": "None and Print",
-    "section": "The print function",
-    "text": "The print function\nThe print function displays values to the screen (in this case, our Jupyter notebook). Each call to print displays information on a new line.\n\nprint(2)\nprint(\"Hello, world!\")\n\n2\nHello, world!\n\n\nprint lets us to see information about executed statements that are not just the last line of the cell. Could you see why this would be a useful feature for debugging?\nprint is ultra-convenient because it can take as many arguments as you want.\n\nx = 3\ny = 4\nprint(x, \"+\", y, \"is equal to\", x + y)\n\n3 + 4 is equal to 7\n\n\nTrace through the above program. Do you see how expressions are evaluated before printing?",
-    "crumbs": [
-      "L04: Table Fundamentals",
-      "None and Print"
-    ]
-  },
-  {
-    "objectID": "04-tables/none-print.html#notebooks-cell-output-vs.-print",
-    "href": "04-tables/none-print.html#notebooks-cell-output-vs.-print",
-    "title": "None and Print",
-    "section": "Notebooks: Cell Output vs. print",
-    "text": "Notebooks: Cell Output vs. print\nCell output and print output seem very closely related:\n\nBoth evaluate expressions\nBoth display something in the notebook\n\nHowever, they have subtle differences. We won’t expect you to know all of them. Instead, the purpose of this section is to get you used to tracing programs, where you closely consider Python’s order of execution of each statement, expression, function call, and so on.\nBecause the print output is intended for human view, it displays strings without quotes. Contrast this with the cell output, which includes the quotes.\n\nprint(2)\n\"Hello, world!\"\n\n2\n\n\n'Hello, world!'\n\n\n\nExercise 1\nThis is now super pedantic, but consider the following cells. Can you explain what is happening?\n\nmy_var\n\n\nprint(my_var)\n\nNone\n\n\n\n\n\n\n\n\nExplanation\n\n\n\n\n\nWhen print is evaluated as the last line in a cell, it displays the value of the evaluated argument (here, None). print returns None, so the cell does not additionally output anything,\n\n\n\n\n\nExercise 2\nTry this challenge on for size.\n\nprint(my_var)\nprint(3)\n45\n\nNone\n3\n\n\n45\n\n\n\n\n\n\n\n\nExplanation\n\n\n\n\n\nEach line explained:\n\nEvaluate the first print call expression. This prints the value of my_var to the screen, which evaluates to None. print returns None, but this second None is not output to the sceen because it is not the last line.\nEvaluate the second print call expression. This prints the value of 3 to the screen. print returns None, but this second None is not output to the sceen because it is not the last line.\nEvaluate the third expression, 45; because it is the last line, output to screen.\n\n\n\n\nYou’re thinking like a computer scientist now!",
-    "crumbs": [
-      "L04: Table Fundamentals",
-      "None and Print"
+      "L12: Pivots and Joins"
     ]
   },
   {

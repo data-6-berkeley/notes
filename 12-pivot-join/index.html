@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Course Introduction</title>
+<title>Pivot and Join</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../01-intro/jupyter-notebook.html" rel="next">
-<link href="../index.html" rel="prev">
+<link href="../five-things.html" rel="next">
+<link href="../11-group/index.html" rel="prev">
 <link href="../assets/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -94,7 +94,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../01-intro/index.html">L01: Introduction</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../12-pivot-join/index.html">L12: Pivots and Joins</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -133,16 +133,16 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../01-intro/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../01-intro/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">L01: Introduction</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01-intro/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../01-intro/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Course Introduction</span></a>
   </div>
 </li>
@@ -409,8 +409,8 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-will-i-learn-in-this-course" id="toc-what-will-i-learn-in-this-course" class="nav-link active" data-scroll-target="#what-will-i-learn-in-this-course">What will I learn in this course?</a></li>
-  <li><a href="#external-reading" id="toc-external-reading" class="nav-link" data-scroll-target="#external-reading">External Reading</a></li>
+  <li><a href="#pivot" id="toc-pivot" class="nav-link active" data-scroll-target="#pivot">Pivot</a></li>
+  <li><a href="#join" id="toc-join" class="nav-link" data-scroll-target="#join">Join</a></li>
   </ul>
 </nav>
     </div>
@@ -419,8 +419,8 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Course Introduction</h1>
-<p class="subtitle lead">UC Berkeley, Data 6</p>
+<h1 class="title">Pivot and Join</h1>
+<p class="subtitle lead">Selecting rows based on a condition</p>
 </div>
 
 
@@ -437,15 +437,52 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </header>
 
 
-<section id="what-will-i-learn-in-this-course" class="level2">
-<h2 class="anchored" data-anchor-id="what-will-i-learn-in-this-course">What will I learn in this course?</h2>
-<p>Check out our slides for today! No additional notes!</p>
-</section>
-<section id="external-reading" class="level2">
-<h2 class="anchored" data-anchor-id="external-reading">External Reading</h2>
+<section id="pivot" class="level2">
+<h2 class="anchored" data-anchor-id="pivot">Pivot</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Read _Inferential Thinking_">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Read <em>Inferential Thinking</em>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Read <a href="https://inferentialthinking.com/chapters/08/3/Cross-Classifying_by_More_than_One_Variable.html">Ch 8.3</a>, which describes grouping by multiple columns and a cross-tabulation concept called <strong>pivoting</strong>.</p>
+<p>Before continuing, make sure that:</p>
 <ul>
-<li><em>Computational and Inferential Thinking</em>, <a href="https://inferentialthinking.com/chapters/01/1/intro.html">Ch 1.1</a></li>
+<li>You can compare and contrast how <code>group</code> and <code>pivot</code> aggregate data.</li>
+<li>You understand the optional arguments to the <code>pivot</code> method: <code>values</code> and <code>collect</code>.</li>
 </ul>
+</div>
+</div>
+</section>
+<section id="join" class="level2">
+<h2 class="anchored" data-anchor-id="join">Join</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Read _Inferential Thinking_">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Read <em>Inferential Thinking</em>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Read <a href="https://inferentialthinking.com/chapters/08/4/Joining_Tables_by_Columns.html">Ch 8.4</a>, which joins tables together.</p>
+<p>Before continuing, make sure that:</p>
+<ul>
+<li><p>You understand how joining one table on another augments the information in a table.</p></li>
+<li><p>You can identify the appropriate shared column on which to join two tables.</p></li>
+<li><p>You can compare and contrast the use cases for the different function signatures of the <code>join</code> Table method:</p>
+<ul>
+<li><code>tblA.join(colA, tblB)</code></li>
+<li><code>tblA.join(colA, tblB, colB)</code></li>
+</ul></li>
+</ul>
+</div>
+</div>
 
 
 </section>
@@ -852,13 +889,13 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../index.html" class="pagination-link" aria-label="Home / About">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Home / About</span>
+      <a href="../11-group/index.html" class="pagination-link" aria-label="L11: Grouping">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">L11: Grouping</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../01-intro/jupyter-notebook.html" class="pagination-link" aria-label="Jupyter Notebooks">
-        <span class="nav-page-text">Jupyter Notebooks</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../five-things.html" class="pagination-link" aria-label="5 Things to Know">
+        <span class="nav-page-text">5 Things to Know</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
