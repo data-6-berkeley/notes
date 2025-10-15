@@ -104,8 +104,10 @@ website:
             text: "Filtering and Boolean Predicates"
           - href: 10-boolean-predicates/boolean.qmd
             text: "Booleans"
-      - section: "L11: Grouping and Pivoting"
+      - section: "L11: Grouping"
         href: 11-group/index.qmd
+      - section: "L12: Pivots and Joins"
+        href: 12-pivot-join/index.qmd
       - href: five-things.qmd
         text: "5 Things to Know"
       - href: reference.qmd
