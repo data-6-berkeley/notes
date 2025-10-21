@@ -1,0 +1,136 @@
+---
+title: "The `apply` Table method"
+subtitle: "Make new columns of a table by applying custom functions to existing columns"
+---
+
+## The `apply` Table method
+```{python}
+#| include: false
+from datascience import *
+import numpy as np
+```
+
+::: {.callout-note title="Read _Inferential Thinking_"}
+ Read [Ch 8.1.1](https://inferentialthinking.com/chapters/08/1/Applying_a_Function_to_a_Column.html#apply), which describes `apply` Table method.
+:::
+
+The function signature of `apply` is:
+
+```
+tbl.apply(func, col1, …, colN)
+```
+
+* `func` takes in the same number of arguments as columns provided. If N columns are provided, then `func` should take in `N` arguments.
+* `col1`, ..., `colN` are names of columns in `tbl`.
+* For each row, the value in the `col1` column is passed in as argument 1, the value in the `col2` column is passed in as argument 2, etc.
+
+## Example
+
+We have a weather table of high and low temperatures on each day, recorded in Farenheit. We would like to transform these temperatures to Celsius. This example creates a new column, `High (C)`, using the `apply` method.
+
+```{python}
+weather = Table().with_columns(
+    "Day", make_array(1, 2, 3),
+    "High", make_array(55.1, 57.2, 56.8),
+    "Low", make_array(43.7, 46, 45.9),
+    "Sky condition", make_array("Cloudy", "Sunny", "Cloudy")
+)
+weather
+```
+
+```{python}
+def celsius(temp): 	
+    """converts Fahrenheit to Celsius"""
+    return (temp - 32) * 5/9
+```
+
+The `apply` method returns an array of values.
+```{python}
+weather.apply(celsius, 'High')
+```
+
+We can create a new column by assigning this newly created array to a new column name.
+
+```{python}
+weather.with_columns(
+    "High (C)",
+    weather.apply(celsius, 'High')
+)
+```
+
+As practice, try doing the same with the temperatures in the `Low` column.
+
+## Applying with Strings
+
+### Task 1
+
+Make exciting greetings by adding the Greeting column as below.
+
+| Holiday | Name | Greeting |
+| --- | --- | --- |
+| Hanukkah | Josh |  HAPPY HANUKKAH JOSH |
+| New Year | Tracy | HAPPY NEW YEAR TRACY |
+| Birthday | Jaspreet | HAPPY BIRTHDAY JASPREET |
+
+```{python}
+holidays = Table().with_columns(
+    'Holiday', make_array('Hanukkah', 'New Year', 'Birthday'),
+    'Name', make_array('Josh', 'Tracy', 'Jaspreet')
+)
+holidays
+```
+
+There are various solutions. One reasonable approach:
+
+```{python}
+def make_greeting(holiday, name):
+    return "HAPPY " + holiday.upper() + " " + name.upper()
+
+holidays.with_columns(
+    "Greeting",
+    holidays.apply(make_greeting, "Holiday", "Name")
+)
+```
+
+Here's another advanced approach, using `join`:
+
+```{python}
+def make_greeting(holiday, name):
+    return ' '.join(["happy", holiday, name]).upper()
+
+holidays.with_columns(
+    "Greeting",
+    holidays.apply(make_greeting, "Holiday", "Name")
+)
+```
+
+### Task 2 (Challenge)
+
+Convert phone numbers. For example, `510-642-3141` should be formatted as `(510) 642-3141`.
+
+_Hint_: Try using `split`. The `split` function returns a list of strings split by the delimiter; after conversion, lists can be indexed just like an array.
+
+```{python}
+res_halls = Table().with_columns(
+    'Residence Hall', 
+        make_array('Unit 1', 'Unit 2', 'Unit 3', 'Foothill',
+                   'Clark Kerr', 'Blackwell', 'Martinez Commons'),
+    'Phone',
+        make_array('510-642-3141', '510-642-3143', '510-642-5391', '510-642-9703',
+                   '510-642-6290', '510-423-3740', '510-642-8517')
+)
+res_halls
+```
+
+One possible approach:
+
+```{python}
+def format_phone_number(phone):
+    parts = np.array(phone.split('-'))
+    return "(" + parts.item(0) + ") " + parts.item(1) + "-" + parts.item(2)
+
+res_halls.with_columns(
+    "Formatted",
+    res_halls.apply(format_phone_number, "Phone")
+)
+```

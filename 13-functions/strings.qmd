@@ -1,0 +1,99 @@
+---
+title: "String Methods"
+subtitle: "Some more string methods, some more esoteric than others"
+---
+
+## String methods
+
+This note extends our discussion of strings at the beginning of the semester. So far, we have only discussed the concatenation operator (`+`) and the length function (`len`). Strings also have methods. 
+
+Some string methods are discussed in the Data 8 textbook:
+
+::: {.callout-note title="Read _Inferential Thinking_"}
+ Read [Ch 4.2.1](https://inferentialthinking.com/chapters/04/2/1/String_Methods.html) which describes two string methods: `upper` and `replace`. Before continuing, make sure you understand how these work.
+:::
+
+## String method table
+
+This is from our Data 6 Python Reference, appended with a few examples. Assume that the following string `s` has been assigned:
+
+```{python}
+s = 'JuNiOR12' # already run
+```
+
+| **Function** | **Description** | **Example Output** |
+|--|------|----|
+| `s.upper()` | Returns a copy of `s` where all letters are uppercase. | `'JUNIOR12'` |
+| `s.lower()` | Returns a copy of `str` where all letters are lowercase. | `'junior12'`|
+| `s.replace(old, new)`, e.g., <br/>`s.replace('i', 'iii')` | Returns a copy of `s` with all occurrences of the substring `old` replaced by `new`.| `'JuNiiiOR12'` |
+| `s.split(separator, maxsplit)`, e.g.,  <br/>`s.split('iO')` | Splits `s` into a list of substrings using the specified `separator`. If `separator` is not provided, splits at any whitespace. You can also use the optional argument `maxsplit` to limit the number of splits. | `['JuN', 'R12']` |
+| `s.join(iterable)`, e.g.,<br/>`' '.join(['hello' 'world', '!'])` | Concatenates the elements in `iterable` (usually a list or array) into a single string, with each element separated by `str`. | `'hello world !'` |
+
+## Lists vs. Arrays
+
+The last two methods, `split` and `join`, work with a data type called Python lists, which we won't get into too much in this class. For all intents and purposes, you can consider lists to be very similar to NumPy arrays, in that:
+
+* Lists are a sequence of elements in-order that can be referenced by element index.
+* Lists are zero-indexed, i.e., the first element has index 0.
+* When all list elements are the same data type, lists can be cast into NumPy arrays. (Unlike arrays, list elements can typically have different data types.)
+* Lists are displayed using square brackets (and it also accepts indexing by square brackets, unlike arrays which accept indexing with the `item` method. We do not cover square bracket indexing in this course).
+
+Because we only use NumPy arrays in this class, we recommend that you consider casting to NumPy arrays where possible with `make_array`.
+
+## `join` and `split`
+
+With this understanding, in this section we clarify the **return value** of `split` (i.e., its output) and the **input parameter** of `join` (i.e., its input).
+
+```{python}
+retval = s.split('iO')
+retval
+```
+
+```{python}
+type(retval)
+```
+
+Once we cast `retval` (a list) into a NumPy array, we can use the `item` method to get different elements of the output of `split`. 
+
+```{python}
+from datascience import *
+
+arr = make_array(retval)
+arr
+```
+
+```{python}
+arr.item(1)
+```
+
+The `join` string method accepts a list or NumPy array as input. The following code casts the NumPy array to a list before calling join.
+
+```{python}
+' '.join(make_array('hello', 'world', '!'))
+```
+
+Notice why there is a space in-between each of the elements of the array---particularly before the exclamation mark!
+
+A second note is that you now know two `join` methods: one for tables and one for strings. Be careful when reading code involving `join`---double-check the data types of your Python names, as this determines how a method operates!
+
+### Application: Adjusting whitespace
+
+As you are processing data, you will find it useful to split text according to, say, whitespace, or even commas (like in CSVs, or comma-separated values). You can split and rejoin this text, so that you can process the text inside tables or arrays before moving on.
+
+```{python}
+s = """Some long text string
+separated by
+many new lines
+!"""
+s
+```
+
+```{python}
+s.split('\n')
+```
+
+```{python}
+Table().with_columns("line",
+s.split('\n')
+)
+```

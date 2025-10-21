@@ -104,10 +104,19 @@ website:
             text: "Filtering and Boolean Predicates"
           - href: 10-boolean-predicates/boolean.qmd
             text: "Booleans"
-      - section: "L11: Grouping"
+      - text: "L11: Grouping"
         href: 11-group/index.qmd
-      - section: "L12: Pivots and Joins"
+      - text: "L12: Pivots and Joins"
         href: 12-pivot-join/index.qmd
+      - section: "L13: Functions"
+        href: 13-functions/index.qmd
+        contents:
+          - href: 13-functions/index.qmd
+            text: "Functions"
+          - href: 13-functions/strings.qmd
+            text: "String Methods"
+          - href: 13-functions/apply.qmd
+            text: "Apply"
       - href: five-things.qmd
         text: "5 Things to Know"
       - href: reference.qmd

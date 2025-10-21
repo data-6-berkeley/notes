@@ -1,0 +1,135 @@
+---
+title: "Functions"
+subtitle: "Defining and writing our own functions"
+---
+
+## Functions
+
+```{python}
+#| include: false
+from datascience import *
+import numpy as np
+```
+
+::: {.callout-note title="Read _Inferential Thinking_"}
+ Read [Ch 8](https://inferentialthinking.com/chapters/08/Functions_and_Tables.html), which describes a function.
+ 
+ Before continuing, make sure that:
+
+ * You understand that arguments are the inputs to functions.
+ * You understand that return values are the outputs to functions.
+ * You understand what are the signature, docstring, and body of a function.
+:::
+
+In addition to the terminology above, in this course we will use **parameter** to refer to the names of each argument, as defined in your function definition.
+
+## Toaster analogy
+
+Functions are like toasters. You provide input arguments, and the function returns some output value. A toaster can take a slice of bread as input and return a heated, toasted slice of bread. That same toaster can take a bagel as input and return a heated, toasted bagel. That same toaster can also take a fork as input, then "error" (because the toaster catches on fire).
+
+Needless to say, the toaster accepts many types of arguments (most toasters take two inputs, one for each slot; see lecture slides) and returns a value each time it is called, or it errors out.
+
+## Examples
+
+The function `triple` takes an input x and triples it:
+
+```{python}
+def triple(x):
+    """triples the input"""
+    tripled_x = x * 3
+    return tripled_x
+```
+
+`triple` works by taking an input `x` and first assigning `tripled_x` to `x * 3`. Then, it returns (i.e., outputs) the value of `tripled_x`.
+
+
+```{python}
+triple(3)
+```
+
+In lecture, we labeled different values to trace through different calls to this newly defined `triple` function:
+
+```{python}
+num = 4
+triple(num)
+```
+
+Note that arguments are first evaluated, then passed in as parameters to `triple`. In the below cell, the argument to `triple` is `20`, which is the result of multiplying `num` by `5`.
+
+```{python}
+triple(num * 5)
+```
+
+Functions can be type-agnostic, but it depends on what the function does. For `triple`, the `*` operator works on arrays and strings, too.
+
+```{python}
+triple(np.arange(4))
+```
+
+
+```{python}
+triple('ha')
+```
+
+
+## Function details
+
+While many functions will take in some input and return some processed output, not all functions need parameters nor return values.
+
+In fact, **returning** is the act of a function stopping execution, "returning" control to whatever the original line was. If a `return` statement does not have a return value, then by default the function returns `None`.
+
+In the cell below, `retval` is indeed assigned to the return value of `add_and_print`, but because `add_and_print` does not correctly return the value of `total` (it only prints the value), `retval` is assigned to `None`.
+
+```{python}
+def add_and_print(a, b):
+    total = a + b
+    print(total)
+
+retval = add_and_print(3, 4)
+print("the sum of 3 and 4 is", retval)
+```
+
+Once we reach a statement with a `return` keyword, our function is done running. Nothing in the function is run after this **return statement**.
+
+Below, odd checks if a number is even or odd by checking if the remainder modulo 2 is equal to (`==`) 1. If it is not, then it is zero, meaning that the number is divisible by two (and therefore even).
+
+```{python}
+def odd(n):
+    return n % 2 == 1
+    print("this will never be printed!")
+```
+
+```{python}
+odd(15)
+```
+
+```{python}
+odd(2)
+```
+
+## Function scope
+
+Function scope refers to which Python names are accessible while running within a function. Scope generally refers to which names are accessible. Importantly, function parameters are not accessible outside the function scope. The below code therefore errors:
+
+```{python}
+#| error: true
+odd(15)
+print("n outside function", n)
+```
+
+This idea of "scope" will come up more as we write more complex functions!
+
+## Docstrings
+
+The **docstring**, or document string, is useful for providing function documentation. In Jupyter notebooks, the `?` gives you information about a function, its signature, and its docstring:
+
+```python
+triple?
+```
+
+```
+Signature: triple(x)
+Docstring: triples the input
+File:      /tmp/ipykernel_100/2130756623.py
+Type:      function
+```
