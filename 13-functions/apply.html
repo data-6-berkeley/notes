@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Causality vs.&nbsp;EDA</title>
+<title>The apply Table method</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,18 +20,53 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../06-variables-ii/sample-population.html" rel="next">
-<link href="../05-variables/units-of-analysis.html" rel="prev">
+<link href="../five-things.html" rel="next">
+<link href="../13-functions/strings.html" rel="prev">
 <link href="../assets/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -79,6 +114,9 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 <!--<script async src=”https://siteimproveanalytics.com/js/siteanalyze_6294756.js”></script>-->
 
 
@@ -94,7 +132,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../06-variables-ii/index.html">L06: Variables II</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../13-functions/index.html">L13: Functions</a></li><li class="breadcrumb-item"><a href="../13-functions/apply.html">Apply</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -260,16 +298,16 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../06-variables-ii/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../06-variables-ii/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">L06: Variables II</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../06-variables-ii/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../06-variables-ii/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Causality vs.&nbsp;EDA</span></a>
   </div>
 </li>
@@ -395,11 +433,11 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <div class="sidebar-item-container"> 
             <a href="../13-functions/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">L13: Functions</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../13-functions/index.html" class="sidebar-item-text sidebar-link">
@@ -414,7 +452,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../13-functions/apply.html" class="sidebar-item-text sidebar-link">
+  <a href="../13-functions/apply.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Apply</span></a>
   </div>
 </li>
@@ -442,21 +480,23 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#john-snow-and-the-broad-street-pump" id="toc-john-snow-and-the-broad-street-pump" class="nav-link active" data-scroll-target="#john-snow-and-the-broad-street-pump">John Snow and the Broad Street Pump</a></li>
-  <li><a href="#randomized-controlled-trials-vs.-observational-studies" id="toc-randomized-controlled-trials-vs.-observational-studies" class="nav-link" data-scroll-target="#randomized-controlled-trials-vs.-observational-studies">Randomized Controlled Trials vs.&nbsp;Observational Studies</a></li>
-  <li><a href="#confounding" id="toc-confounding" class="nav-link" data-scroll-target="#confounding">Confounding</a></li>
-  <li><a href="#exploratory-data-analysis" id="toc-exploratory-data-analysis" class="nav-link" data-scroll-target="#exploratory-data-analysis">Exploratory Data Analysis</a></li>
-  <li><a href="#data-wrangling" id="toc-data-wrangling" class="nav-link" data-scroll-target="#data-wrangling">Data Wrangling</a></li>
-  <li><a href="#external-reading" id="toc-external-reading" class="nav-link" data-scroll-target="#external-reading">External Reading</a></li>
+  <li><a href="#the-apply-table-method" id="toc-the-apply-table-method" class="nav-link active" data-scroll-target="#the-apply-table-method">The <code>apply</code> Table method</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
+  <li><a href="#applying-with-strings" id="toc-applying-with-strings" class="nav-link" data-scroll-target="#applying-with-strings">Applying with Strings</a>
+  <ul class="collapse">
+  <li><a href="#task-1" id="toc-task-1" class="nav-link" data-scroll-target="#task-1">Task 1</a></li>
+  <li><a href="#task-2-challenge" id="toc-task-2-challenge" class="nav-link" data-scroll-target="#task-2-challenge">Task 2 (Challenge)</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../13-functions/index.html">L13: Functions</a></li><li class="breadcrumb-item"><a href="../13-functions/apply.html">Apply</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Causality vs.&nbsp;EDA</h1>
+<h1 class="title">The <code>apply</code> Table method</h1>
+<p class="subtitle lead">Make new columns of a table by applying custom functions to existing columns</p>
 </div>
 
 
@@ -473,8 +513,8 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </header>
 
 
-<section id="john-snow-and-the-broad-street-pump" class="level2">
-<h2 class="anchored" data-anchor-id="john-snow-and-the-broad-street-pump">John Snow and the Broad Street Pump</h2>
+<section id="the-apply-table-method" class="level2">
+<h2 class="anchored" data-anchor-id="the-apply-table-method">The <code>apply</code> Table method</h2>
 <div class="callout callout-style-default callout-note callout-titled" title="Read _Inferential Thinking_">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -485,60 +525,374 @@ Read <em>Inferential Thinking</em>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Read <a href="https://inferentialthinking.com/chapters/02/causality-and-experiments.html">all of Chapter 2</a>, which describes in detail experimental setup and design. It covers a core story to data scientists: John Snow and the Broad Street Pump.</p>
-<p>Before continuing, make sure that you are familiar with the following terminology:</p>
+<p>Read <a href="https://inferentialthinking.com/chapters/08/1/Applying_a_Function_to_a_Column.html#apply">Ch 8.1.1</a>, which describes <code>apply</code> Table method.</p>
+</div>
+</div>
+<p>The function signature of <code>apply</code> is:</p>
+<pre><code>tbl.apply(func, col1, …, colN)</code></pre>
 <ul>
-<li>observational study</li>
-<li>causality</li>
-<li>association</li>
-<li>comparison</li>
-<li>treatment group</li>
-<li>control group</li>
-<li>randomized controlled trial (RCT)</li>
+<li><code>func</code> takes in the same number of arguments as columns provided. If N columns are provided, then <code>func</code> should take in <code>N</code> arguments.</li>
+<li><code>col1</code>, …, <code>colN</code> are names of columns in <code>tbl</code>.</li>
+<li>For each row, the value in the <code>col1</code> column is passed in as argument 1, the value in the <code>col2</code> column is passed in as argument 2, etc.</li>
 </ul>
+</section>
+<section id="example" class="level2">
+<h2 class="anchored" data-anchor-id="example">Example</h2>
+<p>We have a weather table of high and low temperatures on each day, recorded in Farenheit. We would like to transform these temperatures to Celsius. This example creates a new column, <code>High (C)</code>, using the <code>apply</code> method.</p>
+<div id="2f14bf84" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>weather <span class="op">=</span> Table().with_columns(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Day"</span>, make_array(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"High"</span>, make_array(<span class="fl">55.1</span>, <span class="fl">57.2</span>, <span class="fl">56.8</span>),</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Low"</span>, make_array(<span class="fl">43.7</span>, <span class="dv">46</span>, <span class="fl">45.9</span>),</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Sky condition"</span>, make_array(<span class="st">"Cloudy"</span>, <span class="st">"Sunny"</span>, <span class="st">"Cloudy"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>weather</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Day</th>
+<th data-quarto-table-cell-role="th">High</th>
+<th data-quarto-table-cell-role="th">Low</th>
+<th data-quarto-table-cell-role="th">Sky condition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>55.1</td>
+<td>43.7</td>
+<td>Cloudy</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>57.2</td>
+<td>46</td>
+<td>Sunny</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>56.8</td>
+<td>45.9</td>
+<td>Cloudy</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="9ff25558" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> celsius(temp):  </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""converts Fahrenheit to Celsius"""</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (temp <span class="op">-</span> <span class="dv">32</span>) <span class="op">*</span> <span class="dv">5</span><span class="op">/</span><span class="dv">9</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The <code>apply</code> method returns an array of values.</p>
+<div id="7214220e" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>weather.<span class="bu">apply</span>(celsius, <span class="st">'High'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>array([ 12.83333333,  14.        ,  13.77777778])</code></pre>
+</div>
+</div>
+<p>We can create a new column by assigning this newly created array to a new column name.</p>
+<div id="f3e05b00" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>weather.with_columns(</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"High (C)"</span>,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    weather.<span class="bu">apply</span>(celsius, <span class="st">'High'</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Day</th>
+<th data-quarto-table-cell-role="th">High</th>
+<th data-quarto-table-cell-role="th">Low</th>
+<th data-quarto-table-cell-role="th">Sky condition</th>
+<th data-quarto-table-cell-role="th">High (C)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>55.1</td>
+<td>43.7</td>
+<td>Cloudy</td>
+<td>12.8333</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>57.2</td>
+<td>46</td>
+<td>Sunny</td>
+<td>14</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>56.8</td>
+<td>45.9</td>
+<td>Cloudy</td>
+<td>13.7778</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>As practice, try doing the same with the temperatures in the <code>Low</code> column.</p>
+</section>
+<section id="applying-with-strings" class="level2">
+<h2 class="anchored" data-anchor-id="applying-with-strings">Applying with Strings</h2>
+<section id="task-1" class="level3">
+<h3 class="anchored" data-anchor-id="task-1">Task 1</h3>
+<p>Make exciting greetings by adding the Greeting column as below.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Holiday</th>
+<th>Name</th>
+<th>Greeting</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Hanukkah</td>
+<td>Josh</td>
+<td>HAPPY HANUKKAH JOSH</td>
+</tr>
+<tr class="even">
+<td>New Year</td>
+<td>Tracy</td>
+<td>HAPPY NEW YEAR TRACY</td>
+</tr>
+<tr class="odd">
+<td>Birthday</td>
+<td>Jaspreet</td>
+<td>HAPPY BIRTHDAY JASPREET</td>
+</tr>
+</tbody>
+</table>
+<div id="6d3b18b7" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>holidays <span class="op">=</span> Table().with_columns(</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Holiday'</span>, make_array(<span class="st">'Hanukkah'</span>, <span class="st">'New Year'</span>, <span class="st">'Birthday'</span>),</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Name'</span>, make_array(<span class="st">'Josh'</span>, <span class="st">'Tracy'</span>, <span class="st">'Jaspreet'</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>holidays</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Holiday</th>
+<th data-quarto-table-cell-role="th">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Hanukkah</td>
+<td>Josh</td>
+</tr>
+<tr class="even">
+<td>New Year</td>
+<td>Tracy</td>
+</tr>
+<tr class="odd">
+<td>Birthday</td>
+<td>Jaspreet</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>There are various solutions. One reasonable approach:</p>
+<div id="3be03f25" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_greeting(holiday, name):</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"HAPPY "</span> <span class="op">+</span> holiday.upper() <span class="op">+</span> <span class="st">" "</span> <span class="op">+</span> name.upper()</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>holidays.with_columns(</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Greeting"</span>,</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    holidays.<span class="bu">apply</span>(make_greeting, <span class="st">"Holiday"</span>, <span class="st">"Name"</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Holiday</th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Greeting</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Hanukkah</td>
+<td>Josh</td>
+<td>HAPPY HANUKKAH JOSH</td>
+</tr>
+<tr class="even">
+<td>New Year</td>
+<td>Tracy</td>
+<td>HAPPY NEW YEAR TRACY</td>
+</tr>
+<tr class="odd">
+<td>Birthday</td>
+<td>Jaspreet</td>
+<td>HAPPY BIRTHDAY JASPREET</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Here’s another advanced approach, using <code>join</code>:</p>
+<div id="3504f341" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_greeting(holiday, name):</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">' '</span>.join([<span class="st">"happy"</span>, holiday, name]).upper()</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>holidays.with_columns(</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Greeting"</span>,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    holidays.<span class="bu">apply</span>(make_greeting, <span class="st">"Holiday"</span>, <span class="st">"Name"</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Holiday</th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Greeting</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Hanukkah</td>
+<td>Josh</td>
+<td>HAPPY HANUKKAH JOSH</td>
+</tr>
+<tr class="even">
+<td>New Year</td>
+<td>Tracy</td>
+<td>HAPPY NEW YEAR TRACY</td>
+</tr>
+<tr class="odd">
+<td>Birthday</td>
+<td>Jaspreet</td>
+<td>HAPPY BIRTHDAY JASPREET</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </section>
-<section id="randomized-controlled-trials-vs.-observational-studies" class="level2">
-<h2 class="anchored" data-anchor-id="randomized-controlled-trials-vs.-observational-studies">Randomized Controlled Trials vs.&nbsp;Observational Studies</h2>
-<p>In the Broad Street Pump experiment, John Snow established a causal relationship (between what? Read <em>Inferential Thinking</em> Chapter 2 to find out) because he noted that there was no systematic difference between the two different groups observed other than along a single variable dimension.</p>
-<p>In modern days, randomized controlled trials are excellent ways to compare two groups of otherwise similar individuals. However, in the majority of this class we will <em>not</em> be able to conduct a randomized controlled trial. This is because the datasets we analyze are almost all <strong>observational studies</strong> and not experiments. Moreover, these datasets are largely pre-existing materials collected by other researchers, and we may not know the entire picture of how they collected the data. As a result, in this class we seek to understand associations between variables, and we will almost never seek to establish causal relationships between variables.</p>
-<p>To further understand causality, we encourage you to take inferential thinking courses like Data 8, Stat 20, and a wide range of Statistics courses.</p>
-</section>
-<section id="confounding" class="level2">
-<h2 class="anchored" data-anchor-id="confounding">Confounding</h2>
-<p>From <em>Inferential Thinking</em>, <a href="https://inferentialthinking.com/chapters/02/3/establishing-causality.html">Ch 3.2 Establishing Causality</a>:</p>
-<blockquote class="blockquote">
-<p><strong>In an observational study, if the treatment and control groups differ in ways other than the treatment, it is difficult to make conclusions about causality.</strong></p>
-<p>An underlying difference between the two groups (other than the treatment) is called a confounding factor, because it might confound you (that is, mess you up) when you try to reach a conclusion.</p>
-</blockquote>
-<p><strong>Confounding</strong> occurs when two variables can be consistently associated with each other even when one does not cause the other.</p>
-<p>To determine whether a <strong>confounding variable</strong> can account for the association between two variables, we can try to <strong>disaggregate</strong> by different values of the confounding variable.</p>
-<p>This disaggregation process can be repeated exhaustively for a potentially infinite number of confounding variables. Researchers generally don’t do this. Instead, we usually rely on assumptions drawn from social science theory or findings from prior studies. This process can narrow our search of potential confounding variables that may influence the association between two variables.</p>
-</section>
-<section id="exploratory-data-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="exploratory-data-analysis">Exploratory Data Analysis</h2>
-<p>If we’re <em>not</em> going to be studying causal relationships in this class, what <em>will</em> we be looking at? In this course we will look deeply at a core component of Data Science: <strong>Exploratory Data Analysis</strong>, or <strong>EDA</strong>.</p>
-<p>Exploratory Data Analysis (EDA) is like detective work. As coined by the famous American statistician and mathematician <a href="https://en.wikipedia.org/wiki/John_Tukey">John Tukey</a> (we will discuss Tukey numbers soon):</p>
-<blockquote class="blockquote">
-<p>Exploratory data analysis is an attitude, a state of flexibility, a willingness to look for those things that we believe are not there, as well as those that we believe to be there.</p>
-</blockquote>
-<p>More formally, <strong>Exploratory Data Analysis (EDA)</strong> is the process of understanding a new dataset. It is an open-ended, informal analysis that involves familiarizing ourselves with the variables present in the data, discovering potential hypotheses, and identifying possible issues with the data.</p>
-</section>
-<section id="data-wrangling" class="level2">
-<h2 class="anchored" data-anchor-id="data-wrangling">Data Wrangling</h2>
-<p>A process very closely related to EDA is <strong>data wrangling</strong>, often called <strong>data cleaning</strong>. Data wrangling is the process of transforming raw data to facilitate subsequent analysis and can address issues like unclear structure or formatting, missing or corrupted values, unit conversions, and so on.</p>
-<p>EDA and data cleaning are often thought of as an “infinite loop,” with each process driving the other.</p>
-<p>Fortunately, in our classes we will try our best to work with “clean” datasets. These datasets will often have already been preprocessed for cleaner analysis, allowing us to explore and ask questions much more easily than if we were stuck with messier data.</p>
-</section>
-<section id="external-reading" class="level2">
-<h2 class="anchored" data-anchor-id="external-reading">External Reading</h2>
-<ul>
-<li>(mentioned in notes) <em>Computational and Inferential Thinking</em>, <a href="https://inferentialthinking.com/chapters/05/1/Arrays.html">Ch 5.1</a></li>
-<li>“Chapter 15: From Concepts to Models.” Elizabeth Heger Boyle, Deborah Carr, Benjamin Cornwell, Shelley Correll, Robert Crosnoe, Jeremy Freese, and Waters, Mary C. 2017. <em>The Art and Science of Social Research</em>. New York: W. W. Norton &amp; Company.</li>
-</ul>
+<section id="task-2-challenge" class="level3">
+<h3 class="anchored" data-anchor-id="task-2-challenge">Task 2 (Challenge)</h3>
+<p>Convert phone numbers. For example, <code>510-642-3141</code> should be formatted as <code>(510) 642-3141</code>.</p>
+<p><em>Hint</em>: Try using <code>split</code>. The <code>split</code> function returns a list of strings split by the delimiter; after conversion, lists can be indexed just like an array.</p>
+<div id="64c7daa4" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>res_halls <span class="op">=</span> Table().with_columns(</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Residence Hall'</span>, </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>        make_array(<span class="st">'Unit 1'</span>, <span class="st">'Unit 2'</span>, <span class="st">'Unit 3'</span>, <span class="st">'Foothill'</span>,</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>                   <span class="st">'Clark Kerr'</span>, <span class="st">'Blackwell'</span>, <span class="st">'Martinez Commons'</span>),</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Phone'</span>,</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>        make_array(<span class="st">'510-642-3141'</span>, <span class="st">'510-642-3143'</span>, <span class="st">'510-642-5391'</span>, <span class="st">'510-642-9703'</span>,</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>                   <span class="st">'510-642-6290'</span>, <span class="st">'510-423-3740'</span>, <span class="st">'510-642-8517'</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>res_halls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Residence Hall</th>
+<th data-quarto-table-cell-role="th">Phone</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Unit 1</td>
+<td>510-642-3141</td>
+</tr>
+<tr class="even">
+<td>Unit 2</td>
+<td>510-642-3143</td>
+</tr>
+<tr class="odd">
+<td>Unit 3</td>
+<td>510-642-5391</td>
+</tr>
+<tr class="even">
+<td>Foothill</td>
+<td>510-642-9703</td>
+</tr>
+<tr class="odd">
+<td>Clark Kerr</td>
+<td>510-642-6290</td>
+</tr>
+<tr class="even">
+<td>Blackwell</td>
+<td>510-423-3740</td>
+</tr>
+<tr class="odd">
+<td>Martinez Commons</td>
+<td>510-642-8517</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>One possible approach:</p>
+<div id="c36ca84b" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> format_phone_number(phone):</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    parts <span class="op">=</span> np.array(phone.split(<span class="st">'-'</span>))</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"("</span> <span class="op">+</span> parts.item(<span class="dv">0</span>) <span class="op">+</span> <span class="st">") "</span> <span class="op">+</span> parts.item(<span class="dv">1</span>) <span class="op">+</span> <span class="st">"-"</span> <span class="op">+</span> parts.item(<span class="dv">2</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>res_halls.with_columns(</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Formatted"</span>,</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    res_halls.<span class="bu">apply</span>(format_phone_number, <span class="st">"Phone"</span>)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Residence Hall</th>
+<th data-quarto-table-cell-role="th">Phone</th>
+<th data-quarto-table-cell-role="th">Formatted</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Unit 1</td>
+<td>510-642-3141</td>
+<td>(510) 642-3141</td>
+</tr>
+<tr class="even">
+<td>Unit 2</td>
+<td>510-642-3143</td>
+<td>(510) 642-3143</td>
+</tr>
+<tr class="odd">
+<td>Unit 3</td>
+<td>510-642-5391</td>
+<td>(510) 642-5391</td>
+</tr>
+<tr class="even">
+<td>Foothill</td>
+<td>510-642-9703</td>
+<td>(510) 642-9703</td>
+</tr>
+<tr class="odd">
+<td>Clark Kerr</td>
+<td>510-642-6290</td>
+<td>(510) 642-6290</td>
+</tr>
+<tr class="even">
+<td>Blackwell</td>
+<td>510-423-3740</td>
+<td>(510) 423-3740</td>
+</tr>
+<tr class="odd">
+<td>Martinez Commons</td>
+<td>510-642-8517</td>
+<td>(510) 642-8517</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -943,13 +1297,13 @@ Read <em>Inferential Thinking</em>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../05-variables/units-of-analysis.html" class="pagination-link" aria-label="Units of Analysis">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Units of Analysis</span>
+      <a href="../13-functions/strings.html" class="pagination-link" aria-label="String Methods">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">String Methods</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../06-variables-ii/sample-population.html" class="pagination-link" aria-label="Sample vs. Population">
-        <span class="nav-page-text">Sample vs.&nbsp;Population</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../five-things.html" class="pagination-link" aria-label="5 Things to Know">
+        <span class="nav-page-text">5 Things to Know</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

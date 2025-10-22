@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Causality vs.&nbsp;EDA</title>
+<title>String Methods</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,18 +20,53 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../06-variables-ii/sample-population.html" rel="next">
-<link href="../05-variables/units-of-analysis.html" rel="prev">
+<link href="../13-functions/apply.html" rel="next">
+<link href="../13-functions/index.html" rel="prev">
 <link href="../assets/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -79,6 +114,9 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 <!--<script async src=”https://siteimproveanalytics.com/js/siteanalyze_6294756.js”></script>-->
 
 
@@ -94,7 +132,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../06-variables-ii/index.html">L06: Variables II</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../13-functions/index.html">L13: Functions</a></li><li class="breadcrumb-item"><a href="../13-functions/strings.html">String Methods</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -260,16 +298,16 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../06-variables-ii/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../06-variables-ii/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">L06: Variables II</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../06-variables-ii/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../06-variables-ii/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Causality vs.&nbsp;EDA</span></a>
   </div>
 </li>
@@ -395,11 +433,11 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <div class="sidebar-item-container"> 
             <a href="../13-functions/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">L13: Functions</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../13-functions/index.html" class="sidebar-item-text sidebar-link">
@@ -408,7 +446,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../13-functions/strings.html" class="sidebar-item-text sidebar-link">
+  <a href="../13-functions/strings.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">String Methods</span></a>
   </div>
 </li>
@@ -442,21 +480,23 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#john-snow-and-the-broad-street-pump" id="toc-john-snow-and-the-broad-street-pump" class="nav-link active" data-scroll-target="#john-snow-and-the-broad-street-pump">John Snow and the Broad Street Pump</a></li>
-  <li><a href="#randomized-controlled-trials-vs.-observational-studies" id="toc-randomized-controlled-trials-vs.-observational-studies" class="nav-link" data-scroll-target="#randomized-controlled-trials-vs.-observational-studies">Randomized Controlled Trials vs.&nbsp;Observational Studies</a></li>
-  <li><a href="#confounding" id="toc-confounding" class="nav-link" data-scroll-target="#confounding">Confounding</a></li>
-  <li><a href="#exploratory-data-analysis" id="toc-exploratory-data-analysis" class="nav-link" data-scroll-target="#exploratory-data-analysis">Exploratory Data Analysis</a></li>
-  <li><a href="#data-wrangling" id="toc-data-wrangling" class="nav-link" data-scroll-target="#data-wrangling">Data Wrangling</a></li>
-  <li><a href="#external-reading" id="toc-external-reading" class="nav-link" data-scroll-target="#external-reading">External Reading</a></li>
+  <li><a href="#string-methods" id="toc-string-methods" class="nav-link active" data-scroll-target="#string-methods">String methods</a></li>
+  <li><a href="#string-method-table" id="toc-string-method-table" class="nav-link" data-scroll-target="#string-method-table">String method table</a></li>
+  <li><a href="#lists-vs.-arrays" id="toc-lists-vs.-arrays" class="nav-link" data-scroll-target="#lists-vs.-arrays">Lists vs.&nbsp;Arrays</a></li>
+  <li><a href="#join-and-split" id="toc-join-and-split" class="nav-link" data-scroll-target="#join-and-split"><code>join</code> and <code>split</code></a>
+  <ul class="collapse">
+  <li><a href="#application-adjusting-whitespace" id="toc-application-adjusting-whitespace" class="nav-link" data-scroll-target="#application-adjusting-whitespace">Application: Adjusting whitespace</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../13-functions/index.html">L13: Functions</a></li><li class="breadcrumb-item"><a href="../13-functions/strings.html">String Methods</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Causality vs.&nbsp;EDA</h1>
+<h1 class="title">String Methods</h1>
+<p class="subtitle lead">Some more string methods, some more esoteric than others</p>
 </div>
 
 
@@ -473,8 +513,10 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </header>
 
 
-<section id="john-snow-and-the-broad-street-pump" class="level2">
-<h2 class="anchored" data-anchor-id="john-snow-and-the-broad-street-pump">John Snow and the Broad Street Pump</h2>
+<section id="string-methods" class="level2">
+<h2 class="anchored" data-anchor-id="string-methods">String methods</h2>
+<p>This note extends our discussion of strings at the beginning of the semester. So far, we have only discussed the concatenation operator (<code>+</code>) and the length function (<code>len</code>). Strings also have methods.</p>
+<p>Some string methods are discussed in the Data 8 textbook:</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Read _Inferential Thinking_">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -485,60 +527,160 @@ Read <em>Inferential Thinking</em>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Read <a href="https://inferentialthinking.com/chapters/02/causality-and-experiments.html">all of Chapter 2</a>, which describes in detail experimental setup and design. It covers a core story to data scientists: John Snow and the Broad Street Pump.</p>
-<p>Before continuing, make sure that you are familiar with the following terminology:</p>
-<ul>
-<li>observational study</li>
-<li>causality</li>
-<li>association</li>
-<li>comparison</li>
-<li>treatment group</li>
-<li>control group</li>
-<li>randomized controlled trial (RCT)</li>
-</ul>
+<p>Read <a href="https://inferentialthinking.com/chapters/04/2/1/String_Methods.html">Ch 4.2.1</a> which describes two string methods: <code>upper</code> and <code>replace</code>. Before continuing, make sure you understand how these work.</p>
 </div>
 </div>
 </section>
-<section id="randomized-controlled-trials-vs.-observational-studies" class="level2">
-<h2 class="anchored" data-anchor-id="randomized-controlled-trials-vs.-observational-studies">Randomized Controlled Trials vs.&nbsp;Observational Studies</h2>
-<p>In the Broad Street Pump experiment, John Snow established a causal relationship (between what? Read <em>Inferential Thinking</em> Chapter 2 to find out) because he noted that there was no systematic difference between the two different groups observed other than along a single variable dimension.</p>
-<p>In modern days, randomized controlled trials are excellent ways to compare two groups of otherwise similar individuals. However, in the majority of this class we will <em>not</em> be able to conduct a randomized controlled trial. This is because the datasets we analyze are almost all <strong>observational studies</strong> and not experiments. Moreover, these datasets are largely pre-existing materials collected by other researchers, and we may not know the entire picture of how they collected the data. As a result, in this class we seek to understand associations between variables, and we will almost never seek to establish causal relationships between variables.</p>
-<p>To further understand causality, we encourage you to take inferential thinking courses like Data 8, Stat 20, and a wide range of Statistics courses.</p>
+<section id="string-method-table" class="level2">
+<h2 class="anchored" data-anchor-id="string-method-table">String method table</h2>
+<p>This is from our Data 6 Python Reference, appended with a few examples. Assume that the following string <code>s</code> has been assigned:</p>
+<div id="46719d92" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">'JuNiOR12'</span> <span class="co"># already run</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 50%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Function</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Example Output</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>s.upper()</code></td>
+<td>Returns a copy of <code>s</code> where all letters are uppercase.</td>
+<td><code>'JUNIOR12'</code></td>
+</tr>
+<tr class="even">
+<td><code>s.lower()</code></td>
+<td>Returns a copy of <code>str</code> where all letters are lowercase.</td>
+<td><code>'junior12'</code></td>
+</tr>
+<tr class="odd">
+<td><code>s.replace(old, new)</code>, e.g., <br><code>s.replace('i', 'iii')</code></td>
+<td>Returns a copy of <code>s</code> with all occurrences of the substring <code>old</code> replaced by <code>new</code>.</td>
+<td><code>'JuNiiiOR12'</code></td>
+</tr>
+<tr class="even">
+<td><code>s.split(separator, maxsplit)</code>, e.g., <br><code>s.split('iO')</code></td>
+<td>Splits <code>s</code> into a list of substrings using the specified <code>separator</code>. If <code>separator</code> is not provided, splits at any whitespace. You can also use the optional argument <code>maxsplit</code> to limit the number of splits.</td>
+<td><code>['JuN', 'R12']</code></td>
+</tr>
+<tr class="odd">
+<td><code>s.join(iterable)</code>, e.g.,<br><code>' '.join(['hello' 'world', '!'])</code></td>
+<td>Concatenates the elements in <code>iterable</code> (usually a list or array) into a single string, with each element separated by <code>str</code>.</td>
+<td><code>'hello world !'</code></td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="confounding" class="level2">
-<h2 class="anchored" data-anchor-id="confounding">Confounding</h2>
-<p>From <em>Inferential Thinking</em>, <a href="https://inferentialthinking.com/chapters/02/3/establishing-causality.html">Ch 3.2 Establishing Causality</a>:</p>
-<blockquote class="blockquote">
-<p><strong>In an observational study, if the treatment and control groups differ in ways other than the treatment, it is difficult to make conclusions about causality.</strong></p>
-<p>An underlying difference between the two groups (other than the treatment) is called a confounding factor, because it might confound you (that is, mess you up) when you try to reach a conclusion.</p>
-</blockquote>
-<p><strong>Confounding</strong> occurs when two variables can be consistently associated with each other even when one does not cause the other.</p>
-<p>To determine whether a <strong>confounding variable</strong> can account for the association between two variables, we can try to <strong>disaggregate</strong> by different values of the confounding variable.</p>
-<p>This disaggregation process can be repeated exhaustively for a potentially infinite number of confounding variables. Researchers generally don’t do this. Instead, we usually rely on assumptions drawn from social science theory or findings from prior studies. This process can narrow our search of potential confounding variables that may influence the association between two variables.</p>
-</section>
-<section id="exploratory-data-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="exploratory-data-analysis">Exploratory Data Analysis</h2>
-<p>If we’re <em>not</em> going to be studying causal relationships in this class, what <em>will</em> we be looking at? In this course we will look deeply at a core component of Data Science: <strong>Exploratory Data Analysis</strong>, or <strong>EDA</strong>.</p>
-<p>Exploratory Data Analysis (EDA) is like detective work. As coined by the famous American statistician and mathematician <a href="https://en.wikipedia.org/wiki/John_Tukey">John Tukey</a> (we will discuss Tukey numbers soon):</p>
-<blockquote class="blockquote">
-<p>Exploratory data analysis is an attitude, a state of flexibility, a willingness to look for those things that we believe are not there, as well as those that we believe to be there.</p>
-</blockquote>
-<p>More formally, <strong>Exploratory Data Analysis (EDA)</strong> is the process of understanding a new dataset. It is an open-ended, informal analysis that involves familiarizing ourselves with the variables present in the data, discovering potential hypotheses, and identifying possible issues with the data.</p>
-</section>
-<section id="data-wrangling" class="level2">
-<h2 class="anchored" data-anchor-id="data-wrangling">Data Wrangling</h2>
-<p>A process very closely related to EDA is <strong>data wrangling</strong>, often called <strong>data cleaning</strong>. Data wrangling is the process of transforming raw data to facilitate subsequent analysis and can address issues like unclear structure or formatting, missing or corrupted values, unit conversions, and so on.</p>
-<p>EDA and data cleaning are often thought of as an “infinite loop,” with each process driving the other.</p>
-<p>Fortunately, in our classes we will try our best to work with “clean” datasets. These datasets will often have already been preprocessed for cleaner analysis, allowing us to explore and ask questions much more easily than if we were stuck with messier data.</p>
-</section>
-<section id="external-reading" class="level2">
-<h2 class="anchored" data-anchor-id="external-reading">External Reading</h2>
+<section id="lists-vs.-arrays" class="level2">
+<h2 class="anchored" data-anchor-id="lists-vs.-arrays">Lists vs.&nbsp;Arrays</h2>
+<p>The last two methods, <code>split</code> and <code>join</code>, work with a data type called Python lists, which we won’t get into too much in this class. For all intents and purposes, you can consider lists to be very similar to NumPy arrays, in that:</p>
 <ul>
-<li>(mentioned in notes) <em>Computational and Inferential Thinking</em>, <a href="https://inferentialthinking.com/chapters/05/1/Arrays.html">Ch 5.1</a></li>
-<li>“Chapter 15: From Concepts to Models.” Elizabeth Heger Boyle, Deborah Carr, Benjamin Cornwell, Shelley Correll, Robert Crosnoe, Jeremy Freese, and Waters, Mary C. 2017. <em>The Art and Science of Social Research</em>. New York: W. W. Norton &amp; Company.</li>
+<li>Lists are a sequence of elements in-order that can be referenced by element index.</li>
+<li>Lists are zero-indexed, i.e., the first element has index 0.</li>
+<li>When all list elements are the same data type, lists can be cast into NumPy arrays. (Unlike arrays, list elements can typically have different data types.)</li>
+<li>Lists are displayed using square brackets (and it also accepts indexing by square brackets, unlike arrays which accept indexing with the <code>item</code> method. We do not cover square bracket indexing in this course).</li>
 </ul>
+<p>Because we only use NumPy arrays in this class, we recommend that you consider casting to NumPy arrays where possible with <code>make_array</code>.</p>
+</section>
+<section id="join-and-split" class="level2">
+<h2 class="anchored" data-anchor-id="join-and-split"><code>join</code> and <code>split</code></h2>
+<p>With this understanding, in this section we clarify the <strong>return value</strong> of <code>split</code> (i.e., its output) and the <strong>input parameter</strong> of <code>join</code> (i.e., its input).</p>
+<div id="d3b24bf6" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>retval <span class="op">=</span> s.split(<span class="st">'iO'</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>retval</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>['JuN', 'R12']</code></pre>
+</div>
+</div>
+<div id="d61ef563" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(retval)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>list</code></pre>
+</div>
+</div>
+<p>Once we cast <code>retval</code> (a list) into a NumPy array, we can use the <code>item</code> method to get different elements of the output of <code>split</code>.</p>
+<div id="177e6e5f" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datascience <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> make_array(retval)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>arr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>array([['JuN', 'R12']], dtype=object)</code></pre>
+</div>
+</div>
+<div id="723c9155" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>arr.item(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>'R12'</code></pre>
+</div>
+</div>
+<p>The <code>join</code> string method accepts a list or NumPy array as input. The following code casts the NumPy array to a list before calling join.</p>
+<div id="307f9710" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">' '</span>.join(make_array(<span class="st">'hello'</span>, <span class="st">'world'</span>, <span class="st">'!'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>'hello world !'</code></pre>
+</div>
+</div>
+<p>Notice why there is a space in-between each of the elements of the array—particularly before the exclamation mark!</p>
+<p>A second note is that you now know two <code>join</code> methods: one for tables and one for strings. Be careful when reading code involving <code>join</code>—double-check the data types of your Python names, as this determines how a method operates!</p>
+<section id="application-adjusting-whitespace" class="level3">
+<h3 class="anchored" data-anchor-id="application-adjusting-whitespace">Application: Adjusting whitespace</h3>
+<p>As you are processing data, you will find it useful to split text according to, say, whitespace, or even commas (like in CSVs, or comma-separated values). You can split and rejoin this text, so that you can process the text inside tables or arrays before moving on.</p>
+<div id="902f60a6" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">"""Some long text string</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="st">separated by</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="st">many new lines</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="st">!"""</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>s</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>'Some long text string\nseparated by\nmany new lines\n!'</code></pre>
+</div>
+</div>
+<div id="8586c332" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>s.split(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>['Some long text string', 'separated by', 'many new lines', '!']</code></pre>
+</div>
+</div>
+<div id="0c0bbf31" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>Table().with_columns(<span class="st">"line"</span>,</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>s.split(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">line</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Some long text string</td>
+</tr>
+<tr class="even">
+<td>separated by</td>
+</tr>
+<tr class="odd">
+<td>many new lines</td>
+</tr>
+<tr class="even">
+<td>!</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -943,13 +1085,13 @@ Read <em>Inferential Thinking</em>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../05-variables/units-of-analysis.html" class="pagination-link" aria-label="Units of Analysis">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Units of Analysis</span>
+      <a href="../13-functions/index.html" class="pagination-link" aria-label="L13: Functions">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">L13: Functions</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../06-variables-ii/sample-population.html" class="pagination-link" aria-label="Sample vs. Population">
-        <span class="nav-page-text">Sample vs.&nbsp;Population</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../13-functions/apply.html" class="pagination-link" aria-label="Apply">
+        <span class="nav-page-text">Apply</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
