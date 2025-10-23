@@ -488,7 +488,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   <li><a href="#how-to-read-these-tables" id="toc-how-to-read-these-tables" class="nav-link" data-scroll-target="#how-to-read-these-tables">How to Read These Tables</a></li>
   </ul></li>
   <li><a href="#built-in-python-functions" id="toc-built-in-python-functions" class="nav-link" data-scroll-target="#built-in-python-functions">Built-In Python Functions</a></li>
-  <li><a href="#numpy-array-functions" id="toc-numpy-array-functions" class="nav-link" data-scroll-target="#numpy-array-functions">NumPy Array Functions</a></li>
+  <li><a href="#numpy-array-functions-and-methods" id="toc-numpy-array-functions-and-methods" class="nav-link" data-scroll-target="#numpy-array-functions-and-methods">NumPy Array Functions and Methods</a></li>
   <li><a href="#string-methods" id="toc-string-methods" class="nav-link" data-scroll-target="#string-methods">String Methods</a></li>
   <li><a href="#tables-and-table-methods" id="toc-tables-and-table-methods" class="nav-link" data-scroll-target="#tables-and-table-methods">Tables and Table Methods</a></li>
   <li><a href="#visualization-functions" id="toc-visualization-functions" class="nav-link" data-scroll-target="#visualization-functions">Visualization Functions</a></li>
@@ -527,7 +527,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <p>Of course, the Python Reference can only provide information about the basics of the functions you’ll use in Data 6. The best knowledge about functions comes from using these functions in code you write in labs or homeworks. If you get stuck when using a certain function, we encourage you to come to office hours or ask a question on Ed.</p>
 <section id="the-anatomy-of-a-function" class="level3">
 <h3 class="anchored" data-anchor-id="the-anatomy-of-a-function">The Anatomy of a Function</h3>
-<div id="ac1a03e7" class="cell" data-execution_count="1">
+<div id="a4973175" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> my_function(num):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> num <span class="op">**</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -631,101 +631,75 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </tbody>
 </table>
 </section>
-<section id="numpy-array-functions" class="level2">
-<h2 class="anchored" data-anchor-id="numpy-array-functions">NumPy Array Functions</h2>
+<section id="numpy-array-functions-and-methods" class="level2">
+<h2 class="anchored" data-anchor-id="numpy-array-functions-and-methods">NumPy Array Functions and Methods</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 12%">
-<col style="width: 37%">
 <col style="width: 25%">
-<col style="width: 25%">
+<col style="width: 75%">
 </colgroup>
 <thead>
 <tr class="header">
 <th><strong>Function</strong></th>
 <th><strong>Description</strong></th>
-<th><strong>Input</strong></th>
-<th><strong>Output</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><code>make_array(val1, val2, ...)</code></td>
 <td>Makes a NumPy array with the inputted values</td>
-<td>A sequence of values</td>
-<td>An <strong>array</strong> with those values</td>
 </tr>
 <tr class="even">
 <td><code>np.mean(arr)</code> or <code>np.average(arr)</code></td>
 <td>Calculates the average value of <code>arr</code></td>
-<td>An <strong>array</strong> of numbers</td>
-<td><strong>float</strong>: The average of the array</td>
 </tr>
 <tr class="odd">
 <td><code>np.sum(arr)</code></td>
 <td>Returns the sum of the values in <code>arr</code></td>
-<td><strong>array</strong></td>
-<td><strong>int</strong> or <strong>float</strong>: the sum of the values in the array</td>
 </tr>
 <tr class="even">
 <td><code>np.prod(arr)</code></td>
 <td>Returns the product of the values in <code>arr</code></td>
-<td><strong>array</strong></td>
-<td><strong>int</strong> or <strong>float</strong>: the product of the values in the array</td>
 </tr>
 <tr class="odd">
 <td><code>np.sqrt(num)</code></td>
 <td>Calculates the square root of <code>num</code></td>
-<td><strong>int</strong> or <strong>float</strong></td>
-<td><strong>float</strong> : the square root of the number</td>
 </tr>
 <tr class="even">
 <td><code>np.arange(stop)</code>, <code>np.arange(start, stop)</code>, or <code>np.arange(start, stop, step)</code></td>
-<td>Creates an array of sequential numbers starting at <code>start</code>, going up in increments of <code>step</code>, and going up to but excluding <code>stop</code>. Default <code>start</code> is 0, default <code>step</code> is 1</td>
-<td><strong>int</strong> or <strong>float</strong></td>
-<td><strong>array</strong></td>
+<td>Creates an array of sequential numbers starting at <code>start</code>, going up in increments of <code>step</code>, and going up to but excluding <code>stop</code>. When <code>start</code> and/or <code>step</code> are not specified, default values are used in their place. Default <code>start</code> is 0, default <code>step</code> is 1</td>
 </tr>
 <tr class="odd">
 <td><code>np.count_nonzero(arr)</code></td>
 <td>Returns the number of non-zero (or <code>True</code>) elements in an array</td>
-<td>An <strong>array</strong> of values</td>
-<td><strong>int</strong>: the number of non-zero values in <code>arr</code></td>
 </tr>
 <tr class="even">
 <td><code>np.append(arr, item)</code></td>
 <td>Appends <code>item</code> to the end of <code>arr</code>. Does not modify the original array.</td>
-<td>1. <strong>array</strong> to append to <br> 2. item to append (any type)</td>
-<td><strong>array</strong>: a new array with the appended item</td>
 </tr>
 <tr class="odd">
 <td><code>np.cumsum(arr)</code></td>
 <td>Returns the cumulative sum of the elements in <code>arr</code>, where each element is the sum of all preceding elements including itself</td>
-<td><strong>array</strong></td>
-<td><strong>array</strong>: the cumulative sum of the values in the array</td>
 </tr>
 <tr class="even">
 <td><code>np.diff(arr)</code></td>
-<td>Computes the difference between consecutive elements in <code>arr</code>.</td>
-<td><strong>array</strong></td>
-<td><strong>array</strong>: the differences between consecutive elements in the array containing <code>len(arr) - 1</code> elements</td>
+<td>Returns a new array of size <code>len(arr)-1</code> with elements equal to the difference between adjacent elements; val_2 - val_1, val_3 - val_2, etc.</td>
 </tr>
 <tr class="odd">
 <td><code>np.sort(arr)</code></td>
-<td>Sorts an array in ascending order.</td>
-<td><strong>array</strong></td>
-<td><code>None</code> (<code>arr</code> is sorted; no copy is made)</td>
+<td>Sorts an array in ascending order. This function returns nothing; array <code>arr</code> is sorted in-place.</td>
 </tr>
 <tr class="even">
-<td><code>arr.take(indices)</code></td>
-<td>Creates an array with only the elements of <code>arr</code> at the given indices. <code>indices</code> is either an array of indices or an integer corresponding to one index. (array method)</td>
-<td><strong>array</strong>: indices of elements</td>
-<td><strong>array</strong>: a copy of the original array with only the elements at the given indices</td>
+<td><code>arr.item(i)</code></td>
+<td>Returns the <code>i</code>-th item in an array (remember Python indices start at 0!).</td>
 </tr>
 <tr class="odd">
+<td><code>arr.take(indices)</code></td>
+<td>Creates an array with only the elements of <code>arr</code> at the given indices. <code>indices</code> is either an array of indices or an integer corresponding to one index. (array method)</td>
+</tr>
+<tr class="even">
 <td><code>percentile(p, arr)</code></td>
 <td>Returns the corresponding percentile <code>p</code> of an array <code>arr</code>.</td>
-<td>1. value between 0 and 100 <br> 2. <strong>array</strong> of <strong>int</strong>s or <strong>float</strong>s</td>
-<td><strong>int</strong> or <strong>float</strong></td>
 </tr>
 </tbody>
 </table>
@@ -734,49 +708,35 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <h2 class="anchored" data-anchor-id="string-methods">String Methods</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 12%">
-<col style="width: 37%">
 <col style="width: 25%">
-<col style="width: 25%">
+<col style="width: 75%">
 </colgroup>
 <thead>
 <tr class="header">
 <th><strong>Function</strong></th>
 <th><strong>Description</strong></th>
-<th><strong>Input</strong></th>
-<th><strong>Output</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><code>s.upper()</code></td>
 <td>Returns a copy of <code>s</code> where all letters are uppercase.</td>
-<td></td>
-<td><strong>string</strong></td>
 </tr>
 <tr class="even">
 <td><code>s.lower()</code></td>
 <td>Returns a copy of <code>s</code> where all letters are lowercase.</td>
-<td></td>
-<td><strong>string</strong></td>
 </tr>
 <tr class="odd">
 <td><code>s.replace(old, new)</code></td>
 <td>Returns a copy of <code>s</code> with all occurrences of the substring <code>old</code> replaced by <code>new</code>.</td>
-<td><code>old</code>: the substring to be replaced. <br> <code>new</code>: the substring to replace <code>old</code> with.</td>
-<td><strong>string</strong></td>
 </tr>
 <tr class="even">
-<td><code>s.split(separator, maxsplit)</code></td>
-<td>Splits <code>s</code> into a list of substrings using the specified <code>separator</code>. If <code>separator</code> is not provided, splits at any whitespace. You can also use the optional argument <code>maxsplit</code> to limit the number of splits.</td>
-<td>1. (Optional) <strong>separator</strong>: the delimiter used to split <code>s</code> <br> 2. (Optional) <strong>maxsplit</strong>: maximum number of splits</td>
-<td><strong>list</strong> of substrings</td>
+<td><code>s.split()</code> or <code>s.split(separator)</code> or <code>s.split(separator, maxsplit)</code></td>
+<td>Splits <code>s</code> into a list of substrings using the specified <code>separator</code>; returns a list of strings. If <code>separator</code> is not provided, splits at any whitespace. You can also use the optional argument <code>maxsplit</code> to limit the number of splits.</td>
 </tr>
 <tr class="odd">
 <td><code>s.join(iterable)</code></td>
-<td>Concatenates the elements in <code>iterable</code> (usually a list or array) into a single string, with each element separated by <code>s</code>.</td>
-<td><strong>iterable</strong>: an iterable of strings to join (can be an array or list of strings)</td>
-<td><strong>string</strong>: a single string formed by joining the elements of <code>iterable</code> with the separator <code>s</code></td>
+<td>Returns a string that concatenates the elements in <code>iterable</code> (usually a list or array) into a single string, with each element separated by <code>s</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -918,6 +878,12 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <td>Adds multiple rows to <code>tbl</code> using a list of rows</td>
 <td>1. <strong>list</strong> of <strong>lists</strong> or <strong>arrays</strong>: each list/array represents a new row</td>
 <td><strong>Table</strong>: a copy of the original table with the new rows</td>
+</tr>
+<tr class="even">
+<td><code>tbl.row(row_index)</code></td>
+<td>Accesses the row of a table by taking the index of the row as its argument. Note that rows are in general not arrays, as their elements can be of different types. However, you can use <code>.item</code> to access a particular element of a row, e.g., <code>row.item(label)</code>.</td>
+<td><strong>int</strong>: row index</td>
+<td><strong>Row object</strong> with the values of the row and labels of the corresponding columns</td>
 </tr>
 </tbody>
 </table>

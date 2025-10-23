@@ -540,7 +540,7 @@ Read <em>Inferential Thinking</em>
 <section id="string-method-table" class="level2">
 <h2 class="anchored" data-anchor-id="string-method-table">String method table</h2>
 <p>This is from our Data 6 Python Reference, appended with a few examples. Assume that the following string <code>s</code> has been assigned:</p>
-<div id="d8f7b988" class="cell" data-execution_count="1">
+<div id="70ee1a27" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">'JuNiOR12'</span> <span class="co"># already run</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <table class="caption-top table">
@@ -599,21 +599,21 @@ Read <em>Inferential Thinking</em>
 <section id="join-and-split" class="level2">
 <h2 class="anchored" data-anchor-id="join-and-split"><code>join</code> and <code>split</code></h2>
 <p>With this understanding, in this section we clarify the <strong>return value</strong> of <code>split</code> (i.e., its output) and the <strong>input parameter</strong> of <code>join</code> (i.e., its input).</p>
-<div id="3b9b2e4e" class="cell" data-execution_count="2">
+<div id="1454a73e" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>retval <span class="op">=</span> s.split(<span class="st">'iO'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>retval</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>['JuN', 'R12']</code></pre>
 </div>
 </div>
-<div id="db02e4d5" class="cell" data-execution_count="3">
+<div id="7665801b" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(retval)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>list</code></pre>
 </div>
 </div>
 <p>Once we cast <code>retval</code> (a list) into a NumPy array, we can use the <code>item</code> method to get different elements of the output of <code>split</code>.</p>
-<div id="3b97ae97" class="cell" data-execution_count="4">
+<div id="67e1475b" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datascience <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> make_array(retval)</span>
@@ -622,14 +622,14 @@ Read <em>Inferential Thinking</em>
 <pre><code>array([['JuN', 'R12']], dtype=object)</code></pre>
 </div>
 </div>
-<div id="fbc8bc88" class="cell" data-execution_count="5">
+<div id="ee3fe09b" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>arr.item(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>'R12'</code></pre>
 </div>
 </div>
 <p>The <code>join</code> string method accepts a list or NumPy array as input. The following code casts the NumPy array to a list before calling join.</p>
-<div id="15791cae" class="cell" data-execution_count="6">
+<div id="7afb0758" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">' '</span>.join(make_array(<span class="st">'hello'</span>, <span class="st">'world'</span>, <span class="st">'!'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>'hello world !'</code></pre>
@@ -640,7 +640,7 @@ Read <em>Inferential Thinking</em>
 <section id="application-adjusting-whitespace" class="level3">
 <h3 class="anchored" data-anchor-id="application-adjusting-whitespace">Application: Adjusting whitespace</h3>
 <p>As you are processing data, you will find it useful to split text according to, say, whitespace, or even commas (like in CSVs, or comma-separated values). You can split and rejoin this text, so that you can process the text inside tables or arrays before moving on.</p>
-<div id="18dbd7be" class="cell" data-execution_count="7">
+<div id="07c06dfd" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">"""Some long text string</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="st">separated by</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="st">many new lines</span></span>
@@ -650,13 +650,13 @@ Read <em>Inferential Thinking</em>
 <pre><code>'Some long text string\nseparated by\nmany new lines\n!'</code></pre>
 </div>
 </div>
-<div id="6eacbe73" class="cell" data-execution_count="8">
+<div id="870f2b23" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>s.split(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>['Some long text string', 'separated by', 'many new lines', '!']</code></pre>
 </div>
 </div>
-<div id="87802c7b" class="cell" data-execution_count="9">
+<div id="6db9b0ff" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>Table().with_columns(<span class="st">"line"</span>,</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>s.split(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
