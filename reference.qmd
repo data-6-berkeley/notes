@@ -46,33 +46,34 @@ In the function above, `my_function` is the name of the function, which takes on
 | `type(object)` | Returns the type of `object`. | **object**: the object whose type is to be determined | **type**: the type of the object|
 
 
-## NumPy Array Functions
+## NumPy Array Functions and Methods
 
-| **Function** | **Description** | **Input** | **Output** |
-|--|------|----|----|
-| `make_array(val1, val2, ...)` | Makes a NumPy array with the inputted values | A sequence of values | An **array** with those values |
-| `np.mean(arr)` or `np.average(arr)` | Calculates the average value of `arr` | An **array** of numbers | **float**: The average of the array |
-| `np.sum(arr)` | Returns the sum of the values in `arr` | **array** | **int** or **float**: the sum of the values in the array |
-| `np.prod(arr)` | Returns the product of the values in `arr` | **array** | **int** or **float**: the product of the values in the array |
-| `np.sqrt(num)` | Calculates the square root of `num` | **int** or **float** | **float** : the square root of the number |
-| `np.arange(stop)`, `np.arange(start, stop)`, or `np.arange(start, stop, step)` | Creates an array of sequential numbers starting at `start`, going up in increments of `step`, and going up to but excluding `stop`. Default `start` is 0, default `step` is 1 | **int** or **float** | **array** |
-| `np.count_nonzero(arr)` | Returns the number of non-zero (or `True`) elements in an array | An **array** of values |  **int**: the number of non-zero values in `arr` |
-| `np.append(arr, item)` | Appends `item` to the end of `arr`. Does not modify the original array. | 1. **array** to append to <br> 2. item to append (any type) | **array**: a new array with the appended item |
-| `np.cumsum(arr)` | Returns the cumulative sum of the elements in `arr`, where each element is the sum of all preceding elements including itself | **array** | **array**: the cumulative sum of the values in the array |
-| `np.diff(arr)` | Computes the difference between consecutive elements in `arr`. | **array** | **array**: the differences between consecutive elements in the array containing `len(arr) - 1` elements |
-| `np.sort(arr)` | Sorts an array in ascending order. | **array** | `None` (`arr` is sorted; no copy is made) |
-| `arr.take(indices)` | Creates an array with only the elements of `arr` at the given indices. `indices` is either an array of indices or an integer corresponding to one index. (array method) | **array**: indices of elements | **array**: a copy of the original array with only the elements at the given indices |
-| `percentile(p, arr)` | Returns the corresponding percentile `p` of an array `arr`. | 1. value between 0 and 100 <br/> 2. **array** of **int**s or **float**s | **int** or **float** 
+| **Function** | **Description** |
+|--|------|
+| `make_array(val1, val2, ...)` | Makes a NumPy array with the inputted values |
+| `np.mean(arr)` or `np.average(arr)` | Calculates the average value of `arr` | 
+| `np.sum(arr)` | Returns the sum of the values in `arr` |
+| `np.prod(arr)` | Returns the product of the values in `arr` | 
+| `np.sqrt(num)` | Calculates the square root of `num` |
+| `np.arange(stop)`, `np.arange(start, stop)`, or `np.arange(start, stop, step)` | Creates an array of sequential numbers starting at `start`, going up in increments of `step`, and going up to but excluding `stop`. When `start` and/or `step` are not specified, default values are used in their place.  Default `start` is 0, default `step` is 1 | 
+| `np.count_nonzero(arr)` | Returns the number of non-zero (or `True`) elements in an array | 
+| `np.append(arr, item)` | Appends `item` to the end of `arr`. Does not modify the original array. |
+| `np.cumsum(arr)` | Returns the cumulative sum of the elements in `arr`, where each element is the sum of all preceding elements including itself |
+| `np.diff(arr)` | Returns a new array of size `len(arr)-1` with elements equal to the difference between adjacent elements; val_2 - val_1, val_3 - val_2, etc. |
+| `np.sort(arr)` | Sorts an array in ascending order. This function returns nothing; array `arr` is sorted in-place. |
+| `arr.item(i)` | Returns the `i`-th item in an array (remember Python indices start at 0!). |
+| `arr.take(indices)` | Creates an array with only the elements of `arr` at the given indices. `indices` is either an array of indices or an integer corresponding to one index. (array method) | 
+| `percentile(p, arr)` | Returns the corresponding percentile `p` of an array `arr`. |
 
 ## String Methods
 
-| **Function** | **Description** | **Input** | **Output** |
-|--|------|----|----|
-| `s.upper()` | Returns a copy of `s` where all letters are uppercase. | | **string** |
-| `s.lower()` | Returns a copy of `s` where all letters are lowercase. | | **string** |
-| `s.replace(old, new)` | Returns a copy of `s` with all occurrences of the substring `old` replaced by `new`.| `old`: the substring to be replaced. <br> `new`: the substring to replace `old` with. | **string** |
-| `s.split(separator, maxsplit)` | Splits `s` into a list of substrings using the specified `separator`. If `separator` is not provided, splits at any whitespace. You can also use the optional argument `maxsplit` to limit the number of splits. | 1. (Optional) **separator**: the delimiter used to split `s` <br> 2. (Optional) **maxsplit**: maximum number of splits | **list** of substrings |
-| `s.join(iterable)` | Concatenates the elements in `iterable` (usually a list or array) into a single string, with each element separated by `s`. | **iterable**: an iterable of strings to join (can be an array or list of strings) | **string**: a single string formed by joining the elements of `iterable` with the separator `s` |
+| **Function** | **Description** | 
+|--|------|
+| `s.upper()` | Returns a copy of `s` where all letters are uppercase. | 
+| `s.lower()` | Returns a copy of `s` where all letters are lowercase. | 
+| `s.replace(old, new)` | Returns a copy of `s` with all occurrences of the substring `old` replaced by `new`.| 
+| `s.split()` or `s.split(separator)` or `s.split(separator, maxsplit)` | Splits `s` into a list of substrings using the specified `separator`; returns a list of strings. If `separator` is not provided, splits at any whitespace. You can also use the optional argument `maxsplit` to limit the number of splits. |
+| `s.join(iterable)` | Returns a string that concatenates the elements in `iterable` (usually a list or array) into a single string, with each element separated by `s`. | 
 
 
 ## Tables and Table Methods
@@ -100,6 +101,7 @@ In the function above, `my_function` is the name of the function, which takes on
 | `tblA.join(colA, tblB)` or `tblA.join(colA, tblB, colB)` | Generate a table with the columns of `tblA` and `tblB`, containing rows for all values in `colA` and `colB` that appear in `tblA` and `tblB`, respectively. By default, `colB` is the same value as `colA`. `colA` and `colB` must be strings specifying column names. | 1. **string**: name of column in `tblA` with values to join on <br> 2. **Table**: the other table <br> 3. (Optional) **string**: the name of the shared column in `tblB`, if column names are different between the tables | **Table**: a new combined table |
 | `tbl.with_row(values)` | Adds a new row with the specified `values` to `tbl` | 1. **list** or **array**: values to add as a new row | **Table**: a copy of the original table with the new row |
 | `tbl.with_rows(list_of_rows)` | Adds multiple rows to `tbl` using a list of rows | 1. **list** of **lists** or **arrays**: each list/array represents a new row | **Table**: a copy of the original table with the new rows |
+| `tbl.row(row_index)` | Accesses the row of a table by taking the index of the row as its argument. Note that rows are in general not arrays, as their elements can be of different types. However, you can use `.item` to access a particular element of a row, e.g., `row.item(label)`. | **int**: row index | **Row object** with the values of the row and labels of the corresponding columns |
 
 ## Visualization Functions
 
