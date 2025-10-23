@@ -117,6 +117,8 @@ website:
             text: "String Methods"
           - href: 13-functions/apply.qmd
             text: "Apply"
+      - text: "L14: Conditionals"
+        href: 14-conditionals/index.qmd
       - href: five-things.qmd
         text: "5 Things to Know"
       - href: reference.qmd

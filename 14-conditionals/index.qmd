@@ -1,0 +1,13 @@
+---
+title: "Conditionals"
+subtitle: "Navigating control statements"
+---
+
+## Control: Conditionals, if-else statements
+
+For this lecture's notes, please see:
+
+* Jupyter Notebook. Here's a [read-only notebook](https://github.com/data-6-berkeley/materials-fa25/blob/main/lec/lec14/lec14.ipynb), but you should run this in DataHub by accessing via the course website.
+* [Lecture slides](https://docs.google.com/presentation/d/1cnDJYiyBhDXneXYv7MT3qUnAPapOC506sh2e8FvCp8M/edit?usp=drive_link). I made some additional diagrams post-lecture that roughly match my whiteboard work, including a post-class student question.
+* [_Inferential Thinking_, Chapter 9.1](https://inferentialthinking.com/chapters/09/1/Conditional_Statements.html)
+    * Does not cover boolean operators in as much detail as we do.
