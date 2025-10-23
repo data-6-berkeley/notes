@@ -927,6 +927,26 @@
     ]
   },
   {
+    "objectID": "14-conditionals/index.html",
+    "href": "14-conditionals/index.html",
+    "title": "Conditionals",
+    "section": "",
+    "text": "For this lecture’s notes, please see:\n\nJupyter Notebook. Here’s a read-only notebook, but you should run this in DataHub by accessing via the course website.\nLecture slides. I made some additional diagrams post-lecture that roughly match my whiteboard work, including a post-class student question.\nInferential Thinking, Chapter 9.1\n\nDoes not cover boolean operators in as much detail as we do.",
+    "crumbs": [
+      "L14: Conditionals"
+    ]
+  },
+  {
+    "objectID": "14-conditionals/index.html#control-conditionals-if-else-statements",
+    "href": "14-conditionals/index.html#control-conditionals-if-else-statements",
+    "title": "Conditionals",
+    "section": "",
+    "text": "For this lecture’s notes, please see:\n\nJupyter Notebook. Here’s a read-only notebook, but you should run this in DataHub by accessing via the course website.\nLecture slides. I made some additional diagrams post-lecture that roughly match my whiteboard work, including a post-class student question.\nInferential Thinking, Chapter 9.1\n\nDoes not cover boolean operators in as much detail as we do.",
+    "crumbs": [
+      "L14: Conditionals"
+    ]
+  },
+  {
     "objectID": "reference.html",
     "href": "reference.html",
     "title": "🐍 Data 6 Python Reference",
