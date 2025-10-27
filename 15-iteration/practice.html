@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Variables and Variable Types</title>
+<title>Iteration Practice</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,18 +20,53 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../05-variables/units-of-analysis.html" rel="next">
-<link href="../04-tables/none-print.html" rel="prev">
+<link href="../five-things.html" rel="next">
+<link href="../15-iteration/while.html" rel="prev">
 <link href="../assets/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -79,6 +114,9 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 <!--<script async src=”https://siteimproveanalytics.com/js/siteanalyze_6294756.js”></script>-->
 
 
@@ -94,7 +132,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../05-variables/index.html">L05: Variables in Social Science</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../15-iteration/index.html">L15: Iteration</a></li><li class="breadcrumb-item"><a href="../15-iteration/practice.html">Practice</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -237,16 +275,16 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../05-variables/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../05-variables/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">L05: Variables in Social Science</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../05-variables/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../05-variables/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Variables and Variable Types</span></a>
   </div>
 </li>
@@ -430,11 +468,11 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <div class="sidebar-item-container"> 
             <a href="../15-iteration/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">L15: Iteration</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../15-iteration/index.html" class="sidebar-item-text sidebar-link">
@@ -449,7 +487,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../15-iteration/practice.html" class="sidebar-item-text sidebar-link">
+  <a href="../15-iteration/practice.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Practice</span></a>
   </div>
 </li>
@@ -477,21 +515,23 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#variables-operationalization-of-concepts" id="toc-variables-operationalization-of-concepts" class="nav-link active" data-scroll-target="#variables-operationalization-of-concepts">Variables: Operationalization of Concepts</a></li>
-  <li><a href="#variables-in-tabular-data" id="toc-variables-in-tabular-data" class="nav-link" data-scroll-target="#variables-in-tabular-data">Variables in Tabular Data</a></li>
-  <li><a href="#variable-types" id="toc-variable-types" class="nav-link" data-scroll-target="#variable-types">Variable Types</a></li>
-  <li><a href="#external-reading" id="toc-external-reading" class="nav-link" data-scroll-target="#external-reading">External Reading</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#titanic-for-loop" id="toc-titanic-for-loop" class="nav-link active" data-scroll-target="#titanic-for-loop">Titanic: For loop</a>
+  <ul class="collapse">
+  <li><a href="#what-is-the-average-fare-of-the-first-class-passengers" id="toc-what-is-the-average-fare-of-the-first-class-passengers" class="nav-link" data-scroll-target="#what-is-the-average-fare-of-the-first-class-passengers">What is the average fare of the first-class passengers?</a></li>
+  </ul></li>
+  <li><a href="#uc-berkeley-enrollment-while-loop" id="toc-uc-berkeley-enrollment-while-loop" class="nav-link" data-scroll-target="#uc-berkeley-enrollment-while-loop">UC Berkeley enrollment: While loop</a>
+  <ul class="collapse">
+  <li><a href="#what-is-the-historic-year-where-uc-berkeley-enrolled-a-cumulative-number-of-1000000-undergraduates" id="toc-what-is-the-historic-year-where-uc-berkeley-enrolled-a-cumulative-number-of-1000000-undergraduates" class="nav-link" data-scroll-target="#what-is-the-historic-year-where-uc-berkeley-enrolled-a-cumulative-number-of-1000000-undergraduates">What is the historic year where UC Berkeley enrolled a cumulative number of 1,000,000 undergraduates?</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../15-iteration/index.html">L15: Iteration</a></li><li class="breadcrumb-item"><a href="../15-iteration/practice.html">Practice</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Variables and Variable Types</h1>
-<p class="subtitle lead">Intro to Social Science Research</p>
+<h1 class="title">Iteration Practice</h1>
 </div>
 
 
@@ -508,109 +548,220 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </header>
 
 
-<section id="variables-operationalization-of-concepts" class="level2">
-<h2 class="anchored" data-anchor-id="variables-operationalization-of-concepts">Variables: Operationalization of Concepts</h2>
-<p>In data science, a <strong>variable</strong> is a measurable feature, attribute, and/or representation of a concept. It can have different values for different individuals.</p>
-<p>Variables are often <strong>empirical measurements</strong>; they are metrics that researchers create to approximate the specific dimensions of an abstract <strong>concept</strong> of a research question.</p>
-<p>The process of going from a concept, which may often be unmeasurable, to a definition of variable(s) and methods of measurement of these variable(s) is a process broadly referred to as <strong>operationalization</strong>.</p>
-<table class="caption-top table">
-<caption>Examples of operationalizing concepts into variables</caption>
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
+<p>These examples practice loops with data.</p>
+<section id="titanic-for-loop" class="level2">
+<h2 class="anchored" data-anchor-id="titanic-for-loop">Titanic: For loop</h2>
+<p>Consider the <code>titanic</code> dataset, which lists information about each passenger aboard the 1912 ocean liner. Read more about the <em>Titanic</em> and its tragic end on <a href="https://en.wikipedia.org/wiki/Titanic">Wikipedia</a>.</p>
+<div id="41c6635e" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>titanic.show(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
-<th>Concept</th>
-<th>Variable(s)</th>
+<th data-quarto-table-cell-role="th">survived</th>
+<th data-quarto-table-cell-role="th">pclass</th>
+<th data-quarto-table-cell-role="th">sex</th>
+<th data-quarto-table-cell-role="th">age</th>
+<th data-quarto-table-cell-role="th">sibsp</th>
+<th data-quarto-table-cell-role="th">parch</th>
+<th data-quarto-table-cell-role="th">fare</th>
+<th data-quarto-table-cell-role="th">embarked</th>
+<th data-quarto-table-cell-role="th">class</th>
+<th data-quarto-table-cell-role="th">who</th>
+<th data-quarto-table-cell-role="th">adult_male</th>
+<th data-quarto-table-cell-role="th">deck</th>
+<th data-quarto-table-cell-role="th">embark_town</th>
+<th data-quarto-table-cell-role="th">alive</th>
+<th data-quarto-table-cell-role="th">alone</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Education level</td>
-<td>Highest degree earned</td>
+<td>0</td>
+<td>3</td>
+<td>male</td>
+<td>22</td>
+<td>1</td>
+<td>0</td>
+<td>7.25</td>
+<td>S</td>
+<td>Third</td>
+<td>man</td>
+<td>True</td>
+<td>nan</td>
+<td>Southampton</td>
+<td>no</td>
+<td>False</td>
 </tr>
 <tr class="even">
-<td>Family background</td>
-<td>Household income, in thousands of dollars<br>Household size<br>Parental/guardian immigrant status</td>
+<td>1</td>
+<td>1</td>
+<td>female</td>
+<td>38</td>
+<td>1</td>
+<td>0</td>
+<td>71.2833</td>
+<td>C</td>
+<td>First</td>
+<td>woman</td>
+<td>False</td>
+<td>C</td>
+<td>Cherbourg</td>
+<td>yes</td>
+<td>False</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>3</td>
+<td>female</td>
+<td>26</td>
+<td>0</td>
+<td>0</td>
+<td>7.925</td>
+<td>S</td>
+<td>Third</td>
+<td>woman</td>
+<td>False</td>
+<td>nan</td>
+<td>Southampton</td>
+<td>yes</td>
+<td>True</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>1</td>
+<td>female</td>
+<td>35</td>
+<td>1</td>
+<td>0</td>
+<td>53.1</td>
+<td>S</td>
+<td>First</td>
+<td>woman</td>
+<td>False</td>
+<td>C</td>
+<td>Southampton</td>
+<td>yes</td>
+<td>False</td>
+</tr>
+<tr class="odd">
+<td>0</td>
+<td>3</td>
+<td>male</td>
+<td>35</td>
+<td>0</td>
+<td>0</td>
+<td>8.05</td>
+<td>S</td>
+<td>Third</td>
+<td>man</td>
+<td>True</td>
+<td>nan</td>
+<td>Southampton</td>
+<td>no</td>
+<td>True</td>
 </tr>
 </tbody>
 </table>
-<p>From the above it should be evident that the operationalization process has pitfalls! <a href="https://en.wikipedia.org/wiki/Operationalization#Anger_example">Wikipedia</a> describes this issue well with an example operationalizing the concept “anger.” One operation could be directly asking each participant their anger level. However, this self-evaluation process is not only subjective (individuals may define their own anger levels differently) but also often impractical (e.g., surveys or interviews may be impossible in an experimental setting).</p>
-<p>In summary, operationalization necessarily highlights certain dimensions of a concept, constructing certain precise dimensions and measurements while hiding or obscuring others. However, operationalization makes research practical. Through operational definitions, it constructs procedures for measuring and collecting data. By translating immeasurable concepts into numeric or categorical quantities, one can then conduct statistical and graphical analysis on the data.</p>
+
+<p>... (886 rows omitted)</p>
+</div>
+</div>
+<section id="what-is-the-average-fare-of-the-first-class-passengers" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-the-average-fare-of-the-first-class-passengers">What is the average fare of the first-class passengers?</h3>
+<p>We can compute this with Table methods:</p>
+<div id="06703804" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>titanic.where(<span class="st">"class"</span>, <span class="st">"First"</span>).column(<span class="st">"fare"</span>).mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>84.154687499999994</code></pre>
+</div>
+</div>
+<p>We can also compute this using a <code>for</code> loop and conditional statements. It is more verbose, but you will find it productive to compare and contrast the approaches.</p>
+<div id="5c0e5f86" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ticket_class <span class="op">=</span> titanic.column(<span class="st">"class"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>ticket_fare <span class="op">=</span> titanic.column(<span class="st">"fare"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>count <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> np.arange(<span class="bu">len</span>(ticket_class)):</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> ticket_class.item(i) <span class="op">==</span> <span class="st">"First"</span>:</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        total <span class="op">+=</span> ticket_fare.item(i) </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>        count <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>total<span class="op">/</span>count</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>84.15468749999992</code></pre>
+</div>
+</div>
+<p>A <code>for</code> loop is preferable because we need to examine each and every passenger to determine if they bought a first-class ticket.</p>
 </section>
-<section id="variables-in-tabular-data" class="level2">
-<h2 class="anchored" data-anchor-id="variables-in-tabular-data">Variables in Tabular Data</h2>
-<p>We will see that as data scientists, we may often start with a dataset involving data that have already been collected for us. These datasets may have been constructed to answer specific questions (we’ll get into the research methods a bit later) and later shared to the broader public for transparency and reproducibility.</p>
-<p>It is challenging to use another person’s data! The concepts have already been operationalized into variables; or the quality of data may vary widely; or multiple data sources may be needed to construct a reasonable first step towards a new research question. We’ll see more benefits and drawbacks in our examples this semester.</p>
-<p>For now, we focus on variables as they exist in tabular data. In most of the tabular datasets we will examine, variables correspond to <strong>columns</strong> of features. Each row is a <strong>record</strong> of a datapoint, with different values of variables measured for that datapoint.</p>
-<div style="text-align: center">
-<div id="fig-inflation" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-inflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/variable.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-inflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Variables as columns.
-</figcaption>
-</figure>
-</div>
-</div>
 </section>
-<section id="variable-types" class="level2">
-<h2 class="anchored" data-anchor-id="variable-types">Variable Types</h2>
-<p><strong>Variable types</strong> are different from Python data types like <code>string</code>, <code>int</code>, etc. Variable types help us make more informed decisions about how to measure and analyze variables: to make comparisons, create visualizations, and draw conclusions.</p>
-<ul>
-<li><strong>Numerical/Quantitative</strong> Variable: a variable that takes numbers as values and where the magnitude of the number has a quantitative meaning.
-<ul>
-<li><strong>Discrete</strong>: A numerical variable that takes values that have jumps between them.</li>
-<li><strong>Continuous</strong>: A numerical variable that takes values on an interval of the real number line.</li>
-</ul></li>
-<li><strong>Categorical/Qualitative</strong> Variable: a variable that takes categories as values. Each unique category is called a <em>level</em>.
-<ul>
-<li><strong>Ordinal</strong>: A categorical variable with levels that have a natural ordering.</li>
-<li><strong>Nominal</strong>: A categorical variable with levels that have no ordering.</li>
-</ul></li>
-</ul>
-<p>Figure 2 has examples of each variable type.</p>
-<div style="text-align: center">
-<div id="fig-inflation" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-inflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/variable_types.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%">
+<section id="uc-berkeley-enrollment-while-loop" class="level2">
+<h2 class="anchored" data-anchor-id="uc-berkeley-enrollment-while-loop">UC Berkeley enrollment: While loop</h2>
+<p>The <a href="https://www.universityofcalifornia.edu/about-us/information-center/historical-enrollment">University of California</a> keeps historic data on the number of students enrolled at each of the UC campuses. The below <code>enrollments</code> table lists UC Berkeley undergraduate and graduate enrollments:</p>
+<div id="8f2171ae" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>enrollment.show(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">undergrad</th>
+<th data-quarto-table-cell-role="th">graduate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1869</td>
+<td>40</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>1870</td>
+<td>90</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>1871</td>
+<td>151</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>1872</td>
+<td>185</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>1873</td>
+<td>189</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+
+<p>... (151 rows omitted)</p>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-inflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Variable Types.
-</figcaption>
-</figure>
+</div>
+<section id="what-is-the-historic-year-where-uc-berkeley-enrolled-a-cumulative-number-of-1000000-undergraduates" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-the-historic-year-where-uc-berkeley-enrolled-a-cumulative-number-of-1000000-undergraduates">What is the historic year where UC Berkeley enrolled a cumulative number of 1,000,000 undergraduates?</h3>
+<div id="6262d4fe" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>total_undergrads <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>year_index <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>undergrads <span class="op">=</span> enrollment.column(<span class="st">"undergrad"</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> total_undergrads <span class="op">&lt;=</span> <span class="dv">1000000</span>:</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    total_undergrads <span class="op">+=</span> undergrads.item(year_index)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    year_index <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Total undergrads graduated by'</span>, enrollment.column(<span class="st">"year"</span>).item(year_index),</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>      <span class="st">"was"</span>, total_undergrads)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Total undergrads graduated by 1982 was 1002972</code></pre>
 </div>
 </div>
-<p><em>What do we mean by “meaningful” arithmetic?</em> From <a href="https://www.stat20.org/1-questions-and-data/02-taxonomy-of-data/notes">Stat 20</a>:</p>
-<blockquote class="blockquote">
-<p>What unites both types of numerical variables is that the magnitude of the numbers have meaning and you can perform mathematical operations on them and the result also has meaning. It is possible and meaningful to talk about the average air temperature across three locations. It is also possible and meaningful to talk about the sum total number of people across ten households.</p>
-</blockquote>
-<p>Just because a variable has numbers for values does not make it numerical. Consider phone area codes: Berkeley is 510, San Francisco is 415, Palo Alto is 650, and so on. While area codes are numbers, you can’t do any arithmetic—comparative or otherwise—with them that “makes sense”: what does it mean to add area codes? have one area code (650) that is “larger” than another (510)? Area codes are therefore an example of a nominal categorical variable.</p>
-<p>Variable types are closely tied to measurement. Consider the following survey item from <a href="https://www.stat20.org/1-questions-and-data/02-taxonomy-of-data/notes">Stat 20</a>, which describes a common ordinal categorical variable in opinion surveys:</p>
-<blockquote class="blockquote">
-<p>Consider the question:“Do you strongly agree, agree, feel neutral about, disagree, or strongly disagree with the following statement: Dogs are better than cats?” When you record answers to this question, you’re recording measurements on a categorical variable that takes values “strongly agree”, “agree”, “neutral”, “disagree”, “strongly disagree”. Those are the levels of the categorical variable and they have a natural ordering: “strongly agree” is closer to “agree” than it is to “strongly disagree”.</p>
-</blockquote>
-<p>The above is an example of a <strong>Likert item</strong>. The researcher likely wanted a way to measure respondents’ sentiment of dogs and cats—an abstract concept. To do so, the researcher distributed a survey to respondents that <em>operationalized</em> this concept as a 5-point ordinal categorical variable. (There are of course other ways to measure this sentiment, such as by interviewing respondents and asking the open-ended question, “Dogs or cats?” but these yield a different set of possible responses and, consequently a different set of variables.)</p>
-<p><em>Aside: What is a discrete variable type, really?</em> If you think about it deeply from a Computer Science perspective, there will be cases in which continuous numerical variables may seem discrete: after all, price (in U.S. dollars) is counted to the cent, and so there are a discrete number of prices for, say, a pound of apples (we hope). However, in the data world we consider how the variable type may inform how we construct informative visualizations of the variable itself and compare it to other values. In short, variable typing informs our choice of using histograms vs.&nbsp;scatter plots, and so on. More later on this.</p>
-</section>
-<section id="external-reading" class="level2">
-<h2 class="anchored" data-anchor-id="external-reading">External Reading</h2>
-<ul>
-<li>(mentioned in notes) “Chapter 4: From Concepts to Models.” Elizabeth Heger Boyle, Deborah Carr, Benjamin Cornwell, Shelley Correll, Robert Crosnoe, Jeremy Freese, and Waters, Mary C. 2017. <em>The Art and Science of Social Research</em>. New York: W. W. Norton &amp; Company.</li>
-<li>(mentioned in notes) <em>Stat 20 notes</em>, <a href="https://www.stat20.org/1-questions-and-data/02-taxonomy-of-data/notes">Taxonomy of Data</a></li>
-</ul>
-</section>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
-<p>U.S. Census Bureau, “EDUCATIONAL ATTAINMENT,” American Community Survey 5-Year Estimates Subject Tables, Table S1501, 2020, <a href="https://data.census.gov/table/ACSST5Y2020.S1501?q=2020+education&amp;t=Age+and+Sex:Educational+Attainment&amp;g=010XX00US$0400000" class="uri">https://data.census.gov/table/ACSST5Y2020.S1501?q=2020+education&amp;t=Age+and+Sex:Educational+Attainment&amp;g=010XX00US$0400000</a>, accessed on August 24, 2025.</p>
-<p>U.S. Census Bureau, “Design and Methodology Report.” <a href="https://www.census.gov/programs-surveys/acs/methodology/design-and-methodology.html" class="uri">https://www.census.gov/programs-surveys/acs/methodology/design-and-methodology.html</a>, accessed on September 2, 2025.</p>
-<p>U.S. Census Bureau, “Public Use Microdata Sample (PUMS).” <a href="https://www.census.gov/programs-surveys/acs/microdata.html" class="uri">https://www.census.gov/programs-surveys/acs/microdata.html</a>, accessed on September 2, 2025.</p>
+<p>A <code>while</code> loop is preferable because all of our rows are sorted by year, and we can stop looking after we have found the corresponding year.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1015,13 +1166,13 @@ Figure&nbsp;2: Variable Types.
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../04-tables/none-print.html" class="pagination-link" aria-label="None and Print">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">None and Print</span>
+      <a href="../15-iteration/while.html" class="pagination-link" aria-label="While Loops">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">While Loops</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../05-variables/units-of-analysis.html" class="pagination-link" aria-label="Units of Analysis">
-        <span class="nav-page-text">Units of Analysis</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../five-things.html" class="pagination-link" aria-label="5 Things to Know">
+        <span class="nav-page-text">5 Things to Know</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

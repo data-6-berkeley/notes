@@ -464,6 +464,35 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
  <span class="menu-text">L14: Conditionals</span></a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../15-iteration/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">L15: Iteration</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../15-iteration/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">For Loops</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../15-iteration/while.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">While Loops</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../15-iteration/practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practice</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../five-things.html" class="sidebar-item-text sidebar-link">
@@ -545,7 +574,7 @@ Read <em>Inferential Thinking</em>
 <section id="example" class="level2">
 <h2 class="anchored" data-anchor-id="example">Example</h2>
 <p>We have a weather table of high and low temperatures on each day, recorded in Farenheit. We would like to transform these temperatures to Celsius. This example creates a new column, <code>High (C)</code>, using the <code>apply</code> method.</p>
-<div id="6fe25b60" class="cell" data-execution_count="2">
+<div id="6bf03751" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>weather <span class="op">=</span> Table().with_columns(</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Day"</span>, make_array(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"High"</span>, make_array(<span class="fl">55.1</span>, <span class="fl">57.2</span>, <span class="fl">56.8</span>),</span>
@@ -586,20 +615,20 @@ Read <em>Inferential Thinking</em>
 </table>
 </div>
 </div>
-<div id="5a5aeac7" class="cell" data-execution_count="3">
+<div id="9c83d2c2" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> celsius(temp):  </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""converts Fahrenheit to Celsius"""</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (temp <span class="op">-</span> <span class="dv">32</span>) <span class="op">*</span> <span class="dv">5</span><span class="op">/</span><span class="dv">9</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The <code>apply</code> method returns an array of values.</p>
-<div id="eeacd80e" class="cell" data-execution_count="4">
+<div id="7a54ebfa" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>weather.<span class="bu">apply</span>(celsius, <span class="st">'High'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>array([ 12.83333333,  14.        ,  13.77777778])</code></pre>
 </div>
 </div>
 <p>We can create a new column by assigning this newly created array to a new column name.</p>
-<div id="906dbb5c" class="cell" data-execution_count="5">
+<div id="f9228f6c" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>weather.with_columns(</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"High (C)"</span>,</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    weather.<span class="bu">apply</span>(celsius, <span class="st">'High'</span>)</span>
@@ -674,7 +703,7 @@ Read <em>Inferential Thinking</em>
 </tr>
 </tbody>
 </table>
-<div id="186e0657" class="cell" data-execution_count="6">
+<div id="37067458" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>holidays <span class="op">=</span> Table().with_columns(</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Holiday'</span>, make_array(<span class="st">'Hanukkah'</span>, <span class="st">'New Year'</span>, <span class="st">'Birthday'</span>),</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Name'</span>, make_array(<span class="st">'Josh'</span>, <span class="st">'Tracy'</span>, <span class="st">'Jaspreet'</span>)</span>
@@ -706,7 +735,7 @@ Read <em>Inferential Thinking</em>
 </div>
 </div>
 <p>There are various solutions. One reasonable approach:</p>
-<div id="5719902c" class="cell" data-execution_count="7">
+<div id="e9184f03" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_greeting(holiday, name):</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"HAPPY "</span> <span class="op">+</span> holiday.upper() <span class="op">+</span> <span class="st">" "</span> <span class="op">+</span> name.upper()</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -744,7 +773,7 @@ Read <em>Inferential Thinking</em>
 </div>
 </div>
 <p>Here’s another advanced approach, using <code>join</code>:</p>
-<div id="e83e27db" class="cell" data-execution_count="8">
+<div id="42254c18" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_greeting(holiday, name):</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">' '</span>.join([<span class="st">"happy"</span>, holiday, name]).upper()</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -786,7 +815,7 @@ Read <em>Inferential Thinking</em>
 <h3 class="anchored" data-anchor-id="task-2-challenge">Task 2 (Challenge)</h3>
 <p>Convert phone numbers. For example, <code>510-642-3141</code> should be formatted as <code>(510) 642-3141</code>.</p>
 <p><em>Hint</em>: Try using <code>split</code>. The <code>split</code> function returns a list of strings split by the delimiter; after conversion, lists can be indexed just like an array.</p>
-<div id="ff1515a7" class="cell" data-execution_count="9">
+<div id="10fde5c2" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>res_halls <span class="op">=</span> Table().with_columns(</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Residence Hall'</span>, </span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>        make_array(<span class="st">'Unit 1'</span>, <span class="st">'Unit 2'</span>, <span class="st">'Unit 3'</span>, <span class="st">'Foothill'</span>,</span>
@@ -838,7 +867,7 @@ Read <em>Inferential Thinking</em>
 </div>
 </div>
 <p>One possible approach:</p>
-<div id="01061e3c" class="cell" data-execution_count="10">
+<div id="05ff7cbb" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> format_phone_number(phone):</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    parts <span class="op">=</span> np.array(phone.split(<span class="st">'-'</span>))</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"("</span> <span class="op">+</span> parts.item(<span class="dv">0</span>) <span class="op">+</span> <span class="st">") "</span> <span class="op">+</span> parts.item(<span class="dv">1</span>) <span class="op">+</span> <span class="st">"-"</span> <span class="op">+</span> parts.item(<span class="dv">2</span>)</span>
