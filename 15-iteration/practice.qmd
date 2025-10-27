@@ -1,0 +1,74 @@
+---
+title: "Iteration Practice"
+---
+
+```{python}
+#| include: false
+from datascience import *
+import numpy as np
+import seaborn as sns
+
+titanic = Table().from_df(sns.load_dataset("titanic"))
+enrollment = Table.read_table("data/ucberkeley_enrollment.csv")
+```
+
+These examples practice loops with data.
+
+## Titanic: For loop
+
+Consider the `titanic` dataset, which lists information about each passenger aboard the 1912 ocean liner. Read more about the _Titanic_ and its tragic end on [Wikipedia](https://en.wikipedia.org/wiki/Titanic).
+
+```{python}
+titanic.show(5)
+```
+
+
+### What is the average fare of the first-class passengers?
+
+We can compute this with Table methods:
+
+```{python}
+titanic.where("class", "First").column("fare").mean()
+```
+
+We can also compute this using a `for` loop and conditional statements. It is more verbose, but you will find it productive to compare and contrast the approaches.
+
+```{python}
+ticket_class = titanic.column("class")
+ticket_fare = titanic.column("fare")
+
+total = 0
+count = 0
+for i in np.arange(len(ticket_class)):
+    if ticket_class.item(i) == "First":
+        total += ticket_fare.item(i) 
+        count += 1
+total/count
+```
+
+A `for` loop is preferable because we need to examine each and every passenger to determine if they bought a first-class ticket.
+
+## UC Berkeley enrollment: While loop
+
+The [University of California](https://www.universityofcalifornia.edu/about-us/information-center/historical-enrollment) keeps historic data on the number of students enrolled at each of the UC campuses. The below `enrollments` table lists UC Berkeley undergraduate and graduate enrollments:
+
+```{python}
+enrollment.show(5)
+```
+
+### What is the historic year where UC Berkeley enrolled a cumulative number of 1,000,000 undergraduates?
+
+```{python}
+total_undergrads = 0
+year_index = 0
+undergrads = enrollment.column("undergrad")
+
+while total_undergrads <= 1000000:
+    total_undergrads += undergrads.item(year_index)
+    year_index += 1
+
+print('Total undergrads graduated by', enrollment.column("year").item(year_index),
+      "was", total_undergrads)
+```
+
+A `while` loop is preferable because all of our rows are sorted by year, and we can stop looking after we have found the corresponding year.

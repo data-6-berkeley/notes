@@ -1,0 +1,74 @@
+---
+title: "Iteration: While loops"
+subtitle: "Repeat a procedure while some condition holds"
+---
+
+## Control: Iteration with While Loops
+
+```{python}
+#| include: false
+from datascience import *
+import numpy as np
+```
+
+Loops allow us to repeat the execution of code. We discuss two types of Python loops:
+
+The `for` loop. For each element of this sequence, repeat this code.
+
+```
+for <elem> in <sequence>:
+    <for body>
+```
+
+The `while` loop. While this condition is `True`, repeat this code.
+
+```
+while <boolean expression>:
+    <while body>
+```
+
+## Repeat while the condition is `True`.
+
+On each iteration of the below `while` loop, we first check if `counter` is greater than zero. If it is, then we to run the loop body, which involves printing `counter`, then decrementing it. If it is not, we exit the loop.
+
+```{python}
+counter = 10
+while counter > 0:
+    print(counter)
+    counter -= 1
+print("blast off!")
+```
+
+## For Loop or While Loop?
+
+Compare the two functions below. Why might they do the same thing?
+
+```{python}
+def sum_squares_for(values):
+    total = 0
+    for v in values:
+        total += v ** 2
+    return total
+
+sum_squares_for(make_array(3, 4, 5))
+```
+
+```{python}
+def sum_squares_while(values):
+    total = 0
+    i = 0
+    while i < len(values):
+        total += values.item(i) ** 2
+        i += 1
+    return total
+
+sum_squares_while(make_array(3, 4, 5))
+```
+
+Which do you prefer?
+
+**Every for-loop can be written as a while-loop, but not vice versa.** You will see and effectively prove this claim in a future computer science class, but now is not the time.
+
+Instead, we recommend you use the following heuristics:
+* If you need to check/modify/read every element in a sequence, use a `for` loop. `for` loops are often more readable.
+* Use `while` loops when you don’t know how many iterations to run in advance.

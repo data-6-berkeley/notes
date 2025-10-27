@@ -80,6 +80,12 @@ print(3)
 ```
 
 ::: {.callout-note title="Explanation" collapse="true"}
+```{.python code-line-numbers="true"}
+print(my_var)
+print(3)
+45
+```
+
 Each line explained:
 
 1. Evaluate the first `print` call expression. This prints the value of `my_var` to the screen, which evaluates to `None`. `print` returns `None`, but this second `None` is not output to the sceen because it is not the last line.

@@ -119,6 +119,15 @@ website:
             text: "Apply"
       - text: "L14: Conditionals"
         href: 14-conditionals/index.qmd
+      - text: "L15: Iteration"
+        href: 15-iteration/index.qmd
+        contents:
+          - href: 15-iteration/index.qmd
+            text: "For Loops"
+          - href: 15-iteration/while.qmd
+            text: "While Loops"
+          - href: 15-iteration/practice.qmd
+            text: "Practice"
       - href: five-things.qmd
         text: "5 Things to Know"
       - href: reference.qmd

@@ -1,0 +1,199 @@
+---
+title: "Iteration: For loops"
+subtitle: "Repeat a procedure over a sequence of values"
+---
+
+## Control: Iteration with For-Loops
+
+```{python}
+#| include: false
+from datascience import *
+import numpy as np
+```
+
+::: {.callout-note title="Read _Inferential Thinking_"}
+ Read [_Inferential Thinking_ Chapter 9.2](https://inferentialthinking.com/chapters/09/2/Iteration.html), which describes for-loops.
+ 
+ Before continuing, make sure that:
+
+ * You know that **iteration** is a process of repeating a sequence multiple times.
+ * You understand that a `for` statement loops over the contents of a sequence (e.g., an array).
+ * The indented **loop body** of the `for` statement is executed once for each item in the sequence.
+
+:::
+
+## For-loop examples
+
+There are many use cases for `for` statements, otherwise known as `for` **loops**. The rest of this document provides motivated examples for common loop structures.
+
+### Iterate over an existing array
+
+`for`-loops iterate over sequences using an **iteration variable.**
+An array is a type of **sequence**; we discuss other types of sequences briefly below, like Python lists and strings.
+
+On each iteration of the below `for` loop, we re-assign the name `animal` to the next value of the array:
+
+```{python}
+arr = make_array('cat', 'dog', 'rabbit')
+for animal in arr:
+    print(animal)
+```
+
+### Repeat a process `n` times
+
+In Python, a `for` loop must iterate over a sequence. However, you can imagine that it is useful to repeat a process `n` times, without referencing a specific sequence. In this case (quoted from _Inferential Thinking_):
+
+> To repeat a process `n` times, it is common to use the sequence `np.arange(n)` in the for statement. It is also common to use a very short name for each item. In our code we will use the name `i` to remind ourselves that it refers to an item.
+
+Below, we are just printing the same string repeatedly, so we do not use the short name `i` at all in our **loop body** (the indented part). Nevertheless, the `np.arange(5)` expression used in the `for` loop helps re-assign `i` to the values `0` through `4`.
+
+```{python}
+for i in np.arange(5):
+    print("I love Data 6")
+```
+
+
+### Declaring and accessing values outside of a loop
+
+`for` loops have access to the overall scope of the environment, meaning that we can access names assigned outside of the loop. This property is particularly useful when we want to save some processing after each iteration of the loop.
+
+Now with `for` loops, we can write a new version of our average function. Below, the `+=` is shorthand in Python for adding the right-hand-side value to the left-hand-side name, then re-assigning the left-hand-side name to the result.
+
+```{python}
+def average(arr):
+    total = 0
+    count = 0
+    for element in arr:
+        total += element  # shorthand: total = total + element
+        count += 1        # shorthand: count = count + 1
+    return total/count
+```
+
+```{python}
+arr = make_array(1, 2, 3, 4)
+average(arr)
+```
+
+```{python}
+average(np.arange(10))
+```
+
+::: {.callout-note title="Explanation" collapse="true"}
+
+Each line explained:
+
+```{.python code-line-numbers="true"}
+def average(arr):
+    total = 0
+    count = 0
+    for element in arr:
+        total = total + element
+        count = count + 1
+    return total/count
+```
+
+* (Lines 2, 3): Assign `total` and `count` to starting values of zero.
+*  (Line 4): Repeat for all values in the `arr` array, assigning `element` to each one sequentially:
+    * (Line 5) Update `total` to the current `total` plus the current `element`.
+    * (Line 6) Increment `count` by 1.
+* (Line 7) Return the `total` sum of all element in the array by the `count` of elements in the array.
+:::
+
+Admittedly, this version is significantly wordier than `np.sum(arr)/len(arr)` or even `np.average(arr)`. But we can now "lift the veil" on how these algorithms and functions are implemented...!
+
+### Creating/Augmenting an array
+
+Another useful application is iteratively creating a new array of results, by augmenting the array each time the loop body is run.
+
+We use `np.append`. From `_Inferential Thinking_:
+
+> The call `np.append(array_name, value)` evaluates to a new array that is `array_name` augmented by `value`. When you use `np.append`, keep in mind that all the entries of an array must have the same type.
+
+```{python code-line-numbers="true"}
+base = 100
+numbers = make_array()
+for i in np.arange(5):
+    numbers = np.append(numbers, base + i)
+numbers
+```
+
+::: {.callout-note title="Explanation" collapse="true"}
+
+Each line explained:
+
+```{.python code-line-numbers="true"}
+base = 100
+numbers = make_array()
+for i in np.arange(5):
+    numbers = np.append(numbers, base + i)
+numbers
+```
+
+
+1. Assign `base` to a base number.
+1. Create `numbers`, an empty array.
+1. Repeat **five** times:
+1.
+    a. Right-hand-side: Create an array that augments the current `numbers` by one value, `base + i`. 
+    b. Left-hand-side: Assign this new array to `numbers`.
+1. Output `numbers` at the end of the cell.
+:::
+
+## Fencepost Problems
+
+A common iterative algorithm (i.e., series of steps) involves performing **N** tasks with **N-1** things between them. This is analogous to setting **fenceposts**. From [Wiktionary](https://en.wiktionary.org/wiki/fencepost_problem):
+
+> By analogy with fence-building. If one wants to say "lay a fencepost, then a length of fence, then repeat", then a special case must be made for the final fencepost. If one wants to say "lay a length of fence, then a fencepost, then repeat", then a special case must be made for the initial fencepost.
+
+In other words, to lay 3 fences (`===`), we need 4 fenceposts (`|`):
+
+```
+|===|===|===|
+```
+
+Suppose we wanted to revisit our previous example and print out the state of the `number` array every time it changes. 
+
+```{python}
+base = 100
+numbers = make_array()
+for i in np.arange(5):
+    print(numbers)
+    numbers = np.append(numbers, base + i)
+print(numbers)
+```
+
+This is a fencepost problem, as there are actually **six** states, including the empty array. In the loop, we print out the state of `numbers` **before** appending a new value to the array. As a result, without the `print` call **after** the end of the loop, we would otherwise neglect to print out `numbers` after the last value is appended.
+
+
+To solve fencepost problems with `for` loops:
+
+* Place one “post” outside your loop (before or after your loop; this will depend on the problem).
+* Alternate between “fences” and “posts” inside your loop.
+
+## Iterating over other sequence types
+
+`for` loops can iterate over many types of sequences beyond NumPy arrays. Two common sequences are lists and strings. Here is an example of iterating over a string. Can you explain what the `unknown` function does?
+
+```{python}
+def unknown(word):
+    output = ''
+    for letter in word:
+        if letter not in 'aeiou':
+            output += letter
+    return output
+
+unknown("supercalifragilisticexpialidocious")
+```
+
+::: {.callout-note title="Explanation" collapse="true"}
+
+Each line explained:
+
+```{.python code-line-numbers="true"}
+Create a string of only consonants from the provided string argument. The name `letter` is iteratively assigned to each **character** in the `word` string. Then, if the `letter` is not one of `a`, `e`, `i`, `o`, or `u`, then it is appended to the `output` string. Otherwise, we do nothing.
+
+:::
+
+## External Reading
+
+* [_Inferential Thinking_ Chapter 9.2](https://inferentialthinking.com/chapters/09/2/Iteration.html)
