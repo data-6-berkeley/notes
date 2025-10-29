@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://data-6-berkeley.github.io/notes/13-functions/strings.html</loc>
-    <lastmod>2025-10-20T22:43:48.322Z</lastmod>
+    <lastmod>2025-10-29T22:07:57.241Z</lastmod>
   </url>
   <url>
     <loc>https://data-6-berkeley.github.io/notes/13-functions/apply.html</loc>
@@ -34,7 +34,7 @@
   </url>
   <url>
     <loc>https://data-6-berkeley.github.io/notes/15-iteration/index.html</loc>
-    <lastmod>2025-10-27T17:20:07.820Z</lastmod>
+    <lastmod>2025-10-29T22:23:00.846Z</lastmod>
   </url>
   <url>
     <loc>https://data-6-berkeley.github.io/notes/06-variables-ii/deprecated-eda.html</loc>
@@ -74,7 +74,11 @@
   </url>
   <url>
     <loc>https://data-6-berkeley.github.io/notes/reference.html</loc>
-    <lastmod>2025-10-23T00:29:39.394Z</lastmod>
+    <lastmod>2025-10-29T22:06:29.313Z</lastmod>
+  </url>
+  <url>
+    <loc>https://data-6-berkeley.github.io/notes/16-measurements/index.html</loc>
+    <lastmod>2025-10-29T22:40:14.127Z</lastmod>
   </url>
   <url>
     <loc>https://data-6-berkeley.github.io/notes/14-conditionals/index.html</loc>

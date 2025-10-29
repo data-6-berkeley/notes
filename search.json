@@ -37,7 +37,7 @@
     "href": "13-functions/strings.html#lists-vs.-arrays",
     "title": "String Methods",
     "section": "Lists vs. Arrays",
-    "text": "Lists vs. Arrays\nThe last two methods, split and join, work with a data type called Python lists, which we won’t get into too much in this class. For all intents and purposes, you can consider lists to be very similar to NumPy arrays, in that:\n\nLists are a sequence of elements in-order that can be referenced by element index.\nLists are zero-indexed, i.e., the first element has index 0.\nWhen all list elements are the same data type, lists can be cast into NumPy arrays. (Unlike arrays, list elements can typically have different data types.)\nLists are displayed using square brackets (and it also accepts indexing by square brackets, unlike arrays which accept indexing with the item method. We do not cover square bracket indexing in this course).\n\nBecause we only use NumPy arrays in this class, we recommend that you consider casting to NumPy arrays where possible with make_array.",
+    "text": "Lists vs. Arrays\nThe last two methods, split and join, work with a data type called Python lists, which we won’t get into too much in this class. For all intents and purposes, you can consider lists to be very similar to NumPy arrays, in that:\n\nLists are a sequence of elements in-order that can be referenced by element index.\nLists are zero-indexed, i.e., the first element has index 0.\nWhen all list elements are the same data type, lists can be cast into NumPy arrays. (Unlike arrays, list elements can typically have different data types.)\nLists are displayed using square brackets (and it also accepts indexing by square brackets, unlike arrays which accept indexing with the item method. We do not cover square bracket indexing in this course).\n\nBecause we primarily use NumPy arrays in this class, we recommend that you consider casting to NumPy arrays where possible with make_array.",
     "crumbs": [
       "L13: Functions",
       "String Methods"
@@ -473,11 +473,11 @@
     ]
   },
   {
-    "objectID": "15-iteration/index.html#fencepost-problems",
-    "href": "15-iteration/index.html#fencepost-problems",
+    "objectID": "15-iteration/index.html#fencepost-problemsoff-by-one-errors",
+    "href": "15-iteration/index.html#fencepost-problemsoff-by-one-errors",
     "title": "Iteration: For loops",
-    "section": "Fencepost Problems",
-    "text": "Fencepost Problems\nA common iterative algorithm (i.e., series of steps) involves performing N tasks with N-1 things between them. This is analogous to setting fenceposts. From Wiktionary:\n\nBy analogy with fence-building. If one wants to say “lay a fencepost, then a length of fence, then repeat”, then a special case must be made for the final fencepost. If one wants to say “lay a length of fence, then a fencepost, then repeat”, then a special case must be made for the initial fencepost.\n\nIn other words, to lay 3 fences (===), we need 4 fenceposts (|):\n|===|===|===|\nSuppose we wanted to revisit our previous example and print out the state of the number array every time it changes.\n\nbase = 100\nnumbers = make_array()\nfor i in np.arange(5):\n    print(numbers)\n    numbers = np.append(numbers, base + i)\nprint(numbers)\n\n[]\n[ 100.]\n[ 100.  101.]\n[ 100.  101.  102.]\n[ 100.  101.  102.  103.]\n[ 100.  101.  102.  103.  104.]\n\n\nThis is a fencepost problem, as there are actually six states, including the empty array. In the loop, we print out the state of numbers before appending a new value to the array. As a result, without the print call after the end of the loop, we would otherwise neglect to print out numbers after the last value is appended.\nTo solve fencepost problems with for loops:\n\nPlace one “post” outside your loop (before or after your loop; this will depend on the problem).\nAlternate between “fences” and “posts” inside your loop.",
+    "section": "Fencepost Problems/“Off-by-one” Errors",
+    "text": "Fencepost Problems/“Off-by-one” Errors\nA common iterative algorithm (i.e., series of steps) involves performing N tasks with N-1 things between them. This is analogous to setting fenceposts. From Wiktionary:\n\nBy analogy with fence-building. If one wants to say “lay a fencepost, then a length of fence, then repeat”, then a special case must be made for the final fencepost. If one wants to say “lay a length of fence, then a fencepost, then repeat”, then a special case must be made for the initial fencepost.\n\nIn other words, to lay 3 fences (===), we need 4 fenceposts (|):\n|===|===|===|\nYou may also hear the phrase off-by-one errors used in reference to fencepost problems. Off-by-one errors occur when we fail to account for one of the boundaries (i.e., left or right fencepost).\nSuppose we wanted to revisit our previous example and print out the state of the number array every time it changes.\n\nbase = 100\nnumbers = make_array()\nfor i in np.arange(5):\n    print(numbers)\n    numbers = np.append(numbers, base + i)\nprint(numbers)\n\n[]\n[ 100.]\n[ 100.  101.]\n[ 100.  101.  102.]\n[ 100.  101.  102.  103.]\n[ 100.  101.  102.  103.  104.]\n\n\nThis is a fencepost problem, as there are actually six states, including the empty array. In the loop, we print out the state of numbers before appending a new value to the array. As a result, without the print call after the end of the loop, we would otherwise neglect to print out numbers after the last value is appended.\nTo solve fencepost problems with for loops:\n\nPlace one “post” outside your loop (before or after your loop; this will depend on the problem).\nAlternate between “fences” and “posts” inside your loop.",
     "crumbs": [
       "L15: Iteration"
     ]
@@ -487,7 +487,17 @@
     "href": "15-iteration/index.html#iterating-over-other-sequence-types",
     "title": "Iteration: For loops",
     "section": "Iterating over other sequence types",
-    "text": "Iterating over other sequence types\nfor loops can iterate over many types of sequences beyond NumPy arrays. Two common sequences are lists and strings. Here is an example of iterating over a string. Can you explain what the unknown function does?\n\ndef unknown(word):\n    output = ''\n    for letter in word:\n        if letter not in 'aeiou':\n            output += letter\n    return output\n\nunknown(\"supercalifragilisticexpialidocious\")\n\n'sprclfrglstcxpldcs'\n\n\n\n\n\n\n\n\nExplanation\n\n\n\n\n\nEach line explained:\n``{.python code-line-numbers=\"true\"} Create a string of only consonants from the provided string argument. The nameletteris iteratively assigned to each **character** in thewordstring. Then, if theletteris not one ofa,e,i,o, oru, then it is appended to theoutput` string. Otherwise, we do nothing.",
+    "text": "Iterating over other sequence types\nfor loops can iterate over many types of sequences beyond NumPy arrays. Two common sequences are lists and strings. Here is an example of iterating over a string. Can you explain what the unknown function does?\n\ndef unknown(word):\n    output = ''\n    for letter in word:\n        if letter not in 'aeiou':\n            output += letter\n    return output\n\nunknown(\"supercalifragilisticexpialidocious\")\n\n'sprclfrglstcxpldcs'\n\n\n\n\n\n\n\n\nExplanation\n\n\n\n\n\nEach line explained:\ndef unknown(word):\n    output = ''\n    for letter in word:\n        if letter not in 'aeiou':\n            output += letter\n    return output\n\n(Line 2) Create a string of only consonants from the provided string argument word.\n(Line 3) The name letter is iteratively assigned to each character in the word string.\n(Lines 4-5, loop body) If the letter is not one of a, e, i, o, or u, then it is appended to the output string. Otherwise, we do nothing (we know this because there is no else clause).\n(Line 6, return statement) Finally, return the output string.",
+    "crumbs": [
+      "L15: Iteration"
+    ]
+  },
+  {
+    "objectID": "15-iteration/index.html#challenge-question-triplets",
+    "href": "15-iteration/index.html#challenge-question-triplets",
+    "title": "Iteration: For loops",
+    "section": "Challenge question: triplets",
+    "text": "Challenge question: triplets\nSee next lecture notes set!",
     "crumbs": [
       "L15: Iteration"
     ]
@@ -978,11 +988,11 @@
     ]
   },
   {
-    "objectID": "reference.html#string-methods",
-    "href": "reference.html#string-methods",
+    "objectID": "reference.html#string-methods-and-operations",
+    "href": "reference.html#string-methods-and-operations",
     "title": "🐍 Data 6 Python Reference",
-    "section": "String Methods",
-    "text": "String Methods\n\n\n\n\n\n\n\nFunction\nDescription\n\n\n\n\ns.upper()\nReturns a copy of s where all letters are uppercase.\n\n\ns.lower()\nReturns a copy of s where all letters are lowercase.\n\n\ns.replace(old, new)\nReturns a copy of s with all occurrences of the substring old replaced by new.\n\n\ns.split() or s.split(separator) or s.split(separator, maxsplit)\nSplits s into a list of substrings using the specified separator; returns a list of strings. If separator is not provided, splits at any whitespace. You can also use the optional argument maxsplit to limit the number of splits.\n\n\ns.join(iterable)\nReturns a string that concatenates the elements in iterable (usually a list or array) into a single string, with each element separated by s.",
+    "section": "String Methods and Operations",
+    "text": "String Methods and Operations\n\n\n\n\n\n\n\nFunction\nDescription\n\n\n\n\ns.upper()\nReturns a copy of s where all letters are uppercase.\n\n\ns.lower()\nReturns a copy of s where all letters are lowercase.\n\n\ns.replace(old, new)\nReturns a copy of s with all occurrences of the substring old replaced by new.\n\n\ns.split() or s.split(separator) or s.split(separator, maxsplit)\nSplits s into a list of substrings using the specified separator; returns a list of strings. If separator is not provided, splits at any whitespace. You can also use the optional argument maxsplit to limit the number of splits.\n\n\ns.join(iterable)\nReturns a string that concatenates the elements in iterable (usually a list or array) into a single string, with each element separated by s.\n\n\ns.strip(chars)\nReturns a copy of s with the characters in chars trimmed off the left and right ends of the string. If chars is not provided, trims off whitespace from both ends.\n\n\nsubstr in s\nReturns True if the string substr is contained in the string s (i.e., substr is a substring of s) and False otherwise. A similar operation, x in lst, checks if an element x is in an iterable (list or array).\n\n\nsubstr not in s\nReturns False if substr is not a substring of s and True otherwise. A similar operation, x not in lst, checks if an element x is not in an iterable (list or array).",
     "crumbs": [
       "Data 6 Python Reference"
     ]
@@ -1025,6 +1035,46 @@
     "text": "More Documentation\nThe Data 6 Python reference guide is based on the Data 8 Python Reference. More detailed Python documentation is available here.",
     "crumbs": [
       "Data 6 Python Reference"
+    ]
+  },
+  {
+    "objectID": "16-measurements/index.html",
+    "href": "16-measurements/index.html",
+    "title": "Iteration II, Measurements",
+    "section": "",
+    "text": "Today was reviewing while loops and a more challenging triplets example. We will discuss Algorithms, Measurements, Reliability, and Validity next lecture. You will do the reading first.",
+    "crumbs": [
+      "L16: Iterations II; Measurements"
+    ]
+  },
+  {
+    "objectID": "16-measurements/index.html#challenge-question-triplets",
+    "href": "16-measurements/index.html#challenge-question-triplets",
+    "title": "Iteration II, Measurements",
+    "section": "Challenge question: triplets",
+    "text": "Challenge question: triplets\nWhat does the below code do?\n\ndef triplets(arr):\n    zeros_in_sequence = 0\n    triplets_seen = 0\n    for elt in arr:\n        if not elt:\n            zeros_in_sequence += 1\n            if zeros_in_sequence == 3:\n                triplets_seen += 1\n                zeros_in_sequence = 0    # reset, we have seen 3 0's\n        else:\n            zeros_in_sequence = 0        # reset, we broke a 0 streak\n    return triplets_seen\n\nHere are some example outputs:\n\ntriplets(make_array(0, 1, 0, 0, 0, 1))\n\n1\n\n\n\ntriplets(make_array(0, 1, 0, 0, 1, 0, 0, 0, 0, 1))\n\n1\n\n\n\ntriplets(make_array(0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0))\n\n3\n\n\nStrategy from class:\n\nRun the code first. See what the example inputs/outputs are. Give a short 1-2 sentence summary of what the function does at a very high level. What you said in class: “It counts the zeros in order” “It counts triplets of zeros”\nThen, look at the code to understand what each name is. What you said in class:\n\ntriplets_seen: The number of triplets. We can see this by the return statement.\nzeros_in_sequence: seems to be updating and “resetting” to zero.\nelt: Maybe short for element? Iterates over the array, arr.\narr: The argument to triplets. Based on the example input/output, this is an array of numbers.\n\nFinally, trace the code line by line to clear up remaining questions. Some questions you had in class:\n\nWhat is not elt doing? When does it evaluate to True or False?\nWhat is zeros_in_sequence doing? How does it work?\nWhat is the += shorthand?\n\n(Answer: “increment and re-assign” the left-hand-side, using the right-hand-side.)\n\n\n\nFor not elt, recall our discussion of truthy values:\n\nEvery value can be cast to a Boolean value.\n\nThe only values that evaluate to False are 0, None, and an empty sequence (empty array, zero-length string, empty list, etc.).\nAll other values evaluate to True.\n\nTherefore for numeric values of elt, the only instance in which not elt will evaluate to True is when elt is 0: not elt is not 0 is not False is True.\nAll non-zero numeric values of elt will evaluate to False, e.g., when elt is 1: not elt is not 1 is not True is False.\n\n\n\n\n\n\n\nExplanation: Each Line Explained\n\n\n\n\n\nEach line explained:\ndef triplets(arr):\n    zeros_in_sequence = 0\n    triplets_seen = 0\n    for elt in arr:\n        if not elt:\n            zeros_in_sequence += 1\n            if zeros_in_sequence == 3:\n                triplets_seen += 1\n                zeros_in_sequence = 0\n        else:\n            zeros_in_sequence = 0\n    return triplets_seen\n\ntriplets(make_array(0, 1, 0, 0, 1, 0, 0, 0, 0, 1))\n\n(Line 1) Define the function triplets. It takes an array arr. We can see this from Line 14, which is a function call to triplets.\n(Lines 2-3) Set zeros_in_sequence and triplets_seen to 0.\n(Line 4) Iterate through each element (elt) in the argument array arr.\n(Line 5) The Boolean expression not elt will only evaluate to True (i.e., we will only evaluate this if case) if the current elt is 0.\n\n(Line 6) Increment zeros_in_sequence by 1.\n(Line 7) Check if we have seen three zeros_in_sequence.\n\n(Lines 8-9): If so, we have seen a triple, so increment our return value, triplets_seen. Also reset zeros_in_sequence.\n\n\n(Lines 10-11) If we saw a non-zero elt, then we have broken our zero-sequence. Reset zeros_in_sequence.\n(Line 12): Return the number of triples seen.\n\n\n\n\n\n\n\n\n\n\nExplanation: Array Example Explained\n\n\n\n\n\ndef triplets(arr):\n    zeros_in_sequence = 0\n    triplets_seen = 0\n    for elt in arr:\n        if not elt:\n            zeros_in_sequence += 1\n            if zeros_in_sequence == 3:\n                triplets_seen += 1\n                zeros_in_sequence = 0\n        else:\n            zeros_in_sequence = 0\n    return triplets_seen\n\ntriplets(make_array(0, 1, 0, 0, 1, 0, 0, 0, 0, 1))\nelements | 0 | 1 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 |\nindices    0   1   2   3   4   5   6   7   8   9\nThe values of zeros_in_sequence and triplets_seen after the corresponding iteration has finished evaluating the loop body, before the loop moves to the next element or exits:\n\n\n\nindex\nelt\ntriplets_seen\nzeros_in_sequence\n\n\n\n\n0\n0\n0\n1\n\n\n1\n1\n0\n0\n\n\n2\n0\n0\n1\n\n\n3\n0\n0\n2\n\n\n4\n1\n0\n0\n\n\n5\n0\n0\n1\n\n\n6\n0\n0\n2\n\n\n7\n0\n1\n0 (why?)\n\n\n8\n0\n1\n1\n\n\n9\n1\n1\n0\n\n\n\n\nWhile loops\nSee the previous lecture notes set.\n\n\nAlgorithms and Measurements\nFor this lecture’s notes, please see:\n\nLecture slides.\nExcerpt of “Chapter 5: Evaluating Research.” Elizabeth Heger Boyle, Deborah Carr, Benjamin Cornwell, Shelley Correll, Robert Crosnoe, Jeremy Freese, and Waters, Mary C. 2017. The Art and Science of Social Research. New York: W. W. Norton & Company. PDF link (UC Berkeley only)\nDiscussion handout.\n\nWe will cover this lecture in more detail next time, on Monday 11/2.",
+    "crumbs": [
+      "L16: Iterations II; Measurements"
+    ]
+  },
+  {
+    "objectID": "16-measurements/index.html#while-loops",
+    "href": "16-measurements/index.html#while-loops",
+    "title": "Iteration II, Measurements",
+    "section": "While loops",
+    "text": "While loops\nSee the previous lecture notes set.",
+    "crumbs": [
+      "L16: Iterations II; Measurements"
+    ]
+  },
+  {
+    "objectID": "16-measurements/index.html#algorithms-and-measurements",
+    "href": "16-measurements/index.html#algorithms-and-measurements",
+    "title": "Iteration II, Measurements",
+    "section": "Algorithms and Measurements",
+    "text": "Algorithms and Measurements\nFor this lecture’s notes, please see:\n\nLecture slides.\nExcerpt of “Chapter 5: Evaluating Research.” Elizabeth Heger Boyle, Deborah Carr, Benjamin Cornwell, Shelley Correll, Robert Crosnoe, Jeremy Freese, and Waters, Mary C. 2017. The Art and Science of Social Research. New York: W. W. Norton & Company. PDF link (UC Berkeley only)\nDiscussion handout.\n\nWe will cover this lecture in more detail next time, on Monday 11/2.",
+    "crumbs": [
+      "L16: Iterations II; Measurements"
     ]
   },
   {

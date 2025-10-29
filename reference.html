@@ -491,6 +491,12 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./16-measurements/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">L16: Iterations II; Measurements</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./five-things.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">5 Things to Know</span></a>
   </div>
@@ -518,7 +524,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   </ul></li>
   <li><a href="#built-in-python-functions" id="toc-built-in-python-functions" class="nav-link" data-scroll-target="#built-in-python-functions">Built-In Python Functions</a></li>
   <li><a href="#numpy-array-functions-and-methods" id="toc-numpy-array-functions-and-methods" class="nav-link" data-scroll-target="#numpy-array-functions-and-methods">NumPy Array Functions and Methods</a></li>
-  <li><a href="#string-methods" id="toc-string-methods" class="nav-link" data-scroll-target="#string-methods">String Methods</a></li>
+  <li><a href="#string-methods-and-operations" id="toc-string-methods-and-operations" class="nav-link" data-scroll-target="#string-methods-and-operations">String Methods and Operations</a></li>
   <li><a href="#tables-and-table-methods" id="toc-tables-and-table-methods" class="nav-link" data-scroll-target="#tables-and-table-methods">Tables and Table Methods</a></li>
   <li><a href="#visualization-functions" id="toc-visualization-functions" class="nav-link" data-scroll-target="#visualization-functions">Visualization Functions</a></li>
   <li><a href="#table.where-predicates" id="toc-table.where-predicates" class="nav-link" data-scroll-target="#table.where-predicates">Table.where Predicates</a></li>
@@ -556,7 +562,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <p>Of course, the Python Reference can only provide information about the basics of the functions you’ll use in Data 6. The best knowledge about functions comes from using these functions in code you write in labs or homeworks. If you get stuck when using a certain function, we encourage you to come to office hours or ask a question on Ed.</p>
 <section id="the-anatomy-of-a-function" class="level3">
 <h3 class="anchored" data-anchor-id="the-anatomy-of-a-function">The Anatomy of a Function</h3>
-<div id="db7664e9" class="cell" data-execution_count="1">
+<div id="b8ce36c9" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> my_function(num):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> num <span class="op">**</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -733,8 +739,8 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </tbody>
 </table>
 </section>
-<section id="string-methods" class="level2">
-<h2 class="anchored" data-anchor-id="string-methods">String Methods</h2>
+<section id="string-methods-and-operations" class="level2">
+<h2 class="anchored" data-anchor-id="string-methods-and-operations">String Methods and Operations</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 25%">
@@ -766,6 +772,18 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <tr class="odd">
 <td><code>s.join(iterable)</code></td>
 <td>Returns a string that concatenates the elements in <code>iterable</code> (usually a list or array) into a single string, with each element separated by <code>s</code>.</td>
+</tr>
+<tr class="even">
+<td><code>s.strip(chars)</code></td>
+<td>Returns a copy of <code>s</code> with the characters in <code>chars</code> trimmed off the left and right ends of the string. If <code>chars</code> is not provided, trims off whitespace from both ends.</td>
+</tr>
+<tr class="odd">
+<td><code>substr in s</code></td>
+<td>Returns <code>True</code> if the string <code>substr</code> is contained in the string <code>s</code> (i.e., <code>substr</code> is a substring of <code>s</code>) and <code>False</code> otherwise. A similar operation, <code>x in lst</code>, checks if an element <code>x</code> is in an iterable (list or array).</td>
+</tr>
+<tr class="even">
+<td><code>substr not in s</code></td>
+<td>Returns <code>False</code> if <code>substr</code> is not a substring of <code>s</code> and <code>True</code> otherwise. A similar operation, <code>x not in lst</code>, checks if an element <code>x</code> is not in an iterable (list or array).</td>
 </tr>
 </tbody>
 </table>

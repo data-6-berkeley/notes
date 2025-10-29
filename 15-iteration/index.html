@@ -492,6 +492,12 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../16-measurements/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">L16: Iterations II; Measurements</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../five-things.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">5 Things to Know</span></a>
   </div>
@@ -520,8 +526,9 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   <li><a href="#declaring-and-accessing-values-outside-of-a-loop" id="toc-declaring-and-accessing-values-outside-of-a-loop" class="nav-link" data-scroll-target="#declaring-and-accessing-values-outside-of-a-loop">Declaring and accessing values outside of a loop</a></li>
   <li><a href="#creatingaugmenting-an-array" id="toc-creatingaugmenting-an-array" class="nav-link" data-scroll-target="#creatingaugmenting-an-array">Creating/Augmenting an array</a></li>
   </ul></li>
-  <li><a href="#fencepost-problems" id="toc-fencepost-problems" class="nav-link" data-scroll-target="#fencepost-problems">Fencepost Problems</a></li>
+  <li><a href="#fencepost-problemsoff-by-one-errors" id="toc-fencepost-problemsoff-by-one-errors" class="nav-link" data-scroll-target="#fencepost-problemsoff-by-one-errors">Fencepost Problems/“Off-by-one” Errors</a></li>
   <li><a href="#iterating-over-other-sequence-types" id="toc-iterating-over-other-sequence-types" class="nav-link" data-scroll-target="#iterating-over-other-sequence-types">Iterating over other sequence types</a></li>
+  <li><a href="#challenge-question-triplets" id="toc-challenge-question-triplets" class="nav-link" data-scroll-target="#challenge-question-triplets">Challenge question: <code>triplets</code></a></li>
   <li><a href="#external-reading" id="toc-external-reading" class="nav-link" data-scroll-target="#external-reading">External Reading</a></li>
   </ul>
 </nav>
@@ -578,7 +585,7 @@ Read <em>Inferential Thinking</em>
 <h3 class="anchored" data-anchor-id="iterate-over-an-existing-array">Iterate over an existing array</h3>
 <p><code>for</code>-loops iterate over sequences using an <strong>iteration variable.</strong> An array is a type of <strong>sequence</strong>; we discuss other types of sequences briefly below, like Python lists and strings.</p>
 <p>On each iteration of the below <code>for</code> loop, we re-assign the name <code>animal</code> to the next value of the array:</p>
-<div id="b64af4ab" class="cell" data-execution_count="2">
+<div id="e2fcae88" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> make_array(<span class="st">'cat'</span>, <span class="st">'dog'</span>, <span class="st">'rabbit'</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> animal <span class="kw">in</span> arr:</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(animal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -596,7 +603,7 @@ rabbit</code></pre>
 <p>To repeat a process <code>n</code> times, it is common to use the sequence <code>np.arange(n)</code> in the for statement. It is also common to use a very short name for each item. In our code we will use the name <code>i</code> to remind ourselves that it refers to an item.</p>
 </blockquote>
 <p>Below, we are just printing the same string repeatedly, so we do not use the short name <code>i</code> at all in our <strong>loop body</strong> (the indented part). Nevertheless, the <code>np.arange(5)</code> expression used in the <code>for</code> loop helps re-assign <code>i</code> to the values <code>0</code> through <code>4</code>.</p>
-<div id="3937abc7" class="cell" data-execution_count="3">
+<div id="b1ef3337" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> np.arange(<span class="dv">5</span>):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"I love Data 6"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -612,7 +619,7 @@ I love Data 6</code></pre>
 <h3 class="anchored" data-anchor-id="declaring-and-accessing-values-outside-of-a-loop">Declaring and accessing values outside of a loop</h3>
 <p><code>for</code> loops have access to the overall scope of the environment, meaning that we can access names assigned outside of the loop. This property is particularly useful when we want to save some processing after each iteration of the loop.</p>
 <p>Now with <code>for</code> loops, we can write a new version of our average function. Below, the <code>+=</code> is shorthand in Python for adding the right-hand-side value to the left-hand-side name, then re-assigning the left-hand-side name to the result.</p>
-<div id="4779092a" class="cell" data-execution_count="4">
+<div id="8117b02c" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> average(arr):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    count <span class="op">=</span> <span class="dv">0</span></span>
@@ -621,14 +628,14 @@ I love Data 6</code></pre>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        count <span class="op">+=</span> <span class="dv">1</span>        <span class="co"># shorthand: count = count + 1</span></span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> total<span class="op">/</span>count</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="b222f6fe" class="cell" data-execution_count="5">
+<div id="09acc260" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> make_array(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>average(arr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>2.5</code></pre>
 </div>
 </div>
-<div id="01df9b49" class="cell" data-execution_count="6">
+<div id="ee3036ae" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>average(np.arange(<span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>4.5</code></pre>
@@ -675,7 +682,7 @@ Explanation
 <blockquote class="blockquote">
 <p>The call <code>np.append(array_name, value)</code> evaluates to a new array that is <code>array_name</code> augmented by <code>value</code>. When you use <code>np.append</code>, keep in mind that all the entries of an array must have the same type.</p>
 </blockquote>
-<div id="633c5fa5" class="cell" data-execution_count="7">
+<div id="f6b2a022" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>base <span class="op">=</span> <span class="dv">100</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> make_array()</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> np.arange(<span class="dv">5</span>):</span>
@@ -718,16 +725,17 @@ Explanation
 </div>
 </section>
 </section>
-<section id="fencepost-problems" class="level2">
-<h2 class="anchored" data-anchor-id="fencepost-problems">Fencepost Problems</h2>
+<section id="fencepost-problemsoff-by-one-errors" class="level2">
+<h2 class="anchored" data-anchor-id="fencepost-problemsoff-by-one-errors">Fencepost Problems/“Off-by-one” Errors</h2>
 <p>A common iterative algorithm (i.e., series of steps) involves performing <strong>N</strong> tasks with <strong>N-1</strong> things between them. This is analogous to setting <strong>fenceposts</strong>. From <a href="https://en.wiktionary.org/wiki/fencepost_problem">Wiktionary</a>:</p>
 <blockquote class="blockquote">
 <p>By analogy with fence-building. If one wants to say “lay a fencepost, then a length of fence, then repeat”, then a special case must be made for the final fencepost. If one wants to say “lay a length of fence, then a fencepost, then repeat”, then a special case must be made for the initial fencepost.</p>
 </blockquote>
 <p>In other words, to lay 3 fences (<code>===</code>), we need 4 fenceposts (<code>|</code>):</p>
 <pre><code>|===|===|===|</code></pre>
+<p>You may also hear the phrase <strong>off-by-one</strong> errors used in reference to fencepost problems. Off-by-one errors occur when we fail to account for one of the boundaries (i.e., left or right fencepost).</p>
 <p>Suppose we wanted to revisit our previous example and print out the state of the <code>number</code> array every time it changes.</p>
-<div id="6f97ecbb" class="cell" data-execution_count="8">
+<div id="7488cd15" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>base <span class="op">=</span> <span class="dv">100</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> make_array()</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> np.arange(<span class="dv">5</span>):</span>
@@ -753,7 +761,7 @@ Explanation
 <section id="iterating-over-other-sequence-types" class="level2">
 <h2 class="anchored" data-anchor-id="iterating-over-other-sequence-types">Iterating over other sequence types</h2>
 <p><code>for</code> loops can iterate over many types of sequences beyond NumPy arrays. Two common sequences are lists and strings. Here is an example of iterating over a string. Can you explain what the <code>unknown</code> function does?</p>
-<div id="45666993" class="cell" data-execution_count="9">
+<div id="d7f6dfbd" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> unknown(word):</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    output <span class="op">=</span> <span class="st">''</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> letter <span class="kw">in</span> word:</span>
@@ -779,10 +787,25 @@ Explanation
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Each line explained:</p>
-<p>``<code>{.python code-line-numbers="true"} Create a string of only consonants from the provided string argument. The name</code>letter<code>is iteratively assigned to each **character** in the</code>word<code>string. Then, if the</code>letter<code>is not one of</code>a<code>,</code>e<code>,</code>i<code>,</code>o<code>, or</code>u<code>, then it is appended to the</code>output` string. Otherwise, we do nothing.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a><span class="kw">def</span> unknown(word):</span>
+<span id="cb19-2"><a href="#cb19-2"></a>    output <span class="op">=</span> <span class="st">''</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a>    <span class="cf">for</span> letter <span class="kw">in</span> word:</span>
+<span id="cb19-4"><a href="#cb19-4"></a>        <span class="cf">if</span> letter <span class="kw">not</span> <span class="kw">in</span> <span class="st">'aeiou'</span>:</span>
+<span id="cb19-5"><a href="#cb19-5"></a>            output <span class="op">+=</span> letter</span>
+<span id="cb19-6"><a href="#cb19-6"></a>    <span class="cf">return</span> output</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>(Line 2) Create a string of only consonants from the provided string argument <code>word</code>.</li>
+<li>(Line 3) The name <code>letter</code> is iteratively assigned to each <strong>character</strong> in the <code>word</code> string.</li>
+<li>(Lines 4-5, loop body) If the <code>letter</code> is not one of <code>a</code>, <code>e</code>, <code>i</code>, <code>o</code>, or <code>u</code>, then it is appended to the <code>output</code> string. Otherwise, we do nothing (we know this because there is no <code>else</code> clause).</li>
+<li>(Line 6, return statement) Finally, return the <code>output</code> string.</li>
+</ul>
 </div>
 </div>
 </div>
+</section>
+<section id="challenge-question-triplets" class="level2">
+<h2 class="anchored" data-anchor-id="challenge-question-triplets">Challenge question: <code>triplets</code></h2>
+<p>See next lecture notes set!</p>
 </section>
 <section id="external-reading" class="level2">
 <h2 class="anchored" data-anchor-id="external-reading">External Reading</h2>

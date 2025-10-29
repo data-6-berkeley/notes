@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Table Exercises</title>
+<title>Iteration II, Measurements</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -58,15 +58,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../04-tables/none-print.html" rel="next">
-<link href="../04-tables/index.html" rel="prev">
+<link href="../five-things.html" rel="next">
+<link href="../15-iteration/practice.html" rel="prev">
 <link href="../assets/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -114,9 +114,6 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 <!--<script async src=”https://siteimproveanalytics.com/js/siteanalyze_6294756.js”></script>-->
 
 
@@ -132,7 +129,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../04-tables/index.html">L04: Table Fundamentals</a></li><li class="breadcrumb-item"><a href="../04-tables/exercises.html">Table Exercises</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../16-measurements/index.html">L16: Iterations II; Measurements</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -248,11 +245,11 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <div class="sidebar-item-container"> 
             <a href="../04-tables/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">L04: Table Fundamentals</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../04-tables/index.html" class="sidebar-item-text sidebar-link">
@@ -261,7 +258,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../04-tables/exercises.html" class="sidebar-item-text sidebar-link active">
+  <a href="../04-tables/exercises.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Table Exercises</span></a>
   </div>
 </li>
@@ -495,7 +492,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../16-measurements/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../16-measurements/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">L16: Iterations II; Measurements</span></a>
   </div>
 </li>
@@ -521,20 +518,17 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#exercise-1-variable-names" id="toc-exercise-1-variable-names" class="nav-link active" data-scroll-target="#exercise-1-variable-names">Exercise 1: Variable names</a></li>
-  <li><a href="#exercise-2-reorder-columns" id="toc-exercise-2-reorder-columns" class="nav-link" data-scroll-target="#exercise-2-reorder-columns">Exercise 2: Reorder columns</a></li>
-  <li><a href="#exercise-3-filtering" id="toc-exercise-3-filtering" class="nav-link" data-scroll-target="#exercise-3-filtering">Exercise 3: Filtering</a></li>
-  <li><a href="#exercise-4-rename-columns" id="toc-exercise-4-rename-columns" class="nav-link" data-scroll-target="#exercise-4-rename-columns">Exercise 4: Rename Columns</a></li>
-  <li><a href="#exercise-5-debugging-show" id="toc-exercise-5-debugging-show" class="nav-link" data-scroll-target="#exercise-5-debugging-show">Exercise 5: Debugging <code>show</code></a></li>
+  <li><a href="#challenge-question-triplets" id="toc-challenge-question-triplets" class="nav-link active" data-scroll-target="#challenge-question-triplets">Challenge question: <code>triplets</code></a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../04-tables/index.html">L04: Table Fundamentals</a></li><li class="breadcrumb-item"><a href="../04-tables/exercises.html">Table Exercises</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Table Exercises</h1>
+<h1 class="title">Iteration II, Measurements</h1>
+<p class="subtitle lead">Reliability and Validity</p>
 </div>
 
 
@@ -551,866 +545,238 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </header>
 
 
-<p>We work with the <code>schools</code> table from before.</p>
-<div id="1d63c486" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datascience <span class="im">import</span> <span class="op">*</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> Table.read_table(<span class="st">'data/cal_unis.csv'</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>schools.show(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">Name</th>
-<th data-quarto-table-cell-role="th">Institution</th>
-<th data-quarto-table-cell-role="th">City</th>
-<th data-quarto-table-cell-role="th">County</th>
-<th data-quarto-table-cell-role="th">Enrollment</th>
-<th data-quarto-table-cell-role="th">Founded</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>California State Polytechnic University, Humboldt</td>
-<td>CSU</td>
-<td>Arcata</td>
-<td>Humboldt</td>
-<td>6025</td>
-<td>1913</td>
-</tr>
-<tr class="even">
-<td>California State University, Bakersfield</td>
-<td>CSU</td>
-<td>Bakersfield</td>
-<td>Kern</td>
-<td>9613</td>
-<td>1965</td>
-</tr>
-<tr class="odd">
-<td>University of California, Berkeley</td>
-<td>UC</td>
-<td>Berkeley</td>
-<td>Alameda</td>
-<td>45307</td>
-<td>1869</td>
-</tr>
-</tbody>
-</table>
-
-<p>... (29 rows omitted)</p>
+<p>Today was reviewing while loops and a more challenging <code>triplets</code> example. We will discuss Algorithms, Measurements, Reliability, and Validity next lecture. You will do the reading first.</p>
+<section id="challenge-question-triplets" class="level2">
+<h2 class="anchored" data-anchor-id="challenge-question-triplets">Challenge question: <code>triplets</code></h2>
+<p>What does the below code do?</p>
+<div id="964dbb60" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> triplets(arr):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    zeros_in_sequence <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    triplets_seen <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> elt <span class="kw">in</span> arr:</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> elt:</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>            zeros_in_sequence <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> zeros_in_sequence <span class="op">==</span> <span class="dv">3</span>:</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>                triplets_seen <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>                zeros_in_sequence <span class="op">=</span> <span class="dv">0</span>    <span class="co"># reset, we have seen 3 0's</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>            zeros_in_sequence <span class="op">=</span> <span class="dv">0</span>        <span class="co"># reset, we broke a 0 streak</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> triplets_seen</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Here are some example outputs:</p>
+<div id="5d807db5" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>triplets(make_array(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>1</code></pre>
 </div>
 </div>
-<p>Pull up the Python Reference and try these exercises yourself! They are roughly in order of increasing difficulty.</p>
-<section id="exercise-1-variable-names" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-1-variable-names">Exercise 1: Variable names</h2>
-<p>How do we get all the column labels of <code>schools</code>?</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Show Answer">
+<div id="df0045bc" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>triplets(make_array(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>1</code></pre>
+</div>
+</div>
+<div id="494e8c49" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>triplets(make_array(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>3</code></pre>
+</div>
+</div>
+<p>Strategy from class:</p>
+<ol type="1">
+<li>Run the code first. See what the example inputs/outputs are. Give a short 1-2 sentence summary of what the function does at a <em>very</em> high level. What you said in class: “It counts the zeros in order” “It counts triplets of zeros”</li>
+<li>Then, look at the code to understand what each name is. What you said in class:
+<ul>
+<li><code>triplets_seen</code>: The number of triplets. We can see this by the <code>return</code> statement.</li>
+<li><code>zeros_in_sequence</code>: seems to be updating and “resetting” to zero.</li>
+<li><code>elt</code>: Maybe short for element? Iterates over the array, <code>arr</code>.</li>
+<li><code>arr</code>: The argument to <code>triplets</code>. Based on the example input/output, this is an array of numbers.</li>
+</ul></li>
+<li>Finally, <strong>trace</strong> the code line by line to clear up remaining questions. Some questions you had in class:
+<ul>
+<li>What is <code>not elt</code> doing? When does it evaluate to <code>True</code> or <code>False</code>?</li>
+<li>What is <code>zeros_in_sequence</code> doing? How does it work?</li>
+<li>What is the <code>+=</code> shorthand?
+<ul>
+<li>(Answer: “increment and re-assign” the left-hand-side, using the right-hand-side.)</li>
+</ul></li>
+</ul></li>
+</ol>
+<p>For <code>not elt</code>, recall our discussion of <strong>truthy values</strong>:</p>
+<ul>
+<li>Every value can be cast to a Boolean value.
+<ul>
+<li>The only values that evaluate to <code>False</code> are <code>0</code>, <code>None</code>, and an empty sequence (empty array, zero-length string, empty list, etc.).</li>
+<li>All other values evaluate to <code>True</code>.</li>
+</ul></li>
+<li>Therefore for numeric values of <code>elt</code>, the only instance in which <code>not elt</code> will evaluate to <code>True</code> is when <code>elt</code> is <code>0</code>: <code>not elt</code> is <code>not 0</code> is <code>not False</code> is <code>True</code>.</li>
+<li>All non-zero numeric values of <code>elt</code> will evaluate to <code>False</code>, e.g., when <code>elt</code> is <code>1</code>: <code>not elt</code> is <code>not 1</code> is <code>not True</code> is <code>False</code>.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="Explanation: Each Line Explained">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Show Answer
+Explanation: Each Line Explained
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="1672e641" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>schools.labels</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>('Name', 'Institution', 'City', 'County', 'Enrollment', 'Founded')</code></pre>
+<p>Each line explained:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">def</span> triplets(arr):</span>
+<span id="cb8-2"><a href="#cb8-2"></a>    zeros_in_sequence <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a>    triplets_seen <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a>    <span class="cf">for</span> elt <span class="kw">in</span> arr:</span>
+<span id="cb8-5"><a href="#cb8-5"></a>        <span class="cf">if</span> <span class="kw">not</span> elt:</span>
+<span id="cb8-6"><a href="#cb8-6"></a>            zeros_in_sequence <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a>            <span class="cf">if</span> zeros_in_sequence <span class="op">==</span> <span class="dv">3</span>:</span>
+<span id="cb8-8"><a href="#cb8-8"></a>                triplets_seen <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb8-9"><a href="#cb8-9"></a>                zeros_in_sequence <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb8-10"><a href="#cb8-10"></a>        <span class="cf">else</span>:</span>
+<span id="cb8-11"><a href="#cb8-11"></a>            zeros_in_sequence <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb8-12"><a href="#cb8-12"></a>    <span class="cf">return</span> triplets_seen</span>
+<span id="cb8-13"><a href="#cb8-13"></a></span>
+<span id="cb8-14"><a href="#cb8-14"></a>triplets(make_array(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>(Line 1) Define the function <code>triplets</code>. It takes an array <code>arr</code>. We can see this from Line 14, which is a function call to <code>triplets</code>.</li>
+<li>(Lines 2-3) Set <code>zeros_in_sequence</code> and <code>triplets_seen</code> to <code>0</code>.</li>
+<li>(Line 4) Iterate through each element (<code>elt</code>) in the argument array <code>arr</code>.</li>
+<li>(Line 5) The Boolean expression <code>not elt</code> will only evaluate to <code>True</code> (i.e., we will only evaluate this <code>if</code> case) if the current <code>elt</code> is <code>0</code>.
+<ul>
+<li>(Line 6) Increment <code>zeros_in_sequence</code> by 1.</li>
+<li>(Line 7) Check if we have seen three <code>zeros_in_sequence</code>.
+<ul>
+<li>(Lines 8-9): If so, we have seen a triple, so increment our return value, <code>triplets_seen</code>. Also reset <code>zeros_in_sequence</code>.</li>
+</ul></li>
+</ul></li>
+<li>(Lines 10-11) If we saw a non-zero <code>elt</code>, then we have broken our zero-sequence. Reset <code>zeros_in_sequence</code>.</li>
+<li>(Line 12): Return the number of triples seen.</li>
+</ul>
 </div>
 </div>
 </div>
-</div>
-</div>
-</section>
-<section id="exercise-2-reorder-columns" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-2-reorder-columns">Exercise 2: Reorder columns</h2>
-<p>How do we reorder the columns, as below?</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Name</strong></th>
-<th><strong>Founded</strong></th>
-<th><strong>Institution</strong></th>
-<th><strong>City</strong></th>
-<th><strong>County</strong></th>
-<th><strong>Enrollment</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>…</td>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-</tr>
-</tbody>
-</table>
-<p>Hint: use one of <code>select</code>, <code>drop</code>, or <code>with_columns</code>.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Show Answer">
+<div class="callout callout-style-default callout-note callout-titled" title="Explanation: Array Example Explained">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Show Answer
+Explanation: Array Example Explained
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="6a8e29db" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>schools.select(</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Name"</span>, <span class="st">"Founded"</span>,</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Institution"</span>, <span class="st">"City"</span>,</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"County"</span>, <span class="st">"Enrollment"</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">def</span> triplets(arr):</span>
+<span id="cb9-2"><a href="#cb9-2"></a>    zeros_in_sequence <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a>    triplets_seen <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a>    <span class="cf">for</span> elt <span class="kw">in</span> arr:</span>
+<span id="cb9-5"><a href="#cb9-5"></a>        <span class="cf">if</span> <span class="kw">not</span> elt:</span>
+<span id="cb9-6"><a href="#cb9-6"></a>            zeros_in_sequence <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb9-7"><a href="#cb9-7"></a>            <span class="cf">if</span> zeros_in_sequence <span class="op">==</span> <span class="dv">3</span>:</span>
+<span id="cb9-8"><a href="#cb9-8"></a>                triplets_seen <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb9-9"><a href="#cb9-9"></a>                zeros_in_sequence <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb9-10"><a href="#cb9-10"></a>        <span class="cf">else</span>:</span>
+<span id="cb9-11"><a href="#cb9-11"></a>            zeros_in_sequence <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb9-12"><a href="#cb9-12"></a>    <span class="cf">return</span> triplets_seen</span>
+<span id="cb9-13"><a href="#cb9-13"></a></span>
+<span id="cb9-14"><a href="#cb9-14"></a>triplets(make_array(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>elements | 0 | 1 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 |
+indices    0   1   2   3   4   5   6   7   8   9</code></pre>
+<p>The values of <code>zeros_in_sequence</code> and <code>triplets_seen</code> <strong>after</strong> the corresponding iteration has finished evaluating the <strong>loop body</strong>, before the loop moves to the next element or exits:</p>
+<table class="caption-top table">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th">Name</th>
-<th data-quarto-table-cell-role="th">Founded</th>
-<th data-quarto-table-cell-role="th">Institution</th>
-<th data-quarto-table-cell-role="th">City</th>
-<th data-quarto-table-cell-role="th">County</th>
-<th data-quarto-table-cell-role="th">Enrollment</th>
+<th>index</th>
+<th><code>elt</code></th>
+<th><code>triplets_seen</code></th>
+<th><code>zeros_in_sequence</code></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>California State Polytechnic University, Humboldt</td>
-<td>1913</td>
-<td>CSU</td>
-<td>Arcata</td>
-<td>Humboldt</td>
-<td>6025</td>
+<td>0</td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td><code>1</code></td>
 </tr>
 <tr class="even">
-<td>California State University, Bakersfield</td>
-<td>1965</td>
-<td>CSU</td>
-<td>Bakersfield</td>
-<td>Kern</td>
-<td>9613</td>
+<td>1</td>
+<td><code>1</code></td>
+<td><code>0</code></td>
+<td><code>0</code></td>
 </tr>
 <tr class="odd">
-<td>University of California, Berkeley</td>
-<td>1869</td>
-<td>UC</td>
-<td>Berkeley</td>
-<td>Alameda</td>
-<td>45307</td>
+<td>2</td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td><code>1</code></td>
 </tr>
 <tr class="even">
-<td>California State University Channel Islands</td>
-<td>2002</td>
-<td>CSU</td>
-<td>Camarillo</td>
-<td>Ventura</td>
-<td>6128</td>
+<td>3</td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td><code>2</code></td>
 </tr>
 <tr class="odd">
-<td>California State University, Dominguez Hills</td>
-<td>1960</td>
-<td>CSU</td>
-<td>Carson</td>
-<td>Los Angeles</td>
-<td>16426</td>
+<td>4</td>
+<td><code>1</code></td>
+<td><code>0</code></td>
+<td><code>0</code></td>
 </tr>
 <tr class="even">
-<td>California State University, Chico</td>
-<td>1887</td>
-<td>CSU</td>
-<td>Chico</td>
-<td>Butte</td>
-<td>14183</td>
+<td>5</td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td><code>1</code></td>
 </tr>
 <tr class="odd">
-<td>University of California, Davis</td>
-<td>1905</td>
-<td>UC</td>
-<td>Davis</td>
-<td>Yolo</td>
-<td>39679</td>
+<td>6</td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td><code>2</code></td>
 </tr>
 <tr class="even">
-<td>California State University, Fresno</td>
-<td>1911</td>
-<td>CSU</td>
-<td>Fresno</td>
-<td>Fresno</td>
-<td>23999</td>
+<td>7</td>
+<td><code>0</code></td>
+<td><code>1</code></td>
+<td><code>0</code> (why?)</td>
 </tr>
 <tr class="odd">
-<td>California State University, Fullerton</td>
-<td>1957</td>
-<td>CSU</td>
-<td>Fullerton</td>
-<td>Orange</td>
-<td>40386</td>
+<td>8</td>
+<td><code>0</code></td>
+<td><code>1</code></td>
+<td><code>1</code></td>
 </tr>
 <tr class="even">
-<td>California State University, East Bay</td>
-<td>1957</td>
-<td>CSU</td>
-<td>Hayward</td>
-<td>Alameda</td>
-<td>13673</td>
+<td>9</td>
+<td><code>1</code></td>
+<td><code>1</code></td>
+<td><code>0</code></td>
 </tr>
 </tbody>
 </table>
-
-<p>... (22 rows omitted)</p>
-</div>
-</div>
-</div>
-</div>
-</div>
+<section id="while-loops" class="level2">
+<h2 class="anchored" data-anchor-id="while-loops">While loops</h2>
+<p>See the previous lecture notes set.</p>
 </section>
-<section id="exercise-3-filtering" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-3-filtering">Exercise 3: Filtering</h2>
-<div class="callout callout-style-default callout-note callout-titled" title="The schools table for reference, if you need it">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-The schools table for reference, if you need it
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="fec8ed3b" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>schools.show(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">Name</th>
-<th data-quarto-table-cell-role="th">Institution</th>
-<th data-quarto-table-cell-role="th">City</th>
-<th data-quarto-table-cell-role="th">County</th>
-<th data-quarto-table-cell-role="th">Enrollment</th>
-<th data-quarto-table-cell-role="th">Founded</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>California State Polytechnic University, Humboldt</td>
-<td>CSU</td>
-<td>Arcata</td>
-<td>Humboldt</td>
-<td>6025</td>
-<td>1913</td>
-</tr>
-<tr class="even">
-<td>California State University, Bakersfield</td>
-<td>CSU</td>
-<td>Bakersfield</td>
-<td>Kern</td>
-<td>9613</td>
-<td>1965</td>
-</tr>
-<tr class="odd">
-<td>University of California, Berkeley</td>
-<td>UC</td>
-<td>Berkeley</td>
-<td>Alameda</td>
-<td>45307</td>
-<td>1869</td>
-</tr>
-</tbody>
-</table>
+<section id="algorithms-and-measurements" class="level2">
+<h2 class="anchored" data-anchor-id="algorithms-and-measurements">Algorithms and Measurements</h2>
+<p>For this lecture’s notes, please see:</p>
+<ul>
+<li><a href="">Lecture slides</a>.</li>
+<li>Excerpt of “Chapter 5: Evaluating Research.” Elizabeth Heger Boyle, Deborah Carr, Benjamin Cornwell, Shelley Correll, Robert Crosnoe, Jeremy Freese, and Waters, Mary C. 2017. The Art and Science of Social Research. New York: W. W. Norton &amp; Company. <a href="https://drive.google.com/file/d/1E2ngZHiqXg2D_IFPBaYCKapB5HZIl1Z-/view?usp=drive_link">PDF link</a> (UC Berkeley only)</li>
+<li>Discussion handout.</li>
+</ul>
+<p>We will cover this lecture in more detail next time, on Monday 11/2.</p>
 
-<p>... (29 rows omitted)</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<ol type="1">
-<li>How do we get a table with only <strong>UC</strong> schools?</li>
-</ol>
-<div class="callout callout-style-default callout-note callout-titled" title="Show Answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Show Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="20486e73" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>schools.where(<span class="st">"Institution"</span>, <span class="st">"UC"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">Name</th>
-<th data-quarto-table-cell-role="th">Institution</th>
-<th data-quarto-table-cell-role="th">City</th>
-<th data-quarto-table-cell-role="th">County</th>
-<th data-quarto-table-cell-role="th">Enrollment</th>
-<th data-quarto-table-cell-role="th">Founded</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>University of California, Berkeley</td>
-<td>UC</td>
-<td>Berkeley</td>
-<td>Alameda</td>
-<td>45307</td>
-<td>1869</td>
-</tr>
-<tr class="even">
-<td>University of California, Davis</td>
-<td>UC</td>
-<td>Davis</td>
-<td>Yolo</td>
-<td>39679</td>
-<td>1905</td>
-</tr>
-<tr class="odd">
-<td>University of California, Irvine</td>
-<td>UC</td>
-<td>Irvine</td>
-<td>Orange</td>
-<td>35937</td>
-<td>1965</td>
-</tr>
-<tr class="even">
-<td>University of California, Los Angeles</td>
-<td>UC</td>
-<td>Los Angeles</td>
-<td>Los Angeles</td>
-<td>46430</td>
-<td>1882</td>
-</tr>
-<tr class="odd">
-<td>University of California, Merced</td>
-<td>UC</td>
-<td>Merced</td>
-<td>Merced</td>
-<td>9110</td>
-<td>2005</td>
-</tr>
-<tr class="even">
-<td>University of California, Riverside</td>
-<td>UC</td>
-<td>Riverside</td>
-<td>Riverside</td>
-<td>26809</td>
-<td>1954</td>
-</tr>
-<tr class="odd">
-<td>University of California, San Diego</td>
-<td>UC</td>
-<td>San Diego</td>
-<td>San Diego</td>
-<td>42006</td>
-<td>1960</td>
-</tr>
-<tr class="even">
-<td>University of California, Santa Barbara</td>
-<td>UC</td>
-<td>Santa Barbara</td>
-<td>Santa Barbara</td>
-<td>26420</td>
-<td>1891</td>
-</tr>
-<tr class="odd">
-<td>University of California, Santa Cruz</td>
-<td>UC</td>
-<td>Santa Cruz</td>
-<td>Santa Cruz</td>
-<td>19478</td>
-<td>1965</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-<ol start="2" type="1">
-<li>How do we get a table with all the schools in <strong>Los Angeles</strong>?</li>
-</ol>
-<div class="callout callout-style-default callout-note callout-titled" title="Show Answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Show Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="c5e3bae0" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>schools.where(<span class="st">"City"</span>, <span class="st">"Los Angeles"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">Name</th>
-<th data-quarto-table-cell-role="th">Institution</th>
-<th data-quarto-table-cell-role="th">City</th>
-<th data-quarto-table-cell-role="th">County</th>
-<th data-quarto-table-cell-role="th">Enrollment</th>
-<th data-quarto-table-cell-role="th">Founded</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>University of California, Los Angeles</td>
-<td>UC</td>
-<td>Los Angeles</td>
-<td>Los Angeles</td>
-<td>46430</td>
-<td>1882</td>
-</tr>
-<tr class="even">
-<td>California State University, Los Angeles</td>
-<td>CSU</td>
-<td>Los Angeles</td>
-<td>Los Angeles</td>
-<td>26460</td>
-<td>1947</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
+
 </section>
-<section id="exercise-4-rename-columns" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-4-rename-columns">Exercise 4: Rename Columns</h2>
-<p>How do we <strong>update</strong> <code>schools</code> such that the column Name is renamed University? <em>Hint</em>: Check out the method <code>relabeled</code>.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Show Answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Show Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="01fa4287" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> schools.relabeled(<span class="st">"Name"</span>, <span class="st">"University"</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>schools.show(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">University</th>
-<th data-quarto-table-cell-role="th">Institution</th>
-<th data-quarto-table-cell-role="th">City</th>
-<th data-quarto-table-cell-role="th">County</th>
-<th data-quarto-table-cell-role="th">Enrollment</th>
-<th data-quarto-table-cell-role="th">Founded</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>California State Polytechnic University, Humboldt</td>
-<td>CSU</td>
-<td>Arcata</td>
-<td>Humboldt</td>
-<td>6025</td>
-<td>1913</td>
-</tr>
-<tr class="even">
-<td>California State University, Bakersfield</td>
-<td>CSU</td>
-<td>Bakersfield</td>
-<td>Kern</td>
-<td>9613</td>
-<td>1965</td>
-</tr>
-<tr class="odd">
-<td>University of California, Berkeley</td>
-<td>UC</td>
-<td>Berkeley</td>
-<td>Alameda</td>
-<td>45307</td>
-<td>1869</td>
-</tr>
-</tbody>
-</table>
-
-<p>... (29 rows omitted)</p>
 </div>
 </div>
 </div>
-</div>
-</div>
-<p>There are many ways to approach a problem. Suppose you didn’t know the method <code>relabeled</code> existed:</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Alternate Answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Alternate Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="51d3c725" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> schools.with_column(<span class="st">"University"</span>, schools.column(<span class="st">"Name"</span>)).drop(<span class="st">"Name"</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>schools.show(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">Institution</th>
-<th data-quarto-table-cell-role="th">City</th>
-<th data-quarto-table-cell-role="th">County</th>
-<th data-quarto-table-cell-role="th">Enrollment</th>
-<th data-quarto-table-cell-role="th">Founded</th>
-<th data-quarto-table-cell-role="th">University</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>CSU</td>
-<td>Arcata</td>
-<td>Humboldt</td>
-<td>6025</td>
-<td>1913</td>
-<td>California State Polytechnic University, Humboldt</td>
-</tr>
-<tr class="even">
-<td>CSU</td>
-<td>Bakersfield</td>
-<td>Kern</td>
-<td>9613</td>
-<td>1965</td>
-<td>California State University, Bakersfield</td>
-</tr>
-<tr class="odd">
-<td>UC</td>
-<td>Berkeley</td>
-<td>Alameda</td>
-<td>45307</td>
-<td>1869</td>
-<td>University of California, Berkeley</td>
-</tr>
-</tbody>
-</table>
-
-<p>... (29 rows omitted)</p>
-</div>
-</div>
-<p>Questions for you as you read the above code:</p>
-<ol type="1">
-<li>What methods are being chained together here? Which is executed first, <code>with_column</code> or <code>drop</code>?</li>
-<li>When is the <code>column</code> method being called?</li>
-<li>What would happen if you switched the two methods? (try it out)</li>
-<li>Why is University now the last column?</li>
-</ol>
-</div>
-</div>
-</div>
-</section>
-<section id="exercise-5-debugging-show" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-5-debugging-show">Exercise 5: Debugging <code>show</code></h2>
-<p>The following cells exhibit a tricky, but potentially common bug. First, check out the Python Reference to understand what <code>show</code> does.</p>
-<div id="b23349e2" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> Table.read_table(<span class="st">'data/cal_unis.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="40045031" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> schools.show(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">Name</th>
-<th data-quarto-table-cell-role="th">Institution</th>
-<th data-quarto-table-cell-role="th">City</th>
-<th data-quarto-table-cell-role="th">County</th>
-<th data-quarto-table-cell-role="th">Enrollment</th>
-<th data-quarto-table-cell-role="th">Founded</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>California State Polytechnic University, Humboldt</td>
-<td>CSU</td>
-<td>Arcata</td>
-<td>Humboldt</td>
-<td>6025</td>
-<td>1913</td>
-</tr>
-<tr class="even">
-<td>California State University, Bakersfield</td>
-<td>CSU</td>
-<td>Bakersfield</td>
-<td>Kern</td>
-<td>9613</td>
-<td>1965</td>
-</tr>
-<tr class="odd">
-<td>University of California, Berkeley</td>
-<td>UC</td>
-<td>Berkeley</td>
-<td>Alameda</td>
-<td>45307</td>
-<td>1869</td>
-</tr>
-</tbody>
-</table>
-
-<p>... (29 rows omitted)</p>
-</div>
-</div>
-<div id="2ba585bf" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> schools.show(<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[12]</span><span class="ansi-green-fg">, line 1</span>
-<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">1</span> schools = <span class="ansi-yellow-bg">schools</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">show</span>(<span class="ansi-green-fg">4</span>)
-
-<span class="ansi-red-fg">AttributeError</span>: 'NoneType' object has no attribute 'show'</pre>
-</div>
-</div>
-</div>
-<p>Like <code>print</code>, show is for display purposes. It does not return anything—i.e., it returns None. The second cell above therefore assigns schools to None!</p>
-<p>Despite this, <code>show</code>—just like <code>print</code>—is useful when you want to display intermediate output for debugging purposes.</p>
-<div id="d97a1b72" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> Table.read_table(<span class="st">'data/cal_unis.csv'</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>schools.show(<span class="dv">3</span>) <span class="co"># just the first three rows</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> schools.relabeled(<span class="st">"Name"</span>, <span class="st">"University"</span>)</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>schools.show(<span class="dv">3</span>) <span class="co"># and again</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> schools.with_columns(<span class="st">"Name"</span>, <span class="st">"City"</span>)</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>schools         <span class="co"># the last evaluated value in a cell</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>                <span class="co"># is displayed by default</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">Name</th>
-<th data-quarto-table-cell-role="th">Institution</th>
-<th data-quarto-table-cell-role="th">City</th>
-<th data-quarto-table-cell-role="th">County</th>
-<th data-quarto-table-cell-role="th">Enrollment</th>
-<th data-quarto-table-cell-role="th">Founded</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>California State Polytechnic University, Humboldt</td>
-<td>CSU</td>
-<td>Arcata</td>
-<td>Humboldt</td>
-<td>6025</td>
-<td>1913</td>
-</tr>
-<tr class="even">
-<td>California State University, Bakersfield</td>
-<td>CSU</td>
-<td>Bakersfield</td>
-<td>Kern</td>
-<td>9613</td>
-<td>1965</td>
-</tr>
-<tr class="odd">
-<td>University of California, Berkeley</td>
-<td>UC</td>
-<td>Berkeley</td>
-<td>Alameda</td>
-<td>45307</td>
-<td>1869</td>
-</tr>
-</tbody>
-</table>
-
-<p>... (29 rows omitted)</p>
-</div>
-<div class="cell-output cell-output-display">
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">University</th>
-<th data-quarto-table-cell-role="th">Institution</th>
-<th data-quarto-table-cell-role="th">City</th>
-<th data-quarto-table-cell-role="th">County</th>
-<th data-quarto-table-cell-role="th">Enrollment</th>
-<th data-quarto-table-cell-role="th">Founded</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>California State Polytechnic University, Humboldt</td>
-<td>CSU</td>
-<td>Arcata</td>
-<td>Humboldt</td>
-<td>6025</td>
-<td>1913</td>
-</tr>
-<tr class="even">
-<td>California State University, Bakersfield</td>
-<td>CSU</td>
-<td>Bakersfield</td>
-<td>Kern</td>
-<td>9613</td>
-<td>1965</td>
-</tr>
-<tr class="odd">
-<td>University of California, Berkeley</td>
-<td>UC</td>
-<td>Berkeley</td>
-<td>Alameda</td>
-<td>45307</td>
-<td>1869</td>
-</tr>
-</tbody>
-</table>
-
-<p>... (29 rows omitted)</p>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="13">
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">University</th>
-<th data-quarto-table-cell-role="th">Institution</th>
-<th data-quarto-table-cell-role="th">City</th>
-<th data-quarto-table-cell-role="th">County</th>
-<th data-quarto-table-cell-role="th">Enrollment</th>
-<th data-quarto-table-cell-role="th">Founded</th>
-<th data-quarto-table-cell-role="th">Name</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>California State Polytechnic University, Humboldt</td>
-<td>CSU</td>
-<td>Arcata</td>
-<td>Humboldt</td>
-<td>6025</td>
-<td>1913</td>
-<td>City</td>
-</tr>
-<tr class="even">
-<td>California State University, Bakersfield</td>
-<td>CSU</td>
-<td>Bakersfield</td>
-<td>Kern</td>
-<td>9613</td>
-<td>1965</td>
-<td>City</td>
-</tr>
-<tr class="odd">
-<td>University of California, Berkeley</td>
-<td>UC</td>
-<td>Berkeley</td>
-<td>Alameda</td>
-<td>45307</td>
-<td>1869</td>
-<td>City</td>
-</tr>
-<tr class="even">
-<td>California State University Channel Islands</td>
-<td>CSU</td>
-<td>Camarillo</td>
-<td>Ventura</td>
-<td>6128</td>
-<td>2002</td>
-<td>City</td>
-</tr>
-<tr class="odd">
-<td>California State University, Dominguez Hills</td>
-<td>CSU</td>
-<td>Carson</td>
-<td>Los Angeles</td>
-<td>16426</td>
-<td>1960</td>
-<td>City</td>
-</tr>
-<tr class="even">
-<td>California State University, Chico</td>
-<td>CSU</td>
-<td>Chico</td>
-<td>Butte</td>
-<td>14183</td>
-<td>1887</td>
-<td>City</td>
-</tr>
-<tr class="odd">
-<td>University of California, Davis</td>
-<td>UC</td>
-<td>Davis</td>
-<td>Yolo</td>
-<td>39679</td>
-<td>1905</td>
-<td>City</td>
-</tr>
-<tr class="even">
-<td>California State University, Fresno</td>
-<td>CSU</td>
-<td>Fresno</td>
-<td>Fresno</td>
-<td>23999</td>
-<td>1911</td>
-<td>City</td>
-</tr>
-<tr class="odd">
-<td>California State University, Fullerton</td>
-<td>CSU</td>
-<td>Fullerton</td>
-<td>Orange</td>
-<td>40386</td>
-<td>1957</td>
-<td>City</td>
-</tr>
-<tr class="even">
-<td>California State University, East Bay</td>
-<td>CSU</td>
-<td>Hayward</td>
-<td>Alameda</td>
-<td>13673</td>
-<td>1957</td>
-<td>City</td>
-</tr>
-</tbody>
-</table>
-
-<p>... (22 rows omitted)</p>
-</div>
-</div>
-
-
 </section>
 
 </main> <!-- /main -->
@@ -1815,13 +1181,13 @@ Alternate Answer
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../04-tables/index.html" class="pagination-link" aria-label="L04: Table Fundamentals">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">L04: Table Fundamentals</span>
+      <a href="../15-iteration/practice.html" class="pagination-link" aria-label="Practice">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Practice</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../04-tables/none-print.html" class="pagination-link" aria-label="None and Print">
-        <span class="nav-page-text">None and Print</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../five-things.html" class="pagination-link" aria-label="5 Things to Know">
+        <span class="nav-page-text">5 Things to Know</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
