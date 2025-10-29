@@ -139,7 +139,7 @@ numbers
 1. Output `numbers` at the end of the cell.
 :::
 
-## Fencepost Problems
+## Fencepost Problems/"Off-by-one" Errors
 
 A common iterative algorithm (i.e., series of steps) involves performing **N** tasks with **N-1** things between them. This is analogous to setting **fenceposts**. From [Wiktionary](https://en.wiktionary.org/wiki/fencepost_problem):
 
@@ -150,6 +150,8 @@ In other words, to lay 3 fences (`===`), we need 4 fenceposts (`|`):
 ```
 |===|===|===|
 ```
+
+You may also hear the phrase **off-by-one** errors used in reference to fencepost problems. Off-by-one errors occur when we fail to account for one of the boundaries (i.e., left or right fencepost).
 
 Suppose we wanted to revisit our previous example and print out the state of the `number` array every time it changes. 
 
@@ -190,9 +192,24 @@ unknown("supercalifragilisticexpialidocious")
 Each line explained:
 
 ```{.python code-line-numbers="true"}
-Create a string of only consonants from the provided string argument. The name `letter` is iteratively assigned to each **character** in the `word` string. Then, if the `letter` is not one of `a`, `e`, `i`, `o`, or `u`, then it is appended to the `output` string. Otherwise, we do nothing.
+def unknown(word):
+    output = ''
+    for letter in word:
+        if letter not in 'aeiou':
+            output += letter
+    return output
+```
+
+* (Line 2) Create a string of only consonants from the provided string argument `word`.
+* (Line 3) The name `letter` is iteratively assigned to each **character** in the `word` string.
+* (Lines 4-5, loop body) If the `letter` is not one of `a`, `e`, `i`, `o`, or `u`, then it is appended to the `output` string. Otherwise, we do nothing (we know this because there is no `else` clause).
+* (Line 6, return statement) Finally, return the `output` string.
 
 :::
+
+## Challenge question: `triplets`
+
+See next lecture notes set!
 
 ## External Reading
 

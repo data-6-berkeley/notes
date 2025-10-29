@@ -65,7 +65,7 @@ In the function above, `my_function` is the name of the function, which takes on
 | `arr.take(indices)` | Creates an array with only the elements of `arr` at the given indices. `indices` is either an array of indices or an integer corresponding to one index. (array method) | 
 | `percentile(p, arr)` | Returns the corresponding percentile `p` of an array `arr`. |
 
-## String Methods
+## String Methods and Operations
 
 | **Function** | **Description** | 
 |--|------|
@@ -74,7 +74,9 @@ In the function above, `my_function` is the name of the function, which takes on
 | `s.replace(old, new)` | Returns a copy of `s` with all occurrences of the substring `old` replaced by `new`.| 
 | `s.split()` or `s.split(separator)` or `s.split(separator, maxsplit)` | Splits `s` into a list of substrings using the specified `separator`; returns a list of strings. If `separator` is not provided, splits at any whitespace. You can also use the optional argument `maxsplit` to limit the number of splits. |
 | `s.join(iterable)` | Returns a string that concatenates the elements in `iterable` (usually a list or array) into a single string, with each element separated by `s`. | 
-
+| `s.strip(chars)` | Returns a copy of `s` with the characters in `chars` trimmed off the left and right ends of the string. If `chars` is not provided, trims off whitespace from both ends.
+| `substr in s` | Returns `True` if the string `substr` is contained in the string `s` (i.e., `substr` is a substring of `s`) and `False` otherwise. A similar operation, `x in lst`, checks if an element `x` is in an iterable (list or array). |
+| `substr not in s` | Returns `False` if `substr` is not a substring of `s` and `True` otherwise. A similar operation, `x not in lst`, checks if an element `x` is not in an iterable (list or array). |
 
 ## Tables and Table Methods
 

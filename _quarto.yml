@@ -128,6 +128,8 @@ website:
             text: "While Loops"
           - href: 15-iteration/practice.qmd
             text: "Practice"
+      - text: "L16: Iterations II; Measurements"
+        href: 16-measurements/index.qmd
       - href: five-things.qmd
         text: "5 Things to Know"
       - href: reference.qmd

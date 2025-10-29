@@ -38,7 +38,7 @@ The last two methods, `split` and `join`, work with a data type called Python li
 * When all list elements are the same data type, lists can be cast into NumPy arrays. (Unlike arrays, list elements can typically have different data types.)
 * Lists are displayed using square brackets (and it also accepts indexing by square brackets, unlike arrays which accept indexing with the `item` method. We do not cover square bracket indexing in this course).
 
-Because we only use NumPy arrays in this class, we recommend that you consider casting to NumPy arrays where possible with `make_array`.
+Because we primarily use NumPy arrays in this class, we recommend that you consider casting to NumPy arrays where possible with `make_array`.
 
 ## `join` and `split`
 

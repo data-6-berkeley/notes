@@ -1,0 +1,153 @@
+---
+title: "Iteration II, Measurements"
+subtitle: "Reliability and Validity"
+---
+
+Today was reviewing while loops and a more challenging `triplets` example. We will discuss Algorithms, Measurements, Reliability, and Validity next lecture. You will do the reading first.
+
+## Challenge question: `triplets`
+
+What does the below code do?
+
+```{python}
+#| include: false
+from datascience import *
+import numpy as np
+```
+
+```{python}
+def triplets(arr):
+    zeros_in_sequence = 0
+    triplets_seen = 0
+    for elt in arr:
+        if not elt:
+            zeros_in_sequence += 1
+            if zeros_in_sequence == 3:
+                triplets_seen += 1
+                zeros_in_sequence = 0    # reset, we have seen 3 0's
+        else:
+            zeros_in_sequence = 0        # reset, we broke a 0 streak
+    return triplets_seen
+```
+
+Here are some example outputs:
+
+```{python}
+triplets(make_array(0, 1, 0, 0, 0, 1))
+```
+
+```{python}
+triplets(make_array(0, 1, 0, 0, 1, 0, 0, 0, 0, 1))
+```
+
+```{python}
+triplets(make_array(0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0))
+```
+
+Strategy from class:
+
+1. Run the code first. See what the example inputs/outputs are. Give a short 1-2 sentence summary of what the function does at a _very_ high level. What you said in class: "It counts the zeros in order" "It counts triplets of zeros"
+1. Then, look at the code to understand what each name is. What you said in class:
+    * `triplets_seen`: The number of triplets. We can see this by the `return` statement.
+    * `zeros_in_sequence`: seems to be updating and "resetting" to zero.
+    * `elt`: Maybe short for element? Iterates over the array, `arr`.
+    * `arr`: The argument to `triplets`. Based on the example input/output, this is an array of numbers.
+1. Finally, **trace** the code line by line to clear up remaining questions. Some questions you had in class:
+    * What is `not elt` doing? When does it evaluate to `True` or `False`?
+    * What is `zeros_in_sequence` doing? How does it work?
+    * What is the `+=` shorthand?
+        * (Answer: "increment and re-assign" the left-hand-side, using the right-hand-side.)
+
+For `not elt`, recall our discussion of **truthy values**: 
+
+* Every value can be cast to a Boolean value.
+    * The only values that evaluate to `False` are `0`, `None`, and an empty sequence (empty array, zero-length string, empty list, etc.).
+    * All other values evaluate to `True`.
+* Therefore for numeric values of `elt`, the only instance in which `not elt` will evaluate to `True` is when `elt` is `0`: `not elt` is `not 0` is `not False` is `True`.
+* All non-zero numeric values of `elt` will evaluate to `False`, e.g., when `elt` is `1`: `not elt` is `not 1` is `not True` is `False`.
+
+::: {.callout-note title="Explanation: Each Line Explained" collapse="true"}
+
+Each line explained:
+
+```{.python code-line-numbers="true"}
+def triplets(arr):
+    zeros_in_sequence = 0
+    triplets_seen = 0
+    for elt in arr:
+        if not elt:
+            zeros_in_sequence += 1
+            if zeros_in_sequence == 3:
+                triplets_seen += 1
+                zeros_in_sequence = 0
+        else:
+            zeros_in_sequence = 0
+    return triplets_seen
+
+triplets(make_array(0, 1, 0, 0, 1, 0, 0, 0, 0, 1))
+```
+
+* (Line 1) Define the function `triplets`. It takes an array `arr`. We can see this from Line 14, which is a function call to `triplets`.
+* (Lines 2-3) Set `zeros_in_sequence` and `triplets_seen` to `0`.
+* (Line 4) Iterate through each element (`elt`) in the argument array `arr`.
+* (Line 5) The Boolean expression `not elt` will only evaluate to `True` (i.e., we will only evaluate this `if` case) if the current `elt` is `0`.
+    * (Line 6) Increment `zeros_in_sequence` by 1.
+    * (Line 7) Check if we have seen three `zeros_in_sequence`.
+        * (Lines 8-9): If so, we have seen a triple, so increment our return value, `triplets_seen`. Also reset `zeros_in_sequence`.
+* (Lines 10-11) If we saw a non-zero `elt`, then we have broken our zero-sequence. Reset `zeros_in_sequence`.
+* (Line 12): Return the number of triples seen.
+:::
+
+::: {.callout-note title="Explanation: Array Example Explained" collapse="true"}
+
+```{.python code-line-numbers="true"}
+def triplets(arr):
+    zeros_in_sequence = 0
+    triplets_seen = 0
+    for elt in arr:
+        if not elt:
+            zeros_in_sequence += 1
+            if zeros_in_sequence == 3:
+                triplets_seen += 1
+                zeros_in_sequence = 0
+        else:
+            zeros_in_sequence = 0
+    return triplets_seen
+
+triplets(make_array(0, 1, 0, 0, 1, 0, 0, 0, 0, 1))
+```
+
+
+```
+elements | 0 | 1 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 |
+indices    0   1   2   3   4   5   6   7   8   9
+```
+
+The values of `zeros_in_sequence` and `triplets_seen` **after** the corresponding iteration has finished evaluating the **loop body**, before the loop moves to the next element or exits:
+
+| index | `elt` | `triplets_seen` | `zeros_in_sequence` | 
+| --- | --- | --- | --- |
+| 0 | `0` | `0` | `1` |
+| 1 | `1` | `0` | `0` |
+| 2 | `0` | `0` | `1` |
+| 3 | `0` | `0` | `2` |
+| 4 | `1` | `0` | `0` |
+| 5 | `0` | `0` | `1` |
+| 6 | `0` | `0` | `2` |
+| 7 | `0` | `1` | `0` (why?) |
+| 8 | `0` | `1` | `1` |
+| 9 | `1` | `1` | `0` |
+
+## While loops
+
+See the previous lecture notes set.
+
+## Algorithms and Measurements
+
+For this lecture's notes, please see:
+
+* [Lecture slides]().
+*  Excerpt of “Chapter 5: Evaluating Research.” Elizabeth Heger Boyle, Deborah Carr, Benjamin Cornwell, Shelley Correll, Robert Crosnoe, Jeremy Freese, and Waters, Mary C. 2017. The Art and Science of Social Research. New York: W. W. Norton & Company. [PDF link](https://drive.google.com/file/d/1E2ngZHiqXg2D_IFPBaYCKapB5HZIl1Z-/view?usp=drive_link) (UC Berkeley only)
+* Discussion handout.
+
+We will cover this lecture in more detail next time, on Monday 11/2.
