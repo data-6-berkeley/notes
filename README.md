@@ -4,6 +4,7 @@ Course notes for Data 6, based on the Stat course-site-quarto template.
 
 Quick reference:
 - Use VS Code with Quarto extensions to update and preview notes locally.
+    - Edit files, then Ctrl/Cmd-Shift-K to preview (also available in the extensions docs)
 - Push changes to quarto source files to `main`.
 - Optional: `quarto render` builds `_site`.
 - `quarto publish gh-pages` to host `_site` on GitHub pages.
