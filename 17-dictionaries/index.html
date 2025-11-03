@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>None and Print</title>
+<title>Dictionaries</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../05-variables/index.html" rel="next">
-<link href="../04-tables/exercises.html" rel="prev">
+<link href="../five-things.html" rel="next">
+<link href="../16-measurements/iteration-ii.html" rel="prev">
 <link href="../assets/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -129,7 +129,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../04-tables/index.html">L04: Table Fundamentals</a></li><li class="breadcrumb-item"><a href="../04-tables/none-print.html">None and Print</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../17-dictionaries/index.html">L17: Dictionaries</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -245,11 +245,11 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <div class="sidebar-item-container"> 
             <a href="../04-tables/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">L04: Table Fundamentals</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../04-tables/index.html" class="sidebar-item-text sidebar-link">
@@ -264,7 +264,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../04-tables/none-print.html" class="sidebar-item-text sidebar-link active">
+  <a href="../04-tables/none-print.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">None and Print</span></a>
   </div>
 </li>
@@ -515,7 +515,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../17-dictionaries/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../17-dictionaries/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">L17: Dictionaries</span></a>
   </div>
 </li>
@@ -541,23 +541,27 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#none-type" id="toc-none-type" class="nav-link active" data-scroll-target="#none-type"><code>None</code> type</a></li>
-  <li><a href="#the-print-function" id="toc-the-print-function" class="nav-link" data-scroll-target="#the-print-function">The <code>print</code> function</a></li>
-  <li><a href="#notebooks-cell-output-vs.-print" id="toc-notebooks-cell-output-vs.-print" class="nav-link" data-scroll-target="#notebooks-cell-output-vs.-print">Notebooks: Cell Output vs.&nbsp;<code>print</code></a>
+  <li><a href="#the-dictionary-data-structure" id="toc-the-dictionary-data-structure" class="nav-link active" data-scroll-target="#the-dictionary-data-structure">The Dictionary Data Structure</a></li>
+  <li><a href="#basic-dictionary-use" id="toc-basic-dictionary-use" class="nav-link" data-scroll-target="#basic-dictionary-use">Basic Dictionary Use</a></li>
+  <li><a href="#removing-keys-with-pop" id="toc-removing-keys-with-pop" class="nav-link" data-scroll-target="#removing-keys-with-pop">Removing keys with <code>pop</code></a></li>
+  <li><a href="#dictionary-properties" id="toc-dictionary-properties" class="nav-link" data-scroll-target="#dictionary-properties">Dictionary Properties</a></li>
+  <li><a href="#conditions-and-iterations-with-dictionaries" id="toc-conditions-and-iterations-with-dictionaries" class="nav-link" data-scroll-target="#conditions-and-iterations-with-dictionaries">Conditions and Iterations with Dictionaries</a>
   <ul class="collapse">
-  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
-  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
+  <li><a href="#common-iteration-patterns" id="toc-common-iteration-patterns" class="nav-link" data-scroll-target="#common-iteration-patterns">Common iteration patterns</a></li>
+  <li><a href="#example-deciphering-gen-z-lingo" id="toc-example-deciphering-gen-z-lingo" class="nav-link" data-scroll-target="#example-deciphering-gen-z-lingo">Example: Deciphering Gen Z Lingo</a></li>
   </ul></li>
+  <li><a href="#challenge-1" id="toc-challenge-1" class="nav-link" data-scroll-target="#challenge-1">Challenge 1</a></li>
+  <li><a href="#challenge-2-nested-dictionaries" id="toc-challenge-2-nested-dictionaries" class="nav-link" data-scroll-target="#challenge-2-nested-dictionaries">Challenge 2: Nested Dictionaries</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../04-tables/index.html">L04: Table Fundamentals</a></li><li class="breadcrumb-item"><a href="../04-tables/none-print.html">None and Print</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><code>None</code> and Print</h1>
-<p class="subtitle lead">A special data type, and a valuable function</p>
+<h1 class="title">Dictionaries</h1>
+<p class="subtitle lead">Key-Value Pairs</p>
 </div>
 
 
@@ -574,134 +578,317 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </header>
 
 
-<section id="none-type" class="level2">
-<h2 class="anchored" data-anchor-id="none-type"><code>None</code> type</h2>
-<p>We have covered a few data types so far. There are <em>infinitely</em> many integers, floating point numbers, and strings. (Actually <em>finite</em>, because of how computers store information. Take <a href="https://cs61c.org/">CS61C</a> to learn more.)</p>
-<p>However, for the <code>NoneType</code> data type, there is only one value: <code>None</code>.</p>
-<div id="668eafb2" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>my_var <span class="op">=</span> <span class="va">None</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(my_var)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="the-dictionary-data-structure" class="level2">
+<h2 class="anchored" data-anchor-id="the-dictionary-data-structure">The Dictionary Data Structure</h2>
+<p>We have seen several data structures so far. To name a few: * <strong>NumPy array</strong>: A sequence of elements, all of the same data type. Each element has an index, and we can access elements by their index using the <code>item</code> method or square-bracket indexing. We use the NumPy one-dimensional array in this course. * <strong>List</strong>: A sequence of elements, potentially of different data types. Each element has an index, and we can access elements by their index using square-bracket indexing. Python has a built-in list type. * <strong>Tables</strong>: A sequence of rows, where each row consists of values corresponding to a series of columns. Rows and columns are in sequence. We can access rows by their index using the <code>take</code> or <code>row</code> methods. We use the <code>datascience</code> package Table data type.</p>
+<p>Arrays, lists, and tables have one core feature in common: their elements (or rows) are <strong>in order</strong>, and we can access these elements by index. But what if elements don’t naturally have an order? We must turn to different data structures; one such data structure is a <strong>dictionary</strong>.</p>
+<p>In Python, a dictionary is a data structure that stores a set of key-value pairs.</p>
+<div id="4b7d9fc1" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>dog <span class="op">=</span> {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'name'</span>: <span class="st">'Junior'</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="dv">4</span>: [<span class="st">'kibble'</span>, <span class="st">'treat'</span>]</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>dog</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>NoneType</code></pre>
+<pre><code>{'name': 'Junior', 4: ['kibble', 'treat']}</code></pre>
 </div>
 </div>
-<p><code>None</code> is strange: Cells will not output expressions that evaluate to <code>None</code>.</p>
-<p><code>None</code> is also referred to as the <strong>null value.</strong></p>
-</section>
-<section id="the-print-function" class="level2">
-<h2 class="anchored" data-anchor-id="the-print-function">The <code>print</code> function</h2>
-<p>The <strong><code>print</code></strong> function displays values to the screen (in this case, our Jupyter notebook). Each call to <code>print</code> displays information on a new line.</p>
-<div id="1f31cbe4" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">2</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, world!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>2
-Hello, world!</code></pre>
-</div>
-</div>
-<p><code>print</code> lets us to see information about executed statements that are not just the last line of the cell. Could you see why this would be a useful feature for <strong>debugging</strong>?</p>
-<p><code>print</code> is ultra-convenient because it can take as many arguments as you want.</p>
-<div id="5897c1b4" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">4</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x, <span class="st">"+"</span>, y, <span class="st">"is equal to"</span>, x <span class="op">+</span> y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>3 + 4 is equal to 7</code></pre>
-</div>
-</div>
-<p>Trace through the above program. Do you see how expressions are evaluated before printing?</p>
-</section>
-<section id="notebooks-cell-output-vs.-print" class="level2">
-<h2 class="anchored" data-anchor-id="notebooks-cell-output-vs.-print">Notebooks: Cell Output vs.&nbsp;<code>print</code></h2>
-<p>Cell output and <code>print</code> output seem very closely related:</p>
+<p>The above syntax creates a dictionary called <code>dog</code> with two keys. Each key has an associated value:</p>
 <ul>
-<li>Both evaluate expressions</li>
-<li>Both display something in the notebook</li>
+<li>key <code>'name'</code>: value <code>'Junior'</code></li>
+<li>key <code>4</code>: value <code>['kibble', 'treat']</code> (a list)</li>
 </ul>
-<p>However, they have subtle differences. We won’t expect you to know all of them. Instead, the purpose of this section is to get you used to <strong>tracing programs</strong>, where you closely consider Python’s order of execution of each statement, expression, function call, and so on.</p>
-<p>Because the <code>print</code> output is intended for human view, it displays strings without quotes. Contrast this with the <strong>cell output</strong>, which includes the quotes.</p>
-<div id="01a297b4" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">2</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">"Hello, world!"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>2</code></pre>
+</section>
+<section id="basic-dictionary-use" class="level2">
+<h2 class="anchored" data-anchor-id="basic-dictionary-use">Basic Dictionary Use</h2>
+<p><strong>Read/access</strong> dictionary. In order to retrieve an element from a dictionary, we use its key:</p>
+<div id="62bf7b97" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>dog[<span class="st">'name'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>'Junior'</code></pre>
 </div>
+</div>
+<p>Attempting to get the value of a key that does not exist in the dictionary will throw an error:</p>
+<div id="0c3d0729" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>dog[<span class="st">'breed'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">KeyError</span>                                  Traceback (most recent call last)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[3]</span><span class="ansi-green-fg">, line 1</span>
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">1</span> <span class="ansi-yellow-bg">dog</span><span class="ansi-yellow-bg">[</span><span class="ansi-yellow-fg ansi-yellow-bg">'</span><span class="ansi-yellow-fg ansi-yellow-bg">breed</span><span class="ansi-yellow-fg ansi-yellow-bg">'</span><span class="ansi-yellow-bg">]</span>
+
+<span class="ansi-red-fg">KeyError</span>: 'breed'</pre>
+</div>
+</div>
+</div>
+<p><strong>Write</strong> to a dictionary by providing a key and its associated value. Suppose we wanted to add the dog’s age to the dictionary:</p>
+<div id="61146568" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>dog[<span class="st">'age'</span>] <span class="op">=</span> <span class="dv">11</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>dog</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>'Hello, world!'</code></pre>
+<pre><code>{'name': 'Junior', 4: ['kibble', 'treat'], 'age': 11}</code></pre>
 </div>
 </div>
-<section id="exercise-1" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-1">Exercise 1</h3>
-<p>This is now super pedantic, but consider the following cells. Can you explain what is happening?</p>
-<div id="86eb7cf5" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>my_var</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Modify</strong> a dictionary by overwriting the value associated with a key. Note this works because dictionaries have unique keys:</p>
+<div id="a2cd1c3c" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>dog[<span class="st">'age'</span>] <span class="op">=</span> <span class="dv">12</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>dog</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>{'name': 'Junior', 4: ['kibble', 'treat'], 'age': 12}</code></pre>
 </div>
-<div id="948a7a02" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_var)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="removing-keys-with-pop" class="level2">
+<h2 class="anchored" data-anchor-id="removing-keys-with-pop">Removing keys with <code>pop</code></h2>
+<p>The key <code>4</code> does not describe its value well:</p>
+<div id="bb541924" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>dog[<span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>['kibble', 'treat']</code></pre>
+</div>
+</div>
+<p>Write two lines such that the dictionary <code>dog</code> will have the key <code>'likes'</code> assigned to the list <code>['kibble', 'treat']</code> and will not have the key <code>4</code>.</p>
+<p>Note: To remove the existing key key from dictionary dog, you can use <code>dog.pop(key)</code>.</p>
+<p>Solution:</p>
+<div id="476248e2" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>dog[<span class="st">'likes'</span>] <span class="op">=</span> dog[<span class="dv">4</span>]</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>dog.pop(<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>['kibble', 'treat']</code></pre>
+</div>
+</div>
+<p><strong>Usage of <code>pop</code></strong>: To pop key and avoid errors when the key doesn’t exist, you can provide a second argument <code>None</code> to <code>pop</code>:</p>
+<div id="da9e0ea6" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>dog.pop(<span class="dv">4</span>, <span class="va">None</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Why? Find out the answer in the official <a href="https://docs.python.org/3/library/stdtypes.html#dict.pop">Python documentation on <code>pop</code></a>!</p>
+</section>
+<section id="dictionary-properties" class="level2">
+<h2 class="anchored" data-anchor-id="dictionary-properties">Dictionary Properties</h2>
+<p>Dictionary definitions/notes:</p>
+<ul>
+<li>A <strong>key</strong> is what we use to look up values in a dictionary. This can be numbers or strings. Because we access values by keys, we suggest using “meaningful” keys, which are often strings.</li>
+<li>A <strong>value</strong> can be anything—numbers, strings, lists, or even other dictionaries.</li>
+<li>In a dictionary, each value has a key. Keys in a dictionary are unique.</li>
+</ul>
+<p>Dictionary syntax:</p>
+<ul>
+<li>`Curly brackets denote the start and end of a dictionary.</li>
+<li>A colon is used to specify a single key-value pair; commas separate key-value pairs.</li>
+</ul>
+</section>
+<section id="conditions-and-iterations-with-dictionaries" class="level2">
+<h2 class="anchored" data-anchor-id="conditions-and-iterations-with-dictionaries">Conditions and Iterations with Dictionaries</h2>
+<p>Suppose we want to create a dictionary of slang:</p>
+<div id="086001b7" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>slang <span class="op">=</span> {</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'haha'</span>: <span class="st">'that was not funny'</span>,</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'smh'</span>: <span class="st">'shake my head'</span>,</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'lol'</span>: <span class="st">'laugh out loud'</span>,</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'GOAT'</span>: <span class="st">'greatest of all time'</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>slang</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>{'haha': 'that was not funny',
+ 'smh': 'shake my head',
+ 'lol': 'laugh out loud',
+ 'GOAT': 'greatest of all time'}</code></pre>
+</div>
+</div>
+<div id="ea5ab304" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Number of key-value pairs</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(slang)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>4</code></pre>
+</div>
+</div>
+<div id="30a03bff" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Checks if 'smh' is a key</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co">'smh'</span> <span class="kw">in</span> slang</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<pre><code>True</code></pre>
+</div>
+</div>
+<div id="48081e8b" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Checks if 'shake my head' is a key</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># It is not – it is a value</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co">'shake my head'</span> <span class="kw">in</span> slang</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>False</code></pre>
+</div>
+</div>
+<section id="common-iteration-patterns" class="level3">
+<h3 class="anchored" data-anchor-id="common-iteration-patterns">Common iteration patterns</h3>
+<div id="76d84d4c" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> abb <span class="kw">in</span> slang.keys():</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(abb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>None</code></pre>
+<pre><code>haha
+smh
+lol
+GOAT</code></pre>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled" title="Explanation">
+<div id="226e2ade" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> abb <span class="kw">in</span> slang.keys():</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(abb, slang[abb])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>haha that was not funny
+smh shake my head
+lol laugh out loud
+GOAT greatest of all time</code></pre>
+</div>
+</div>
+<p>The below structure is quite common in Python scripts. <code>items</code> returns Python tuples of (key, value), which we respectively assign to <code>k</code> and <code>v</code>:</p>
+<div id="550121c9" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k, v <span class="kw">in</span> slang.items():</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(k, v)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>haha that was not funny
+smh shake my head
+lol laugh out loud
+GOAT greatest of all time</code></pre>
+</div>
+</div>
+</section>
+<section id="example-deciphering-gen-z-lingo" class="level3">
+<h3 class="anchored" data-anchor-id="example-deciphering-gen-z-lingo">Example: Deciphering Gen Z Lingo</h3>
+<div id="55d803d5" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Replaces all abbreviations in text</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="co"># that are defined in more_slang</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co"># with their full forms</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> replace_slang(text):</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> abb <span class="kw">in</span> slang.keys():</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> abb <span class="kw">in</span> text:</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>            text <span class="op">=</span> text.replace(abb, slang[abb])</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> text</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="c21253c8" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>replace_slang(<span class="st">'smh, I did not lol'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<pre><code>'shake my head, I did not laugh out loud'</code></pre>
+</div>
+</div>
+<div id="baa7a6de" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>replace_slang(<span class="st">'serena is the GOAT'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
+<pre><code>'serena is the greatest of all time'</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="challenge-1" class="level2">
+<h2 class="anchored" data-anchor-id="challenge-1">Challenge 1</h2>
+<p>After running the following four lines of code, what are the values of <code>numbers['1']</code>, <code>numbers['five']</code>, <code>numbers[1]</code>, and <code>numbers[2]</code>?</p>
+<div id="564df17c" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>two <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> {<span class="st">'1'</span>: <span class="dv">2</span>}</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>numbers[<span class="st">'five'</span>] <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>numbers[two] <span class="op">=</span> numbers[<span class="st">'1'</span>]</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>numbers[<span class="dv">2</span>] <span class="op">=</span> numbers[<span class="dv">1</span>] <span class="op">+</span> numbers[<span class="st">'five'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Solutions">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Explanation
+Solutions
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>When <code>print</code> is evaluated as the last line in a cell, it displays the value of the evaluated argument (here, <code>None</code>). <code>print</code> returns <code>None</code>, so the cell does not additionally output anything,</p>
+<div id="e1bec615" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>numbers[<span class="st">'1'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
+<pre><code>2</code></pre>
+</div>
+</div>
+<div id="2336a2a9" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>numbers[<span class="st">'five'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="21">
+<pre><code>5</code></pre>
+</div>
+</div>
+<div id="1381a963" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>numbers[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="22">
+<pre><code>2</code></pre>
+</div>
+</div>
+<div id="509a7cd6" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>numbers[<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="23">
+<pre><code>7</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
 </section>
-<section id="exercise-2" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
-<p>Try this challenge on for size.</p>
-<div id="3e814d15" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_var)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">3</span>)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="dv">45</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>None
-3</code></pre>
+<section id="challenge-2-nested-dictionaries" class="level2">
+<h2 class="anchored" data-anchor-id="challenge-2-nested-dictionaries">Challenge 2: Nested Dictionaries</h2>
+<p>After defining <code>bears</code>, what are the values of: * <code>bears['polar']['hungry']</code> * <code>bears[None][1]</code> * <code>bears['weight_range']</code></p>
+<div id="b5b08bee" class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>bears <span class="op">=</span> {</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'polar'</span>: {</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">'color'</span>: <span class="st">'white'</span>,</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">'weight_range'</span>: [<span class="dv">175</span>, <span class="dv">700</span>],</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">'hungry'</span>: <span class="va">True</span></span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'grizzly'</span>: {</span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">'color'</span>: <span class="st">'brown'</span>,</span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">'weight_range'</span>: [<span class="dv">130</span>, <span class="dv">360</span>],</span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">'endangered'</span>: <span class="va">False</span></span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>    <span class="va">None</span>: [<span class="st">'koala'</span>, <span class="st">'panda'</span>]</span>
+<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>45</code></pre>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" title="Explanation">
+<div class="callout callout-style-default callout-note callout-titled" title="Solutions">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Explanation
+Solutions
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a><span class="bu">print</span>(my_var)</span>
-<span id="cb16-2"><a href="#cb16-2"></a><span class="bu">print</span>(<span class="dv">3</span>)</span>
-<span id="cb16-3"><a href="#cb16-3"></a><span class="dv">45</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Each line explained:</p>
-<ol type="1">
-<li>Evaluate the first <code>print</code> call expression. This prints the value of <code>my_var</code> to the screen, which evaluates to <code>None</code>. <code>print</code> returns <code>None</code>, but this second <code>None</code> is not output to the sceen because it is not the last line.</li>
-<li>Evaluate the second <code>print</code> call expression. This prints the value of <code>3</code> to the screen. <code>print</code> returns <code>None</code>, but this second <code>None</code> is not output to the sceen because it is not the last line.</li>
-<li>Evaluate the third expression, <code>45</code>; because it is the last line, output to screen.</li>
-</ol>
+<div id="bb15cad1" class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>bears[<span class="st">'polar'</span>][<span class="st">'hungry'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="25">
+<pre><code>True</code></pre>
+</div>
+</div>
+<div id="04274f35" class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>bears[<span class="va">None</span>][<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="26">
+<pre><code>'panda'</code></pre>
+</div>
+</div>
+<div id="63ff43a6" class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>bears[<span class="st">'weight_range'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">KeyError</span>                                  Traceback (most recent call last)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[27]</span><span class="ansi-green-fg">, line 1</span>
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">1</span> <span class="ansi-yellow-bg">bears</span><span class="ansi-yellow-bg">[</span><span class="ansi-yellow-fg ansi-yellow-bg">'</span><span class="ansi-yellow-fg ansi-yellow-bg">weight_range</span><span class="ansi-yellow-fg ansi-yellow-bg">'</span><span class="ansi-yellow-bg">]</span>
+
+<span class="ansi-red-fg">KeyError</span>: 'weight_range'</pre>
 </div>
 </div>
 </div>
-<p>You’re thinking like a computer scientist now!</p>
+</div>
+</div>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1106,13 +1293,13 @@ Explanation
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../04-tables/exercises.html" class="pagination-link" aria-label="Table Exercises">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Table Exercises</span>
+      <a href="../16-measurements/iteration-ii.html" class="pagination-link" aria-label="More Iteration Practice">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">More Iteration Practice</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../05-variables/index.html" class="pagination-link" aria-label="L05: Variables in Social Science">
-        <span class="nav-page-text">L05: Variables in Social Science</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../five-things.html" class="pagination-link" aria-label="5 Things to Know">
+        <span class="nav-page-text">5 Things to Know</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

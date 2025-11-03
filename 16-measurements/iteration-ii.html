@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>None and Print</title>
+<title>More Iteration Practice</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../05-variables/index.html" rel="next">
-<link href="../04-tables/exercises.html" rel="prev">
+<link href="../17-dictionaries/index.html" rel="next">
+<link href="../16-measurements/index.html" rel="prev">
 <link href="../assets/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -129,7 +129,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../04-tables/index.html">L04: Table Fundamentals</a></li><li class="breadcrumb-item"><a href="../04-tables/none-print.html">None and Print</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../16-measurements/index.html">L16: Iterations II; Measurements</a></li><li class="breadcrumb-item"><a href="../16-measurements/iteration-ii.html">More Iteration Practice</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -245,11 +245,11 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <div class="sidebar-item-container"> 
             <a href="../04-tables/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">L04: Table Fundamentals</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../04-tables/index.html" class="sidebar-item-text sidebar-link">
@@ -264,7 +264,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../04-tables/none-print.html" class="sidebar-item-text sidebar-link active">
+  <a href="../04-tables/none-print.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">None and Print</span></a>
   </div>
 </li>
@@ -494,11 +494,11 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <div class="sidebar-item-container"> 
             <a href="../16-measurements/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">L16: Iterations II; Measurements</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../16-measurements/index.html" class="sidebar-item-text sidebar-link">
@@ -507,7 +507,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../16-measurements/iteration-ii.html" class="sidebar-item-text sidebar-link">
+  <a href="../16-measurements/iteration-ii.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">More Iteration Practice</span></a>
   </div>
 </li>
@@ -541,23 +541,17 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#none-type" id="toc-none-type" class="nav-link active" data-scroll-target="#none-type"><code>None</code> type</a></li>
-  <li><a href="#the-print-function" id="toc-the-print-function" class="nav-link" data-scroll-target="#the-print-function">The <code>print</code> function</a></li>
-  <li><a href="#notebooks-cell-output-vs.-print" id="toc-notebooks-cell-output-vs.-print" class="nav-link" data-scroll-target="#notebooks-cell-output-vs.-print">Notebooks: Cell Output vs.&nbsp;<code>print</code></a>
-  <ul class="collapse">
-  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
-  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
-  </ul></li>
+  <li><a href="#challenge-question-triplets" id="toc-challenge-question-triplets" class="nav-link active" data-scroll-target="#challenge-question-triplets">Challenge question: <code>triplets</code></a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../04-tables/index.html">L04: Table Fundamentals</a></li><li class="breadcrumb-item"><a href="../04-tables/none-print.html">None and Print</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../16-measurements/index.html">L16: Iterations II; Measurements</a></li><li class="breadcrumb-item"><a href="../16-measurements/iteration-ii.html">More Iteration Practice</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><code>None</code> and Print</h1>
-<p class="subtitle lead">A special data type, and a valuable function</p>
+<h1 class="title">More Iteration Practice</h1>
+<p class="subtitle lead"><code>Triplets</code> Example</p>
 </div>
 
 
@@ -574,134 +568,238 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </header>
 
 
-<section id="none-type" class="level2">
-<h2 class="anchored" data-anchor-id="none-type"><code>None</code> type</h2>
-<p>We have covered a few data types so far. There are <em>infinitely</em> many integers, floating point numbers, and strings. (Actually <em>finite</em>, because of how computers store information. Take <a href="https://cs61c.org/">CS61C</a> to learn more.)</p>
-<p>However, for the <code>NoneType</code> data type, there is only one value: <code>None</code>.</p>
-<div id="668eafb2" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>my_var <span class="op">=</span> <span class="va">None</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(my_var)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>NoneType</code></pre>
+<p>Today we discussed <code>while</code> loops and a more challenging <code>triplets</code> example. We will discuss Algorithms, Measurements, Reliability, and Validity next lecture. You will do the reading first.</p>
+<section id="challenge-question-triplets" class="level2">
+<h2 class="anchored" data-anchor-id="challenge-question-triplets">Challenge question: <code>triplets</code></h2>
+<p>What does the below code do?</p>
+<div id="28259d42" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> triplets(arr):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    zeros_in_sequence <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    triplets_seen <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> elt <span class="kw">in</span> arr:</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> elt:</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>            zeros_in_sequence <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> zeros_in_sequence <span class="op">==</span> <span class="dv">3</span>:</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>                triplets_seen <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>                zeros_in_sequence <span class="op">=</span> <span class="dv">0</span>    <span class="co"># reset, we have seen 3 0's</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>            zeros_in_sequence <span class="op">=</span> <span class="dv">0</span>        <span class="co"># reset, we broke a 0 streak</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> triplets_seen</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Here are some example outputs:</p>
+<div id="55d40e7d" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>triplets(make_array(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>1</code></pre>
 </div>
 </div>
-<p><code>None</code> is strange: Cells will not output expressions that evaluate to <code>None</code>.</p>
-<p><code>None</code> is also referred to as the <strong>null value.</strong></p>
-</section>
-<section id="the-print-function" class="level2">
-<h2 class="anchored" data-anchor-id="the-print-function">The <code>print</code> function</h2>
-<p>The <strong><code>print</code></strong> function displays values to the screen (in this case, our Jupyter notebook). Each call to <code>print</code> displays information on a new line.</p>
-<div id="1f31cbe4" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">2</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, world!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>2
-Hello, world!</code></pre>
-</div>
-</div>
-<p><code>print</code> lets us to see information about executed statements that are not just the last line of the cell. Could you see why this would be a useful feature for <strong>debugging</strong>?</p>
-<p><code>print</code> is ultra-convenient because it can take as many arguments as you want.</p>
-<div id="5897c1b4" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">4</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x, <span class="st">"+"</span>, y, <span class="st">"is equal to"</span>, x <span class="op">+</span> y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>3 + 4 is equal to 7</code></pre>
-</div>
-</div>
-<p>Trace through the above program. Do you see how expressions are evaluated before printing?</p>
-</section>
-<section id="notebooks-cell-output-vs.-print" class="level2">
-<h2 class="anchored" data-anchor-id="notebooks-cell-output-vs.-print">Notebooks: Cell Output vs.&nbsp;<code>print</code></h2>
-<p>Cell output and <code>print</code> output seem very closely related:</p>
-<ul>
-<li>Both evaluate expressions</li>
-<li>Both display something in the notebook</li>
-</ul>
-<p>However, they have subtle differences. We won’t expect you to know all of them. Instead, the purpose of this section is to get you used to <strong>tracing programs</strong>, where you closely consider Python’s order of execution of each statement, expression, function call, and so on.</p>
-<p>Because the <code>print</code> output is intended for human view, it displays strings without quotes. Contrast this with the <strong>cell output</strong>, which includes the quotes.</p>
-<div id="01a297b4" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">2</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">"Hello, world!"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>2</code></pre>
-</div>
+<div id="d6a9f60d" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>triplets(make_array(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>'Hello, world!'</code></pre>
+<pre><code>1</code></pre>
 </div>
 </div>
-<section id="exercise-1" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-1">Exercise 1</h3>
-<p>This is now super pedantic, but consider the following cells. Can you explain what is happening?</p>
-<div id="86eb7cf5" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>my_var</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="948a7a02" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_var)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>None</code></pre>
+<div id="0f3c6482" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>triplets(make_array(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>3</code></pre>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled" title="Explanation">
+<p>Strategy from class:</p>
+<ol type="1">
+<li>Run the code first. See what the example inputs/outputs are. Give a short 1-2 sentence summary of what the function does at a <em>very</em> high level. What you said in class: “It counts the zeros in order” “It counts triplets of zeros”</li>
+<li>Then, look at the code to understand what each name is. What you said in class:
+<ul>
+<li><code>triplets_seen</code>: The number of triplets. We can see this by the <code>return</code> statement.</li>
+<li><code>zeros_in_sequence</code>: seems to be updating and “resetting” to zero.</li>
+<li><code>elt</code>: Maybe short for element? Iterates over the array, <code>arr</code>.</li>
+<li><code>arr</code>: The argument to <code>triplets</code>. Based on the example input/output, this is an array of numbers.</li>
+</ul></li>
+<li>Finally, <strong>trace</strong> the code line by line to clear up remaining questions. Some questions you had in class:
+<ul>
+<li>What is <code>not elt</code> doing? When does it evaluate to <code>True</code> or <code>False</code>?</li>
+<li>What is <code>zeros_in_sequence</code> doing? How does it work?</li>
+<li>What is the <code>+=</code> shorthand?
+<ul>
+<li>(Answer: “increment and re-assign” the left-hand-side, using the right-hand-side.)</li>
+</ul></li>
+</ul></li>
+</ol>
+<p>For <code>not elt</code>, recall our discussion of <strong>truthy values</strong>:</p>
+<ul>
+<li>Every value can be cast to a Boolean value.
+<ul>
+<li>The only values that evaluate to <code>False</code> are <code>0</code>, <code>None</code>, and an empty sequence (empty array, zero-length string, empty list, etc.).</li>
+<li>All other values evaluate to <code>True</code>.</li>
+</ul></li>
+<li>Therefore for numeric values of <code>elt</code>, the only instance in which <code>not elt</code> will evaluate to <code>True</code> is when <code>elt</code> is <code>0</code>: <code>not elt</code> is <code>not 0</code> is <code>not False</code> is <code>True</code>.</li>
+<li>All non-zero numeric values of <code>elt</code> will evaluate to <code>False</code>, e.g., when <code>elt</code> is <code>1</code>: <code>not elt</code> is <code>not 1</code> is <code>not True</code> is <code>False</code>.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="Explanation: Each Line Explained">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Explanation
+Explanation: Each Line Explained
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>When <code>print</code> is evaluated as the last line in a cell, it displays the value of the evaluated argument (here, <code>None</code>). <code>print</code> returns <code>None</code>, so the cell does not additionally output anything,</p>
+<p>Each line explained:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">def</span> triplets(arr):</span>
+<span id="cb8-2"><a href="#cb8-2"></a>    zeros_in_sequence <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a>    triplets_seen <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a>    <span class="cf">for</span> elt <span class="kw">in</span> arr:</span>
+<span id="cb8-5"><a href="#cb8-5"></a>        <span class="cf">if</span> <span class="kw">not</span> elt:</span>
+<span id="cb8-6"><a href="#cb8-6"></a>            zeros_in_sequence <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a>            <span class="cf">if</span> zeros_in_sequence <span class="op">==</span> <span class="dv">3</span>:</span>
+<span id="cb8-8"><a href="#cb8-8"></a>                triplets_seen <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb8-9"><a href="#cb8-9"></a>                zeros_in_sequence <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb8-10"><a href="#cb8-10"></a>        <span class="cf">else</span>:</span>
+<span id="cb8-11"><a href="#cb8-11"></a>            zeros_in_sequence <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb8-12"><a href="#cb8-12"></a>    <span class="cf">return</span> triplets_seen</span>
+<span id="cb8-13"><a href="#cb8-13"></a></span>
+<span id="cb8-14"><a href="#cb8-14"></a>triplets(make_array(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>(Line 1) Define the function <code>triplets</code>. It takes an array <code>arr</code>. We can see this from Line 14, which is a function call to <code>triplets</code>.</li>
+<li>(Lines 2-3) Set <code>zeros_in_sequence</code> and <code>triplets_seen</code> to <code>0</code>.</li>
+<li>(Line 4) Iterate through each element (<code>elt</code>) in the argument array <code>arr</code>.</li>
+<li>(Line 5) The Boolean expression <code>not elt</code> will only evaluate to <code>True</code> (i.e., we will only evaluate this <code>if</code> case) if the current <code>elt</code> is <code>0</code>.
+<ul>
+<li>(Line 6) Increment <code>zeros_in_sequence</code> by 1.</li>
+<li>(Line 7) Check if we have seen three <code>zeros_in_sequence</code>.
+<ul>
+<li>(Lines 8-9): If so, we have seen a triple, so increment our return value, <code>triplets_seen</code>. Also reset <code>zeros_in_sequence</code>.</li>
+</ul></li>
+</ul></li>
+<li>(Lines 10-11) If we saw a non-zero <code>elt</code>, then we have broken our zero-sequence. Reset <code>zeros_in_sequence</code>.</li>
+<li>(Line 12): Return the number of triples seen.</li>
+</ul>
 </div>
 </div>
 </div>
-</section>
-<section id="exercise-2" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
-<p>Try this challenge on for size.</p>
-<div id="3e814d15" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_var)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">3</span>)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="dv">45</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>None
-3</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>45</code></pre>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" title="Explanation">
+<div class="callout callout-style-default callout-note callout-titled" title="Explanation: Array Example Explained">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Explanation
+Explanation: Array Example Explained
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a><span class="bu">print</span>(my_var)</span>
-<span id="cb16-2"><a href="#cb16-2"></a><span class="bu">print</span>(<span class="dv">3</span>)</span>
-<span id="cb16-3"><a href="#cb16-3"></a><span class="dv">45</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Each line explained:</p>
-<ol type="1">
-<li>Evaluate the first <code>print</code> call expression. This prints the value of <code>my_var</code> to the screen, which evaluates to <code>None</code>. <code>print</code> returns <code>None</code>, but this second <code>None</code> is not output to the sceen because it is not the last line.</li>
-<li>Evaluate the second <code>print</code> call expression. This prints the value of <code>3</code> to the screen. <code>print</code> returns <code>None</code>, but this second <code>None</code> is not output to the sceen because it is not the last line.</li>
-<li>Evaluate the third expression, <code>45</code>; because it is the last line, output to screen.</li>
-</ol>
-</div>
-</div>
-</div>
-<p>You’re thinking like a computer scientist now!</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">def</span> triplets(arr):</span>
+<span id="cb9-2"><a href="#cb9-2"></a>    zeros_in_sequence <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a>    triplets_seen <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a>    <span class="cf">for</span> elt <span class="kw">in</span> arr:</span>
+<span id="cb9-5"><a href="#cb9-5"></a>        <span class="cf">if</span> <span class="kw">not</span> elt:</span>
+<span id="cb9-6"><a href="#cb9-6"></a>            zeros_in_sequence <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb9-7"><a href="#cb9-7"></a>            <span class="cf">if</span> zeros_in_sequence <span class="op">==</span> <span class="dv">3</span>:</span>
+<span id="cb9-8"><a href="#cb9-8"></a>                triplets_seen <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb9-9"><a href="#cb9-9"></a>                zeros_in_sequence <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb9-10"><a href="#cb9-10"></a>        <span class="cf">else</span>:</span>
+<span id="cb9-11"><a href="#cb9-11"></a>            zeros_in_sequence <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb9-12"><a href="#cb9-12"></a>    <span class="cf">return</span> triplets_seen</span>
+<span id="cb9-13"><a href="#cb9-13"></a></span>
+<span id="cb9-14"><a href="#cb9-14"></a>triplets(make_array(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>elements | 0 | 1 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 |
+indices    0   1   2   3   4   5   6   7   8   9</code></pre>
+<p>The values of <code>zeros_in_sequence</code> and <code>triplets_seen</code> <strong>after</strong> the corresponding iteration has finished evaluating the <strong>loop body</strong>, before the loop moves to the next element or exits:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>index</th>
+<th><code>elt</code></th>
+<th><code>triplets_seen</code></th>
+<th><code>zeros_in_sequence</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td><code>1</code></td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td><code>1</code></td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td><code>1</code></td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td><code>2</code></td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td><code>1</code></td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td><code>1</code></td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td><code>2</code></td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td><code>0</code></td>
+<td><code>1</code></td>
+<td><code>0</code> (why?)</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td><code>0</code></td>
+<td><code>1</code></td>
+<td><code>1</code></td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td><code>1</code></td>
+<td><code>1</code></td>
+<td><code>0</code></td>
+</tr>
+</tbody>
+</table>
+<section id="while-loops" class="level2">
+<h2 class="anchored" data-anchor-id="while-loops">While loops</h2>
+<p>See the previous lecture notes set.</p>
+</section>
+<section id="algorithms-and-measurements" class="level2">
+<h2 class="anchored" data-anchor-id="algorithms-and-measurements">Algorithms and Measurements</h2>
+<p>For this lecture’s notes, please see:</p>
+<ul>
+<li><a href="">Lecture slides</a>.</li>
+<li>Excerpt of “Chapter 5: Evaluating Research.” Elizabeth Heger Boyle, Deborah Carr, Benjamin Cornwell, Shelley Correll, Robert Crosnoe, Jeremy Freese, and Waters, Mary C. 2017. The Art and Science of Social Research. New York: W. W. Norton &amp; Company. <a href="https://drive.google.com/file/d/1E2ngZHiqXg2D_IFPBaYCKapB5HZIl1Z-/view?usp=drive_link">PDF link</a> (UC Berkeley only)</li>
+<li>Discussion handout.</li>
+</ul>
+<p>We will cover this lecture in more detail next time, on Monday 11/2.</p>
 
 
 </section>
+</div>
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -1106,13 +1204,13 @@ Explanation
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../04-tables/exercises.html" class="pagination-link" aria-label="Table Exercises">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Table Exercises</span>
+      <a href="../16-measurements/index.html" class="pagination-link" aria-label="L16: Iterations II; Measurements">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">L16: Iterations II; Measurements</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../05-variables/index.html" class="pagination-link" aria-label="L05: Variables in Social Science">
-        <span class="nav-page-text">L05: Variables in Social Science</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../17-dictionaries/index.html" class="pagination-link" aria-label="L17: Dictionaries">
+        <span class="nav-page-text">L17: Dictionaries</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

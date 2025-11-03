@@ -1038,43 +1038,147 @@
     ]
   },
   {
+    "objectID": "17-dictionaries/index.html",
+    "href": "17-dictionaries/index.html",
+    "title": "Dictionaries",
+    "section": "",
+    "text": "We have seen several data structures so far. To name a few: * NumPy array: A sequence of elements, all of the same data type. Each element has an index, and we can access elements by their index using the item method or square-bracket indexing. We use the NumPy one-dimensional array in this course. * List: A sequence of elements, potentially of different data types. Each element has an index, and we can access elements by their index using square-bracket indexing. Python has a built-in list type. * Tables: A sequence of rows, where each row consists of values corresponding to a series of columns. Rows and columns are in sequence. We can access rows by their index using the take or row methods. We use the datascience package Table data type.\nArrays, lists, and tables have one core feature in common: their elements (or rows) are in order, and we can access these elements by index. But what if elements don’t naturally have an order? We must turn to different data structures; one such data structure is a dictionary.\nIn Python, a dictionary is a data structure that stores a set of key-value pairs.\n\ndog = {\n    'name': 'Junior',\n    4: ['kibble', 'treat']\n}\ndog\n\n{'name': 'Junior', 4: ['kibble', 'treat']}\n\n\nThe above syntax creates a dictionary called dog with two keys. Each key has an associated value:\n\nkey 'name': value 'Junior'\nkey 4: value ['kibble', 'treat'] (a list)",
+    "crumbs": [
+      "L17: Dictionaries"
+    ]
+  },
+  {
+    "objectID": "17-dictionaries/index.html#the-dictionary-data-structure",
+    "href": "17-dictionaries/index.html#the-dictionary-data-structure",
+    "title": "Dictionaries",
+    "section": "",
+    "text": "We have seen several data structures so far. To name a few: * NumPy array: A sequence of elements, all of the same data type. Each element has an index, and we can access elements by their index using the item method or square-bracket indexing. We use the NumPy one-dimensional array in this course. * List: A sequence of elements, potentially of different data types. Each element has an index, and we can access elements by their index using square-bracket indexing. Python has a built-in list type. * Tables: A sequence of rows, where each row consists of values corresponding to a series of columns. Rows and columns are in sequence. We can access rows by their index using the take or row methods. We use the datascience package Table data type.\nArrays, lists, and tables have one core feature in common: their elements (or rows) are in order, and we can access these elements by index. But what if elements don’t naturally have an order? We must turn to different data structures; one such data structure is a dictionary.\nIn Python, a dictionary is a data structure that stores a set of key-value pairs.\n\ndog = {\n    'name': 'Junior',\n    4: ['kibble', 'treat']\n}\ndog\n\n{'name': 'Junior', 4: ['kibble', 'treat']}\n\n\nThe above syntax creates a dictionary called dog with two keys. Each key has an associated value:\n\nkey 'name': value 'Junior'\nkey 4: value ['kibble', 'treat'] (a list)",
+    "crumbs": [
+      "L17: Dictionaries"
+    ]
+  },
+  {
+    "objectID": "17-dictionaries/index.html#basic-dictionary-use",
+    "href": "17-dictionaries/index.html#basic-dictionary-use",
+    "title": "Dictionaries",
+    "section": "Basic Dictionary Use",
+    "text": "Basic Dictionary Use\nRead/access dictionary. In order to retrieve an element from a dictionary, we use its key:\n\ndog['name']\n\n'Junior'\n\n\nAttempting to get the value of a key that does not exist in the dictionary will throw an error:\n\ndog['breed']\n\n\n---------------------------------------------------------------------------\nKeyError                                  Traceback (most recent call last)\nCell In[3], line 1\n----&gt; 1 dog['breed']\n\nKeyError: 'breed'\n\n\n\nWrite to a dictionary by providing a key and its associated value. Suppose we wanted to add the dog’s age to the dictionary:\n\ndog['age'] = 11\ndog\n\n{'name': 'Junior', 4: ['kibble', 'treat'], 'age': 11}\n\n\nModify a dictionary by overwriting the value associated with a key. Note this works because dictionaries have unique keys:\n\ndog['age'] = 12\ndog\n\n{'name': 'Junior', 4: ['kibble', 'treat'], 'age': 12}",
+    "crumbs": [
+      "L17: Dictionaries"
+    ]
+  },
+  {
+    "objectID": "17-dictionaries/index.html#removing-keys-with-pop",
+    "href": "17-dictionaries/index.html#removing-keys-with-pop",
+    "title": "Dictionaries",
+    "section": "Removing keys with pop",
+    "text": "Removing keys with pop\nThe key 4 does not describe its value well:\n\ndog[4]\n\n['kibble', 'treat']\n\n\nWrite two lines such that the dictionary dog will have the key 'likes' assigned to the list ['kibble', 'treat'] and will not have the key 4.\nNote: To remove the existing key key from dictionary dog, you can use dog.pop(key).\nSolution:\n\ndog['likes'] = dog[4]\ndog.pop(4)\n\n['kibble', 'treat']\n\n\nUsage of pop: To pop key and avoid errors when the key doesn’t exist, you can provide a second argument None to pop:\n\ndog.pop(4, None)\n\nWhy? Find out the answer in the official Python documentation on pop!",
+    "crumbs": [
+      "L17: Dictionaries"
+    ]
+  },
+  {
+    "objectID": "17-dictionaries/index.html#dictionary-properties",
+    "href": "17-dictionaries/index.html#dictionary-properties",
+    "title": "Dictionaries",
+    "section": "Dictionary Properties",
+    "text": "Dictionary Properties\nDictionary definitions/notes:\n\nA key is what we use to look up values in a dictionary. This can be numbers or strings. Because we access values by keys, we suggest using “meaningful” keys, which are often strings.\nA value can be anything—numbers, strings, lists, or even other dictionaries.\nIn a dictionary, each value has a key. Keys in a dictionary are unique.\n\nDictionary syntax:\n\n`Curly brackets denote the start and end of a dictionary.\nA colon is used to specify a single key-value pair; commas separate key-value pairs.",
+    "crumbs": [
+      "L17: Dictionaries"
+    ]
+  },
+  {
+    "objectID": "17-dictionaries/index.html#conditions-and-iterations-with-dictionaries",
+    "href": "17-dictionaries/index.html#conditions-and-iterations-with-dictionaries",
+    "title": "Dictionaries",
+    "section": "Conditions and Iterations with Dictionaries",
+    "text": "Conditions and Iterations with Dictionaries\nSuppose we want to create a dictionary of slang:\n\nslang = {\n    'haha': 'that was not funny',\n    'smh': 'shake my head',\n    'lol': 'laugh out loud',\n    'GOAT': 'greatest of all time'\n}\nslang\n\n{'haha': 'that was not funny',\n 'smh': 'shake my head',\n 'lol': 'laugh out loud',\n 'GOAT': 'greatest of all time'}\n\n\n\n# Number of key-value pairs\nlen(slang)\n\n4\n\n\n\n# Checks if 'smh' is a key\n'smh' in slang\n\nTrue\n\n\n\n# Checks if 'shake my head' is a key\n# It is not – it is a value\n'shake my head' in slang\n\nFalse\n\n\n\nCommon iteration patterns\n\nfor abb in slang.keys():\n    print(abb)\n\nhaha\nsmh\nlol\nGOAT\n\n\n\nfor abb in slang.keys():\n    print(abb, slang[abb])\n\nhaha that was not funny\nsmh shake my head\nlol laugh out loud\nGOAT greatest of all time\n\n\nThe below structure is quite common in Python scripts. items returns Python tuples of (key, value), which we respectively assign to k and v:\n\nfor k, v in slang.items():\n    print(k, v)\n\nhaha that was not funny\nsmh shake my head\nlol laugh out loud\nGOAT greatest of all time\n\n\n\n\nExample: Deciphering Gen Z Lingo\n\n# Replaces all abbreviations in text\n# that are defined in more_slang\n# with their full forms\n\ndef replace_slang(text):\n    for abb in slang.keys():\n        if abb in text:\n            text = text.replace(abb, slang[abb])\n    return text\n\n\nreplace_slang('smh, I did not lol')\n\n'shake my head, I did not laugh out loud'\n\n\n\nreplace_slang('serena is the GOAT')\n\n'serena is the greatest of all time'",
+    "crumbs": [
+      "L17: Dictionaries"
+    ]
+  },
+  {
+    "objectID": "17-dictionaries/index.html#challenge-1",
+    "href": "17-dictionaries/index.html#challenge-1",
+    "title": "Dictionaries",
+    "section": "Challenge 1",
+    "text": "Challenge 1\nAfter running the following four lines of code, what are the values of numbers['1'], numbers['five'], numbers[1], and numbers[2]?\n\ntwo = 1\nnumbers = {'1': 2}\nnumbers['five'] = 5\nnumbers[two] = numbers['1']\nnumbers[2] = numbers[1] + numbers['five']\n\n\n\n\n\n\n\nSolutions\n\n\n\n\n\n\nnumbers['1']\n\n2\n\n\n\nnumbers['five']\n\n5\n\n\n\nnumbers[1]\n\n2\n\n\n\nnumbers[2]\n\n7",
+    "crumbs": [
+      "L17: Dictionaries"
+    ]
+  },
+  {
+    "objectID": "17-dictionaries/index.html#challenge-2-nested-dictionaries",
+    "href": "17-dictionaries/index.html#challenge-2-nested-dictionaries",
+    "title": "Dictionaries",
+    "section": "Challenge 2: Nested Dictionaries",
+    "text": "Challenge 2: Nested Dictionaries\nAfter defining bears, what are the values of: * bears['polar']['hungry'] * bears[None][1] * bears['weight_range']\n\nbears = {\n    'polar': {\n        'color': 'white',\n        'weight_range': [175, 700],\n        'hungry': True\n    },\n    'grizzly': {\n        'color': 'brown',\n        'weight_range': [130, 360],\n        'endangered': False\n    },\n    None: ['koala', 'panda']\n}\n\n\n\n\n\n\n\nSolutions\n\n\n\n\n\n\nbears['polar']['hungry']\n\nTrue\n\n\n\nbears[None][1]\n\n'panda'\n\n\n\nbears['weight_range']\n\n\n---------------------------------------------------------------------------\nKeyError                                  Traceback (most recent call last)\nCell In[27], line 1\n----&gt; 1 bears['weight_range']\n\nKeyError: 'weight_range'",
+    "crumbs": [
+      "L17: Dictionaries"
+    ]
+  },
+  {
     "objectID": "16-measurements/index.html",
     "href": "16-measurements/index.html",
-    "title": "Iteration II, Measurements",
+    "title": "Measurements",
     "section": "",
-    "text": "Today was reviewing while loops and a more challenging triplets example. We will discuss Algorithms, Measurements, Reliability, and Validity next lecture. You will do the reading first.",
+    "text": "For this lecture’s notes, please see:\n\nLecture slides.\nExcerpt of “Chapter 5: Evaluating Research.” Elizabeth Heger Boyle, Deborah Carr, Benjamin Cornwell, Shelley Correll, Robert Crosnoe, Jeremy Freese, and Waters, Mary C. 2017. The Art and Science of Social Research. New York: W. W. Norton & Company PDF Link (UC Berkeley affiliates only)\nThis week’s discussion handout",
     "crumbs": [
       "L16: Iterations II; Measurements"
     ]
   },
   {
-    "objectID": "16-measurements/index.html#challenge-question-triplets",
-    "href": "16-measurements/index.html#challenge-question-triplets",
-    "title": "Iteration II, Measurements",
+    "objectID": "16-measurements/index.html#reliability-and-validity",
+    "href": "16-measurements/index.html#reliability-and-validity",
+    "title": "Measurements",
+    "section": "",
+    "text": "For this lecture’s notes, please see:\n\nLecture slides.\nExcerpt of “Chapter 5: Evaluating Research.” Elizabeth Heger Boyle, Deborah Carr, Benjamin Cornwell, Shelley Correll, Robert Crosnoe, Jeremy Freese, and Waters, Mary C. 2017. The Art and Science of Social Research. New York: W. W. Norton & Company PDF Link (UC Berkeley affiliates only)\nThis week’s discussion handout",
+    "crumbs": [
+      "L16: Iterations II; Measurements"
+    ]
+  },
+  {
+    "objectID": "16-measurements/iteration-ii.html",
+    "href": "16-measurements/iteration-ii.html",
+    "title": "More Iteration Practice",
+    "section": "",
+    "text": "Today we discussed while loops and a more challenging triplets example. We will discuss Algorithms, Measurements, Reliability, and Validity next lecture. You will do the reading first.",
+    "crumbs": [
+      "L16: Iterations II; Measurements",
+      "More Iteration Practice"
+    ]
+  },
+  {
+    "objectID": "16-measurements/iteration-ii.html#challenge-question-triplets",
+    "href": "16-measurements/iteration-ii.html#challenge-question-triplets",
+    "title": "More Iteration Practice",
     "section": "Challenge question: triplets",
     "text": "Challenge question: triplets\nWhat does the below code do?\n\ndef triplets(arr):\n    zeros_in_sequence = 0\n    triplets_seen = 0\n    for elt in arr:\n        if not elt:\n            zeros_in_sequence += 1\n            if zeros_in_sequence == 3:\n                triplets_seen += 1\n                zeros_in_sequence = 0    # reset, we have seen 3 0's\n        else:\n            zeros_in_sequence = 0        # reset, we broke a 0 streak\n    return triplets_seen\n\nHere are some example outputs:\n\ntriplets(make_array(0, 1, 0, 0, 0, 1))\n\n1\n\n\n\ntriplets(make_array(0, 1, 0, 0, 1, 0, 0, 0, 0, 1))\n\n1\n\n\n\ntriplets(make_array(0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0))\n\n3\n\n\nStrategy from class:\n\nRun the code first. See what the example inputs/outputs are. Give a short 1-2 sentence summary of what the function does at a very high level. What you said in class: “It counts the zeros in order” “It counts triplets of zeros”\nThen, look at the code to understand what each name is. What you said in class:\n\ntriplets_seen: The number of triplets. We can see this by the return statement.\nzeros_in_sequence: seems to be updating and “resetting” to zero.\nelt: Maybe short for element? Iterates over the array, arr.\narr: The argument to triplets. Based on the example input/output, this is an array of numbers.\n\nFinally, trace the code line by line to clear up remaining questions. Some questions you had in class:\n\nWhat is not elt doing? When does it evaluate to True or False?\nWhat is zeros_in_sequence doing? How does it work?\nWhat is the += shorthand?\n\n(Answer: “increment and re-assign” the left-hand-side, using the right-hand-side.)\n\n\n\nFor not elt, recall our discussion of truthy values:\n\nEvery value can be cast to a Boolean value.\n\nThe only values that evaluate to False are 0, None, and an empty sequence (empty array, zero-length string, empty list, etc.).\nAll other values evaluate to True.\n\nTherefore for numeric values of elt, the only instance in which not elt will evaluate to True is when elt is 0: not elt is not 0 is not False is True.\nAll non-zero numeric values of elt will evaluate to False, e.g., when elt is 1: not elt is not 1 is not True is False.\n\n\n\n\n\n\n\nExplanation: Each Line Explained\n\n\n\n\n\nEach line explained:\ndef triplets(arr):\n    zeros_in_sequence = 0\n    triplets_seen = 0\n    for elt in arr:\n        if not elt:\n            zeros_in_sequence += 1\n            if zeros_in_sequence == 3:\n                triplets_seen += 1\n                zeros_in_sequence = 0\n        else:\n            zeros_in_sequence = 0\n    return triplets_seen\n\ntriplets(make_array(0, 1, 0, 0, 1, 0, 0, 0, 0, 1))\n\n(Line 1) Define the function triplets. It takes an array arr. We can see this from Line 14, which is a function call to triplets.\n(Lines 2-3) Set zeros_in_sequence and triplets_seen to 0.\n(Line 4) Iterate through each element (elt) in the argument array arr.\n(Line 5) The Boolean expression not elt will only evaluate to True (i.e., we will only evaluate this if case) if the current elt is 0.\n\n(Line 6) Increment zeros_in_sequence by 1.\n(Line 7) Check if we have seen three zeros_in_sequence.\n\n(Lines 8-9): If so, we have seen a triple, so increment our return value, triplets_seen. Also reset zeros_in_sequence.\n\n\n(Lines 10-11) If we saw a non-zero elt, then we have broken our zero-sequence. Reset zeros_in_sequence.\n(Line 12): Return the number of triples seen.\n\n\n\n\n\n\n\n\n\n\nExplanation: Array Example Explained\n\n\n\n\n\ndef triplets(arr):\n    zeros_in_sequence = 0\n    triplets_seen = 0\n    for elt in arr:\n        if not elt:\n            zeros_in_sequence += 1\n            if zeros_in_sequence == 3:\n                triplets_seen += 1\n                zeros_in_sequence = 0\n        else:\n            zeros_in_sequence = 0\n    return triplets_seen\n\ntriplets(make_array(0, 1, 0, 0, 1, 0, 0, 0, 0, 1))\nelements | 0 | 1 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 |\nindices    0   1   2   3   4   5   6   7   8   9\nThe values of zeros_in_sequence and triplets_seen after the corresponding iteration has finished evaluating the loop body, before the loop moves to the next element or exits:\n\n\n\nindex\nelt\ntriplets_seen\nzeros_in_sequence\n\n\n\n\n0\n0\n0\n1\n\n\n1\n1\n0\n0\n\n\n2\n0\n0\n1\n\n\n3\n0\n0\n2\n\n\n4\n1\n0\n0\n\n\n5\n0\n0\n1\n\n\n6\n0\n0\n2\n\n\n7\n0\n1\n0 (why?)\n\n\n8\n0\n1\n1\n\n\n9\n1\n1\n0\n\n\n\n\nWhile loops\nSee the previous lecture notes set.\n\n\nAlgorithms and Measurements\nFor this lecture’s notes, please see:\n\nLecture slides.\nExcerpt of “Chapter 5: Evaluating Research.” Elizabeth Heger Boyle, Deborah Carr, Benjamin Cornwell, Shelley Correll, Robert Crosnoe, Jeremy Freese, and Waters, Mary C. 2017. The Art and Science of Social Research. New York: W. W. Norton & Company. PDF link (UC Berkeley only)\nDiscussion handout.\n\nWe will cover this lecture in more detail next time, on Monday 11/2.",
     "crumbs": [
-      "L16: Iterations II; Measurements"
+      "L16: Iterations II; Measurements",
+      "More Iteration Practice"
     ]
   },
   {
-    "objectID": "16-measurements/index.html#while-loops",
-    "href": "16-measurements/index.html#while-loops",
-    "title": "Iteration II, Measurements",
+    "objectID": "16-measurements/iteration-ii.html#while-loops",
+    "href": "16-measurements/iteration-ii.html#while-loops",
+    "title": "More Iteration Practice",
     "section": "While loops",
     "text": "While loops\nSee the previous lecture notes set.",
     "crumbs": [
-      "L16: Iterations II; Measurements"
+      "L16: Iterations II; Measurements",
+      "More Iteration Practice"
     ]
   },
   {
-    "objectID": "16-measurements/index.html#algorithms-and-measurements",
-    "href": "16-measurements/index.html#algorithms-and-measurements",
-    "title": "Iteration II, Measurements",
+    "objectID": "16-measurements/iteration-ii.html#algorithms-and-measurements",
+    "href": "16-measurements/iteration-ii.html#algorithms-and-measurements",
+    "title": "More Iteration Practice",
     "section": "Algorithms and Measurements",
     "text": "Algorithms and Measurements\nFor this lecture’s notes, please see:\n\nLecture slides.\nExcerpt of “Chapter 5: Evaluating Research.” Elizabeth Heger Boyle, Deborah Carr, Benjamin Cornwell, Shelley Correll, Robert Crosnoe, Jeremy Freese, and Waters, Mary C. 2017. The Art and Science of Social Research. New York: W. W. Norton & Company. PDF link (UC Berkeley only)\nDiscussion handout.\n\nWe will cover this lecture in more detail next time, on Monday 11/2.",
     "crumbs": [
-      "L16: Iterations II; Measurements"
+      "L16: Iterations II; Measurements",
+      "More Iteration Practice"
     ]
   },
   {
