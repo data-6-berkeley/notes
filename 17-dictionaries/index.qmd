@@ -1,0 +1,245 @@
+---
+title: "Dictionaries"
+subtitle: "Key-Value Pairs"
+---
+
+## The Dictionary Data Structure
+
+We have seen several data structures so far. To name a few:
+* **NumPy array**: A sequence of elements, all of the same data type. Each element has an index, and we can access elements by their index using the `item` method or square-bracket indexing. We use the NumPy one-dimensional array in this course.
+* **List**: A sequence of elements, potentially of different data types. Each element has an index, and we can access elements by their index using square-bracket indexing. Python has a built-in list type.
+* **Tables**: A sequence of rows, where each row consists of values corresponding to a series of columns. Rows and columns are in sequence. We can access rows by their index using the `take` or `row` methods. We use the `datascience` package Table data type.
+
+Arrays, lists, and tables have one core feature in common: their elements (or rows) are **in order**, and we can access these elements by index. But what if elements don't naturally have an order? We must turn to different data structures; one such data structure is a **dictionary**.
+
+In Python, a dictionary is a data structure that stores a set of key-value pairs.
+
+```{python}
+dog = {
+    'name': 'Junior',
+    4: ['kibble', 'treat']
+}
+dog
+```
+
+The above syntax creates a dictionary called `dog` with two keys. Each key has an associated value:
+
+* key `'name'`: value `'Junior'`
+* key `4`: value `['kibble', 'treat']` (a list)
+
+## Basic Dictionary Use
+
+**Read/access** dictionary. In order to retrieve an element from a dictionary, we use its key:
+
+```{python}
+dog['name']
+```
+
+Attempting to get the value of a key that does not exist in the dictionary will throw an error:
+
+```{python}
+#| error: true
+dog['breed']
+```
+
+**Write** to a dictionary by providing a key and its associated value. Suppose we wanted to add the dog's age to the dictionary:
+
+```{python}
+dog['age'] = 11
+dog
+```
+
+**Modify** a dictionary by overwriting the value associated with a key. Note this works because dictionaries have unique keys:
+
+```{python}
+dog['age'] = 12
+dog
+```
+
+## Removing keys with `pop`
+
+The key `4` does not describe its value well:
+```{python}
+dog[4]
+```
+
+Write two lines such that the dictionary `dog` will have the key `'likes'` assigned to the list `['kibble', 'treat']` and will not have the key `4`.
+
+Note: To remove the existing key key from dictionary dog, you can use `dog.pop(key)`.
+
+Solution:
+
+```{python}
+dog['likes'] = dog[4]
+dog.pop(4)
+```
+
+**Usage of `pop`**: To pop key and avoid errors when the key doesn't exist, you can provide a second argument `None` to `pop`:
+
+```{python}
+dog.pop(4, None)
+```
+
+Why? Find out the answer in the official [Python documentation on `pop`](https://docs.python.org/3/library/stdtypes.html#dict.pop)!
+
+## Dictionary Properties
+
+Dictionary definitions/notes:
+
+* A **key** is what we use to look up values in a dictionary. This can be numbers or strings. Because we access values by keys, we suggest using "meaningful" keys, which are often strings.
+* A **value** can be anything—numbers, strings, lists, or even other dictionaries.
+* In a dictionary, each value has a key. Keys in a dictionary are unique.
+
+Dictionary syntax:
+
+* `Curly brackets denote the start and end of a dictionary.
+* A colon is used to specify a single key-value pair; commas separate key-value pairs.
+
+## Conditions and Iterations with Dictionaries
+
+Suppose we want to create a dictionary of slang:
+
+```{python}
+slang = {
+    'haha': 'that was not funny',
+    'smh': 'shake my head',
+    'lol': 'laugh out loud',
+    'GOAT': 'greatest of all time'
+}
+slang
+```
+
+```{python}
+# Number of key-value pairs
+len(slang)
+```
+
+
+```{python}
+# Checks if 'smh' is a key
+'smh' in slang
+```
+
+
+```{python}
+# Checks if 'shake my head' is a key
+# It is not – it is a value
+'shake my head' in slang
+```
+
+### Common iteration patterns
+
+```{python}
+for abb in slang.keys():
+    print(abb)
+```
+
+
+```{python}
+for abb in slang.keys():
+    print(abb, slang[abb])
+```
+
+The below structure is quite common in Python scripts. `items` returns Python tuples of (key, value), which we respectively assign to `k` and `v`:
+
+```{python}
+for k, v in slang.items():
+    print(k, v)
+```
+
+### Example: Deciphering Gen Z Lingo
+
+```{python}
+# Replaces all abbreviations in text
+# that are defined in more_slang
+# with their full forms
+
+def replace_slang(text):
+    for abb in slang.keys():
+        if abb in text:
+            text = text.replace(abb, slang[abb])
+    return text
+```
+
+```{python}
+replace_slang('smh, I did not lol')
+```
+
+
+```{python}
+replace_slang('serena is the GOAT')
+```
+
+## Challenge 1
+
+After running the following four lines of code, what are the values of `numbers['1']`, `numbers['five']`, `numbers[1]`, and `numbers[2]`?
+
+```{python}
+two = 1
+numbers = {'1': 2}
+numbers['five'] = 5
+numbers[two] = numbers['1']
+numbers[2] = numbers[1] + numbers['five']
+```
+
+::: {.callout-note title="Solutions" collapse="true"}
+
+```{python}
+numbers['1']
+```
+
+```{python}
+numbers['five']
+```
+
+```{python}
+numbers[1]
+```
+
+```{python}
+numbers[2]
+```
+
+:::
+
+
+## Challenge 2: Nested Dictionaries
+
+After defining `bears`, what are the values of:
+* `bears['polar']['hungry']`
+* `bears[None][1]`
+* `bears['weight_range']`
+
+```{python}
+bears = {
+    'polar': {
+        'color': 'white',
+        'weight_range': [175, 700],
+        'hungry': True
+    },
+    'grizzly': {
+        'color': 'brown',
+        'weight_range': [130, 360],
+        'endangered': False
+    },
+    None: ['koala', 'panda']
+}
+```
+
+
+::: {.callout-note title="Solutions" collapse="true"}
+
+```{python}
+bears['polar']['hungry']
+```
+
+```{python}
+bears[None][1]
+```
+
+```{python}
+#| error: true
+bears['weight_range']
+```
+
+:::

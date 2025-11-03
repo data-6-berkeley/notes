@@ -130,6 +130,14 @@ website:
             text: "Practice"
       - text: "L16: Iterations II; Measurements"
         href: 16-measurements/index.qmd
+        contents:
+          - href: 16-measurements/index.qmd
+            text: "Reliability and Validity"
+          - href: 16-measurements/iteration-ii.qmd
+            text: "More Iteration Practice"
+      - text: "L17: Dictionaries"
+        href: 17-dictionaries/index.qmd
+        
       - href: five-things.qmd
         text: "5 Things to Know"
       - href: reference.qmd
