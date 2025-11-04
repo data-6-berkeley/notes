@@ -1,9 +1,9 @@
 ---
-title: "BeautifulSoup"
-subtitle: "Scraping HTML"
+title: "HTML Web Scraper"
+subtitle: "The BeautifulSoup Library"
 ---
 
-## Tutorial: HTML And BeautifulSoup
+## Tutorial: Parsing HTML with BeautifulSoup
 
 BeautifulSoup is a Python library for pulling data out of HTML and XML files.
 
