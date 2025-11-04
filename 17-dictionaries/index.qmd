@@ -63,15 +63,51 @@ The key `4` does not describe its value well:
 dog[4]
 ```
 
+## Task: Renaming a key
+
 Write two lines such that the dictionary `dog` will have the key `'likes'` assigned to the list `['kibble', 'treat']` and will not have the key `4`.
 
-Note: To remove the existing key key from dictionary dog, you can use `dog.pop(key)`.
+Note: To remove the existing key from dictionary dog, you can use `dog.pop(key)`.
 
-Solution:
+The below approach is succinct. The only thing that is changing is the key itself. Assign a new key to the existing value, then pop off the original key.
 
 ```{python}
+"""
+Succinct solution
+"""
 dog['likes'] = dog[4]
 dog.pop(4)
+```
+
+Other approaches which aren't incorrect per se, but have some data duplication and therefore will be quite tedious in practice:
+
+```{python}
+"""
+This solution reassigns the name to an entirely
+new dictionary, requiring the programmer to manually rewrite
+the entire dictionary
+"""
+dog = {
+    'name': 'Junior',
+    'likes': ['kibble', 'treat']
+}
+dog
+```
+
+```{python}
+"""
+This solution first deletes the key-value, then
+assignes the new key-value, requiring the programmer to
+manually rewrite the original value (which hasn't changed)
+"""
+
+dog = { # the original dictionary, again
+    'name': 'Junior',
+    4: ['kibble', 'treat']
+}
+dog.pop(4) # delete the unneeded key
+dog['likes'] = ['kibble', 'treat']
+dog
 ```
 
 **Usage of `pop`**: To pop key and avoid errors when the key doesn't exist, you can provide a second argument `None` to `pop`:
