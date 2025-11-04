@@ -1,0 +1,128 @@
+---
+title: "File Formats"
+subtitle: "CSV and JSON"
+---
+
+```{python}
+#| include: false
+from datascience import *
+import numpy as np
+```
+
+## File Storage
+
+How do we store data in a computer? We use Python **names** to store information within our Python programs. But in order to share information with other people, we need to store it in a **file**.
+We can use files to generate tables, or other useful data structures
+Files are often stored in **folders**.
+
+:::{style="text-align: center"}
+![Within files are folders. A file can be loaded into Python.](images/directory_structure.png){#fig-inflation fig-align=center width=90%}
+:::
+
+We can categorize data as being in one of two broad categories:
+
+* **Tabular Data**: Data is organized into rows and columns.
+    * Example formats: XLS/XLSX, **CSV**, DB, ...
+    * Applications: Google Sheets, Microsoft Excel, SQLite, Jupyter Notebooks + datascience, ...
+* **Non-Tabular Data**: Data is organized in some other way:
+    * Example Formats: TXT, DOC, JSON, JPG, MP3, MP4, ...
+    * Applications: It really depends!
+
+## Tabular Data
+
+### CSV
+
+**Comma-Separated Values, or CSV, is a file format consisting of lines of text. The CSV format stores tabular data, where
+
+* Each line is a row of values.
+* Each value is separated by a comma (hence, the name).
+* Each row has the same number of comma-separated values.
+
+Typically, the first line of the file is assumed to be a row of column labels. The `pups.csv` file:
+
+```
+name,age,breed
+Junior Smith,11,cockapoo
+Rex Rogers,7,labradoodle
+Flash Heat,3,labrador
+Reese Bo,4,boston terrier
+Polo Cash,2,shih tzu
+```
+
+Most of the data we use in this class is in the CSV format. To load a CSV file into a table, provide the file name:
+
+```{python}
+pups = Table.read_table("data/pups.csv")
+pups
+```
+
+### Aside: File Paths
+
+The below syntax loads data from a CSV located at `file_path` (a string describing the location of the relevant file) into a table named `tbl`.
+
+```python
+tbl = Table.read_table(file_path)
+```
+
+In our example `pups` case, the `pups.csv` file is located in the `data` directory (say, on DataHub), so our argument to `read_table` is the string `"data/pups.csv"`. The argument to `file_path` could also be a link to a CSV on the internet.
+
+## Non-Tabular Data
+
+What kinds of data can’t be stored in a tabular format? Lots of things: music, videos, maps, etc. Graph data and hierarchical data, like family trees, might also be non-tabular.
+
+:::{style="text-align: center"}
+![A family tree graph structure. At the root is Grandma, who has children Dad and Aunt. Dad has children Brother and Me, and Aunt has children Cousin 1 and Cousin 2. Cousin 2 has a one child, Cousin 2 Jr.](images/trees.png){#fig-inflation fig-align=center width=75%}
+:::
+
+### JSON
+
+JSON, which stands for **JavaScript Object Notation**, is a file format that allows us to store **hierarchical data**.
+Main features of a JSON file:
+* Curly braces denote the start of a series of key-value pairs (e.g., dictionary).
+    * Valid keys are strings and numbers (integers and floats).
+    * Valid values are strings, numbers, dictionaries, and lists.
+* Square brackets denote the start of a sequence (e.g., list).
+    * Valid elements are strings, numbers, dictionaries, and lists.
+
+While whitespace makes the `family.json` file quite long, it helps organize the JSON for human view. You can put as much or as little whitespace in JSON files as you want.
+
+```
+{
+  "name": "Grandma",
+  "children": [
+    {
+      "name": "Dad",
+      "children": [
+        {
+          "name": "Me"
+        },
+        {
+          "name": "Brother"
+        }
+      ]
+    },
+    {
+      "name": "Aunt",
+      "children": [
+        {
+          "name": "Cousin 1"
+        },
+        {
+          "name": "Cousin 2",
+          "children": [
+            {
+              "name": "Cousin 2 Jr."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
+
+
+The JSON format looks very similar to the syntax we use for defining dictionaries in Python.
+Technically, JSON can be also used to store tabular data, but it’s far less elegant than just using a CSV.
+
+In lab, you will see an example of how to load JSON files into dictionaries. We will generally provide this starter code for you.

@@ -163,20 +163,33 @@ len(slang)
 'shake my head' in slang
 ```
 
-### Common iteration patterns
+### Iterating over dictionaries with a `for` loop
 
-```{python}
-for abb in slang.keys():
-    print(abb)
-```
+Like many other data structures we have seen, we can use `for` loops to iterate over dictionaries. We discuss several approaches below:
+* Using the dictionary methods `keys`, `values`, and `items`
+* Using the dictionary name itself
 
+We can iterate over the keys of a dictionary using the `keys` dictionary method:
 
 ```{python}
 for abb in slang.keys():
     print(abb, slang[abb])
 ```
 
-The below structure is quite common in Python scripts. `items` returns Python tuples of (key, value), which we respectively assign to `k` and `v`:
+Python also allows us to provide the dictionary itself as the data structure to be iterated over, without any method calls. By doing so (as below), the iterated elements are the keys itself. The below code has the same behavior as the previous code:
+
+```{python}
+for abb in slang:
+    print(abb, slang[abb])
+```
+
+Occasionally, you may want to iterate over just the values in a dictionary, without knowing the keys. This is rare:
+```{python}
+for slang_phrase in slang.values():
+    print(slang_phrase)
+```
+
+In Python, the below structure is probably the most common. `items` returns Python tuples of (key, value), which we respectively assign to `k` and `v`:
 
 ```{python}
 for k, v in slang.items():

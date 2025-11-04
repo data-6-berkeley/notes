@@ -137,7 +137,13 @@ website:
             text: "More Iteration Practice"
       - text: "L17: Dictionaries"
         href: 17-dictionaries/index.qmd
-        
+        contents:
+          - href: 17-dictionaries/index.qmd
+            text: "Dictionaries"
+          - href: 17-dictionaries/file-formats.qmd
+            text: "File Formats"
+      - text: "L18: Beautiful Soup"
+        href: 18-beautifulsoup/index.qmd
       - href: five-things.qmd
         text: "5 Things to Know"
       - href: reference.qmd
