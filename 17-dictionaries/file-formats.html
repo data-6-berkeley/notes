@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Grouping</title>
+<title>File Formats</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,18 +20,53 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../12-pivot-join/index.html" rel="next">
-<link href="../10-boolean-predicates/boolean.html" rel="prev">
+<link href="../18-beautifulsoup/index.html" rel="next">
+<link href="../17-dictionaries/index.html" rel="prev">
 <link href="../assets/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -79,6 +114,9 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 <!--<script async src=”https://siteimproveanalytics.com/js/siteanalyze_6294756.js”></script>-->
 
 
@@ -94,7 +132,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../11-group/index.html">L11: Grouping</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../17-dictionaries/index.html">L17: Dictionaries</a></li><li class="breadcrumb-item"><a href="../17-dictionaries/file-formats.html">File Formats</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -381,7 +419,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../11-group/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../11-group/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">L11: Grouping</span></a>
   </div>
 </li>
@@ -482,11 +520,11 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <div class="sidebar-item-container"> 
             <a href="../17-dictionaries/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">L17: Dictionaries</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../17-dictionaries/index.html" class="sidebar-item-text sidebar-link">
@@ -495,7 +533,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../17-dictionaries/file-formats.html" class="sidebar-item-text sidebar-link">
+  <a href="../17-dictionaries/file-formats.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">File Formats</span></a>
   </div>
 </li>
@@ -529,21 +567,26 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#aggregating-and-disaggregating" id="toc-aggregating-and-disaggregating" class="nav-link active" data-scroll-target="#aggregating-and-disaggregating">Aggregating and Disaggregating</a>
+  <li><a href="#file-storage" id="toc-file-storage" class="nav-link active" data-scroll-target="#file-storage">File Storage</a></li>
+  <li><a href="#tabular-data" id="toc-tabular-data" class="nav-link" data-scroll-target="#tabular-data">Tabular Data</a>
   <ul class="collapse">
-  <li><a href="#case-study-1973-uc-berkeley-graduate-admissions" id="toc-case-study-1973-uc-berkeley-graduate-admissions" class="nav-link" data-scroll-target="#case-study-1973-uc-berkeley-graduate-admissions">Case Study: 1973 UC Berkeley Graduate Admissions</a></li>
+  <li><a href="#csv" id="toc-csv" class="nav-link" data-scroll-target="#csv">CSV</a></li>
+  <li><a href="#aside-file-paths" id="toc-aside-file-paths" class="nav-link" data-scroll-target="#aside-file-paths">Aside: File Paths</a></li>
   </ul></li>
-  <li><a href="#external-reading" id="toc-external-reading" class="nav-link" data-scroll-target="#external-reading">External Reading</a></li>
+  <li><a href="#non-tabular-data" id="toc-non-tabular-data" class="nav-link" data-scroll-target="#non-tabular-data">Non-Tabular Data</a>
+  <ul class="collapse">
+  <li><a href="#json" id="toc-json" class="nav-link" data-scroll-target="#json">JSON</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../17-dictionaries/index.html">L17: Dictionaries</a></li><li class="breadcrumb-item"><a href="../17-dictionaries/file-formats.html">File Formats</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Grouping</h1>
-<p class="subtitle lead">Aggregating values across rows.</p>
+<h1 class="title">File Formats</h1>
+<p class="subtitle lead">CSV and JSON</p>
 </div>
 
 
@@ -560,55 +603,159 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </header>
 
 
-<div class="callout callout-style-default callout-note callout-titled" title="Read _Inferential Thinking_">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<section id="file-storage" class="level2">
+<h2 class="anchored" data-anchor-id="file-storage">File Storage</h2>
+<p>How do we store data in a computer? We use Python <strong>names</strong> to store information within our Python programs. But in order to share information with other people, we need to store it in a <strong>file</strong>. We can use files to generate tables, or other useful data structures Files are often stored in <strong>folders</strong>.</p>
+<div style="text-align: center">
+<div id="fig-inflation" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-inflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/directory_structure.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%">
 </div>
-<div class="callout-title-container flex-fill">
-Read <em>Inferential Thinking</em>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-inflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Within files are folders. A file can be loaded into Python.
+</figcaption>
+</figure>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>Read <a href="https://inferentialthinking.com/chapters/08/2/Classifying_by_One_Variable.html">Ch 8.2</a>, which describes grouping in detail.</p>
-<p>Before continuing, make sure that:</p>
+<p>We can categorize data as being in one of two broad categories:</p>
 <ul>
-<li>You know that <code>group</code> with one argument produces counts per unique value in the grouped column.</li>
-<li>You know that <code>group</code> with two arguments produces an <strong>aggregated value</strong> per unique value in the grouped column, and can potentially produce multiple columns based on which column value can be aggregated with the provided <strong>aggregator</strong> function.</li>
+<li><strong>Tabular Data</strong>: Data is organized into rows and columns.
+<ul>
+<li>Example formats: XLS/XLSX, <strong>CSV</strong>, DB, …</li>
+<li>Applications: Google Sheets, Microsoft Excel, SQLite, Jupyter Notebooks + datascience, …</li>
+</ul></li>
+<li><strong>Non-Tabular Data</strong>: Data is organized in some other way:
+<ul>
+<li>Example Formats: TXT, DOC, JSON, JPG, MP3, MP4, …</li>
+<li>Applications: It really depends!</li>
+</ul></li>
 </ul>
+</section>
+<section id="tabular-data" class="level2">
+<h2 class="anchored" data-anchor-id="tabular-data">Tabular Data</h2>
+<section id="csv" class="level3">
+<h3 class="anchored" data-anchor-id="csv">CSV</h3>
+<p>**Comma-Separated Values, or CSV, is a file format consisting of lines of text. The CSV format stores tabular data, where</p>
+<ul>
+<li>Each line is a row of values.</li>
+<li>Each value is separated by a comma (hence, the name).</li>
+<li>Each row has the same number of comma-separated values.</li>
+</ul>
+<p>Typically, the first line of the file is assumed to be a row of column labels. The <code>pups.csv</code> file:</p>
+<pre><code>name,age,breed
+Junior Smith,11,cockapoo
+Rex Rogers,7,labradoodle
+Flash Heat,3,labrador
+Reese Bo,4,boston terrier
+Polo Cash,2,shih tzu</code></pre>
+<p>Most of the data we use in this class is in the CSV format. To load a CSV file into a table, provide the file name:</p>
+<div id="6d893d7c" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pups <span class="op">=</span> Table.read_table(<span class="st">"data/pups.csv"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>pups</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">name</th>
+<th data-quarto-table-cell-role="th">age</th>
+<th data-quarto-table-cell-role="th">breed</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Junior Smith</td>
+<td>11</td>
+<td>cockapoo</td>
+</tr>
+<tr class="even">
+<td>Rex Rogers</td>
+<td>7</td>
+<td>labradoodle</td>
+</tr>
+<tr class="odd">
+<td>Flash Heat</td>
+<td>3</td>
+<td>labrador</td>
+</tr>
+<tr class="even">
+<td>Reese Bo</td>
+<td>4</td>
+<td>boston terrier</td>
+</tr>
+<tr class="odd">
+<td>Polo Cash</td>
+<td>2</td>
+<td>shih tzu</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
-<p>You can also group data on multiple columns.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Read _Inferential Thinking_">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Read <em>Inferential Thinking</em>
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Read <a href="https://inferentialthinking.com/chapters/08/3/Cross-Classifying_by_More_than_One_Variable.html">Ch 8.3.1-8.3.2</a>, which describes grouping by multiple columns.</p>
-</div>
-</div>
-<section id="aggregating-and-disaggregating" class="level2">
-<h2 class="anchored" data-anchor-id="aggregating-and-disaggregating">Aggregating and Disaggregating</h2>
-<p>Grouping is a table operation most useful in translating between units of analysis. In particular, it lets us <strong>disaggregate</strong> data. Instead of just reporting an average across all datapoints, we can report averages as broken down by different subgroups.</p>
-<section id="case-study-1973-uc-berkeley-graduate-admissions" class="level3">
-<h3 class="anchored" data-anchor-id="case-study-1973-uc-berkeley-graduate-admissions">Case Study: 1973 UC Berkeley Graduate Admissions</h3>
-<p>The Fall 1973 admitted graduate student population had a peculiar characteristic: Overall, women were admitted at <strong>lower rates</strong> than men to graduate school, seeming to suggest that the admission rates was biased. However, when the admission rates <em>by department</em> (e.g., by field of study) were studied, women were often admitted at <strong>higher rates</strong> than men. How is this possible?</p>
-<p>This is a peculiar case study around Simpson’s Paradox: when the trends of subgroups are <strong>reversed</strong> or <strong>not seen</strong> as compared to the trends of the overall dataset. We will explore this in detail in the reading, in section, and in the project. Stay tuned!</p>
+</section>
+<section id="aside-file-paths" class="level3">
+<h3 class="anchored" data-anchor-id="aside-file-paths">Aside: File Paths</h3>
+<p>The below syntax loads data from a CSV located at <code>file_path</code> (a string describing the location of the relevant file) into a table named <code>tbl</code>.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>tbl <span class="op">=</span> Table.read_table(file_path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In our example <code>pups</code> case, the <code>pups.csv</code> file is located in the <code>data</code> directory (say, on DataHub), so our argument to <code>read_table</code> is the string <code>"data/pups.csv"</code>. The argument to <code>file_path</code> could also be a link to a CSV on the internet.</p>
 </section>
 </section>
-<section id="external-reading" class="level2">
-<h2 class="anchored" data-anchor-id="external-reading">External Reading</h2>
-<ul>
-<li>(mentioned in notes) <em>Computational and Inferential Thinking</em>, <a href="https://inferentialthinking.com/chapters/08/3/Cross-Classifying_by_More_than_One_Variable.html">Ch 8.3</a></li>
-<li>P. J. Bickel et al.&nbsp;,Sex Bias in Graduate Admissions: Data from Berkeley. Science 187, 398-404(1975). <a href="https://www.science.org/doi/10.1126/science.187.4175.398">DOI:10.1126/science.187.4175.398</a></li>
-</ul>
+<section id="non-tabular-data" class="level2">
+<h2 class="anchored" data-anchor-id="non-tabular-data">Non-Tabular Data</h2>
+<p>What kinds of data can’t be stored in a tabular format? Lots of things: music, videos, maps, etc. Graph data and hierarchical data, like family trees, might also be non-tabular.</p>
+<div style="text-align: center">
+<div id="fig-inflation" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-inflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/trees.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-inflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: A family tree graph structure. At the root is Grandma, who has children Dad and Aunt. Dad has children Brother and Me, and Aunt has children Cousin 1 and Cousin 2. Cousin 2 has a one child, Cousin 2 Jr.
+</figcaption>
+</figure>
+</div>
+</div>
+<section id="json" class="level3">
+<h3 class="anchored" data-anchor-id="json">JSON</h3>
+<p>JSON, which stands for <strong>JavaScript Object Notation</strong>, is a file format that allows us to store <strong>hierarchical data</strong>. Main features of a JSON file: * Curly braces denote the start of a series of key-value pairs (e.g., dictionary). * Valid keys are strings and numbers (integers and floats). * Valid values are strings, numbers, dictionaries, and lists. * Square brackets denote the start of a sequence (e.g., list). * Valid elements are strings, numbers, dictionaries, and lists.</p>
+<p>While whitespace makes the <code>family.json</code> file quite long, it helps organize the JSON for human view. You can put as much or as little whitespace in JSON files as you want.</p>
+<pre><code>{
+  "name": "Grandma",
+  "children": [
+    {
+      "name": "Dad",
+      "children": [
+        {
+          "name": "Me"
+        },
+        {
+          "name": "Brother"
+        }
+      ]
+    },
+    {
+      "name": "Aunt",
+      "children": [
+        {
+          "name": "Cousin 1"
+        },
+        {
+          "name": "Cousin 2",
+          "children": [
+            {
+              "name": "Cousin 2 Jr."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}</code></pre>
+<p>The JSON format looks very similar to the syntax we use for defining dictionaries in Python. Technically, JSON can be also used to store tabular data, but it’s far less elegant than just using a CSV.</p>
+<p>In lab, you will see an example of how to load JSON files into dictionaries. We will generally provide this starter code for you.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1013,13 +1160,13 @@ Read <em>Inferential Thinking</em>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../10-boolean-predicates/boolean.html" class="pagination-link" aria-label="Booleans">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Booleans</span>
+      <a href="../17-dictionaries/index.html" class="pagination-link" aria-label="L17: Dictionaries">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">L17: Dictionaries</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../12-pivot-join/index.html" class="pagination-link" aria-label="L12: Pivots and Joins">
-        <span class="nav-page-text">L12: Pivots and Joins</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../18-beautifulsoup/index.html" class="pagination-link" aria-label="L18: Beautiful Soup">
+        <span class="nav-page-text">L18: Beautiful Soup</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
