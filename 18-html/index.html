@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Measurements</title>
+<title>HTML Web Scraper</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../16-measurements/iteration-ii.html" rel="next">
-<link href="../15-iteration/practice.html" rel="prev">
+<link href="../five-things.html" rel="next">
+<link href="../17-dictionaries/file-formats.html" rel="prev">
 <link href="../assets/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -94,7 +94,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../16-measurements/index.html">L16: Iterations II; Measurements</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../18-html/index.html">L18: HTML Web Scraper</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -457,16 +457,16 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../16-measurements/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../16-measurements/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">L16: Iterations II; Measurements</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../16-measurements/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../16-measurements/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Reliability and Validity</span></a>
   </div>
 </li>
@@ -503,7 +503,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../18-html/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../18-html/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">L18: HTML Web Scraper</span></a>
   </div>
 </li>
@@ -529,7 +529,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#reliability-and-validity" id="toc-reliability-and-validity" class="nav-link active" data-scroll-target="#reliability-and-validity">Reliability and Validity</a></li>
+  <li><a href="#tutorial-parsing-html-with-beautifulsoup" id="toc-tutorial-parsing-html-with-beautifulsoup" class="nav-link active" data-scroll-target="#tutorial-parsing-html-with-beautifulsoup">Tutorial: Parsing HTML with BeautifulSoup</a></li>
   </ul>
 </nav>
     </div>
@@ -538,8 +538,8 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Measurements</h1>
-<p class="subtitle lead">Reliability and Validity</p>
+<h1 class="title">HTML Web Scraper</h1>
+<p class="subtitle lead">The BeautifulSoup Library</p>
 </div>
 
 
@@ -556,14 +556,11 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </header>
 
 
-<section id="reliability-and-validity" class="level2">
-<h2 class="anchored" data-anchor-id="reliability-and-validity">Reliability and Validity</h2>
-<p>For this lecture’s notes, please see:</p>
-<ul>
-<li><a href="https://docs.google.com/presentation/d/13mJmUvWdBpJS9NYmK-mniefU7sikqWtIQIUGGPq3xcI/edit?slide=id.g39e3df289f5_1_26#slide=id.g39e3df289f5_1_26">Lecture slides</a>.</li>
-<li>Excerpt of “Chapter 5: Evaluating Research.” Elizabeth Heger Boyle, Deborah Carr, Benjamin Cornwell, Shelley Correll, Robert Crosnoe, Jeremy Freese, and Waters, Mary C. 2017. The Art and Science of Social Research. New York: W. W. Norton &amp; Company <a href="https://drive.google.com/file/d/1E2ngZHiqXg2D_IFPBaYCKapB5HZIl1Z-/view?usp=drive_link">PDF Link</a> (UC Berkeley affiliates only)</li>
-<li>This week’s discussion handout</li>
-</ul>
+<section id="tutorial-parsing-html-with-beautifulsoup" class="level2">
+<h2 class="anchored" data-anchor-id="tutorial-parsing-html-with-beautifulsoup">Tutorial: Parsing HTML with BeautifulSoup</h2>
+<p>BeautifulSoup is a Python library for pulling data out of HTML and XML files.</p>
+<p>Please see Professor Allison Parrish’s <a href="https://github.com/aparrish/dmep-python-intro/blob/master/scraping-html.ipynb">tutorial on HTML and BeautifulSoup</a>, which we go over in class. This tutorial walks through scraping HTML from a simple <a href="http://static.decontextualize.com/kittens.html">kittens webpage</a>.</p>
+<p>The official <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">BeautifulSoup Documentation</a> is also a great place to continue searching for that exact feature you want.</p>
 
 
 </section>
@@ -970,13 +967,13 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../15-iteration/practice.html" class="pagination-link" aria-label="Practice">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Practice</span>
+      <a href="../17-dictionaries/file-formats.html" class="pagination-link" aria-label="File Formats">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">File Formats</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../16-measurements/iteration-ii.html" class="pagination-link" aria-label="More Iteration Practice">
-        <span class="nav-page-text">More Iteration Practice</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../five-things.html" class="pagination-link" aria-label="5 Things to Know">
+        <span class="nav-page-text">5 Things to Know</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
