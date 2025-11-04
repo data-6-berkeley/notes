@@ -552,7 +552,7 @@
     "href": "18-beautifulsoup/index.html",
     "title": "BeautifulSoup",
     "section": "",
-    "text": "BeautifulSoup is a Python library for pulling data out of HTML and XML files.\nPlease see Professor Allison Parrish’s tutorial on HTML and BeautifulSoup, which we go over in class.\nThe official BeautifulSoup Documentation is also a great place to continue searching for that exact feature you want.",
+    "text": "BeautifulSoup is a Python library for pulling data out of HTML and XML files.\nPlease see Professor Allison Parrish’s tutorial on HTML and BeautifulSoup, which we go over in class. This tutorial walks through scraping HTML from a simple kittens webpage.\nThe official BeautifulSoup Documentation is also a great place to continue searching for that exact feature you want.",
     "crumbs": [
       "L18: Beautiful Soup"
     ]
@@ -562,7 +562,7 @@
     "href": "18-beautifulsoup/index.html#tutorial-html-and-beautifulsoup",
     "title": "BeautifulSoup",
     "section": "",
-    "text": "BeautifulSoup is a Python library for pulling data out of HTML and XML files.\nPlease see Professor Allison Parrish’s tutorial on HTML and BeautifulSoup, which we go over in class.\nThe official BeautifulSoup Documentation is also a great place to continue searching for that exact feature you want.",
+    "text": "BeautifulSoup is a Python library for pulling data out of HTML and XML files.\nPlease see Professor Allison Parrish’s tutorial on HTML and BeautifulSoup, which we go over in class. This tutorial walks through scraping HTML from a simple kittens webpage.\nThe official BeautifulSoup Documentation is also a great place to continue searching for that exact feature you want.",
     "crumbs": [
       "L18: Beautiful Soup"
     ]
