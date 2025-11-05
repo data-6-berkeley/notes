@@ -142,8 +142,13 @@ website:
             text: "Dictionaries"
           - href: 17-dictionaries/file-formats.qmd
             text: "File Formats"
-      - text: "L18: HTML Web Scraper"
+      - text: "L18: HTML and Web Scraping"
         href: 18-html/index.qmd
+        contents:
+          - href: 18-html/index.qmd
+            text: "HTML and BeautifulSoup"
+          - href: 18-html/genius.qmd
+            text: "Genius API Key"
       - href: five-things.qmd
         text: "5 Things to Know"
       - href: reference.qmd

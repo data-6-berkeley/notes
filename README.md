@@ -15,6 +15,7 @@ Quick reference:
 datascience
 numpy
 seaborn
+beautifulsoup4
 ```
 
 ## course-site-quarto

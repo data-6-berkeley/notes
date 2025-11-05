@@ -1,38 +1,26 @@
----
-title: "HTML and BeautifulSoup"
-subtitle: "Scraping the web by turning HTML into soup"
----
+# Data 6 Fall 2025: Web Scraping with Beautiful Soup
 
-## Tutorial: Parsing HTML with BeautifulSoup
+Based on lessons by [Melanie Walsh's _Intro to Cultural Analytics](https://melaniewalsh.github.io/Intro-Cultural-Analytics), [Alison Parrish](http://www.decontextualize.com/) and [Jinho Choi](https://github.com/emory-courses/data-science/blob/master/course/data_aggregation/data_aggregation.ipynb)
 
-BeautifulSoup is a Python library for pulling data out of HTML and XML files.
-
-This tutorial walks through scraping HTML from a simple [kittens webpage](http://static.decontextualize.com/kittens.html). This tutorial is based on lessons by [Melanie Walsh's _Intro to Cultural Analytics](https://melaniewalsh.github.io/Intro-Cultural-Analytics), [Alison Parrish](http://www.decontextualize.com/) and [Jinho Choi](https://github.com/emory-courses/data-science/blob/master/course/data_aggregation/data_aggregation.ipynb)
-
-The official [BeautifulSoup Documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) is also a great place to continue searching for that exact feature you want.
-
-## HTML Anatomy
+# Inspecting HTML's anatomy with Developer Tools
 
 Thanks to Alison Parrish, we have a very simple example of HTML to begin with. It is about kittens. [Here's the rendered version](http://static.decontextualize.com/kittens.html), and [here's the HTML source code](https://raw.githubusercontent.com/ledeprogram/courses/master/databases/data/kittens.html).
 
-### Developer Tools in your browser
+## Developer Tools in your browser
 First we're going to use Developer Tools in Chrome to take a look at how `kittens.html` is organized. Click on the "rendered ve#rsion" link above.
 * Chrome, Firefox: Right-click (or ctrl-click) anywhere on the page, then click "Inspect"
 * Safari: Right-click (or ctrl-click) anywhere on the page, then click "Inspect Element"
 
 This will the browser's Chrome's Developer Tools. Your screen should look (something) like this:
 
-
-:::{style="text-align: center"}
-![Kittens Dev Tools.](http://static.decontextualize.com/snaps/kittens-dev-tools.png){#fig-inflation fig-align=center width=100%}
-:::
+<a href="http://static.decontextualize.com/snaps/kittens-dev-tools.png"><img src="http://static.decontextualize.com/snaps/kittens-dev-tools.png" alt="kittens-dev-tools"/></a>
 
 In the upper panel, you see the web page you're inspecting. In the lower panel, you see a version of the HTML source code, with little arrows next to some of the lines. (The little arrows allow you to collapse parts of the HTML source that are hierarchically related.) As you move your mouse over the elements in the top panel, different parts of the source code will be highlighted. Chrome is showing you which parts of the source code are causing which parts of the page to show up. Pretty spiffy!
 
 This relationship also works in reverse: you can move your mouse over some part of the source code in the lower panel, which will highlight in the top panel what that source code corresponds to on the page. We'll be using this later to visually identify the parts of the page that are interesting to us, so we can write code that extracts the contents of those parts automatically.
 
 
-### The structure of `kittens.html`
+## The structure of `kittens.html`
 
 Here's what the source code of kittens.html looks like:
 
@@ -74,10 +62,9 @@ This is pretty well organized HTML, but if you don't know how to read HTML, it w
 * Each kitten has a list (a `<ul>` with class `tvshows`) of television shows, contained within `<li>` tags.
 * Those list items themselves have links (`<a>` tags) with an `href` attribute that contains a link to an IMDB entry for that show.
 
-### Summary: HTML Elements
+## Summary: HTML Elements
 
 In summary, HTML is composed of **HTML elements**, which have:
-
 * **Tags**, provided as the first string within angled brackets.
 * (optional) **attributes**, provided as `attr=value` key-value pairs within the angled brackets.
 * (optional) a string and/or other elements under the tag. These will be between the matching angled brackets, e.g., `<li>` and `</li>`.
@@ -88,19 +75,22 @@ You will hear **tag** and **element** used interchangeably. This is because ever
 
 1. What's the parent tag of `<a href="http://www.imdb.com/title/tt0088576/">Mr. Belvedere</a>`? 
 
+_Your answer here_
+
 2. Both `<div class="kitten">` tags share a parent tag---what is it? What attributes are present on both `<img>` tags?
 
-## Scraping and Web requests
+_Your answer here_
+
+# Scraping and Web requests
 
 We've examined `kittens.html` a bit now. What we'd like to do is write some code that is going to extract information from the HTML, like "what is the last checkup date for each of these kittens?" or "what are Monsieur Whiskeur's favorite TV shows?" To do so, we need to:
-
 1. **Scrape** the HTML from the internet
 2. **Parse** the HTML by creating a representation of it in our program that we can manipulate with Python
 
 Let's do the first task: **scraping**. It's left to us to actually *get* the HTML from somewhere. In most cases, we'll want to download the HTML directly from the actual web. For that, we'll use the `get` method from the Python library `requests` ([link](https://2.python-requests.org/en/master/)):
 
 
-```{python}
+```python
 # first let's import the requests library
 import requests 
 ```
@@ -110,7 +100,7 @@ If it worked, you won't get an error message.
 Now let's use the "get" method to make an http request (the eponymous "requests") to get the contents of kittens.html.
 
 
-```{python}
+```python
 resp = requests.get("http://static.decontextualize.com/kittens.html") 
 resp
 ```
@@ -119,14 +109,15 @@ Note that "resp" is a **Python object**, and not plain text. The HTTP Response S
 
 _Side note_: The "get" method makes things easy by guessing at the document's character encoding. We're not really going to talk about character encoding until next class, but since we can, let's check this page's encoding real quick.
 
-```{python}
+
+```python
 resp.encoding
 ```
 
 Okay, back on task. Now let's create a **string** with the contents of the web page in text format we use the "text" method for this.
 
 
-```{python}
+```python
 html_str = resp.text
 html_str
 ```
@@ -140,18 +131,20 @@ If we wanted to "pretty print", note that the `html_str` has a lot of whitespace
 Calling `print` will render this whitespace in our display.
 
 
-```{python}
+```python
 # pretty print
 print(html_str)
 ```
 
-### Why is web scraping hard?
+## Task: Why is web scraping hard?
 
 It turns out that web scraping is heavily restricted on today's internet. What do you think are reasons why websites would **not** want programs periodically scraping their data?
 
+_Your answer here_
+
 In this class, we will usually handle the web requests and scraping for you. 
 
-## The Beautiful Soup library
+# The Beautiful Soup library
 
 Now, onto the next step:
 
@@ -164,7 +157,7 @@ What representation should we choose? As mentioned earlier, HTML is hard to pars
 Note that BeautifulSoup can parse any HTML that is provided as a string. We've already gotten an HTML string from our previous web request, so now we need to create a Beautiful Soup object from that data. 
 
 
-```{python}
+```python
 # just run this cell
 from bs4 import BeautifulSoup
 
@@ -178,12 +171,12 @@ The `document` object supports a number of interesting methods that allow us to 
 * `Tag` objects, and
 * `ResultSet` objects, which are essentially just lists of `Tag` objects.
 
-### Finding a tag with `find`
+## Finding a tag with `find`
 
 As we've previously discussed, HTML documents are composed of tags. To represent this, Beautiful Soup has a type of value that represents tags. We can use the `.find()` method of the `BeautifulSoup` object to find a tag that matches a particular tag name. For example:
 
 
-```{python}
+```python
 h1_tag = document.find('h1')
 type(h1_tag)
 ```
@@ -191,39 +184,37 @@ type(h1_tag)
 A `Tag` object has several interesting attributes and methods. The `string` attribute of a `Tag` object, for example, returns a string representing that tag's contents:
 
 
-```{python}
+```python
 h1_tag.string
 ```
 
 You can access the attributes of a tag by treating the tag object as though it were a **dictionary**. To get the **value** associated with a particular **attribute**. Use the square-bracket syntax, providing the attribute name as key/string.
 
-#### Get the `src` attribute of the first `<img>` tag in the document
+### Get the `src` attribute of the first `<img>` tag in the document
 
 
-```{python}
+```python
 img_tag = document.find('img')
 img_tag['src']
 ```
 
 **Note**: You might have noticed that there is more than one `<img>` tag in `kittens.html`! If more than one tag matches the name you pass to `.find()`, it returns only the first matching tag. (A better name for `.find()` might be `.find_first()`, but we digress.)
 
-#### Your turn: Find the last check-up date of the first kitten.
+### **TASK**: Find the last check-up date of the first kitten.
 
-::: {.callout-note title="Solution" collapse="true"}
 
-```{python}
-tag = document.find('span')
-tag.string
+```python
+# YOUR SOLUTION HERE
+first_span_tag = ...
+...
 ```
 
-:::
-
-### Finding multiple tags with `find_all`
+## Finding multiple tags with `find_all`
 
 It's very often the case that we want to find not just one tag that matches particular criteria, but ALL tags matching those criteria. For that, we use the `.find_all()` method of the `BeautifulSoup` object. For example, to find all `h2` tags in the document:
 
 
-```{python}
+```python
 h2_tags = document.find_all('h2')
 type(h2_tags)
 ```
@@ -233,14 +224,14 @@ But what's in the Result Set?
 In order to find out, we're going to need to use a loop. Specifically, a **for** loop.
 
 
-```{python}
+```python
 for tag in h2_tags:
     print(tag.string) 
 ```
 
 This conveniently gives you a variable, `tag`, that updates with the appropriate value each time you iterate.
 
-### Finding tags with particular attributes
+## Finding tags with particular attributes
 
 In any case, both the `.find()` and `.find_all()` methods can search not just for tags with particular names, but also for **tags that have particular attributes**.
 
@@ -253,19 +244,19 @@ document.find_all(tag_name, attrs=None)
 To find all `span` tags with a `class` attribute of `lastcheckup`:
 
 
-```{python}
+```python
 checkup_tags = document.find_all('span', attrs={'class': 'lastcheckup'})
 for tag in checkup_tags:
     print(tag.string)
 ```
 
-## More on BeautifulSoup
+## Read more in the BeautifulSoup Documentation
 
 **Before we move on:**
 
 Beautiful Soup's `.find()` and `.find_all()` methods are actually more powerful than we're letting on here. [Check out the details in the official Beautiful Soup documentation.](http://www.crummy.com/software/BeautifulSoup/bs4/doc/#find-all)
 
-### Use `find`/`find_all` on tags, too
+## Use `find`/`find_all` on tags, too
 
 Let's say that we wanted to print out a list of the name of each kitten, along with a list of the names of that kitten's favorite TV shows. In other words, we want to print out something that looks like this:
 
@@ -284,27 +275,31 @@ This kind of search is made easy by the fact that you can use `.find()` and `.fi
 In our kittens example, we can see that information about individual kittens is grouped together under `<div>` tags with a `class` attribute of `kitten`. So, to find a list of all `<div>` tags with `class` set to `kitten`, we might do this:
 
 
-```{python}
+```python
+# just run this cell
 kitten_tags = document.find_all("div", attrs={"class": "kitten"})
+# kitten_tags # uncomment if you want to print
 ```
 
 Now, we'll loop over that list of tags and find, inside each of them, the `<h2>` tag that is its child:
 
-```{python}
+
+
+```python
 # just run this cell
 for kitten_tag in kitten_tags:
     h2_tag = kitten_tag.find('h2')
     print(h2_tag.string)
 ```
 
-#### String method demo practice
+### String method demo practice
 
 Now, we'll go one extra step. Looping over all of the kitten tags, we'll find not just the `<h2>` tag with the kitten's name, but all `<a>` tags (which contain the names of the TV shows that we were looking for).
 
 _Note*: The list method `lst.append(elt)` returns nothing and directly modifies the original list `lst`, appending `elt` to the end. (This behavior is unlike `np.append`, which returns a new array.)
 
 
-```{python}
+```python
 # trace through this code carefully!
 
 for kitten_tag in kitten_tags:
@@ -317,16 +312,23 @@ for kitten_tag in kitten_tags:
     print(h2_tag.string + ":", ", ".join(a_tag_strings))
 ```
 
-#### Your turn: Find last check-up for all kittens
+### Task: Find last check-up for all kittens
 
 Using the code above as a template, write code that prints out a list of kitten names along with the last check-up date for that kitten.
 
-_Hint_: Look up above for the HTML that deals with check-up dates. 
+HINT: Look up above for the code that deals with check-up dates. 
 
 
-::: {.callout-note title="Solution" collapse="true"}
+```python
+# YOUR CODE HERE
+```
 
-```{python}
+<details>
+  <summary>Click for Solution</summary>
+
+Various options. One reasonable approach:
+
+```
 for kitten_tag in kitten_tags:
     h2_tag = kitten_tag.find('h2') # keep this to find the kittens
     checkup_tag = kitten_tag.find('span', attrs={'class': 'lastcheckup'})
@@ -334,22 +336,30 @@ for kitten_tag in kitten_tags:
     print(h2_tag.string + ", " + checkup_tag.string)
 ```
 
-:::
+</details>
 
 
-#### Your turn: Find links to all kittens' favorite shows
+
+### Task: Find links to all kittens' favorite shows
 
 Using the code above, write code that prints a list of kitten names with links to that kitten's favorite shows. I.e., you should end up with something of the format:
 
 `Name: [kitten name]
  URLS: www.asdasdsa.com, www.sdkalskdjsa.com`
  
-_Hint_: Look up above for how you access the attribute of a tag. 
+Hint: Look up above for how you access the attribute of a tag. 
 
 
-::: {.callout-note title="Solution" collapse="true"}
+```python
+# YOUR CODE HERE
+```
 
-```{python}
+<details>
+  <summary>Click for Solution</summary>
+
+Various options. One reasonable approach:
+
+```
 for kitten_tag in kitten_tags:
     h2_tag = kitten_tag.find('h2') # keep this to find the kittens
     url_strings = []
@@ -360,15 +370,16 @@ for kitten_tag in kitten_tags:
     print("URLs: " + urls_joined)
 ```
 
-:::
+</details>
 
 
-### Find sibling tags: `find_next_sibling()`
+
+## Find sibling tags: `find_next_sibling()`
 
 Often, the tags we're looking for don't have a distinguishing characteristic, like a `class` attribute, that allows us to find them using `.find()` and `.find_all()`, and the tags also aren't in a parent-child relationship. This can be tricky! Take the following HTML snippet, for example:    
 
 
-```{python}
+```python
 cheese_html = """
 <h2>Camembert</h2>
 <p>A soft cheese made in the Camembert region of France.</p>
@@ -383,7 +394,7 @@ cheese_document = BeautifulSoup(cheese_html, "html.parser")
 If our task was to create a list of the name of the cheese followed by the description that follows in the `<p>` tag directly afterward, we'd be out of luck. Fortunately, Beautiful Soup has a `.find_next_sibling()` method, which allows us to search for the next tag that is a *sibling* of the tag you're calling it on (i.e., the two tags share a parent), that also matches particular criteria. So, for example, to accomplish the task outlined above:
 
 
-```{python}
+```python
 cheese_dict = {}
 for h2_tag in cheese_document.find_all('h2'):
     cheese_name = h2_tag.string
@@ -393,42 +404,41 @@ for h2_tag in cheese_document.find_all('h2'):
 cheese_dict
 ```
 
-### When things go wrong with Beautiful Soup
-
 You now know most of what you need to know to scrape web pages effectively. Good job!
 
 But before you're done, we should talk about what to do when things go wrong.
 
+## When things go wrong with Beautiful Soup
+
 A number of things might go wrong with Beautiful Soup. Here are just a few.
 
-#### Tag does not exist with `find`
+### Tag does not exist with `find`
 
 You might, for example, search for a tag that doesn't exist in the document:
 
-```{python}
+
+```python
 footer_tag = document.find("footer")
 ```
 
 Beautiful Soup doesn't return an error if it can't find the tag you want. Instead, it returns `None`:
 
 
-```{python}
+```python
 type(footer_tag)
 ```
 
 If you try to call a method on the object that Beautiful Soup returned anyway, you might end up with an error like this:
 
 
-```{python}
-#| error: true
+```python
 footer_tag.find("p")
 ```
 
 You might also inadvertently try to get an attribute of a tag that wasn't actually found. You'll get a similar error in that case:
 
 
-```{python}
-#| error: true
+```python
 footer_tag['title']
 ```
 
@@ -439,7 +449,7 @@ Whenever you see something like `TypeError: 'NoneType' object is not subscriptab
 The `.find_all()` method will return an empty list if it doesn't find any of the tags you wanted:
 
 
-```{python}
+```python
 footer_tags = document.find_all("footer")
 print(footer_tags)
 ```
@@ -447,14 +457,13 @@ print(footer_tags)
 If you attempt to access one of the elements of this regardless...
 
 
-```{python}
-#| error: true
+```python
 print(footer_tags[0].string)
 ```
 
 ...you'll get an `IndexError`.
 
-## [Out-of-scope material] List comprehension
+# [Out-of-scope material] List comprehension
 
 Consider the following code:
 
@@ -463,6 +472,8 @@ Consider the following code:
 checkup_tags = document.find_all('span', attrs={'class': 'lastcheckup'})
 [tag.string for tag in checkup_tags]
 ```
+
+
 
 The second line in the code cell above is a helpful shorthand: it creates a list with each of the `tag.string`s in `checkup_tags`.
 
