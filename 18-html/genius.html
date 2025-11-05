@@ -670,7 +670,7 @@ Figure&nbsp;2: New API Client button.
 <p>It doesn’t really matter what you type in. You can simply put “Data 6 Fall 2025 Project 2” for the “App Name” and the URL for our course website “https://data6.org/fa25/” for the “App Website URL.”</p>
 <p>When you click “Save,” you’ll be given a series of API Keys: a “Client ID” and a “Client Secret.” To generate your “Client Access Token,” which is the API key that we’ll be using in this notebook, you need to click “Generate Access Token”.</p>
 <p>Finally, you <em>could</em> copy and paste your “Client Access Token” into a Python cell and assign it to a name, <code>client_access_token</code>.</p>
-<div id="60d02ebb" class="cell" data-execution_count="1">
+<div id="47002e50" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># don't do this in practice</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>client_access_token <span class="op">=</span> <span class="st">"INSERT YOUR CLIENT ACCESS TOKEN IN THESE QUOTATION MARKS"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -691,10 +691,10 @@ Figure&nbsp;2: New API Client button.
 <li>Return to your assignment file.</li>
 </ol>
 <p>We can then import <code>my_client_access_token</code> into my notebook with <code>import api_key</code>.</p>
-<div id="aab13443" class="cell" data-execution_count="2">
+<div id="45f99198" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> api_key</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="25d09fd7" class="cell" data-execution_count="3">
+<div id="54eec9df" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>api_key.my_client_access_token</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>'MY_API_KEY'</code></pre>
@@ -702,7 +702,7 @@ Figure&nbsp;2: New API Client button.
 </div>
 <p>By importing this Python file as a module, we get access to <code>my_client_access_token</code> without ever having to explicitly type our secret API token into this notebook. If we were to publish this notebook to GitHub, then we can ignore or leave out the <code>api_key.py</code> file that actually contains the API token.</p>
 <p>Finally, we can load this value into our <code>client_access_token</code>:</p>
-<div id="f2cf6205" class="cell" data-execution_count="4">
+<div id="b1d99804" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>client_access_token <span class="op">=</span> api_key.my_client_access_token</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 

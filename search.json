@@ -1082,6 +1082,224 @@
     ]
   },
   {
+    "objectID": "18-html/lec18.html",
+    "href": "18-html/lec18.html",
+    "title": "Data 6 Fall 2025: Web Scraping with Beautiful Soup",
+    "section": "",
+    "text": "Based on lessons by Melanie Walsh’s _Intro to Cultural Analytics, Alison Parrish and Jinho Choi"
+  },
+  {
+    "objectID": "18-html/lec18.html#developer-tools-in-your-browser",
+    "href": "18-html/lec18.html#developer-tools-in-your-browser",
+    "title": "Data 6 Fall 2025: Web Scraping with Beautiful Soup",
+    "section": "Developer Tools in your browser",
+    "text": "Developer Tools in your browser\nFirst we’re going to use Developer Tools in Chrome to take a look at how kittens.html is organized. Click on the “rendered ve#rsion” link above. * Chrome, Firefox: Right-click (or ctrl-click) anywhere on the page, then click “Inspect” * Safari: Right-click (or ctrl-click) anywhere on the page, then click “Inspect Element”\nThis will the browser’s Chrome’s Developer Tools. Your screen should look (something) like this:\n\nIn the upper panel, you see the web page you’re inspecting. In the lower panel, you see a version of the HTML source code, with little arrows next to some of the lines. (The little arrows allow you to collapse parts of the HTML source that are hierarchically related.) As you move your mouse over the elements in the top panel, different parts of the source code will be highlighted. Chrome is showing you which parts of the source code are causing which parts of the page to show up. Pretty spiffy!\nThis relationship also works in reverse: you can move your mouse over some part of the source code in the lower panel, which will highlight in the top panel what that source code corresponds to on the page. We’ll be using this later to visually identify the parts of the page that are interesting to us, so we can write code that extracts the contents of those parts automatically."
+  },
+  {
+    "objectID": "18-html/lec18.html#the-structure-of-kittens.html",
+    "href": "18-html/lec18.html#the-structure-of-kittens.html",
+    "title": "Data 6 Fall 2025: Web Scraping with Beautiful Soup",
+    "section": "The structure of kittens.html",
+    "text": "The structure of kittens.html\nHere’s what the source code of kittens.html looks like:\n&lt;!doctype html&gt;\n&lt;html&gt;\n  &lt;head&gt;\n    &lt;title&gt;Kittens!&lt;/title&gt;\n  &lt;/head&gt;\n  &lt;body&gt;\n    &lt;h1&gt;Kittens and the TV Shows They Love&lt;/h1&gt;\n    &lt;div class=\"kitten\"&gt;\n      &lt;h2&gt;Fluffy&lt;/h2&gt;\n      &lt;div&gt;&lt;img src=\"http://placekitten.com/100/100\"&gt;&lt;/div&gt;\n      &lt;ul class=\"tvshows\"&gt;\n        &lt;li&gt;&lt;a href=\"http://www.imdb.com/title/tt0106145/\"&gt;Deep Space Nine&lt;/a&gt;&lt;/li&gt;\n        &lt;li&gt;&lt;a href=\"http://www.imdb.com/title/tt0088576/\"&gt;Mr. Belvedere&lt;/a&gt;&lt;/li&gt;\n      &lt;/ul&gt;\n      Last check-up: &lt;span class=\"lastcheckup\"&gt;2014-01-17&lt;/span&gt;\n    &lt;/div&gt;\n    &lt;div class=\"kitten\"&gt;\n      &lt;h2&gt;Monsieur Whiskeurs&lt;/h2&gt;\n      &lt;div&gt;&lt;img src=\"http://placekitten.com/150/100\"&gt;&lt;/div&gt;\n      &lt;ul class=\"tvshows\"&gt;\n        &lt;li&gt;&lt;a href=\"http://www.imdb.com/title/tt0106179/\"&gt;The X-Files&lt;/a&gt;&lt;/li&gt;\n        &lt;li&gt;&lt;a href=\"http://www.imdb.com/title/tt0098800/\"&gt;Fresh Prince&lt;/a&gt;&lt;/li&gt;\n      &lt;/ul&gt;\n      Last check-up: &lt;span class=\"lastcheckup\"&gt;2013-11-02&lt;/span&gt;\n    &lt;/div&gt;\n  &lt;/body&gt;\n&lt;/html&gt;\nThis is pretty well organized HTML, but if you don’t know how to read HTML, it will still look like a big jumble. Here’s how I would characterize the structure of this HTML, reading in my own idea of what the meaning of the elements are.\n\nWe have two “kittens,” both of which are contained in &lt;div&gt; tags with class kitten.\nEach “kitten” &lt;div&gt; has an &lt;h2&gt; tag with that kitten’s name.\nThere’s an image for each kitten, specified with an &lt;img&gt; tag.\nEach kitten has a list (a &lt;ul&gt; with class tvshows) of television shows, contained within &lt;li&gt; tags.\nThose list items themselves have links (&lt;a&gt; tags) with an href attribute that contains a link to an IMDB entry for that show."
+  },
+  {
+    "objectID": "18-html/lec18.html#summary-html-elements",
+    "href": "18-html/lec18.html#summary-html-elements",
+    "title": "Data 6 Fall 2025: Web Scraping with Beautiful Soup",
+    "section": "Summary: HTML Elements",
+    "text": "Summary: HTML Elements\nIn summary, HTML is composed of HTML elements, which have: * Tags, provided as the first string within angled brackets. * (optional) attributes, provided as attr=value key-value pairs within the angled brackets. * (optional) a string and/or other elements under the tag. These will be between the matching angled brackets, e.g., &lt;li&gt; and &lt;/li&gt;.\nYou will hear tag and element used interchangeably. This is because every HTML element must have a tag.\n\nTASK: Discussion\n\nWhat’s the parent tag of &lt;a href=\"http://www.imdb.com/title/tt0088576/\"&gt;Mr. Belvedere&lt;/a&gt;?\n\nYour answer here\n\nBoth &lt;div class=\"kitten\"&gt; tags share a parent tag—what is it? What attributes are present on both &lt;img&gt; tags?\n\nYour answer here"
+  },
+  {
+    "objectID": "18-html/lec18.html#task-why-is-web-scraping-hard",
+    "href": "18-html/lec18.html#task-why-is-web-scraping-hard",
+    "title": "Data 6 Fall 2025: Web Scraping with Beautiful Soup",
+    "section": "Task: Why is web scraping hard?",
+    "text": "Task: Why is web scraping hard?\nIt turns out that web scraping is heavily restricted on today’s internet. What do you think are reasons why websites would not want programs periodically scraping their data?\nYour answer here\nIn this class, we will usually handle the web requests and scraping for you."
+  },
+  {
+    "objectID": "18-html/lec18.html#finding-a-tag-with-find",
+    "href": "18-html/lec18.html#finding-a-tag-with-find",
+    "title": "Data 6 Fall 2025: Web Scraping with Beautiful Soup",
+    "section": "Finding a tag with find",
+    "text": "Finding a tag with find\nAs we’ve previously discussed, HTML documents are composed of tags. To represent this, Beautiful Soup has a type of value that represents tags. We can use the .find() method of the BeautifulSoup object to find a tag that matches a particular tag name. For example:\nh1_tag = document.find('h1')\ntype(h1_tag)\nA Tag object has several interesting attributes and methods. The string attribute of a Tag object, for example, returns a string representing that tag’s contents:\nh1_tag.string\nYou can access the attributes of a tag by treating the tag object as though it were a dictionary. To get the value associated with a particular attribute. Use the square-bracket syntax, providing the attribute name as key/string.\n\nGet the src attribute of the first &lt;img&gt; tag in the document\nimg_tag = document.find('img')\nimg_tag['src']\nNote: You might have noticed that there is more than one &lt;img&gt; tag in kittens.html! If more than one tag matches the name you pass to .find(), it returns only the first matching tag. (A better name for .find() might be .find_first(), but we digress.)\n\n\nTASK: Find the last check-up date of the first kitten.\n# YOUR SOLUTION HERE\nfirst_span_tag = ...\n..."
+  },
+  {
+    "objectID": "18-html/lec18.html#finding-multiple-tags-with-find_all",
+    "href": "18-html/lec18.html#finding-multiple-tags-with-find_all",
+    "title": "Data 6 Fall 2025: Web Scraping with Beautiful Soup",
+    "section": "Finding multiple tags with find_all",
+    "text": "Finding multiple tags with find_all\nIt’s very often the case that we want to find not just one tag that matches particular criteria, but ALL tags matching those criteria. For that, we use the .find_all() method of the BeautifulSoup object. For example, to find all h2 tags in the document:\nh2_tags = document.find_all('h2')\ntype(h2_tags)\nBut what’s in the Result Set?\nIn order to find out, we’re going to need to use a loop. Specifically, a for loop.\nfor tag in h2_tags:\n    print(tag.string) \nThis conveniently gives you a variable, tag, that updates with the appropriate value each time you iterate."
+  },
+  {
+    "objectID": "18-html/lec18.html#finding-tags-with-particular-attributes",
+    "href": "18-html/lec18.html#finding-tags-with-particular-attributes",
+    "title": "Data 6 Fall 2025: Web Scraping with Beautiful Soup",
+    "section": "Finding tags with particular attributes",
+    "text": "Finding tags with particular attributes\nIn any case, both the .find() and .find_all() methods can search not just for tags with particular names, but also for tags that have particular attributes.\nFor that, we use the optional attrs keyword argument. attrs is a dictionary that associates attribute names as keys and the desired attribute value as values.\ndocument.find_all(tag_name, attrs=None)\nTo find all span tags with a class attribute of lastcheckup:\ncheckup_tags = document.find_all('span', attrs={'class': 'lastcheckup'})\nfor tag in checkup_tags:\n    print(tag.string)"
+  },
+  {
+    "objectID": "18-html/lec18.html#read-more-in-the-beautifulsoup-documentation",
+    "href": "18-html/lec18.html#read-more-in-the-beautifulsoup-documentation",
+    "title": "Data 6 Fall 2025: Web Scraping with Beautiful Soup",
+    "section": "Read more in the BeautifulSoup Documentation",
+    "text": "Read more in the BeautifulSoup Documentation\nBefore we move on:\nBeautiful Soup’s .find() and .find_all() methods are actually more powerful than we’re letting on here. Check out the details in the official Beautiful Soup documentation."
+  },
+  {
+    "objectID": "18-html/lec18.html#use-findfind_all-on-tags-too",
+    "href": "18-html/lec18.html#use-findfind_all-on-tags-too",
+    "title": "Data 6 Fall 2025: Web Scraping with Beautiful Soup",
+    "section": "Use find/find_all on tags, too",
+    "text": "Use find/find_all on tags, too\nLet’s say that we wanted to print out a list of the name of each kitten, along with a list of the names of that kitten’s favorite TV shows. In other words, we want to print out something that looks like this:\nFlufzfy: Deep Space Nine, Mr. Belvedere\nMonsieur Whiskeurs: The X-Files, Fresh Prince\nIn order to do this, we need to find not just tags with particular names, but tags with particular hierarchical relationships with other tags:\n\nIdentify all of the kittens, then\nFind the shows that belong to that kitten.\n\nThis kind of search is made easy by the fact that you can use .find() and .find_all() methods not just on the entire document, but on individual tags*. When you use these methods on tags, they search for matching tags that are specifically children of the tag that you call them on.\n\nIn our kittens example, we can see that information about individual kittens is grouped together under &lt;div&gt; tags with a class attribute of kitten. So, to find a list of all &lt;div&gt; tags with class set to kitten, we might do this:\n# just run this cell\nkitten_tags = document.find_all(\"div\", attrs={\"class\": \"kitten\"})\n# kitten_tags # uncomment if you want to print\nNow, we’ll loop over that list of tags and find, inside each of them, the &lt;h2&gt; tag that is its child:\n# just run this cell\nfor kitten_tag in kitten_tags:\n    h2_tag = kitten_tag.find('h2')\n    print(h2_tag.string)\n\nString method demo practice\nNow, we’ll go one extra step. Looping over all of the kitten tags, we’ll find not just the &lt;h2&gt; tag with the kitten’s name, but all &lt;a&gt; tags (which contain the names of the TV shows that we were looking for).\n_Note*: The list method lst.append(elt) returns nothing and directly modifies the original list lst, appending elt to the end. (This behavior is unlike np.append, which returns a new array.)\n# trace through this code carefully!\n\nfor kitten_tag in kitten_tags:\n    h2_tag = kitten_tag.find('h2')\n    \n    a_tag_strings = []\n    for tag in kitten_tag.find_all('a'):\n        a_tag_strings.append(tag.string)\n        \n    print(h2_tag.string + \":\", \", \".join(a_tag_strings))\n\n\nTask: Find last check-up for all kittens\nUsing the code above as a template, write code that prints out a list of kitten names along with the last check-up date for that kitten.\nHINT: Look up above for the code that deals with check-up dates.\n# YOUR CODE HERE\n\n\nClick for Solution\n\nVarious options. One reasonable approach:\nfor kitten_tag in kitten_tags:\n    h2_tag = kitten_tag.find('h2') # keep this to find the kittens\n    checkup_tag = kitten_tag.find('span', attrs={'class': 'lastcheckup'})\n\n    print(h2_tag.string + \", \" + checkup_tag.string)\n\n\n\nTask: Find links to all kittens’ favorite shows\nUsing the code above, write code that prints a list of kitten names with links to that kitten’s favorite shows. I.e., you should end up with something of the format:\nName: [kitten name]  URLS: www.asdasdsa.com, www.sdkalskdjsa.com\nHint: Look up above for how you access the attribute of a tag.\n# YOUR CODE HERE\n\n\nClick for Solution\n\nVarious options. One reasonable approach:\nfor kitten_tag in kitten_tags:\n    h2_tag = kitten_tag.find('h2') # keep this to find the kittens\n    url_strings = []\n    for url in kitten_tag.find_all('a'):\n        url_strings.append(url['href'])\n    urls_joined = \", \".join(url_strings)\n    print(\"Name: \" + h2_tag.string)\n    print(\"URLs: \" + urls_joined)"
+  },
+  {
+    "objectID": "18-html/lec18.html#find-sibling-tags-find_next_sibling",
+    "href": "18-html/lec18.html#find-sibling-tags-find_next_sibling",
+    "title": "Data 6 Fall 2025: Web Scraping with Beautiful Soup",
+    "section": "Find sibling tags: find_next_sibling()",
+    "text": "Find sibling tags: find_next_sibling()\nOften, the tags we’re looking for don’t have a distinguishing characteristic, like a class attribute, that allows us to find them using .find() and .find_all(), and the tags also aren’t in a parent-child relationship. This can be tricky! Take the following HTML snippet, for example:\ncheese_html = \"\"\"\n&lt;h2&gt;Camembert&lt;/h2&gt;\n&lt;p&gt;A soft cheese made in the Camembert region of France.&lt;/p&gt;\n\n&lt;h2&gt;Cheddar&lt;/h2&gt;\n&lt;p&gt;A yellow cheese made in the Cheddar region of... France, probably, idk whatevs.&lt;/p&gt;\n\"\"\"\n\ncheese_document = BeautifulSoup(cheese_html, \"html.parser\")\nIf our task was to create a list of the name of the cheese followed by the description that follows in the &lt;p&gt; tag directly afterward, we’d be out of luck. Fortunately, Beautiful Soup has a .find_next_sibling() method, which allows us to search for the next tag that is a sibling of the tag you’re calling it on (i.e., the two tags share a parent), that also matches particular criteria. So, for example, to accomplish the task outlined above:\ncheese_dict = {}\nfor h2_tag in cheese_document.find_all('h2'):\n    cheese_name = h2_tag.string\n    cheese_desc_tag = h2_tag.find_next_sibling('p')\n    cheese_dict[cheese_name] = cheese_desc_tag.string\n\ncheese_dict\nYou now know most of what you need to know to scrape web pages effectively. Good job!\nBut before you’re done, we should talk about what to do when things go wrong."
+  },
+  {
+    "objectID": "18-html/lec18.html#when-things-go-wrong-with-beautiful-soup",
+    "href": "18-html/lec18.html#when-things-go-wrong-with-beautiful-soup",
+    "title": "Data 6 Fall 2025: Web Scraping with Beautiful Soup",
+    "section": "When things go wrong with Beautiful Soup",
+    "text": "When things go wrong with Beautiful Soup\nA number of things might go wrong with Beautiful Soup. Here are just a few.\n\nTag does not exist with find\nYou might, for example, search for a tag that doesn’t exist in the document:\nfooter_tag = document.find(\"footer\")\nBeautiful Soup doesn’t return an error if it can’t find the tag you want. Instead, it returns None:\ntype(footer_tag)\nIf you try to call a method on the object that Beautiful Soup returned anyway, you might end up with an error like this:\nfooter_tag.find(\"p\")\nYou might also inadvertently try to get an attribute of a tag that wasn’t actually found. You’ll get a similar error in that case:\nfooter_tag['title']\nWhenever you see something like TypeError: 'NoneType' object is not subscriptable, it’s a good idea to check to see whether your method calls are indeed finding the thing you were looking for.\n\n\nNo tags exist with find_all\nThe .find_all() method will return an empty list if it doesn’t find any of the tags you wanted:\nfooter_tags = document.find_all(\"footer\")\nprint(footer_tags)\nIf you attempt to access one of the elements of this regardless…\nprint(footer_tags[0].string)\n…you’ll get an IndexError."
+  },
+  {
+    "objectID": "18-html/index.html",
+    "href": "18-html/index.html",
+    "title": "HTML and BeautifulSoup",
+    "section": "",
+    "text": "BeautifulSoup is a Python library for pulling data out of HTML and XML files.\nThis tutorial walks through scraping HTML from a simple kittens webpage. This tutorial is based on lessons by Melanie Walsh’s _Intro to Cultural Analytics, Alison Parrish and Jinho Choi\nThe official BeautifulSoup Documentation is also a great place to continue searching for that exact feature you want.",
+    "crumbs": [
+      "L18: HTML and Web Scraping"
+    ]
+  },
+  {
+    "objectID": "18-html/index.html#tutorial-parsing-html-with-beautifulsoup",
+    "href": "18-html/index.html#tutorial-parsing-html-with-beautifulsoup",
+    "title": "HTML and BeautifulSoup",
+    "section": "",
+    "text": "BeautifulSoup is a Python library for pulling data out of HTML and XML files.\nThis tutorial walks through scraping HTML from a simple kittens webpage. This tutorial is based on lessons by Melanie Walsh’s _Intro to Cultural Analytics, Alison Parrish and Jinho Choi\nThe official BeautifulSoup Documentation is also a great place to continue searching for that exact feature you want.",
+    "crumbs": [
+      "L18: HTML and Web Scraping"
+    ]
+  },
+  {
+    "objectID": "18-html/index.html#html-anatomy",
+    "href": "18-html/index.html#html-anatomy",
+    "title": "HTML and BeautifulSoup",
+    "section": "HTML Anatomy",
+    "text": "HTML Anatomy\nThanks to Alison Parrish, we have a very simple example of HTML to begin with. It is about kittens. Here’s the rendered version, and here’s the HTML source code.\n\nDeveloper Tools in your browser\nFirst we’re going to use Developer Tools in Chrome to take a look at how kittens.html is organized. Click on the “rendered ve#rsion” link above. * Chrome, Firefox: Right-click (or ctrl-click) anywhere on the page, then click “Inspect” * Safari: Right-click (or ctrl-click) anywhere on the page, then click “Inspect Element”\nThis will the browser’s Chrome’s Developer Tools. Your screen should look (something) like this:\n\n\n\n\n\n\n\nFigure 1: Kittens Dev Tools.\n\n\n\n\nIn the upper panel, you see the web page you’re inspecting. In the lower panel, you see a version of the HTML source code, with little arrows next to some of the lines. (The little arrows allow you to collapse parts of the HTML source that are hierarchically related.) As you move your mouse over the elements in the top panel, different parts of the source code will be highlighted. Chrome is showing you which parts of the source code are causing which parts of the page to show up. Pretty spiffy!\nThis relationship also works in reverse: you can move your mouse over some part of the source code in the lower panel, which will highlight in the top panel what that source code corresponds to on the page. We’ll be using this later to visually identify the parts of the page that are interesting to us, so we can write code that extracts the contents of those parts automatically.\n\n\nThe structure of kittens.html\nHere’s what the source code of kittens.html looks like:\n&lt;!doctype html&gt;\n&lt;html&gt;\n  &lt;head&gt;\n    &lt;title&gt;Kittens!&lt;/title&gt;\n  &lt;/head&gt;\n  &lt;body&gt;\n    &lt;h1&gt;Kittens and the TV Shows They Love&lt;/h1&gt;\n    &lt;div class=\"kitten\"&gt;\n      &lt;h2&gt;Fluffy&lt;/h2&gt;\n      &lt;div&gt;&lt;img src=\"http://placekitten.com/100/100\"&gt;&lt;/div&gt;\n      &lt;ul class=\"tvshows\"&gt;\n        &lt;li&gt;&lt;a href=\"http://www.imdb.com/title/tt0106145/\"&gt;Deep Space Nine&lt;/a&gt;&lt;/li&gt;\n        &lt;li&gt;&lt;a href=\"http://www.imdb.com/title/tt0088576/\"&gt;Mr. Belvedere&lt;/a&gt;&lt;/li&gt;\n      &lt;/ul&gt;\n      Last check-up: &lt;span class=\"lastcheckup\"&gt;2014-01-17&lt;/span&gt;\n    &lt;/div&gt;\n    &lt;div class=\"kitten\"&gt;\n      &lt;h2&gt;Monsieur Whiskeurs&lt;/h2&gt;\n      &lt;div&gt;&lt;img src=\"http://placekitten.com/150/100\"&gt;&lt;/div&gt;\n      &lt;ul class=\"tvshows\"&gt;\n        &lt;li&gt;&lt;a href=\"http://www.imdb.com/title/tt0106179/\"&gt;The X-Files&lt;/a&gt;&lt;/li&gt;\n        &lt;li&gt;&lt;a href=\"http://www.imdb.com/title/tt0098800/\"&gt;Fresh Prince&lt;/a&gt;&lt;/li&gt;\n      &lt;/ul&gt;\n      Last check-up: &lt;span class=\"lastcheckup\"&gt;2013-11-02&lt;/span&gt;\n    &lt;/div&gt;\n  &lt;/body&gt;\n&lt;/html&gt;\nThis is pretty well organized HTML, but if you don’t know how to read HTML, it will still look like a big jumble. Here’s how I would characterize the structure of this HTML, reading in my own idea of what the meaning of the elements are.\n\nWe have two “kittens,” both of which are contained in &lt;div&gt; tags with class kitten.\nEach “kitten” &lt;div&gt; has an &lt;h2&gt; tag with that kitten’s name.\nThere’s an image for each kitten, specified with an &lt;img&gt; tag.\nEach kitten has a list (a &lt;ul&gt; with class tvshows) of television shows, contained within &lt;li&gt; tags.\nThose list items themselves have links (&lt;a&gt; tags) with an href attribute that contains a link to an IMDB entry for that show.\n\n\n\nSummary: HTML Elements\nIn summary, HTML is composed of HTML elements, which have:\n\nTags, provided as the first string within angled brackets.\n(optional) attributes, provided as attr=value key-value pairs within the angled brackets.\n(optional) a string and/or other elements under the tag. These will be between the matching angled brackets, e.g., &lt;li&gt; and &lt;/li&gt;.\n\nYou will hear tag and element used interchangeably. This is because every HTML element must have a tag.\n\n\nTASK: Discussion\n\nWhat’s the parent tag of &lt;a href=\"http://www.imdb.com/title/tt0088576/\"&gt;Mr. Belvedere&lt;/a&gt;?\nBoth &lt;div class=\"kitten\"&gt; tags share a parent tag—what is it? What attributes are present on both &lt;img&gt; tags?",
+    "crumbs": [
+      "L18: HTML and Web Scraping"
+    ]
+  },
+  {
+    "objectID": "18-html/index.html#scraping-and-web-requests",
+    "href": "18-html/index.html#scraping-and-web-requests",
+    "title": "HTML and BeautifulSoup",
+    "section": "Scraping and Web requests",
+    "text": "Scraping and Web requests\nWe’ve examined kittens.html a bit now. What we’d like to do is write some code that is going to extract information from the HTML, like “what is the last checkup date for each of these kittens?” or “what are Monsieur Whiskeur’s favorite TV shows?” To do so, we need to:\n\nScrape the HTML from the internet\nParse the HTML by creating a representation of it in our program that we can manipulate with Python\n\nLet’s do the first task: scraping. It’s left to us to actually get the HTML from somewhere. In most cases, we’ll want to download the HTML directly from the actual web. For that, we’ll use the get method from the Python library requests (link):\n\n# first let's import the requests library\nimport requests \n\nIf it worked, you won’t get an error message.\nNow let’s use the “get” method to make an http request (the eponymous “requests”) to get the contents of kittens.html.\n\nresp = requests.get(\"http://static.decontextualize.com/kittens.html\") \nresp\n\n&lt;Response [200]&gt;\n\n\nNote that “resp” is a Python object, and not plain text. The HTTP Response Status Code 200 means “OK”—as in, the webpage was able to give us the data we wanted.\nSide note: The “get” method makes things easy by guessing at the document’s character encoding. We’re not really going to talk about character encoding until next class, but since we can, let’s check this page’s encoding real quick.\n\nresp.encoding\n\n'UTF-8'\n\n\nOkay, back on task. Now let’s create a string with the contents of the web page in text format we use the “text” method for this.\n\nhtml_str = resp.text\nhtml_str\n\n'&lt;!doctype html&gt;\\n&lt;html&gt;\\n\\t&lt;head&gt;\\n\\t\\t&lt;title&gt;Kittens!&lt;/title&gt;\\n\\t\\t&lt;style type=\"text/css\"&gt;\\n\\t\\t\\tspan.lastcheckup { font-family: \"Courier\", fixed; font-size: 11px; }\\n\\t\\t&lt;/style&gt;\\n\\t&lt;/head&gt;\\n\\t&lt;body&gt;\\n\\t\\t&lt;h1&gt;Kittens and the TV Shows They Love&lt;/h1&gt;\\n\\t\\t&lt;div class=\"kitten\"&gt;\\n\\t\\t\\t&lt;h2&gt;Fluffy&lt;/h2&gt;\\n\\t\\t\\t&lt;div&gt;&lt;img src=\"kitten1.jpg\"&gt;&lt;/div&gt;\\n\\t\\t\\t&lt;ul class=\"tvshows\"&gt;\\n\\t\\t\\t\\t&lt;li&gt;\\n\\t\\t\\t\\t\\t&lt;a href=\"http://www.imdb.com/title/tt0106145/\"&gt;Deep Space Nine&lt;/a&gt;\\n\\t\\t\\t\\t&lt;/li&gt;\\n\\t\\t\\t\\t&lt;li&gt;\\n\\t\\t\\t\\t\\t&lt;a href=\"http://www.imdb.com/title/tt0088576/\"&gt;Mr. Belvedere&lt;/a&gt;\\n\\t\\t\\t\\t&lt;/li&gt;\\n\\t\\t\\t&lt;/ul&gt;\\n\\t\\t\\tLast check-up: &lt;span class=\"lastcheckup\"&gt;2014-01-17&lt;/span&gt;\\n\\t\\t&lt;/div&gt;\\n\\t\\t&lt;div class=\"kitten\"&gt;\\n\\t\\t\\t&lt;h2&gt;Monsieur Whiskeurs&lt;/h2&gt;\\n\\t\\t\\t&lt;div&gt;&lt;img src=\"kitten2.jpg\"&gt;&lt;/div&gt;\\n\\t\\t\\t&lt;ul class=\"tvshows\"&gt;\\n\\t\\t\\t\\t&lt;li&gt;\\n\\t\\t\\t\\t\\t&lt;a href=\"http://www.imdb.com/title/tt0106179/\"&gt;The X-Files&lt;/a&gt;\\n\\t\\t\\t\\t&lt;/li&gt;\\n\\t\\t\\t\\t&lt;li&gt;\\n\\t\\t\\t\\t\\t&lt;a href=\"http://www.imdb.com/title/tt0098800/\"&gt;Fresh Prince&lt;/a&gt;\\n\\t\\t\\t\\t&lt;/li&gt;\\n\\t\\t\\t&lt;/ul&gt;\\n\\t\\t\\tLast check-up: &lt;span class=\"lastcheckup\"&gt;2013-11-02&lt;/span&gt;\\n\\t\\t&lt;/div&gt;\\n\\t&lt;/body&gt;\\n&lt;/html&gt;\\n\\n'\n\n\nThat looks like a mess but it’s apparent that we’ve obtained the data as desired.\nIf we wanted to “pretty print”, note that the html_str has a lot of whitespace: * \\t: Tab * \\n: Newline\nCalling print will render this whitespace in our display.\n\n# pretty print\nprint(html_str)\n\n&lt;!doctype html&gt;\n&lt;html&gt;\n    &lt;head&gt;\n        &lt;title&gt;Kittens!&lt;/title&gt;\n        &lt;style type=\"text/css\"&gt;\n            span.lastcheckup { font-family: \"Courier\", fixed; font-size: 11px; }\n        &lt;/style&gt;\n    &lt;/head&gt;\n    &lt;body&gt;\n        &lt;h1&gt;Kittens and the TV Shows They Love&lt;/h1&gt;\n        &lt;div class=\"kitten\"&gt;\n            &lt;h2&gt;Fluffy&lt;/h2&gt;\n            &lt;div&gt;&lt;img src=\"kitten1.jpg\"&gt;&lt;/div&gt;\n            &lt;ul class=\"tvshows\"&gt;\n                &lt;li&gt;\n                    &lt;a href=\"http://www.imdb.com/title/tt0106145/\"&gt;Deep Space Nine&lt;/a&gt;\n                &lt;/li&gt;\n                &lt;li&gt;\n                    &lt;a href=\"http://www.imdb.com/title/tt0088576/\"&gt;Mr. Belvedere&lt;/a&gt;\n                &lt;/li&gt;\n            &lt;/ul&gt;\n            Last check-up: &lt;span class=\"lastcheckup\"&gt;2014-01-17&lt;/span&gt;\n        &lt;/div&gt;\n        &lt;div class=\"kitten\"&gt;\n            &lt;h2&gt;Monsieur Whiskeurs&lt;/h2&gt;\n            &lt;div&gt;&lt;img src=\"kitten2.jpg\"&gt;&lt;/div&gt;\n            &lt;ul class=\"tvshows\"&gt;\n                &lt;li&gt;\n                    &lt;a href=\"http://www.imdb.com/title/tt0106179/\"&gt;The X-Files&lt;/a&gt;\n                &lt;/li&gt;\n                &lt;li&gt;\n                    &lt;a href=\"http://www.imdb.com/title/tt0098800/\"&gt;Fresh Prince&lt;/a&gt;\n                &lt;/li&gt;\n            &lt;/ul&gt;\n            Last check-up: &lt;span class=\"lastcheckup\"&gt;2013-11-02&lt;/span&gt;\n        &lt;/div&gt;\n    &lt;/body&gt;\n&lt;/html&gt;\n\n\n\n\n\nWhy is web scraping hard?\nIt turns out that web scraping is heavily restricted on today’s internet. What do you think are reasons why websites would not want programs periodically scraping their data?\nIn this class, we will usually handle the web requests and scraping for you.",
+    "crumbs": [
+      "L18: HTML and Web Scraping"
+    ]
+  },
+  {
+    "objectID": "18-html/index.html#the-beautiful-soup-library",
+    "href": "18-html/index.html#the-beautiful-soup-library",
+    "title": "HTML and BeautifulSoup",
+    "section": "The Beautiful Soup library",
+    "text": "The Beautiful Soup library\nNow, onto the next step:\n\n\nParse the HTML by creating a representation of it in our program that we can manipulate with Python.\n\n\nWhat representation should we choose? As mentioned earlier, HTML is hard to parse by hand. (Don’t even try it. In particular, don’t parse HTML with regular expressions.)\nBeautiful Soup is a Python library that parses (even poorly formatted) HTML and allows us to extract and manipulate its contents. More specifically, it gives us some Python objects that we can call methods on to poke at the data contained therein. So instead of working with strings and bytes, we can work with Python objects, methods and data structures.\nNote that BeautifulSoup can parse any HTML that is provided as a string. We’ve already gotten an HTML string from our previous web request, so now we need to create a Beautiful Soup object from that data.\n\n# just run this cell\nfrom bs4 import BeautifulSoup\n\ndocument = BeautifulSoup(html_str, \"html.parser\")\ntype(document)\n\nbs4.BeautifulSoup\n\n\nThe BeautifulSoup function creates a new Beautiful Soup object. It takes two parameters: the string containing the HTML data, and a string that designates which underlying parser to use to build the parsed version of the document. (Leave this as \"html.parser\".) I’ve assigned this object to the variable document.\nThe document object supports a number of interesting methods that allow us to dig into the contents of the HTML. Primarily what we’ll be working with are: * Tag objects, and * ResultSet objects, which are essentially just lists of Tag objects.\n\nFinding a tag with find\nAs we’ve previously discussed, HTML documents are composed of tags. To represent this, Beautiful Soup has a type of value that represents tags. We can use the .find() method of the BeautifulSoup object to find a tag that matches a particular tag name. For example:\n\nh1_tag = document.find('h1')\ntype(h1_tag)\n\nbs4.element.Tag\n\n\nA Tag object has several interesting attributes and methods. The string attribute of a Tag object, for example, returns a string representing that tag’s contents:\n\nh1_tag.string\n\n'Kittens and the TV Shows They Love'\n\n\nYou can access the attributes of a tag by treating the tag object as though it were a dictionary. To get the value associated with a particular attribute. Use the square-bracket syntax, providing the attribute name as key/string.\n\nGet the src attribute of the first &lt;img&gt; tag in the document\n\nimg_tag = document.find('img')\nimg_tag['src']\n\n'kitten1.jpg'\n\n\nNote: You might have noticed that there is more than one &lt;img&gt; tag in kittens.html! If more than one tag matches the name you pass to .find(), it returns only the first matching tag. (A better name for .find() might be .find_first(), but we digress.)\n\n\nYour turn: Find the last check-up date of the first kitten.\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\ntag = document.find('span')\ntag.string\n\n'2014-01-17'\n\n\n\n\n\n\n\n\nFinding multiple tags with find_all\nIt’s very often the case that we want to find not just one tag that matches particular criteria, but ALL tags matching those criteria. For that, we use the .find_all() method of the BeautifulSoup object. For example, to find all h2 tags in the document:\n\nh2_tags = document.find_all('h2')\ntype(h2_tags)\n\nbs4.element.ResultSet\n\n\nBut what’s in the Result Set?\nIn order to find out, we’re going to need to use a loop. Specifically, a for loop.\n\nfor tag in h2_tags:\n    print(tag.string) \n\nFluffy\nMonsieur Whiskeurs\n\n\nThis conveniently gives you a variable, tag, that updates with the appropriate value each time you iterate.\n\n\nFinding tags with particular attributes\nIn any case, both the .find() and .find_all() methods can search not just for tags with particular names, but also for tags that have particular attributes.\nFor that, we use the optional attrs keyword argument. attrs is a dictionary that associates attribute names as keys and the desired attribute value as values.\ndocument.find_all(tag_name, attrs=None)\nTo find all span tags with a class attribute of lastcheckup:\n\ncheckup_tags = document.find_all('span', attrs={'class': 'lastcheckup'})\nfor tag in checkup_tags:\n    print(tag.string)\n\n2014-01-17\n2013-11-02",
+    "crumbs": [
+      "L18: HTML and Web Scraping"
+    ]
+  },
+  {
+    "objectID": "18-html/index.html#more-on-beautifulsoup",
+    "href": "18-html/index.html#more-on-beautifulsoup",
+    "title": "HTML and BeautifulSoup",
+    "section": "More on BeautifulSoup",
+    "text": "More on BeautifulSoup\nBefore we move on:\nBeautiful Soup’s .find() and .find_all() methods are actually more powerful than we’re letting on here. Check out the details in the official Beautiful Soup documentation.\n\nUse find/find_all on tags, too\nLet’s say that we wanted to print out a list of the name of each kitten, along with a list of the names of that kitten’s favorite TV shows. In other words, we want to print out something that looks like this:\nFlufzfy: Deep Space Nine, Mr. Belvedere\nMonsieur Whiskeurs: The X-Files, Fresh Prince\nIn order to do this, we need to find not just tags with particular names, but tags with particular hierarchical relationships with other tags:\n\nIdentify all of the kittens, then\nFind the shows that belong to that kitten.\n\nThis kind of search is made easy by the fact that you can use .find() and .find_all() methods not just on the entire document, but on individual tags*. When you use these methods on tags, they search for matching tags that are specifically children of the tag that you call them on.\n\nIn our kittens example, we can see that information about individual kittens is grouped together under &lt;div&gt; tags with a class attribute of kitten. So, to find a list of all &lt;div&gt; tags with class set to kitten, we might do this:\n\nkitten_tags = document.find_all(\"div\", attrs={\"class\": \"kitten\"})\n\nNow, we’ll loop over that list of tags and find, inside each of them, the &lt;h2&gt; tag that is its child:\n\n# just run this cell\nfor kitten_tag in kitten_tags:\n    h2_tag = kitten_tag.find('h2')\n    print(h2_tag.string)\n\nFluffy\nMonsieur Whiskeurs\n\n\n\nString method demo practice\nNow, we’ll go one extra step. Looping over all of the kitten tags, we’ll find not just the &lt;h2&gt; tag with the kitten’s name, but all &lt;a&gt; tags (which contain the names of the TV shows that we were looking for).\n_Note*: The list method lst.append(elt) returns nothing and directly modifies the original list lst, appending elt to the end. (This behavior is unlike np.append, which returns a new array.)\n\n# trace through this code carefully!\n\nfor kitten_tag in kitten_tags:\n    h2_tag = kitten_tag.find('h2')\n    \n    a_tag_strings = []\n    for tag in kitten_tag.find_all('a'):\n        a_tag_strings.append(tag.string)\n        \n    print(h2_tag.string + \":\", \", \".join(a_tag_strings))\n\nFluffy: Deep Space Nine, Mr. Belvedere\nMonsieur Whiskeurs: The X-Files, Fresh Prince\n\n\n\n\nYour turn: Find last check-up for all kittens\nUsing the code above as a template, write code that prints out a list of kitten names along with the last check-up date for that kitten.\nHint: Look up above for the HTML that deals with check-up dates.\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\nfor kitten_tag in kitten_tags:\n    h2_tag = kitten_tag.find('h2') # keep this to find the kittens\n    checkup_tag = kitten_tag.find('span', attrs={'class': 'lastcheckup'})\n\n    print(h2_tag.string + \", \" + checkup_tag.string)\n\nFluffy, 2014-01-17\nMonsieur Whiskeurs, 2013-11-02\n\n\n\n\n\n\n\nYour turn: Find links to all kittens’ favorite shows\nUsing the code above, write code that prints a list of kitten names with links to that kitten’s favorite shows. I.e., you should end up with something of the format:\nName: [kitten name]  URLS: www.asdasdsa.com, www.sdkalskdjsa.com\nHint: Look up above for how you access the attribute of a tag.\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\nfor kitten_tag in kitten_tags:\n    h2_tag = kitten_tag.find('h2') # keep this to find the kittens\n    url_strings = []\n    for url in kitten_tag.find_all('a'):\n        url_strings.append(url['href'])\n    urls_joined = \", \".join(url_strings)\n    print(\"Name: \" + h2_tag.string)\n    print(\"URLs: \" + urls_joined)\n\nName: Fluffy\nURLs: http://www.imdb.com/title/tt0106145/, http://www.imdb.com/title/tt0088576/\nName: Monsieur Whiskeurs\nURLs: http://www.imdb.com/title/tt0106179/, http://www.imdb.com/title/tt0098800/\n\n\n\n\n\n\n\n\nFind sibling tags: find_next_sibling()\nOften, the tags we’re looking for don’t have a distinguishing characteristic, like a class attribute, that allows us to find them using .find() and .find_all(), and the tags also aren’t in a parent-child relationship. This can be tricky! Take the following HTML snippet, for example:\n\ncheese_html = \"\"\"\n&lt;h2&gt;Camembert&lt;/h2&gt;\n&lt;p&gt;A soft cheese made in the Camembert region of France.&lt;/p&gt;\n\n&lt;h2&gt;Cheddar&lt;/h2&gt;\n&lt;p&gt;A yellow cheese made in the Cheddar region of... France, probably, idk whatevs.&lt;/p&gt;\n\"\"\"\n\ncheese_document = BeautifulSoup(cheese_html, \"html.parser\")\n\nIf our task was to create a list of the name of the cheese followed by the description that follows in the &lt;p&gt; tag directly afterward, we’d be out of luck. Fortunately, Beautiful Soup has a .find_next_sibling() method, which allows us to search for the next tag that is a sibling of the tag you’re calling it on (i.e., the two tags share a parent), that also matches particular criteria. So, for example, to accomplish the task outlined above:\n\ncheese_dict = {}\nfor h2_tag in cheese_document.find_all('h2'):\n    cheese_name = h2_tag.string\n    cheese_desc_tag = h2_tag.find_next_sibling('p')\n    cheese_dict[cheese_name] = cheese_desc_tag.string\n\ncheese_dict\n\n{'Camembert': 'A soft cheese made in the Camembert region of France.',\n 'Cheddar': 'A yellow cheese made in the Cheddar region of... France, probably, idk whatevs.'}\n\n\n\n\nWhen things go wrong with Beautiful Soup\nYou now know most of what you need to know to scrape web pages effectively. Good job!\nBut before you’re done, we should talk about what to do when things go wrong.\nA number of things might go wrong with Beautiful Soup. Here are just a few.\n\nTag does not exist with find\nYou might, for example, search for a tag that doesn’t exist in the document:\n\nfooter_tag = document.find(\"footer\")\n\nBeautiful Soup doesn’t return an error if it can’t find the tag you want. Instead, it returns None:\n\ntype(footer_tag)\n\nNoneType\n\n\nIf you try to call a method on the object that Beautiful Soup returned anyway, you might end up with an error like this:\n\nfooter_tag.find(\"p\")\n\n\n---------------------------------------------------------------------------\nAttributeError                            Traceback (most recent call last)\nCell In[23], line 1\n----&gt; 1 footer_tag.find(\"p\")\n\nAttributeError: 'NoneType' object has no attribute 'find'\n\n\n\nYou might also inadvertently try to get an attribute of a tag that wasn’t actually found. You’ll get a similar error in that case:\n\nfooter_tag['title']\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[24], line 1\n----&gt; 1 footer_tag['title']\n\nTypeError: 'NoneType' object is not subscriptable\n\n\n\nWhenever you see something like TypeError: 'NoneType' object is not subscriptable, it’s a good idea to check to see whether your method calls are indeed finding the thing you were looking for.\n\n\n\nNo tags exist with find_all\nThe .find_all() method will return an empty list if it doesn’t find any of the tags you wanted:\n\nfooter_tags = document.find_all(\"footer\")\nprint(footer_tags)\n\n[]\n\n\nIf you attempt to access one of the elements of this regardless…\n\nprint(footer_tags[0].string)\n\n\n---------------------------------------------------------------------------\nIndexError                                Traceback (most recent call last)\nCell In[26], line 1\n----&gt; 1 print(footer_tags[0].string)\n\nIndexError: list index out of range\n\n\n\n…you’ll get an IndexError.",
+    "crumbs": [
+      "L18: HTML and Web Scraping"
+    ]
+  },
+  {
+    "objectID": "18-html/index.html#out-of-scope-material-list-comprehension",
+    "href": "18-html/index.html#out-of-scope-material-list-comprehension",
+    "title": "HTML and BeautifulSoup",
+    "section": "[Out-of-scope material] List comprehension",
+    "text": "[Out-of-scope material] List comprehension\nConsider the following code:\ncheckup_tags = document.find_all('span', attrs={'class': 'lastcheckup'})\n[tag.string for tag in checkup_tags]\nThe second line in the code cell above is a helpful shorthand: it creates a list with each of the tag.strings in checkup_tags.\nIn more official terms, it’s called a list comprehension, and it helps with a very common task in both data analysis and computer programming: when you want to apply an operation to every item in a list (e.g., scaling the numbers in a list by a fixed factor), or create a copy of a list with only those items that match a particular criterion (e.g., eliminating values that fall below a certain threshold).\nA list comprehension has a few parts:\n\na source list, or the list whose values will be transformed or filtered;\na predicate expression, to be evaluated for every item in the list;\n(optionally) a membership expression that determines whether or not an item in the source list will be included in the result of evaluating the list comprehension, based on whether the expression evaluates to True or False; and\na temporary variable name by which each value from the source list will be known in the predicate expression and membership expression. These parts are arranged like so:\n\n\n[ predicate expression for temporary variable name in source list if membership expression ]\n\nThe words for, in, and if are a part of the syntax of the expression. They don’t mean anything in particular (and in fact, they do completely different things in other parts of the Python language). You just have to spell them right and put them in the right place in order for the list comprehension to work.\nYou are welcome to use list comprehension in this course, but we won’t test it.",
+    "crumbs": [
+      "L18: HTML and Web Scraping"
+    ]
+  },
+  {
+    "objectID": "16-measurements/index.html",
+    "href": "16-measurements/index.html",
+    "title": "Measurements",
+    "section": "",
+    "text": "For this lecture’s notes, please see:\n\nLecture slides.\nExcerpt of “Chapter 5: Evaluating Research.” Elizabeth Heger Boyle, Deborah Carr, Benjamin Cornwell, Shelley Correll, Robert Crosnoe, Jeremy Freese, and Waters, Mary C. 2017. The Art and Science of Social Research. New York: W. W. Norton & Company PDF Link (UC Berkeley affiliates only)\nThis week’s discussion handout",
+    "crumbs": [
+      "L16: Iterations II; Measurements"
+    ]
+  },
+  {
+    "objectID": "16-measurements/index.html#reliability-and-validity",
+    "href": "16-measurements/index.html#reliability-and-validity",
+    "title": "Measurements",
+    "section": "",
+    "text": "For this lecture’s notes, please see:\n\nLecture slides.\nExcerpt of “Chapter 5: Evaluating Research.” Elizabeth Heger Boyle, Deborah Carr, Benjamin Cornwell, Shelley Correll, Robert Crosnoe, Jeremy Freese, and Waters, Mary C. 2017. The Art and Science of Social Research. New York: W. W. Norton & Company PDF Link (UC Berkeley affiliates only)\nThis week’s discussion handout",
+    "crumbs": [
+      "L16: Iterations II; Measurements"
+    ]
+  },
+  {
+    "objectID": "16-measurements/iteration-ii.html",
+    "href": "16-measurements/iteration-ii.html",
+    "title": "More Iteration Practice",
+    "section": "",
+    "text": "Today we discussed while loops and a more challenging triplets example. We will discuss Algorithms, Measurements, Reliability, and Validity next lecture. You will do the reading first.",
+    "crumbs": [
+      "L16: Iterations II; Measurements",
+      "More Iteration Practice"
+    ]
+  },
+  {
+    "objectID": "16-measurements/iteration-ii.html#challenge-question-triplets",
+    "href": "16-measurements/iteration-ii.html#challenge-question-triplets",
+    "title": "More Iteration Practice",
+    "section": "Challenge question: triplets",
+    "text": "Challenge question: triplets\nWhat does the below code do?\n\ndef triplets(arr):\n    zeros_in_sequence = 0\n    triplets_seen = 0\n    for elt in arr:\n        if not elt:\n            zeros_in_sequence += 1\n            if zeros_in_sequence == 3:\n                triplets_seen += 1\n                zeros_in_sequence = 0    # reset, we have seen 3 0's\n        else:\n            zeros_in_sequence = 0        # reset, we broke a 0 streak\n    return triplets_seen\n\nHere are some example outputs:\n\ntriplets(make_array(0, 1, 0, 0, 0, 1))\n\n1\n\n\n\ntriplets(make_array(0, 1, 0, 0, 1, 0, 0, 0, 0, 1))\n\n1\n\n\n\ntriplets(make_array(0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0))\n\n3\n\n\nStrategy from class:\n\nRun the code first. See what the example inputs/outputs are. Give a short 1-2 sentence summary of what the function does at a very high level. What you said in class: “It counts the zeros in order” “It counts triplets of zeros”\nThen, look at the code to understand what each name is. What you said in class:\n\ntriplets_seen: The number of triplets. We can see this by the return statement.\nzeros_in_sequence: seems to be updating and “resetting” to zero.\nelt: Maybe short for element? Iterates over the array, arr.\narr: The argument to triplets. Based on the example input/output, this is an array of numbers.\n\nFinally, trace the code line by line to clear up remaining questions. Some questions you had in class:\n\nWhat is not elt doing? When does it evaluate to True or False?\nWhat is zeros_in_sequence doing? How does it work?\nWhat is the += shorthand?\n\n(Answer: “increment and re-assign” the left-hand-side, using the right-hand-side.)\n\n\n\nFor not elt, recall our discussion of truthy values:\n\nEvery value can be cast to a Boolean value.\n\nThe only values that evaluate to False are 0, None, and an empty sequence (empty array, zero-length string, empty list, etc.).\nAll other values evaluate to True.\n\nTherefore for numeric values of elt, the only instance in which not elt will evaluate to True is when elt is 0: not elt is not 0 is not False is True.\nAll non-zero numeric values of elt will evaluate to False, e.g., when elt is 1: not elt is not 1 is not True is False.\n\n\n\n\n\n\n\nExplanation: Each Line Explained\n\n\n\n\n\nEach line explained:\ndef triplets(arr):\n    zeros_in_sequence = 0\n    triplets_seen = 0\n    for elt in arr:\n        if not elt:\n            zeros_in_sequence += 1\n            if zeros_in_sequence == 3:\n                triplets_seen += 1\n                zeros_in_sequence = 0\n        else:\n            zeros_in_sequence = 0\n    return triplets_seen\n\ntriplets(make_array(0, 1, 0, 0, 1, 0, 0, 0, 0, 1))\n\n(Line 1) Define the function triplets. It takes an array arr. We can see this from Line 14, which is a function call to triplets.\n(Lines 2-3) Set zeros_in_sequence and triplets_seen to 0.\n(Line 4) Iterate through each element (elt) in the argument array arr.\n(Line 5) The Boolean expression not elt will only evaluate to True (i.e., we will only evaluate this if case) if the current elt is 0.\n\n(Line 6) Increment zeros_in_sequence by 1.\n(Line 7) Check if we have seen three zeros_in_sequence.\n\n(Lines 8-9): If so, we have seen a triple, so increment our return value, triplets_seen. Also reset zeros_in_sequence.\n\n\n(Lines 10-11) If we saw a non-zero elt, then we have broken our zero-sequence. Reset zeros_in_sequence.\n(Line 12): Return the number of triples seen.\n\n\n\n\n\n\n\n\n\n\nExplanation: Array Example Explained\n\n\n\n\n\ndef triplets(arr):\n    zeros_in_sequence = 0\n    triplets_seen = 0\n    for elt in arr:\n        if not elt:\n            zeros_in_sequence += 1\n            if zeros_in_sequence == 3:\n                triplets_seen += 1\n                zeros_in_sequence = 0\n        else:\n            zeros_in_sequence = 0\n    return triplets_seen\n\ntriplets(make_array(0, 1, 0, 0, 1, 0, 0, 0, 0, 1))\nelements | 0 | 1 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 |\nindices    0   1   2   3   4   5   6   7   8   9\nThe values of zeros_in_sequence and triplets_seen after the corresponding iteration has finished evaluating the loop body, before the loop moves to the next element or exits:\n\n\n\nindex\nelt\ntriplets_seen\nzeros_in_sequence\n\n\n\n\n0\n0\n0\n1\n\n\n1\n1\n0\n0\n\n\n2\n0\n0\n1\n\n\n3\n0\n0\n2\n\n\n4\n1\n0\n0\n\n\n5\n0\n0\n1\n\n\n6\n0\n0\n2\n\n\n7\n0\n1\n0 (why?)\n\n\n8\n0\n1\n1\n\n\n9\n1\n1\n0\n\n\n\n\nWhile loops\nSee the previous lecture notes set.\n\n\nAlgorithms and Measurements\nFor this lecture’s notes, please see:\n\nLecture slides.\nExcerpt of “Chapter 5: Evaluating Research.” Elizabeth Heger Boyle, Deborah Carr, Benjamin Cornwell, Shelley Correll, Robert Crosnoe, Jeremy Freese, and Waters, Mary C. 2017. The Art and Science of Social Research. New York: W. W. Norton & Company. PDF link (UC Berkeley only)\nDiscussion handout.\n\nWe will cover this lecture in more detail next time, on Monday 11/2.",
+    "crumbs": [
+      "L16: Iterations II; Measurements",
+      "More Iteration Practice"
+    ]
+  },
+  {
+    "objectID": "16-measurements/iteration-ii.html#while-loops",
+    "href": "16-measurements/iteration-ii.html#while-loops",
+    "title": "More Iteration Practice",
+    "section": "While loops",
+    "text": "While loops\nSee the previous lecture notes set.",
+    "crumbs": [
+      "L16: Iterations II; Measurements",
+      "More Iteration Practice"
+    ]
+  },
+  {
+    "objectID": "16-measurements/iteration-ii.html#algorithms-and-measurements",
+    "href": "16-measurements/iteration-ii.html#algorithms-and-measurements",
+    "title": "More Iteration Practice",
+    "section": "Algorithms and Measurements",
+    "text": "Algorithms and Measurements\nFor this lecture’s notes, please see:\n\nLecture slides.\nExcerpt of “Chapter 5: Evaluating Research.” Elizabeth Heger Boyle, Deborah Carr, Benjamin Cornwell, Shelley Correll, Robert Crosnoe, Jeremy Freese, and Waters, Mary C. 2017. The Art and Science of Social Research. New York: W. W. Norton & Company. PDF link (UC Berkeley only)\nDiscussion handout.\n\nWe will cover this lecture in more detail next time, on Monday 11/2.",
+    "crumbs": [
+      "L16: Iterations II; Measurements",
+      "More Iteration Practice"
+    ]
+  },
+  {
     "objectID": "18-html/genius.html",
     "href": "18-html/genius.html",
     "title": "API Keys",
@@ -1134,90 +1352,6 @@
     "crumbs": [
       "L18: HTML and Web Scraping",
       "Genius API Key"
-    ]
-  },
-  {
-    "objectID": "16-measurements/iteration-ii.html",
-    "href": "16-measurements/iteration-ii.html",
-    "title": "More Iteration Practice",
-    "section": "",
-    "text": "Today we discussed while loops and a more challenging triplets example. We will discuss Algorithms, Measurements, Reliability, and Validity next lecture. You will do the reading first.",
-    "crumbs": [
-      "L16: Iterations II; Measurements",
-      "More Iteration Practice"
-    ]
-  },
-  {
-    "objectID": "16-measurements/iteration-ii.html#challenge-question-triplets",
-    "href": "16-measurements/iteration-ii.html#challenge-question-triplets",
-    "title": "More Iteration Practice",
-    "section": "Challenge question: triplets",
-    "text": "Challenge question: triplets\nWhat does the below code do?\n\ndef triplets(arr):\n    zeros_in_sequence = 0\n    triplets_seen = 0\n    for elt in arr:\n        if not elt:\n            zeros_in_sequence += 1\n            if zeros_in_sequence == 3:\n                triplets_seen += 1\n                zeros_in_sequence = 0    # reset, we have seen 3 0's\n        else:\n            zeros_in_sequence = 0        # reset, we broke a 0 streak\n    return triplets_seen\n\nHere are some example outputs:\n\ntriplets(make_array(0, 1, 0, 0, 0, 1))\n\n1\n\n\n\ntriplets(make_array(0, 1, 0, 0, 1, 0, 0, 0, 0, 1))\n\n1\n\n\n\ntriplets(make_array(0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0))\n\n3\n\n\nStrategy from class:\n\nRun the code first. See what the example inputs/outputs are. Give a short 1-2 sentence summary of what the function does at a very high level. What you said in class: “It counts the zeros in order” “It counts triplets of zeros”\nThen, look at the code to understand what each name is. What you said in class:\n\ntriplets_seen: The number of triplets. We can see this by the return statement.\nzeros_in_sequence: seems to be updating and “resetting” to zero.\nelt: Maybe short for element? Iterates over the array, arr.\narr: The argument to triplets. Based on the example input/output, this is an array of numbers.\n\nFinally, trace the code line by line to clear up remaining questions. Some questions you had in class:\n\nWhat is not elt doing? When does it evaluate to True or False?\nWhat is zeros_in_sequence doing? How does it work?\nWhat is the += shorthand?\n\n(Answer: “increment and re-assign” the left-hand-side, using the right-hand-side.)\n\n\n\nFor not elt, recall our discussion of truthy values:\n\nEvery value can be cast to a Boolean value.\n\nThe only values that evaluate to False are 0, None, and an empty sequence (empty array, zero-length string, empty list, etc.).\nAll other values evaluate to True.\n\nTherefore for numeric values of elt, the only instance in which not elt will evaluate to True is when elt is 0: not elt is not 0 is not False is True.\nAll non-zero numeric values of elt will evaluate to False, e.g., when elt is 1: not elt is not 1 is not True is False.\n\n\n\n\n\n\n\nExplanation: Each Line Explained\n\n\n\n\n\nEach line explained:\ndef triplets(arr):\n    zeros_in_sequence = 0\n    triplets_seen = 0\n    for elt in arr:\n        if not elt:\n            zeros_in_sequence += 1\n            if zeros_in_sequence == 3:\n                triplets_seen += 1\n                zeros_in_sequence = 0\n        else:\n            zeros_in_sequence = 0\n    return triplets_seen\n\ntriplets(make_array(0, 1, 0, 0, 1, 0, 0, 0, 0, 1))\n\n(Line 1) Define the function triplets. It takes an array arr. We can see this from Line 14, which is a function call to triplets.\n(Lines 2-3) Set zeros_in_sequence and triplets_seen to 0.\n(Line 4) Iterate through each element (elt) in the argument array arr.\n(Line 5) The Boolean expression not elt will only evaluate to True (i.e., we will only evaluate this if case) if the current elt is 0.\n\n(Line 6) Increment zeros_in_sequence by 1.\n(Line 7) Check if we have seen three zeros_in_sequence.\n\n(Lines 8-9): If so, we have seen a triple, so increment our return value, triplets_seen. Also reset zeros_in_sequence.\n\n\n(Lines 10-11) If we saw a non-zero elt, then we have broken our zero-sequence. Reset zeros_in_sequence.\n(Line 12): Return the number of triples seen.\n\n\n\n\n\n\n\n\n\n\nExplanation: Array Example Explained\n\n\n\n\n\ndef triplets(arr):\n    zeros_in_sequence = 0\n    triplets_seen = 0\n    for elt in arr:\n        if not elt:\n            zeros_in_sequence += 1\n            if zeros_in_sequence == 3:\n                triplets_seen += 1\n                zeros_in_sequence = 0\n        else:\n            zeros_in_sequence = 0\n    return triplets_seen\n\ntriplets(make_array(0, 1, 0, 0, 1, 0, 0, 0, 0, 1))\nelements | 0 | 1 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 |\nindices    0   1   2   3   4   5   6   7   8   9\nThe values of zeros_in_sequence and triplets_seen after the corresponding iteration has finished evaluating the loop body, before the loop moves to the next element or exits:\n\n\n\nindex\nelt\ntriplets_seen\nzeros_in_sequence\n\n\n\n\n0\n0\n0\n1\n\n\n1\n1\n0\n0\n\n\n2\n0\n0\n1\n\n\n3\n0\n0\n2\n\n\n4\n1\n0\n0\n\n\n5\n0\n0\n1\n\n\n6\n0\n0\n2\n\n\n7\n0\n1\n0 (why?)\n\n\n8\n0\n1\n1\n\n\n9\n1\n1\n0\n\n\n\n\nWhile loops\nSee the previous lecture notes set.\n\n\nAlgorithms and Measurements\nFor this lecture’s notes, please see:\n\nLecture slides.\nExcerpt of “Chapter 5: Evaluating Research.” Elizabeth Heger Boyle, Deborah Carr, Benjamin Cornwell, Shelley Correll, Robert Crosnoe, Jeremy Freese, and Waters, Mary C. 2017. The Art and Science of Social Research. New York: W. W. Norton & Company. PDF link (UC Berkeley only)\nDiscussion handout.\n\nWe will cover this lecture in more detail next time, on Monday 11/2.",
-    "crumbs": [
-      "L16: Iterations II; Measurements",
-      "More Iteration Practice"
-    ]
-  },
-  {
-    "objectID": "16-measurements/iteration-ii.html#while-loops",
-    "href": "16-measurements/iteration-ii.html#while-loops",
-    "title": "More Iteration Practice",
-    "section": "While loops",
-    "text": "While loops\nSee the previous lecture notes set.",
-    "crumbs": [
-      "L16: Iterations II; Measurements",
-      "More Iteration Practice"
-    ]
-  },
-  {
-    "objectID": "16-measurements/iteration-ii.html#algorithms-and-measurements",
-    "href": "16-measurements/iteration-ii.html#algorithms-and-measurements",
-    "title": "More Iteration Practice",
-    "section": "Algorithms and Measurements",
-    "text": "Algorithms and Measurements\nFor this lecture’s notes, please see:\n\nLecture slides.\nExcerpt of “Chapter 5: Evaluating Research.” Elizabeth Heger Boyle, Deborah Carr, Benjamin Cornwell, Shelley Correll, Robert Crosnoe, Jeremy Freese, and Waters, Mary C. 2017. The Art and Science of Social Research. New York: W. W. Norton & Company. PDF link (UC Berkeley only)\nDiscussion handout.\n\nWe will cover this lecture in more detail next time, on Monday 11/2.",
-    "crumbs": [
-      "L16: Iterations II; Measurements",
-      "More Iteration Practice"
-    ]
-  },
-  {
-    "objectID": "16-measurements/index.html",
-    "href": "16-measurements/index.html",
-    "title": "Measurements",
-    "section": "",
-    "text": "For this lecture’s notes, please see:\n\nLecture slides.\nExcerpt of “Chapter 5: Evaluating Research.” Elizabeth Heger Boyle, Deborah Carr, Benjamin Cornwell, Shelley Correll, Robert Crosnoe, Jeremy Freese, and Waters, Mary C. 2017. The Art and Science of Social Research. New York: W. W. Norton & Company PDF Link (UC Berkeley affiliates only)\nThis week’s discussion handout",
-    "crumbs": [
-      "L16: Iterations II; Measurements"
-    ]
-  },
-  {
-    "objectID": "16-measurements/index.html#reliability-and-validity",
-    "href": "16-measurements/index.html#reliability-and-validity",
-    "title": "Measurements",
-    "section": "",
-    "text": "For this lecture’s notes, please see:\n\nLecture slides.\nExcerpt of “Chapter 5: Evaluating Research.” Elizabeth Heger Boyle, Deborah Carr, Benjamin Cornwell, Shelley Correll, Robert Crosnoe, Jeremy Freese, and Waters, Mary C. 2017. The Art and Science of Social Research. New York: W. W. Norton & Company PDF Link (UC Berkeley affiliates only)\nThis week’s discussion handout",
-    "crumbs": [
-      "L16: Iterations II; Measurements"
-    ]
-  },
-  {
-    "objectID": "18-html/index.html",
-    "href": "18-html/index.html",
-    "title": "HTML and BeautifulSoup",
-    "section": "",
-    "text": "BeautifulSoup is a Python library for pulling data out of HTML and XML files.\nPlease see Professor Allison Parrish’s tutorial on HTML and BeautifulSoup, which we go over in class. This tutorial walks through scraping HTML from a simple kittens webpage.\nThe official BeautifulSoup Documentation is also a great place to continue searching for that exact feature you want.",
-    "crumbs": [
-      "L18: HTML and Web Scraping"
-    ]
-  },
-  {
-    "objectID": "18-html/index.html#tutorial-parsing-html-with-beautifulsoup",
-    "href": "18-html/index.html#tutorial-parsing-html-with-beautifulsoup",
-    "title": "HTML and BeautifulSoup",
-    "section": "",
-    "text": "BeautifulSoup is a Python library for pulling data out of HTML and XML files.\nPlease see Professor Allison Parrish’s tutorial on HTML and BeautifulSoup, which we go over in class. This tutorial walks through scraping HTML from a simple kittens webpage.\nThe official BeautifulSoup Documentation is also a great place to continue searching for that exact feature you want.",
-    "crumbs": [
-      "L18: HTML and Web Scraping"
     ]
   },
   {
