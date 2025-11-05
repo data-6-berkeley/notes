@@ -1082,44 +1082,39 @@
     ]
   },
   {
-    "objectID": "18-html/index.html",
-    "href": "18-html/index.html",
-    "title": "HTML Web Scraper",
+    "objectID": "18-html/genius.html",
+    "href": "18-html/genius.html",
+    "title": "Genius API Key",
     "section": "",
-    "text": "BeautifulSoup is a Python library for pulling data out of HTML and XML files.\nPlease see Professor Allison Parrish’s tutorial on HTML and BeautifulSoup, which we go over in class. This tutorial walks through scraping HTML from a simple kittens webpage.\nThe official BeautifulSoup Documentation is also a great place to continue searching for that exact feature you want.",
-    "crumbs": [
-      "L18: HTML Web Scraper"
-    ]
+    "text": "This tutorial walks you through obtaining an API Key for the Genius API. This tutorial is adapted from Intro to Cultural Analytics by Melanie Walsh."
   },
   {
-    "objectID": "18-html/index.html#tutorial-parsing-html-with-beautifulsoup",
-    "href": "18-html/index.html#tutorial-parsing-html-with-beautifulsoup",
-    "title": "HTML Web Scraper",
+    "objectID": "18-html/genius.html#tutorial-overview",
+    "href": "18-html/genius.html#tutorial-overview",
+    "title": "Genius API Key",
     "section": "",
-    "text": "BeautifulSoup is a Python library for pulling data out of HTML and XML files.\nPlease see Professor Allison Parrish’s tutorial on HTML and BeautifulSoup, which we go over in class. This tutorial walks through scraping HTML from a simple kittens webpage.\nThe official BeautifulSoup Documentation is also a great place to continue searching for that exact feature you want.",
-    "crumbs": [
-      "L18: HTML Web Scraper"
-    ]
+    "text": "This tutorial walks you through obtaining an API Key for the Genius API. This tutorial is adapted from Intro to Cultural Analytics by Melanie Walsh."
   },
   {
-    "objectID": "16-measurements/index.html",
-    "href": "16-measurements/index.html",
-    "title": "Measurements",
-    "section": "",
-    "text": "For this lecture’s notes, please see:\n\nLecture slides.\nExcerpt of “Chapter 5: Evaluating Research.” Elizabeth Heger Boyle, Deborah Carr, Benjamin Cornwell, Shelley Correll, Robert Crosnoe, Jeremy Freese, and Waters, Mary C. 2017. The Art and Science of Social Research. New York: W. W. Norton & Company PDF Link (UC Berkeley affiliates only)\nThis week’s discussion handout",
-    "crumbs": [
-      "L16: Iterations II; Measurements"
-    ]
+    "objectID": "18-html/genius.html#application-programming-interfaces-apis",
+    "href": "18-html/genius.html#application-programming-interfaces-apis",
+    "title": "Genius API Key",
+    "section": "Application Programming Interfaces (APIs)",
+    "text": "Application Programming Interfaces (APIs)\nIn the previous lesson, we collected internet data by scraping the surface of web pages. But there’s another way of collecting internet data called Application Programming Interfaces (APIs).\n\nWhat is an API?\nAn API allows you to programmatically extract and interact with data under the hood of websites like Genius as well as other social networks, applications, and projects that make their data publicly available, such as Twitter and The Smithsonian museums.\nAn API is something that a project or company explicitly designs for data-sharing purposes. Why do companies or projects go to all this trouble? One reason is that it helps to promote the use and further development of an application and its data. For example, Twitter wants other developers to use, integrate, and build upon Twitter tools and data. The Twitter API is the main conduit by which these developers can do so.\n\n\nPros\nBecause APIs are explicitly designed for data-sharing purposes, working with an API is often a cleaner, more reliable, and more streamlined process than web scraping.\n\n\nCons\nOne of the downsides is that the companies and projects that design the APIs get to decide exactly which kinds of data they want to share. *Spoiler alert* They often choose not to share their most lucrative and desirable data. For example, the Genius API does not provide access to lyrics data, and the Twitter API does not provide free access to tweets more than 14 days in the past. To get that Twitter data, you need to pay for special API access."
   },
   {
-    "objectID": "16-measurements/index.html#reliability-and-validity",
-    "href": "16-measurements/index.html#reliability-and-validity",
-    "title": "Measurements",
-    "section": "",
-    "text": "For this lecture’s notes, please see:\n\nLecture slides.\nExcerpt of “Chapter 5: Evaluating Research.” Elizabeth Heger Boyle, Deborah Carr, Benjamin Cornwell, Shelley Correll, Robert Crosnoe, Jeremy Freese, and Waters, Mary C. 2017. The Art and Science of Social Research. New York: W. W. Norton & Company PDF Link (UC Berkeley affiliates only)\nThis week’s discussion handout",
-    "crumbs": [
-      "L16: Iterations II; Measurements"
-    ]
+    "objectID": "18-html/genius.html#genius-api-api-keys",
+    "href": "18-html/genius.html#genius-api-api-keys",
+    "title": "Genius API Key",
+    "section": "Genius API: API Keys",
+    "text": "Genius API: API Keys\nTo use the Genius Lyrics API, you need a special API key, specifically a “Client Access Token”, which is kind of like a password. Many APIs require authentication keys to gain access to them. To get your necessary Genius API keys, you need to navigate to the following URL: https://genius.com/api-clients.\n\n\n\n\n\n\n\nFigure 1: Genius API webpage.\n\n\n\n\nYou’ll be prompted to sign up for a Genius account, which is required to gain API access. Signing up for a Genius account is free and easy. You just need a Genius nickname (which must be one word), an email address, and a password.\nOnce you’re signed in, you should be taken to https://genius.com/api-clients, where you need to click the button that says “New API Client.”\n\n\n\n\n\n\n\nFigure 2: New API Client button.\n\n\n\n\nAfter clicking “New API Client,” you’ll be prompted to fill out a short form about the “App” that you need the Genius API for. You only need to fill out “App Name” and “App Website URL.”\nIt doesn’t really matter what you type in. You can simply put “Data 6 Fall 2025 Project 2” for the “App Name” and the URL for our course website “https://data6.org/fa25/” for the “App Website URL.”\nWhen you click “Save,” you’ll be given a series of API Keys: a “Client ID” and a “Client Secret.” To generate your “Client Access Token,” which is the API key that we’ll be using in this notebook, you need to click “Generate Access Token”.\nFinally, you could copy and paste your “Client Access Token” into a Python cell and assign it to a name, client_access_token.\n\n# don't do this in practice\nclient_access_token = \"INSERT YOUR CLIENT ACCESS TOKEN IN THESE QUOTATION MARKS\"\n\nIf you are the only one accessing your notebook, you should be fine if you just copy and paste your Genius API into your Jupyter notebook. But that’s actually not the best way of storing your API keys—in fact, it’s incredibly insecure. If you published this notebook to GitHub, for example, other people might be able to read and use/steal your API key."
+  },
+  {
+    "objectID": "18-html/genius.html#protect-your-api-key",
+    "href": "18-html/genius.html#protect-your-api-key",
+    "title": "Genius API Key",
+    "section": "Protect Your API Key",
+    "text": "Protect Your API Key\nAPI keys are like passwords. Where possible, we should not share them publicly in plaintext.\nFor this reason, it’s best practice to keep your API keys away from your code, such as in another file that we store locally. We will do this by making a new Python file called “api_key.py” that contains just one line my_client_access_token = \"MY_API_KEY\".\nTo do this on DataHub, first save whatever notebook you’re in. Then:\n\nRight click the Jupyter logo in the top left of your screen, and click “Open Link in New Tab” (it may appear as Open…)\nNavigate to the appropriate folder with your assignment in it.\nOpen the api_key.py file. You can open files by clicking on them.\nPaste your Client Access Token as a string, assigning it to the name my_client_access_token.\nThe resulting api_key.py should exactly have one line in it. In our example, our Client Access Token is MY_API_TOKEN, so our singular line is my_client_access_token = \"MY_API_KEY\".\nSave and exit.\nReturn to your assignment file.\n\nWe can then import my_client_access_token into my notebook with import api_key.\n\nimport api_key\n\n\napi_key.my_client_access_token\n\n'MY_API_KEY'\n\n\nBy importing this Python file as a module, we get access to my_client_access_token without ever having to explicitly type our secret API token into this notebook. If we were to publish this notebook to GitHub, then we can ignore or leave out the api_key.py file that actually contains the API token.\nFinally, we can load this value into our client_access_token:\n\nclient_access_token = api_key.my_client_access_token"
   },
   {
     "objectID": "16-measurements/iteration-ii.html",
@@ -1163,6 +1158,46 @@
     "crumbs": [
       "L16: Iterations II; Measurements",
       "More Iteration Practice"
+    ]
+  },
+  {
+    "objectID": "16-measurements/index.html",
+    "href": "16-measurements/index.html",
+    "title": "Measurements",
+    "section": "",
+    "text": "For this lecture’s notes, please see:\n\nLecture slides.\nExcerpt of “Chapter 5: Evaluating Research.” Elizabeth Heger Boyle, Deborah Carr, Benjamin Cornwell, Shelley Correll, Robert Crosnoe, Jeremy Freese, and Waters, Mary C. 2017. The Art and Science of Social Research. New York: W. W. Norton & Company PDF Link (UC Berkeley affiliates only)\nThis week’s discussion handout",
+    "crumbs": [
+      "L16: Iterations II; Measurements"
+    ]
+  },
+  {
+    "objectID": "16-measurements/index.html#reliability-and-validity",
+    "href": "16-measurements/index.html#reliability-and-validity",
+    "title": "Measurements",
+    "section": "",
+    "text": "For this lecture’s notes, please see:\n\nLecture slides.\nExcerpt of “Chapter 5: Evaluating Research.” Elizabeth Heger Boyle, Deborah Carr, Benjamin Cornwell, Shelley Correll, Robert Crosnoe, Jeremy Freese, and Waters, Mary C. 2017. The Art and Science of Social Research. New York: W. W. Norton & Company PDF Link (UC Berkeley affiliates only)\nThis week’s discussion handout",
+    "crumbs": [
+      "L16: Iterations II; Measurements"
+    ]
+  },
+  {
+    "objectID": "18-html/index.html",
+    "href": "18-html/index.html",
+    "title": "HTML Web Scraper",
+    "section": "",
+    "text": "BeautifulSoup is a Python library for pulling data out of HTML and XML files.\nPlease see Professor Allison Parrish’s tutorial on HTML and BeautifulSoup, which we go over in class. This tutorial walks through scraping HTML from a simple kittens webpage.\nThe official BeautifulSoup Documentation is also a great place to continue searching for that exact feature you want.",
+    "crumbs": [
+      "L18: HTML Web Scraper"
+    ]
+  },
+  {
+    "objectID": "18-html/index.html#tutorial-parsing-html-with-beautifulsoup",
+    "href": "18-html/index.html#tutorial-parsing-html-with-beautifulsoup",
+    "title": "HTML Web Scraper",
+    "section": "",
+    "text": "BeautifulSoup is a Python library for pulling data out of HTML and XML files.\nPlease see Professor Allison Parrish’s tutorial on HTML and BeautifulSoup, which we go over in class. This tutorial walks through scraping HTML from a simple kittens webpage.\nThe official BeautifulSoup Documentation is also a great place to continue searching for that exact feature you want.",
+    "crumbs": [
+      "L18: HTML Web Scraper"
     ]
   },
   {
