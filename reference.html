@@ -625,7 +625,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <p>Of course, the Python Reference can only provide information about the basics of the functions you’ll use in Data 6. The best knowledge about functions comes from using these functions in code you write in labs or homeworks. If you get stuck when using a certain function, we encourage you to come to office hours or ask a question on Ed.</p>
 <section id="the-anatomy-of-a-function" class="level3">
 <h3 class="anchored" data-anchor-id="the-anatomy-of-a-function">The Anatomy of a Function</h3>
-<div id="f3a8de92" class="cell" data-execution_count="1">
+<div id="62074a50" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> my_function(num):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> num <span class="op">**</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -838,15 +838,15 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </tr>
 <tr class="even">
 <td><code>s.strip(chars)</code></td>
-<td>Returns a copy of <code>s</code> with the characters in <code>chars</code> trimmed off the left and right ends of the string. If <code>chars</code> is not provided, trims off whitespace from both ends.</td>
+<td>Returns a copy of <code>s</code> with the characters in <code>chars</code> trimmed off the left and right ends of the string. If <code>chars</code> is not provided, trims off whitespace.</td>
 </tr>
 <tr class="odd">
 <td><code>substr in s</code></td>
-<td>Returns <code>True</code> if the string <code>substr</code> is contained in the string <code>s</code> (i.e., <code>substr</code> is a substring of <code>s</code>) and <code>False</code> otherwise. A similar operation, <code>x in lst</code>, checks if an element <code>x</code> is in an iterable (list or array).</td>
+<td>Returns <code>True</code> if the string <code>substr</code> is contained in <code>s</code> (i.e., <code>substr</code> is a substring of <code>s</code>) and <code>False</code> otherwise. A similar operation, <code>x in lst</code>, checks if an element <code>x</code> is in an iterable (list or array).</td>
 </tr>
 <tr class="even">
 <td><code>substr not in s</code></td>
-<td>Returns <code>False</code> if <code>substr</code> is not a substring of <code>s</code> and <code>True</code> otherwise. A similar operation, <code>x not in lst</code>, checks if an element <code>x</code> is not in an iterable (list or array).</td>
+<td>Returns <code>True</code> if <code>substr</code> is not a substring of <code>s</code> and <code>False</code> otherwise. A similar operation, <code>x not in lst</code>, checks if an element <code>x</code> is not in an iterable (list or array).</td>
 </tr>
 </tbody>
 </table>
@@ -980,13 +980,13 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <tr class="even">
 <td><code>tbl.with_row(values)</code></td>
 <td>Adds a new row with the specified <code>values</code> to <code>tbl</code></td>
-<td>1. <strong>list</strong> or <strong>array</strong>: values to add as a new row</td>
+<td><strong>list</strong> or <strong>array</strong>: values to add as a new row</td>
 <td><strong>Table</strong>: a copy of the original table with the new row</td>
 </tr>
 <tr class="odd">
 <td><code>tbl.with_rows(list_of_rows)</code></td>
 <td>Adds multiple rows to <code>tbl</code> using a list of rows</td>
-<td>1. <strong>list</strong> of <strong>lists</strong> or <strong>arrays</strong>: each list/array represents a new row</td>
+<td><strong>list</strong> of <strong>lists</strong> or <strong>arrays</strong>: each list/array represents a new row</td>
 <td><strong>Table</strong>: a copy of the original table with the new rows</td>
 </tr>
 <tr class="even">

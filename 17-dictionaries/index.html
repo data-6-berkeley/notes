@@ -624,7 +624,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <p>We have seen several data structures so far. To name a few: * <strong>NumPy array</strong>: A sequence of elements, all of the same data type. Each element has an index, and we can access elements by their index using the <code>item</code> method or square-bracket indexing. We use the NumPy one-dimensional array in this course. * <strong>List</strong>: A sequence of elements, potentially of different data types. Each element has an index, and we can access elements by their index using square-bracket indexing. Python has a built-in list type. * <strong>Tables</strong>: A sequence of rows, where each row consists of values corresponding to a series of columns. Rows and columns are in sequence. We can access rows by their index using the <code>take</code> or <code>row</code> methods. We use the <code>datascience</code> package Table data type.</p>
 <p>Arrays, lists, and tables have one core feature in common: their elements (or rows) are <strong>in order</strong>, and we can access these elements by index. But what if elements don’t naturally have an order? We must turn to different data structures; one such data structure is a <strong>dictionary</strong>.</p>
 <p>In Python, a dictionary is a data structure that stores a set of key-value pairs.</p>
-<div id="9d86f08f" class="cell" data-execution_count="1">
+<div id="b8b8f1ab" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>dog <span class="op">=</span> {</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'name'</span>: <span class="st">'Junior'</span>,</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="dv">4</span>: [<span class="st">'kibble'</span>, <span class="st">'treat'</span>]</span>
@@ -643,14 +643,14 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <section id="basic-dictionary-use" class="level2">
 <h2 class="anchored" data-anchor-id="basic-dictionary-use">Basic Dictionary Use</h2>
 <p><strong>Read/access</strong> dictionary. In order to retrieve an element from a dictionary, we use its key:</p>
-<div id="198e71f0" class="cell" data-execution_count="2">
+<div id="d5ae6bbf" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>dog[<span class="st">'name'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>'Junior'</code></pre>
 </div>
 </div>
 <p>Attempting to get the value of a key that does not exist in the dictionary will throw an error:</p>
-<div id="f5d554e1" class="cell" data-execution_count="3">
+<div id="cc66c9de" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>dog[<span class="st">'breed'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
@@ -664,7 +664,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </div>
 </div>
 <p><strong>Write</strong> to a dictionary by providing a key and its associated value. Suppose we wanted to add the dog’s age to the dictionary:</p>
-<div id="890de0a3" class="cell" data-execution_count="4">
+<div id="1891129e" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>dog[<span class="st">'age'</span>] <span class="op">=</span> <span class="dv">11</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>dog</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
@@ -672,7 +672,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </div>
 </div>
 <p><strong>Modify</strong> a dictionary by overwriting the value associated with a key. Note this works because dictionaries have unique keys:</p>
-<div id="feb80438" class="cell" data-execution_count="5">
+<div id="0b5d940f" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>dog[<span class="st">'age'</span>] <span class="op">=</span> <span class="dv">12</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>dog</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
@@ -683,7 +683,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <section id="removing-keys-with-pop" class="level2">
 <h2 class="anchored" data-anchor-id="removing-keys-with-pop">Removing keys with <code>pop</code></h2>
 <p>The key <code>4</code> does not describe its value well:</p>
-<div id="0df35011" class="cell" data-execution_count="6">
+<div id="f61422bf" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>dog[<span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>['kibble', 'treat']</code></pre>
@@ -695,7 +695,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <p>Write two lines such that the dictionary <code>dog</code> will have the key <code>'likes'</code> assigned to the list <code>['kibble', 'treat']</code> and will not have the key <code>4</code>.</p>
 <p>Note: To remove the existing key from dictionary dog, you can use <code>dog.pop(key)</code>.</p>
 <p>The below approach is succinct. The only thing that is changing is the key itself. Assign a new key to the existing value, then pop off the original key.</p>
-<div id="8c54990b" class="cell" data-execution_count="7">
+<div id="6a971251" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">Succinct solution</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
@@ -706,7 +706,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </div>
 </div>
 <p>Other approaches which aren’t incorrect per se, but have some data duplication and therefore will be quite tedious in practice:</p>
-<div id="d4221bb6" class="cell" data-execution_count="8">
+<div id="643df4e5" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co">This solution reassigns the name to an entirely</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co">new dictionary, requiring the programmer to manually rewrite</span></span>
@@ -721,7 +721,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <pre><code>{'name': 'Junior', 'likes': ['kibble', 'treat']}</code></pre>
 </div>
 </div>
-<div id="daffca24" class="cell" data-execution_count="9">
+<div id="0fc94ca7" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co">This solution first deletes the key-value, then</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co">assignes the new key-value, requiring the programmer to</span></span>
@@ -740,7 +740,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </div>
 </div>
 <p><strong>Usage of <code>pop</code></strong>: To pop key and avoid errors when the key doesn’t exist, you can provide a second argument <code>None</code> to <code>pop</code>:</p>
-<div id="5d5288f0" class="cell" data-execution_count="10">
+<div id="d7853715" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>dog.pop(<span class="dv">4</span>, <span class="va">None</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Why? Find out the answer in the official <a href="https://docs.python.org/3/library/stdtypes.html#dict.pop">Python documentation on <code>pop</code></a>!</p>
@@ -762,7 +762,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <section id="conditions-and-iterations-with-dictionaries" class="level2">
 <h2 class="anchored" data-anchor-id="conditions-and-iterations-with-dictionaries">Conditions and Iterations with Dictionaries</h2>
 <p>Suppose we want to create a dictionary of slang:</p>
-<div id="47df9ebc" class="cell" data-execution_count="11">
+<div id="d7863906" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>slang <span class="op">=</span> {</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'haha'</span>: <span class="st">'that was not funny'</span>,</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'smh'</span>: <span class="st">'shake my head'</span>,</span>
@@ -777,21 +777,21 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
  'GOAT': 'greatest of all time'}</code></pre>
 </div>
 </div>
-<div id="adeb5dd1" class="cell" data-execution_count="12">
+<div id="2fb980cc" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Number of key-value pairs</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(slang)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>4</code></pre>
 </div>
 </div>
-<div id="97b50227" class="cell" data-execution_count="13">
+<div id="b09c44cf" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Checks if 'smh' is a key</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co">'smh'</span> <span class="kw">in</span> slang</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="2a780c42" class="cell" data-execution_count="14">
+<div id="a2a9936c" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Checks if 'shake my head' is a key</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co"># It is not – it is a value</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co">'shake my head'</span> <span class="kw">in</span> slang</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -803,7 +803,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <h3 class="anchored" data-anchor-id="iterating-over-dictionaries-with-a-for-loop">Iterating over dictionaries with a <code>for</code> loop</h3>
 <p>Like many other data structures we have seen, we can use <code>for</code> loops to iterate over dictionaries. We discuss several approaches below: * Using the dictionary methods <code>keys</code>, <code>values</code>, and <code>items</code> * Using the dictionary name itself</p>
 <p>We can iterate over the keys of a dictionary using the <code>keys</code> dictionary method:</p>
-<div id="970255cf" class="cell" data-execution_count="15">
+<div id="b85493af" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> abb <span class="kw">in</span> slang.keys():</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(abb, slang[abb])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -814,7 +814,7 @@ GOAT greatest of all time</code></pre>
 </div>
 </div>
 <p>Python also allows us to provide the dictionary itself as the data structure to be iterated over, without any method calls. By doing so (as below), the iterated elements are the keys itself. The below code has the same behavior as the previous code:</p>
-<div id="f75ca933" class="cell" data-execution_count="16">
+<div id="b02a57e2" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> abb <span class="kw">in</span> slang:</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(abb, slang[abb])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -825,7 +825,7 @@ GOAT greatest of all time</code></pre>
 </div>
 </div>
 <p>Occasionally, you may want to iterate over just the values in a dictionary, without knowing the keys. This is rare:</p>
-<div id="9364310f" class="cell" data-execution_count="17">
+<div id="7811e0b1" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> slang_phrase <span class="kw">in</span> slang.values():</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(slang_phrase)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -836,7 +836,7 @@ greatest of all time</code></pre>
 </div>
 </div>
 <p>In Python, the below structure is probably the most common. <code>items</code> returns Python tuples of (key, value), which we respectively assign to <code>k</code> and <code>v</code>:</p>
-<div id="c68fdc6c" class="cell" data-execution_count="18">
+<div id="45500b35" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k, v <span class="kw">in</span> slang.items():</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(k, v)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -849,7 +849,7 @@ GOAT greatest of all time</code></pre>
 </section>
 <section id="example-deciphering-gen-z-lingo" class="level3">
 <h3 class="anchored" data-anchor-id="example-deciphering-gen-z-lingo">Example: Deciphering Gen Z Lingo</h3>
-<div id="591825df" class="cell" data-execution_count="19">
+<div id="1bbd2242" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Replaces all abbreviations in text</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="co"># that are defined in more_slang</span></span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="co"># with their full forms</span></span>
@@ -860,13 +860,13 @@ GOAT greatest of all time</code></pre>
 <span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>            text <span class="op">=</span> text.replace(abb, slang[abb])</span>
 <span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> text</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="f95edc14" class="cell" data-execution_count="20">
+<div id="446289bf" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>replace_slang(<span class="st">'smh, I did not lol'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>'shake my head, I did not laugh out loud'</code></pre>
 </div>
 </div>
-<div id="393b16f0" class="cell" data-execution_count="21">
+<div id="55c00909" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>replace_slang(<span class="st">'serena is the GOAT'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
 <pre><code>'serena is the greatest of all time'</code></pre>
@@ -877,7 +877,7 @@ GOAT greatest of all time</code></pre>
 <section id="challenge-1" class="level2">
 <h2 class="anchored" data-anchor-id="challenge-1">Challenge 1</h2>
 <p>After running the following four lines of code, what are the values of <code>numbers['1']</code>, <code>numbers['five']</code>, <code>numbers[1]</code>, and <code>numbers[2]</code>?</p>
-<div id="aa548ea5" class="cell" data-execution_count="22">
+<div id="8d57b625" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>two <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> {<span class="st">'1'</span>: <span class="dv">2</span>}</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>numbers[<span class="st">'five'</span>] <span class="op">=</span> <span class="dv">5</span></span>
@@ -896,25 +896,25 @@ Solutions
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="600ffbbc" class="cell" data-execution_count="23">
+<div id="37b4359f" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>numbers[<span class="st">'1'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
 <pre><code>2</code></pre>
 </div>
 </div>
-<div id="5204085c" class="cell" data-execution_count="24">
+<div id="6a448545" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>numbers[<span class="st">'five'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="24">
 <pre><code>5</code></pre>
 </div>
 </div>
-<div id="c0394c99" class="cell" data-execution_count="25">
+<div id="d77e17d0" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>numbers[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="25">
 <pre><code>2</code></pre>
 </div>
 </div>
-<div id="0a7a1a53" class="cell" data-execution_count="26">
+<div id="206981fb" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>numbers[<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="26">
 <pre><code>7</code></pre>
@@ -927,7 +927,7 @@ Solutions
 <section id="challenge-2-nested-dictionaries" class="level2">
 <h2 class="anchored" data-anchor-id="challenge-2-nested-dictionaries">Challenge 2: Nested Dictionaries</h2>
 <p>After defining <code>bears</code>, what are the values of: * <code>bears['polar']['hungry']</code> * <code>bears[None][1]</code> * <code>bears['weight_range']</code></p>
-<div id="7fedbffc" class="cell" data-execution_count="27">
+<div id="a4341457" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>bears <span class="op">=</span> {</span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'polar'</span>: {</span>
 <span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">'color'</span>: <span class="st">'white'</span>,</span>
@@ -954,19 +954,19 @@ Solutions
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="05a3fa10" class="cell" data-execution_count="28">
+<div id="e3632805" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>bears[<span class="st">'polar'</span>][<span class="st">'hungry'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="28">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="e9a18b21" class="cell" data-execution_count="29">
+<div id="80ab169c" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>bears[<span class="va">None</span>][<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="29">
 <pre><code>'panda'</code></pre>
 </div>
 </div>
-<div id="08348d86" class="cell" data-execution_count="30">
+<div id="c46c3f22" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>bears[<span class="st">'weight_range'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">

@@ -644,21 +644,21 @@ Read <em>Inferential Thinking</em>
 <section id="examples" class="level2">
 <h2 class="anchored" data-anchor-id="examples">Examples</h2>
 <p>The function <code>triple</code> takes an input x and triples it:</p>
-<div id="ea0be486" class="cell" data-execution_count="2">
+<div id="3f43a733" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> triple(x):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""triples the input"""</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    tripled_x <span class="op">=</span> x <span class="op">*</span> <span class="dv">3</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> tripled_x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><code>triple</code> works by taking an input <code>x</code> and first assigning <code>tripled_x</code> to <code>x * 3</code>. Then, it returns (i.e., outputs) the value of <code>tripled_x</code>.</p>
-<div id="0207570d" class="cell" data-execution_count="3">
+<div id="c64b7cd8" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>triple(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>9</code></pre>
 </div>
 </div>
 <p>In lecture, we labeled different values to trace through different calls to this newly defined <code>triple</code> function:</p>
-<div id="ecac793a" class="cell" data-execution_count="4">
+<div id="f1286be2" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>num <span class="op">=</span> <span class="dv">4</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>triple(num)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
@@ -666,20 +666,20 @@ Read <em>Inferential Thinking</em>
 </div>
 </div>
 <p>Note that arguments are first evaluated, then passed in as parameters to <code>triple</code>. In the below cell, the argument to <code>triple</code> is <code>20</code>, which is the result of multiplying <code>num</code> by <code>5</code>.</p>
-<div id="ca132ee9" class="cell" data-execution_count="5">
+<div id="d8cf3c2f" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>triple(num <span class="op">*</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>60</code></pre>
 </div>
 </div>
 <p>Functions can be type-agnostic, but it depends on what the function does. For <code>triple</code>, the <code>*</code> operator works on arrays and strings, too.</p>
-<div id="ea649223" class="cell" data-execution_count="6">
+<div id="65e2c8c1" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>triple(np.arange(<span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>array([0, 3, 6, 9])</code></pre>
 </div>
 </div>
-<div id="4921888f" class="cell" data-execution_count="7">
+<div id="0a771144" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>triple(<span class="st">'ha'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>'hahaha'</code></pre>
@@ -691,7 +691,7 @@ Read <em>Inferential Thinking</em>
 <p>While many functions will take in some input and return some processed output, not all functions need parameters nor return values.</p>
 <p>In fact, <strong>returning</strong> is the act of a function stopping execution, “returning” control to whatever the original line was. If a <code>return</code> statement does not have a return value, then by default the function returns <code>None</code>.</p>
 <p>In the cell below, <code>retval</code> is indeed assigned to the return value of <code>add_and_print</code>, but because <code>add_and_print</code> does not correctly return the value of <code>total</code> (it only prints the value), <code>retval</code> is assigned to <code>None</code>.</p>
-<div id="db1e74b3" class="cell" data-execution_count="8">
+<div id="eb3fd720" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add_and_print(a, b):</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> a <span class="op">+</span> b</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(total)</span>
@@ -705,18 +705,18 @@ the sum of 3 and 4 is None</code></pre>
 </div>
 <p>Once we reach a statement with a <code>return</code> keyword, our function is done running. Nothing in the function is run after this <strong>return statement</strong>.</p>
 <p>Below, odd checks if a number is even or odd by checking if the remainder modulo 2 is equal to (<code>==</code>) 1. If it is not, then it is zero, meaning that the number is divisible by two (and therefore even).</p>
-<div id="31d4af86" class="cell" data-execution_count="9">
+<div id="0fe5a1b3" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> odd(n):</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">1</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"this will never be printed!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="32d1defc" class="cell" data-execution_count="10">
+<div id="f9ab0591" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>odd(<span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="79588257" class="cell" data-execution_count="11">
+<div id="28f1bac4" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>odd(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>False</code></pre>
@@ -726,7 +726,7 @@ the sum of 3 and 4 is None</code></pre>
 <section id="function-scope" class="level2">
 <h2 class="anchored" data-anchor-id="function-scope">Function scope</h2>
 <p>Function scope refers to which Python names are accessible while running within a function. Scope generally refers to which names are accessible. Importantly, function parameters are not accessible outside the function scope. The below code therefore errors:</p>
-<div id="0afa9de4" class="cell" data-execution_count="12">
+<div id="c167e25f" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>odd(<span class="dv">15</span>)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"n outside function"</span>, n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
