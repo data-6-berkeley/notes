@@ -1,0 +1,20 @@
+---
+title: "GenAI and LLMs"
+subtitle: ""
+---
+
+**Generative Artificial Intelligence**, also known as Generative AI or GenAI, refers to models that generate responses, often to user input.
+
+## Large Language Models (LLMs)
+
+Large language models (LLMs) are the hallmark of machine learning models for Generative AI. LLMs take as text as input and output text.
+
+Refer to these slides for the high-level idea of how large language models probabilistically generate content:
+
+* [Lecture slides](hhttps://docs.google.com/presentation/d/1UmkNWQJdoEzsiM7H2DrkV9ghUkiaiN1o733bDC4uaYE/edit?usp=sharing)
+
+Focus on:
+
+* Understanding the difference between an LLM (e.g., GPT) and a chatbot that uses an LLM (e.g., ChatGPT).
+* Know that chatbots can be powered by different models, which have different capacities.
+* Understand the risks of hallucinations and other inaccuracies when it comes to generative models.

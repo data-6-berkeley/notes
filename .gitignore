@@ -5,4 +5,5 @@
 *.quarto_ipynb
 venv/
 **/*.quarto_ipynb
-__pycache__
+__pycache__/
+21-genai/ignore_api_key.py

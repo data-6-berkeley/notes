@@ -1,0 +1,236 @@
+---
+title: "Gemini Tutorial"
+subtitle: "Google Gemini API for Python"
+
+format:
+  html:
+    code-overflow: wrap
+---
+
+This tutorial is a subset of the lab assignment.
+
+```{python}
+#| include: false
+
+# IMPORTANT: to regenerate this file, make sure you put a Gemini API key
+# in the ignore_api_key.py file AND make sure the file is in .gitignore
+# so it is not pushed to the repo.
+
+import ignore_api_key
+GOOGLE_API_KEY = ignore_api_key.my_client_access_token
+```
+
+This part gives you your first experience using the Gemini Python API. We walk through the official tutorials and try to abstract away the complicated parts of the official documentation.
+
+Google's Gemini API uses a Python interface. This is unlike the Genius and Wikipedia APIs, which used special URLs to access data. To access the Gemini API, we install the `google-genai`, which installs related `google` packages.
+
+## Gemini API Key
+
+We shared an API key with you through email. This individualized API key allows Gemini to recognize who is using their API. 
+
+
+::: {.callout-warning title="**Important Note**: API usage is monitored"}
+ Please DO NOT share your API key outside of this class. We will disable your API key (1) if you misuse it, (2) if you exceed the free usage tier during the project, and (3) for all students after the semester has ended.
+ 
+ If you'd like to play around with your code after the term, you'll have to get your own API key. Ask us how to do this!
+:::
+
+Remember that we avoid storing our API keys publicly. In `api_key.py`, we set `my_client_access_token` to be this string of alphanumeric characters. We then load it into our notebook environment as the Python name `GOOGLE_API_KEY`.
+<!-- this is not run -->
+```python
+import api_key
+
+GOOGLE_API_KEY = api_key.my_client_access_token
+```
+
+## Our first (two) API request(s)
+
+So far, the Genius and Wikipedia APIs we've worked with have been what is called [RESTful APIs](https://en.wikipedia.org/wiki/REST), where we specify a URL to access structured data from an endpoint.  After making this request, we then processed the JSON response. Now, we will directly use a Python library API, developed by Google as part of their Gemini Software Development Kit (Gemini SDK).
+
+Using a Python API means that we will make a Python client object using Google's `genai` package, then call that object's methods to get data from Gemini. A Python API is often more convenient than a RESTful API when (1) the input and output are both quite flexible in format, as is the case for Generative AI data, and (2) when we write code that will make multiple calls to the API across different functions.
+
+The cell below imports Google's `genai` Python module:
+
+```{python}
+from google import genai
+```
+
+### From chat interface to API
+
+We will first examine the example API request listed in the [Gemini Quickstart Documentation](https://ai.google.dev/gemini-api/docs/quickstart) ("Make your first request"). You are welcome (and encouraged!) to browse this documentation.
+
+An **AI chatbot** is an application *on top of* a **large language model (LLM)**. The **LLM** is what takes in user prompts and returns text responses. The **chatbot** is what filters input, perhaps converting and loading files with additional prompts, and returns filtered LLM responses back, perhaps with some HTML or Markdown formatting.
+
+Consider the chat prompt shown in the screenshot, as well as (the start of) the model's response.
+
+
+:::{style="text-align: center"}
+![A screenshot of a Google Gemini chat conversation. Prompt is 'Explain how AI works in a few words.'. Response from Gemini chat is long but gets at the idea..](images/prompt-chat.png){#fig-inflation fig-align=center width=90%}
+:::
+
+We define three pieces of terminology to describe  what is happening in the above screenshot:
+
+* The user **prompt**: "Explain how AI works in a few words."
+* The model **response**: "AI works by using algorithms to analyze..."
+* The specified **model**: Here, it is "Fast" (note the dropdown in the bottom right). The other option is "Thinking." We'll discuss this more later.
+
+### Create the client then make the request
+
+The below code uses Gemini's Python API to directly query the Gemini LLM with this prompt. We describe the behavior below the cell.
+
+```{python}
+# first, create the client
+client = genai.Client(api_key=GOOGLE_API_KEY)
+
+# then make the API request
+response = client.models.generate_content(
+    model="gemini-2.5-flash",
+    contents="Explain how AI works in a few words"
+)
+print(response.text)
+```
+
+What just happened (and how you would make these API calls):
+
+1. Make an **API client**: Make a Gemini client object called `client`, which passes in your API key. (We will do this for you usually.) This client lets you access different API calls via its methods. We will focus on one specific method in this class, `generate_content`.
+1. Make the **API request**. Call `generate_content`, available in via `client.models`. This cell takes in several arguments, which we specify by name:
+
+    * `model`: The underlying large language model. Here we specify Gemini 2.5 Flash, which is equivalent to the "Fast" option in the Gemini chatbot.
+    * `contents`: The **prompt**: "Explain how AI works in a few words." We discuss the type of `contents` later.
+1. Receive a **response**. `response` is a [Gemini-specific object type](https://ai.google.dev/gemini-api/docs/quickstart). The details are too complicated for this course. Instead, we focus on the value **`response.text`**, the LLM response string itself.
+
+### Make another API request
+
+Once we have created the API client, we do not need to remake the client. Instead, we can just make more calls to `generate_content`.
+
+Remember—**LLMs are random response generators**, so you will likely get a different response back!
+
+```{python}
+# client is already created, so just call generate_content
+response = client.models.generate_content(
+    model="gemini-2.5-flash",
+    contents="Explain how AI works in a few words"
+)
+print(response.text)
+```
+
+## Different Gemini Models
+
+You can specify different Gemini models to get different responses. Some more advanced models will produce higher-quality responses, though with the tradeoff that each response will take longer and be more expensive.
+
+We recommend a few models for this course:
+
+* "Fast" **Gemini 2.5 Flash** model (`"gemini-2.5-flash"`). Pretty fast, though depending on the time of day responses might still take a few seconds. Reasonable cost.
+* "Thinking" **Gemini 2.5 Pro** model (`"gemini-2.5-pro"`). More in-depth responses, though responses will take significantly longer than Fast responses. Expensive.
+* Extra fast: **Gemini 2.5 Flash-Lite** (`"gemini-2.5-flash-lite"`). Very fast, very cost effective.
+
+
+::: {.callout-warning title="**Important Note**: Again, API usage is monitored"}
+ Gemini Pro not only has longer request times. It is also more expensive per request. We **strongly** recommended testing out prompts with **Gemini 2.5 Flash** or **Gemini 2.5 Flash-Lite**. Once you are satisfied with your prompt, only then should you change models.
+:::
+
+We use **Gemini 2.5 Flash** for the remainder of this tutorial.
+
+## Prompt Engineering
+
+**Prompt engineering** is the process of structuring or crafting a **prompt** (natural language text instruction) in order to produce better outputs from a generative artificial intelligence (AI) model (source: [Wikipedia](https://en.wikipedia.org/wiki/Prompt_engineering)).
+
+### Provide context
+
+What is the best restaurant in Berkeley?
+
+```{python}
+response = client.models.generate_content(
+    model="gemini-2.5-flash",
+    contents="What is the best restaurant in Berkeley?"
+)
+print(response.text)
+```
+
+The LLM response looks too general; these recommendations might not be great for the average college student. One core aspect of prompt engineering is to provide more **context** to the prompt.
+
+Context can help define:
+
+* What information you are looking for in the response, e.g., "Only include cheap meals under $15, and only consider restaurants that are open past 9pm."
+* How long you want the response to be, e.g., "Limit your response to 200 words."
+* What tone you want the response to have, e.g., "Imagine you are a UC Berkeley student talking to a fellow classmate."
+* How to structure the response: markdown, comma-separated, JSON, etc., e.g., "Format your response as a bulleted list."
+
+**Note**: Include linebreaks (with newline characters `'\n'`, or use multi-line strings) to delineate different aspects of the prompt.
+
+One way to provide detailed context is to just pass in a very, very long string as your prompt. See the example below. Note that the triple quotes (`"""`) allows you to specify a multi-line string, with line breaks.
+
+```{python}
+response = client.models.generate_content(
+    model="gemini-2.5-flash",
+    contents="""Imagine you are a UC Berkeley student talking to a fellow 
+    classmate.
+    
+    What is the best restaurant in Berkeley? Only include cheap meals 
+    under $15, and only consider restaurants that are open past 9pm.
+
+    Format your response as a bulleted list. Limit your response to 200 words.
+    """
+)
+print(response.text)
+```
+
+Word count:
+
+```{python}
+# this uses regular expressions, which we don't cover in this course
+import re
+def split_into_words(any_chunk_of_text):
+    lowercase_text = any_chunk_of_text.lower()
+    split_words = re.split(r"\W+", lowercase_text)
+    return split_words 
+
+len(split_into_words(response.text))
+```
+
+### Construct a prompt as a list of parts
+
+As we've seen in this class time and time again, we want to **reuse** pieces of code, data, etc. The same is true of our prompts! A formatting context from one prompt may be very useful for an entirely different application, and it would be great to reuse the context string instead of duplicating string literals in different parts of our code.
+
+The Gemini API supports multiple argument types for `content`. For this course, we focus on providing additional context to our prompts by passing in a **list of strings** to `content`. Passing in a list of strings is comparable to separating context parts with linebreaks and allows us to reuse parts of our context.
+
+The below code specifies the same prompt as before but now with a list of strings passed into `content`. (Again, because LLMs are random text generators, the response may be different from before.)
+
+```{python}
+context_character = "Imagine you are a UC Berkeley student talking to a fellow classmate."
+context_format = "Format your response as a bulleted list. Limit your response to 200 words."
+
+response = client.models.generate_content(
+    model="gemini-2.5-flash",
+    contents=[
+        context_character,
+        """
+        What is the best restaurant in Berkeley? Only include cheap meals under $15,
+        and only consider restaurants that are open past 9pm.    
+        """,
+        context_format
+    ]
+)
+
+print(response.text)
+```
+
+Word count:
+
+```{python}
+len(split_into_words(response.text))
+```
+
+See the prompt engineering resources below for how to construct prompt for a variety of tasks.
+
+## Additional Reading
+
+Official Documentation:
+
+* [Gemini API Quickstart](https://ai.google.dev/gemini-api/docs/quickstart)
+* [Google Gen AI Python SDK](https://googleapis.github.io/python-genai/)
+
+Prompt Engineering Resources:
+
+* [Gemini API: Prompting Strategies](https://ai.google.dev/gemini-api/docs/prompting-strategies)
+* [Ziem et al., Table 1](https://direct.mit.edu/view-large/figure/4722326/coli_a_00502_i004.tif): LLM Prompting Guidelines to generate consistent, machine-readable outputs for CSS tasks. Very useful for project.
