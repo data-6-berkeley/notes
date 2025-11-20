@@ -561,6 +561,35 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../19-css/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">L19: Intro to Computational Social Science</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../20-coding/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">L20: Qualitative Coding</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../20-coding/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Qualitative Coding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../20-coding/cohens-kappa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Cohen’s Kappa</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../five-things.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">5 Things to Know</span></a>
   </div>
@@ -613,12 +642,12 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 
 <p>We will cover this section in more detail, likely after the quiz. The lecture notebook and outputs are kept here for your reference, but we will cover it later.</p>
 <p>Naturally, we will want to compare values in our code.</p>
-<div id="3c8855a2" class="cell" data-execution_count="1">
+<div id="9fbbcc9e" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># is age at least age_limit?</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>age_limit <span class="op">=</span> <span class="dv">21</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">17</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="efb4b293" class="cell" data-execution_count="2">
+<div id="2fdd0cd7" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># is password_guess equal to true_password?</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># note: do not do this---weak security!</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>true_password <span class="op">=</span> <span class="st">'qwerty1093x!'</span></span>
@@ -641,25 +670,25 @@ Read <em>Inferential Thinking</em>
 <section id="comparison-operators" class="level2">
 <h2 class="anchored" data-anchor-id="comparison-operators">Comparison Operators</h2>
 <p>Boolean values most often arise from <strong>comparison operators</strong>.</p>
-<div id="71b5ea40" class="cell" data-execution_count="3">
+<div id="69a9c9df" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="op">&gt;</span> <span class="dv">1</span> <span class="op">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="66d9bbe9" class="cell" data-execution_count="4">
+<div id="241626d9" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="op">&lt;</span> <span class="op">-</span><span class="dv">1</span> <span class="op">*</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>False</code></pre>
 </div>
 </div>
-<div id="bbbd5dd2" class="cell" data-execution_count="5">
+<div id="461f7733" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="op">&lt;</span> <span class="dv">1</span> <span class="op">+</span> <span class="dv">1</span> <span class="op">&lt;</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="823f1b23" class="cell" data-execution_count="6">
+<div id="56e0967f" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">"Data "</span> <span class="op">+</span> <span class="st">"6"</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>s <span class="op">==</span> <span class="st">"Data 6"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
@@ -698,25 +727,25 @@ Read <em>Inferential Thinking</em>
 <section id="exercises" class="level2">
 <h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
 <p>Here are some WWPD (What Would Python Do?) exercises for you to read through and understand. For each value in each expression, think carefully about its data type.</p>
-<div id="abdebe44" class="cell" data-execution_count="7">
+<div id="6d30f121" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="dv">17</span> <span class="op">==</span> <span class="st">'17'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>False</code></pre>
 </div>
 </div>
-<div id="06476e95" class="cell" data-execution_count="8">
+<div id="a0e2383f" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">'zebra'</span> <span class="op">!=</span> <span class="va">True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="a019c9c7" class="cell" data-execution_count="9">
+<div id="c18348f8" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="va">True</span> <span class="op">==</span> <span class="fl">1.0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="6efe6e19" class="cell" data-execution_count="10">
+<div id="de81c192" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>banana <span class="op">=</span> <span class="dv">10</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co">'apple'</span> <span class="op">&gt;=</span> banana</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
@@ -731,7 +760,7 @@ Read <em>Inferential Thinking</em>
 </div>
 </div>
 </div>
-<div id="455d2632" class="cell" data-execution_count="11">
+<div id="1811a6f6" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">'alpha'</span> <span class="op">&gt;=</span> <span class="dv">5</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
@@ -744,7 +773,7 @@ Read <em>Inferential Thinking</em>
 </div>
 </div>
 </div>
-<div id="3a51deaf" class="cell" data-execution_count="12">
+<div id="d4f72086" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="op">&gt;</span> <span class="va">True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>True</code></pre>
