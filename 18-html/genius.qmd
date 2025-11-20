@@ -64,13 +64,16 @@ For this reason, it's best practice to keep your API keys away from your code, s
 
 To do this on DataHub, first save whatever notebook you're in. Then:
 
-1. Right click the Jupyter logo in the top left of your screen, and click "Open Link in New Tab" (it may appear as Open...)
+1. Navigate to the file explorer on DataHub.
+  1. Save your changes in your notebook.
+  1. In the top-right, on the menu bar, click on the dropdown "Open with..." and select "NBClassic." This should open your notebook in a new tab.
+  1. In the new tab of your notebook, click the Jupyter logo in the top left of your screen. If a pop-up appears saying you have unsaved changes, continue to leave the page (this is because you should still have your original tab with your notebook in it.)
 1. Navigate to the appropriate folder with your assignment in it.
 1. Open the `api_key.py` file. You can open files by clicking on them.
 1. Paste your Client Access Token as a string, assigning it to the name `my_client_access_token`.
   1. The resulting `api_key.py` should exactly have one line in it. In our example, our Client Access Token is `MY_API_TOKEN`, so our singular line is `my_client_access_token = "MY_API_KEY"`.
   1. Save and exit.
-1. Return to your assignment file.
+1. Return to your assignment file by closing this tab. You should still have your original tab with your notebook in it; if not, navigate to the notebook from the course website.
 
 We can then import `my_client_access_token` into my notebook with `import api_key`.
 

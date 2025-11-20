@@ -149,6 +149,15 @@ website:
             text: "HTML and BeautifulSoup"
           - href: 18-html/genius.qmd
             text: "Genius API Key"
+      - text: "L19: Intro to Computational Social Science"
+        href: 19-css/index.qmd
+      - text: "L20: Qualitative Coding"
+        href: 20-coding/index.qmd
+        contents:
+          - href: 20-coding/index.qmd
+            text: "Qualitative Coding"
+          - href: 20-coding/cohens-kappa.qmd
+            text: "Cohen's Kappa"
       - href: five-things.qmd
         text: "5 Things to Know"
       - href: reference.qmd

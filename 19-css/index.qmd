@@ -1,0 +1,21 @@
+---
+title: "Computational Social Science"
+subtitle: "Using Computing for Social Science Research. Also, Large Language Models"
+---
+
+## Computational Social Science
+
+For this lecture's notes, please see:
+
+* [Lecture slides](hhttps://docs.google.com/presentation/d/1UmkNWQJdoEzsiM7H2DrkV9ghUkiaiN1o733bDC4uaYE/edit?usp=sharing).
+
+Focus on understanding what **coding** means in qualitative social science research.
+
+## Large Language Models (LLMs)
+
+Large language models (LLMs) are the hallmark of machine learning models for generative AI. They are a subset of generative models, because they generate a response to user input.
+
+Focus on:
+* Understanding the difference between an LLM (e.g., GPT) and a chatbot that uses an LLM (e.g., ChatGPT).
+* Know that chatbots can be powered by different models, which have different capacities.
+* Understand the risks of hallucinations and other inaccuracies when it comes to generative models.

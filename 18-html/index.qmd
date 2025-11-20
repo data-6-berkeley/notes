@@ -16,11 +16,15 @@ The official [BeautifulSoup Documentation](https://www.crummy.com/software/Beaut
 Thanks to Alison Parrish, we have a very simple example of HTML to begin with. It is about kittens. [Here's the rendered version](http://static.decontextualize.com/kittens.html), and [here's the HTML source code](https://raw.githubusercontent.com/ledeprogram/courses/master/databases/data/kittens.html).
 
 ### Developer Tools in your browser
-First we're going to use Developer Tools in Chrome to take a look at how `kittens.html` is organized. Click on the "rendered ve#rsion" link above.
-* Chrome, Firefox: Right-click (or ctrl-click) anywhere on the page, then click "Inspect"
-* Safari: Right-click (or ctrl-click) anywhere on the page, then click "Inspect Element"
+First we're going to use Developer Tools in Chrome to take a look at how `kittens.html` is organized.
 
-This will the browser's Chrome's Developer Tools. Your screen should look (something) like this:
+Click on the "rendered version" link above, then launch your browser's **Developer Tools**:
+
+  * Chrome, Firefox: Right-click (or ctrl-click) anywhere on the page, then click "Inspect"
+  * Safari: Right-click (or ctrl-click) anywhere on the page, then click "Inspect Element."
+    * You may not see this option by default. On the menu bar, go to Safari --> Settings --> Advanced. Check the box "Show features for web developers." Upon selecting this feature, you should see the "Develop" tab appear in the menu bar. Return to the page and try again.
+
+Your screen should look (something) like this:
 
 
 :::{style="text-align: center"}
@@ -175,6 +179,7 @@ type(document)
 The `BeautifulSoup` function creates a new Beautiful Soup object. It takes two parameters: the string containing the HTML data, and a string that designates which underlying parser to use to build the parsed version of the document. (Leave this as `"html.parser"`.) I've assigned this object to the variable `document`.
 
 The `document` object supports a number of interesting methods that allow us to dig into the contents of the HTML. Primarily what we'll be working with are:
+
 * `Tag` objects, and
 * `ResultSet` objects, which are essentially just lists of `Tag` objects.
 

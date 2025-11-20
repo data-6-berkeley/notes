@@ -1,0 +1,113 @@
+---
+title: "IRR: Cohen's Kappa"
+subtitle: "One measure of agreement between raters"
+---
+
+## Cohen's Kappa
+
+**Cohen’s Kappa** is a measure of **inter-rater agreement**, or inter-rater reliability, between two annotators (or raters) who independently classify items into categories.
+
+Unlike simple agreement rates (e.g., how often the two raters agree), **Cohen’s Kappa adjusts for chance agreement,** that is, how often two people might agree just by random guessing.
+
+
+### Cohen’s Kappa Formula
+
+Cohen's kappa measures the agreement between two raters who each classify items into a set of mutually exclusive categories. Here is the mathematical notation of Cohen's Kappa, denoted by the greek letter kappa ($\kappa$):
+
+$$\kappa = \frac{p_o - p_e}{1 - p_e},$$
+
+where
+
+- $p_o$ = observed agreement rate, i.e., how often the raters agreed
+- $p_e$ = random agreement rate, i.e., how likely the raters would agree just by randomly guessing.
+
+We will not go into the probability in this course, but here's the idea. Cohen's Kappa is a **ratio** of two values:
+
+$$\kappa = \dfrac{\text{observed agreement rate} - \text{random agreement rate}}{1 - \text{random agreement rate}}$$
+
+If the raters are in complete agreement, then the observed agreement rate $p_o = 1$ and $\kappa = 1$. If the raters only agree randomly, then the observed agreement rate $p_o = p_e$ and $\kappa = 0$. It is possible for $\kappa < 0$, which can occur if there is really no relationship between the raters' rankings, or if raters are biased in their ratings.
+
+### Cohen's Kappa as a Measure of Inter-Rater Agreement
+
+Values of Cohen's Kappa can be used to determine **inter-rater agreement**: i.e., how closely two raters agree. There are no agreed upon thresholds in the literature, but Landis and Koch (1981, [DOI](https://doi.org/10.2307/2529310)) is the one used in the Ziems et al. (2024, [DOI](https://doi.org/10.1162/coli_a_00502)) we study in this course.
+
+| $\kappa$ | Agreement |
+| --- | --- |
+| < 0 | no agreement |
+| 0-0.2 | poor |
+| 0.21-0.4 | fair | 
+| 0.41-0.6 | moderate |
+| 0.61 - 0.8 | good |
+| 0.8 - 1.0 | near-perfect agreement |
+
+Again—these categories should be seen as just guidelines. In fact, Landis and Koch supplied no evidence to support it, basing it instead on personal opinion.
+
+### High agreement implies more reliability
+
+Inter-rater agreement can also provide a measure of **reliability**. If we find that agreement levels are quite high among two raters, then it is likely that we can rely on the labels provided by these raters to do further analysis. By contrast, if we find that agreement levels are quite poor, then we cannot rely on the labels provided by the raters. In this case, we search for other means of labeling/coding the data, or we revisit our codebook/label categories and training process for labeling data.
+
+## Example: Binary Classification with Grant Decisions
+
+**In general, we will **not** ask you to manually compute Cohen's Kappa**. We will see that there is a convenient Python library called sklearn for computing Cohen's Kappa in practice. However, it is good to first internalize this idea of "random chance" with the manual computation below. You will see the library implementation in lab.
+
+In this task, we will manually compute Cohen's Kappa on a binary labeling task. This question just uses very simple Python (like a calculator!), but make sure you understand how we compute each part of the Cohen's Kappa formula. This example is adapted from the [Wikipedia article on Cohen's Kappa](https://en.wikipedia.org/wiki/Cohen%27s_kappa).
+
+Suppose that you were analyzing data related to a group of 50 people applying for a grant, each of whom submitted a grant proposal. Each grant proposal was read by a panel of two readers and each reader decides either "Yes" or "No" to the proposal. Suppose the summary of readers A and B's decisions were as follows:
+
+|             | B: Yes | B: No |
+| ---         | --- | --- |
+| <b>A: Yes</b> | 20 | 5 | 
+| <b>A: No</b>  | 10 | 15 |
+
+
+This means:
+
+- Both A and B agreed on 35 grants:
+    - Both said **Yes** on 20 grants.
+    - Both said **No** on 15 grants.
+- A and B disagreed on 15 grants:
+    - A said **Yes**, B said **No** on 5 grants.
+    - A said **No**, B said **Yes** on 10 grants.
+
+### Compute observed agreement rate, $p_o$
+
+The rate of observed agreement $p_o$ is the fraction of grants for which A and B actually agreed on their decision, i.e., they both decided "yes" or both decided "no".
+
+This rate is:
+
+$$ p_o = \frac{20 + 15}{50} = 0.7$$
+
+### Compute random agreement rate, $p_e$
+
+The rate of random agreement $p_e$ is the _hypothetical_ (i.e., expected) fraction of grants for which A and B might randomly agree. That is, if A had randomly voted yes on agreements _based on A's observed "yes" rate_, and B had randomly also voted yes on agreements _based on B's observed "yes" rate_, then sometimes A and B might agree in their decisions purely based on chance.
+
+We demonstrate an algorithm to compute $p_e$ below. The precise formula for this rate is rooted in probability, which you will cover in a future probability and statistics class. But you can imagine that "random agreement" of A and B is like flipping two coins and seeing the rate at which both land on heads or both land on tails.
+
+1. Compute the observed "yes" rates of A and B.
+    * Reader A said "Yes" to 25 applicants and "No" to 25 applicants. Thus reader A said "Yes" 50% of the time.
+    * Reader B said "Yes" to 30 applicants and "No" to 20 applicants. Thus reader B said "Yes" 60% of the time.
+2. Compute the probability that both A and B would say "yes" at random. If reader A says "Yes" 50% randomly, and reader B says "Yes" 60% randomly, then this probability is $0.5 \times 0.6 = 0.3$.
+3. Compute the probability that both A and B would say "no" at random. If reader A says "Yes" 50% randomly then they otherwise say "No" 50% randomly; similarly, if reader B says "Yes" 60% randomly then they otherwise say "No" 40% randomly. Therefore this probability that both say "no" is $(1 - 0.5) \times (1 - 0.6) = 0.5 \times 0.4 = 0.2$.
+4. The probability that A and B agree is the sum of these two probabilities. $0.3 + 0.2 = 0.5$.
+
+### Compute Cohen's Kappa, $\kappa$
+
+Finally, we use these values of $p_o$ and $p_e$ to compute Cohen's Kappa
+
+$$\kappa = \frac{p_o - p_e}{1 - p_e}$$
+
+Again, we have included the text description of this formula in case it is easier to work through:
+
+$$\kappa = \dfrac{\text{observed agreement rate} - \text{random agreement rate}}{1 - \text{random agreement rate}}$$
+
+As per the [Wikipedia article](https://en.wikipedia.org/wiki/Cohen%27s_kappa#Simple_example), this value should be:
+
+$$ \kappa = \frac{0.7 - 0.5}{1 - 0.5} = 0.4.$$
+
+### Determine Agreement Level
+
+Based on this value of $\kappa$ and the thresholds provided by Landis and Koch, we would determine that $\kappa = 0.4$ provides a **fair** level of agreement.
+
+What do we do with this evaluation? It depends on our application. If we were trying to get a general sense of how many grants were approved by this panel, this level of agreement might be fine.
+
+On the other hand, if we were deciding whether to fund grant proposals based on the decisions of raters and B, this might not be a high enough threshold of agreement for us to determine that the ratings were reliable. We may want to ask the raters to revisit their ratings, or rediscuss aspects of what makes a good grant application.
