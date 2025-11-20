@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Percentiles and Box Plots</title>
+<title>GenAI and LLMs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../09-summary-statistics/center-spread.html" rel="next">
-<link href="../08-histograms/exercises.html" rel="prev">
+<link href="../21-genai/gemini.html" rel="next">
+<link href="../20-coding/cohens-kappa.html" rel="prev">
 <link href="../assets/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -81,35 +81,6 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </script>
 <!--<script async src=”https://siteimproveanalytics.com/js/siteanalyze_6294756.js”></script>-->
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
@@ -123,7 +94,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../09-summary-statistics/index.html">L09: Summary Statistics and Box Plots</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../21-genai/index.html">L21: Generative AI</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -364,16 +335,16 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../09-summary-statistics/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../09-summary-statistics/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">L09: Summary Statistics and Box Plots</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../09-summary-statistics/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../09-summary-statistics/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Percentiles and Box Plots</span></a>
   </div>
 </li>
@@ -584,16 +555,16 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../21-genai/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../21-genai/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">L21: Generative AI</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../21-genai/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../21-genai/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">GenAI and LLMs</span></a>
   </div>
 </li>
@@ -627,16 +598,7 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#summary-statistics" id="toc-summary-statistics" class="nav-link active" data-scroll-target="#summary-statistics">Summary Statistics</a></li>
-  <li><a href="#percentiles" id="toc-percentiles" class="nav-link" data-scroll-target="#percentiles">Percentiles</a>
-  <ul class="collapse">
-  <li><a href="#five-number-summary" id="toc-five-number-summary" class="nav-link" data-scroll-target="#five-number-summary">Five-number summary</a></li>
-  </ul></li>
-  <li><a href="#box-plots" id="toc-box-plots" class="nav-link" data-scroll-target="#box-plots">Box Plots</a>
-  <ul class="collapse">
-  <li><a href="#when-to-use-box-plots" id="toc-when-to-use-box-plots" class="nav-link" data-scroll-target="#when-to-use-box-plots">When to use box plots?</a></li>
-  </ul></li>
-  <li><a href="#external-reading" id="toc-external-reading" class="nav-link" data-scroll-target="#external-reading">External Reading</a></li>
+  <li><a href="#large-language-models-llms" id="toc-large-language-models-llms" class="nav-link active" data-scroll-target="#large-language-models-llms">Large Language Models (LLMs)</a></li>
   </ul>
 </nav>
     </div>
@@ -645,8 +607,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Percentiles and Box Plots</h1>
-<p class="subtitle lead">Order statistics</p>
+<h1 class="title">GenAI and LLMs</h1>
 </div>
 
 
@@ -663,74 +624,19 @@ window.Quarto = {
 </header>
 
 
-<section id="summary-statistics" class="level2">
-<h2 class="anchored" data-anchor-id="summary-statistics">Summary Statistics</h2>
-<p><strong>Summary statistics</strong> are used to summarize a set of observations. These numbers often describe data distributions, though they are certainly not replacements for visualizations, which can describe the entire distribution in more interpretable detail.</p>
-<p>For categorical variables, one summary statistic is the most common value that appears in the dataset.</p>
-<p>For numerical variables, there are many more summary statistics that collectively describe <strong>center</strong> and <strong>spread</strong>. We’ll discuss these in much more detail soon, but first we must introduce a statistical concept called <strong>percentiles</strong>.</p>
-</section>
-<section id="percentiles" class="level2">
-<h2 class="anchored" data-anchor-id="percentiles">Percentiles</h2>
-<div class="callout callout-style-default callout-note callout-titled" title="Read _Inferential Thinking_">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Read <em>Inferential Thinking</em>
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Read <a href="https://inferentialthinking.com/chapters/13/1/Percentiles.html">Ch 13.1</a>, which defines percentiles.</p>
-</div>
-</div>
-<p>Before continuing, make sure that you:</p>
+<p><strong>Generative Artificial Intelligence</strong>, also known as Generative AI or GenAI, refers to models that generate responses, often to user input.</p>
+<section id="large-language-models-llms" class="level2">
+<h2 class="anchored" data-anchor-id="large-language-models-llms">Large Language Models (LLMs)</h2>
+<p>Large language models (LLMs) are the hallmark of machine learning models for Generative AI. LLMs take as text as input and output text.</p>
+<p>Refer to these slides for the high-level idea of how large language models probabilistically generate content:</p>
 <ul>
-<li><p>Understand the definition of percentile:</p>
-<blockquote class="blockquote">
-<p>The <span class="math inline">\(p\)</span>-th percentile of a collection is the smallest value in the collection that is at least as large as <span class="math inline">\(p\)</span>% of all the values.</p>
-</blockquote></li>
-<li><p>Can compute a given percentile from a small array, e.g., <code>array([ 6,  7,  9, 12, 17])</code></p></li>
+<li><a href="hhttps://docs.google.com/presentation/d/1UmkNWQJdoEzsiM7H2DrkV9ghUkiaiN1o733bDC4uaYE/edit?usp=sharing">Lecture slides</a></li>
 </ul>
-<section id="five-number-summary" class="level3">
-<h3 class="anchored" data-anchor-id="five-number-summary">Five-number summary</h3>
-<p>As described in the chapter above, percentiles describe quartiles:</p>
+<p>Focus on:</p>
 <ul>
-<li>First quartile (“Q1”): 25th percentile</li>
-<li>Median: 50th percentile</li>
-<li>Third quartile (“Q2”): 75th percentile</li>
-</ul>
-<p>The <strong>five-number summary</strong> is defined as: * Minimum * First quartile * Median * Third quartile * Maximum</p>
-<p><strong>Challenge</strong>: What pecentiles are the minimum and maximum, respectively? Use the definition of percentile in the textbook.</p>
-</section>
-</section>
-<section id="box-plots" class="level2">
-<h2 class="anchored" data-anchor-id="box-plots">Box Plots</h2>
-<p>A <strong>box plot</strong>—also known as a box-and-whisker plot— is a visual representation of the five-number summary.</p>
-<p>Refer to the <a href="https://docs.google.com/presentation/d/19heoEFT4o65jGiWT0kUhDIZQke_xOw7h1uK0PrnVkc4/edit?slide=id.g387c21d64ba_0_947#slide=id.g387c21d64ba_0_947">Fall 2025 lecture slides</a> for a description of box plots. The accompanying lecture notebook has an activity to aid you in interpreting box plots.</p>
-<div class="callout callout-style-default callout-important callout-titled" title="In this course">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-In this course
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You will not need to write code to plot box plots, but you should be able to draw them by hand given a five-number summary. You should also be able to interpret and compare sets of box plots.</p>
-</div>
-</div>
-<section id="when-to-use-box-plots" class="level3">
-<h3 class="anchored" data-anchor-id="when-to-use-box-plots">When to use box plots?</h3>
-<p>Box plots are somewhat between a histogram and summary statistics in terms of interpretability. By ordering and visualizing the five-number summary, box plots help data scientsts understand where data are concentrated (e.g., in the interquartile range), and whether the data exhibits some skew (e.g., in the whiskers).</p>
-<p>Box plots are an abstraction of the histogram—effectively, it plots four equally-sized bins of data on one-dimension. Box plots are therefore often used to compare different subsets of distributions to one another. But to understand more about any given distribution, plot a histogram, or look at individual records.</p>
-</section>
-</section>
-<section id="external-reading" class="level2">
-<h2 class="anchored" data-anchor-id="external-reading">External Reading</h2>
-<ul>
-<li>(mentioned in notes) <em>Computational and Inferential Thinking</em>, <a href="https://inferentialthinking.com/chapters/13/1/Percentiles.html">Ch 13.1</a></li>
+<li>Understanding the difference between an LLM (e.g., GPT) and a chatbot that uses an LLM (e.g., ChatGPT).</li>
+<li>Know that chatbots can be powered by different models, which have different capacities.</li>
+<li>Understand the risks of hallucinations and other inaccuracies when it comes to generative models.</li>
 </ul>
 
 
@@ -1138,13 +1044,13 @@ In this course
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../08-histograms/exercises.html" class="pagination-link" aria-label="Exercises">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Exercises</span>
+      <a href="../20-coding/cohens-kappa.html" class="pagination-link" aria-label="Cohen's Kappa">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Cohen’s Kappa</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../09-summary-statistics/center-spread.html" class="pagination-link" aria-label="Center and Spread">
-        <span class="nav-page-text">Center and Spread</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../21-genai/gemini.html" class="pagination-link" aria-label="Gemini Tutorial">
+        <span class="nav-page-text">Gemini Tutorial</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

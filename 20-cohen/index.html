@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>IRR: Cohen’s Kappa</title>
+<title>Inter-rater agreement and LLMs, continued</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../21-genai/index.html" rel="next">
-<link href="../20-coding/index.html" rel="prev">
 <link href="../assets/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -114,520 +112,21 @@ window.Quarto = {
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 
-<body class="nav-sidebar docked quarto-light">
+<body class="quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../20-coding/index.html">L20: Qualitative Coding</a></li><li class="breadcrumb-item"><a href="../20-coding/cohens-kappa.html">Cohen’s Kappa</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
-</header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="../index.html" class="sidebar-logo-link">
-      <img src="../assets/data6.png" alt="Data 6 logo" class="sidebar-logo py-0 d-lg-inline d-none">
-      </a>
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">DATA 6 <br><small>Course Notes</small></a> 
-        <div class="sidebar-tools-main">
-    <a href="https://github.com/data-6-berkeley/notes" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
-</div>
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Home / About</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../01-intro/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L01: Introduction</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../01-intro/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Course Introduction</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../01-intro/jupyter-notebook.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Jupyter Notebooks</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../01-intro/programming-basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Programming Basics</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../02-datatypes/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L02: Data Types</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../02-datatypes/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Numeric and String Data Types</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../02-datatypes/rates-incidence.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Application: Rates and Incidence</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../03-arrays/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L03: Arrays</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../03-arrays/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Arrays</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../03-arrays/numpy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">NumPy and Array Functions</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../04-tables/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L04: Table Fundamentals</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../04-tables/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Table Fundamentals</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../04-tables/exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Table Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../04-tables/none-print.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">None and Print</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../05-variables/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L05: Variables in Social Science</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../05-variables/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Variables and Variable Types</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../05-variables/units-of-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Units of Analysis</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../06-variables-ii/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L06: Variables II</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../06-variables-ii/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Causality vs.&nbsp;EDA</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../06-variables-ii/sample-population.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Sample vs.&nbsp;Population</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../07-visualizations/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L07: Visualizations</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../07-visualizations/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Visualizations</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../07-visualizations/encoding.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Encoding</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../07-visualizations/charts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bar Charts, Scatter Plots, Line Graphs</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../08-histograms/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L08: Histograms</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../08-histograms/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Histograms and Ranges</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../08-histograms/exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exercises</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../09-summary-statistics/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L09: Summary Statistics and Box Plots</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../09-summary-statistics/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Percentiles and Box Plots</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../09-summary-statistics/center-spread.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Center and Spread</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../10-boolean-predicates/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L10: Filtering and Boolean Predicates</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../10-boolean-predicates/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Filtering and Boolean Predicates</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../10-boolean-predicates/boolean.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Booleans</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../11-group/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L11: Grouping</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../12-pivot-join/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L12: Pivots and Joins</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../13-functions/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L13: Functions</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../13-functions/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Functions</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../13-functions/strings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">String Methods</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../13-functions/apply.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Apply</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../14-conditionals/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L14: Conditionals</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../15-iteration/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L15: Iteration</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../15-iteration/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">For Loops</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../15-iteration/while.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">While Loops</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../15-iteration/practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Practice</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../16-measurements/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L16: Iterations II; Measurements</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../16-measurements/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reliability and Validity</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../16-measurements/iteration-ii.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">More Iteration Practice</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../17-dictionaries/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L17: Dictionaries</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../17-dictionaries/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dictionaries</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../17-dictionaries/file-formats.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">File Formats</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../18-html/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L18: HTML and Web Scraping</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../18-html/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">HTML and BeautifulSoup</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../18-html/genius.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Genius API Key</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../19-css/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L19: Intro to Computational Social Science</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../20-coding/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L20: Qualitative Coding</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../20-coding/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Qualitative Coding</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../20-coding/cohens-kappa.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Cohen’s Kappa</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../21-genai/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L21: Generative AI</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../21-genai/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">GenAI and LLMs</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../21-genai/gemini.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Gemini Tutorial</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../five-things.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5 Things to Know</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../reference.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data 6 Python Reference</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#cohens-kappa" id="toc-cohens-kappa" class="nav-link active" data-scroll-target="#cohens-kappa">Cohen’s Kappa</a>
+  <li><a href="#coding" id="toc-coding" class="nav-link active" data-scroll-target="#coding">Coding</a></li>
+  <li><a href="#inter-rater-agreement" id="toc-inter-rater-agreement" class="nav-link" data-scroll-target="#inter-rater-agreement">Inter-rater agreement</a></li>
+  <li><a href="#cohens-kappa" id="toc-cohens-kappa" class="nav-link" data-scroll-target="#cohens-kappa">Cohen’s Kappa</a>
   <ul class="collapse">
   <li><a href="#cohens-kappa-formula" id="toc-cohens-kappa-formula" class="nav-link" data-scroll-target="#cohens-kappa-formula">Cohen’s Kappa Formula</a></li>
   <li><a href="#cohens-kappa-as-a-measure-of-inter-rater-agreement" id="toc-cohens-kappa-as-a-measure-of-inter-rater-agreement" class="nav-link" data-scroll-target="#cohens-kappa-as-a-measure-of-inter-rater-agreement">Cohen’s Kappa as a Measure of Inter-Rater Agreement</a></li>
@@ -646,10 +145,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../20-coding/index.html">L20: Qualitative Coding</a></li><li class="breadcrumb-item"><a href="../20-coding/cohens-kappa.html">Cohen’s Kappa</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">IRR: Cohen’s Kappa</h1>
-<p class="subtitle lead">One measure of agreement between raters</p>
+<h1 class="title">Inter-rater agreement and LLMs, continued</h1>
 </div>
 
 
@@ -666,9 +164,32 @@ window.Quarto = {
 </header>
 
 
+<section id="coding" class="level2">
+<h2 class="anchored" data-anchor-id="coding">Coding</h2>
+<p>The previous lecture discussed the idea of <strong>qualitative coding</strong>, central to analysis of open-ended text and other qualitative data.</p>
+<p><strong>Coding</strong>: The process of translating written or visual material into standardized categories. Codes are the labels/tags for chunks of text, <em>not</em> the programming/coding we’ve been doing so far.</p>
+<ol type="1">
+<li>First, determine codebook. This is the set of category labels for the data.</li>
+<li>Then, <strong>“code”</strong> the data. Apply codes (i.e., labels) to text.</li>
+</ol>
+</section>
+<section id="inter-rater-agreement" class="level2">
+<h2 class="anchored" data-anchor-id="inter-rater-agreement">Inter-rater agreement</h2>
+<p>However, the process of coding has historically needed to be completed (at least in part) by humans (i.e., <strong>raters</strong>).</p>
+<p>It’s likely that if codes for a very large dataset were generated by a single rater, there might be risks to <strong>validity</strong>. After all, perhaps this rater would have certain preconceptions that encoded their way into labels. If codes for a very large dataset were generated by multiple human raters, there might be risks to <strong>reliability</strong>, because different raters may code the same datapoint differently.</p>
+<p>In practice, multiple researchers collaborate to assign codes that are both reliable and valid:</p>
+<ol type="1">
+<li>Co-design codebook.</li>
+<li>Then, work together by labeling a subset of the data separately, then coming together to discuss agreement. This assesses reliability of labels.</li>
+<li>If they don’t agree, then they revisit the codebook and variable definitions, then try coding again. This also revisits the validity of coding process, potentially redefining how the concept is operationalized by the new codes (i.e., categories) in the variable codebook.</li>
+<li>Repeat this process until reasonable levels of agreement are reached.</li>
+<li>Then, independently code the rest of the dataset.</li>
+</ol>
+<p>How do researchers reach “reasonable levels of agreement”? One common measure is Cohen’s Kappa.</p>
+</section>
 <section id="cohens-kappa" class="level2">
 <h2 class="anchored" data-anchor-id="cohens-kappa">Cohen’s Kappa</h2>
-<p><strong>Cohen’s Kappa</strong> is a measure of <strong>inter-rater agreement</strong>, or inter-rater reliability, between two annotators (or raters) who independently classify items into categories.</p>
+<p><strong>Cohen’s Kappa</strong> is a measure of agreement between two annotators (or raters) who independently classify items into categories.</p>
 <p>Unlike simple agreement rates (e.g., how often the two raters agree), <strong>Cohen’s Kappa adjusts for chance agreement,</strong> that is, how often two people might agree just by random guessing.</p>
 <section id="cohens-kappa-formula" class="level3">
 <h3 class="anchored" data-anchor-id="cohens-kappa-formula">Cohen’s Kappa Formula</h3>
@@ -879,7 +400,7 @@ window.Quarto = {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/data-6-berkeley\.github\.io\/notes\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1206,18 +727,6 @@ window.Quarto = {
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../20-coding/index.html" class="pagination-link" aria-label="L20: Qualitative Coding">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">L20: Qualitative Coding</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../21-genai/index.html" class="pagination-link" aria-label="L21: Generative AI">
-        <span class="nav-page-text">L21: Generative AI</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -1227,7 +736,7 @@ window.Quarto = {
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link active" href="../index.html" aria-current="page">
+    <a class="nav-link" href="../index.html">
 <p>Home / About / License</p>
 </a>
   </li>  

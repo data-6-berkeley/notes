@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Percentiles and Box Plots</title>
+<title>Gemini Tutorial</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../09-summary-statistics/center-spread.html" rel="next">
-<link href="../08-histograms/exercises.html" rel="prev">
+<link href="../five-things.html" rel="next">
+<link href="../21-genai/index.html" rel="prev">
 <link href="../assets/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -42,7 +77,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-753e6901f2c274e22bcfe03890f74e5f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5dac7ead189ce37b035e4bf1b476b30f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -81,35 +116,6 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </script>
 <!--<script async src=”https://siteimproveanalytics.com/js/siteanalyze_6294756.js”></script>-->
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
@@ -123,7 +129,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../09-summary-statistics/index.html">L09: Summary Statistics and Box Plots</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../21-genai/index.html">L21: Generative AI</a></li><li class="breadcrumb-item"><a href="../21-genai/gemini.html">Gemini Tutorial</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -364,16 +370,16 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../09-summary-statistics/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../09-summary-statistics/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">L09: Summary Statistics and Box Plots</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../09-summary-statistics/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../09-summary-statistics/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Percentiles and Box Plots</span></a>
   </div>
 </li>
@@ -586,11 +592,11 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../21-genai/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">L21: Generative AI</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../21-genai/index.html" class="sidebar-item-text sidebar-link">
@@ -599,7 +605,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../21-genai/gemini.html" class="sidebar-item-text sidebar-link">
+  <a href="../21-genai/gemini.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Gemini Tutorial</span></a>
   </div>
 </li>
@@ -627,26 +633,30 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#summary-statistics" id="toc-summary-statistics" class="nav-link active" data-scroll-target="#summary-statistics">Summary Statistics</a></li>
-  <li><a href="#percentiles" id="toc-percentiles" class="nav-link" data-scroll-target="#percentiles">Percentiles</a>
+  <li><a href="#gemini-api-key" id="toc-gemini-api-key" class="nav-link active" data-scroll-target="#gemini-api-key">Gemini API Key</a></li>
+  <li><a href="#our-first-two-api-requests" id="toc-our-first-two-api-requests" class="nav-link" data-scroll-target="#our-first-two-api-requests">Our first (two) API request(s)</a>
   <ul class="collapse">
-  <li><a href="#five-number-summary" id="toc-five-number-summary" class="nav-link" data-scroll-target="#five-number-summary">Five-number summary</a></li>
+  <li><a href="#from-chat-interface-to-api" id="toc-from-chat-interface-to-api" class="nav-link" data-scroll-target="#from-chat-interface-to-api">From chat interface to API</a></li>
+  <li><a href="#create-the-client-then-make-the-request" id="toc-create-the-client-then-make-the-request" class="nav-link" data-scroll-target="#create-the-client-then-make-the-request">Create the client then make the request</a></li>
+  <li><a href="#make-another-api-request" id="toc-make-another-api-request" class="nav-link" data-scroll-target="#make-another-api-request">Make another API request</a></li>
   </ul></li>
-  <li><a href="#box-plots" id="toc-box-plots" class="nav-link" data-scroll-target="#box-plots">Box Plots</a>
+  <li><a href="#different-gemini-models" id="toc-different-gemini-models" class="nav-link" data-scroll-target="#different-gemini-models">Different Gemini Models</a></li>
+  <li><a href="#prompt-engineering" id="toc-prompt-engineering" class="nav-link" data-scroll-target="#prompt-engineering">Prompt Engineering</a>
   <ul class="collapse">
-  <li><a href="#when-to-use-box-plots" id="toc-when-to-use-box-plots" class="nav-link" data-scroll-target="#when-to-use-box-plots">When to use box plots?</a></li>
+  <li><a href="#provide-context" id="toc-provide-context" class="nav-link" data-scroll-target="#provide-context">Provide context</a></li>
+  <li><a href="#constuct-a-prompt-as-a-list-of-parts" id="toc-constuct-a-prompt-as-a-list-of-parts" class="nav-link" data-scroll-target="#constuct-a-prompt-as-a-list-of-parts">Constuct a prompt as a list of parts</a></li>
   </ul></li>
-  <li><a href="#external-reading" id="toc-external-reading" class="nav-link" data-scroll-target="#external-reading">External Reading</a></li>
+  <li><a href="#additional-reading" id="toc-additional-reading" class="nav-link" data-scroll-target="#additional-reading">Additional Reading</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../21-genai/index.html">L21: Generative AI</a></li><li class="breadcrumb-item"><a href="../21-genai/gemini.html">Gemini Tutorial</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Percentiles and Box Plots</h1>
-<p class="subtitle lead">Order statistics</p>
+<h1 class="title">Gemini Tutorial</h1>
+<p class="subtitle lead">Google Gemini API for Python</p>
 </div>
 
 
@@ -663,74 +673,314 @@ window.Quarto = {
 </header>
 
 
-<section id="summary-statistics" class="level2">
-<h2 class="anchored" data-anchor-id="summary-statistics">Summary Statistics</h2>
-<p><strong>Summary statistics</strong> are used to summarize a set of observations. These numbers often describe data distributions, though they are certainly not replacements for visualizations, which can describe the entire distribution in more interpretable detail.</p>
-<p>For categorical variables, one summary statistic is the most common value that appears in the dataset.</p>
-<p>For numerical variables, there are many more summary statistics that collectively describe <strong>center</strong> and <strong>spread</strong>. We’ll discuss these in much more detail soon, but first we must introduce a statistical concept called <strong>percentiles</strong>.</p>
-</section>
-<section id="percentiles" class="level2">
-<h2 class="anchored" data-anchor-id="percentiles">Percentiles</h2>
-<div class="callout callout-style-default callout-note callout-titled" title="Read _Inferential Thinking_">
+<p>This tutorial is a subset of the lab assignment.</p>
+<p>This part gives you your first experience using the Gemini Python API. We walk through the official tutorials and try to abstract away the complicated parts of the official documentation.</p>
+<p>Google’s Gemini API uses a Python interface. This is unlike the Genius and Wikipedia APIs, which used special URLs to access data. To access the Gemini API, we install the <code>google-genai</code>, which installs related <code>google</code> packages.</p>
+<section id="gemini-api-key" class="level2">
+<h2 class="anchored" data-anchor-id="gemini-api-key">Gemini API Key</h2>
+<p>We shared an API key with you through email. This individualized API key allows Gemini to recognize who is using their API.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="**Important Note**: API usage is monitored">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Read <em>Inferential Thinking</em>
+<strong>Important Note</strong>: API usage is monitored
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Read <a href="https://inferentialthinking.com/chapters/13/1/Percentiles.html">Ch 13.1</a>, which defines percentiles.</p>
+<p>Please DO NOT share your API key outside of this class. We will disable your API key (1) if you misuse it, (2) if you exceed the free usage tier during the project, and (2) for all students after the semester has ended.</p>
+<p>If you’d like to play around with your code after the term, you’ll have to get your own API key. Ask us how to do this!</p>
 </div>
 </div>
-<p>Before continuing, make sure that you:</p>
+<p>Remember that we avoid storing our API keys publicly. In <code>api_key.py</code>, we set <code>my_client_access_token</code> to be this string of alphanumeric characters. We then load it into our notebook environment as the Python name <code>GOOGLE_API_KEY</code>. <!-- this is not run --></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> api_key</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>GOOGLE_API_KEY <span class="op">=</span> api_key.my_client_access_token</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="our-first-two-api-requests" class="level2">
+<h2 class="anchored" data-anchor-id="our-first-two-api-requests">Our first (two) API request(s)</h2>
+<p>So far, the Genius and Wikipedia APIs we’ve worked with have been what is called <a href="https://en.wikipedia.org/wiki/REST">RESTful APIs</a>, where we specify a URL to access structured data from an endpoint. After making this request, we then processed the JSON response. Now, we will directly use a Python library API, developed by Google as part of their Gemini Software Development Kit (Gemini SDK).</p>
+<p>Using a Python API means that we will make a Python client object using Google’s <code>genai</code> package, then call that object’s methods to get data from Gemini. A Python API is often more convenient than a RESTful API when (1) the input and output are both quite flexible in format, as is the case for Generative AI data, and (2) when we write code that will make multiple calls to the API across different functions.</p>
+<p>The cell below imports Google’s <code>genai</code> Python module:</p>
+<div id="4dcde851" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> google <span class="im">import</span> genai</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="from-chat-interface-to-api" class="level3">
+<h3 class="anchored" data-anchor-id="from-chat-interface-to-api">From chat interface to API</h3>
+<p>We will first examine the example API request listed in the <a href="https://ai.google.dev/gemini-api/docs/quickstart">Gemini Quickstart Documentation</a> (“Make your first request”). You are welcome (and encouraged!) to browse this documentation.</p>
+<p>An <strong>AI chatbot</strong> is an application <em>on top of</em> a <strong>large language model (LLM)</strong>. The <strong>LLM</strong> is what takes in user prompts and returns text responses. The <strong>chatbot</strong> is what filters input, perhaps converting and loading files with additional prompts, and returns filtered LLM responses back, perhaps with some HTML or Markdown formatting.</p>
+<p>Consider the chat prompt shown in the screenshot, as well as (the start of) the model’s response.</p>
+<div style="text-align: center">
+<div id="fig-inflation" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-inflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/prompt-chat.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-inflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: A screenshot of a Google Gemini chat conversation. Prompt is ‘Explain how AI works in a few words.’. Response from Gemini chat is long but gets at the idea..
+</figcaption>
+</figure>
+</div>
+</div>
+<p>We define three pieces of terminology to describe what is happening in the above screenshot:</p>
 <ul>
-<li><p>Understand the definition of percentile:</p>
-<blockquote class="blockquote">
-<p>The <span class="math inline">\(p\)</span>-th percentile of a collection is the smallest value in the collection that is at least as large as <span class="math inline">\(p\)</span>% of all the values.</p>
-</blockquote></li>
-<li><p>Can compute a given percentile from a small array, e.g., <code>array([ 6,  7,  9, 12, 17])</code></p></li>
+<li>The user <strong>prompt</strong>: “Explain how AI works in a few words.”</li>
+<li>The model <strong>response</strong>: “AI works by using algorithms to analyze…”</li>
+<li>The specified <strong>model</strong>: Here, it is “Fast” (note the dropdown in the bottom right). The other option is “Thinking.” We’ll discuss this more later.</li>
 </ul>
-<section id="five-number-summary" class="level3">
-<h3 class="anchored" data-anchor-id="five-number-summary">Five-number summary</h3>
-<p>As described in the chapter above, percentiles describe quartiles:</p>
+</section>
+<section id="create-the-client-then-make-the-request" class="level3">
+<h3 class="anchored" data-anchor-id="create-the-client-then-make-the-request">Create the client then make the request</h3>
+<p>The below code uses Gemini’s Python API to directly query the Gemini LLM with this prompt. We describe the behavior below the cell.</p>
+<div id="ec42d719" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># first, create the client</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> genai.Client(api_key<span class="op">=</span>GOOGLE_API_KEY)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># then make the API request</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> client.models.generate_content(</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    model<span class="op">=</span><span class="st">"gemini-2.5-flash"</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    contents<span class="op">=</span><span class="st">"Explain how AI works in a few words"</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>It learns patterns from data to make intelligent decisions.</code></pre>
+</div>
+</div>
+<p>What just happened (and how you would make these API calls):</p>
+<ol type="1">
+<li><p>Make an <strong>API client</strong>: Make a Gemini client object called <code>client</code>, which passes in your API key. (We will do this for you usually.) This client lets you access different API calls via its methods. We will focus on one specific method in this class, <code>generate_content</code>.</p></li>
+<li><p>Make the <strong>API request</strong>. Call <code>generate_content</code>, available in via <code>client.models</code>. This cell takes in several arguments, which we specify by name:</p>
 <ul>
-<li>First quartile (“Q1”): 25th percentile</li>
-<li>Median: 50th percentile</li>
-<li>Third quartile (“Q2”): 75th percentile</li>
-</ul>
-<p>The <strong>five-number summary</strong> is defined as: * Minimum * First quartile * Median * Third quartile * Maximum</p>
-<p><strong>Challenge</strong>: What pecentiles are the minimum and maximum, respectively? Use the definition of percentile in the textbook.</p>
+<li><code>model</code>: The underlying large language model. Here we specify Gemini 2.5 Flash, which is equivalent to the “Fast” option in the Gemini chatbot.</li>
+<li><code>contents</code>: The <strong>prompt</strong>: “Explain how AI works in a few words.” We discuss the type of <code>contents</code> later.</li>
+</ul></li>
+<li><p>Receive a <strong>response</strong>. <code>response</code> is a <a href="https://ai.google.dev/gemini-api/docs/quickstart">Gemini-specific object type</a>. The details are too complicated for this course. Instead, we focus on the value <strong><code>response.text</code></strong>, the LLM response string itself.</p></li>
+</ol>
+</section>
+<section id="make-another-api-request" class="level3">
+<h3 class="anchored" data-anchor-id="make-another-api-request">Make another API request</h3>
+<p>Once we have created the API client, we do not need to remake the client. Instead, we can just make more calls to <code>generate_content</code>.</p>
+<p>Remember—<strong>LLMs are random response generators</strong>, so you will likely get a different response back!</p>
+<div id="dc0075e3" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># client is already created, so just call generate_content</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> client.models.generate_content(</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    model<span class="op">=</span><span class="st">"gemini-2.5-flash"</span>,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    contents<span class="op">=</span><span class="st">"Explain how AI works in a few words"</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>AI learns patterns from data to make decisions or predictions.</code></pre>
+</div>
+</div>
 </section>
 </section>
-<section id="box-plots" class="level2">
-<h2 class="anchored" data-anchor-id="box-plots">Box Plots</h2>
-<p>A <strong>box plot</strong>—also known as a box-and-whisker plot— is a visual representation of the five-number summary.</p>
-<p>Refer to the <a href="https://docs.google.com/presentation/d/19heoEFT4o65jGiWT0kUhDIZQke_xOw7h1uK0PrnVkc4/edit?slide=id.g387c21d64ba_0_947#slide=id.g387c21d64ba_0_947">Fall 2025 lecture slides</a> for a description of box plots. The accompanying lecture notebook has an activity to aid you in interpreting box plots.</p>
-<div class="callout callout-style-default callout-important callout-titled" title="In this course">
+<section id="different-gemini-models" class="level2">
+<h2 class="anchored" data-anchor-id="different-gemini-models">Different Gemini Models</h2>
+<p>You can specify different Gemini models to get different responses. Some more advanced models will produce higher-quality responses, though with the tradeoff that each response will take longer and be more expensive.</p>
+<p>We recommend a few models for this course:</p>
+<ul>
+<li>“Fast” <strong>Gemini 2.5 Flash</strong> model (<code>"gemini-2.5-flash"</code>). Pretty fast, though depending on the time of day responses might still take a few seconds. Reasonable cost.</li>
+<li>“Thinking” <strong>Gemini 2.5 Pro</strong> model (<code>"gemini-2.5-pro"</code>). More in-depth responses, though responses will take significantly longer than Fast responses. Expensive.</li>
+<li>Extra fast: <strong>Gemini 2.5 Flash-Lite</strong> (<code>"gemini-2.5-flash-lite"</code>). Very fast, very cost effective.</li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled" title="**Important Note**: Again, API usage is monitored">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-In this course
+<strong>Important Note</strong>: Again, API usage is monitored
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You will not need to write code to plot box plots, but you should be able to draw them by hand given a five-number summary. You should also be able to interpret and compare sets of box plots.</p>
+<p>Gemini Pro not only has longer request times. It is also more expensive per request. We <strong>strongly</strong> recommended testing out prompts with <strong>Gemini 2.5 Flash</strong> or <strong>Gemini 2.5 Flash-Lite</strong>. Once you are satisfied with your prompt, only then should you change models.</p>
 </div>
 </div>
-<section id="when-to-use-box-plots" class="level3">
-<h3 class="anchored" data-anchor-id="when-to-use-box-plots">When to use box plots?</h3>
-<p>Box plots are somewhat between a histogram and summary statistics in terms of interpretability. By ordering and visualizing the five-number summary, box plots help data scientsts understand where data are concentrated (e.g., in the interquartile range), and whether the data exhibits some skew (e.g., in the whiskers).</p>
-<p>Box plots are an abstraction of the histogram—effectively, it plots four equally-sized bins of data on one-dimension. Box plots are therefore often used to compare different subsets of distributions to one another. But to understand more about any given distribution, plot a histogram, or look at individual records.</p>
+<p>We use <strong>Gemini 2.5 Flash</strong> for the remainder of this tutorial.</p>
 </section>
-</section>
-<section id="external-reading" class="level2">
-<h2 class="anchored" data-anchor-id="external-reading">External Reading</h2>
+<section id="prompt-engineering" class="level2">
+<h2 class="anchored" data-anchor-id="prompt-engineering">Prompt Engineering</h2>
+<p><strong>Prompt engineering</strong> is the process of structuring or crafting a <strong>prompt</strong> (natural language text instruction) in order to produce better outputs from a generative artificial intelligence (AI) model (source: <a href="https://en.wikipedia.org/wiki/Prompt_engineering">Wikipedia</a>).</p>
+<section id="provide-context" class="level3">
+<h3 class="anchored" data-anchor-id="provide-context">Provide context</h3>
+<p>What is the best restaurant in Berkeley?</p>
+<div id="556d1848" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> client.models.generate_content(</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    model<span class="op">=</span><span class="st">"gemini-2.5-flash"</span>,</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    contents<span class="op">=</span><span class="st">"What is the best restaurant in Berkeley?"</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Berkeley, California is a true foodie haven, but declaring *the* "best" restaurant is incredibly subjective! It depends entirely on what you're looking for: cuisine, price point, ambiance, occasion, etc.
+
+However, I can give you a rundown of some of the most critically acclaimed, beloved, and iconic restaurants in Berkeley, categorized to help you decide:
+
+---
+
+### **Iconic &amp; Fine Dining (Special Occasion/Higher End)**
+
+1.  **Chez Panisse Restaurant &amp; Cafe:** You simply cannot talk about Berkeley food without mentioning Chez Panisse. Alice Waters' legendary restaurant practically invented California cuisine and the farm-to-table movement.
+    *   **Restaurant (Upstairs):** Fixed, elaborate, multi-course menu that changes daily. Very expensive, requires reservations far in advance. An experience.
+    *   **Cafe (Downstairs):** More casual, à la carte menu, still excellent, slightly less expensive, often easier to get into (sometimes even walk-ins).
+    *   **Cuisine:** California, seasonal, market-driven.
+
+2.  **Ippuku:** For an authentic and elevated Japanese izakaya experience, Ippuku is outstanding. Known for its charcoal-grilled yakitori (skewers) using free-range chicken, plus a fantastic selection of sake and small plates.
+    *   **Cuisine:** Japanese Izakaya (yakitori focus).
+    *   **Vibe:** Dark, intimate, bustling, excellent for a date or a serious food outing.
+
+3.  **Kiraku:** Another excellent Japanese option, a lively izakaya with a diverse menu beyond just yakitori, including sushi, sashimi, tempura, and more creative small plates.
+    *   **Cuisine:** Japanese Izakaya.
+    *   **Vibe:** Energetic, bustling, great for groups or a fun night out.
+
+---
+
+### **Popular &amp; Trendy (Great Food, Lively Vibe)**
+
+1.  **Comal:** A very popular spot for upscale Mexican cuisine, fantastic cocktails (especially their margaritas), and a lively atmosphere. They have a great outdoor patio with fire pits.
+    *   **Cuisine:** Mexican (Oaxacan-inspired).
+    *   **Vibe:** Lively, modern, buzzing, great for groups or a fun date night.
+
+2.  **Corso:** A rustic, charming trattoria from Chef Wendy Levy, focusing on Tuscan-inspired Italian dishes. Consistently excellent pasta, wood-fired pizzas, and classic entrées.
+    *   **Cuisine:** Italian (Tuscan).
+    *   **Vibe:** Warm, inviting, often bustling.
+
+3.  **Gather:** Known for its farm-to-table approach, Gather offers creative and delicious Californian cuisine with a strong emphasis on vegetables, sustainable meats, and excellent sourdough pizza. Good for vegetarians and omnivores alike.
+    *   **Cuisine:** Californian, Farm-to-Table.
+    *   **Vibe:** Modern, airy, a bit minimalist, but warm.
+
+---
+
+### **Casual &amp; Beloved Local Favorites**
+
+1.  **Gregoire:** A small, charming French-inspired deli known for its amazing pommes frites (fries) served in a paper cone, and daily changing gourmet takeout meals. Perfect for a quick, delicious bite.
+    *   **Cuisine:** French-inspired, deli/takeout.
+    *   **Vibe:** Casual, grab-and-go, but there are a few tables outside.
+
+2.  **La Note:** A beloved spot for French country-style breakfast and brunch. Expect a wait on weekends, but their delicious food, coffee, and charming atmosphere are worth it.
+    *   **Cuisine:** French, Breakfast/Brunch.
+    *   **Vibe:** Rustic, charming, cozy, very popular.
+
+3.  **The Cheeseboard Collective:** A unique Berkeley institution! They only make *one* type of vegetarian pizza per day, which changes daily. No slices, full pies only. Also a fantastic cheese shop and bakery. Expect lines!
+    *   **Cuisine:** Vegetarian Pizza (one kind per day).
+    *   **Vibe:** Super casual, community-oriented, often has live jazz outside.
+
+4.  **Bette's Oceanview Diner:** A classic American diner experience, famous for its breakfasts and brunches. Expect a line, especially on weekends, but it's a quintessential Berkeley experience.
+    *   **Cuisine:** American Diner (Breakfast focus).
+    *   **Vibe:** Retro, bustling, classic diner feel.
+
+---
+
+**To help me narrow it down for *you*, tell me:**
+
+*   **What kind of cuisine are you in the mood for?** (e.g., Italian, Mexican, Japanese, American, etc.)
+*   **What's your budget like?** (e.g., casual/cheap eats, moderate, fine dining/splurge)
+*   **What's the occasion?** (e.g., casual dinner with friends, romantic date, quick lunch, celebration)
+*   **What kind of ambiance are you looking for?** (e.g., lively, quiet, intimate, family-friendly)
+
+Without that, my top recommendation for an overall "best experience" that showcases Berkeley's culinary scene (if budget isn't an issue) would probably be **Chez Panisse (Cafe for accessibility, Restaurant for the full experience)** or **Comal** for a more lively and modern take.</code></pre>
+</div>
+</div>
+<p>The LLM response looks too general; these recommendations might not be great for the average college student. One core aspect of prompt engineering is to provide more <strong>context</strong> to the prompt.</p>
+<p>Context can help define:</p>
 <ul>
-<li>(mentioned in notes) <em>Computational and Inferential Thinking</em>, <a href="https://inferentialthinking.com/chapters/13/1/Percentiles.html">Ch 13.1</a></li>
+<li>What information you are looking for in the response, e.g., “Only include cheap meals under $15, and only consider restaurants that are open past 9pm.”</li>
+<li>How long you want the response to be, e.g., “Limit your response to 200 words.”</li>
+<li>What tone you want the response to have, e.g., “Imagine you are a UC Berkeley student talking to a fellow classmate.”</li>
+<li>How to structure the response: markdown, comma-separated, JSON, etc., e.g., “Format your response as a bulleted list.”</li>
+</ul>
+<p><strong>Note</strong>: Include linebreaks (with newline characters <code>'\n'</code>, or use multi-line strings) to delineate different aspects of the prompt.</p>
+<p>One way to provide detailed context is to just pass in a very, very long string as your prompt. See the example below. Note that the triple quotes (<code>"""</code>) allows you to specify a multi-line string, with line breaks.</p>
+<div id="9245b5d8" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> client.models.generate_content(</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    model<span class="op">=</span><span class="st">"gemini-2.5-flash"</span>,</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    contents<span class="op">=</span><span class="st">"""Imagine you are a UC Berkeley student talking to a fellow </span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="st">    classmate.</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="st">    </span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="st">    What is the best restaurant in Berkeley? Only include cheap meals </span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="st">    under $15, and only consider restaurants that are open past 9pm.</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="st">    Format your response as a bulleted list. Limit your response to 200 words.</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="st">    """</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Yo, hard to pick just *one* "best" spot, especially when you need late-night cheap eats, but if I'm hitting up places after a long study sesh or a late class, here are my go-tos for under $15 that are still open:
+
+*   **Kingpin Donuts &amp; Cafe:** This is an absolute Berkeley institution. Their burgers are surprisingly solid, fries are on point, and you can grab a donut for dessert. Perfect for satisfying those late-night greasy cravings, and it's open super late.
+*   **Artichoke Basille's Pizza:** If you're craving pizza slices, these New York-style behemoths are the move. They're thick, cheesy, and one slice is practically a meal. Always packed with students after dark, and they're open till like 3 or 4 AM.
+*   **La Mission Burritos:** A classic spot for a massive, cheap, and delicious burrito. Fast service, filling portions, and they usually stay open till 11 pm or midnight. Great for a quick and satisfying dinner that won't break the bank.
+
+These spots are clutch when you're hungry and broke after 9 pm. Let me know which one you hit up!</code></pre>
+</div>
+</div>
+<p>Word count:</p>
+<div id="6d162ea8" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># this uses regular expressions, which we don't cover in this course</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> split_into_words(any_chunk_of_text):</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    lowercase_text <span class="op">=</span> any_chunk_of_text.lower()</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    split_words <span class="op">=</span> re.split(<span class="vs">r"</span><span class="dv">\W</span><span class="op">+</span><span class="vs">"</span>, lowercase_text)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> split_words </span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(split_into_words(response.text))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>191</code></pre>
+</div>
+</div>
+</section>
+<section id="constuct-a-prompt-as-a-list-of-parts" class="level3">
+<h3 class="anchored" data-anchor-id="constuct-a-prompt-as-a-list-of-parts">Constuct a prompt as a list of parts</h3>
+<p>As we’ve seen in this class time and time again, we want to <strong>reuse</strong> pieces of code, data, etc. The same is true of our contexts! One formatting context may be very useful for an entirely different application, and it would be great to use those same strings.</p>
+<p>The Gemini API supports multiple argument types for <code>content</code>. For this course, we focus on providing additional <strong>context</strong> to our prompts by passing in a <strong>list of strings</strong> to <code>content</code>. This allows us to reuse context parts. It is also comparable to separating context parts with linebreaks.</p>
+<p>The below code specifies the same prompt as before but now with a list of strings passed into <code>content</code>. (Again, because LLMs are random text generators, the response may be different from before.)</p>
+<div id="bda93a64" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>context_character <span class="op">=</span> <span class="st">"Imagine you are a UC Berkeley student talking to a fellow classmate."</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>context_format <span class="op">=</span> <span class="st">"Format your response as a bulleted list. Limit your response to 200 words."</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> client.models.generate_content(</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    model<span class="op">=</span><span class="st">"gemini-2.5-flash"</span>,</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    contents<span class="op">=</span>[</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>        context_character,</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"""</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="st">        What is the best restaurant in Berkeley? Only include cheap meals under $15,</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="st">        and only consider restaurants that are open past 9pm.    </span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="st">        """</span>,</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>        context_format</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Dude, "best" is super subjective, but if we're talking cheap eats under $15 that are open past 9 PM, these are absolute lifesavers for any Cal student:
+
+*   **Artichoke Basille's Pizza:** Hands down. Open 'til like 3 AM, massive slices for ~$7. It's the ultimate greasy, delicious, late-night Berkeley experience. You can't go wrong.
+*   **Top Dog (Durant Ave or Shattuck):** An iconic Berkeley institution. Hot dogs are dirt cheap (like $3-5) and they're open super late (also 3 AM+). Perfect for a quick, satisfying bite after a study sesh or a party.
+*   **Sliver Pizzeria:** Similar vibe to Artichoke but with a rotating daily pizza. Always tasty, big slices for ~$5-6, and they're usually open until 10 or 11 PM. Great if you want a slightly different pizza fix.
+*   **Pho Hoa Lao:** If you're craving something warm and savory, their pho is solid and usually around $12-14. They're open until 10 PM, making it a good option for a proper, cheap late meal.</code></pre>
+</div>
+</div>
+<p>Word count:</p>
+<div id="1afb4fb6" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(split_into_words(response.text))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>174</code></pre>
+</div>
+</div>
+<p>See the prompt engineering resources below for how to construct prompt for a variety of tasks.</p>
+</section>
+</section>
+<section id="additional-reading" class="level2">
+<h2 class="anchored" data-anchor-id="additional-reading">Additional Reading</h2>
+<p>Official Documentation:</p>
+<ul>
+<li><a href="https://ai.google.dev/gemini-api/docs/quickstart">Gemini API Quickstart</a></li>
+<li><a href="https://googleapis.github.io/python-genai/">Google Gen AI Python SDK</a></li>
+</ul>
+<p>Prompt Engineering Resources:</p>
+<ul>
+<li><a href="https://ai.google.dev/gemini-api/docs/prompting-strategies">Gemini API: Prompting Strategies</a></li>
+<li><a href="https://direct.mit.edu/view-large/figure/4722326/coli_a_00502_i004.tif">Ziem et al., Table 1</a>: LLM Prompting Guidelines to generate consistent, machine-readable outputs for CSS tasks (very useful for project).</li>
 </ul>
 
 
@@ -1138,13 +1388,13 @@ In this course
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../08-histograms/exercises.html" class="pagination-link" aria-label="Exercises">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Exercises</span>
+      <a href="../21-genai/index.html" class="pagination-link" aria-label="L21: Generative AI">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">L21: Generative AI</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../09-summary-statistics/center-spread.html" class="pagination-link" aria-label="Center and Spread">
-        <span class="nav-page-text">Center and Spread</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../five-things.html" class="pagination-link" aria-label="5 Things to Know">
+        <span class="nav-page-text">5 Things to Know</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
