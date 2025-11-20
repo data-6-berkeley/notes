@@ -5,3 +5,4 @@
 *.quarto_ipynb
 venv/
 **/*.quarto_ipynb
+__pycache__
