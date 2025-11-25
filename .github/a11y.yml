@@ -2,6 +2,11 @@ name: Accessibility Check
 
 on:
   push:
+    branches:
+      - main
+      - a11y
+  pull_request:
+    types: [opened, synchronize, reopened]
   workflow_dispatch:
 
 env:
