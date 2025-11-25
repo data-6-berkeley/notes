@@ -1,0 +1,117 @@
+---
+title: "Grouping with .group()"
+subtitle: "Aggregating and disaggregating data"
+---
+
+## Introduction to Grouping
+
+The term "group" in data science is most commonly associated with data **aggregation** and **disaggregation**:
+
+- **Aggregation**: A process in which information is gathered and expressed in collective or summary form. Useful for getting information about groups based on variables (age, profession, income) while simultaneously preserving confidentiality of individuals.
+
+- **Disaggregation** (aka **disentanglement**): A process of taking aggregated data and breaking it down into smaller information units. Useful to highlight outcomes that pertain to individual subsets of results/outcomes (e.g., gender, location, socio-cultural/ethnic background, age groups, etc.) to expose hidden trends.
+
+```{python}
+#| include: false
+from datascience import *
+import numpy as np
+```
+
+::: {.callout-note title="Spotify Dataset"}
+This dataset contains the Spotify Daily Top 200 streams, including song rankings, artist names, track names, and streaming numbers. Each row represents one song's performance on the charts.
+:::
+
+
+```{python}
+streams = Table.read_table('data/regional-global-daily-latest.csv')
+streams
+```
+
+## Basic Grouping
+
+The method `t.group(column)` counts the number of rows for each unique value in `column`, and returns a two-column table with the results.
+
+
+```{python}
+# Example: Counting songs by artist in Spotify Top 10
+top_10 = streams.take(np.arange(10))
+top_10.group('artist_names').sort('count', descending=True)
+```
+
+::: {.callout-important title="Note about Grouping"}
+Note that `t.group(column)` only keeps the specified `column`,the frequency `count`, and no others. All other columns are dropped from the result.
+:::
+
+## The Group + Sort + Take Pattern
+
+A common and powerful pattern in data analysis is: **grouping and then sorting, and then taking**. This gives us ranked lists of categories.
+
+```{python}
+# Top 10 artists with the most songs in Spotify Daily Top 200
+top_10_artists = streams.group('artist_names').sort('count', descending=True).take(np.arange(10))
+top_10_artists
+```
+
+This pattern is so useful that it's worth memorizing: `group()` → `sort()` → `take()`.
+
+## Advanced Grouping with Collect Functions
+
+The method `t.group(column, collect)` combines/aggregates all rows with the same value for `column` into a single row in the resulting table, according to the function `collect`.
+
+The `collect` argument is optional and can be:
+
+- `len`: number of grouped values (default)
+- `list`: list of all grouped values  
+- `sum`: total of all grouped values
+- `np.mean`: average of all grouped values
+- `max`, `min`: maximum/minimum values
+- Any function that works on arrays!
+
+::: {.callout-note title="Cars Dataset"}
+This dataset contains car specifications for 2021 model-year vehicles, including manufacturer, brand, engine size (displacement), cylinders, fuel efficiency (MPG), and other technical details.
+:::
+
+```{python}
+# Example: Load cars data and show basic grouping
+cars = Table.read_table('data/models-2021.csv')
+cars.group('Brand', np.mean)
+```
+
+::: {.callout-note title="Non-numeric Values"}
+If a collect function doesn't work with non-numeric values (like `sum`), it skips non-numeric columns. You can't sum strings, so string columns will be empty in the result.
+:::
+
+## Grouping by Multiple Columns
+
+If we pass a list of column names as the first argument to `group()`:
+
+The resulting table has one row for every unique combination of values in the specified columns.
+
+```{python}
+# One row for every combination of Manufacturer and Brand
+cars.group(['Manufacturer', 'Brand'])
+```
+
+```{python}
+# Average MPG for each Brand-Cylinders combination
+cars.group(['Brand', 'Cylinders'], np.mean)
+```
+
+::: {.callout-tip title="When to Group by Multiple Columns"}
+It usually only makes sense to group by columns that store categorical information that is shared across multiple rows. For example, you can group by breed, size, sex, or color of dogs, but it wouldn't make sense to group by weight in pounds, since every dog will have a slightly different weight.
+:::
+
+::: {.callout-note title="Practical Limitation"}
+You can group by any number of columns, but we rarely group by more than two columns as the results tend to be less meaningful and harder to interpret.
+:::
+
+## When to Use Grouping
+
+Use **`.group()`** when you want to:
+
+- Analyze one categorical variable at a time
+- See all combinations of multiple variables in a long format
+- Calculate aggregate statistics for categories
+- Create ranked lists of categories
+
+The grouping method is particularly powerful for exploratory data analysis and understanding the distribution of categorical variables in your dataset.
