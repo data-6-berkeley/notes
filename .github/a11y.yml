@@ -1,0 +1,75 @@
+name: Accessibility Check
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  axe-audit:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # 1. Checkout Code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Setup Quarto
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+      
+      # 3. Setup Node.js (for Axe and http-server)
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # 4. Render the Site
+      - name: Render Quarto Site
+        run: quarto render
+
+      # 5. Install Tools
+      - name: Install Axe and Server
+        run: npm install -g @axe-core/cli http-server
+
+      # 6. Start Local Server (Background Process)
+      - name: Start Local Server
+        run: |
+          # Start server on port 3000, silence output, run in background (&)
+          npx http-server ./_site -p 3000 > /dev/null 2>&1 &
+          
+          # Wait 5 seconds to ensure server is ready
+          sleep 5
+
+      # 7. Run Axe Scan
+      - name: Run Accessibility Scan
+        id: axe-scan
+        run: |
+          # 1. Read sitemap.xml
+          # 2. Extract content between <loc> tags
+          # 3. Replace production domain with localhost:3000
+          # 4. Convert newlines to spaces for the Axe command
+          
+          # match 'site-url' in _quarto.yml
+          PRODUCTION_URL="https://ca-datascience.github.io"
+          
+          URLS=$(cat _site/sitemap.xml | \
+            sed -n 's/.*<loc>\(.*\)<\/loc>.*/\1/p' | \
+            sed "s|$PRODUCTION_URL|http://localhost:3000|" | \
+            tr '\n' ' ')
+
+          echo "Detected pages from sitemap:"
+          echo "$URLS"
+
+          # Run Axe
+          axe $URLS \
+            --tags wcag2a,wcag2aa,wcag21a,wcag21aa \
+            --save axe-report.json \
+            --exit
+
+      # 8. Upload Report (Runs even if Step 7 fails)
+      - name: Upload Accessibility Report
+        if: always() 
+        uses: actions/upload-artifact@v4
+        with:
+          name: axe-report
+          path: axe-report.json
