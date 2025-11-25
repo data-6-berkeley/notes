@@ -1,8 +1,8 @@
-name: Accessibility Checks (With Render)
+name: Deployment Accessibility Checks)
 
 on:
   push:
-    branches-ignore:
+    branches:
       - gh-pages
   workflow_dispatch:
 
@@ -20,35 +20,22 @@ jobs:
       # 1. Checkout Code
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      # 2. Setup Quarto
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
       
-      # 3. Setup Node.js (for Axe and http-server)
+      # 2. Setup Node.js (for Axe and http-server)
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      # 4. Render the Site
-      - name: Render Quarto Site
-        run: quarto render
-
-      # 5. Install Tools
+      # 3. Install Tools
       - name: Install Axe and Server
         run: npm install -g @axe-core/cli http-server
 
-      # 6. Start Local Server (Background Process)
+      # 4. Start Local Server (Background Process)
       - name: Start Local Server
         run: |
-          # We create a 'public/notes' folder so the local server 
-          # mimics the production path structure exactly.
-          mkdir -p public/${{ env.SITE_SUBDIR }}
-          cp -r _site/* public/${{ env.SITE_SUBDIR }}/
-          
-          # Serve the 'public' folder on port 3000
-          npx http-server ./public -p 3000 > /dev/null 2>&1 &
+          # Serve the contents on port 3000.
+          npx http-server ./ -p 3000 > /dev/null 2>&1 &
           
           sleep 5
 
@@ -61,7 +48,7 @@ jobs:
           
           LOCAL_URL="http://localhost:3000/${{ env.SITE_SUBDIR }}"
           
-          URLS=$(cat _site/sitemap.xml | \
+          URLS=$(cat sitemap.xml | \
             sed -n 's/.*<loc>\(.*\)<\/loc>.*/\1/p' | \
             sed "s|${{ env.PRODUCTION_URL }}|$LOCAL_URL|" | \
             tr '\n' ' ')
