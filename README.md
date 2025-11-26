@@ -1,6 +1,6 @@
 # Data 6: Course Notes
 
-[![Deployment Accessibility Checks](https://github.com/data-6-berkeley/notes/actions/workflows/gh-pages-a11y.yml/badge.svg)](https://github.com/data-6-berkeley/notes/actions/workflows/gh-pages-a11y.yml)
+[![Deployment Accessibility Checks](https://github.com/data-6-berkeley/notes/actions/workflows/gh-pages-a11y.yml/badge.svg)](https://github.com/data-6-berkeley/notes/actions/workflows/gh-pages-a11y.yml) [![Accessibility Checks (With Render)](https://github.com/data-6-berkeley/notes/actions/workflows/a11y.yml/badge.svg)](https://github.com/data-6-berkeley/notes/actions/workflows/a11y.yml)
 
 Course notes for Data 6, based on the Stat course-site-quarto template.
 
