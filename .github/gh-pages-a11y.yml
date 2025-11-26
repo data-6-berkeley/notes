@@ -1,4 +1,4 @@
-name: Deployment Accessibility Checks)
+name: Deployment Accessibility Checks
 
 on:
   push:
