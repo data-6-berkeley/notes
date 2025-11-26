@@ -31,15 +31,19 @@ jobs:
         with:
           node-version: '20'
 
-      # 4. Render the Site
+      # 4. Install Python dependencies
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+      
+      # 5. Render the Site
       - name: Render Quarto Site
         run: quarto render
 
-      # 5. Install Tools
+      # 6. Install Tools
       - name: Install Axe and Server
         run: npm install -g @axe-core/cli http-server
 
-      # 6. Start Local Server (Background Process)
+      # 7. Start Local Server (Background Process)
       - name: Start Local Server
         run: |
           # We create a 'public/notes' folder so the local server 
@@ -52,7 +56,7 @@ jobs:
           
           sleep 5
 
-      # 7. Run Axe Scan
+      # 8. Run Axe Scan
       - name: Run Accessibility Scan
         id: axe-scan
         run: |
@@ -75,7 +79,7 @@ jobs:
             --save axe-report.json \
             --exit
 
-      # 8. Upload Report (Runs even if Step 7 fails)
+      # 9. Upload Report (Runs even if Step 8 fails)
       - name: Upload Accessibility Report
         if: always() 
         uses: actions/upload-artifact@v4

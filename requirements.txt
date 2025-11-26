@@ -1,0 +1,5 @@
+jupyter
+datascience
+numpy
+seaborn
+beautifulsoup4
