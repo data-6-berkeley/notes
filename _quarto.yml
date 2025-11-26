@@ -4,6 +4,7 @@ project:
 website:
   favicon: assets/favicon.ico
   google-analytics: G-CES9J82GLL
+  site-url: "https://data6.org/notes/"
   page-footer: 
     center:
       - text: Home / About / License
