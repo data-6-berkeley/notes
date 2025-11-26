@@ -1,5 +1,8 @@
 project:
   type: website
+  render:
+    - "*.qmd"
+    - "!21-genai/gemini.qmd"
 
 website:
   favicon: assets/favicon.ico
