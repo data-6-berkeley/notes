@@ -1,25 +1,25 @@
 name: Deployment Accessibility Checks
 
 on:
-  push:
-    branches:
-      - gh-pages
+  page_build:
   workflow_dispatch:
 
 env:
-  PRODUCTION_URL: "https://data6.org/notes/"
-  # must match the end of PRODUCTION_URL
-  # leave blank if at root
   SITE_SUBDIR: "notes"
 
 jobs:
   axe-audit:
+    if: |
+      (github.event_name == 'page_build' && github.event.build.status == 'built') ||
+      github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     
     steps:
       # 1. Checkout Code
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          ref: gh-pages
       
       # 2. Setup Node.js (for Axe and http-server)
       - name: Set up Node.js
@@ -39,18 +39,25 @@ jobs:
           
           sleep 5
 
-      # 7. Run Axe Scan
+      # 5. Run Axe Scan
       - name: Run Accessibility Scan
         id: axe-scan
         run: |
-          # Swap the Production URL for Localhost + Subdirectory
-          # e.g. https://data6.org/notes -> http://localhost:3000/notes
+          # Reconstruct URLs based on specific domain structure replacing with localhost.
+          # Get the first URL from sitemap.xml
+          FIRST_URL=$(sed -n 's/.*<loc>\(.*\)<\/loc>.*/\1/p' sitemap.xml | head -n 1)
+          
+          # Extract the base URL to be replaced (e.g., 'https://data6.org/notes')
+          # This assumes all LOCs start with the same base URL.
+          BASE_URL_TO_REPLACE="${FIRST_URL%%/*}/${{ env.SITE_SUBDIR }}/"
           
           LOCAL_URL="http://localhost:3000/${{ env.SITE_SUBDIR }}"
           
+          echo "Base URL found in sitemap to replace: $BASE_URL_TO_REPLACE"
+
           URLS=$(cat sitemap.xml | \
             sed -n 's/.*<loc>\(.*\)<\/loc>.*/\1/p' | \
-            sed "s|${{ env.PRODUCTION_URL }}|$LOCAL_URL|" | \
+            sed "s|${BASE_URL_TO_REPLACE}|$LOCAL_URL|" | \
             tr '\n' ' ')
 
           echo "Scanning the following pages:"
@@ -62,7 +69,7 @@ jobs:
             --save axe-report.json \
             --exit
 
-      # 8. Upload Report (Runs even if Step 7 fails)
+      # 6. Upload Report (Runs even if previous step fails)
       - name: Upload Accessibility Report
         if: always() 
         uses: actions/upload-artifact@v4
