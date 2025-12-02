@@ -52,7 +52,7 @@ jobs:
           # Look for 'http(s)://domain.com/subdir/' using regex to ensure we capture the domain.
           BASE_URL_TO_REPLACE=$(echo "$FIRST_URL" | grep -oE "^https?://[^/]+/${{ env.SITE_SUBDIR }}/")
           
-          LOCAL_URL="http://localhost:3000/${{ env.SITE_SUBDIR }}/"
+          LOCAL_URL="http://localhost:3000/"
           
           if [ -z "$BASE_URL_TO_REPLACE" ]; then
             echo "Error: Could not determine base URL from $FIRST_URL using subdir ${{ env.SITE_SUBDIR }}"
