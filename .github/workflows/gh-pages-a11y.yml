@@ -43,21 +43,29 @@ jobs:
       - name: Run Accessibility Scan
         id: axe-scan
         run: |
-          # Reconstruct URLs based on specific domain structure replacing with localhost.
-          # Get the first URL from sitemap.xml
-          FIRST_URL=$(sed -n 's/.*<loc>\(.*\)<\/loc>.*/\1/p' sitemap.xml | head -n 1)
+          # 1. Get the first URL from the sitemap
+          FIRST_URL=$(grep -m 1 "<loc>" sitemap.xml | sed 's/.*<loc>\(.*\)<\/loc>.*/\1/')
           
-          # Extract the base URL to be replaced (e.g., 'https://data6.org/notes')
-          # This assumes all LOCs start with the same base URL.
-          BASE_URL_TO_REPLACE="${FIRST_URL%%/*}/${{ env.SITE_SUBDIR }}/"
+          echo "Sample URL from sitemap: $FIRST_URL"
+
+          # 2. Extract the base URL accurately.
+          # Look for 'http(s)://domain.com/subdir/' using regex to ensure we capture the domain.
+          BASE_URL_TO_REPLACE=$(echo "$FIRST_URL" | grep -oE "^https?://[^/]+/${{ env.SITE_SUBDIR }}/")
           
           LOCAL_URL="http://localhost:3000/${{ env.SITE_SUBDIR }}"
           
-          echo "Base URL found in sitemap to replace: $BASE_URL_TO_REPLACE"
+          if [ -z "$BASE_URL_TO_REPLACE" ]; then
+            echo "Error: Could not determine base URL from $FIRST_URL using subdir ${{ env.SITE_SUBDIR }}"
+            exit 1
+          fi
 
+          echo "Replacing $BASE_URL_TO_REPLACE with $LOCAL_URL"
+
+          # 3. Generate URL list
+          # We use '|' as the delimiter in sed to avoid conflicts with slashes in URLs
           URLS=$(cat sitemap.xml | \
             sed -n 's/.*<loc>\(.*\)<\/loc>.*/\1/p' | \
-            sed "s|${BASE_URL_TO_REPLACE}|$LOCAL_URL|" | \
+            sed "s|$BASE_URL_TO_REPLACE|$LOCAL_URL|" | \
             tr '\n' ' ')
 
           echo "Scanning the following pages:"
