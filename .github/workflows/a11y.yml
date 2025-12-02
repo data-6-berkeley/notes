@@ -65,7 +65,7 @@ jobs:
           # Swap the Production URL for Localhost + Subdirectory
           # e.g. https://data6.org/notes -> http://localhost:3000/notes
           
-          LOCAL_URL="http://localhost:3000/${{ env.SITE_SUBDIR }}"
+          LOCAL_URL="http://localhost:3000/${{ env.SITE_SUBDIR }}/"
           
           URLS=$(cat _site/sitemap.xml | \
             sed -n 's/.*<loc>\(.*\)<\/loc>.*/\1/p' | \
