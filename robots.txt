@@ -1,1 +1,1 @@
-Sitemap: https://data-6-berkeley.github.io/notes/sitemap.xml
+Sitemap: https://data6.org/notes/sitemap.xml

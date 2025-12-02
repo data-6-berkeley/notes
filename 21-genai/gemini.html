@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -70,14 +70,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../assets/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-5dac7ead189ce37b035e4bf1b476b30f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-552df76fac1a19af64da6fc6ed81ed58.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -144,7 +145,8 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../assets/data6.png" alt="Data 6 logo" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="../assets/data6.png" alt="Data 6 logo" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../assets/data6.png" alt="Data 6 logo" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">DATA 6 <br><small>Course Notes</small></a> 
@@ -685,7 +687,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<strong>Important Note</strong>: API usage is monitored
+<span class="screen-reader-only">Warning</span><strong>Important Note</strong>: API usage is monitored
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -694,17 +696,17 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </div>
 </div>
 <p>Remember that we avoid storing our API keys publicly. In <code>api_key.py</code>, we set <code>my_client_access_token</code> to be this string of alphanumeric characters. We then load it into our notebook environment as the Python name <code>GOOGLE_API_KEY</code>. <!-- this is not run --></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> api_key</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> api_key</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>GOOGLE_API_KEY <span class="op">=</span> api_key.my_client_access_token</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>GOOGLE_API_KEY <span class="op">=</span> api_key.my_client_access_token</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="our-first-two-api-requests" class="level2">
 <h2 class="anchored" data-anchor-id="our-first-two-api-requests">Our first (two) API request(s)</h2>
 <p>So far, the Genius and Wikipedia APIs we’ve worked with have been what is called <a href="https://en.wikipedia.org/wiki/REST">RESTful APIs</a>, where we specify a URL to access structured data from an endpoint. After making this request, we then processed the JSON response. Now, we will directly use a Python library API, developed by Google as part of their Gemini Software Development Kit (Gemini SDK).</p>
 <p>Using a Python API means that we will make a Python client object using Google’s <code>genai</code> package, then call that object’s methods to get data from Gemini. A Python API is often more convenient than a RESTful API when (1) the input and output are both quite flexible in format, as is the case for Generative AI data, and (2) when we write code that will make multiple calls to the API across different functions.</p>
 <p>The cell below imports Google’s <code>genai</code> Python module:</p>
-<div id="9e28a658" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> google <span class="im">import</span> genai</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="78ad7f51" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> google <span class="im">import</span> genai</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="from-chat-interface-to-api" class="level3">
 <h3 class="anchored" data-anchor-id="from-chat-interface-to-api">From chat interface to API</h3>
@@ -733,8 +735,8 @@ Figure&nbsp;1: A screenshot of a Google Gemini chat conversation. Prompt is ‘E
 <section id="create-the-client-then-make-the-request" class="level3">
 <h3 class="anchored" data-anchor-id="create-the-client-then-make-the-request">Create the client then make the request</h3>
 <p>The below code uses Gemini’s Python API to directly query the Gemini LLM with this prompt. We describe the behavior below the cell.</p>
-<div id="649d3e73" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># first, create the client</span></span>
+<div id="00d05392" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># first, create the client</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> genai.Client(api_key<span class="op">=</span>GOOGLE_API_KEY)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># then make the API request</span></span>
@@ -742,9 +744,9 @@ Figure&nbsp;1: A screenshot of a Google Gemini chat conversation. Prompt is ‘E
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    model<span class="op">=</span><span class="st">"gemini-2.5-flash"</span>,</span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    contents<span class="op">=</span><span class="st">"Explain how AI works in a few words"</span></span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.text)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>AI learns patterns from data to make intelligent decisions.</code></pre>
+<pre><code>AI learns patterns from data to make smart decisions or predictions.</code></pre>
 </div>
 </div>
 <p>What just happened (and how you would make these API calls):</p>
@@ -762,15 +764,15 @@ Figure&nbsp;1: A screenshot of a Google Gemini chat conversation. Prompt is ‘E
 <h3 class="anchored" data-anchor-id="make-another-api-request">Make another API request</h3>
 <p>Once we have created the API client, we do not need to remake the client. Instead, we can just make more calls to <code>generate_content</code>.</p>
 <p>Remember—<strong>LLMs are random response generators</strong>, so you will likely get a different response back!</p>
-<div id="aaa49f30" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># client is already created, so just call generate_content</span></span>
+<div id="6842ab30" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># client is already created, so just call generate_content</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> client.models.generate_content(</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    model<span class="op">=</span><span class="st">"gemini-2.5-flash"</span>,</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    contents<span class="op">=</span><span class="st">"Explain how AI works in a few words"</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.text)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>AI learns patterns from data to make smart predictions and decisions.</code></pre>
+<pre><code>AI learns patterns from data to make predictions or decisions.</code></pre>
 </div>
 </div>
 </section>
@@ -790,7 +792,7 @@ Figure&nbsp;1: A screenshot of a Google Gemini chat conversation. Prompt is ‘E
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<strong>Important Note</strong>: Again, API usage is monitored
+<span class="screen-reader-only">Warning</span><strong>Important Note</strong>: Again, API usage is monitored
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -805,50 +807,79 @@ Figure&nbsp;1: A screenshot of a Google Gemini chat conversation. Prompt is ‘E
 <section id="provide-context" class="level3">
 <h3 class="anchored" data-anchor-id="provide-context">Provide context</h3>
 <p>What is the best restaurant in Berkeley?</p>
-<div id="2d0bfed0" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> client.models.generate_content(</span>
+<div id="7485cee2" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> client.models.generate_content(</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    model<span class="op">=</span><span class="st">"gemini-2.5-flash"</span>,</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    contents<span class="op">=</span><span class="st">"What is the best restaurant in Berkeley?"</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.text)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Ah, the million-dollar question! "Best" is always subjective and depends entirely on what you're looking for (cuisine, price point, ambiance, occasion).
+<pre><code>Ah, the million-dollar question in Berkeley! There's no single "best" restaurant, as it heavily depends on what you're looking for: cuisine, price point, ambiance, and occasion.
 
-However, if we're talking about **iconic status, historical significance, and a consistently high-quality experience that influenced the entire culinary world,** the answer is almost universally:
+However, I can give you a breakdown of highly acclaimed and beloved establishments across different categories.
 
-1.  **Chez Panisse (Restaurant or Cafe)**
-    *   **Why it's often considered "the best":** Founded by Alice Waters, Chez Panisse is the birthplace of the farm-to-table movement. It emphasizes seasonal, local, and organic ingredients, cooked simply and perfectly.
-        *   **The Downstairs Restaurant:** A fixed-price, multi-course menu that changes nightly. It's a true special occasion splurge and a culinary pilgrimage for many.
-        *   **The Upstairs Cafe:** More casual, à la carte menu, still focused on exquisite ingredients but more accessible.
-    *   **Best for:** Special occasions, foodies, those looking for a piece of culinary history.
+**The Legends &amp; Fine Dining (Special Occasion/Higher Price Point):**
 
-Beyond Chez Panisse, Berkeley has a fantastic and diverse food scene. Here are some other contenders for "best" depending on your criteria:
+1.  **Chez Panisse (Restaurant &amp; Cafe):**
+    *   **Why it's famous:** The birthplace of California Cuisine and the farm-to-table movement. Alice Waters' influence is monumental. The downstairs restaurant is prix fixe, very expensive, and formal. The upstairs cafe is more casual (but still pricey) with an à la carte menu.
+    *   **Cuisine:** Californian, seasonal.
+    *   **Best for:** A truly special occasion, food history buffs.
 
-**For a Special Occasion / Modern California Cuisine:**
-*   **Gather:** Excellent seasonal Californian cuisine with a focus on sustainable ingredients. Great cocktails and a lively atmosphere.
-*   **Corso:** Rustic, elegant Tuscan cuisine from Chez Panisse alum Wendy Brucker. Fantastic pasta and wood-fired dishes.
+2.  **Comal:**
+    *   **Why it's great:** Upscale, vibrant Mexican cuisine with a fantastic cocktail program. Lively atmosphere, great for groups or a fun date night. They have a beautiful outdoor patio.
+    *   **Cuisine:** Oaxacan/Mexican.
+    *   **Best for:** Delicious food, excellent cocktails, lively ambiance.
 
-**For Lively &amp; Delicious / Global Flavors:**
-*   **Comal:** Bustling, popular spot for Oaxacan-inspired Mexican food, amazing cocktails (especially their margaritas), and a great patio.
-*   **Kiraku:** Fantastic, authentic Japanese izakaya. Known for creative small plates, charcoal-grilled skewers, and an extensive sake list.
-*   **Great China:** A Berkeley institution for high-quality, delicious Peking duck and other Chinese dishes in a lively setting.
-*   **Agrodolce:** Sicilian comfort food in a cozy setting. Think fresh pastas, seafood, and hearty meat dishes.
+3.  **Corso:**
+    *   **Why it's great:** Authentic Tuscan cuisine from Chef Wendy Brucker (also of Rivoli). Excellent pasta, wood-fired dishes, and a warm, inviting atmosphere.
+    *   **Cuisine:** Italian (Tuscan).
+    *   **Best for:** Romantic dinner, delicious traditional Italian.
 
-**For Unique &amp; Casual Institutions:**
-*   **The Cheese Board Collective:** A unique, worker-owned collective. They serve one type of vegetarian pizza a day (often with inventive toppings) and have an amazing bakery. Expect lines, but it's an iconic Berkeley experience.
-*   **Jupiter:** A popular brewpub with delicious wood-fired pizzas, a huge selection of craft beers, and a great outdoor patio.
+**Excellent Mid-Range &amp; Diverse Options:**
 
-**For Breakfast/Brunch:**
-*   **La Note:** Extremely popular for French country-style breakfast and brunch. Expect a wait, but it's worth it for their famous lavender honey lattes and rich omelets.
+4.  **Gather:**
+    *   **Why it's great:** Farm-to-table, locally sourced ingredients with a focus on seasonal and often vegetarian-friendly dishes. Famous for their "vegan pizza." Stylish, modern interior.
+    *   **Cuisine:** Californian, American.
+    *   **Best for:** Delicious, healthy-ish food, good for vegetarians/vegans, modern ambiance.
 
-**To give you the *best* recommendation, I'd need to know:**
+5.  **Ramen Shop:**
+    *   **Why it's great:** Often cited as having the best ramen in the Bay Area. Expect a wait, but the complex broths and fresh ingredients are worth it. They also have great appetizers and drinks.
+    *   **Cuisine:** Japanese (Ramen).
+    *   **Best for:** A fantastic bowl of ramen, casual but high-quality meal.
 
-*   **What kind of cuisine are you in the mood for?**
-*   **What's your budget like (cheap eats, moderate, fine dining)?**
-*   **What's the occasion (casual dinner, date night, special celebration, quick lunch)?**
-*   **What kind of ambiance do you prefer (lively, quiet, romantic, family-friendly)?**
+6.  **Ippuku:**
+    *   **Why it's great:** Authentic Japanese izakaya specializing in yakitori (grilled skewers) and other small plates. They also offer a fantastic omakase experience. More intimate than Ramen Shop.
+    *   **Cuisine:** Japanese Izakaya, Yakitori.
+    *   **Best for:** Authentic Japanese experience, small plates, Omakase.
 
-Let me know more, and I can narrow it down!</code></pre>
+7.  **Lalime's:**
+    *   **Why it's great:** A long-standing Berkeley favorite with a consistently excellent menu that blends Mediterranean and Californian influences. Cozy and sophisticated.
+    *   **Cuisine:** Mediterranean, Californian.
+    *   **Best for:** Reliable, consistently good food, date night.
+
+**Casual &amp; Unique Berkeley Favorites:**
+
+8.  **The Cheese Board Pizza Collective / Cheese Board Bakery:**
+    *   **Why it's great:** A Berkeley institution. They serve only *one* type of vegetarian pizza daily, by the slice or whole pie, and it's always incredible. Live jazz music often accompanies your meal. The bakery side has amazing breads and pastries.
+    *   **Cuisine:** Vegetarian Pizza (unique toppings daily).
+    *   **Best for:** A unique Berkeley experience, delicious and creative vegetarian pizza.
+
+9.  **Gregoire's:**
+    *   **Why it's great:** Gourmet takeout with a limited, rotating menu that changes daily. French-inspired dishes that are surprisingly affordable for the quality. No seating, just walk up and order.
+    *   **Cuisine:** French, Gourmet Takeout.
+    *   **Best for:** High-quality, delicious takeout meal.
+
+10. **Saul's Delicatessen:**
+    *   **Why it's great:** A classic New York-style deli with fantastic pastrami, corned beef, matzo ball soup, and bagels. A comfortable, bustling atmosphere.
+    *   **Cuisine:** Jewish Deli.
+    *   **Best for:** Comfort food, brunch, authentic deli experience.
+
+**To help me narrow it down further for YOU, tell me:**
+
+*   **What kind of food are you in the mood for?** (e.g., Italian, Mexican, Asian, American, etc.)
+*   **What's your budget?** (e.g., cheap eats, mid-range, fine dining)
+*   **What's the occasion?** (e.g., casual lunch, romantic dinner, celebratory meal, quick bite)
+*   **What kind of atmosphere do you prefer?** (e.g., lively, quiet, trendy, traditional)</code></pre>
 </div>
 </div>
 <p>The LLM response looks too general; these recommendations might not be great for the average college student. One core aspect of prompt engineering is to provide more <strong>context</strong> to the prompt.</p>
@@ -861,8 +892,8 @@ Let me know more, and I can narrow it down!</code></pre>
 </ul>
 <p><strong>Note</strong>: Include linebreaks (with newline characters <code>'\n'</code>, or use multi-line strings) to delineate different aspects of the prompt.</p>
 <p>One way to provide detailed context is to just pass in a very, very long string as your prompt. See the example below. Note that the triple quotes (<code>"""</code>) allows you to specify a multi-line string, with line breaks.</p>
-<div id="44c587b2" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> client.models.generate_content(</span>
+<div id="de0773c1" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> client.models.generate_content(</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    model<span class="op">=</span><span class="st">"gemini-2.5-flash"</span>,</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    contents<span class="op">=</span><span class="st">"""Imagine you are a UC Berkeley student talking to a fellow </span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="st">    classmate.</span></span>
@@ -873,29 +904,27 @@ Let me know more, and I can narrow it down!</code></pre>
 <span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="st">    Format your response as a bulleted list. Limit your response to 200 words.</span></span>
 <span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="st">    """</span></span>
 <span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.text)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Yo, fellow classmate! Okay, if we're talking best cheap eats open late, hands down, it's Thai Noodle II. Seriously, it's a Berkeley institution for a reason.
+<pre><code>Hey, awesome question! When I'm starving late and broke, it's gotta be a toss-up between a couple of spots for the "best" bang for your buck after 9 PM.
 
-*   **Thai Noodle II (on Telegraph Ave):** This place is an absolute lifesaver for students.
-*   **Super Affordable:** You can get massive portions of incredible Pad See Ew, Pad Thai, or a hearty curry for around $12-14. You often have leftovers!
-*   **Late Night Hero:** They're typically open until 9:30 or 10 PM on weekdays and even later on weekends, perfect for those late study sessions or after a club meeting.
-*   **Delicious &amp; Fast:** The food is consistently fresh, flavorful, and they get your order out incredibly quickly. It's authentic Thai that always hits the spot.
-*   **Reliable Favorite:** It's a go-to for pretty much every Berkeley student because it's no-frills, always good, and won't drain your wallet.</code></pre>
+*   **Gordo Taqueria (Telegraph Ave.):** Seriously, their super burritos are legendary, massive, and will set you back around $10-$12. They're typically open until 10 PM or 11 PM depending on the night. Perfect for fueling up after a long study sesh, and you can't beat the freshness or the salsa bar. Absolute Berkeley classic for a reason.
+
+*   **Artichoke Basille's Pizza (Shattuck Ave.):** If you're craving a monster slice, this place is king. A single slice of their famous artichoke pizza is super filling, well under $10, and they're open until 2 AM or later on weekends. It's decadent, cheesy, and the perfect late-night grub when you need something quick and satisfying.</code></pre>
 </div>
 </div>
 <p>Word count:</p>
-<div id="1916aaf3" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># this uses regular expressions, which we don't cover in this course</span></span>
+<div id="493b0b58" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># this uses regular expressions, which we don't cover in this course</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> split_into_words(any_chunk_of_text):</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    lowercase_text <span class="op">=</span> any_chunk_of_text.lower()</span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    split_words <span class="op">=</span> re.split(<span class="vs">r"</span><span class="dv">\W</span><span class="op">+</span><span class="vs">"</span>, lowercase_text)</span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> split_words </span>
 <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(split_into_words(response.text))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(split_into_words(response.text))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>152</code></pre>
+<pre><code>151</code></pre>
 </div>
 </div>
 </section>
@@ -904,8 +933,8 @@ Let me know more, and I can narrow it down!</code></pre>
 <p>As we’ve seen in this class time and time again, we want to <strong>reuse</strong> pieces of code, data, etc. The same is true of our prompts! A formatting context from one prompt may be very useful for an entirely different application, and it would be great to reuse the context string instead of duplicating string literals in different parts of our code.</p>
 <p>The Gemini API supports multiple argument types for <code>content</code>. For this course, we focus on providing additional context to our prompts by passing in a <strong>list of strings</strong> to <code>content</code>. Passing in a list of strings is comparable to separating context parts with linebreaks and allows us to reuse parts of our context.</p>
 <p>The below code specifies the same prompt as before but now with a list of strings passed into <code>content</code>. (Again, because LLMs are random text generators, the response may be different from before.)</p>
-<div id="08a7a225" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>context_character <span class="op">=</span> <span class="st">"Imagine you are a UC Berkeley student talking to a fellow classmate."</span></span>
+<div id="bfe7159e" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>context_character <span class="op">=</span> <span class="st">"Imagine you are a UC Berkeley student talking to a fellow classmate."</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>context_format <span class="op">=</span> <span class="st">"Format your response as a bulleted list. Limit your response to 200 words."</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> client.models.generate_content(</span>
@@ -920,21 +949,21 @@ Let me know more, and I can narrow it down!</code></pre>
 <span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    ]</span>
 <span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.text)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Alright, dude, if we're talking cheap, late, and "best" for a Cal student, this is a no-brainer:
+<pre><code>Dude, finding a good, cheap spot that's open late is practically a sport here. But if you're looking for the best late-night grub under $15, here are my go-tos:
 
-*   **Top Dog** is the absolute GOAT.
-    *   **Why it's the best:** It's a quintessential Berkeley experience. You can get a couple of their legendary sausages, chips, and a drink for well under $15. It's fast, it's consistent, and it hits different when you're starving after a late study session.
-    *   **Open Late:** Both the Durant and Shattuck locations are usually open until 2:30 AM, making it the ultimate late-night spot.
-    *   **The Food:** My personal favorite is the Louisiana Hot Link with everything, but honestly, you can't go wrong with any of their sausages. It's a Berkeley institution for a reason!</code></pre>
+*   **Top Dog (Durant or Shattuck):** Can't beat a classic. Cheap, delicious, and they're open until like 2 or 3 AM. Perfect for post-study munchies.
+*   **La Burrita (Telegraph Ave):** Solid, no-frills burritos, tacos, and quesadillas. Most stuff is well under $15 and they usually stay open till 10 or 11 PM. Super clutch when you're craving Mexican.
+*   **Sliver Pizzeria (Shattuck Ave):** Only one kind of slice a day, but it's always amazing and vegetarian-friendly. A massive slice is like $4-5, and they're open till 10 PM or later, especially on weekends.
+*   **Kingpin Donuts &amp; Cafe (Telegraph Ave):** Open 24/7, dude! Seriously, if you need a burger, fries, a breakfast plate, or just a donut and coffee at 3 AM, this is your spot. Everything's dirt cheap.</code></pre>
 </div>
 </div>
 <p>Word count:</p>
-<div id="01470905" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(split_into_words(response.text))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="79c79e20" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(split_into_words(response.text))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
-<pre><code>127</code></pre>
+<pre><code>169</code></pre>
 </div>
 </div>
 <p>See the prompt engineering resources below for how to construct prompt for a variety of tasks.</p>
@@ -1008,13 +1037,14 @@ Let me know more, and I can narrow it down!</code></pre>
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1029,7 +1059,7 @@ Let me know more, and I can narrow it down!</code></pre>
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/data-6-berkeley\.github\.io\/notes\/");
+        var filterRegex = new RegExp("https:\/\/data6\.org\/notes\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
