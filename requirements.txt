@@ -3,3 +3,4 @@ datascience
 numpy
 seaborn
 beautifulsoup4
+google-genai
