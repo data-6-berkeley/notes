@@ -37,6 +37,8 @@ jobs:
       
       # 5. Render the Site
       - name: Render Quarto Site
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         run: quarto render
 
       # 6. Install Tools

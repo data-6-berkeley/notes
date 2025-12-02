@@ -12,12 +12,16 @@ This tutorial is a subset of the lab assignment.
 ```{python}
 #| include: false
 
-# IMPORTANT: to regenerate this file, make sure you put a Gemini API key
-# in the ignore_api_key.py file AND make sure the file is in .gitignore
-# so it is not pushed to the repo.
-
-import ignore_api_key
-GOOGLE_API_KEY = ignore_api_key.my_client_access_token
+# Try to get API key from Environment (GitHub Actions)
+import os
+GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")
+# If that doesn't work, use ignore_api_key.py
+# ignore_api_key.py should contain the variable 
+# `my_client_access_token` set to your token.
+# Do not push this file; ensure it is in .gitignore
+if not GOOGLE_API_KEY:
+    import ignore_api_key
+    GOOGLE_API_KEY = ignore_api_key.my_client_access_token
 ```
 
 This part gives you your first experience using the Gemini Python API. We walk through the official tutorials and try to abstract away the complicated parts of the official documentation.
