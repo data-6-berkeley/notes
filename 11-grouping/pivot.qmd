@@ -1,0 +1,108 @@
+---
+title: "Pivot Tables with .pivot()"
+subtitle: "Creating cross-tabulations and matrix organization"
+---
+
+## Introduction to Pivot Tables
+
+Another useful table method is `tbl.pivot()`, which can help us determine statistics for different combinations of values for two variables. Pivot tables are particularly powerful for creating cross-tabulations and organizing data in a matrix format that makes comparisons easier.
+
+## Basic Pivot Syntax
+
+The method `t.pivot(columns, rows)` is an alternative to grouping by exactly two columns:
+
+- **First argument (`columns`)**: the column from `t` you want to make up the columns of the output. Each unique value in the `columns` column will get its own column.
+- **Second argument (`rows`)**: the column from `t` you want to make up the rows of the output. Each unique value in the `rows` column will get its own row.
+
+```{python}
+#| include: false
+from datascience import *
+import numpy as np
+```
+
+::: {.callout-note title="Cars Dataset"}
+This dataset contains car specifications for 2021 model-year vehicles, including manufacturer, brand, engine size (displacement), cylinders, fuel efficiency (MPG), and other technical details.
+:::
+
+```{python}
+# Load cars data for examples
+cars = Table.read_table('data/models-2021.csv')
+```
+
+```{python}
+# Basic pivot table counting combinations
+cars.pivot('Cylinders', 'Brand')
+```
+
+This creates a matrix where each cell shows the count of cars with that specific combination of cylinders and brand.
+
+## Advanced Pivot with Values and Collect
+
+Like with `group`, the default with `pivot` is to count the number of occurrences. But we can provide two optional arguments:
+
+This creates a new table where:
+
+- The columns are specified by `columns`
+- The rows are specified by `rows`  
+- The entries are specified by `values`, combined using the function `collect`
+
+```{python}
+# Average MPG for every combination of Brand and Cylinders
+cars.pivot('Cylinders', 'Brand', 'MPG', np.mean)
+```
+
+```{python}
+# Maximum number of cylinders by manufacturer and drivetrain
+cars.pivot('Wheel', 'Manufacturer', 'Cylinders', max)
+```
+
+## Common Collect Functions for Pivot
+
+The `collect` function in pivot tables works the same way as in grouping:
+
+- `len`: count of occurrences (default)
+- `sum`: total of all values
+- `np.mean`: average of all values
+- `max`, `min`: maximum/minimum values
+- any function that works on arrays!
+
+```{python}
+# Different ways to aggregate data in pivot tables
+cars.pivot('Cylinders', 'Brand', 'MPG', np.mean)  # Average MPG
+```
+
+```{python}
+cars.pivot('Cylinders', 'Brand', 'MPG', max)      # Maximum MPG
+```
+
+```{python}
+cars.pivot('Cylinders', 'Brand', 'MPG', min)      # Minimum MPG
+```
+
+## When to Use Pivot vs. Group
+
+- Use **`.group()`** when you want to analyze one categorical variable at a time, or when you want to see all combinations of multiple variables in a long format.
+
+- Use **`.pivot()`** when you want to compare two categorical variables side-by-side in a matrix format, especially when you want to visualize the results.
+
+## Real-World Example: University Data
+
+Let's see how pivot tables work with real data using R1 universities:
+
+::: {.callout-note title="About the Dataset"}
+This dataset contains 96 R1 universities (highest research classification) in the United States, including Stanford, Harvard, MIT, and UC Berkeley. Each row represents one university with information about its student enrollment, research score, type (Public/Private), and location.
+:::
+
+```{python}
+# Load university data
+unis = Table.read_table("data/r1_with_students.csv")
+unis
+```
+
+```{python}
+# Use pivot to create a visualization-ready table
+unis_pivot = unis.pivot('Type', 'State')
+unis_pivot
+```
+
+The pivot table organizes the data in a way that makes it easy to create visualizations comparing university types across states.
