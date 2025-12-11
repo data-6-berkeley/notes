@@ -12,6 +12,8 @@ Course notes for Data 6, based on the Stat course-site-quarto template.
 - Optional: `quarto render` builds `_site`.
 - `quarto publish gh-pages` to host `_site` on GitHub pages.
 
+You should always push changes to `main` before running `quarto publish gh-pages`. It is permissible to push to `main` without running `quarto publish gh-pages` to draft or share materials for review before they are officially published. You should *never* run `quarto publish gh-pages` without first pushing to `main`.
+
 ## Python dependencies
 
 ```
