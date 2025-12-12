@@ -173,7 +173,7 @@ website:
 
 format:
   html:
-    theme: lumen
+    theme: cosmos
     fontsize: 1em
     css: assets/styles.css
     toc: true
