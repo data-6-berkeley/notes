@@ -705,7 +705,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <p>So far, the Genius and Wikipedia APIs we’ve worked with have been what is called <a href="https://en.wikipedia.org/wiki/REST">RESTful APIs</a>, where we specify a URL to access structured data from an endpoint. After making this request, we then processed the JSON response. Now, we will directly use a Python library API, developed by Google as part of their Gemini Software Development Kit (Gemini SDK).</p>
 <p>Using a Python API means that we will make a Python client object using Google’s <code>genai</code> package, then call that object’s methods to get data from Gemini. A Python API is often more convenient than a RESTful API when (1) the input and output are both quite flexible in format, as is the case for Generative AI data, and (2) when we write code that will make multiple calls to the API across different functions.</p>
 <p>The cell below imports Google’s <code>genai</code> Python module:</p>
-<div id="78ad7f51" class="cell" data-execution_count="2">
+<div id="2fd8d928" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> google <span class="im">import</span> genai</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="from-chat-interface-to-api" class="level3">
@@ -735,7 +735,7 @@ Figure&nbsp;1: A screenshot of a Google Gemini chat conversation. Prompt is ‘E
 <section id="create-the-client-then-make-the-request" class="level3">
 <h3 class="anchored" data-anchor-id="create-the-client-then-make-the-request">Create the client then make the request</h3>
 <p>The below code uses Gemini’s Python API to directly query the Gemini LLM with this prompt. We describe the behavior below the cell.</p>
-<div id="00d05392" class="cell" data-execution_count="3">
+<div id="f6d3d289" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># first, create the client</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> genai.Client(api_key<span class="op">=</span>GOOGLE_API_KEY)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -746,7 +746,7 @@ Figure&nbsp;1: A screenshot of a Google Gemini chat conversation. Prompt is ‘E
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.text)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>AI learns patterns from data to make smart decisions or predictions.</code></pre>
+<pre><code>AI learns patterns from data to make decisions or predictions.</code></pre>
 </div>
 </div>
 <p>What just happened (and how you would make these API calls):</p>
@@ -764,7 +764,7 @@ Figure&nbsp;1: A screenshot of a Google Gemini chat conversation. Prompt is ‘E
 <h3 class="anchored" data-anchor-id="make-another-api-request">Make another API request</h3>
 <p>Once we have created the API client, we do not need to remake the client. Instead, we can just make more calls to <code>generate_content</code>.</p>
 <p>Remember—<strong>LLMs are random response generators</strong>, so you will likely get a different response back!</p>
-<div id="6842ab30" class="cell" data-execution_count="4">
+<div id="de69d968" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># client is already created, so just call generate_content</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> client.models.generate_content(</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    model<span class="op">=</span><span class="st">"gemini-2.5-flash"</span>,</span>
@@ -772,7 +772,7 @@ Figure&nbsp;1: A screenshot of a Google Gemini chat conversation. Prompt is ‘E
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.text)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>AI learns patterns from data to make predictions or decisions.</code></pre>
+<pre><code>AI learns patterns from data to make decisions or perform tasks.</code></pre>
 </div>
 </div>
 </section>
@@ -807,79 +807,59 @@ Figure&nbsp;1: A screenshot of a Google Gemini chat conversation. Prompt is ‘E
 <section id="provide-context" class="level3">
 <h3 class="anchored" data-anchor-id="provide-context">Provide context</h3>
 <p>What is the best restaurant in Berkeley?</p>
-<div id="7485cee2" class="cell" data-execution_count="5">
+<div id="15f80822" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> client.models.generate_content(</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    model<span class="op">=</span><span class="st">"gemini-2.5-flash"</span>,</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    contents<span class="op">=</span><span class="st">"What is the best restaurant in Berkeley?"</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.text)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Ah, the million-dollar question in Berkeley! There's no single "best" restaurant, as it heavily depends on what you're looking for: cuisine, price point, ambiance, and occasion.
+<pre><code>"Best" is incredibly subjective when it comes to restaurants, as it depends entirely on what you're looking for! Berkeley has a fantastic and diverse food scene.
 
-However, I can give you a breakdown of highly acclaimed and beloved establishments across different categories.
+To give you the best recommendation, I'd need to know a bit more, but here are some top contenders in different categories:
 
-**The Legends &amp; Fine Dining (Special Occasion/Higher Price Point):**
+**1. For a Landmark Fine Dining Experience / Special Occasion:**
 
-1.  **Chez Panisse (Restaurant &amp; Cafe):**
-    *   **Why it's famous:** The birthplace of California Cuisine and the farm-to-table movement. Alice Waters' influence is monumental. The downstairs restaurant is prix fixe, very expensive, and formal. The upstairs cafe is more casual (but still pricey) with an à la carte menu.
-    *   **Cuisine:** Californian, seasonal.
-    *   **Best for:** A truly special occasion, food history buffs.
+*   **Chez Panisse:** You can't talk about Berkeley restaurants without mentioning Alice Waters' pioneering restaurant. It's the birthplace of California cuisine and the farm-to-table movement.
+    *   **Downstairs (Restaurant):** Fixed, elaborate, and expensive prix-fixe menu that changes daily. Reservations are essential, often weeks in advance.
+    *   **Upstairs (Cafe):** More casual, à la carte, slightly less expensive, and often easier to get into (though still popular). Still excellent quality.
+    *   *Why it's "best":* Historical significance, unparalleled commitment to local/seasonal ingredients, refined yet simple preparation.
 
-2.  **Comal:**
-    *   **Why it's great:** Upscale, vibrant Mexican cuisine with a fantastic cocktail program. Lively atmosphere, great for groups or a fun date night. They have a beautiful outdoor patio.
-    *   **Cuisine:** Oaxacan/Mexican.
-    *   **Best for:** Delicious food, excellent cocktails, lively ambiance.
+**2. For Excellent Upscale Casual / Contemporary California:**
 
-3.  **Corso:**
-    *   **Why it's great:** Authentic Tuscan cuisine from Chef Wendy Brucker (also of Rivoli). Excellent pasta, wood-fired dishes, and a warm, inviting atmosphere.
-    *   **Cuisine:** Italian (Tuscan).
-    *   **Best for:** Romantic dinner, delicious traditional Italian.
+*   **Comal:** Lively, modern Mexican restaurant with a fantastic patio, amazing cocktails, and delicious wood-fired dishes. Great for a fun night out with friends or a date.
+    *   *Why it's "best":* Consistently great food and drinks, vibrant atmosphere, excellent service.
+*   **Corso:** From the same owners as Comal, Corso focuses on rustic Italian cuisine. Also very popular and well-regarded.
+    *   *Why it's "best":* Authentic Italian flavors, cozy ambiance, delicious pastas and pizzas.
+*   **Juanita &amp; Maude:** A more recent addition to the scene, offering creative and seasonal Californian dishes with a focus on local ingredients. Reservations recommended.
+    *   *Why it's "best":* Innovative menu, fresh flavors, intimate setting.
+*   **Lalime's:** A long-standing Berkeley favorite known for its Mediterranean-inspired California cuisine and elegant, comfortable atmosphere.
+    *   *Why it's "best":* Reliable quality, sophisticated menu, good for a slightly more formal but not stuffy dinner.
 
-**Excellent Mid-Range &amp; Diverse Options:**
+**3. For Unique &amp; Popular Experiences:**
 
-4.  **Gather:**
-    *   **Why it's great:** Farm-to-table, locally sourced ingredients with a focus on seasonal and often vegetarian-friendly dishes. Famous for their "vegan pizza." Stylish, modern interior.
-    *   **Cuisine:** Californian, American.
-    *   **Best for:** Delicious, healthy-ish food, good for vegetarians/vegans, modern ambiance.
+*   **The Cheese Board Pizza Collective:** Not your average pizza! They offer only two vegetarian pizza options per day (one for lunch, one for dinner) and sell them by the slice. It's an institution.
+    *   *Why it's "best":* Unique concept, incredibly delicious and fresh vegetarian pizzas, community feel (often with live music outside).
+*   **Great China:** A beloved spot for classic Cantonese and Sichuan dishes, famous for its Peking Duck. Can be bustling and loud, especially on weekends.
+    *   *Why it's "best":* Authentic flavors, excellent Peking Duck, generous portions.
+*   **Kiraku:** Fantastic Japanese Izakaya (small plates). Expect a wait, but it's worth it for the variety and quality of the dishes.
+    *   *Why it's "best":* Diverse and delicious menu, great for sharing, lively atmosphere.
 
-5.  **Ramen Shop:**
-    *   **Why it's great:** Often cited as having the best ramen in the Bay Area. Expect a wait, but the complex broths and fresh ingredients are worth it. They also have great appetizers and drinks.
-    *   **Cuisine:** Japanese (Ramen).
-    *   **Best for:** A fantastic bowl of ramen, casual but high-quality meal.
+**4. For Casual &amp; Delicious (but still high quality):**
 
-6.  **Ippuku:**
-    *   **Why it's great:** Authentic Japanese izakaya specializing in yakitori (grilled skewers) and other small plates. They also offer a fantastic omakase experience. More intimate than Ramen Shop.
-    *   **Cuisine:** Japanese Izakaya, Yakitori.
-    *   **Best for:** Authentic Japanese experience, small plates, Omakase.
+*   **Marufuku Ramen:** Often has a line out the door, and for good reason. Serves authentic Hakata-style tonkotsu ramen.
+    *   *Why it's "best":* Rich, flavorful broth, perfect noodles, consistently high quality.
+*   **Gather:** Known for its delicious, health-conscious, and often vegetarian/vegan-friendly options, with a focus on sustainable ingredients. Great pizzas too.
+    *   *Why it's "best":* Fresh ingredients, great options for various diets, vibrant atmosphere.
 
-7.  **Lalime's:**
-    *   **Why it's great:** A long-standing Berkeley favorite with a consistently excellent menu that blends Mediterranean and Californian influences. Cozy and sophisticated.
-    *   **Cuisine:** Mediterranean, Californian.
-    *   **Best for:** Reliable, consistently good food, date night.
+**To give you *my* "best" recommendation, tell me:**
 
-**Casual &amp; Unique Berkeley Favorites:**
+*   **What kind of cuisine are you in the mood for?**
+*   **What's your budget like?** (e.g., fine dining, mid-range, casual/cheap eats)
+*   **What's the occasion?** (e.g., romantic date, quick lunch, celebratory dinner, family meal)
+*   **What kind of atmosphere are you looking for?** (e.g., quiet, lively, cozy, elegant)
 
-8.  **The Cheese Board Pizza Collective / Cheese Board Bakery:**
-    *   **Why it's great:** A Berkeley institution. They serve only *one* type of vegetarian pizza daily, by the slice or whole pie, and it's always incredible. Live jazz music often accompanies your meal. The bakery side has amazing breads and pastries.
-    *   **Cuisine:** Vegetarian Pizza (unique toppings daily).
-    *   **Best for:** A unique Berkeley experience, delicious and creative vegetarian pizza.
-
-9.  **Gregoire's:**
-    *   **Why it's great:** Gourmet takeout with a limited, rotating menu that changes daily. French-inspired dishes that are surprisingly affordable for the quality. No seating, just walk up and order.
-    *   **Cuisine:** French, Gourmet Takeout.
-    *   **Best for:** High-quality, delicious takeout meal.
-
-10. **Saul's Delicatessen:**
-    *   **Why it's great:** A classic New York-style deli with fantastic pastrami, corned beef, matzo ball soup, and bagels. A comfortable, bustling atmosphere.
-    *   **Cuisine:** Jewish Deli.
-    *   **Best for:** Comfort food, brunch, authentic deli experience.
-
-**To help me narrow it down further for YOU, tell me:**
-
-*   **What kind of food are you in the mood for?** (e.g., Italian, Mexican, Asian, American, etc.)
-*   **What's your budget?** (e.g., cheap eats, mid-range, fine dining)
-*   **What's the occasion?** (e.g., casual lunch, romantic dinner, celebratory meal, quick bite)
-*   **What kind of atmosphere do you prefer?** (e.g., lively, quiet, trendy, traditional)</code></pre>
+Once I have a bit more info, I can narrow it down for you!</code></pre>
 </div>
 </div>
 <p>The LLM response looks too general; these recommendations might not be great for the average college student. One core aspect of prompt engineering is to provide more <strong>context</strong> to the prompt.</p>
@@ -892,7 +872,7 @@ However, I can give you a breakdown of highly acclaimed and beloved establishmen
 </ul>
 <p><strong>Note</strong>: Include linebreaks (with newline characters <code>'\n'</code>, or use multi-line strings) to delineate different aspects of the prompt.</p>
 <p>One way to provide detailed context is to just pass in a very, very long string as your prompt. See the example below. Note that the triple quotes (<code>"""</code>) allows you to specify a multi-line string, with line breaks.</p>
-<div id="de0773c1" class="cell" data-execution_count="6">
+<div id="124e3834" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> client.models.generate_content(</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    model<span class="op">=</span><span class="st">"gemini-2.5-flash"</span>,</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    contents<span class="op">=</span><span class="st">"""Imagine you are a UC Berkeley student talking to a fellow </span></span>
@@ -906,15 +886,17 @@ However, I can give you a breakdown of highly acclaimed and beloved establishmen
 <span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.text)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Hey, awesome question! When I'm starving late and broke, it's gotta be a toss-up between a couple of spots for the "best" bang for your buck after 9 PM.
+<pre><code>Hey, that's a tough one, there are so many good spots! But if I had to pick *the* best for cheap, late-night grub, considering all our requirements, it’s a pretty close call between a couple of places.
 
-*   **Gordo Taqueria (Telegraph Ave.):** Seriously, their super burritos are legendary, massive, and will set you back around $10-$12. They're typically open until 10 PM or 11 PM depending on the night. Perfect for fueling up after a long study sesh, and you can't beat the freshness or the salsa bar. Absolute Berkeley classic for a reason.
+*   **Artichoke Basille's Pizza:** Hands down. A giant slice (especially the famous Artichoke one!) is less than $10 and seriously fills you up. They're open super late, like until 3 AM on weekends, which is a lifesaver after a long study session or just hanging out.
+*   **Top Dog:** It’s iconic for a reason. Super cheap hot dogs and sausages, always quick, and open until midnight or later. You can grab two dogs with all the fixings for well under $15. Perfect for a quick, satisfying bite when you’re craving something savory.
+*   **La Burrita:** Honorable mention! Their burritos are huge, delicious, and definitely under $15. Plus, they’re open pretty late, usually until 10:30 or 11 PM. Great for a classic burrito fix.
 
-*   **Artichoke Basille's Pizza (Shattuck Ave.):** If you're craving a monster slice, this place is king. A single slice of their famous artichoke pizza is super filling, well under $10, and they're open until 2 AM or later on weekends. It's decadent, cheesy, and the perfect late-night grub when you need something quick and satisfying.</code></pre>
+Honestly, you can't go wrong with any of these for a late-night, budget-friendly meal! Go Bears!</code></pre>
 </div>
 </div>
 <p>Word count:</p>
-<div id="493b0b58" class="cell" data-execution_count="7">
+<div id="e6c4e47a" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># this uses regular expressions, which we don't cover in this course</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> split_into_words(any_chunk_of_text):</span>
@@ -924,7 +906,7 @@ However, I can give you a breakdown of highly acclaimed and beloved establishmen
 <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(split_into_words(response.text))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>151</code></pre>
+<pre><code>186</code></pre>
 </div>
 </div>
 </section>
@@ -933,7 +915,7 @@ However, I can give you a breakdown of highly acclaimed and beloved establishmen
 <p>As we’ve seen in this class time and time again, we want to <strong>reuse</strong> pieces of code, data, etc. The same is true of our prompts! A formatting context from one prompt may be very useful for an entirely different application, and it would be great to reuse the context string instead of duplicating string literals in different parts of our code.</p>
 <p>The Gemini API supports multiple argument types for <code>content</code>. For this course, we focus on providing additional context to our prompts by passing in a <strong>list of strings</strong> to <code>content</code>. Passing in a list of strings is comparable to separating context parts with linebreaks and allows us to reuse parts of our context.</p>
 <p>The below code specifies the same prompt as before but now with a list of strings passed into <code>content</code>. (Again, because LLMs are random text generators, the response may be different from before.)</p>
-<div id="bfe7159e" class="cell" data-execution_count="8">
+<div id="3da0aa4b" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>context_character <span class="op">=</span> <span class="st">"Imagine you are a UC Berkeley student talking to a fellow classmate."</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>context_format <span class="op">=</span> <span class="st">"Format your response as a bulleted list. Limit your response to 200 words."</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -951,19 +933,18 @@ However, I can give you a breakdown of highly acclaimed and beloved establishmen
 <span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.text)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Dude, finding a good, cheap spot that's open late is practically a sport here. But if you're looking for the best late-night grub under $15, here are my go-tos:
+<pre><code>Yo, fellow Bear! "Best" is always tough, but when it's after 9 pm and my wallet's looking thin, these are my absolute go-tos for a solid, cheap meal:
 
-*   **Top Dog (Durant or Shattuck):** Can't beat a classic. Cheap, delicious, and they're open until like 2 or 3 AM. Perfect for post-study munchies.
-*   **La Burrita (Telegraph Ave):** Solid, no-frills burritos, tacos, and quesadillas. Most stuff is well under $15 and they usually stay open till 10 or 11 PM. Super clutch when you're craving Mexican.
-*   **Sliver Pizzeria (Shattuck Ave):** Only one kind of slice a day, but it's always amazing and vegetarian-friendly. A massive slice is like $4-5, and they're open till 10 PM or later, especially on weekends.
-*   **Kingpin Donuts &amp; Cafe (Telegraph Ave):** Open 24/7, dude! Seriously, if you need a burger, fries, a breakfast plate, or just a donut and coffee at 3 AM, this is your spot. Everything's dirt cheap.</code></pre>
+*   **Top Dog (Durant Ave &amp; Shattuck Ave):** A true Berkeley institution. Seriously, grab a hot dog or a brat for under $5, and they're open until 2-3 AM. It's the ultimate quick, cheap, and satisfying fix after a late study sesh.
+*   **Artichoke Basille's Pizza (Telegraph Ave):** Their massive, cheesy slices are legendary. One slice is a meal, usually under $10, and they're open super late – often till 3 AM on weekends. Perfect for those deep-night pizza cravings.
+*   **Gypsy's Trattoria Italiana (Telegraph Ave):** If you want a full, hot, sit-down meal, their pasta bowls are incredibly filling and affordable (around $10-12). They're open until at least 10 PM most nights, sometimes later, making it great for a more substantial cheap late meal.</code></pre>
 </div>
 </div>
 <p>Word count:</p>
-<div id="79c79e20" class="cell" data-execution_count="9">
+<div id="c8979e0b" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(split_into_words(response.text))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
-<pre><code>169</code></pre>
+<pre><code>162</code></pre>
 </div>
 </div>
 <p>See the prompt engineering resources below for how to construct prompt for a variety of tasks.</p>
