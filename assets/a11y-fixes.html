@@ -48,5 +48,9 @@ var scrollableRegions = document.querySelectorAll(
              region.setAttribute('tabindex', '0');
         }
     });
+
+    // --- Specific Fix for the Last Two Known Violations ---
+    document.querySelector('#the-structure-of-kittens\\.html > pre')?.setAttribute('tabindex', '0');
+    document.querySelector('#ranges-are-sequences-of-consecutive-numbers > pre')?.setAttribute('tabindex', '0');
 });
 </script>
