@@ -53,13 +53,13 @@ Let's return to our American Community Survey (ACS) 2020 data. It shows educatio
 From the [ACS webpage](https://www.census.gov/programs-surveys/acs/methodology/design-and-methodology.html), the American Community Survey (ACS) is an ongoing monthly survey that collects detailed housing and socioeconomic data. 
 
 :::{style="text-align: center"}
-![ACS Household survey, which collects data on individual households.](images/acs_screenshot.png){#fig-inflation fig-align=center width=90%}
+![ACS Household survey, which collects data on individual households.](images/acs_screenshot.png){#fig-inflation fig-align=center width=90% fig-alt=""}
 :::
 
 There are (at least) two datasets collected by the ACS: A private dataset of survey responses by household (Figure 1), and a public-facing dataset of responses by geographic region. The variables for the geographic region, a larger unit of analysis, are constructed via aggregation and estimation (Figure 2):
 
 :::{style="text-align: center"}
-![ACS reported public data, which reports aggregated data of households across a geographic region.](images/acs_aggregate.png){#fig-inflation fig-align=center width=90%}
+![ACS reported public data, which reports aggregated data of households across a geographic region.](images/acs_aggregate.png){#fig-inflation fig-align=center width=90% fig-alt=""}
 :::
 
 Simple forms of aggregation are straightforward and involve counting and averaging---methods that are very possible using our limited Data Science toolkit thus far. However, disaggregation cannot be done without individual datapoints! There are various methods of estimating individuals from averages using statistics and distributions; we discuss this briefly in a few weeks, but you can take a statistics course for more information.
