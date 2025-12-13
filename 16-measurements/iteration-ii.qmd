@@ -66,7 +66,7 @@ For `not elt`, recall our discussion of **truthy values**:
 * Therefore for numeric values of `elt`, the only instance in which `not elt` will evaluate to `True` is when `elt` is `0`: `not elt` is `not 0` is `not False` is `True`.
 * All non-zero numeric values of `elt` will evaluate to `False`, e.g., when `elt` is `1`: `not elt` is `not 1` is `not True` is `False`.
 
-::: {.callout-note title="Explanation: Each Line Explained" collapse="true"}
+::: {.callout-note title="Explanation: Each Line Explained" collapse="true" role="button"}
 
 Each line explained:
 
@@ -98,7 +98,7 @@ triplets(make_array(0, 1, 0, 0, 1, 0, 0, 0, 0, 1))
 * (Line 12): Return the number of triples seen.
 :::
 
-::: {.callout-note title="Explanation: Array Example Explained" collapse="true"}
+::: {.callout-note title="Explanation: Array Example Explained" collapse="true" role="button"}
 
 ```{.python code-line-numbers="true"}
 def triplets(arr):
