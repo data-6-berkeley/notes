@@ -36,7 +36,9 @@ var scrollableRegions = document.querySelectorAll(
         '.ansi-escaped-output > pre, ' +
         
         // 5. The deepest container for error output (e.g., #ID > .cell-output-error... > .ansi-escaped-output > pre)
-        '.cell-output-error.cell-output > .ansi-escaped-output > pre'
+        '.cell-output-error.cell-output > .ansi-escaped-output > pre' +
+
+        'pre[id]' // Target any PRE tag that has an ID attribute (a common source of scrollability)
     );
 
     scrollableRegions.forEach(function(region) {
