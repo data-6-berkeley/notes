@@ -121,12 +121,14 @@ studio_distribution.show(6)
 ```
 
 ```{python}
+#| fig-alt: "Distribution of studios responsible for the highest grossing movies as of 2017"
 studio_distribution.barh('Studio')
 ```
 
 Let's revisualize this barchart to display just the top five studios. In the below code, note how `.take` is used with `np.arange`:
 
 ```{python}
+#| fig-alt: "Distribution of studios responsible for the top five highest grossing movies as of 2017"
 studio_distribution.sort('count', descending=True).take(np.arange(5)).barh('Studio')
 print("Five studios are largely responsible for the highest grossing movies")
 ```
@@ -157,12 +159,15 @@ min(ages), max(ages)
 
 If you want to make equally sized bins, `np.arange()` is a great tool to help you.
 ```{python}
+#| fig-alt: "Histogram of the age of the top grossing movies as of 2017 with equally sized bins and count on the y-axis"
 top_movies.hist('Age', bins = np.arange(0, 110, 10), unit = 'Year', density=False)
 ```
 
 ## Histograms: Density
 
 ```{python}
+#| fig-alt: "Histogram of the age of the top grossing movies as of 2017 with equally sized bins and 'Percent per Year' on the y-axis"
+
 # default is density=True
 top_movies.hist('Age', bins = np.arange(0, 110, 10), unit = 'Year')
 ```
@@ -196,6 +201,7 @@ binned_data
 ### Now, plot the histogram!
 
 ```{python}
+#| fig-alt: "Histogram of the age of the top grossing movies as of 2017 using custom bins"
 top_movies.hist('Age', bins = my_bins, unit = 'Year')
 ```
 
@@ -276,6 +282,7 @@ To check our work one last time, let's see if the numbers in the last column mat
 
 
 ```{python}
+#| fig-alt: "Histogram of the age of the top grossing movies as of 2017 using custom bins"
 top_movies.hist('Age', bins = my_bins, unit = 'Year')
 ```
 
@@ -296,6 +303,7 @@ flavor_table
 
 
 ```{python}
+#| fig-alt: "Distribution of ice cream flavors"
 flavor_table.barh('Flavor')
 ```
 
@@ -309,6 +317,7 @@ cone_average_price_table
 
 
 ```{python}
+#| fig-alt: "Plot with one categorical attribute and one numerical attribute."
 cone_average_price_table.barh('Flavor')
 ```
 
@@ -324,5 +333,6 @@ cones_pivot_table
 
 
 ```{python}
+#| fig-alt: "Plot with two categorical attributes."
 cones_pivot_table.barh('Color')
 ```

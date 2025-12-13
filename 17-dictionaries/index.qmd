@@ -116,7 +116,7 @@ dog
 dog.pop(4, None)
 ```
 
-Why? Find out the answer in the official [Python documentation on `pop`](https://docs.python.org/3/library/stdtypes.html#dict.pop)!
+Why? Find out the answer in the official [Python documentation](https://docs.python.org/3/library/stdtypes.html#dict.pop) on `pop`!
 
 ## Dictionary Properties
 

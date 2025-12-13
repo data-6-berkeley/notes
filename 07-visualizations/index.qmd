@@ -25,7 +25,7 @@ To better understand these principles in action, let's examine how humans have u
 What do you see when you look at this ancient artifact?
 
 :::{style="text-align: center"}
-![The World's First Map](images/world-map.jpg){#fig-ancient-map fig-align=center width=60%}
+![The World's First Map](images/world-map.jpg){#fig-ancient-map fig-align=center width=60% fig-alt=""}
 :::
 
 This is a map depicting the town of Konya, Turkey - supposedly the world's first map, dating back to approximately 6200 BC. Even in prehistoric times, humans recognized the power of visual representation to communicate spatial relationships and important information.
@@ -47,7 +47,7 @@ One of the most famous examples of data visualization directly saving human live
 **The Solution**: Dr. John Snow was skeptical of the miasma theory and suspected contaminated water. He created a revolutionary approach that became standard in epidemiology: **he drew a map**. 
 
 :::{style="text-align: center"}
-![John Snow's Cholera Map](images/john-snow-cholera-map.png){#fig-cholera-map fig-align=center width=70%}
+![John Snow's Cholera Map](images/john-snow-cholera-map.png){#fig-cholera-map fig-align=center width=70% fig-alt=""}
 :::
 
 **What the map revealed**:
@@ -64,7 +64,7 @@ One of the most famous examples of data visualization directly saving human live
 Florence Nightingale wasn't just a pioneering nurse, she was also an innovative data visualizer. During the Crimean War, she created what's now called a "rose diagram" or "coxcomb chart" to visualize the causes of death among British soldiers.
 
 :::{style="text-align: center"}
-![Florence Nightingale's Rose Diagram](images/florence-nightingale-rose.png){#fig-rose-diagram fig-align=center width=60%}
+![Florence Nightingale's Rose Diagram](images/florence-nightingale-rose.png){#fig-rose-diagram fig-align=center width=60% fig-alt=""}
 :::
 
 Her visualization revealed a shocking truth: more soldiers were dying from preventable diseases than from battle wounds. This wasn't just a pretty chart, it was a powerful argument that drove major reforms in military medical care. Nightingale understood that abstract statistics about mortality rates couldn't compete with the visual impact of her rose petals, where the size of each segment made the disparity impossible to ignore.
@@ -76,7 +76,7 @@ Her visualization revealed a shocking truth: more soldiers were dying from preve
 Not all data visualization involves charts and graphs. Maya Lin's Vietnam War Memorial in Washington DC proves that data can be deeply emotional and memorial, not just analytical.
 
 :::{style="text-align: center"}
-![Vietnam War Memorial](images/veitnam-war-memorial.png){#fig-vietnam-memorial fig-align=center width=70%}
+![Vietnam War Memorial](images/veitnam-war-memorial.png){#fig-vietnam-memorial fig-align=center width=70% fig-alt=""}
 :::
 
 Each of the 58,000+ names etched into the black granite represents one life lost. The chronological arrangement tells the story of the war's progression through time, while the reflective surface creates an intimate connection between viewers and the data you literally see yourself reflected among the names. This memorial demonstrates that the most powerful visualizations don't just inform us; they transform how we feel about the information.
@@ -86,7 +86,7 @@ Each of the 58,000+ names etched into the black granite represents one life lost
 During the COVID-19 pandemic, data visualization became part of daily life. Suddenly, everyone from epidemiologists to elementary school students was reading line charts showing case trends and interpreting what those curves meant for their communities.
 
 :::{style="text-align: center"}
-![COVID-19 Case Tracking](images/coivd.png){#fig-covid-dashboard fig-align=center width=80%}
+![COVID-19 Case Tracking](images/coivd.png){#fig-covid-dashboard fig-align=center width=80% fig-alt=""}
 :::
 
 Google's COVID tracking dashboard exemplified how modern visualization must be both accessible and updateable in real-time. The time series charts showed trends over months with clear visual indicators of peaks and valleys, but more importantly, they translated complex epidemiological data into something any concerned citizen could understand.

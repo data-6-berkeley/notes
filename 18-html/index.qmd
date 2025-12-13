@@ -28,7 +28,7 @@ Your screen should look (something) like this:
 
 
 :::{style="text-align: center"}
-![Kittens Dev Tools.](http://static.decontextualize.com/snaps/kittens-dev-tools.png){#fig-inflation fig-align=center width=100%}
+![Kittens Dev Tools.](http://static.decontextualize.com/snaps/kittens-dev-tools.png){#fig-inflation fig-align=center width=100% fig-alt=""}
 :::
 
 In the upper panel, you see the web page you're inspecting. In the lower panel, you see a version of the HTML source code, with little arrows next to some of the lines. (The little arrows allow you to collapse parts of the HTML source that are hierarchically related.) As you move your mouse over the elements in the top panel, different parts of the source code will be highlighted. Chrome is showing you which parts of the source code are causing which parts of the page to show up. Pretty spiffy!

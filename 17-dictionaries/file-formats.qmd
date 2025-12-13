@@ -16,7 +16,7 @@ We can use files to generate tables, or other useful data structures
 Files are often stored in **folders**.
 
 :::{style="text-align: center"}
-![Within files are folders. A file can be loaded into Python.](images/directory_structure.png){#fig-inflation fig-align=center width=90%}
+![Within files are folders. A file can be loaded into Python.](images/directory_structure.png){#fig-inflation fig-align=center width=90% fig-alt=""}
 :::
 
 We can categorize data as being in one of two broad categories:
@@ -71,7 +71,7 @@ In our example `pups` case, the `pups.csv` file is located in the `data` directo
 What kinds of data can’t be stored in a tabular format? Lots of things: music, videos, maps, etc. Graph data and hierarchical data, like family trees, might also be non-tabular.
 
 :::{style="text-align: center"}
-![A family tree graph structure. At the root is Grandma, who has children Dad and Aunt. Dad has children Brother and Me, and Aunt has children Cousin 1 and Cousin 2. Cousin 2 has a one child, Cousin 2 Jr.](images/trees.png){#fig-inflation fig-align=center width=75%}
+![A family tree graph structure. At the root is Grandma, who has children Dad and Aunt. Dad has children Brother and Me, and Aunt has children Cousin 1 and Cousin 2. Cousin 2 has a one child, Cousin 2 Jr.](images/trees.png){#fig-inflation fig-align=center width=75% fig-alt=""}
 :::
 
 ### JSON
