@@ -20,15 +20,23 @@
 
     // 1. Target all code blocks (Source Code and Code Output <pre> elements)
     // that are scrollable (have overflow:auto/scroll).
-    var scrollableRegions = document.querySelectorAll(
+var scrollableRegions = document.querySelectorAll(
         // 1. Source Code <pre>
         'div.sourceCode > pre, ' + 
         
-        // 2. Output <pre> inside a generic cell-output (Handles .cell-output-stdout.cell-output > pre and .cell-output-display.cell-output > pre)
+        // 2. Output <pre> inside a generic cell-output
         '.cell-output > pre, ' + 
         
-        // 3. The main DIV container for cell-output-display (Handles #ID > .cell-output-display.cell-output)
-        '.cell-output-display.cell-output'
+        // 3. The main DIV container for cell-output-display (from previous fix)
+        '.cell-output-display.cell-output, ' +
+        
+        // --- NEW SELECTORS TO CATCH ERROR AND ANSI BLOCKS ---
+        
+        // 4. PRE tag inside any ANSI-escaped output (e.g., .ansi-escaped-output > pre)
+        '.ansi-escaped-output > pre, ' +
+        
+        // 5. The deepest container for error output (e.g., #ID > .cell-output-error... > .ansi-escaped-output > pre)
+        '.cell-output-error.cell-output > .ansi-escaped-output > pre'
     );
 
     scrollableRegions.forEach(function(region) {
