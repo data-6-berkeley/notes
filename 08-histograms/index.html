@@ -43,7 +43,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-49e440d101fc6353fc588809fa46bb5e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-1b378448c96145639a45d0cc9a697531.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -84,6 +84,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 
 
 <link rel="stylesheet" href="../assets/styles.css">
+<link rel="stylesheet" href="../assets/custom-error-colors.css">
 </head>
 
 <body class="nav-sidebar docked quarto-light">
@@ -695,7 +696,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 We will not test the details of this method other than what is on the [Data 6 Python Reference](../reference.html), but we are sharing the full description here.
 
 
-::: {#fce086aa .cell execution_count=2}
+::: {#8e9d0118 .cell execution_count=2}
 ``` {.python .cell-code}
 Table.hist?
 ```
@@ -715,6 +716,62 @@ Table.hist?
 </section>
 
 </main> <!-- /main -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    // 1. Select the specific parent div within the callout header that has the 
+    //    collapse attributes (data-bs-toggle).
+    var calloutToggles = document.querySelectorAll(
+        '.callout-header[data-bs-toggle="collapse"]'
+    );
+
+    calloutToggles.forEach(function(toggle) {
+        // 2. Force the ARIA role to be 'button'
+        // This is crucial because a 'div' is not allowed to use aria-expanded.
+        toggle.setAttribute('role', 'button');
+        
+        // 3. Ensure it is keyboard-focusable (critical for accessibility)
+        // Bootstrap usually handles this, but forcing it is safer.
+        if (toggle.getAttribute('tabindex') === null) {
+             toggle.setAttribute('tabindex', '0');
+        }
+    });
+
+    // 1. Target all code blocks (Source Code and Code Output <pre> elements)
+    // that are scrollable (have overflow:auto/scroll).
+var scrollableRegions = document.querySelectorAll(
+        // 1. Source Code <pre>
+        'div.sourceCode > pre, ' + 
+        
+        // 2. Output <pre> inside a generic cell-output
+        '.cell-output > pre, ' + 
+        
+        // 3. The main DIV container for cell-output-display (from previous fix)
+        '.cell-output-display.cell-output, ' +
+        
+        // --- NEW SELECTORS TO CATCH ERROR AND ANSI BLOCKS ---
+        
+        // 4. PRE tag inside any ANSI-escaped output (e.g., .ansi-escaped-output > pre)
+        '.ansi-escaped-output > pre, ' +
+        
+        // 5. The deepest container for error output (e.g., #ID > .cell-output-error... > .ansi-escaped-output > pre)
+        '.cell-output-error.cell-output > .ansi-escaped-output > pre, ' +
+
+        'pre[id]' // Target any PRE tag that has an ID attribute (a common source of scrollability)
+    );
+
+    scrollableRegions.forEach(function(region) {
+        // Check if the element actually has horizontal overflow (is scrollable)
+        // Add tabindex="0" to make the region keyboard-focusable.
+        if (region.getAttribute('tabindex') === null || region.getAttribute('tabindex') === undefined) {
+             region.setAttribute('tabindex', '0');
+        }
+    });
+
+    // --- Specific Fix for the Last Two Known Violations ---
+    document.querySelector('#the-structure-of-kittens\\.html > pre')?.setAttribute('tabindex', '0');
+    document.querySelector('#ranges-are-sequences-of-consecutive-numbers > pre')?.setAttribute('tabindex', '0');
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

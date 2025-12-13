@@ -78,7 +78,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-49e440d101fc6353fc588809fa46bb5e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-1b378448c96145639a45d0cc9a697531.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -119,6 +119,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 
 
 <link rel="stylesheet" href="../assets/styles.css">
+<link rel="stylesheet" href="../assets/custom-error-colors.css">
 </head>
 
 <body class="nav-sidebar docked quarto-light">
@@ -666,7 +667,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <section id="challenge-question-triplets" class="level2">
 <h2 class="anchored" data-anchor-id="challenge-question-triplets">Challenge question: <code>triplets</code></h2>
 <p>What does the below code do?</p>
-<div id="81440017" class="cell" data-execution_count="2">
+<div id="8f903c92" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> triplets(arr):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    zeros_in_sequence <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    triplets_seen <span class="op">=</span> <span class="dv">0</span></span>
@@ -681,19 +682,19 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> triplets_seen</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Here are some example outputs:</p>
-<div id="d429e56b" class="cell" data-execution_count="3">
+<div id="3bc0233b" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>triplets(make_array(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>1</code></pre>
 </div>
 </div>
-<div id="8777e19e" class="cell" data-execution_count="4">
+<div id="663abe2f" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>triplets(make_array(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>1</code></pre>
 </div>
 </div>
-<div id="2b2695e9" class="cell" data-execution_count="5">
+<div id="c8a43e8f" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>triplets(make_array(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>3</code></pre>
@@ -897,6 +898,62 @@ indices    0   1   2   3   4   5   6   7   8   9</code></pre>
 </section>
 
 </main> <!-- /main -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    // 1. Select the specific parent div within the callout header that has the 
+    //    collapse attributes (data-bs-toggle).
+    var calloutToggles = document.querySelectorAll(
+        '.callout-header[data-bs-toggle="collapse"]'
+    );
+
+    calloutToggles.forEach(function(toggle) {
+        // 2. Force the ARIA role to be 'button'
+        // This is crucial because a 'div' is not allowed to use aria-expanded.
+        toggle.setAttribute('role', 'button');
+        
+        // 3. Ensure it is keyboard-focusable (critical for accessibility)
+        // Bootstrap usually handles this, but forcing it is safer.
+        if (toggle.getAttribute('tabindex') === null) {
+             toggle.setAttribute('tabindex', '0');
+        }
+    });
+
+    // 1. Target all code blocks (Source Code and Code Output <pre> elements)
+    // that are scrollable (have overflow:auto/scroll).
+var scrollableRegions = document.querySelectorAll(
+        // 1. Source Code <pre>
+        'div.sourceCode > pre, ' + 
+        
+        // 2. Output <pre> inside a generic cell-output
+        '.cell-output > pre, ' + 
+        
+        // 3. The main DIV container for cell-output-display (from previous fix)
+        '.cell-output-display.cell-output, ' +
+        
+        // --- NEW SELECTORS TO CATCH ERROR AND ANSI BLOCKS ---
+        
+        // 4. PRE tag inside any ANSI-escaped output (e.g., .ansi-escaped-output > pre)
+        '.ansi-escaped-output > pre, ' +
+        
+        // 5. The deepest container for error output (e.g., #ID > .cell-output-error... > .ansi-escaped-output > pre)
+        '.cell-output-error.cell-output > .ansi-escaped-output > pre, ' +
+
+        'pre[id]' // Target any PRE tag that has an ID attribute (a common source of scrollability)
+    );
+
+    scrollableRegions.forEach(function(region) {
+        // Check if the element actually has horizontal overflow (is scrollable)
+        // Add tabindex="0" to make the region keyboard-focusable.
+        if (region.getAttribute('tabindex') === null || region.getAttribute('tabindex') === undefined) {
+             region.setAttribute('tabindex', '0');
+        }
+    });
+
+    // --- Specific Fix for the Last Two Known Violations ---
+    document.querySelector('#the-structure-of-kittens\\.html > pre')?.setAttribute('tabindex', '0');
+    document.querySelector('#ranges-are-sequences-of-consecutive-numbers > pre')?.setAttribute('tabindex', '0');
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

@@ -78,7 +78,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-49e440d101fc6353fc588809fa46bb5e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-1b378448c96145639a45d0cc9a697531.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -122,6 +122,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 
 
 <link rel="stylesheet" href="../assets/styles.css">
+<link rel="stylesheet" href="../assets/custom-error-colors.css">
 </head>
 
 <body class="nav-sidebar docked quarto-light">
@@ -669,7 +670,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 
 
 <p>We work with the <code>schools</code> table from before.</p>
-<div id="92906b3c" class="cell" data-execution_count="1">
+<div id="f8c826cb" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datascience <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -734,7 +735,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="03a2b10f" class="cell" data-execution_count="2">
+<div id="efd27370" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>schools.labels</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>('Name', 'Institution', 'City', 'County', 'Enrollment', 'Founded')</code></pre>
@@ -790,7 +791,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="6a7a56aa" class="cell" data-execution_count="3">
+<div id="8e2dc19e" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>schools.select(</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Name"</span>, <span class="st">"Founded"</span>,</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Institution"</span>, <span class="st">"City"</span>,</span>
@@ -913,7 +914,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="45af4a38" class="cell" data-execution_count="4">
+<div id="31c93fab" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>schools.show(<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-border="1">
@@ -976,7 +977,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="ac3a2c87" class="cell" data-execution_count="5">
+<div id="21da2d1b" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>schools.where(<span class="st">"Institution"</span>, <span class="st">"UC"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <table class="dataframe caption-top table table-sm table-striped small" data-border="1">
@@ -1085,7 +1086,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="946fef65" class="cell" data-execution_count="6">
+<div id="457a0217" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>schools.where(<span class="st">"City"</span>, <span class="st">"Los Angeles"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <table class="dataframe caption-top table table-sm table-striped small" data-border="1">
@@ -1139,7 +1140,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="32a8e31a" class="cell" data-execution_count="7">
+<div id="a0ac08e7" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> schools.relabeled(<span class="st">"Name"</span>, <span class="st">"University"</span>)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>schools.show(<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
@@ -1201,7 +1202,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="d944c872" class="cell" data-execution_count="9">
+<div id="ba4e4863" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> schools.with_column(<span class="st">"University"</span>, schools.column(<span class="st">"Name"</span>)).drop(<span class="st">"Name"</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>schools.show(<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
@@ -1261,10 +1262,10 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <section id="exercise-5-debugging-show" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-5-debugging-show">Exercise 5: Debugging <code>show</code></h2>
 <p>The following cells exhibit a tricky, but potentially common bug. First, check out the Python Reference to understand what <code>show</code> does.</p>
-<div id="12272cff" class="cell" data-execution_count="10">
+<div id="249e807a" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> Table.read_table(<span class="st">'data/cal_unis.csv'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="b9a4b02b" class="cell" data-execution_count="11">
+<div id="ec532476" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> schools.show(<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-border="1">
@@ -1309,7 +1310,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <p>... (29 rows omitted)</p>
 </div>
 </div>
-<div id="03728e49" class="cell" data-execution_count="12">
+<div id="9ba55e50" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> schools.show(<span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
@@ -1324,7 +1325,7 @@ Cell <span class="ansi-green-fg">In[12], line 1</span>
 </div>
 <p>Like <code>print</code>, show is for display purposes. It does not return anything—i.e., it returns None. The second cell above therefore assigns schools to None!</p>
 <p>Despite this, <code>show</code>—just like <code>print</code>—is useful when you want to display intermediate output for debugging purposes.</p>
-<div id="3366ba56" class="cell" data-execution_count="13">
+<div id="1dc287dc" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> Table.read_table(<span class="st">'data/cal_unis.csv'</span>)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>schools.show(<span class="dv">3</span>) <span class="co"># just the first three rows</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>schools <span class="op">=</span> schools.relabeled(<span class="st">"Name"</span>, <span class="st">"University"</span>)</span>
@@ -1531,6 +1532,62 @@ Cell <span class="ansi-green-fg">In[12], line 1</span>
 </section>
 
 </main> <!-- /main -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    // 1. Select the specific parent div within the callout header that has the 
+    //    collapse attributes (data-bs-toggle).
+    var calloutToggles = document.querySelectorAll(
+        '.callout-header[data-bs-toggle="collapse"]'
+    );
+
+    calloutToggles.forEach(function(toggle) {
+        // 2. Force the ARIA role to be 'button'
+        // This is crucial because a 'div' is not allowed to use aria-expanded.
+        toggle.setAttribute('role', 'button');
+        
+        // 3. Ensure it is keyboard-focusable (critical for accessibility)
+        // Bootstrap usually handles this, but forcing it is safer.
+        if (toggle.getAttribute('tabindex') === null) {
+             toggle.setAttribute('tabindex', '0');
+        }
+    });
+
+    // 1. Target all code blocks (Source Code and Code Output <pre> elements)
+    // that are scrollable (have overflow:auto/scroll).
+var scrollableRegions = document.querySelectorAll(
+        // 1. Source Code <pre>
+        'div.sourceCode > pre, ' + 
+        
+        // 2. Output <pre> inside a generic cell-output
+        '.cell-output > pre, ' + 
+        
+        // 3. The main DIV container for cell-output-display (from previous fix)
+        '.cell-output-display.cell-output, ' +
+        
+        // --- NEW SELECTORS TO CATCH ERROR AND ANSI BLOCKS ---
+        
+        // 4. PRE tag inside any ANSI-escaped output (e.g., .ansi-escaped-output > pre)
+        '.ansi-escaped-output > pre, ' +
+        
+        // 5. The deepest container for error output (e.g., #ID > .cell-output-error... > .ansi-escaped-output > pre)
+        '.cell-output-error.cell-output > .ansi-escaped-output > pre, ' +
+
+        'pre[id]' // Target any PRE tag that has an ID attribute (a common source of scrollability)
+    );
+
+    scrollableRegions.forEach(function(region) {
+        // Check if the element actually has horizontal overflow (is scrollable)
+        // Add tabindex="0" to make the region keyboard-focusable.
+        if (region.getAttribute('tabindex') === null || region.getAttribute('tabindex') === undefined) {
+             region.setAttribute('tabindex', '0');
+        }
+    });
+
+    // --- Specific Fix for the Last Two Known Violations ---
+    document.querySelector('#the-structure-of-kittens\\.html > pre')?.setAttribute('tabindex', '0');
+    document.querySelector('#ranges-are-sequences-of-consecutive-numbers > pre')?.setAttribute('tabindex', '0');
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

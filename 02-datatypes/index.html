@@ -78,7 +78,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-49e440d101fc6353fc588809fa46bb5e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-1b378448c96145639a45d0cc9a697531.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -119,6 +119,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 
 
 <link rel="stylesheet" href="../assets/styles.css">
+<link rel="stylesheet" href="../assets/custom-error-colors.css">
 </head>
 
 <body class="nav-sidebar docked quarto-light">
@@ -778,20 +779,20 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </div>
 </div>
 <p><strong>Concatenation operation</strong>: The <code>+</code> operator works differently on string data types. Instead of adding numerically, it “adds textually,” which is more formally called <strong>concatenation</strong>:</p>
-<div id="819fa71e" class="cell" data-execution_count="1">
+<div id="58d6807e" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="op">+</span> <span class="dv">3</span>  <span class="co"># addition</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>5</code></pre>
 </div>
 </div>
-<div id="9cd9992f" class="cell" data-execution_count="2">
+<div id="34600646" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">'hello'</span> <span class="op">+</span> <span class="st">"donuts"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>'hellodonuts'</code></pre>
 </div>
 </div>
 <p><strong>Length function</strong>: There is one function not shown above that would be useful to you know, and that is <code>len(s)</code>, which takes a string argument and returns its length.</p>
-<div id="24b4f95f" class="cell" data-execution_count="3">
+<div id="c3bc372b" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">"hello world"</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(s)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -802,14 +803,14 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <section id="boolean-data-type" class="level2">
 <h2 class="anchored" data-anchor-id="boolean-data-type">Boolean Data Type</h2>
 <p>The Boolean data type (<code>bool</code>) has exactly two values: <code>True</code> and <code>False</code>. Note that boolean values are <em>not</em> strings!</p>
-<div id="d32adaba" class="cell" data-execution_count="4">
+<div id="a2350a49" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="va">True</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="85fdda5d" class="cell" data-execution_count="5">
+<div id="8f3cca9c" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="va">False</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(b)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
@@ -821,14 +822,14 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <section id="typecasting" class="level2">
 <h2 class="anchored" data-anchor-id="typecasting">Typecasting</h2>
 <p>We can also <strong>typecast</strong>, or convert values between data types. These typecasting functions take in one typed argument and return another typed argument, then return that value as a different type. The function name is generally the type. Note that data type conversion is only valid “when it makes sense.” We’ll talk about this more later.</p>
-<div id="520661e8" class="cell" data-execution_count="6">
+<div id="a88179bb" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">3</span>       <span class="co"># what type is x?</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">str</span>(x)      <span class="co"># returns a value of type string</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>'3'</code></pre>
 </div>
 </div>
-<div id="97ad9f04" class="cell" data-execution_count="7">
+<div id="49975f1e" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">"5"</span>       <span class="co"># what type is x?</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">float</span>(s)      <span class="co"># what type is returned?</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
@@ -847,6 +848,62 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </section>
 
 </main> <!-- /main -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    // 1. Select the specific parent div within the callout header that has the 
+    //    collapse attributes (data-bs-toggle).
+    var calloutToggles = document.querySelectorAll(
+        '.callout-header[data-bs-toggle="collapse"]'
+    );
+
+    calloutToggles.forEach(function(toggle) {
+        // 2. Force the ARIA role to be 'button'
+        // This is crucial because a 'div' is not allowed to use aria-expanded.
+        toggle.setAttribute('role', 'button');
+        
+        // 3. Ensure it is keyboard-focusable (critical for accessibility)
+        // Bootstrap usually handles this, but forcing it is safer.
+        if (toggle.getAttribute('tabindex') === null) {
+             toggle.setAttribute('tabindex', '0');
+        }
+    });
+
+    // 1. Target all code blocks (Source Code and Code Output <pre> elements)
+    // that are scrollable (have overflow:auto/scroll).
+var scrollableRegions = document.querySelectorAll(
+        // 1. Source Code <pre>
+        'div.sourceCode > pre, ' + 
+        
+        // 2. Output <pre> inside a generic cell-output
+        '.cell-output > pre, ' + 
+        
+        // 3. The main DIV container for cell-output-display (from previous fix)
+        '.cell-output-display.cell-output, ' +
+        
+        // --- NEW SELECTORS TO CATCH ERROR AND ANSI BLOCKS ---
+        
+        // 4. PRE tag inside any ANSI-escaped output (e.g., .ansi-escaped-output > pre)
+        '.ansi-escaped-output > pre, ' +
+        
+        // 5. The deepest container for error output (e.g., #ID > .cell-output-error... > .ansi-escaped-output > pre)
+        '.cell-output-error.cell-output > .ansi-escaped-output > pre, ' +
+
+        'pre[id]' // Target any PRE tag that has an ID attribute (a common source of scrollability)
+    );
+
+    scrollableRegions.forEach(function(region) {
+        // Check if the element actually has horizontal overflow (is scrollable)
+        // Add tabindex="0" to make the region keyboard-focusable.
+        if (region.getAttribute('tabindex') === null || region.getAttribute('tabindex') === undefined) {
+             region.setAttribute('tabindex', '0');
+        }
+    });
+
+    // --- Specific Fix for the Last Two Known Violations ---
+    document.querySelector('#the-structure-of-kittens\\.html > pre')?.setAttribute('tabindex', '0');
+    document.querySelector('#ranges-are-sequences-of-consecutive-numbers > pre')?.setAttribute('tabindex', '0');
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

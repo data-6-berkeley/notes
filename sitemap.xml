@@ -18,7 +18,7 @@
   </url>
   <url>
     <loc>https://data6.org/notes/08-histograms/exercises.html</loc>
-    <lastmod>2025-12-13T00:09:47.489Z</lastmod>
+    <lastmod>2025-12-13T03:18:58.396Z</lastmod>
   </url>
   <url>
     <loc>https://data6.org/notes/12-pivot-join/index.html</loc>
@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>https://data6.org/notes/21-genai/gemini.html</loc>
-    <lastmod>2025-12-02T02:40:24.082Z</lastmod>
+    <lastmod>2025-12-13T03:18:58.398Z</lastmod>
   </url>
   <url>
     <loc>https://data6.org/notes/04-tables/exercises.html</loc>
@@ -41,59 +41,55 @@
     <lastmod>2025-11-25T21:46:16.316Z</lastmod>
   </url>
   <url>
-    <loc>https://data6.org/notes/06-variables-ii/deprecated-eda.html</loc>
-    <lastmod>2025-11-25T21:46:16.296Z</lastmod>
-  </url>
-  <url>
-    <loc>https://data6.org/notes/06-variables-ii/deprecated-index.html</loc>
-    <lastmod>2025-11-25T21:46:16.296Z</lastmod>
+    <loc>https://data6.org/notes/06-variables-ii/index.html</loc>
+    <lastmod>2025-11-25T21:46:16.297Z</lastmod>
   </url>
   <url>
     <loc>https://data6.org/notes/01-intro/programming-basics.html</loc>
     <lastmod>2025-11-25T21:46:16.291Z</lastmod>
   </url>
   <url>
-    <loc>https://data6.org/notes/01-intro/deprecated-index.html</loc>
-    <lastmod>2025-11-25T21:46:16.289Z</lastmod>
+    <loc>https://data6.org/notes/01-intro/jupyter-notebook.html</loc>
+    <lastmod>2025-12-13T03:18:58.394Z</lastmod>
   </url>
   <url>
-    <loc>https://data6.org/notes/20-coding/index.html</loc>
+    <loc>https://data6.org/notes/20-coding/cohens-kappa.html</loc>
     <lastmod>2025-11-25T21:46:16.319Z</lastmod>
   </url>
   <url>
-    <loc>https://data6.org/notes/index.html</loc>
-    <lastmod>2025-11-25T21:46:16.339Z</lastmod>
-  </url>
-  <url>
-    <loc>https://data6.org/notes/10-boolean-predicates/boolean.html</loc>
+    <loc>https://data6.org/notes/10-boolean-predicates/index.html</loc>
     <lastmod>2025-11-25T21:46:16.315Z</lastmod>
   </url>
   <url>
-    <loc>https://data6.org/notes/07-visualizations/encoding.html</loc>
+    <loc>https://data6.org/notes/07-visualizations/index.html</loc>
+    <lastmod>2025-12-13T03:18:58.396Z</lastmod>
+  </url>
+  <url>
+    <loc>https://data6.org/notes/07-visualizations/charts.html</loc>
     <lastmod>2025-11-25T21:46:16.297Z</lastmod>
   </url>
   <url>
-    <loc>https://data6.org/notes/09-summary-statistics/index.html</loc>
+    <loc>https://data6.org/notes/09-summary-statistics/center-spread.html</loc>
     <lastmod>2025-11-25T21:46:16.315Z</lastmod>
   </url>
   <url>
-    <loc>https://data6.org/notes/05-variables/index.html</loc>
-    <lastmod>2025-11-25T21:46:16.296Z</lastmod>
+    <loc>https://data6.org/notes/05-variables/units-of-analysis.html</loc>
+    <lastmod>2025-12-13T03:18:58.395Z</lastmod>
   </url>
   <url>
-    <loc>https://data6.org/notes/reference.html</loc>
-    <lastmod>2025-11-25T21:46:16.339Z</lastmod>
+    <loc>https://data6.org/notes/14-conditionals/index.html</loc>
+    <lastmod>2025-11-25T21:46:16.316Z</lastmod>
   </url>
   <url>
-    <loc>https://data6.org/notes/17-dictionaries/file-formats.html</loc>
-    <lastmod>2025-12-13T00:09:47.490Z</lastmod>
+    <loc>https://data6.org/notes/17-dictionaries/index.html</loc>
+    <lastmod>2025-12-13T03:18:58.397Z</lastmod>
   </url>
   <url>
-    <loc>https://data6.org/notes/18-html/genius.html</loc>
-    <lastmod>2025-11-25T21:46:16.318Z</lastmod>
+    <loc>https://data6.org/notes/18-html/index.html</loc>
+    <lastmod>2025-12-13T03:18:58.398Z</lastmod>
   </url>
   <url>
-    <loc>https://data6.org/notes/16-measurements/iteration-ii.html</loc>
+    <loc>https://data6.org/notes/16-measurements/index.html</loc>
     <lastmod>2025-11-25T21:46:16.317Z</lastmod>
   </url>
   <url>
@@ -101,48 +97,44 @@
     <lastmod>2025-11-25T21:46:16.319Z</lastmod>
   </url>
   <url>
-    <loc>https://data6.org/notes/16-measurements/index.html</loc>
-    <lastmod>2025-11-25T21:46:16.317Z</lastmod>
+    <loc>https://data6.org/notes/16-measurements/iteration-ii.html</loc>
+    <lastmod>2025-12-13T01:54:02.762Z</lastmod>
   </url>
   <url>
-    <loc>https://data6.org/notes/18-html/index.html</loc>
-    <lastmod>2025-12-13T00:09:47.490Z</lastmod>
+    <loc>https://data6.org/notes/18-html/genius.html</loc>
+    <lastmod>2025-12-13T03:18:58.398Z</lastmod>
   </url>
   <url>
-    <loc>https://data6.org/notes/17-dictionaries/index.html</loc>
-    <lastmod>2025-11-25T21:46:16.318Z</lastmod>
+    <loc>https://data6.org/notes/17-dictionaries/file-formats.html</loc>
+    <lastmod>2025-12-13T03:18:58.397Z</lastmod>
   </url>
   <url>
-    <loc>https://data6.org/notes/14-conditionals/index.html</loc>
-    <lastmod>2025-11-25T21:46:16.316Z</lastmod>
+    <loc>https://data6.org/notes/reference.html</loc>
+    <lastmod>2025-11-25T21:46:16.339Z</lastmod>
   </url>
   <url>
-    <loc>https://data6.org/notes/05-variables/units-of-analysis.html</loc>
-    <lastmod>2025-12-13T00:09:47.489Z</lastmod>
+    <loc>https://data6.org/notes/05-variables/index.html</loc>
+    <lastmod>2025-12-13T03:18:58.394Z</lastmod>
   </url>
   <url>
-    <loc>https://data6.org/notes/09-summary-statistics/center-spread.html</loc>
+    <loc>https://data6.org/notes/09-summary-statistics/index.html</loc>
     <lastmod>2025-11-25T21:46:16.315Z</lastmod>
   </url>
   <url>
-    <loc>https://data6.org/notes/07-visualizations/charts.html</loc>
-    <lastmod>2025-11-25T21:46:16.297Z</lastmod>
+    <loc>https://data6.org/notes/07-visualizations/encoding.html</loc>
+    <lastmod>2025-12-13T03:18:58.396Z</lastmod>
   </url>
   <url>
-    <loc>https://data6.org/notes/07-visualizations/index.html</loc>
-    <lastmod>2025-12-13T00:09:47.489Z</lastmod>
-  </url>
-  <url>
-    <loc>https://data6.org/notes/10-boolean-predicates/index.html</loc>
+    <loc>https://data6.org/notes/10-boolean-predicates/boolean.html</loc>
     <lastmod>2025-11-25T21:46:16.315Z</lastmod>
   </url>
   <url>
-    <loc>https://data6.org/notes/20-coding/cohens-kappa.html</loc>
+    <loc>https://data6.org/notes/index.html</loc>
+    <lastmod>2025-11-25T21:46:16.339Z</lastmod>
+  </url>
+  <url>
+    <loc>https://data6.org/notes/20-coding/index.html</loc>
     <lastmod>2025-11-25T21:46:16.319Z</lastmod>
-  </url>
-  <url>
-    <loc>https://data6.org/notes/01-intro/jupyter-notebook.html</loc>
-    <lastmod>2025-12-13T00:09:47.488Z</lastmod>
   </url>
   <url>
     <loc>https://data6.org/notes/01-intro/index.html</loc>
@@ -150,11 +142,7 @@
   </url>
   <url>
     <loc>https://data6.org/notes/06-variables-ii/sample-population.html</loc>
-    <lastmod>2025-11-25T21:46:16.297Z</lastmod>
-  </url>
-  <url>
-    <loc>https://data6.org/notes/06-variables-ii/index.html</loc>
-    <lastmod>2025-11-25T21:46:16.297Z</lastmod>
+    <lastmod>2025-12-13T03:18:58.395Z</lastmod>
   </url>
   <url>
     <loc>https://data6.org/notes/15-iteration/practice.html</loc>

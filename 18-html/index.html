@@ -78,7 +78,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-49e440d101fc6353fc588809fa46bb5e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-1b378448c96145639a45d0cc9a697531.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -119,6 +119,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 
 
 <link rel="stylesheet" href="../assets/styles.css">
+<link rel="stylesheet" href="../assets/custom-error-colors.css">
 </head>
 
 <body class="nav-sidebar docked quarto-light">
@@ -710,10 +711,10 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </ul>
 <p>Your screen should look (something) like this:</p>
 <div style="text-align: center">
-<div id="fig-inflation" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-inflation" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-inflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="http://static.decontextualize.com/snaps/kittens-dev-tools.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
+<img src="http://static.decontextualize.com/snaps/kittens-dev-tools.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-inflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Kittens Dev Tools.
@@ -789,13 +790,13 @@ Figure&nbsp;1: Kittens Dev Tools.
 <li><strong>Parse</strong> the HTML by creating a representation of it in our program that we can manipulate with Python</li>
 </ol>
 <p>Let’s do the first task: <strong>scraping</strong>. It’s left to us to actually <em>get</em> the HTML from somewhere. In most cases, we’ll want to download the HTML directly from the actual web. For that, we’ll use the <code>get</code> method from the Python library <code>requests</code> (<a href="https://2.python-requests.org/en/master/">link</a>):</p>
-<div id="5d888004" class="cell" data-execution_count="1">
+<div id="f76c1cd1" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># first let's import the requests library</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>If it worked, you won’t get an error message.</p>
 <p>Now let’s use the “get” method to make an http request (the eponymous “requests”) to get the contents of kittens.html.</p>
-<div id="8f230dfb" class="cell" data-execution_count="2">
+<div id="51497214" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>resp <span class="op">=</span> requests.get(<span class="st">"http://static.decontextualize.com/kittens.html"</span>) </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>resp</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -804,14 +805,14 @@ Figure&nbsp;1: Kittens Dev Tools.
 </div>
 <p>Note that “resp” is a <strong>Python object</strong>, and not plain text. The HTTP Response Status Code 200 means “OK”—as in, the webpage was able to give us the data we wanted.</p>
 <p><em>Side note</em>: The “get” method makes things easy by guessing at the document’s character encoding. We’re not really going to talk about character encoding until next class, but since we can, let’s check this page’s encoding real quick.</p>
-<div id="82f7f655" class="cell" data-execution_count="3">
+<div id="12878cd4" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>resp.encoding</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>'UTF-8'</code></pre>
 </div>
 </div>
 <p>Okay, back on task. Now let’s create a <strong>string</strong> with the contents of the web page in text format we use the “text” method for this.</p>
-<div id="8cd2958c" class="cell" data-execution_count="4">
+<div id="b649f9bc" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>html_str <span class="op">=</span> resp.text</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>html_str</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
@@ -821,7 +822,7 @@ Figure&nbsp;1: Kittens Dev Tools.
 <p>That looks like a mess but it’s apparent that we’ve obtained the data as desired.</p>
 <p>If we wanted to “pretty print”, note that the <code>html_str</code> has a lot of whitespace: * <code>\t</code>: Tab * <code>\n</code>: Newline</p>
 <p>Calling <code>print</code> will render this whitespace in our display.</p>
-<div id="7988a54e" class="cell" data-execution_count="5">
+<div id="4ec1d25b" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pretty print</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(html_str)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -884,7 +885,7 @@ Figure&nbsp;1: Kittens Dev Tools.
 <p>What representation should we choose? As mentioned earlier, HTML is hard to parse by hand. (Don’t even try it. In particular, <a href="http://stackoverflow.com/a/1732454">don’t parse HTML with regular expressions</a>.)</p>
 <p><strong><a href="http://www.crummy.com/software/BeautifulSoup/">Beautiful Soup</a></strong> is a Python library that parses (even poorly formatted) HTML and allows us to extract and manipulate its contents. More specifically, it gives us some Python objects that we can call methods on to poke at the data contained therein. So instead of working with strings and bytes, we can work with Python objects, methods and data structures.</p>
 <p>Note that BeautifulSoup can parse any HTML that is provided as a string. We’ve already gotten an HTML string from our previous web request, so now we need to create a Beautiful Soup object from that data.</p>
-<div id="10bf4d7c" class="cell" data-execution_count="6">
+<div id="b16b2dfc" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># just run this cell</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -903,7 +904,7 @@ Figure&nbsp;1: Kittens Dev Tools.
 <section id="finding-a-tag-with-find" class="level3">
 <h3 class="anchored" data-anchor-id="finding-a-tag-with-find">Finding a tag with <code>find</code></h3>
 <p>As we’ve previously discussed, HTML documents are composed of tags. To represent this, Beautiful Soup has a type of value that represents tags. We can use the <code>.find()</code> method of the <code>BeautifulSoup</code> object to find a tag that matches a particular tag name. For example:</p>
-<div id="3c8d5ef2" class="cell" data-execution_count="7">
+<div id="95cc2f8c" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>h1_tag <span class="op">=</span> document.find(<span class="st">'h1'</span>)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(h1_tag)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
@@ -911,7 +912,7 @@ Figure&nbsp;1: Kittens Dev Tools.
 </div>
 </div>
 <p>A <code>Tag</code> object has several interesting attributes and methods. The <code>string</code> attribute of a <code>Tag</code> object, for example, returns a string representing that tag’s contents:</p>
-<div id="317a56d2" class="cell" data-execution_count="8">
+<div id="27bfdf74" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>h1_tag.string</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>'Kittens and the TV Shows They Love'</code></pre>
@@ -920,7 +921,7 @@ Figure&nbsp;1: Kittens Dev Tools.
 <p>You can access the attributes of a tag by treating the tag object as though it were a <strong>dictionary</strong>. To get the <strong>value</strong> associated with a particular <strong>attribute</strong>. Use the square-bracket syntax, providing the attribute name as key/string.</p>
 <section id="get-the-src-attribute-of-the-first-img-tag-in-the-document" class="level4">
 <h4 class="anchored" data-anchor-id="get-the-src-attribute-of-the-first-img-tag-in-the-document">Get the <code>src</code> attribute of the first <code>&lt;img&gt;</code> tag in the document</h4>
-<div id="a71142dd" class="cell" data-execution_count="9">
+<div id="ca697b29" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>img_tag <span class="op">=</span> document.find(<span class="st">'img'</span>)</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>img_tag[<span class="st">'src'</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
@@ -943,7 +944,7 @@ Figure&nbsp;1: Kittens Dev Tools.
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="cf9d19c0" class="cell" data-execution_count="10">
+<div id="582e580b" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>tag <span class="op">=</span> document.find(<span class="st">'span'</span>)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>tag.string</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
@@ -958,7 +959,7 @@ Figure&nbsp;1: Kittens Dev Tools.
 <section id="finding-multiple-tags-with-find_all" class="level3">
 <h3 class="anchored" data-anchor-id="finding-multiple-tags-with-find_all">Finding multiple tags with <code>find_all</code></h3>
 <p>It’s very often the case that we want to find not just one tag that matches particular criteria, but ALL tags matching those criteria. For that, we use the <code>.find_all()</code> method of the <code>BeautifulSoup</code> object. For example, to find all <code>h2</code> tags in the document:</p>
-<div id="a330206b" class="cell" data-execution_count="11">
+<div id="7fac98d0" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>h2_tags <span class="op">=</span> document.find_all(<span class="st">'h2'</span>)</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(h2_tags)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
@@ -967,7 +968,7 @@ Figure&nbsp;1: Kittens Dev Tools.
 </div>
 <p>But what’s in the Result Set?</p>
 <p>In order to find out, we’re going to need to use a loop. Specifically, a <strong>for</strong> loop.</p>
-<div id="8b0eb5db" class="cell" data-execution_count="12">
+<div id="2fa90686" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> tag <span class="kw">in</span> h2_tags:</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(tag.string) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -983,7 +984,7 @@ Monsieur Whiskeurs</code></pre>
 <p>For that, we use the <strong>optional</strong> <code>attrs</code> keyword argument. <code>attrs</code> is a dictionary that associates attribute names as keys and the desired attribute value as values.</p>
 <pre><code>document.find_all(tag_name, attrs=None)</code></pre>
 <p>To find all <code>span</code> tags with a <code>class</code> attribute of <code>lastcheckup</code>:</p>
-<div id="4ed78e1f" class="cell" data-execution_count="13">
+<div id="321671a1" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>checkup_tags <span class="op">=</span> document.find_all(<span class="st">'span'</span>, attrs<span class="op">=</span>{<span class="st">'class'</span>: <span class="st">'lastcheckup'</span>})</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> tag <span class="kw">in</span> checkup_tags:</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(tag.string)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1011,11 +1012,11 @@ Monsieur Whiskeurs: The X-Files, Fresh Prince</code></pre>
 <p>This kind of search is made easy by the fact that you can use <code>.find()</code> and <code>.find_all()</code> methods not just on the entire document, but on <strong>individual tags</strong>*. When you use these methods on tags, they search for matching tags that are specifically <strong>children of</strong> the tag that you call them on.</p>
 <hr>
 <p>In our kittens example, we can see that information about individual kittens is grouped together under <code>&lt;div&gt;</code> tags with a <code>class</code> attribute of <code>kitten</code>. So, to find a list of all <code>&lt;div&gt;</code> tags with <code>class</code> set to <code>kitten</code>, we might do this:</p>
-<div id="bc0c01f9" class="cell" data-execution_count="14">
+<div id="bfc02007" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>kitten_tags <span class="op">=</span> document.find_all(<span class="st">"div"</span>, attrs<span class="op">=</span>{<span class="st">"class"</span>: <span class="st">"kitten"</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now, we’ll loop over that list of tags and find, inside each of them, the <code>&lt;h2&gt;</code> tag that is its child:</p>
-<div id="c8bc98a4" class="cell" data-execution_count="15">
+<div id="52f60cf9" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># just run this cell</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> kitten_tag <span class="kw">in</span> kitten_tags:</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    h2_tag <span class="op">=</span> kitten_tag.find(<span class="st">'h2'</span>)</span>
@@ -1029,7 +1030,7 @@ Monsieur Whiskeurs</code></pre>
 <h4 class="anchored" data-anchor-id="string-method-demo-practice">String method demo practice</h4>
 <p>Now, we’ll go one extra step. Looping over all of the kitten tags, we’ll find not just the <code>&lt;h2&gt;</code> tag with the kitten’s name, but all <code>&lt;a&gt;</code> tags (which contain the names of the TV shows that we were looking for).</p>
 <p>_Note*: The list method <code>lst.append(elt)</code> returns nothing and directly modifies the original list <code>lst</code>, appending <code>elt</code> to the end. (This behavior is unlike <code>np.append</code>, which returns a new array.)</p>
-<div id="1ab725c8" class="cell" data-execution_count="16">
+<div id="df2676dd" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># trace through this code carefully!</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> kitten_tag <span class="kw">in</span> kitten_tags:</span>
@@ -1062,7 +1063,7 @@ Monsieur Whiskeurs: The X-Files, Fresh Prince</code></pre>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="2be35699" class="cell" data-execution_count="17">
+<div id="e5332b36" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> kitten_tag <span class="kw">in</span> kitten_tags:</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    h2_tag <span class="op">=</span> kitten_tag.find(<span class="st">'h2'</span>) <span class="co"># keep this to find the kittens</span></span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    checkup_tag <span class="op">=</span> kitten_tag.find(<span class="st">'span'</span>, attrs<span class="op">=</span>{<span class="st">'class'</span>: <span class="st">'lastcheckup'</span>})</span>
@@ -1094,7 +1095,7 @@ Monsieur Whiskeurs, 2013-11-02</code></pre>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="77f923a4" class="cell" data-execution_count="18">
+<div id="80b3322b" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> kitten_tag <span class="kw">in</span> kitten_tags:</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    h2_tag <span class="op">=</span> kitten_tag.find(<span class="st">'h2'</span>) <span class="co"># keep this to find the kittens</span></span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    url_strings <span class="op">=</span> []</span>
@@ -1118,7 +1119,7 @@ URLs: http://www.imdb.com/title/tt0106179/, http://www.imdb.com/title/tt0098800/
 <section id="find-sibling-tags-find_next_sibling" class="level3">
 <h3 class="anchored" data-anchor-id="find-sibling-tags-find_next_sibling">Find sibling tags: <code>find_next_sibling()</code></h3>
 <p>Often, the tags we’re looking for don’t have a distinguishing characteristic, like a <code>class</code> attribute, that allows us to find them using <code>.find()</code> and <code>.find_all()</code>, and the tags also aren’t in a parent-child relationship. This can be tricky! Take the following HTML snippet, for example:</p>
-<div id="833c3dda" class="cell" data-execution_count="19">
+<div id="df3eda08" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>cheese_html <span class="op">=</span> <span class="st">"""</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;h2&gt;Camembert&lt;/h2&gt;</span></span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;p&gt;A soft cheese made in the Camembert region of France.&lt;/p&gt;</span></span>
@@ -1130,7 +1131,7 @@ URLs: http://www.imdb.com/title/tt0106179/, http://www.imdb.com/title/tt0098800/
 <span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>cheese_document <span class="op">=</span> BeautifulSoup(cheese_html, <span class="st">"html.parser"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>If our task was to create a list of the name of the cheese followed by the description that follows in the <code>&lt;p&gt;</code> tag directly afterward, we’d be out of luck. Fortunately, Beautiful Soup has a <code>.find_next_sibling()</code> method, which allows us to search for the next tag that is a <em>sibling</em> of the tag you’re calling it on (i.e., the two tags share a parent), that also matches particular criteria. So, for example, to accomplish the task outlined above:</p>
-<div id="95d12ca4" class="cell" data-execution_count="20">
+<div id="7380af31" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>cheese_dict <span class="op">=</span> {}</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> h2_tag <span class="kw">in</span> cheese_document.find_all(<span class="st">'h2'</span>):</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    cheese_name <span class="op">=</span> h2_tag.string</span>
@@ -1152,18 +1153,18 @@ URLs: http://www.imdb.com/title/tt0106179/, http://www.imdb.com/title/tt0098800/
 <section id="tag-does-not-exist-with-find" class="level4">
 <h4 class="anchored" data-anchor-id="tag-does-not-exist-with-find">Tag does not exist with <code>find</code></h4>
 <p>You might, for example, search for a tag that doesn’t exist in the document:</p>
-<div id="0a1a4e98" class="cell" data-execution_count="21">
+<div id="22531083" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>footer_tag <span class="op">=</span> document.find(<span class="st">"footer"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Beautiful Soup doesn’t return an error if it can’t find the tag you want. Instead, it returns <code>None</code>:</p>
-<div id="2669d10f" class="cell" data-execution_count="22">
+<div id="823af0de" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(footer_tag)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>NoneType</code></pre>
 </div>
 </div>
 <p>If you try to call a method on the object that Beautiful Soup returned anyway, you might end up with an error like this:</p>
-<div id="df8c7e5b" class="cell" data-execution_count="23">
+<div id="673d4286" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>footer_tag.find(<span class="st">"p"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
@@ -1177,7 +1178,7 @@ Cell <span class="ansi-green-fg">In[23], line 1</span>
 </div>
 </div>
 <p>You might also inadvertently try to get an attribute of a tag that wasn’t actually found. You’ll get a similar error in that case:</p>
-<div id="93524767" class="cell" data-execution_count="24">
+<div id="3eabfb45" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>footer_tag[<span class="st">'title'</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
@@ -1196,7 +1197,7 @@ Cell <span class="ansi-green-fg">In[24], line 1</span>
 <section id="no-tags-exist-with-find_all" class="level3">
 <h3 class="anchored" data-anchor-id="no-tags-exist-with-find_all">No tags exist with <code>find_all</code></h3>
 <p>The <code>.find_all()</code> method will return an empty list if it doesn’t find any of the tags you wanted:</p>
-<div id="47d49047" class="cell" data-execution_count="25">
+<div id="5d613db7" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>footer_tags <span class="op">=</span> document.find_all(<span class="st">"footer"</span>)</span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(footer_tags)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1204,7 +1205,7 @@ Cell <span class="ansi-green-fg">In[24], line 1</span>
 </div>
 </div>
 <p>If you attempt to access one of the elements of this regardless…</p>
-<div id="779f9808" class="cell" data-execution_count="26">
+<div id="07e13500" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(footer_tags[<span class="dv">0</span>].string)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
@@ -1252,6 +1253,62 @@ Cell <span class="ansi-green-fg">In[26], line 1</span>
 </section>
 
 </main> <!-- /main -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    // 1. Select the specific parent div within the callout header that has the 
+    //    collapse attributes (data-bs-toggle).
+    var calloutToggles = document.querySelectorAll(
+        '.callout-header[data-bs-toggle="collapse"]'
+    );
+
+    calloutToggles.forEach(function(toggle) {
+        // 2. Force the ARIA role to be 'button'
+        // This is crucial because a 'div' is not allowed to use aria-expanded.
+        toggle.setAttribute('role', 'button');
+        
+        // 3. Ensure it is keyboard-focusable (critical for accessibility)
+        // Bootstrap usually handles this, but forcing it is safer.
+        if (toggle.getAttribute('tabindex') === null) {
+             toggle.setAttribute('tabindex', '0');
+        }
+    });
+
+    // 1. Target all code blocks (Source Code and Code Output <pre> elements)
+    // that are scrollable (have overflow:auto/scroll).
+var scrollableRegions = document.querySelectorAll(
+        // 1. Source Code <pre>
+        'div.sourceCode > pre, ' + 
+        
+        // 2. Output <pre> inside a generic cell-output
+        '.cell-output > pre, ' + 
+        
+        // 3. The main DIV container for cell-output-display (from previous fix)
+        '.cell-output-display.cell-output, ' +
+        
+        // --- NEW SELECTORS TO CATCH ERROR AND ANSI BLOCKS ---
+        
+        // 4. PRE tag inside any ANSI-escaped output (e.g., .ansi-escaped-output > pre)
+        '.ansi-escaped-output > pre, ' +
+        
+        // 5. The deepest container for error output (e.g., #ID > .cell-output-error... > .ansi-escaped-output > pre)
+        '.cell-output-error.cell-output > .ansi-escaped-output > pre, ' +
+
+        'pre[id]' // Target any PRE tag that has an ID attribute (a common source of scrollability)
+    );
+
+    scrollableRegions.forEach(function(region) {
+        // Check if the element actually has horizontal overflow (is scrollable)
+        // Add tabindex="0" to make the region keyboard-focusable.
+        if (region.getAttribute('tabindex') === null || region.getAttribute('tabindex') === undefined) {
+             region.setAttribute('tabindex', '0');
+        }
+    });
+
+    // --- Specific Fix for the Last Two Known Violations ---
+    document.querySelector('#the-structure-of-kittens\\.html > pre')?.setAttribute('tabindex', '0');
+    document.querySelector('#ranges-are-sequences-of-consecutive-numbers > pre')?.setAttribute('tabindex', '0');
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
