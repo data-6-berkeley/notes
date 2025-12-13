@@ -1,0 +1,34 @@
+/*
+ * Fix WCAG color contrast issues for ANSI colors in Quarto error outputs.
+ * These colors are high-contrast replacements for default ANSI light-colors.
+ */
+
+.cell-output-error .ansi-red-fg,
+.cell-output-error .ansi-bright-red-fg {
+  /* Replace light red/bright red with a darker, accessible red */
+  color: #B30000; /* Example: Dark Crimson */
+}
+
+.cell-output-error .ansi-green-fg,
+.cell-output-error .ansi-bright-green-fg {
+  /* Replace light green/bright green with a darker, accessible green */
+  color: #006600; /* Example: Dark Green */
+}
+
+.cell-output-error .ansi-cyan-fg,
+.cell-output-error .ansi-bright-cyan-fg {
+  /* Replace light cyan/bright cyan with a darker, accessible cyan/teal */
+  color: #006161; /* Example: Dark Teal */
+}
+
+/* Add other colors as needed if they also fail contrast checks */
+.cell-output-error .ansi-yellow-fg,
+.cell-output-error .ansi-bright-yellow-fg {
+  color: #886A00; /* Example: Dark Gold */
+}
+
+/* Ensure the general error text is also high contrast (often dark red/maroon) */
+.cell-output-error {
+  /* This targets the error text that isn't specifically ANSI colored */
+  color: #990000; /* Darker red for general error text */
+}

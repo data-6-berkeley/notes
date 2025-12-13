@@ -175,7 +175,9 @@ format:
   html:
     theme: cosmos
     fontsize: 1em
-    css: assets/styles.css
+    css: 
+      - assets/styles.css
+      - assets/custom-error-colors.css
     toc: true
     include-in-header:
       file: siteimprove.html
