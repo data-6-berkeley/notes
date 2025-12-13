@@ -69,7 +69,7 @@ Consider the chat prompt shown in the screenshot, as well as (the start of) the 
 
 
 :::{style="text-align: center"}
-![A screenshot of a Google Gemini chat conversation. Prompt is 'Explain how AI works in a few words.'. Response from Gemini chat is long but gets at the idea..](images/prompt-chat.png){#fig-inflation fig-align=center width=90%}
+![A screenshot of a Google Gemini chat conversation. Prompt is 'Explain how AI works in a few words.'. Response from Gemini chat is long but gets at the idea..](images/prompt-chat.png){#fig-inflation fig-align=center width=90% fig-alt=""}
 :::
 
 We define three pieces of terminology to describe  what is happening in the above screenshot:

@@ -16,7 +16,7 @@ The set of individuals we actually draw our sample from is the **sampling frame*
 ## Examples
 
 :::{style="text-align: center"}
-![A sampling frame may include individuals not in our population.](images/sampling-frame.png){#fig-inflation fig-align=center width=80%}
+![A sampling frame may include individuals not in our population.](images/sampling-frame.png){#fig-inflation fig-align=center width=80% fig-alt=""}
 :::
 
 | Target Population | Collected sample | 

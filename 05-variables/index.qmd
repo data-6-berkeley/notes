@@ -30,7 +30,7 @@ It is challenging to use another person's data! The concepts have already been o
 For now, we focus on variables as they exist in tabular data. In most of the tabular datasets we will examine, variables correspond to **columns** of features. Each row is a **record** of a datapoint, with different values of variables measured for that datapoint.
 
 :::{style="text-align: center"}
-![Variables as columns.](images/variable.png){#fig-inflation fig-align=center width=60%}
+![Variables as columns.](images/variable.png){#fig-inflation fig-align=center width=60% fig-alt=""}
 :::
 
 
@@ -49,7 +49,7 @@ Figure 2 has examples of each variable type.
 
 
 :::{style="text-align: center"}
-![Variable Types.](images/variable_types.png){#fig-inflation fig-align=center width=90%}
+![Variable Types.](images/variable_types.png){#fig-inflation fig-align=center width=90% fig-alt=""}
 :::
 
 _What do we mean by "meaningful" arithmetic?_ From [Stat 20](https://www.stat20.org/1-questions-and-data/02-taxonomy-of-data/notes):

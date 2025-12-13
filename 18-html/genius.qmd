@@ -29,7 +29,7 @@ To use the [Genius Lyrics](http://genius.com/) API, you need a special API key, 
 
 
 :::{style="text-align: center"}
-![Genius API webpage.](images/Genius-API.png){#fig-inflation fig-align=center width=90%}
+![Genius API webpage.](images/Genius-API.png){#fig-inflation fig-align=center width=90% fig-alt=""}
 :::
 
 You'll be prompted to sign up for [a Genius account](https://genius.com/signup_or_login), which is required to gain API access. Signing up for a Genius account is free and easy. You just need a Genius nickname (which must be one word), an email address, and a password.
@@ -38,7 +38,7 @@ Once you're signed in, you should be taken to [https://genius.com/api-clients](h
 
 
 :::{style="text-align: center"}
-![New API Client button.](images/Genius-New-API.png){#fig-inflation fig-align=center width=90%}
+![New API Client button.](images/Genius-New-API.png){#fig-inflation fig-align=center width=90% fig-alt=""}
 :::
 
 After clicking "New API Client," you'll be prompted to fill out a short form about the "App" that you need the Genius API for. You only need to fill out "App Name" and "App Website URL."
