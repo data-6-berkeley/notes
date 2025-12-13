@@ -182,5 +182,5 @@ format:
     include-in-header:
       file: siteimprove.html
     include-after-body: 
-      - assets/callout-aria-fix.html
+      - assets/a11y-fixes.html
 
