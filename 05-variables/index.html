@@ -669,7 +669,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <p>It is challenging to use another person’s data! The concepts have already been operationalized into variables; or the quality of data may vary widely; or multiple data sources may be needed to construct a reasonable first step towards a new research question. We’ll see more benefits and drawbacks in our examples this semester.</p>
 <p>For now, we focus on variables as they exist in tabular data. In most of the tabular datasets we will examine, variables correspond to <strong>columns</strong> of features. Each row is a <strong>record</strong> of a datapoint, with different values of variables measured for that datapoint.</p>
 <div style="text-align: center">
-<div id="fig-inflation" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="">
+<div id="fig-inflation" class="quarto-float quarto-figure quarto-figure-center anchored" alt="" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-inflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/variable.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%" alt="">
@@ -698,7 +698,7 @@ Figure&nbsp;1: Variables as columns.
 </ul>
 <p>Figure 2 has examples of each variable type.</p>
 <div style="text-align: center">
-<div id="fig-inflation" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="">
+<div id="fig-inflation" class="quarto-float quarto-figure quarto-figure-center anchored" alt="" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-inflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/variable_types.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%" alt="">
@@ -759,8 +759,8 @@ Figure&nbsp;2: Variable Types.
     });
 
     // Scrollable Region Accessibility Fix:
-    // Target ALL <pre> elements, as they are the source of the scrollable-region-focusable errors.
-    var scrollableRegions = document.querySelectorAll('pre'); 
+    var scrollableRegions = document.querySelectorAll('pre, ' + 
+            '.cell-output-display.cell-output'); 
 
     scrollableRegions.forEach(function(region) {
         // Check if the element has horizontal overflow (is scrollable).

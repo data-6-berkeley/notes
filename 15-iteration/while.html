@@ -678,7 +678,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <section id="repeat-while-the-condition-is-true." class="level2">
 <h2 class="anchored" data-anchor-id="repeat-while-the-condition-is-true.">Repeat while the condition is <code>True</code>.</h2>
 <p>On each iteration of the below <code>while</code> loop, we first check if <code>counter</code> is greater than zero. If it is, then we to run the loop body, which involves printing <code>counter</code>, then decrementing it. If it is not, we exit the loop.</p>
-<div id="d627bc25" class="cell" data-execution_count="2">
+<div id="68ad2f1e" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>counter <span class="op">=</span> <span class="dv">10</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> counter <span class="op">&gt;</span> <span class="dv">0</span>:</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(counter)</span>
@@ -702,7 +702,7 @@ blast off!</code></pre>
 <section id="for-loop-or-while-loop" class="level2">
 <h2 class="anchored" data-anchor-id="for-loop-or-while-loop">For Loop or While Loop?</h2>
 <p>Compare the two functions below. Why might they do the same thing?</p>
-<div id="6c341bbd" class="cell" data-execution_count="3">
+<div id="e1477e40" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sum_squares_for(values):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> v <span class="kw">in</span> values:</span>
@@ -714,7 +714,7 @@ blast off!</code></pre>
 <pre><code>50</code></pre>
 </div>
 </div>
-<div id="1f338e1c" class="cell" data-execution_count="4">
+<div id="0ab0b52e" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sum_squares_while(values):</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    i <span class="op">=</span> <span class="dv">0</span></span>
@@ -757,8 +757,8 @@ blast off!</code></pre>
     });
 
     // Scrollable Region Accessibility Fix:
-    // Target ALL <pre> elements, as they are the source of the scrollable-region-focusable errors.
-    var scrollableRegions = document.querySelectorAll('pre'); 
+    var scrollableRegions = document.querySelectorAll('pre, ' + 
+            '.cell-output-display.cell-output'); 
 
     scrollableRegions.forEach(function(region) {
         // Check if the element has horizontal overflow (is scrollable).

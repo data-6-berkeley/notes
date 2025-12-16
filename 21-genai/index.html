@@ -667,8 +667,8 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
     });
 
     // Scrollable Region Accessibility Fix:
-    // Target ALL <pre> elements, as they are the source of the scrollable-region-focusable errors.
-    var scrollableRegions = document.querySelectorAll('pre'); 
+    var scrollableRegions = document.querySelectorAll('pre, ' + 
+            '.cell-output-display.cell-output'); 
 
     scrollableRegions.forEach(function(region) {
         // Check if the element has horizontal overflow (is scrollable).

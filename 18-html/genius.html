@@ -696,7 +696,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <h2 class="anchored" data-anchor-id="genius-api-api-keys">Genius API: API Keys</h2>
 <p>To use the <a href="http://genius.com/">Genius Lyrics</a> API, you need a special API key, specifically a “Client Access Token”, which is kind of like a password. Many APIs require authentication keys to gain access to them. To get your necessary Genius API keys, you need to navigate to the following URL: <a href="https://genius.com/api-clients">https://genius.com/api-clients</a>.</p>
 <div style="text-align: center">
-<div id="fig-inflation" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="">
+<div id="fig-inflation" class="quarto-float quarto-figure quarto-figure-center anchored" alt="" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-inflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/Genius-API.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%" alt="">
@@ -710,7 +710,7 @@ Figure&nbsp;1: Genius API webpage.
 <p>You’ll be prompted to sign up for <a href="https://genius.com/signup_or_login">a Genius account</a>, which is required to gain API access. Signing up for a Genius account is free and easy. You just need a Genius nickname (which must be one word), an email address, and a password.</p>
 <p>Once you’re signed in, you should be taken to <a href="https://genius.com/api-clients">https://genius.com/api-clients</a>, where you need to click the button that says “New API Client.”</p>
 <div style="text-align: center">
-<div id="fig-inflation" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="">
+<div id="fig-inflation" class="quarto-float quarto-figure quarto-figure-center anchored" alt="" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-inflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/Genius-New-API.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%" alt="">
@@ -725,7 +725,7 @@ Figure&nbsp;2: New API Client button.
 <p>It doesn’t really matter what you type in. You can simply put “Data 6 Fall 2025 Project 2” for the “App Name” and the URL for our course website “https://data6.org/fa25/” for the “App Website URL.”</p>
 <p>When you click “Save,” you’ll be given a series of API Keys: a “Client ID” and a “Client Secret.” To generate your “Client Access Token,” which is the API key that we’ll be using in this notebook, you need to click “Generate Access Token”.</p>
 <p>Finally, you <em>could</em> copy and paste your “Client Access Token” into a Python cell and assign it to a name, <code>client_access_token</code>.</p>
-<div id="4276b6ae" class="cell" data-execution_count="1">
+<div id="4412b7ac" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># don't do this in practice</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>client_access_token <span class="op">=</span> <span class="st">"INSERT YOUR CLIENT ACCESS TOKEN IN THESE QUOTATION MARKS"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -749,10 +749,10 @@ Figure&nbsp;2: New API Client button.
 <li>Return to your assignment file by closing this tab. You should still have your original tab with your notebook in it; if not, navigate to the notebook from the course website.</li>
 </ol>
 <p>We can then import <code>my_client_access_token</code> into my notebook with <code>import api_key</code>.</p>
-<div id="f1116657" class="cell" data-execution_count="2">
+<div id="0bd5dd1e" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> api_key</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="6317d032" class="cell" data-execution_count="3">
+<div id="6e983c31" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>api_key.my_client_access_token</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>'MY_API_KEY'</code></pre>
@@ -760,7 +760,7 @@ Figure&nbsp;2: New API Client button.
 </div>
 <p>By importing this Python file as a module, we get access to <code>my_client_access_token</code> without ever having to explicitly type our secret API token into this notebook. If we were to publish this notebook to GitHub, then we can ignore or leave out the <code>api_key.py</code> file that actually contains the API token.</p>
 <p>Finally, we can load this value into our <code>client_access_token</code>:</p>
-<div id="9d00e700" class="cell" data-execution_count="4">
+<div id="8c3f86b6" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>client_access_token <span class="op">=</span> api_key.my_client_access_token</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
@@ -789,8 +789,8 @@ Figure&nbsp;2: New API Client button.
     });
 
     // Scrollable Region Accessibility Fix:
-    // Target ALL <pre> elements, as they are the source of the scrollable-region-focusable errors.
-    var scrollableRegions = document.querySelectorAll('pre'); 
+    var scrollableRegions = document.querySelectorAll('pre, ' + 
+            '.cell-output-display.cell-output'); 
 
     scrollableRegions.forEach(function(region) {
         // Check if the element has horizontal overflow (is scrollable).
