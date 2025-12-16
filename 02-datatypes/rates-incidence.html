@@ -937,7 +937,7 @@ window.Quarto = {
 </div>
 </div>
 <p>Let’s use <a href="#eq-p100k" class="quarto-xref">Equation&nbsp;3</a> to compute TB incidence in the U.S. in 2020:</p>
-<div id="468f4516" class="cell" data-execution_count="1">
+<div id="391c16d9" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">7173</span> <span class="op">/</span> <span class="dv">331501080</span> <span class="op">*</span> <span class="dv">100000</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>2.1637938555132306</code></pre>
@@ -945,7 +945,7 @@ window.Quarto = {
 </div>
 <p>Rounding to the nearest tenth spot, we get the original quoted rate, 2.2!</p>
 <p>The previous cell makes little sense without the prior intense exposition. Python names and comments make everything more understandable:</p>
-<div id="12bdd674" class="cell" data-execution_count="2">
+<div id="32cf996b" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># compute incidence as cases per 100k</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>pop_2020 <span class="op">=</span> <span class="dv">331501080</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>tb_2020 <span class="op">=</span> <span class="dv">7173</span></span>
@@ -990,40 +990,21 @@ This statement is a **summary** of the data: it compares three values, the incid
         }
     });
 
-    // 1. Target all code blocks (Source Code and Code Output <pre> elements)
-    // that are scrollable (have overflow:auto/scroll).
-var scrollableRegions = document.querySelectorAll(
-        // 1. Source Code <pre>
-        'div.sourceCode > pre, ' + 
-        
-        // 2. Output <pre> inside a generic cell-output
-        '.cell-output > pre, ' + 
-        
-        // 3. The main DIV container for cell-output-display (from previous fix)
-        '.cell-output-display.cell-output, ' +
-        
-        // --- NEW SELECTORS TO CATCH ERROR AND ANSI BLOCKS ---
-        
-        // 4. PRE tag inside any ANSI-escaped output (e.g., .ansi-escaped-output > pre)
-        '.ansi-escaped-output > pre, ' +
-        
-        // 5. The deepest container for error output (e.g., #ID > .cell-output-error... > .ansi-escaped-output > pre)
-        '.cell-output-error.cell-output > .ansi-escaped-output > pre, ' +
-
-        'pre[id]' // Target any PRE tag that has an ID attribute (a common source of scrollability)
-    );
+    // Scrollable Region Accessibility Fix:
+    // Target ALL <pre> elements, as they are the source of the scrollable-region-focusable errors.
+    var scrollableRegions = document.querySelectorAll('pre'); 
 
     scrollableRegions.forEach(function(region) {
-        // Check if the element actually has horizontal overflow (is scrollable)
-        // Add tabindex="0" to make the region keyboard-focusable.
-        if (region.getAttribute('tabindex') === null || region.getAttribute('tabindex') === undefined) {
-             region.setAttribute('tabindex', '0');
+        // Check if the element has horizontal overflow (is scrollable).
+        const hasScrollbar = region.scrollWidth > region.clientWidth || region.scrollHeight > region.clientHeight;
+
+        if (hasScrollbar) {
+            // If it is scrollable AND it doesn't already have tabindex="0" (or a different value)
+            if (region.getAttribute('tabindex') === null || region.getAttribute('tabindex') === undefined) {
+                    region.setAttribute('tabindex', '0');
+            }
         }
     });
-
-    // --- Specific Fix for the Last Two Known Violations ---
-    document.querySelector('#the-structure-of-kittens\\.html > pre')?.setAttribute('tabindex', '0');
-    document.querySelector('#ranges-are-sequences-of-consecutive-numbers > pre')?.setAttribute('tabindex', '0');
 });
 </script>
 <script id="quarto-html-after-body" type="application/javascript">

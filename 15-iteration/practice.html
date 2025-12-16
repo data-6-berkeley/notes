@@ -676,7 +676,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <section id="titanic-for-loop" class="level2">
 <h2 class="anchored" data-anchor-id="titanic-for-loop">Titanic: For loop</h2>
 <p>Consider the <code>titanic</code> dataset, which lists information about each passenger aboard the 1912 ocean liner. Read more about the <em>Titanic</em> and its tragic end on <a href="https://en.wikipedia.org/wiki/Titanic">Wikipedia</a>.</p>
-<div id="7c88274f" class="cell" data-execution_count="2">
+<div id="b1b30e08" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>titanic.show(<span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-border="1">
@@ -794,14 +794,14 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <section id="what-is-the-average-fare-of-the-first-class-passengers" class="level3">
 <h3 class="anchored" data-anchor-id="what-is-the-average-fare-of-the-first-class-passengers">What is the average fare of the first-class passengers?</h3>
 <p>We can compute this with Table methods:</p>
-<div id="289cb605" class="cell" data-execution_count="3">
+<div id="c64c5a16" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>titanic.where(<span class="st">"class"</span>, <span class="st">"First"</span>).column(<span class="st">"fare"</span>).mean()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>84.154687499999994</code></pre>
 </div>
 </div>
 <p>We can also compute this using a <code>for</code> loop and conditional statements. It is more verbose, but you will find it productive to compare and contrast the approaches.</p>
-<div id="1b79c58e" class="cell" data-execution_count="4">
+<div id="3fceabe7" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ticket_class <span class="op">=</span> titanic.column(<span class="st">"class"</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>ticket_fare <span class="op">=</span> titanic.column(<span class="st">"fare"</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -822,7 +822,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <section id="uc-berkeley-enrollment-while-loop" class="level2">
 <h2 class="anchored" data-anchor-id="uc-berkeley-enrollment-while-loop">UC Berkeley enrollment: While loop</h2>
 <p>The <a href="https://www.universityofcalifornia.edu/about-us/information-center/historical-enrollment">University of California</a> keeps historic data on the number of students enrolled at each of the UC campuses. The below <code>enrollments</code> table lists UC Berkeley undergraduate and graduate enrollments:</p>
-<div id="6965a1df" class="cell" data-execution_count="5">
+<div id="e407f900" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>enrollment.show(<span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-border="1">
@@ -867,7 +867,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </div>
 <section id="what-is-the-historic-year-where-uc-berkeley-enrolled-a-cumulative-number-of-1000000-undergraduates" class="level3">
 <h3 class="anchored" data-anchor-id="what-is-the-historic-year-where-uc-berkeley-enrolled-a-cumulative-number-of-1000000-undergraduates">What is the historic year where UC Berkeley enrolled a cumulative number of 1,000,000 undergraduates?</h3>
-<div id="d5963629" class="cell" data-execution_count="6">
+<div id="463abb6d" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>total_undergrads <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>year_index <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>undergrads <span class="op">=</span> enrollment.column(<span class="st">"undergrad"</span>)</span>
@@ -909,40 +909,21 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
         }
     });
 
-    // 1. Target all code blocks (Source Code and Code Output <pre> elements)
-    // that are scrollable (have overflow:auto/scroll).
-var scrollableRegions = document.querySelectorAll(
-        // 1. Source Code <pre>
-        'div.sourceCode > pre, ' + 
-        
-        // 2. Output <pre> inside a generic cell-output
-        '.cell-output > pre, ' + 
-        
-        // 3. The main DIV container for cell-output-display (from previous fix)
-        '.cell-output-display.cell-output, ' +
-        
-        // --- NEW SELECTORS TO CATCH ERROR AND ANSI BLOCKS ---
-        
-        // 4. PRE tag inside any ANSI-escaped output (e.g., .ansi-escaped-output > pre)
-        '.ansi-escaped-output > pre, ' +
-        
-        // 5. The deepest container for error output (e.g., #ID > .cell-output-error... > .ansi-escaped-output > pre)
-        '.cell-output-error.cell-output > .ansi-escaped-output > pre, ' +
-
-        'pre[id]' // Target any PRE tag that has an ID attribute (a common source of scrollability)
-    );
+    // Scrollable Region Accessibility Fix:
+    // Target ALL <pre> elements, as they are the source of the scrollable-region-focusable errors.
+    var scrollableRegions = document.querySelectorAll('pre'); 
 
     scrollableRegions.forEach(function(region) {
-        // Check if the element actually has horizontal overflow (is scrollable)
-        // Add tabindex="0" to make the region keyboard-focusable.
-        if (region.getAttribute('tabindex') === null || region.getAttribute('tabindex') === undefined) {
-             region.setAttribute('tabindex', '0');
+        // Check if the element has horizontal overflow (is scrollable).
+        const hasScrollbar = region.scrollWidth > region.clientWidth || region.scrollHeight > region.clientHeight;
+
+        if (hasScrollbar) {
+            // If it is scrollable AND it doesn't already have tabindex="0" (or a different value)
+            if (region.getAttribute('tabindex') === null || region.getAttribute('tabindex') === undefined) {
+                    region.setAttribute('tabindex', '0');
+            }
         }
     });
-
-    // --- Specific Fix for the Last Two Known Violations ---
-    document.querySelector('#the-structure-of-kittens\\.html > pre')?.setAttribute('tabindex', '0');
-    document.querySelector('#ranges-are-sequences-of-consecutive-numbers > pre')?.setAttribute('tabindex', '0');
 });
 </script>
 <script id="quarto-html-after-body" type="application/javascript">

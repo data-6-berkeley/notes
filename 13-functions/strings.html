@@ -693,7 +693,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <section id="string-method-table" class="level2">
 <h2 class="anchored" data-anchor-id="string-method-table">String method table</h2>
 <p>This is from our Data 6 Python Reference, appended with a few examples. Assume that the following string <code>s</code> has been assigned:</p>
-<div id="242001d2" class="cell" data-execution_count="1">
+<div id="fd11304e" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">'JuNiOR12'</span> <span class="co"># already run</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <table class="caption-top table">
@@ -752,21 +752,21 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <section id="join-and-split" class="level2">
 <h2 class="anchored" data-anchor-id="join-and-split"><code>join</code> and <code>split</code></h2>
 <p>With this understanding, in this section we clarify the <strong>return value</strong> of <code>split</code> (i.e., its output) and the <strong>input parameter</strong> of <code>join</code> (i.e., its input).</p>
-<div id="23bd7035" class="cell" data-execution_count="2">
+<div id="bc3567b5" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>retval <span class="op">=</span> s.split(<span class="st">'iO'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>retval</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>['JuN', 'R12']</code></pre>
 </div>
 </div>
-<div id="f179c57a" class="cell" data-execution_count="3">
+<div id="a4183515" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(retval)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>list</code></pre>
 </div>
 </div>
 <p>Once we cast <code>retval</code> (a list) into a NumPy array, we can use the <code>item</code> method to get different elements of the output of <code>split</code>.</p>
-<div id="caf72546" class="cell" data-execution_count="4">
+<div id="5be6c4dc" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datascience <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> make_array(retval)</span>
@@ -775,14 +775,14 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <pre><code>array([['JuN', 'R12']], dtype=object)</code></pre>
 </div>
 </div>
-<div id="9f861d25" class="cell" data-execution_count="5">
+<div id="199da1f5" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>arr.item(<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>'R12'</code></pre>
 </div>
 </div>
 <p>The <code>join</code> string method accepts a list or NumPy array as input. The following code casts the NumPy array to a list before calling join.</p>
-<div id="fa254a80" class="cell" data-execution_count="6">
+<div id="361d690f" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">' '</span>.join(make_array(<span class="st">'hello'</span>, <span class="st">'world'</span>, <span class="st">'!'</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>'hello world !'</code></pre>
@@ -793,7 +793,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <section id="application-adjusting-whitespace" class="level3">
 <h3 class="anchored" data-anchor-id="application-adjusting-whitespace">Application: Adjusting whitespace</h3>
 <p>As you are processing data, you will find it useful to split text according to, say, whitespace, or even commas (like in CSVs, or comma-separated values). You can split and rejoin this text, so that you can process the text inside tables or arrays before moving on.</p>
-<div id="460ef0cb" class="cell" data-execution_count="7">
+<div id="a63eee6e" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">"""Some long text string</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="st">separated by</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="st">many new lines</span></span>
@@ -803,13 +803,13 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <pre><code>'Some long text string\nseparated by\nmany new lines\n!'</code></pre>
 </div>
 </div>
-<div id="7c1a5f63" class="cell" data-execution_count="8">
+<div id="acda0290" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>s.split(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>['Some long text string', 'separated by', 'many new lines', '!']</code></pre>
 </div>
 </div>
-<div id="246428a1" class="cell" data-execution_count="9">
+<div id="44dab04a" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>Table().with_columns(<span class="st">"line"</span>,</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>s.split(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -863,40 +863,21 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
         }
     });
 
-    // 1. Target all code blocks (Source Code and Code Output <pre> elements)
-    // that are scrollable (have overflow:auto/scroll).
-var scrollableRegions = document.querySelectorAll(
-        // 1. Source Code <pre>
-        'div.sourceCode > pre, ' + 
-        
-        // 2. Output <pre> inside a generic cell-output
-        '.cell-output > pre, ' + 
-        
-        // 3. The main DIV container for cell-output-display (from previous fix)
-        '.cell-output-display.cell-output, ' +
-        
-        // --- NEW SELECTORS TO CATCH ERROR AND ANSI BLOCKS ---
-        
-        // 4. PRE tag inside any ANSI-escaped output (e.g., .ansi-escaped-output > pre)
-        '.ansi-escaped-output > pre, ' +
-        
-        // 5. The deepest container for error output (e.g., #ID > .cell-output-error... > .ansi-escaped-output > pre)
-        '.cell-output-error.cell-output > .ansi-escaped-output > pre, ' +
-
-        'pre[id]' // Target any PRE tag that has an ID attribute (a common source of scrollability)
-    );
+    // Scrollable Region Accessibility Fix:
+    // Target ALL <pre> elements, as they are the source of the scrollable-region-focusable errors.
+    var scrollableRegions = document.querySelectorAll('pre'); 
 
     scrollableRegions.forEach(function(region) {
-        // Check if the element actually has horizontal overflow (is scrollable)
-        // Add tabindex="0" to make the region keyboard-focusable.
-        if (region.getAttribute('tabindex') === null || region.getAttribute('tabindex') === undefined) {
-             region.setAttribute('tabindex', '0');
+        // Check if the element has horizontal overflow (is scrollable).
+        const hasScrollbar = region.scrollWidth > region.clientWidth || region.scrollHeight > region.clientHeight;
+
+        if (hasScrollbar) {
+            // If it is scrollable AND it doesn't already have tabindex="0" (or a different value)
+            if (region.getAttribute('tabindex') === null || region.getAttribute('tabindex') === undefined) {
+                    region.setAttribute('tabindex', '0');
+            }
         }
     });
-
-    // --- Specific Fix for the Last Two Known Violations ---
-    document.querySelector('#the-structure-of-kittens\\.html > pre')?.setAttribute('tabindex', '0');
-    document.querySelector('#ranges-are-sequences-of-consecutive-numbers > pre')?.setAttribute('tabindex', '0');
 });
 </script>
 <script id="quarto-html-after-body" type="application/javascript">

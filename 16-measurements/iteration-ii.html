@@ -667,7 +667,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <section id="challenge-question-triplets" class="level2">
 <h2 class="anchored" data-anchor-id="challenge-question-triplets">Challenge question: <code>triplets</code></h2>
 <p>What does the below code do?</p>
-<div id="8f903c92" class="cell" data-execution_count="2">
+<div id="fe799ef6" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> triplets(arr):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    zeros_in_sequence <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    triplets_seen <span class="op">=</span> <span class="dv">0</span></span>
@@ -682,19 +682,19 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> triplets_seen</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Here are some example outputs:</p>
-<div id="3bc0233b" class="cell" data-execution_count="3">
+<div id="a4d84a44" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>triplets(make_array(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>1</code></pre>
 </div>
 </div>
-<div id="663abe2f" class="cell" data-execution_count="4">
+<div id="bc141f25" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>triplets(make_array(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>1</code></pre>
 </div>
 </div>
-<div id="c8a43e8f" class="cell" data-execution_count="5">
+<div id="97a645c4" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>triplets(make_array(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>3</code></pre>
@@ -918,40 +918,21 @@ indices    0   1   2   3   4   5   6   7   8   9</code></pre>
         }
     });
 
-    // 1. Target all code blocks (Source Code and Code Output <pre> elements)
-    // that are scrollable (have overflow:auto/scroll).
-var scrollableRegions = document.querySelectorAll(
-        // 1. Source Code <pre>
-        'div.sourceCode > pre, ' + 
-        
-        // 2. Output <pre> inside a generic cell-output
-        '.cell-output > pre, ' + 
-        
-        // 3. The main DIV container for cell-output-display (from previous fix)
-        '.cell-output-display.cell-output, ' +
-        
-        // --- NEW SELECTORS TO CATCH ERROR AND ANSI BLOCKS ---
-        
-        // 4. PRE tag inside any ANSI-escaped output (e.g., .ansi-escaped-output > pre)
-        '.ansi-escaped-output > pre, ' +
-        
-        // 5. The deepest container for error output (e.g., #ID > .cell-output-error... > .ansi-escaped-output > pre)
-        '.cell-output-error.cell-output > .ansi-escaped-output > pre, ' +
-
-        'pre[id]' // Target any PRE tag that has an ID attribute (a common source of scrollability)
-    );
+    // Scrollable Region Accessibility Fix:
+    // Target ALL <pre> elements, as they are the source of the scrollable-region-focusable errors.
+    var scrollableRegions = document.querySelectorAll('pre'); 
 
     scrollableRegions.forEach(function(region) {
-        // Check if the element actually has horizontal overflow (is scrollable)
-        // Add tabindex="0" to make the region keyboard-focusable.
-        if (region.getAttribute('tabindex') === null || region.getAttribute('tabindex') === undefined) {
-             region.setAttribute('tabindex', '0');
+        // Check if the element has horizontal overflow (is scrollable).
+        const hasScrollbar = region.scrollWidth > region.clientWidth || region.scrollHeight > region.clientHeight;
+
+        if (hasScrollbar) {
+            // If it is scrollable AND it doesn't already have tabindex="0" (or a different value)
+            if (region.getAttribute('tabindex') === null || region.getAttribute('tabindex') === undefined) {
+                    region.setAttribute('tabindex', '0');
+            }
         }
     });
-
-    // --- Specific Fix for the Last Two Known Violations ---
-    document.querySelector('#the-structure-of-kittens\\.html > pre')?.setAttribute('tabindex', '0');
-    document.querySelector('#ranges-are-sequences-of-consecutive-numbers > pre')?.setAttribute('tabindex', '0');
 });
 </script>
 <script id="quarto-html-after-body" type="application/javascript">

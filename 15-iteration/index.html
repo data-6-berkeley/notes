@@ -703,7 +703,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <h3 class="anchored" data-anchor-id="iterate-over-an-existing-array">Iterate over an existing array</h3>
 <p><code>for</code>-loops iterate over sequences using an <strong>iteration variable.</strong> An array is a type of <strong>sequence</strong>; we discuss other types of sequences briefly below, like Python lists and strings.</p>
 <p>On each iteration of the below <code>for</code> loop, we re-assign the name <code>animal</code> to the next value of the array:</p>
-<div id="5db9f866" class="cell" data-execution_count="2">
+<div id="d687a3e7" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> make_array(<span class="st">'cat'</span>, <span class="st">'dog'</span>, <span class="st">'rabbit'</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> animal <span class="kw">in</span> arr:</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(animal)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -721,7 +721,7 @@ rabbit</code></pre>
 <p>To repeat a process <code>n</code> times, it is common to use the sequence <code>np.arange(n)</code> in the for statement. It is also common to use a very short name for each item. In our code we will use the name <code>i</code> to remind ourselves that it refers to an item.</p>
 </blockquote>
 <p>Below, we are just printing the same string repeatedly, so we do not use the short name <code>i</code> at all in our <strong>loop body</strong> (the indented part). Nevertheless, the <code>np.arange(5)</code> expression used in the <code>for</code> loop helps re-assign <code>i</code> to the values <code>0</code> through <code>4</code>.</p>
-<div id="5984f05e" class="cell" data-execution_count="3">
+<div id="5ce30a4c" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> np.arange(<span class="dv">5</span>):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"I love Data 6"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -737,7 +737,7 @@ I love Data 6</code></pre>
 <h3 class="anchored" data-anchor-id="declaring-and-accessing-values-outside-of-a-loop">Declaring and accessing values outside of a loop</h3>
 <p><code>for</code> loops have access to the overall scope of the environment, meaning that we can access names assigned outside of the loop. This property is particularly useful when we want to save some processing after each iteration of the loop.</p>
 <p>Now with <code>for</code> loops, we can write a new version of our average function. Below, the <code>+=</code> is shorthand in Python for adding the right-hand-side value to the left-hand-side name, then re-assigning the left-hand-side name to the result.</p>
-<div id="dab4b4b8" class="cell" data-execution_count="4">
+<div id="18542658" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> average(arr):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    count <span class="op">=</span> <span class="dv">0</span></span>
@@ -746,14 +746,14 @@ I love Data 6</code></pre>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        count <span class="op">+=</span> <span class="dv">1</span>        <span class="co"># shorthand: count = count + 1</span></span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> total<span class="op">/</span>count</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="09bdc207" class="cell" data-execution_count="5">
+<div id="18e5be0c" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> make_array(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>average(arr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>2.5</code></pre>
 </div>
 </div>
-<div id="c69fdac0" class="cell" data-execution_count="6">
+<div id="b3a1d05a" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>average(np.arange(<span class="dv">10</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>4.5</code></pre>
@@ -800,7 +800,7 @@ I love Data 6</code></pre>
 <blockquote class="blockquote">
 <p>The call <code>np.append(array_name, value)</code> evaluates to a new array that is <code>array_name</code> augmented by <code>value</code>. When you use <code>np.append</code>, keep in mind that all the entries of an array must have the same type.</p>
 </blockquote>
-<div id="157451c5" class="cell" data-execution_count="7">
+<div id="b7153cdc" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>base <span class="op">=</span> <span class="dv">100</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> make_array()</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> np.arange(<span class="dv">5</span>):</span>
@@ -853,7 +853,7 @@ I love Data 6</code></pre>
 <pre><code>|===|===|===|</code></pre>
 <p>You may also hear the phrase <strong>off-by-one</strong> errors used in reference to fencepost problems. Off-by-one errors occur when we fail to account for one of the boundaries (i.e., left or right fencepost).</p>
 <p>Suppose we wanted to revisit our previous example and print out the state of the <code>number</code> array every time it changes.</p>
-<div id="56b3f5a0" class="cell" data-execution_count="8">
+<div id="cec73147" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>base <span class="op">=</span> <span class="dv">100</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> make_array()</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> np.arange(<span class="dv">5</span>):</span>
@@ -879,7 +879,7 @@ I love Data 6</code></pre>
 <section id="iterating-over-other-sequence-types" class="level2">
 <h2 class="anchored" data-anchor-id="iterating-over-other-sequence-types">Iterating over other sequence types</h2>
 <p><code>for</code> loops can iterate over many types of sequences beyond NumPy arrays. Two common sequences are lists and strings. Here is an example of iterating over a string. Can you explain what the <code>unknown</code> function does?</p>
-<div id="f2e42ff2" class="cell" data-execution_count="9">
+<div id="ad4bc589" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> unknown(word):</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    output <span class="op">=</span> <span class="st">''</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> letter <span class="kw">in</span> word:</span>
@@ -955,40 +955,21 @@ I love Data 6</code></pre>
         }
     });
 
-    // 1. Target all code blocks (Source Code and Code Output <pre> elements)
-    // that are scrollable (have overflow:auto/scroll).
-var scrollableRegions = document.querySelectorAll(
-        // 1. Source Code <pre>
-        'div.sourceCode > pre, ' + 
-        
-        // 2. Output <pre> inside a generic cell-output
-        '.cell-output > pre, ' + 
-        
-        // 3. The main DIV container for cell-output-display (from previous fix)
-        '.cell-output-display.cell-output, ' +
-        
-        // --- NEW SELECTORS TO CATCH ERROR AND ANSI BLOCKS ---
-        
-        // 4. PRE tag inside any ANSI-escaped output (e.g., .ansi-escaped-output > pre)
-        '.ansi-escaped-output > pre, ' +
-        
-        // 5. The deepest container for error output (e.g., #ID > .cell-output-error... > .ansi-escaped-output > pre)
-        '.cell-output-error.cell-output > .ansi-escaped-output > pre, ' +
-
-        'pre[id]' // Target any PRE tag that has an ID attribute (a common source of scrollability)
-    );
+    // Scrollable Region Accessibility Fix:
+    // Target ALL <pre> elements, as they are the source of the scrollable-region-focusable errors.
+    var scrollableRegions = document.querySelectorAll('pre'); 
 
     scrollableRegions.forEach(function(region) {
-        // Check if the element actually has horizontal overflow (is scrollable)
-        // Add tabindex="0" to make the region keyboard-focusable.
-        if (region.getAttribute('tabindex') === null || region.getAttribute('tabindex') === undefined) {
-             region.setAttribute('tabindex', '0');
+        // Check if the element has horizontal overflow (is scrollable).
+        const hasScrollbar = region.scrollWidth > region.clientWidth || region.scrollHeight > region.clientHeight;
+
+        if (hasScrollbar) {
+            // If it is scrollable AND it doesn't already have tabindex="0" (or a different value)
+            if (region.getAttribute('tabindex') === null || region.getAttribute('tabindex') === undefined) {
+                    region.setAttribute('tabindex', '0');
+            }
         }
     });
-
-    // --- Specific Fix for the Last Two Known Violations ---
-    document.querySelector('#the-structure-of-kittens\\.html > pre')?.setAttribute('tabindex', '0');
-    document.querySelector('#ranges-are-sequences-of-consecutive-numbers > pre')?.setAttribute('tabindex', '0');
 });
 </script>
 <script id="quarto-html-after-body" type="application/javascript">

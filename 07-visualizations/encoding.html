@@ -649,7 +649,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <h2 class="anchored" data-anchor-id="basic-example-bar-charts">Basic Example: Bar Charts</h2>
 <p>In bar charts, <strong>length</strong> can visually encode a numerical variable.</p>
 <div style="text-align: center">
-<div id="fig-barchart" class="quarto-float quarto-figure quarto-figure-center anchored" alt="" data-fig-align="center">
+<div id="fig-barchart" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-barchart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/barchart.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="">
@@ -666,7 +666,7 @@ Figure&nbsp;1: Bar Chart Example
 <h2 class="anchored" data-anchor-id="multiple-variables-multiple-encodings">Multiple Variables, Multiple Encodings</h2>
 <p>Other visualizations can include multiple variables encoded simultaneously.</p>
 <div style="text-align: center">
-<div id="fig-scatter" class="quarto-float quarto-figure quarto-figure-center anchored" alt="" data-fig-align="center">
+<div id="fig-scatter" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-scatter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/scatter.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="">
@@ -709,7 +709,7 @@ Figure&nbsp;2: Multiple Encodings in a Scatter Plot
 <h2 class="anchored" data-anchor-id="matching-encodings-to-variable-types">Matching Encodings to Variable Types</h2>
 <p>As we learned when studying variables, different variable types (numerical vs.&nbsp;categorical, discrete vs.&nbsp;continuous, ordinal vs.&nbsp;nominal) have different properties. When creating visualizations, we need to match our encoding choices to these variable types.</p>
 <div style="text-align: center">
-<div id="fig-variable-types" class="quarto-float quarto-figure quarto-figure-center anchored" alt="" data-fig-align="center">
+<div id="fig-variable-types" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-variable-types-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/variable_types.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%" alt="">
@@ -771,7 +771,7 @@ Figure&nbsp;3: Recall: Variable Types
 <section id="whats-wrong-with-this" class="level3">
 <h3 class="anchored" data-anchor-id="whats-wrong-with-this">What’s Wrong with This?</h3>
 <div style="text-align: center">
-<div id="fig-cars-graph" class="quarto-float quarto-figure quarto-figure-center anchored" alt="" data-fig-align="center">
+<div id="fig-cars-graph" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-cars-graph-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/cars-graph.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="">
@@ -827,40 +827,21 @@ Figure&nbsp;4: Problematic Car Manufacturer Chart
         }
     });
 
-    // 1. Target all code blocks (Source Code and Code Output <pre> elements)
-    // that are scrollable (have overflow:auto/scroll).
-var scrollableRegions = document.querySelectorAll(
-        // 1. Source Code <pre>
-        'div.sourceCode > pre, ' + 
-        
-        // 2. Output <pre> inside a generic cell-output
-        '.cell-output > pre, ' + 
-        
-        // 3. The main DIV container for cell-output-display (from previous fix)
-        '.cell-output-display.cell-output, ' +
-        
-        // --- NEW SELECTORS TO CATCH ERROR AND ANSI BLOCKS ---
-        
-        // 4. PRE tag inside any ANSI-escaped output (e.g., .ansi-escaped-output > pre)
-        '.ansi-escaped-output > pre, ' +
-        
-        // 5. The deepest container for error output (e.g., #ID > .cell-output-error... > .ansi-escaped-output > pre)
-        '.cell-output-error.cell-output > .ansi-escaped-output > pre, ' +
-
-        'pre[id]' // Target any PRE tag that has an ID attribute (a common source of scrollability)
-    );
+    // Scrollable Region Accessibility Fix:
+    // Target ALL <pre> elements, as they are the source of the scrollable-region-focusable errors.
+    var scrollableRegions = document.querySelectorAll('pre'); 
 
     scrollableRegions.forEach(function(region) {
-        // Check if the element actually has horizontal overflow (is scrollable)
-        // Add tabindex="0" to make the region keyboard-focusable.
-        if (region.getAttribute('tabindex') === null || region.getAttribute('tabindex') === undefined) {
-             region.setAttribute('tabindex', '0');
+        // Check if the element has horizontal overflow (is scrollable).
+        const hasScrollbar = region.scrollWidth > region.clientWidth || region.scrollHeight > region.clientHeight;
+
+        if (hasScrollbar) {
+            // If it is scrollable AND it doesn't already have tabindex="0" (or a different value)
+            if (region.getAttribute('tabindex') === null || region.getAttribute('tabindex') === undefined) {
+                    region.setAttribute('tabindex', '0');
+            }
         }
     });
-
-    // --- Specific Fix for the Last Two Known Violations ---
-    document.querySelector('#the-structure-of-kittens\\.html > pre')?.setAttribute('tabindex', '0');
-    document.querySelector('#ranges-are-sequences-of-consecutive-numbers > pre')?.setAttribute('tabindex', '0');
 });
 </script>
 <script id="quarto-html-after-body" type="application/javascript">

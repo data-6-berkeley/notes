@@ -663,7 +663,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <h3 class="anchored" data-anchor-id="the-worlds-first-map-6200-bc">The World’s First Map (~6200 BC)</h3>
 <p>What do you see when you look at this ancient artifact?</p>
 <div style="text-align: center">
-<div id="fig-ancient-map" class="quarto-float quarto-figure quarto-figure-center anchored" alt="" data-fig-align="center">
+<div id="fig-ancient-map" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ancient-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/world-map.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%" alt="">
@@ -708,7 +708,7 @@ Figure&nbsp;1: The World’s First Map
 <p><strong>The Problem</strong>: In August 1854, a massive cholera outbreak was devastating the overcrowded SoHo district of London. Hundreds were dying within days, and the prevailing “miasma theory” blamed bad air and smells.</p>
 <p><strong>The Solution</strong>: Dr.&nbsp;John Snow was skeptical of the miasma theory and suspected contaminated water. He created a revolutionary approach that became standard in epidemiology: <strong>he drew a map</strong>.</p>
 <div style="text-align: center">
-<div id="fig-cholera-map" class="quarto-float quarto-figure quarto-figure-center anchored" alt="" data-fig-align="center">
+<div id="fig-cholera-map" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-cholera-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/john-snow-cholera-map.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="">
@@ -732,7 +732,7 @@ Figure&nbsp;2: John Snow’s Cholera Map
 <h3 class="anchored" data-anchor-id="florence-nightingales-rose-diagram-1850s">Florence Nightingale’s Rose Diagram (1850s)</h3>
 <p>Florence Nightingale wasn’t just a pioneering nurse, she was also an innovative data visualizer. During the Crimean War, she created what’s now called a “rose diagram” or “coxcomb chart” to visualize the causes of death among British soldiers.</p>
 <div style="text-align: center">
-<div id="fig-rose-diagram" class="quarto-float quarto-figure quarto-figure-center anchored" alt="" data-fig-align="center">
+<div id="fig-rose-diagram" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rose-diagram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/florence-nightingale-rose.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%" alt="">
@@ -752,7 +752,7 @@ Figure&nbsp;3: Florence Nightingale’s Rose Diagram
 <h3 class="anchored" data-anchor-id="maya-lins-vietnam-war-memorial-1982">Maya Lin’s Vietnam War Memorial (1982)</h3>
 <p>Not all data visualization involves charts and graphs. Maya Lin’s Vietnam War Memorial in Washington DC proves that data can be deeply emotional and memorial, not just analytical.</p>
 <div style="text-align: center">
-<div id="fig-vietnam-memorial" class="quarto-float quarto-figure quarto-figure-center anchored" alt="" data-fig-align="center">
+<div id="fig-vietnam-memorial" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-vietnam-memorial-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/veitnam-war-memorial.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="">
@@ -769,7 +769,7 @@ Figure&nbsp;4: Vietnam War Memorial
 <h3 class="anchored" data-anchor-id="covid-19-case-tracking-2022">COVID-19 Case Tracking (2022)</h3>
 <p>During the COVID-19 pandemic, data visualization became part of daily life. Suddenly, everyone from epidemiologists to elementary school students was reading line charts showing case trends and interpreting what those curves meant for their communities.</p>
 <div style="text-align: center">
-<div id="fig-covid-dashboard" class="quarto-float quarto-figure quarto-figure-center anchored" alt="" data-fig-align="center">
+<div id="fig-covid-dashboard" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-covid-dashboard-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/coivd.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="">
@@ -826,40 +826,21 @@ Figure&nbsp;5: COVID-19 Case Tracking
         }
     });
 
-    // 1. Target all code blocks (Source Code and Code Output <pre> elements)
-    // that are scrollable (have overflow:auto/scroll).
-var scrollableRegions = document.querySelectorAll(
-        // 1. Source Code <pre>
-        'div.sourceCode > pre, ' + 
-        
-        // 2. Output <pre> inside a generic cell-output
-        '.cell-output > pre, ' + 
-        
-        // 3. The main DIV container for cell-output-display (from previous fix)
-        '.cell-output-display.cell-output, ' +
-        
-        // --- NEW SELECTORS TO CATCH ERROR AND ANSI BLOCKS ---
-        
-        // 4. PRE tag inside any ANSI-escaped output (e.g., .ansi-escaped-output > pre)
-        '.ansi-escaped-output > pre, ' +
-        
-        // 5. The deepest container for error output (e.g., #ID > .cell-output-error... > .ansi-escaped-output > pre)
-        '.cell-output-error.cell-output > .ansi-escaped-output > pre, ' +
-
-        'pre[id]' // Target any PRE tag that has an ID attribute (a common source of scrollability)
-    );
+    // Scrollable Region Accessibility Fix:
+    // Target ALL <pre> elements, as they are the source of the scrollable-region-focusable errors.
+    var scrollableRegions = document.querySelectorAll('pre'); 
 
     scrollableRegions.forEach(function(region) {
-        // Check if the element actually has horizontal overflow (is scrollable)
-        // Add tabindex="0" to make the region keyboard-focusable.
-        if (region.getAttribute('tabindex') === null || region.getAttribute('tabindex') === undefined) {
-             region.setAttribute('tabindex', '0');
+        // Check if the element has horizontal overflow (is scrollable).
+        const hasScrollbar = region.scrollWidth > region.clientWidth || region.scrollHeight > region.clientHeight;
+
+        if (hasScrollbar) {
+            // If it is scrollable AND it doesn't already have tabindex="0" (or a different value)
+            if (region.getAttribute('tabindex') === null || region.getAttribute('tabindex') === undefined) {
+                    region.setAttribute('tabindex', '0');
+            }
         }
     });
-
-    // --- Specific Fix for the Last Two Known Violations ---
-    document.querySelector('#the-structure-of-kittens\\.html > pre')?.setAttribute('tabindex', '0');
-    document.querySelector('#ranges-are-sequences-of-consecutive-numbers > pre')?.setAttribute('tabindex', '0');
 });
 </script>
 <script id="quarto-html-after-body" type="application/javascript">
