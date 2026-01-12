@@ -79,6 +79,7 @@ In data science, boolean values can be used represent a binary variable:
 * etc.
 
 The datascience package automatically casts booleans into integers:
+
 * `True` is equivalent to `1`.
 * `False` is equivalent to `0`.
 

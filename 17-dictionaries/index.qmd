@@ -166,6 +166,7 @@ len(slang)
 ### Iterating over dictionaries with a `for` loop
 
 Like many other data structures we have seen, we can use `for` loops to iterate over dictionaries. We discuss several approaches below:
+
 * Using the dictionary methods `keys`, `values`, and `items`
 * Using the dictionary name itself
 

@@ -11,7 +11,7 @@ Large language models (LLMs) are the hallmark of machine learning models for Gen
 
 Refer to these slides for the high-level idea of how large language models probabilistically generate content:
 
-* [Lecture slides](hhttps://docs.google.com/presentation/d/1UmkNWQJdoEzsiM7H2DrkV9ghUkiaiN1o733bDC4uaYE/edit?usp=sharing)
+* [Lecture slides](https://docs.google.com/presentation/d/1UmkNWQJdoEzsiM7H2DrkV9ghUkiaiN1o733bDC4uaYE/edit?usp=sharing)
 
 Focus on:
 
