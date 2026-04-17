@@ -52,13 +52,13 @@ Figure 2 has examples of each variable type.
 ![Variable Types.](images/variable_types.png){#fig-inflation fig-align=center width=90% fig-alt=""}
 :::
 
-_What do we mean by "meaningful" arithmetic?_ From [Stat 20](https://www.stat20.org/1-questions-and-data/02-taxonomy-of-data/notes):
+_What do we mean by "meaningful" arithmetic?_ From [Stat 20](https://stat20.berkeley.edu/spring-2026/1-questions-and-data/02-taxonomy-of-data/notes.html):
 
 > What unites both types of numerical variables is that the magnitude of the numbers have meaning and you can perform mathematical operations on them and the result also has meaning. It is possible and meaningful to talk about the average air temperature across three locations. It is also possible and meaningful to talk about the sum total number of people across ten households.
 
 Just because a variable has numbers for values does not make it numerical. Consider phone area codes: Berkeley is 510, San Francisco is 415, Palo Alto is 650, and so on. While area codes are numbers, you can't do any arithmetic---comparative or otherwise---with them that "makes sense": what does it mean to add area codes? have one area code (650) that is "larger" than another (510)? Area codes are therefore an example of a nominal categorical variable.
 
-Variable types are closely tied to measurement. Consider the following survey item from [Stat 20](https://www.stat20.org/1-questions-and-data/02-taxonomy-of-data/notes), which describes a common ordinal categorical variable in opinion surveys:
+Variable types are closely tied to measurement. Consider the following survey item from [Stat 20](https://stat20.berkeley.edu/spring-2026/1-questions-and-data/02-taxonomy-of-data/notes.html), which describes a common ordinal categorical variable in opinion surveys:
 
 > Consider the question:“Do you strongly agree, agree, feel neutral about, disagree, or strongly disagree with the following statement: Dogs are better than cats?” When you record answers to this question, you’re recording measurements on a categorical variable that takes values “strongly agree”, “agree”, “neutral”, “disagree”, “strongly disagree”. Those are the levels of the categorical variable and they have a natural ordering: “strongly agree” is closer to “agree” than it is to “strongly disagree”.
 
@@ -69,7 +69,7 @@ _Aside: What is a discrete variable type, really?_ If you think about it deeply 
 ## External Reading
 
 * (mentioned in notes) "Chapter 4: From Concepts to Models." Elizabeth Heger Boyle, Deborah Carr, Benjamin Cornwell, Shelley Correll, Robert Crosnoe, Jeremy Freese, and Waters, Mary C. 2017. _The Art and Science of Social Research_. New York: W. W. Norton & Company.
-* (mentioned in notes) _Stat 20 notes_, [Taxonomy of Data](https://www.stat20.org/1-questions-and-data/02-taxonomy-of-data/notes)
+* (mentioned in notes) _Stat 20 notes_, [Taxonomy of Data](https://stat20.berkeley.edu/spring-2026/1-questions-and-data/02-taxonomy-of-data/notes.html)
 
 ## References
 
