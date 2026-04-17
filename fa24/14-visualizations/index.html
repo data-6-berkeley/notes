@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Application Programming Interfaces (APIs)</title>
+<title>Data Visualizations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +23,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../assets/favicon.ico" rel="icon">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-753e6901f2c274e22bcfe03890f74e5f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-49e440d101fc6353fc588809fa46bb5e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -80,7 +81,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <!--<script async src=”https://siteimproveanalytics.com/js/siteanalyze_6294756.js”></script>-->
 
 
-<link rel="stylesheet" href="../assets/styles.css">
+<link rel="stylesheet" href="../../assets/styles.css">
 </head>
 
 <body class="quarto-light">
@@ -95,9 +96,8 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-is-an-api" id="toc-what-is-an-api" class="nav-link active" data-scroll-target="#what-is-an-api">What is an API?</a></li>
-  <li><a href="#pros" id="toc-pros" class="nav-link" data-scroll-target="#pros">Pros</a></li>
-  <li><a href="#cons" id="toc-cons" class="nav-link" data-scroll-target="#cons">Cons</a></li>
+  <li><a href="#what-is-visualization" id="toc-what-is-visualization" class="nav-link active" data-scroll-target="#what-is-visualization">What is Visualization?</a></li>
+  <li><a href="#why-visualization-matters" id="toc-why-visualization-matters" class="nav-link" data-scroll-target="#why-visualization-matters">Why Visualization Matters</a></li>
   </ul>
 </nav>
     </div>
@@ -106,7 +106,8 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Application Programming Interfaces (APIs)</h1>
+<h1 class="title">Data Visualizations</h1>
+<p class="subtitle lead">Creating effective charts and plots</p>
 </div>
 
 
@@ -123,19 +124,35 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </header>
 
 
-<p>In the previous lessons, we collected internet data by scraping the surface of web pages. But there’s another way of collecting internet data called Application Programming Interfaces (APIs).</p>
-<section id="what-is-an-api" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-an-api">What is an API?</h2>
-<p>An API allows you to programmatically extract and interact with data under the hood of websites like Genius as well as other social networks, applications, and projects that make their data publicly available, such as Twitter and <a href="https://www.si.edu/openaccess/devtools">The Smithsonian museums</a>.</p>
-<p>An API is something that a project or company explicitly designs for data-sharing purposes. Why do companies or projects go to all this trouble? One reason is that it helps to promote the use and further development of an application and its data. For example, Twitter wants other developers to use, integrate, and build upon Twitter tools and data. The Twitter API is the main conduit by which these developers can do so.</p>
+<section id="what-is-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-visualization">What is Visualization?</h2>
+<p>Based on the definitions from leading researchers in the field, we can understand visualization through several key perspectives.</p>
+<p>Leading researchers Card, Mackinlay, and Shneiderman defined visualization in 1999 as <em>“the use of computer-generated, interactive, visual representations of data to amplify cognition.”</em></p>
+<p>This definition captures several key aspects:</p>
+<ul>
+<li><strong>Computer-generated</strong>: Modern visualization leverages computational power</li>
+<li><strong>Interactive</strong>: Users can explore and manipulate the visual representations</li>
+<li><strong>Visual representations</strong>: Data is translated into visual forms</li>
+<li><strong>Amplify cognition</strong>: The goal is to enhance human understanding</li>
+</ul>
+<p>Building on this modern definition, another foundational perspective comes from Jacques Bertin:</p>
+<blockquote class="blockquote">
+<p>“…finding the artificial memory that best supports our natural means of perception”</p>
+<p>— Bertin 1967</p>
+</blockquote>
+<p>Bertin emphasizes that visualization should work with, not against, human perceptual abilities.</p>
 </section>
-<section id="pros" class="level2">
-<h2 class="anchored" data-anchor-id="pros">Pros</h2>
-<p>Because APIs are explicitly designed for data-sharing purposes, working with an API is often a cleaner, more reliable, and more streamlined process than web scraping.</p>
-</section>
-<section id="cons" class="level2">
-<h2 class="anchored" data-anchor-id="cons">Cons</h2>
-<p>One of the downsides is that the companies and projects that design the APIs get to decide exactly which kinds of data they want to share. *Spoiler alert* They often choose not to share their most lucrative and desirable data. For example, the Genius API does not provide access to lyrics data, and the Twitter API does not provide free access to tweets more than 14 days in the past. To get that Twitter data, you need to <em>pay</em> for special API access.</p>
+<section id="why-visualization-matters" class="level2">
+<h2 class="anchored" data-anchor-id="why-visualization-matters">Why Visualization Matters</h2>
+<p>Understanding these definitions helps us appreciate why visualization has become so important.</p>
+<p>They say a picture is worth a thousand words… right? In data science, this couldn’t be more true.</p>
+<p>Visualization serves two primary purposes:</p>
+<ol type="1">
+<li><strong>To further your own understanding</strong> of your results</li>
+<li><strong>To communicate your results</strong> with others</li>
+</ol>
+<p>Creating good visualizations is both an art and a science - there is often no single “correct” way to visualize data. However, we must be careful and deliberate when creating visualizations, especially when they will be used in real-world decision-making.</p>
+<p>To better understand these principles in action, let’s examine how humans have used visual representations throughout history to understand and communicate complex information. The following examples demonstrate powerful uses of data visualization that have shaped our understanding of the world.</p>
 
 
 </section>
@@ -192,13 +209,14 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -549,7 +567,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../index.html">
+    <a class="nav-link" href="../../index.html">
 <p>Home / About / License</p>
 </a>
   </li>  

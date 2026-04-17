@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Inter-rater agreement and LLMs, continued</title>
+<title>Variable Types</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +23,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../assets/favicon.ico" rel="icon">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-753e6901f2c274e22bcfe03890f74e5f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-49e440d101fc6353fc588809fa46bb5e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -79,37 +80,8 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </script>
 <!--<script async src=”https://siteimproveanalytics.com/js/siteanalyze_6294756.js”></script>-->
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="../assets/styles.css">
+<link rel="stylesheet" href="../../assets/styles.css">
 </head>
 
 <body class="quarto-light">
@@ -124,21 +96,24 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#coding" id="toc-coding" class="nav-link active" data-scroll-target="#coding">Coding</a></li>
-  <li><a href="#inter-rater-agreement" id="toc-inter-rater-agreement" class="nav-link" data-scroll-target="#inter-rater-agreement">Inter-rater agreement</a></li>
-  <li><a href="#cohens-kappa" id="toc-cohens-kappa" class="nav-link" data-scroll-target="#cohens-kappa">Cohen’s Kappa</a>
+  <li><a href="#variable-types-vs.-data-types" id="toc-variable-types-vs.-data-types" class="nav-link active" data-scroll-target="#variable-types-vs.-data-types">Variable Types vs.&nbsp;Data Types</a></li>
+  <li><a href="#the-variable-type-hierarchy" id="toc-the-variable-type-hierarchy" class="nav-link" data-scroll-target="#the-variable-type-hierarchy">The Variable Type Hierarchy</a></li>
+  <li><a href="#numerical-variables-quantitative" id="toc-numerical-variables-quantitative" class="nav-link" data-scroll-target="#numerical-variables-quantitative">Numerical Variables (Quantitative)</a></li>
+  <li><a href="#categorical-variables-qualitative" id="toc-categorical-variables-qualitative" class="nav-link" data-scroll-target="#categorical-variables-qualitative">Categorical Variables (Qualitative)</a>
   <ul class="collapse">
-  <li><a href="#cohens-kappa-formula" id="toc-cohens-kappa-formula" class="nav-link" data-scroll-target="#cohens-kappa-formula">Cohen’s Kappa Formula</a></li>
-  <li><a href="#cohens-kappa-as-a-measure-of-inter-rater-agreement" id="toc-cohens-kappa-as-a-measure-of-inter-rater-agreement" class="nav-link" data-scroll-target="#cohens-kappa-as-a-measure-of-inter-rater-agreement">Cohen’s Kappa as a Measure of Inter-Rater Agreement</a></li>
-  <li><a href="#high-agreement-implies-more-reliability" id="toc-high-agreement-implies-more-reliability" class="nav-link" data-scroll-target="#high-agreement-implies-more-reliability">High agreement implies more reliability</a></li>
+  <li><a href="#ordinal-categorical-variables" id="toc-ordinal-categorical-variables" class="nav-link" data-scroll-target="#ordinal-categorical-variables">Ordinal Categorical Variables</a></li>
+  <li><a href="#nominal-categorical-variables" id="toc-nominal-categorical-variables" class="nav-link" data-scroll-target="#nominal-categorical-variables">Nominal Categorical Variables</a></li>
   </ul></li>
-  <li><a href="#example-binary-classification-with-grant-decisions" id="toc-example-binary-classification-with-grant-decisions" class="nav-link" data-scroll-target="#example-binary-classification-with-grant-decisions">Example: Binary Classification with Grant Decisions</a>
+  <li><a href="#common-pitfalls" id="toc-common-pitfalls" class="nav-link" data-scroll-target="#common-pitfalls">Common Pitfalls</a></li>
+  <li><a href="#quick-check-practice-problems" id="toc-quick-check-practice-problems" class="nav-link" data-scroll-target="#quick-check-practice-problems">Quick Check: Practice Problems</a></li>
+  <li><a href="#why-variable-types-matter-for-visualization" id="toc-why-variable-types-matter-for-visualization" class="nav-link" data-scroll-target="#why-variable-types-matter-for-visualization">Why Variable Types Matter for Visualization</a>
   <ul class="collapse">
-  <li><a href="#compute-observed-agreement-rate-p_o" id="toc-compute-observed-agreement-rate-p_o" class="nav-link" data-scroll-target="#compute-observed-agreement-rate-p_o">Compute observed agreement rate, <span class="math inline">\(p_o\)</span></a></li>
-  <li><a href="#compute-random-agreement-rate-p_e" id="toc-compute-random-agreement-rate-p_e" class="nav-link" data-scroll-target="#compute-random-agreement-rate-p_e">Compute random agreement rate, <span class="math inline">\(p_e\)</span></a></li>
-  <li><a href="#compute-cohens-kappa-kappa" id="toc-compute-cohens-kappa-kappa" class="nav-link" data-scroll-target="#compute-cohens-kappa-kappa">Compute Cohen’s Kappa, <span class="math inline">\(\kappa\)</span></a></li>
-  <li><a href="#determine-agreement-level" id="toc-determine-agreement-level" class="nav-link" data-scroll-target="#determine-agreement-level">Determine Agreement Level</a></li>
+  <li><a href="#for-numerical-variables" id="toc-for-numerical-variables" class="nav-link" data-scroll-target="#for-numerical-variables">For Numerical Variables:</a></li>
+  <li><a href="#for-categorical-variables" id="toc-for-categorical-variables" class="nav-link" data-scroll-target="#for-categorical-variables">For Categorical Variables:</a></li>
+  <li><a href="#mixed-types" id="toc-mixed-types" class="nav-link" data-scroll-target="#mixed-types">Mixed Types:</a></li>
   </ul></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key Takeaways</a></li>
+  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next Steps</a></li>
   </ul>
 </nav>
     </div>
@@ -147,7 +122,8 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Inter-rater agreement and LLMs, continued</h1>
+<h1 class="title">Variable Types</h1>
+<p class="subtitle lead">Understanding different types of data and how they affect visualization choices</p>
 </div>
 
 
@@ -164,167 +140,324 @@ window.Quarto = {
 </header>
 
 
-<section id="coding" class="level2">
-<h2 class="anchored" data-anchor-id="coding">Coding</h2>
-<p>The previous lecture discussed the idea of <strong>qualitative coding</strong>, central to analysis of open-ended text and other qualitative data.</p>
-<p><strong>Coding</strong>: The process of translating written or visual material into standardized categories. Codes are the labels/tags for chunks of text, <em>not</em> the programming/coding we’ve been doing so far.</p>
-<ol type="1">
-<li>First, determine codebook. This is the set of category labels for the data.</li>
-<li>Then, <strong>“code”</strong> the data. Apply codes (i.e., labels) to text.</li>
-</ol>
-</section>
-<section id="inter-rater-agreement" class="level2">
-<h2 class="anchored" data-anchor-id="inter-rater-agreement">Inter-rater agreement</h2>
-<p>However, the process of coding has historically needed to be completed (at least in part) by humans (i.e., <strong>raters</strong>).</p>
-<p>It’s likely that if codes for a very large dataset were generated by a single rater, there might be risks to <strong>validity</strong>. After all, perhaps this rater would have certain preconceptions that encoded their way into labels. If codes for a very large dataset were generated by multiple human raters, there might be risks to <strong>reliability</strong>, because different raters may code the same datapoint differently.</p>
-<p>In practice, multiple researchers collaborate to assign codes that are both reliable and valid:</p>
-<ol type="1">
-<li>Co-design codebook.</li>
-<li>Then, work together by labeling a subset of the data separately, then coming together to discuss agreement. This assesses reliability of labels.</li>
-<li>If they don’t agree, then they revisit the codebook and variable definitions, then try coding again. This also revisits the validity of coding process, potentially redefining how the concept is operationalized by the new codes (i.e., categories) in the variable codebook.</li>
-<li>Repeat this process until reasonable levels of agreement are reached.</li>
-<li>Then, independently code the rest of the dataset.</li>
-</ol>
-<p>How do researchers reach “reasonable levels of agreement”? One common measure is Cohen’s Kappa.</p>
-</section>
-<section id="cohens-kappa" class="level2">
-<h2 class="anchored" data-anchor-id="cohens-kappa">Cohen’s Kappa</h2>
-<p><strong>Cohen’s Kappa</strong> is a measure of agreement between two annotators (or raters) who independently classify items into categories.</p>
-<p>Unlike simple agreement rates (e.g., how often the two raters agree), <strong>Cohen’s Kappa adjusts for chance agreement,</strong> that is, how often two people might agree just by random guessing.</p>
-<section id="cohens-kappa-formula" class="level3">
-<h3 class="anchored" data-anchor-id="cohens-kappa-formula">Cohen’s Kappa Formula</h3>
-<p>Cohen’s kappa measures the agreement between two raters who each classify items into a set of mutually exclusive categories. Here is the mathematical notation of Cohen’s Kappa, denoted by the greek letter kappa (<span class="math inline">\(\kappa\)</span>):</p>
-<p><span class="math display">\[\kappa = \frac{p_o - p_e}{1 - p_e},\]</span></p>
-<p>where</p>
+<p>Suppose we have some data and want to create a visualization.</p>
+<p><strong>Question</strong>: How do we know what kind of visualization to create? 🤔</p>
+<p><strong>Answer</strong>: It depends on the type(s) of information we want to visualize.</p>
+<p>Bar charts work sometimes, but not all the time! The type of visualization you choose should match the type of data you’re working with.</p>
+<section id="variable-types-vs.-data-types" class="level2">
+<h2 class="anchored" data-anchor-id="variable-types-vs.-data-types">Variable Types vs.&nbsp;Data Types</h2>
+<div class="callout callout-style-default callout-important callout-titled" title="Don't Confuse These!">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Don’t Confuse These!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Variable types</strong> (what we’re discussing) are different from <strong>data types</strong> like <code>string</code>, <code>int</code>, <code>Table</code>, etc.</p>
 <ul>
-<li><span class="math inline">\(p_o\)</span> = observed agreement rate, i.e., how often the raters agreed</li>
-<li><span class="math inline">\(p_e\)</span> = random agreement rate, i.e., how likely the raters would agree just by randomly guessing.</li>
+<li><strong>Variable types</strong>: Describe the <em>nature</em> of the information</li>
+<li><strong>Data types</strong>: Describe how it’s stored in the computer</li>
 </ul>
-<p>We will not go into the probability in this course, but here’s the idea. Cohen’s Kappa is a <strong>ratio</strong> of two values:</p>
-<p><span class="math display">\[\kappa = \dfrac{\text{observed agreement rate} - \text{random agreement rate}}{1 - \text{random agreement rate}}\]</span></p>
-<p>If the raters are in complete agreement, then the observed agreement rate <span class="math inline">\(p_o = 1\)</span> and <span class="math inline">\(\kappa = 1\)</span>. If the raters only agree randomly, then the observed agreement rate <span class="math inline">\(p_o = p_e\)</span> and <span class="math inline">\(\kappa = 0\)</span>. It is possible for <span class="math inline">\(\kappa &lt; 0\)</span>, which can occur if there is really no relationship between the raters’ rankings, or if raters are biased in their ratings.</p>
+</div>
+</div>
+<p>When visualizing different variables (features) of a dataset, success depends heavily on understanding the <strong>types</strong> of variables you’re working with.</p>
+<p>Understanding variable types helps us make more informed decisions when creating visualizations.</p>
 </section>
-<section id="cohens-kappa-as-a-measure-of-inter-rater-agreement" class="level3">
-<h3 class="anchored" data-anchor-id="cohens-kappa-as-a-measure-of-inter-rater-agreement">Cohen’s Kappa as a Measure of Inter-Rater Agreement</h3>
-<p>Values of Cohen’s Kappa can be used to determine <strong>inter-rater agreement</strong>: i.e., how closely two raters agree. There are no agreed upon thresholds in the literature, but Landis and Koch (1981, <a href="https://doi.org/10.2307/2529310">DOI</a>) is the one used in the Ziems et al.&nbsp;(2024, <a href="https://doi.org/10.1162/coli_a_00502">DOI</a>) we study in this course.</p>
+<section id="the-variable-type-hierarchy" class="level2">
+<h2 class="anchored" data-anchor-id="the-variable-type-hierarchy">The Variable Type Hierarchy</h2>
+<pre><code>Variable Types
+├── Numerical (Quantitative)
+│   ├── Discrete
+│   └── Continuous
+└── Categorical (Qualitative)
+    ├── Ordinal
+    └── Nominal</code></pre>
+</section>
+<section id="numerical-variables-quantitative" class="level2">
+<h2 class="anchored" data-anchor-id="numerical-variables-quantitative">Numerical Variables (Quantitative)</h2>
+<p><strong>Definition</strong>: Variables where you can perform meaningful arithmetic operations.</p>
 <table class="caption-top table">
+<caption>Types of numerical variables</caption>
+<colgroup>
+<col style="width: 18%">
+<col style="width: 32%">
+<col style="width: 26%">
+<col style="width: 22%">
+</colgroup>
 <thead>
 <tr class="header">
-<th><span class="math inline">\(\kappa\)</span></th>
-<th>Agreement</th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Examples</strong></th>
+<th><strong>Source</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>&lt; 0</td>
-<td>no agreement</td>
+<td><strong>Discrete</strong></td>
+<td>Whole numbers that can be counted</td>
+<td>• Number of cars<br>• Number of Cal students<br>• Children in family</td>
+<td><strong>Counting</strong></td>
 </tr>
 <tr class="even">
-<td>0-0.2</td>
-<td>poor</td>
-</tr>
-<tr class="odd">
-<td>0.21-0.4</td>
-<td>fair</td>
-</tr>
-<tr class="even">
-<td>0.41-0.6</td>
-<td>moderate</td>
-</tr>
-<tr class="odd">
-<td>0.61 - 0.8</td>
-<td>good</td>
-</tr>
-<tr class="even">
-<td>0.8 - 1.0</td>
-<td>near-perfect agreement</td>
+<td><strong>Continuous</strong></td>
+<td>Numbers with decimals, often measured</td>
+<td>• Price ($19.99)<br>• Temperature (72.5°F)<br>• GPA (3.85)<br>• Weight (150.7 lbs)</td>
+<td><strong>Measuring</strong></td>
 </tr>
 </tbody>
 </table>
-<p>Again—these categories should be seen as just guidelines. In fact, Landis and Koch supplied no evidence to support it, basing it instead on personal opinion.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Key Point">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Key Point
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You <strong>can</strong> do arithmetic with numerical variables - adding, subtracting, finding averages, etc.</p>
+</div>
+</div>
 </section>
-<section id="high-agreement-implies-more-reliability" class="level3">
-<h3 class="anchored" data-anchor-id="high-agreement-implies-more-reliability">High agreement implies more reliability</h3>
-<p>Inter-rater agreement can also provide a measure of <strong>reliability</strong>. If we find that agreement levels are quite high among two raters, then it is likely that we can rely on the labels provided by these raters to do further analysis. By contrast, if we find that agreement levels are quite poor, then we cannot rely on the labels provided by the raters. In this case, we search for other means of labeling/coding the data, or we revisit our codebook/label categories and training process for labeling data.</p>
+<section id="categorical-variables-qualitative" class="level2">
+<h2 class="anchored" data-anchor-id="categorical-variables-qualitative">Categorical Variables (Qualitative)</h2>
+<p><strong>Definition</strong>: Variables that represent categories or groups where arithmetic doesn’t make sense.</p>
+<section id="ordinal-categorical-variables" class="level3">
+<h3 class="anchored" data-anchor-id="ordinal-categorical-variables">Ordinal Categorical Variables</h3>
+<ul>
+<li><strong>Description</strong>: Categories with some inherent ordering or ranking</li>
+<li><strong>Examples</strong>:
+<ul>
+<li>Highest degree attained (High School &lt; Bachelor’s &lt; Master’s &lt; PhD)</li>
+<li>Yelp stars (1 star &lt; 2 stars &lt; 3 stars &lt; 4 stars &lt; 5 stars)</li>
+<li>Class standing (Freshman &lt; Sophomore &lt; Junior &lt; Senior)</li>
+<li>Income bracket (Low &lt; Medium &lt; High)</li>
+</ul></li>
+<li><strong>Characteristics</strong>: There’s a meaningful “greater than” or “less than” relationship</li>
+</ul>
+</section>
+<section id="nominal-categorical-variables" class="level3">
+<h3 class="anchored" data-anchor-id="nominal-categorical-variables">Nominal Categorical Variables</h3>
+<ul>
+<li><strong>Description</strong>: Categories with no inherent ordering</li>
+<li><strong>Examples</strong>:
+<ul>
+<li>Colors (red, blue, green)</li>
+<li>Political affiliation (Democrat, Republican, Independent)</li>
+<li>Country of origin (USA, Canada, Mexico)</li>
+<li>Favorite programming language (Python, R, Java)</li>
+</ul></li>
+<li><strong>Characteristics</strong>: No meaningful ordering - one category isn’t “greater” than another</li>
+</ul>
+<p><strong>Key Point</strong>: You cannot do arithmetic with categorical variables.</p>
 </section>
 </section>
-<section id="example-binary-classification-with-grant-decisions" class="level2">
-<h2 class="anchored" data-anchor-id="example-binary-classification-with-grant-decisions">Example: Binary Classification with Grant Decisions</h2>
-<p><strong>In general, we will </strong>not** ask you to manually compute Cohen’s Kappa**. We will see that there is a convenient Python library called sklearn for computing Cohen’s Kappa in practice. However, it is good to first internalize this idea of “random chance” with the manual computation below. You will see the library implementation in lab.</p>
-<p>In this task, we will manually compute Cohen’s Kappa on a binary labeling task. This question just uses very simple Python (like a calculator!), but make sure you understand how we compute each part of the Cohen’s Kappa formula. This example is adapted from the <a href="https://en.wikipedia.org/wiki/Cohen%27s_kappa">Wikipedia article on Cohen’s Kappa</a>.</p>
-<p>Suppose that you were analyzing data related to a group of 50 people applying for a grant, each of whom submitted a grant proposal. Each grant proposal was read by a panel of two readers and each reader decides either “Yes” or “No” to the proposal. Suppose the summary of readers A and B’s decisions were as follows:</p>
+<section id="common-pitfalls" class="level2">
+<h2 class="anchored" data-anchor-id="common-pitfalls">Common Pitfalls</h2>
+<div class="callout callout-style-default callout-warning callout-titled" title="Warning: Numbers Don't Always Mean Numerical!">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Warning: Numbers Don’t Always Mean Numerical!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Just because a variable has numbers for values does not make it numerical.</p>
+</div>
+</div>
+<p><strong>Example: Area Codes</strong></p>
 <table class="caption-top table">
+<caption>Why area codes are categorical, not numerical</caption>
 <thead>
 <tr class="header">
-<th></th>
-<th>B: Yes</th>
-<th>B: No</th>
+<th><strong>Test</strong></th>
+<th><strong>Area Codes (510, 415, 650)</strong></th>
+<th><strong>Conclusion</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><b>A: Yes</b></td>
-<td>20</td>
-<td>5</td>
+<td>Can you do arithmetic?</td>
+<td>510 + 415 = ??? (meaningless)</td>
+<td>❌ No</td>
 </tr>
 <tr class="even">
-<td><b>A: No</b></td>
-<td>10</td>
-<td>15</td>
+<td>Is there inherent order?</td>
+<td>415 isn’t “greater than” 510</td>
+<td>❌ No</td>
+</tr>
+<tr class="odd">
+<td>Do they represent categories?</td>
+<td>Yes (geographical regions)</td>
+<td>✅ Yes</td>
+</tr>
+<tr class="even">
+<td><strong>Variable Type</strong></td>
+<td><strong>Categorical Nominal</strong></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<p>This means:</p>
-<ul>
-<li>Both A and B agreed on 35 grants:
-<ul>
-<li>Both said <strong>Yes</strong> on 20 grants.</li>
-<li>Both said <strong>No</strong> on 15 grants.</li>
-</ul></li>
-<li>A and B disagreed on 15 grants:
-<ul>
-<li>A said <strong>Yes</strong>, B said <strong>No</strong> on 5 grants.</li>
-<li>A said <strong>No</strong>, B said <strong>Yes</strong> on 10 grants.</li>
-</ul></li>
-</ul>
-<section id="compute-observed-agreement-rate-p_o" class="level3">
-<h3 class="anchored" data-anchor-id="compute-observed-agreement-rate-p_o">Compute observed agreement rate, <span class="math inline">\(p_o\)</span></h3>
-<p>The rate of observed agreement <span class="math inline">\(p_o\)</span> is the fraction of grants for which A and B actually agreed on their decision, i.e., they both decided “yes” or both decided “no”.</p>
-<p>This rate is:</p>
-<p><span class="math display">\[ p_o = \frac{20 + 15}{50} = 0.7\]</span></p>
+<p><strong>Other examples of “numbers that aren’t numerical”</strong>:</p>
+<table class="caption-top table">
+<caption>Common “fake numerical” variables</caption>
+<thead>
+<tr class="header">
+<th><strong>Variable</strong></th>
+<th><strong>Why It’s Categorical</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Student ID numbers</td>
+<td>Just labels for students</td>
+</tr>
+<tr class="even">
+<td>Social Security Numbers</td>
+<td>Personal identifiers</td>
+</tr>
+<tr class="odd">
+<td>Zip codes</td>
+<td>Geographic categories</td>
+</tr>
+<tr class="even">
+<td>Jersey numbers in sports</td>
+<td>Player identifiers</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-tip callout-titled" title="The Reverse Problem">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>The Reverse Problem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Sometimes numerical variables might be stored as <code>strings</code> in your dataset. In that case, you’ll need to convert the values to <code>int</code> or <code>float</code> before analysis.</p>
+</div>
+</div>
 </section>
-<section id="compute-random-agreement-rate-p_e" class="level3">
-<h3 class="anchored" data-anchor-id="compute-random-agreement-rate-p_e">Compute random agreement rate, <span class="math inline">\(p_e\)</span></h3>
-<p>The rate of random agreement <span class="math inline">\(p_e\)</span> is the <em>hypothetical</em> (i.e., expected) fraction of grants for which A and B might randomly agree. That is, if A had randomly voted yes on agreements <em>based on A’s observed “yes” rate</em>, and B had randomly also voted yes on agreements <em>based on B’s observed “yes” rate</em>, then sometimes A and B might agree in their decisions purely based on chance.</p>
-<p>We demonstrate an algorithm to compute <span class="math inline">\(p_e\)</span> below. The precise formula for this rate is rooted in probability, which you will cover in a future probability and statistics class. But you can imagine that “random agreement” of A and B is like flipping two coins and seeing the rate at which both land on heads or both land on tails.</p>
-<ol type="1">
-<li>Compute the observed “yes” rates of A and B.
+<section id="quick-check-practice-problems" class="level2">
+<h2 class="anchored" data-anchor-id="quick-check-practice-problems">Quick Check: Practice Problems</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Quick Check">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Quick Check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Determine the variable type for each of the following:</p>
+</div>
+</div>
+<table class="caption-top table">
+<caption>Practice problems for variable type identification</caption>
+<colgroup>
+<col style="width: 21%">
+<col style="width: 26%">
+<col style="width: 29%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Variable</strong></th>
+<th><strong>Your Answer</strong></th>
+<th><strong>Correct Answer</strong></th>
+<th><strong>Reasoning</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fuel economy (MPG)</td>
+<td>?</td>
+<td>Continuous numerical</td>
+<td>Can have decimals, measured quantity</td>
+</tr>
+<tr class="even">
+<td>Number of semesters at Berkeley</td>
+<td>?</td>
+<td>Discrete numerical</td>
+<td>Whole numbers, counted</td>
+</tr>
+<tr class="odd">
+<td>Class standing (freshman, sophomore, etc.)</td>
+<td>?</td>
+<td>Ordinal categorical</td>
+<td>Has natural ordering</td>
+</tr>
+<tr class="even">
+<td>Income bracket (low, medium, high)</td>
+<td>?</td>
+<td>Ordinal categorical</td>
+<td>Has natural ordering</td>
+</tr>
+<tr class="odd">
+<td>Bank account number</td>
+<td>?</td>
+<td>Nominal categorical</td>
+<td>Numbers, but no arithmetic or ordering</td>
+</tr>
+</tbody>
+</table>
+<p><em>📍 <strong>Image suggestion</strong>: A decision tree flowchart for determining variable types would be helpful here</em></p>
+</section>
+<section id="why-variable-types-matter-for-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="why-variable-types-matter-for-visualization">Why Variable Types Matter for Visualization</h2>
+<p>Different variable types require different visualization approaches:</p>
+<section id="for-numerical-variables" class="level3">
+<h3 class="anchored" data-anchor-id="for-numerical-variables">For Numerical Variables:</h3>
 <ul>
-<li>Reader A said “Yes” to 25 applicants and “No” to 25 applicants. Thus reader A said “Yes” 50% of the time.</li>
-<li>Reader B said “Yes” to 30 applicants and “No” to 20 applicants. Thus reader B said “Yes” 60% of the time.</li>
-</ul></li>
-<li>Compute the probability that both A and B would say “yes” at random. If reader A says “Yes” 50% randomly, and reader B says “Yes” 60% randomly, then this probability is <span class="math inline">\(0.5 \times 0.6 = 0.3\)</span>.</li>
-<li>Compute the probability that both A and B would say “no” at random. If reader A says “Yes” 50% randomly then they otherwise say “No” 50% randomly; similarly, if reader B says “Yes” 60% randomly then they otherwise say “No” 40% randomly. Therefore this probability that both say “no” is <span class="math inline">\((1 - 0.5) \times (1 - 0.6) = 0.5 \times 0.4 = 0.2\)</span>.</li>
-<li>The probability that A and B agree is the sum of these two probabilities. <span class="math inline">\(0.3 + 0.2 = 0.5\)</span>.</li>
+<li><strong>Histograms</strong> show distribution</li>
+<li><strong>Scatter plots</strong> show relationships</li>
+<li><strong>Line plots</strong> show trends over time</li>
+<li><strong>Box plots</strong> show quartiles and outliers</li>
+</ul>
+</section>
+<section id="for-categorical-variables" class="level3">
+<h3 class="anchored" data-anchor-id="for-categorical-variables">For Categorical Variables:</h3>
+<ul>
+<li><strong>Bar charts</strong> show frequency or counts</li>
+<li><strong>Pie charts</strong> show proportions (use sparingly!)</li>
+<li><strong>Stacked bars</strong> show subcategories</li>
+</ul>
+</section>
+<section id="mixed-types" class="level3">
+<h3 class="anchored" data-anchor-id="mixed-types">Mixed Types:</h3>
+<ul>
+<li><strong>Grouped bar charts</strong> (categorical + numerical)</li>
+<li><strong>Colored scatter plots</strong> (numerical + categorical)</li>
+</ul>
+</section>
+</section>
+<section id="key-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key Takeaways</h2>
+<ol type="1">
+<li><p><strong>Variable type determines appropriate visualizations</strong> - not all chart types work for all data types</p></li>
+<li><p><strong>Numbers aren’t always numerical</strong> - consider what the numbers represent, not just how they’re stored</p></li>
+<li><p><strong>Context matters</strong> - the same data might be treated differently depending on how you want to use it</p></li>
+<li><p><strong>When in doubt, think about operations</strong> - can you meaningfully add, subtract, or order the values?</p></li>
 </ol>
 </section>
-<section id="compute-cohens-kappa-kappa" class="level3">
-<h3 class="anchored" data-anchor-id="compute-cohens-kappa-kappa">Compute Cohen’s Kappa, <span class="math inline">\(\kappa\)</span></h3>
-<p>Finally, we use these values of <span class="math inline">\(p_o\)</span> and <span class="math inline">\(p_e\)</span> to compute Cohen’s Kappa</p>
-<p><span class="math display">\[\kappa = \frac{p_o - p_e}{1 - p_e}\]</span></p>
-<p>Again, we have included the text description of this formula in case it is easier to work through:</p>
-<p><span class="math display">\[\kappa = \dfrac{\text{observed agreement rate} - \text{random agreement rate}}{1 - \text{random agreement rate}}\]</span></p>
-<p>As per the <a href="https://en.wikipedia.org/wiki/Cohen%27s_kappa#Simple_example">Wikipedia article</a>, this value should be:</p>
-<p><span class="math display">\[ \kappa = \frac{0.7 - 0.5}{1 - 0.5} = 0.4.\]</span></p>
-</section>
-<section id="determine-agreement-level" class="level3">
-<h3 class="anchored" data-anchor-id="determine-agreement-level">Determine Agreement Level</h3>
-<p>Based on this value of <span class="math inline">\(\kappa\)</span> and the thresholds provided by Landis and Koch, we would determine that <span class="math inline">\(\kappa = 0.4\)</span> provides a <strong>fair</strong> level of agreement.</p>
-<p>What do we do with this evaluation? It depends on our application. If we were trying to get a general sense of how many grants were approved by this panel, this level of agreement might be fine.</p>
-<p>On the other hand, if we were deciding whether to fund grant proposals based on the decisions of raters and B, this might not be a high enough threshold of agreement for us to determine that the ratings were reliable. We may want to ask the raters to revisit their ratings, or rediscuss aspects of what makes a good grant application.</p>
+<section id="next-steps" class="level2">
+<h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
+<p>Now that we understand different types of variables, let’s explore how these variables get translated into visual elements through the concept of encoding.</p>
+<hr>
+<p><strong>Navigation</strong>: - <strong>Previous</strong>: <a href="what-is-visualization.qmd">What is Visualization?</a> - <strong>Next</strong>: <a href="../../fa24/14-visualizations/encoding.html">Encoding</a><br>
+- <strong>Also see</strong>: <a href="../../fa24/14-visualizations/index.html">Course Introduction</a> | <a href="../../fa24/14-visualizations/examples.html">Examples</a></p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -379,13 +512,14 @@ window.Quarto = {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -736,7 +870,7 @@ window.Quarto = {
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../index.html">
+    <a class="nav-link" href="../../index.html">
 <p>Home / About / License</p>
 </a>
   </li>  

@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Iterating over dictionaries with a for loop</title>
+<title>Examples of Visualizations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,62 +20,28 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../assets/favicon.ico" rel="icon">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-8c10e16f6bdb17aa1afdb56424f4046a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-49e440d101fc6353fc588809fa46bb5e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -115,8 +81,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <!--<script async src=”https://siteimproveanalytics.com/js/siteanalyze_6294756.js”></script>-->
 
 
-<link rel="stylesheet" href="../assets/styles.css">
-<link rel="stylesheet" href="../assets/custom-error-colors.css">
+<link rel="stylesheet" href="../../assets/styles.css">
 </head>
 
 <body class="quarto-light">
@@ -126,16 +91,35 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#historical-examples" id="toc-historical-examples" class="nav-link active" data-scroll-target="#historical-examples">Historical Examples</a>
+  <ul class="collapse">
+  <li><a href="#the-worlds-first-map-6200-bc" id="toc-the-worlds-first-map-6200-bc" class="nav-link" data-scroll-target="#the-worlds-first-map-6200-bc">The World’s First Map (~6200 BC)</a></li>
+  <li><a href="#john-snows-cholera-map-1854" id="toc-john-snows-cholera-map-1854" class="nav-link" data-scroll-target="#john-snows-cholera-map-1854">John Snow’s Cholera Map (1854)</a></li>
+  <li><a href="#florence-nightingales-rose-diagram-1850s" id="toc-florence-nightingales-rose-diagram-1850s" class="nav-link" data-scroll-target="#florence-nightingales-rose-diagram-1850s">Florence Nightingale’s Rose Diagram (1850s)</a></li>
+  </ul></li>
+  <li><a href="#modern-examples" id="toc-modern-examples" class="nav-link" data-scroll-target="#modern-examples">Modern Examples</a>
+  <ul class="collapse">
+  <li><a href="#maya-lins-vietnam-war-memorial-1982" id="toc-maya-lins-vietnam-war-memorial-1982" class="nav-link" data-scroll-target="#maya-lins-vietnam-war-memorial-1982">Maya Lin’s Vietnam War Memorial (1982)</a></li>
+  <li><a href="#covid-19-case-tracking-2022" id="toc-covid-19-case-tracking-2022" class="nav-link" data-scroll-target="#covid-19-case-tracking-2022">COVID-19 Case Tracking (2022)</a></li>
+  </ul></li>
+  <li><a href="#what-makes-these-examples-powerful" id="toc-what-makes-these-examples-powerful" class="nav-link" data-scroll-target="#what-makes-these-examples-powerful">What Makes These Examples Powerful?</a></li>
+  <li><a href="#reflection-questions" id="toc-reflection-questions" class="nav-link" data-scroll-target="#reflection-questions">Reflection Questions</a></li>
+  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next Steps</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Iterating over dictionaries with a <code>for</code> loop</h1>
-<p class="subtitle lead">Lecture Notes printout. Five code cells with corresponding output.</p>
+<h1 class="title">Examples of Visualizations</h1>
+<p class="subtitle lead">Historical and modern examples of effective data visualization</p>
 </div>
 
 
@@ -152,115 +136,203 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </header>
 
 
-<div id="77e84342" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>slang <span class="op">=</span> {</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'smh'</span>: <span class="st">'shake my head'</span>,</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'lol'</span>: <span class="st">'laugh out loud'</span>,</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'GOAT'</span>: <span class="st">'greatest of all time'</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>slang</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="16">
-<pre><code>{'smh': 'shake my head',
- 'lol': 'laugh out loud',
- 'GOAT': 'greatest of all time'}</code></pre>
+<section id="historical-examples" class="level2">
+<h2 class="anchored" data-anchor-id="historical-examples">Historical Examples</h2>
+<section id="the-worlds-first-map-6200-bc" class="level3">
+<h3 class="anchored" data-anchor-id="the-worlds-first-map-6200-bc">The World’s First Map (~6200 BC)</h3>
+<p>What do you see when you look at this ancient artifact?</p>
+<div style="text-align: center">
+<div id="fig-ancient-map" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ancient-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/world-map.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ancient-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The World’s First Map
+</figcaption>
+</figure>
 </div>
 </div>
-<div id="ad2ed349" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> abb <span class="kw">in</span> slang:</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(abb, <span class="st">":"</span>, slang[abb])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>smh : shake my head
-lol : laugh out loud
-GOAT : greatest of all time</code></pre>
+<p>This is a map depicting the town of Konya, Turkey - supposedly the world’s first map, dating back to approximately 6200 BC. Even in prehistoric times, humans recognized the power of visual representation to communicate spatial relationships and important information.</p>
+</section>
+<section id="john-snows-cholera-map-1854" class="level3">
+<h3 class="anchored" data-anchor-id="john-snows-cholera-map-1854">John Snow’s Cholera Map (1854)</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Read _Inferential Thinking_">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Read <em>Inferential Thinking</em>
 </div>
 </div>
-<div id="417756ec" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> abb <span class="kw">in</span> slang.keys():</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(abb, <span class="st">":"</span>, slang[abb])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>smh : shake my head
-lol : laugh out loud
-GOAT : greatest of all time</code></pre>
+<div class="callout-body-container callout-body">
+<p>Read <a href="https://inferentialthinking.com/chapters/02/1/observation-and-visualization-john-snow-and-the-broad-street-pump.html">Ch 2.1</a>, which describes in detail John Snow’s groundbreaking use of data visualization during the 1854 cholera epidemic.</p>
+<p>This story demonstrates how <strong>observation and visualization</strong> can lead to life-saving discoveries, even when the underlying scientific theory (germ theory) wasn’t yet established.</p>
 </div>
 </div>
-<div id="b0dbe22d" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> slang_phrase <span class="kw">in</span> slang.values():</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(slang_phrase)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>shake my head
-laugh out loud
-greatest of all time</code></pre>
+<div class="callout callout-style-default callout-important callout-titled" title="Data Visualization Saves Lives">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Data Visualization Saves Lives
 </div>
 </div>
-<div id="e910a27f" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k, v <span class="kw">in</span> slang.items():</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(k, <span class="st">":"</span>, v)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>smh : shake my head
-lol : laugh out loud
-GOAT : greatest of all time</code></pre>
+<div class="callout-body-container callout-body">
+<p>One of the most famous examples of data visualization directly saving human lives.</p>
 </div>
 </div>
+<p><strong>The Problem</strong>: In August 1854, a massive cholera outbreak was devastating the overcrowded SoHo district of London. Hundreds were dying within days, and the prevailing “miasma theory” blamed bad air and smells.</p>
+<p><strong>The Solution</strong>: Dr.&nbsp;John Snow was skeptical of the miasma theory and suspected contaminated water. He created a revolutionary approach that became standard in epidemiology: <strong>he drew a map</strong>.</p>
+<div style="text-align: center">
+<div id="fig-cholera-map" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cholera-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/john-snow-cholera-map.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cholera-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: John Snow’s Cholera Map
+</figcaption>
+</figure>
+</div>
+</div>
+<p><strong>What the map revealed</strong>:</p>
+<ul>
+<li>Deaths were clustered around the <strong>Broad Street pump</strong></li>
+<li>Houses closer to other pumps still used Broad Street (due to street layout)</li>
+<li>The Lion Brewery had no deaths (workers drank beer and had their own well)</li>
+<li>Scattered distant deaths were children who drank from the pump on their way to school</li>
+</ul>
+<p><strong>The Impact</strong>: Snow’s map convinced local authorities to remove the handle of the Broad Street pump. Later investigation revealed that a cesspit just feet away had been leaking sewage into the well, contaminating the water with cholera.</p>
+</section>
+<section id="florence-nightingales-rose-diagram-1850s" class="level3">
+<h3 class="anchored" data-anchor-id="florence-nightingales-rose-diagram-1850s">Florence Nightingale’s Rose Diagram (1850s)</h3>
+<p>Florence Nightingale wasn’t just a pioneering nurse - she was also an innovative data visualizer. During the Crimean War, she created what’s now called a “rose diagram” or “coxcomb chart” to visualize the causes of death among British soldiers.</p>
+<div style="text-align: center">
+<div id="fig-rose-diagram" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rose-diagram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/florence-nightingale-rose.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rose-diagram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Florence Nightingale’s Rose Diagram
+</figcaption>
+</figure>
+</div>
+</div>
+<p>Her visualization revealed a shocking truth: more soldiers were dying from preventable diseases than from battle wounds. This wasn’t just a pretty chart—it was a powerful argument that drove major reforms in military medical care. Nightingale understood that abstract statistics about mortality rates couldn’t compete with the visual impact of her rose petals, where the size of each segment made the disparity impossible to ignore.</p>
+</section>
+</section>
+<section id="modern-examples" class="level2">
+<h2 class="anchored" data-anchor-id="modern-examples">Modern Examples</h2>
+<section id="maya-lins-vietnam-war-memorial-1982" class="level3">
+<h3 class="anchored" data-anchor-id="maya-lins-vietnam-war-memorial-1982">Maya Lin’s Vietnam War Memorial (1982)</h3>
+<p>Not all data visualization involves charts and graphs. Maya Lin’s Vietnam War Memorial in Washington DC proves that data can be deeply emotional and memorial, not just analytical.</p>
+<div style="text-align: center">
+<div id="fig-vietnam-memorial" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-vietnam-memorial-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/veitnam-war-memorial.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-vietnam-memorial-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Vietnam War Memorial
+</figcaption>
+</figure>
+</div>
+</div>
+<p>Each of the 58,000+ names etched into the black granite represents one life lost. The chronological arrangement tells the story of the war’s progression through time, while the reflective surface creates an intimate connection between viewers and the data—you literally see yourself reflected among the names. This memorial demonstrates that the most powerful visualizations don’t just inform us; they transform how we feel about the information.</p>
+</section>
+<section id="covid-19-case-tracking-2022" class="level3">
+<h3 class="anchored" data-anchor-id="covid-19-case-tracking-2022">COVID-19 Case Tracking (2022)</h3>
+<p>During the COVID-19 pandemic, data visualization became part of daily life. Suddenly, everyone from epidemiologists to elementary school students was reading line charts showing case trends and interpreting what those curves meant for their communities.</p>
+<div style="text-align: center">
+<div id="fig-covid-dashboard" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-covid-dashboard-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/coivd.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-covid-dashboard-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: COVID-19 Case Tracking
+</figcaption>
+</figure>
+</div>
+</div>
+<p>Google’s COVID tracking dashboard exemplified how modern visualization must be both accessible and updateable in real-time. The time series charts showed trends over months with clear visual indicators of peaks and valleys, but more importantly, they translated complex epidemiological data into something any concerned citizen could understand. This democratization of data visualization—where sophisticated statistical information becomes part of everyday conversation—represents a fundamental shift in how we communicate about public health.</p>
+</section>
+</section>
+<section id="what-makes-these-examples-powerful" class="level2">
+<h2 class="anchored" data-anchor-id="what-makes-these-examples-powerful">What Makes These Examples Powerful?</h2>
+<p>Looking across these historical examples, several patterns emerge:</p>
+<table class="caption-top table">
+<caption>Key principles of effective visualization</caption>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 37%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Principle</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Clarity of Purpose</strong></td>
+<td>Each visualization had a clear goal</td>
+<td>Snow’s map: Find disease source</td>
+</tr>
+<tr class="even">
+<td><strong>Appropriate Medium</strong></td>
+<td>Used best available technology</td>
+<td>Clay maps → Digital dashboards</td>
+</tr>
+<tr class="odd">
+<td><strong>Human-Centered Design</strong></td>
+<td>Designed for human understanding</td>
+<td>Nightingale’s roses: Intuitive shapes</td>
+</tr>
+<tr class="even">
+<td><strong>Actionable Insights</strong></td>
+<td>Enable action, not just display</td>
+<td>Vietnam Memorial: Emotional impact</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-warning callout-titled" title="Remember">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Remember
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The best visualizations don’t just show data - they enable action and understanding.</p>
+</div>
+</div>
+</section>
+<section id="reflection-questions" class="level2">
+<h2 class="anchored" data-anchor-id="reflection-questions">Reflection Questions</h2>
+<p>As you think about these examples, consider:</p>
+<ul>
+<li>What made each visualization effective for its time and purpose?</li>
+<li>How might these visualizations be different if created with modern tools?</li>
+<li>What can we learn from these examples about designing effective visualizations today?</li>
+</ul>
+</section>
+<section id="next-steps" class="level2">
+<h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
+<p>Now that we’ve seen the power of visualization through these historical examples, let’s explore the theory behind what makes visualizations effective.</p>
 
 
+</section>
 
 </main> <!-- /main -->
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-    // 1. Select the specific parent div within the callout header that has the 
-    //    collapse attributes (data-bs-toggle).
-    var calloutToggles = document.querySelectorAll(
-        '.callout-header[data-bs-toggle="collapse"]'
-    );
-
-    calloutToggles.forEach(function(toggle) {
-        // 2. Force the ARIA role to be 'button'
-        // This is crucial because a 'div' is not allowed to use aria-expanded.
-        toggle.setAttribute('role', 'button');
-        
-        // 3. Ensure it is keyboard-focusable (critical for accessibility)
-        // Bootstrap usually handles this, but forcing it is safer.
-        if (toggle.getAttribute('tabindex') === null) {
-             toggle.setAttribute('tabindex', '0');
-        }
-    });
-
-    // 1. Target all code blocks (Source Code and Code Output <pre> elements)
-    // that are scrollable (have overflow:auto/scroll).
-var scrollableRegions = document.querySelectorAll(
-        // 1. Source Code <pre>
-        'div.sourceCode > pre, ' + 
-        
-        // 2. Output <pre> inside a generic cell-output
-        '.cell-output > pre, ' + 
-        
-        // 3. The main DIV container for cell-output-display (from previous fix)
-        '.cell-output-display.cell-output, ' +
-        
-        // --- NEW SELECTORS TO CATCH ERROR AND ANSI BLOCKS ---
-        
-        // 4. PRE tag inside any ANSI-escaped output (e.g., .ansi-escaped-output > pre)
-        '.ansi-escaped-output > pre, ' +
-        
-        // 5. The deepest container for error output (e.g., #ID > .cell-output-error... > .ansi-escaped-output > pre)
-        '.cell-output-error.cell-output > .ansi-escaped-output > pre, ' +
-
-        'pre[id]' // Target any PRE tag that has an ID attribute (a common source of scrollability)
-    );
-
-    scrollableRegions.forEach(function(region) {
-        // Check if the element actually has horizontal overflow (is scrollable)
-        // Add tabindex="0" to make the region keyboard-focusable.
-        if (region.getAttribute('tabindex') === null || region.getAttribute('tabindex') === undefined) {
-             region.setAttribute('tabindex', '0');
-        }
-    });
-
-    // --- Specific Fix for the Last Two Known Violations ---
-    document.querySelector('#the-structure-of-kittens\\.html > pre')?.setAttribute('tabindex', '0');
-    document.querySelector('#ranges-are-sequences-of-consecutive-numbers > pre')?.setAttribute('tabindex', '0');
-});
-</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -312,13 +384,14 @@ var scrollableRegions = document.querySelectorAll(
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -333,7 +406,7 @@ var scrollableRegions = document.querySelectorAll(
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/data6\.org\/notes\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -669,7 +742,7 @@ var scrollableRegions = document.querySelectorAll(
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../index.html">
+    <a class="nav-link" href="../../index.html">
 <p>Home / About / License</p>
 </a>
   </li>  

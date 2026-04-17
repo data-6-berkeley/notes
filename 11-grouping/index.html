@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Group and Pivot</title>
+<title>Grouping, Pivoting, and Disaggregating</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,19 +30,20 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../five-things.html" rel="next">
-<link href="../10-boolean-predicates/boolean.html" rel="prev">
+<link href="../11-grouping/group.html" rel="next">
+<link href="../10-filtering/filtering.html" rel="prev">
 <link href="../assets/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-753e6901f2c274e22bcfe03890f74e5f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-49e440d101fc6353fc588809fa46bb5e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -94,7 +95,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../11-group-pivot/index.html">L11: Grouping and Pivoting</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../11-grouping/index.html">L11: Grouping, Pivoting, and Disaggregating</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -109,7 +110,8 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../assets/data6.png" alt="Data 6 logo" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="../assets/data6.png" alt="Data 6 logo" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../assets/data6.png" alt="Data 6 logo" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">DATA 6 <br><small>Course Notes</small></a> 
@@ -336,7 +338,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../09-summary-statistics/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L09: Summary Statistics and Box Plots</span></a>
+ <span class="menu-text">L09: Summary Statistics</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -358,8 +360,8 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../10-boolean-predicates/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L10: Filtering and Boolean Predicates</span></a>
+            <a href="../10-filtering/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">L10: Taking and Filtering Rows</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -367,21 +369,58 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../10-boolean-predicates/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Filtering and Boolean Predicates</span></a>
+  <a href="../10-filtering/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Taking and Filtering Rows</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../10-boolean-predicates/boolean.html" class="sidebar-item-text sidebar-link">
+  <a href="../10-filtering/take.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Taking Subsets of Tables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../10-filtering/booleans.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Booleans</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../10-filtering/filtering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Filtering with .where()</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">L11: Grouping and Pivoting</span></span>
+      <div class="sidebar-item-container"> 
+            <a href="../11-grouping/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">L11: Grouping, Pivoting, and Disaggregating</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../11-grouping/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Grouping, Pivoting, and Disaggregating</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../11-grouping/group.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Grouping</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../11-grouping/pivot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pivoting</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
@@ -405,13 +444,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#grouping" id="toc-grouping" class="nav-link active" data-scroll-target="#grouping">Grouping</a></li>
-  <li><a href="#pivoting" id="toc-pivoting" class="nav-link" data-scroll-target="#pivoting">Pivoting</a></li>
-  <li><a href="#aggregating-and-disaggregating" id="toc-aggregating-and-disaggregating" class="nav-link" data-scroll-target="#aggregating-and-disaggregating">Aggregating and Disaggregating</a>
-  <ul class="collapse">
-  <li><a href="#case-study-1973-uc-berkeley-graduate-admissions" id="toc-case-study-1973-uc-berkeley-graduate-admissions" class="nav-link" data-scroll-target="#case-study-1973-uc-berkeley-graduate-admissions">Case Study: 1973 UC Berkeley Graduate Admissions</a></li>
-  </ul></li>
-  <li><a href="#external-reading" id="toc-external-reading" class="nav-link" data-scroll-target="#external-reading">External Reading</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
   </ul>
 </nav>
     </div>
@@ -420,8 +453,8 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Group and Pivot</h1>
-<p class="subtitle lead">Selecting rows based on a condition</p>
+<h1 class="title">Grouping, Pivoting, and Disaggregating</h1>
+<p class="subtitle lead">Extracting and aggregating information from tables</p>
 </div>
 
 
@@ -438,63 +471,39 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </header>
 
 
-<section id="grouping" class="level2">
-<h2 class="anchored" data-anchor-id="grouping">Grouping</h2>
-<div class="callout callout-style-default callout-note callout-titled" title="Read _Inferential Thinking_">
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>In data science, we often need to analyze data at different levels of aggregation. Sometimes we want to understand patterns at the individual level, while other times we need to examine trends across groups or categories. This chapter introduces two powerful table methods that allow us to <strong>group</strong> and <strong>pivot</strong> our data to gain insights at higher units of analysis.</p>
+<p><strong>Grouping</strong> allows us to:</p>
+<ul>
+<li>Count occurrences of categorical variables</li>
+<li>Calculate aggregate statistics (mean, sum, max, etc.) for groups</li>
+<li>Compare patterns across different categories</li>
+</ul>
+<p><strong>Pivoting</strong> allows us to:</p>
+<ul>
+<li>Create cross-tabulations between two categorical variables</li>
+<li>Organize data in a matrix format for easier comparison</li>
+<li>Calculate aggregate statistics for every combination of two variables</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="Interactive Visualizer">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Read <em>Inferential Thinking</em>
+<span class="screen-reader-only">Note</span>Interactive Visualizer
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Read <a href="https://inferentialthinking.com/chapters/08/2/Classifying_by_One_Variable.html">Ch 8.2</a>, which describes grouping in detail.</p>
-<p>Before continuing, make sure that:</p>
+<p>There is an excellent <a href="https://www.data8.org/interactive_table_functions/">table function visualizer</a> for both <code>.group()</code> and <code>.pivot()</code> methods that can help you understand how these operations work. However, be aware that the visualizer has some limitations:</p>
 <ul>
-<li>You know that <code>group</code> with one argument produces counts per unique value in the grouped column.</li>
-<li>You know that <code>group</code> with two arguments produces an <strong>aggregated value</strong> per unique value in the grouped column, and can potentially produce multiple columns based on which column value can be aggregated with the provided <strong>aggregator</strong> function.</li>
+<li><strong>For <code>.group()</code></strong>: It fails to sort results by ascending order in the group columns</li>
+<li><strong>For <code>.pivot()</code></strong>: It fails to sort the columns/rows in ascending order (excluding the second argument)</li>
 </ul>
+<p>Despite these sorting issues, the visualizer is still valuable for understanding the fundamental mechanics of these operations.</p>
 </div>
 </div>
-<p>You can also group data on multiple columns. We discuss this and a different table transformation, pivoting, below.</p>
-</section>
-<section id="pivoting" class="level2">
-<h2 class="anchored" data-anchor-id="pivoting">Pivoting</h2>
-<div class="callout callout-style-default callout-note callout-titled" title="Read _Inferential Thinking_">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Read <em>Inferential Thinking</em>
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Read <a href="https://inferentialthinking.com/chapters/08/3/Cross-Classifying_by_More_than_One_Variable.html">Ch 8.3</a>, which describes grouping by multiple columns and a cross-tabulation concept called <strong>pivoting</strong>.</p>
-<p>Before continuing, make sure that:</p>
-<ul>
-<li>You can compare and contrast how <code>group</code> and <code>pivot</code> aggregate data.</li>
-<li>You understand the optional arguments to the <code>pivot</code> method: <code>values</code> and <code>collect</code>.</li>
-</ul>
-</div>
-</div>
-</section>
-<section id="aggregating-and-disaggregating" class="level2">
-<h2 class="anchored" data-anchor-id="aggregating-and-disaggregating">Aggregating and Disaggregating</h2>
-<p>Grouping and pivoting are table operations most useful in translating between units of analysis. In particular, it lets us <strong>disaggregate</strong> data. Instead of just reporting an average across all datapoints, we can report averages as broken down by different subgroups.</p>
-<section id="case-study-1973-uc-berkeley-graduate-admissions" class="level3">
-<h3 class="anchored" data-anchor-id="case-study-1973-uc-berkeley-graduate-admissions">Case Study: 1973 UC Berkeley Graduate Admissions</h3>
-<p>The Fall 1973 admitted graduate student population had a peculiar characteristic: Overall, women were admitted at <strong>lower rates</strong> than men to graduate school, seeming to suggest that the admission rates was biased. However, when the admission rates <em>by department</em> (e.g., by field of study) were studied, women were often admitted at <strong>higher rates</strong> than men. How is this possible?</p>
-<p>This is a peculiar case study around Simpson’s Paradox: when the trends of subgroups are <strong>reversed</strong> or <strong>not seen</strong> as compared to the trends of the overall dataset. We will explore this in detail in the reading, in section, and in the project. Stay tuned!</p>
-</section>
-</section>
-<section id="external-reading" class="level2">
-<h2 class="anchored" data-anchor-id="external-reading">External Reading</h2>
-<ul>
-<li>(mentioned in notes) <em>Computational and Inferential Thinking</em>, <a href="https://inferentialthinking.com/chapters/08/3/Cross-Classifying_by_More_than_One_Variable.html">Ch 8.3</a></li>
-</ul>
 
 
 </section>
@@ -551,13 +560,14 @@ Read <em>Inferential Thinking</em>
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -901,13 +911,13 @@ Read <em>Inferential Thinking</em>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../10-boolean-predicates/boolean.html" class="pagination-link" aria-label="Booleans">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Booleans</span>
+      <a href="../10-filtering/filtering.html" class="pagination-link" aria-label="Filtering with .where()">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Filtering with .where()</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../five-things.html" class="pagination-link" aria-label="5 Things to Know">
-        <span class="nav-page-text">5 Things to Know</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../11-grouping/group.html" class="pagination-link" aria-label="Grouping">
+        <span class="nav-page-text">Grouping</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

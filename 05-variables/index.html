@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -35,14 +35,15 @@ ul.task-list li input[type="checkbox"] {
 <link href="../assets/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-8c10e16f6bdb17aa1afdb56424f4046a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-1b378448c96145639a45d0cc9a697531.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -110,7 +111,8 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../assets/data6.png" alt="Data 6 logo" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="../assets/data6.png" alt="Data 6 logo" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../assets/data6.png" alt="Data 6 logo" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">DATA 6 <br><small>Course Notes</small></a> 
@@ -667,7 +669,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <p>It is challenging to use another person’s data! The concepts have already been operationalized into variables; or the quality of data may vary widely; or multiple data sources may be needed to construct a reasonable first step towards a new research question. We’ll see more benefits and drawbacks in our examples this semester.</p>
 <p>For now, we focus on variables as they exist in tabular data. In most of the tabular datasets we will examine, variables correspond to <strong>columns</strong> of features. Each row is a <strong>record</strong> of a datapoint, with different values of variables measured for that datapoint.</p>
 <div style="text-align: center">
-<div id="fig-inflation" class="quarto-float quarto-figure quarto-figure-center anchored" alt="" data-fig-align="center">
+<div id="fig-inflation" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-inflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/variable.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%" alt="">
@@ -696,7 +698,7 @@ Figure&nbsp;1: Variables as columns.
 </ul>
 <p>Figure 2 has examples of each variable type.</p>
 <div style="text-align: center">
-<div id="fig-inflation" class="quarto-float quarto-figure quarto-figure-center anchored" alt="" data-fig-align="center">
+<div id="fig-inflation" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-inflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/variable_types.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%" alt="">
@@ -707,12 +709,12 @@ Figure&nbsp;2: Variable Types.
 </figure>
 </div>
 </div>
-<p><em>What do we mean by “meaningful” arithmetic?</em> From <a href="https://www.stat20.org/1-questions-and-data/02-taxonomy-of-data/notes">Stat 20</a>:</p>
+<p><em>What do we mean by “meaningful” arithmetic?</em> From <a href="https://stat20.berkeley.edu/spring-2026/1-questions-and-data/02-taxonomy-of-data/notes.html">Stat 20</a>:</p>
 <blockquote class="blockquote">
 <p>What unites both types of numerical variables is that the magnitude of the numbers have meaning and you can perform mathematical operations on them and the result also has meaning. It is possible and meaningful to talk about the average air temperature across three locations. It is also possible and meaningful to talk about the sum total number of people across ten households.</p>
 </blockquote>
 <p>Just because a variable has numbers for values does not make it numerical. Consider phone area codes: Berkeley is 510, San Francisco is 415, Palo Alto is 650, and so on. While area codes are numbers, you can’t do any arithmetic—comparative or otherwise—with them that “makes sense”: what does it mean to add area codes? have one area code (650) that is “larger” than another (510)? Area codes are therefore an example of a nominal categorical variable.</p>
-<p>Variable types are closely tied to measurement. Consider the following survey item from <a href="https://www.stat20.org/1-questions-and-data/02-taxonomy-of-data/notes">Stat 20</a>, which describes a common ordinal categorical variable in opinion surveys:</p>
+<p>Variable types are closely tied to measurement. Consider the following survey item from <a href="https://stat20.berkeley.edu/spring-2026/1-questions-and-data/02-taxonomy-of-data/notes.html">Stat 20</a>, which describes a common ordinal categorical variable in opinion surveys:</p>
 <blockquote class="blockquote">
 <p>Consider the question:“Do you strongly agree, agree, feel neutral about, disagree, or strongly disagree with the following statement: Dogs are better than cats?” When you record answers to this question, you’re recording measurements on a categorical variable that takes values “strongly agree”, “agree”, “neutral”, “disagree”, “strongly disagree”. Those are the levels of the categorical variable and they have a natural ordering: “strongly agree” is closer to “agree” than it is to “strongly disagree”.</p>
 </blockquote>
@@ -723,7 +725,7 @@ Figure&nbsp;2: Variable Types.
 <h2 class="anchored" data-anchor-id="external-reading">External Reading</h2>
 <ul>
 <li>(mentioned in notes) “Chapter 4: From Concepts to Models.” Elizabeth Heger Boyle, Deborah Carr, Benjamin Cornwell, Shelley Correll, Robert Crosnoe, Jeremy Freese, and Waters, Mary C. 2017. <em>The Art and Science of Social Research</em>. New York: W. W. Norton &amp; Company.</li>
-<li>(mentioned in notes) <em>Stat 20 notes</em>, <a href="https://www.stat20.org/1-questions-and-data/02-taxonomy-of-data/notes">Taxonomy of Data</a></li>
+<li>(mentioned in notes) <em>Stat 20 notes</em>, <a href="https://stat20.berkeley.edu/spring-2026/1-questions-and-data/02-taxonomy-of-data/notes.html">Taxonomy of Data</a></li>
 </ul>
 </section>
 <section id="references" class="level2">
@@ -824,13 +826,14 @@ Figure&nbsp;2: Variable Types.
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

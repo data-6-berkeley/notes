@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BeautifulSoup</title>
+<title>Grouping with .group()</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,29 +20,65 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../five-things.html" rel="next">
-<link href="../17-dictionaries/file-formats.html" rel="prev">
+<link href="../11-grouping/pivot.html" rel="next">
+<link href="../11-grouping/index.html" rel="prev">
 <link href="../assets/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-753e6901f2c274e22bcfe03890f74e5f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-49e440d101fc6353fc588809fa46bb5e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -79,6 +115,9 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 <!--<script async src=”https://siteimproveanalytics.com/js/siteanalyze_6294756.js”></script>-->
 
 
@@ -94,7 +133,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../18-beautifulsoup/index.html">L18: Beautiful Soup</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../11-grouping/index.html">L11: Grouping, Pivoting, and Disaggregating</a></li><li class="breadcrumb-item"><a href="../11-grouping/group.html">Grouping</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -109,7 +148,8 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../assets/data6.png" alt="Data 6 logo" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="../assets/data6.png" alt="Data 6 logo" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../assets/data6.png" alt="Data 6 logo" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">DATA 6 <br><small>Course Notes</small></a> 
@@ -336,7 +376,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../09-summary-statistics/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L09: Summary Statistics and Box Plots</span></a>
+ <span class="menu-text">L09: Summary Statistics</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -358,8 +398,8 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../10-boolean-predicates/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L10: Filtering and Boolean Predicates</span></a>
+            <a href="../10-filtering/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">L10: Taking and Filtering Rows</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -367,146 +407,59 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../10-boolean-predicates/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Filtering and Boolean Predicates</span></a>
+  <a href="../10-filtering/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Taking and Filtering Rows</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../10-boolean-predicates/boolean.html" class="sidebar-item-text sidebar-link">
+  <a href="../10-filtering/take.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Taking Subsets of Tables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../10-filtering/booleans.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Booleans</span></a>
   </div>
 </li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../11-group/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L11: Grouping</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../12-pivot-join/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L12: Pivots and Joins</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../13-functions/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L13: Functions</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../13-functions/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Functions</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../13-functions/strings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">String Methods</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../13-functions/apply.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Apply</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../14-conditionals/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L14: Conditionals</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../15-iteration/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L15: Iteration</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../15-iteration/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">For Loops</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../15-iteration/while.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">While Loops</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../15-iteration/practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Practice</span></a>
+  <a href="../10-filtering/filtering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Filtering with .where()</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../16-measurements/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L16: Iterations II; Measurements</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <a href="../11-grouping/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">L11: Grouping, Pivoting, and Disaggregating</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../16-measurements/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reliability and Validity</span></a>
+  <a href="../11-grouping/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Grouping, Pivoting, and Disaggregating</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../16-measurements/iteration-ii.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">More Iteration Practice</span></a>
+  <a href="../11-grouping/group.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Grouping</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../11-grouping/pivot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pivoting</span></a>
   </div>
 </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../17-dictionaries/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">L17: Dictionaries</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../17-dictionaries/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dictionaries</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../17-dictionaries/file-formats.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">File Formats</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../18-beautifulsoup/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">L18: Beautiful Soup</span></a>
-  </div>
-</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../five-things.html" class="sidebar-item-text sidebar-link">
@@ -529,17 +482,22 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#tutorial-html-and-beautifulsoup" id="toc-tutorial-html-and-beautifulsoup" class="nav-link active" data-scroll-target="#tutorial-html-and-beautifulsoup">Tutorial: HTML And BeautifulSoup</a></li>
+  <li><a href="#introduction-to-grouping" id="toc-introduction-to-grouping" class="nav-link active" data-scroll-target="#introduction-to-grouping">Introduction to Grouping</a></li>
+  <li><a href="#basic-grouping" id="toc-basic-grouping" class="nav-link" data-scroll-target="#basic-grouping">Basic Grouping</a></li>
+  <li><a href="#the-group-sort-take-pattern" id="toc-the-group-sort-take-pattern" class="nav-link" data-scroll-target="#the-group-sort-take-pattern">The Group + Sort + Take Pattern</a></li>
+  <li><a href="#advanced-grouping-with-collect-functions" id="toc-advanced-grouping-with-collect-functions" class="nav-link" data-scroll-target="#advanced-grouping-with-collect-functions">Advanced Grouping with Collect Functions</a></li>
+  <li><a href="#grouping-by-multiple-columns" id="toc-grouping-by-multiple-columns" class="nav-link" data-scroll-target="#grouping-by-multiple-columns">Grouping by Multiple Columns</a></li>
+  <li><a href="#when-to-use-grouping" id="toc-when-to-use-grouping" class="nav-link" data-scroll-target="#when-to-use-grouping">When to Use Grouping</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../11-grouping/index.html">L11: Grouping, Pivoting, and Disaggregating</a></li><li class="breadcrumb-item"><a href="../11-grouping/group.html">Grouping</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">BeautifulSoup</h1>
-<p class="subtitle lead">Scraping HTML</p>
+<h1 class="title">Grouping with .group()</h1>
+<p class="subtitle lead">Aggregating and disaggregating data</p>
 </div>
 
 
@@ -556,11 +514,656 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </header>
 
 
-<section id="tutorial-html-and-beautifulsoup" class="level2">
-<h2 class="anchored" data-anchor-id="tutorial-html-and-beautifulsoup">Tutorial: HTML And BeautifulSoup</h2>
-<p>BeautifulSoup is a Python library for pulling data out of HTML and XML files.</p>
-<p>Please see Professor Allison Parrish’s <a href="https://github.com/aparrish/dmep-python-intro/blob/master/scraping-html.ipynb">tutorial on HTML and BeautifulSoup</a>, which we go over in class. This tutorial walks through scraping HTML from a simple <a href="http://static.decontextualize.com/kittens.html">kittens webpage</a>.</p>
-<p>The official <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">BeautifulSoup Documentation</a> is also a great place to continue searching for that exact feature you want.</p>
+<section id="introduction-to-grouping" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-grouping">Introduction to Grouping</h2>
+<p>The term “group” in data science is most commonly associated with data <strong>aggregation</strong> and <strong>disaggregation</strong>:</p>
+<ul>
+<li><p><strong>Aggregation</strong>: A process in which information is gathered and expressed in collective or summary form. Useful for getting information about groups based on variables (age, profession, income) while simultaneously preserving confidentiality of individuals.</p></li>
+<li><p><strong>Disaggregation</strong> (aka <strong>disentanglement</strong>): A process of taking aggregated data and breaking it down into smaller information units. Useful to highlight outcomes that pertain to individual subsets of results/outcomes (e.g., gender, location, socio-cultural/ethnic background, age groups, etc.) to expose hidden trends.</p></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="Spotify Dataset">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Spotify Dataset
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This dataset contains the Spotify Daily Top 200 streams, including song rankings, artist names, track names, and streaming numbers. Each row represents one song’s performance on the charts.</p>
+</div>
+</div>
+<div id="200ee081" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>streams <span class="op">=</span> Table.read_table(<span class="st">'data/regional-global-daily-latest.csv'</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>streams</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="35">
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">rank</th>
+<th data-quarto-table-cell-role="th">artist_names</th>
+<th data-quarto-table-cell-role="th">track_name</th>
+<th data-quarto-table-cell-role="th">source</th>
+<th data-quarto-table-cell-role="th">peak_rank</th>
+<th data-quarto-table-cell-role="th">previous_rank</th>
+<th data-quarto-table-cell-role="th">days_on_chart</th>
+<th data-quarto-table-cell-role="th">streams</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Kate Bush</td>
+<td>Running Up That Hill</td>
+<td>Rhino</td>
+<td>1</td>
+<td>1</td>
+<td>41</td>
+<td>7208654</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Harry Styles</td>
+<td>As It Was</td>
+<td>Columbia</td>
+<td>1</td>
+<td>2</td>
+<td>99</td>
+<td>6543793</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Joji</td>
+<td>Glimpse of Us</td>
+<td>88rising Music/Warner Records</td>
+<td>1</td>
+<td>3</td>
+<td>28</td>
+<td>5492997</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Bad Bunny, Chencho Corleone</td>
+<td>Me Porto Bonito</td>
+<td>Rimas Entertainment LLC</td>
+<td>2</td>
+<td>4</td>
+<td>63</td>
+<td>5416421</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Bizarrap, Quevedo</td>
+<td>Quevedo: Bzrp Music Sessions, Vol. 52</td>
+<td>DALE PLAY Records</td>
+<td>5</td>
+<td>-1</td>
+<td>1</td>
+<td>4676471</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Bad Bunny</td>
+<td>Tití Me Preguntó</td>
+<td>Rimas Entertainment LLC</td>
+<td>4</td>
+<td>5</td>
+<td>63</td>
+<td>4549682</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Bad Bunny, Bomba Estéreo</td>
+<td>Ojitos Lindos</td>
+<td>Rimas Entertainment LLC</td>
+<td>2</td>
+<td>6</td>
+<td>63</td>
+<td>4144625</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>Bad Bunny</td>
+<td>Efecto</td>
+<td>Rimas Entertainment LLC</td>
+<td>7</td>
+<td>8</td>
+<td>63</td>
+<td>3722317</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>Charlie Puth, BTS, Jung Kook</td>
+<td>Left and Right (Feat. Jung Kook of BTS)</td>
+<td>Atlantic Records</td>
+<td>3</td>
+<td>7</td>
+<td>14</td>
+<td>3715689</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>Bad Bunny</td>
+<td>Moscow Mule</td>
+<td>Rimas Entertainment LLC</td>
+<td>1</td>
+<td>9</td>
+<td>63</td>
+<td>3465003</td>
+</tr>
+</tbody>
+</table>
+
+<p>... (190 rows omitted)</p>
+</div>
+</div>
+</section>
+<section id="basic-grouping" class="level2">
+<h2 class="anchored" data-anchor-id="basic-grouping">Basic Grouping</h2>
+<p>The method <code>t.group(column)</code> counts the number of rows for each unique value in <code>column</code>, and returns a two-column table with the results.</p>
+<div id="2c0e2a23" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Counting songs by artist in Spotify Top 10</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>top_10 <span class="op">=</span> streams.take(np.arange(<span class="dv">10</span>))</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>top_10.group(<span class="st">'artist_names'</span>).sort(<span class="st">'count'</span>, descending<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="36">
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">artist_names</th>
+<th data-quarto-table-cell-role="th">count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bad Bunny</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>Bad Bunny, Bomba Estéreo</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Bad Bunny, Chencho Corleone</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Bizarrap, Quevedo</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Charlie Puth, BTS, Jung Kook</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Harry Styles</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Joji</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Kate Bush</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="Note about Grouping">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Note about Grouping
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note that <code>t.group(column)</code> only keeps the specified <code>column</code>,the frequency <code>count</code>, and no others. All other columns are dropped from the result.</p>
+</div>
+</div>
+</section>
+<section id="the-group-sort-take-pattern" class="level2">
+<h2 class="anchored" data-anchor-id="the-group-sort-take-pattern">The Group + Sort + Take Pattern</h2>
+<p>A common and powerful pattern in data analysis is: <strong>grouping and then sorting, and then taking</strong>. This gives us ranked lists of categories.</p>
+<div id="32b7f4c3" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Top 10 artists with the most songs in Spotify Daily Top 200</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>top_10_artists <span class="op">=</span> streams.group(<span class="st">'artist_names'</span>).sort(<span class="st">'count'</span>, descending<span class="op">=</span><span class="va">True</span>).take(np.arange(<span class="dv">10</span>))</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>top_10_artists</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="37">
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">artist_names</th>
+<th data-quarto-table-cell-role="th">count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bad Bunny</td>
+<td>16</td>
+</tr>
+<tr class="even">
+<td>Harry Styles</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td>Olivia Rodrigo</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td>The Weeknd</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>Ed Sheeran</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>Arctic Monkeys</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>BTS</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>Doja Cat</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>Eminem</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>Imagine Dragons</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>This pattern is so useful that it’s worth memorizing: <code>group()</code> → <code>sort()</code> → <code>take()</code>.</p>
+</section>
+<section id="advanced-grouping-with-collect-functions" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-grouping-with-collect-functions">Advanced Grouping with Collect Functions</h2>
+<p>The method <code>t.group(column, collect)</code> combines/aggregates all rows with the same value for <code>column</code> into a single row in the resulting table, according to the function <code>collect</code>.</p>
+<p>The <code>collect</code> argument is optional and can be:</p>
+<ul>
+<li><code>len</code>: number of grouped values (default)</li>
+<li><code>list</code>: list of all grouped values<br>
+</li>
+<li><code>sum</code>: total of all grouped values</li>
+<li><code>np.mean</code>: average of all grouped values</li>
+<li><code>max</code>, <code>min</code>: maximum/minimum values</li>
+<li>Any function that works on arrays!</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="Cars Dataset">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Cars Dataset
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This dataset contains car specifications for 2021 model-year vehicles, including manufacturer, brand, engine size (displacement), cylinders, fuel efficiency (MPG), and other technical details.</p>
+</div>
+</div>
+<div id="4f7fa12a" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Load cars data and show basic grouping</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>cars <span class="op">=</span> Table.read_table(<span class="st">'data/models-2021.csv'</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>cars.group(<span class="st">'Brand'</span>, np.mean)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="38">
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Brand</th>
+<th data-quarto-table-cell-role="th">Manufacturer mean</th>
+<th data-quarto-table-cell-role="th">Model mean</th>
+<th data-quarto-table-cell-role="th">Displacement mean</th>
+<th data-quarto-table-cell-role="th">Cylinders mean</th>
+<th data-quarto-table-cell-role="th">MPG mean</th>
+<th data-quarto-table-cell-role="th">Wheel mean</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ALFA ROMEO</td>
+<td></td>
+<td></td>
+<td>2</td>
+<td>4</td>
+<td>25.5</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Acura</td>
+<td></td>
+<td></td>
+<td>2.19</td>
+<td>4.2</td>
+<td>24.1</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Aston Martin Lagonda Ltd</td>
+<td></td>
+<td></td>
+<td>4.4</td>
+<td>9.33333</td>
+<td>17.8333</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Audi</td>
+<td></td>
+<td></td>
+<td>2.94878</td>
+<td>5.87805</td>
+<td>22.0244</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>BMW</td>
+<td></td>
+<td></td>
+<td>3.10789</td>
+<td>6</td>
+<td>22.3421</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Bentley</td>
+<td></td>
+<td></td>
+<td>4</td>
+<td>8</td>
+<td>18.25</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Bugatti</td>
+<td></td>
+<td></td>
+<td>8</td>
+<td>16</td>
+<td>10.5</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Buick</td>
+<td></td>
+<td></td>
+<td>2.0625</td>
+<td>4.25</td>
+<td>25.25</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Cadillac</td>
+<td></td>
+<td></td>
+<td>2.27</td>
+<td>4.4</td>
+<td>23.2</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Chevrolet</td>
+<td></td>
+<td></td>
+<td>2.5963</td>
+<td>4.74074</td>
+<td>23.6667</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p>... (31 rows omitted)</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Non-numeric Values">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Non-numeric Values
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If a collect function doesn’t work with non-numeric values (like <code>sum</code>), it skips non-numeric columns. You can’t sum strings, so string columns will be empty in the result.</p>
+</div>
+</div>
+</section>
+<section id="grouping-by-multiple-columns" class="level2">
+<h2 class="anchored" data-anchor-id="grouping-by-multiple-columns">Grouping by Multiple Columns</h2>
+<p>If we pass a list of column names as the first argument to <code>group()</code>:</p>
+<p>The resulting table has one row for every unique combination of values in the specified columns.</p>
+<div id="d424ba1c" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># One row for every combination of Manufacturer and Brand</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>cars.group([<span class="st">'Manufacturer'</span>, <span class="st">'Brand'</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="39">
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Manufacturer</th>
+<th data-quarto-table-cell-role="th">Brand</th>
+<th data-quarto-table-cell-role="th">count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>BMW</td>
+<td>BMW</td>
+<td>76</td>
+</tr>
+<tr class="even">
+<td>BMW</td>
+<td>Mini</td>
+<td>17</td>
+</tr>
+<tr class="odd">
+<td>BMW</td>
+<td>TOYOTA</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>FCA US LLC</td>
+<td>ALFA ROMEO</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>FCA US LLC</td>
+<td>Chrysler</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td>FCA US LLC</td>
+<td>Dodge</td>
+<td>12</td>
+</tr>
+<tr class="odd">
+<td>FCA US LLC</td>
+<td>FIAT</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>FCA US LLC</td>
+<td>Jeep</td>
+<td>20</td>
+</tr>
+<tr class="odd">
+<td>FCA US LLC</td>
+<td>RAM</td>
+<td>7</td>
+</tr>
+<tr class="even">
+<td>Ferrari</td>
+<td>Ferrari North America, Inc.</td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
+
+<p>... (32 rows omitted)</p>
+</div>
+</div>
+<div id="a5695713" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Average MPG for each Brand-Cylinders combination</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>cars.group([<span class="st">'Brand'</span>, <span class="st">'Cylinders'</span>], np.mean)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="40">
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Brand</th>
+<th data-quarto-table-cell-role="th">Cylinders</th>
+<th data-quarto-table-cell-role="th">Manufacturer mean</th>
+<th data-quarto-table-cell-role="th">Model mean</th>
+<th data-quarto-table-cell-role="th">Displacement mean</th>
+<th data-quarto-table-cell-role="th">MPG mean</th>
+<th data-quarto-table-cell-role="th">Wheel mean</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ALFA ROMEO</td>
+<td>4</td>
+<td></td>
+<td></td>
+<td>2</td>
+<td>25.5</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Acura</td>
+<td>4</td>
+<td></td>
+<td></td>
+<td>2.04444</td>
+<td>24.4444</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Acura</td>
+<td>6</td>
+<td></td>
+<td></td>
+<td>3.5</td>
+<td>21</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Aston Martin Lagonda Ltd</td>
+<td>8</td>
+<td></td>
+<td></td>
+<td>4</td>
+<td>18</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Aston Martin Lagonda Ltd</td>
+<td>12</td>
+<td></td>
+<td></td>
+<td>5.2</td>
+<td>17.5</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Audi</td>
+<td>4</td>
+<td></td>
+<td></td>
+<td>2</td>
+<td>25.6875</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Audi</td>
+<td>5</td>
+<td></td>
+<td></td>
+<td>2.5</td>
+<td>24</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Audi</td>
+<td>6</td>
+<td></td>
+<td></td>
+<td>2.97143</td>
+<td>21.6429</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Audi</td>
+<td>8</td>
+<td></td>
+<td></td>
+<td>4</td>
+<td>16.5</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Audi</td>
+<td>10</td>
+<td></td>
+<td></td>
+<td>5.2</td>
+<td>16.5</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p>... (83 rows omitted)</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="When to Group by Multiple Columns">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>When to Group by Multiple Columns
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It usually only makes sense to group by columns that store categorical information that is shared across multiple rows. For example, you can group by breed, size, sex, or color of dogs, but it wouldn’t make sense to group by weight in pounds, since every dog will have a slightly different weight.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Practical Limitation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Practical Limitation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can group by any number of columns, but we rarely group by more than two columns as the results tend to be less meaningful and harder to interpret.</p>
+</div>
+</div>
+</section>
+<section id="when-to-use-grouping" class="level2">
+<h2 class="anchored" data-anchor-id="when-to-use-grouping">When to Use Grouping</h2>
+<p>Use <strong><code>.group()</code></strong> when you want to:</p>
+<ul>
+<li>Analyze one categorical variable at a time</li>
+<li>See all combinations of multiple variables in a long format</li>
+<li>Calculate aggregate statistics for categories</li>
+<li>Create ranked lists of categories</li>
+</ul>
+<p>The grouping method is particularly powerful for exploratory data analysis and understanding the distribution of categorical variables in your dataset.</p>
 
 
 </section>
@@ -617,13 +1220,14 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -638,7 +1242,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/data-6-berkeley\.github\.io\/notes\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -967,13 +1571,13 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../17-dictionaries/file-formats.html" class="pagination-link" aria-label="File Formats">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">File Formats</span>
+      <a href="../11-grouping/index.html" class="pagination-link" aria-label="L11: Grouping, Pivoting, and Disaggregating">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">L11: Grouping, Pivoting, and Disaggregating</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../five-things.html" class="pagination-link" aria-label="5 Things to Know">
-        <span class="nav-page-text">5 Things to Know</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../11-grouping/pivot.html" class="pagination-link" aria-label="Pivoting">
+        <span class="nav-page-text">Pivoting</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
